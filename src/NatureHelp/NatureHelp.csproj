@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Exceptions\Models\" />
     <Folder Include="Middlewares\" />
   </ItemGroup>
 
