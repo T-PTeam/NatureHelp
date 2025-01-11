@@ -9,7 +9,14 @@ namespace NatureHelp.Providers
         {
             return new List<IExceptionHandler>
             {
-                new GeneralInternalExceptionHandler(),
+                new CommonExceptionsHandler(),
+                new SerializationExceptionsHandler(),
+                new SecurityExceptionsHandler(),
+                new ThreadingExceptionsHandler(),
+                new NetworkExceptionsHandler(),
+                new FileExceptionsHandler(),
+                new DataAccessExceptionsHandler(),
+                new SystemExceptionsHandler(),
             };
         }
     }
