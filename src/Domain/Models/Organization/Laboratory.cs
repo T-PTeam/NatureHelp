@@ -1,7 +1,7 @@
-﻿namespace Core.Models.Organization;
+﻿namespace Domain.Models.Organization;
 
-public class Laboratory
+public class Laboratory : BaseEntity
 {
-    public string Caption { get; set; } = null!;
+    public string Title { get; set; } = null!;
     public List<User>? Researchers { get; set; }
 }

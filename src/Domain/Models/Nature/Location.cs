@@ -1,5 +1,5 @@
-﻿namespace Core.Models.Nature;
-public class Location
+﻿namespace Domain.Models.Nature;
+public class Location : BaseEntity
 {
     public string Country { get; set; } = null!;
     public string City { get; set; } = null!;

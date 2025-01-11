@@ -1,6 +1,6 @@
-﻿using Core.Enums;
+﻿using Domain.Enums;
 
-namespace Core.Models.Organization;
+namespace Domain.Models.Organization;
 
 public class User : Person
 {

@@ -1,8 +1,8 @@
-﻿namespace Core.Models.Organization;
+﻿namespace Domain.Models.Organization;
 
-public class Organization
+public class Organization : BaseEntity
 {
-    public string Caption { get; set; } = null!;
+    public string Title { get; set; } = null!;
     public Location Location { get; set; } = null!;
     public List<User>? Staff { get; set; }
 }
