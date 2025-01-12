@@ -1,0 +1,39 @@
+<div class="header">
+  <h2>Stations</h2>
+  <input type="search" placeholder="Search for station..." [(ngModel)]="search">
+  <button (click)="navigateToDetail()" class="action-btn" id="add-btn"><i class="material-icons">add</i></button>
+</div>
+
+<div class="list">
+  <table class="table">
+    <thead class="table-header">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Work from</th>
+        <th>Work to</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="table-body">
+      <tr *ngFor="let station of (gasStationsList | filter:search)">
+        <td>{{station.id}}</td>
+        <td>{{station.name}}</td>
+        <td>{{station.latitude}}</td>
+        <td>{{station.longitude}}</td>
+        <td>{{station.description}}</td>
+        <td>{{station.productType}}</td>
+        <td>{{station.workTimeFrom}}</td>
+        <td>{{station.workTimeTo}}</td>
+        <td class="btn-ceil"><button (click)="navigateToDetail(station.id)" class="action-btn" id="edit-btn"><i class="fa fa-edit"></i></button></td>
+        <td class="btn-ceil"><button (click)="onRemove(station)" class="action-btn" id="remove-btn"><i class="fa fa-trash"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
