@@ -1,11 +1,16 @@
-﻿namespace Domain.Models.Organization;
+﻿using Domain.Models.Location;
 
-public class Location : BaseEntity
+namespace Domain.Models.Organization;
+
+public class Location : ACoordinates
 {
     public string Country { get; set; } = null!;
     public string Region { get; set; } = null!;
     public string District { get; set; } = null!;
     public string City { get; set; } = null!;
-    public double Latitude { get; set; }
-    public double Longitude { get; set; }
+
+    public string GetFormattedAddress()
+    {
+        return $"{Country}, {Region} region, {District} district, {City}";
+    }
 }
