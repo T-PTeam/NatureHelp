@@ -1,0 +1,63 @@
+.header {
+  background-color: #2e8b57;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.header h2 {
+  display: inline-block;
+  margin: 15px;
+}
+
+.header button {
+  float: inline-end;
+  margin: 15px;
+  font-size: 18px;
+}
+
+.header input {
+  float: inline-end;
+  margin: 15px;
+  font-size: 18px;
+}
+
+.list .table {
+  border: 3px solid green;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.list .table * {
+  border: 1px solid green;
+  padding: 5px;
+}
+
+.list .table thead {
+  border: 2px solid green;
+}
+
+.list .table .btn-ceil * {
+  border: none;
+}
+
+.list .table .action-btn {
+  color: black;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#add-btn {
+  border: 1px solid black;
+  background-color: white;
+  color: #2e8b57;
+}
+
+#edit-btn {
+  border: 1px solid black;
+  background-color: yellow;
+}
+
+#remove-btn{
+  border: 1px solid black;
+  background-color: red;
+}

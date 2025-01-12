@@ -1,7 +1,7 @@
 ﻿using Application.Interfaces.Services;
 using Application.Services.Organization;
-using Core.Interfaces;
-using Core.Models.Organization;
+using Domain.Interfaces;
+using Domain.Models.Organization;
 using Infrastructure.Repositories;
 
 namespace NatureHelp
