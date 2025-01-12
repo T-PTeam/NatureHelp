@@ -1,8 +1,8 @@
-﻿using Core.Enums;
-using Core.Models.Organization;
+﻿using Domain.Enums;
+using Domain.Models.Organization;
 
-namespace Core.Models.Nature;
-public class Deficiency
+namespace Domain.Models.Nature;
+public class Deficiency : BaseEntity
 {
     public string Title { get; set; } = null!;
     public string Description { get; set; } = String.Empty;

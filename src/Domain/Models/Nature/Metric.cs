@@ -1,7 +1,7 @@
-﻿using Core.Enums;
+﻿using Domain.Enums;
 
-namespace Core.Models.Nature;
-public class Metric
+namespace Domain.Models.Nature;
+public class Metric : BaseEntity
 {
     public string Title { get; set; } = null!;
     public string Description { get; set; } = null!;

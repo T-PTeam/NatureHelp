@@ -1,8 +1,8 @@
-﻿using Core.Enums;
-using Core.Models.Organization;
+﻿using Domain.Enums;
+using Domain.Models.Organization;
 
-namespace Core.Models.Analitycs;
-public class Report
+namespace Domain.Models.Analitycs;
+public class Report : BaseEntity
 {
     public string? Title { get; set; }
     public EReportTopic Topic { get; set; }

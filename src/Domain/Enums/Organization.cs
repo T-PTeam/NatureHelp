@@ -1,11 +1,11 @@
-﻿namespace Core.Enums;
+﻿namespace Domain.Enums;
 
 public enum ERole
 {
-    Admin,
+    SuperAdmin,
+    Owner,
     Manager,
     Foreman,
     LabWorker,
-    Analyst,
     Guest
 }
