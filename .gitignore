@@ -366,24 +366,24 @@ FodyWeavers.xsd
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/src/NatureHelp/ClientApp/nature-help/dist/
-/src/NatureHelp/ClientApp/nature-help/tmp/
-/src/NatureHelp/ClientApp/nature-help/out-tsc/
-/src/NatureHelp/ClientApp/nature-help/bazel-out/
+src/NatureHelp/ClientApp/nature-help/dist/
+src/NatureHelp/ClientApp/nature-help/tmp/
+src/NatureHelp/ClientApp/nature-help/out-tsc/
+src/NatureHelp/ClientApp/nature-help/bazel-out/
 
 # Node
-/src/NatureHelp/ClientApp/nature-help/node_modules/
-/npm-debug.log
-/yarn-error.log
+src/NatureHelp/ClientApp/nature-help/node_modules/
+npm-debug.log
+yarn-error.log
 
 # IDEs and editors
 .idea/
-/.project
+.project
 .classpath
 .c9/
-/*.launch
+*.launch
 .settings/
-/*.sublime-workspace
+*.sublime-workspace
 
 # Visual Studio Code
 .vscode/*
@@ -394,13 +394,13 @@ FodyWeavers.xsd
 .history/*
 
 # Miscellaneous
-/src/NatureHelp/ClientApp/nature-help/.angular/cache/
-/.sass-cache/
-/src/NatureHelp/ClientApp/nature-help/connect.lock
-/src/NatureHelp/ClientApp/nature-help/coverage
-/src/NatureHelp/ClientApp/nature-help/libpeerconnection.log
+src/NatureHelp/ClientApp/nature-help/.angular
+.sass-cache/
+src/NatureHelp/ClientApp/nature-help/connect.lock
+src/NatureHelp/ClientApp/nature-help/coverage
+src/NatureHelp/ClientApp/nature-help/libpeerconnection.log
 testem.log
-/src/NatureHelp/ClientApp/nature-help/typings/
+src/NatureHelp/ClientApp/nature-help/typings/
 
 # System files
 .DS_Store

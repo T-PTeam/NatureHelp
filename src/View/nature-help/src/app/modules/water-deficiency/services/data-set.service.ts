@@ -1,0 +1,38 @@
+import { Injectable } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
+
+@Injectable()
+export class DataSetService {
+  private stationsUrl = 'https://localhost:7077/api/Stations/';
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  constructor(
+    private http: HttpClient){
+
+    }
+
+  public getAllWaterDeficiencies(): Observable<IWaterDeficiency[]> {
+    return this.http.get<IWaterDeficiency[]>(this.stationsUrl + "all");
+  }
+
+  public getWaterDeficiencyById(id: string): Observable<IWaterDeficiency> {
+    return this.http.get<IWaterDeficiency>(this.stationsUrl + id.toString());
+  }
+
+  public addNewWaterDeficiency(value: IWaterDeficiency):Observable<IWaterDeficiency>{
+    return this.http.post<IWaterDeficiency>(this.stationsUrl, JSON.stringify(value), this.httpOptions);
+  }
+
+  public updateWaterDeficiency(id: string, value: IWaterDeficiency):Observable<IWaterDeficiency>{
+    return this.http.put<IWaterDeficiency>(this.stationsUrl + id, JSON.stringify(value), this.httpOptions);
+  }
+
+  public deleteWaterDeficiency(id: string):Observable<any>{
+    return this.http.delete<any>(this.stationsUrl + id);
+  }
+}

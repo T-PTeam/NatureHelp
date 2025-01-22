@@ -6,6 +6,6 @@ public enum ERole
     Owner,
     Manager,
     Foreman,
-    LabWorker,
+    Researcher,
     Guest
 }

@@ -1,0 +1,10 @@
+.water-deficiency-card {
+  text-align: center;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 8px;
+}
