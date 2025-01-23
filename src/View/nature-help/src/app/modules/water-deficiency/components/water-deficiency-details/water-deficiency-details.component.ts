@@ -12,7 +12,7 @@ const MOCK_WATER_DEFICIENCY = {
   createdAt: new Date('2025-01-07'),
   updatedAt: new Date('2025-01-15'),
   title: 'Broken Pipeline',
-  description: 'Pipeline failure causing water wastage.',
+  description: '',
   type: EDeficiencyType.Water,
   creator: {
     id: "1", name: 'Admin',
