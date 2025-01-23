@@ -4,7 +4,21 @@
 
 .form-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(7, 1fr);
-  gap: 8px;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: repeat(7, 1fr); 
+  gap: 12px;
+  position: relative; 
+}
+
+.button-group-wrapper {
+  grid-column: 0; 
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
 }
