@@ -8,36 +8,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import moment from 'moment'
 
 const MOCK_WATER_DEFICIENCY = {
-  id: "3",
-  createdAt: new Date('2025-01-07'),
-  updatedAt: new Date('2025-01-15'),
-  title: 'Broken Pipeline',
-  description: 'Pipeline failure causing water wastage.',
+  id: "",
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  title: '',
+  description: '',
   type: EDeficiencyType.Water,
   creator: {
-    id: "1", name: 'Admin',
+    id: "", name: '',
     email: '',
     role: ''
   },
   responsibleUser: {
-    id: "4", name: 'Alice Brown',
+    id: "", name: '',
     email: '',
     role: ''
   },
   metrics: [],
   location: {
-    latitude: 51.5074, longitude: -0.1278,
+    latitude: 1, longitude: 1,
     city: '',
     country: ''
   },
   eDangerState: EDangerState.Moderate,
-  populationAffected: 3000,
-  economicImpact: 100000,
-  healthImpact: 'Low',
+  populationAffected: 0,
+  economicImpact: 0,
+  healthImpact: '',
   resolvedDate: new Date('2025-01-10'),
   expectedResolutionDate: new Date('2025-01-20'),
-  caused: 'Infrastructure failure',
-  waterQualityLevel: 5
+  caused: '',
+  waterQualityLevel: 0
 }
 
 @Component({
@@ -64,11 +64,11 @@ export class WaterDeficiencyDetail implements OnInit {
   //   updatedAt: new Date(),
   // };
 
-  private isAddingStation: boolean = false;
+  private isAddingDeficiency: boolean = false;
   detailsForm!: FormGroup;
   deficiencyTypes = Object.values(EDeficiencyType); //.filter(x => Number(x) || Number(x) === 0).map(x => Number(x));
   
-  constructor(private stationsDataService: DataSetService,
+  constructor(private deficiencyDataService: DataSetService,
       private activatedRoute: ActivatedRoute,
       private router: Router,
       private mapViewService: MapViewService,
@@ -79,75 +79,74 @@ export class WaterDeficiencyDetail implements OnInit {
       const id = params['id'];
 
       if (id == null || id == undefined){
-        this.isAddingStation = true;
+        this.isAddingDeficiency = true;
       }
 
       if (id){
-        this.stationsDataService
+        this.deficiencyDataService
           .getWaterDeficiencyById(id)
-          .subscribe(station => this.details = station);
+          .subscribe(def => this.details = def);
       }
     });
   }
   
   ngOnInit(): void {
     this.detailsForm = this.fb.group({
-      id: [MOCK_WATER_DEFICIENCY.id],
-      createdAt: [MOCK_WATER_DEFICIENCY.createdAt],
-      updatedAt: [MOCK_WATER_DEFICIENCY.updatedAt],
-      title: [MOCK_WATER_DEFICIENCY.title || '', Validators.required],
-      description: [MOCK_WATER_DEFICIENCY.description || '', Validators.required],
-      type: [MOCK_WATER_DEFICIENCY.type || EDeficiencyType.Water, Validators.required],
+      id: [this.details.id],
+      createdAt: [this.details.createdAt],
+      updatedAt: [this.details.updatedAt],
+      title: [this.details.title || '', Validators.required],
+      description: [this.details.description || '', Validators.required],
+      type: [this.details.type || EDeficiencyType.Water, Validators.required],
       creator: this.fb.group({
-        id: [MOCK_WATER_DEFICIENCY.creator.id],
-        name: [MOCK_WATER_DEFICIENCY.creator.name, Validators.required],
-        email: [MOCK_WATER_DEFICIENCY.creator.email, Validators.email],
-        role: [MOCK_WATER_DEFICIENCY.creator.role],
+        id: [this.details.creator.id],
+        name: [this.details.creator.name, Validators.required],
+        email: [this.details.creator.email, Validators.email],
+        role: [this.details.creator.role],
       }),
       responsibleUser: this.fb.group({
-        id: [MOCK_WATER_DEFICIENCY.responsibleUser.id],
-        name: [MOCK_WATER_DEFICIENCY.responsibleUser.name, Validators.required],
-        email: [MOCK_WATER_DEFICIENCY.responsibleUser.email, Validators.email],
-        role: [MOCK_WATER_DEFICIENCY.responsibleUser.role],
+        id: [this.details.responsibleUser?.id],
+        name: [this.details.responsibleUser?.name, Validators.required],
+        email: [this.details.responsibleUser?.email, Validators.email],
+        role: [this.details.responsibleUser?.role],
       }),
-      metrics: [MOCK_WATER_DEFICIENCY.metrics || []], // Optional array
       location: this.fb.group({
-        latitude: [MOCK_WATER_DEFICIENCY.location.latitude, [Validators.required, Validators.min(-90), Validators.max(90)]],
-        longitude: [MOCK_WATER_DEFICIENCY.location.longitude, [Validators.required, Validators.min(-180), Validators.max(180)]],
-        city: [MOCK_WATER_DEFICIENCY.location.city || ''],
-        country: [MOCK_WATER_DEFICIENCY.location.country || ''],
+        latitude: [this.details.location.latitude, [Validators.required, Validators.min(-90), Validators.max(90)]],
+        longitude: [this.details.location.longitude, [Validators.required, Validators.min(-180), Validators.max(180)]],
+        city: [this.details.location.city || ''],
+        country: [this.details.location.country || ''],
       }),
-      eDangerState: [MOCK_WATER_DEFICIENCY.eDangerState || '', Validators.required],
-      populationAffected: [MOCK_WATER_DEFICIENCY.populationAffected, [Validators.required, Validators.min(0)]],
-      economicImpact: [MOCK_WATER_DEFICIENCY.economicImpact, [Validators.required, Validators.min(0)]],
-      healthImpact: [MOCK_WATER_DEFICIENCY.healthImpact || '', Validators.required],
-      resolvedDate: [MOCK_WATER_DEFICIENCY.resolvedDate || moment()],
-      expectedResolutionDate: [MOCK_WATER_DEFICIENCY.expectedResolutionDate || moment()],
-      caused: [MOCK_WATER_DEFICIENCY.caused || '', Validators.required],
-      waterQualityLevel: [MOCK_WATER_DEFICIENCY.waterQualityLevel, [Validators.required, Validators.min(0), Validators.max(10)]],
+      eDangerState: [this.details.eDangerState || '', Validators.required],
+      populationAffected: [this.details.populationAffected, [Validators.required, Validators.min(0)]],
+      economicImpact: [this.details.economicImpact, [Validators.required, Validators.min(0)]],
+      healthImpact: [this.details.healthImpact || '', Validators.required],
+      resolvedDate: [this.details.resolvedDate || moment()],
+      expectedResolutionDate: [this.details.expectedResolutionDate || moment()],
+      caused: [this.details.caused || '', Validators.required],
+      waterQualityLevel: [this.details.waterQualityLevel, [Validators.required, Validators.min(0), Validators.max(10)]],
     });
   }
 
   public onSubmit(){
-    if (this.isAddingStation){
-      this.stationsDataService
+    if (this.isAddingDeficiency){
+      this.deficiencyDataService
         .addNewWaterDeficiency(this.details)
-        .subscribe(station => console.log(station));
+        .subscribe(def => console.log(def));
     }
     else{
       this.changeMapView();
 
-      this.stationsDataService
+      this.deficiencyDataService
         .updateWaterDeficiency(this.details.id, this.details)
-        .subscribe(station => console.log(station));
+        .subscribe(def => console.log(def));
     }
 
-    this.stationsDataService.getAllWaterDeficiencies();
+    this.deficiencyDataService.getAllWaterDeficiencies();
     this.router.navigate(["/"]);
   }
 
   public onCancel(){
-    this.changeMapView()
+    this.changeMapView();
 
     this.router.navigate(["/"]);
   }

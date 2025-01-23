@@ -2,8 +2,26 @@
   border: 2px solid black;
   height: 100%;
   margin: 15px;
+  position: relative;
 }
 
 #map {
   height: 100%;
+  z-index: 1;
+}
+
+.fullscreen-button {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.fullscreen-button img {
+  width: 32px;
+  height: 32px;
 }

@@ -9,9 +9,9 @@ const routes: Routes = [
   { path: 'water/add', component: WaterDeficiencyDetail },
   { path: 'water/{id}', component: WaterDeficiencyDetail },
 
-  { path: 'labs', component: WaterDeficiencyDetail },
-  { path: 'reports', component: WaterDeficiencyDetail },
-  { path: 'about', component: WaterDeficiencyDetail },
+  { path: 'labs', component: WaterDeficiencyList },
+  { path: 'reports', component: WaterDeficiencyList },
+  { path: 'about', component: WaterDeficiencyList },
 ];
 
 @NgModule({
