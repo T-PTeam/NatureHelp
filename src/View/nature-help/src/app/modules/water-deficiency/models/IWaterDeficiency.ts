@@ -1,6 +1,6 @@
 import { IWaterDeficiency } from "@/models/IWaterDeficiency";
 
-export interface IDeficiency extends IWaterDeficiency {
+export interface IWDeficiency extends IWaterDeficiency {
     populationAffected: number;
     economicImpact: number;
     healthImpact?: string;

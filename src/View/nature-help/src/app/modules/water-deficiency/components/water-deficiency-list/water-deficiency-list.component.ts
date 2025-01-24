@@ -2,10 +2,10 @@ import { DataSetService } from '@/modules/water-deficiency/services/data-set.ser
 import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { IDeficiency } from '../../models/IWaterDeficiency';
+import { IWDeficiency } from '../../models/IWaterDeficiency';
 import { EDangerState, EDeficiencyType } from '../../models/enums';
 
-export const MOCK_WATER_DEFICIENCIES: IDeficiency[] = [
+export const MOCK_WATER_DEFICIENCIES: IWDeficiency[] = [
   {
     id: "1",
     createdAt: new Date('2025-01-01'),
@@ -113,7 +113,7 @@ export const MOCK_WATER_DEFICIENCIES: IDeficiency[] = [
   standalone: false,
 })
 export class WaterDeficiencyList implements OnInit, OnChanges{
-  public deficiencies: IDeficiency[] = MOCK_WATER_DEFICIENCIES;
+  public deficiencies: IWDeficiency[] = MOCK_WATER_DEFICIENCIES;
 
   public search: string = "";
 
@@ -142,7 +142,7 @@ export class WaterDeficiencyList implements OnInit, OnChanges{
     this.router.navigate([`water/add`]);
   }
 
-  public onRemove(station: IDeficiency){
+  public onRemove(station: IWDeficiency){
     this.changeMapFocus(station.id)
 
     this.stationsDataService.deleteWaterDeficiency(station.id)
