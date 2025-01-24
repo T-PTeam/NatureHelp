@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'n-main-container',
@@ -7,7 +8,21 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class MainContainerComponent {
+  showWaterTable: boolean = true;
 
-  constructor() { }
+  constructor(private router:Router) {
+
+   }
+
+  toggleTable(): void {
+    this.showWaterTable = !this.showWaterTable;
+    if(this.showWaterTable)
+    {
+      this.router.navigate(['water']);
+    }
+    else{
+      this.router.navigate(['soil']);
+    }
+  }
 
 }

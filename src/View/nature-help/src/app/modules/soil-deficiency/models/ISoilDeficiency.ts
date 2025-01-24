@@ -1,6 +1,6 @@
-import { ISoilDeficiency } from "@/models/ISoilDeficiency";
+import { IDeficiency } from "@/models/IDeficiency";
 
-export interface ISDeficiency extends ISoilDeficiency {
+export interface ISoilDeficiency extends IDeficiency {
     populationAffected: number;
     economicImpact: number;
     healthImpact?: string;

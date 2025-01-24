@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataSetService } from '@/modules/water-deficiency/services/data-set.service';
+import { DataSetWaterService } from '@/modules/water-deficiency/services/data-set-water.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { EDeficiencyType, EDangerState } from '../../models/enums';
-import { IWDeficiency } from '../../models/IWaterDeficiency';
+import { IWaterDeficiency } from '../../models/IWaterDeficiency';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import moment from 'moment'
 
@@ -47,7 +47,7 @@ const MOCK_WATER_DEFICIENCY = {
   standalone: false,
 })
 export class WaterDeficiencyDetail implements OnInit {
-  public details: IWDeficiency = MOCK_WATER_DEFICIENCY;
+  public details: IWaterDeficiency = MOCK_WATER_DEFICIENCY;
   // {
   //   populationAffected: 0,
   //   economicImpact: 0,
@@ -68,7 +68,7 @@ export class WaterDeficiencyDetail implements OnInit {
   detailsForm!: FormGroup;
   deficiencyTypes = Object.values(EDeficiencyType); //.filter(x => Number(x) || Number(x) === 0).map(x => Number(x));
   
-  constructor(private deficiencyDataService: DataSetService,
+  constructor(private deficiencyDataService: DataSetWaterService,
       private activatedRoute: ActivatedRoute,
       private router: Router,
       private mapViewService: MapViewService,

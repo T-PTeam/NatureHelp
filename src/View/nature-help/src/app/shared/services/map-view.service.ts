@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { DataSetService } from '../../modules/water-deficiency/services/data-set.service';
+import { DataSetWaterService } from '../../modules/water-deficiency/services/data-set-water.service';
+import { DataSetSoilService } from '../../modules/soil-deficiency/services/data-set-soil.service';
 import L, { LatLng } from 'leaflet';
-import { IWDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
-import { ISDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
+import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
+import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
 @Injectable({
   providedIn: 'root'
 })
 export class MapViewService {
-  private gasStationsList: IWDeficiency[] = [];
+  private gasStationsList: IWaterDeficiency[] = [];
 
   private map: any;
 
@@ -26,10 +27,10 @@ export class MapViewService {
     tiles.addTo(this.map);
   }
 
-  constructor(private stationsDataService: DataSetService) {
+  constructor(private WaterDataService: DataSetWaterService, private SoilDataService: DataSetSoilService) {
   }
 
-  public makeStationMarkers(stations?: IWDeficiency[]): void {
+  public makeStationMarkers(stations?: IWaterDeficiency[]): void {
     if (stations){
       this.gasStationsList = stations;
     }
@@ -42,7 +43,7 @@ export class MapViewService {
     });
   }
 
-  private makeMarker(station: IWDeficiency, lon: number, lat: number){
+  private makeMarker(station: IWaterDeficiency, lon: number, lat: number){
     const circle = new L.CircleMarker([lat, lon], {radius: 10});
     circle.bindPopup(this.makeStationPopup(station));
 
@@ -59,7 +60,7 @@ export class MapViewService {
     mapObject!.style.height = "100%";
   }
 
-  public makeStationPopup(station: IWDeficiency){
+  public makeStationPopup(station: IWaterDeficiency){
     return `` +
       `<div><b>${ station.title }<b></div>` +
       `<div>Type: ${ station.type }</div>`

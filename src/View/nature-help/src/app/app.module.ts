@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { DataSetService } from './modules/water-deficiency/services/data-set.service';
+import { DataSetWaterService } from './modules/water-deficiency/services/data-set-water.service';
+import { DataSetSoilService } from './modules/soil-deficiency/services/data-set-soil.service';
 import { MapViewService } from './shared/services/map-view.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SharedModule } from './shared/shared.module';
 import { MatModule } from './mat.module';
 import { WaterDeficiencyModule } from './modules/water-deficiency/water-deficiency.module';
+import { SoilDeficiencyModule } from './modules/soil-deficiency/soil-deficiency.module';
 import { MainModule } from './modules/main/main.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter'; 
@@ -30,6 +32,7 @@ const UKRAINIAN_DATE_FORMATS = {
     SharedModule,
     MatModule,
     WaterDeficiencyModule,
+    SoilDeficiencyModule,
     MainModule,
     BrowserAnimationsModule
   ],
@@ -38,7 +41,8 @@ const UKRAINIAN_DATE_FORMATS = {
   ],
   bootstrap: [AppComponent],
   providers: [
-    DataSetService,
+    DataSetWaterService,
+    DataSetSoilService,
     MapViewService,
     provideAnimationsAsync(),
 

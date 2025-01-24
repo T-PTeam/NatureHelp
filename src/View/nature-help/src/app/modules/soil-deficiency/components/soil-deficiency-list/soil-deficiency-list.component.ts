@@ -1,11 +1,11 @@
-import { DataSetService } from '@/modules/soil-deficiency/services/data-set.service';
+import { DataSetSoilService } from '@/modules/soil-deficiency/services/data-set-soil.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { ISDeficiency } from '../../models/ISoilDeficiency';
+import { ISoilDeficiency } from '../../models/ISoilDeficiency';
 import { EDangerState, EDeficiencyType } from '../../models/enums';
 
-export const MOCK_SOIL_DEFICIENCIES: ISDeficiency[] = [
+export const MOCK_SOIL_DEFICIENCIES: ISoilDeficiency[] = [
   {
     id: "1",
     createdAt: new Date('2025-01-01'),
@@ -113,11 +113,11 @@ export const MOCK_SOIL_DEFICIENCIES: ISDeficiency[] = [
   standalone: false,
 })
 export class SoilDeficiencyList implements OnInit, OnChanges{
-  public deficiencies: ISDeficiency[] = MOCK_SOIL_DEFICIENCIES;
+  public deficiencies: ISoilDeficiency[] = MOCK_SOIL_DEFICIENCIES;
 
   public search: string = "";
 
-  constructor(private stationsDataService: DataSetService,
+  constructor(private stationsDataService: DataSetSoilService,
       private router: Router,
       private mapViewService: MapViewService) {
    }
@@ -142,7 +142,7 @@ export class SoilDeficiencyList implements OnInit, OnChanges{
     this.router.navigate([`soil/add`]);
   }
 
-  public onRemove(station: ISDeficiency){
+  public onRemove(station: ISoilDeficiency){
     this.changeMapFocus(station.id)
 
     this.stationsDataService.deleteSoilDeficiency(station.id)

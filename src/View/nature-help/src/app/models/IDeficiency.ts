@@ -4,7 +4,7 @@ import { IMetric } from "@/modules/soil-deficiency/models/IMetric";
 import { IBaseEntity } from "./IBaseEntity";
 import { IUser } from "./IUser";
 
-export interface ISoilDeficiency extends IBaseEntity {
+export interface IDeficiency extends IBaseEntity {
     title: string;
     description: string;
     type: EDeficiencyType;
@@ -14,3 +14,5 @@ export interface ISoilDeficiency extends IBaseEntity {
     location: ILocation;
     eDangerState: EDangerState;
   }
+
+  

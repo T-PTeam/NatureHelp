@@ -1,11 +1,11 @@
-import { DataSetService } from '@/modules/water-deficiency/services/data-set.service';
+import { DataSetWaterService } from '@/modules/water-deficiency/services/data-set-water.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { IWDeficiency } from '../../models/IWaterDeficiency';
+import { IWaterDeficiency } from '../../models/IWaterDeficiency';
 import { EDangerState, EDeficiencyType } from '../../models/enums';
 
-export const MOCK_WATER_DEFICIENCIES: IWDeficiency[] = [
+export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
   {
     id: "1",
     createdAt: new Date('2025-01-01'),
@@ -113,11 +113,11 @@ export const MOCK_WATER_DEFICIENCIES: IWDeficiency[] = [
   standalone: false,
 })
 export class WaterDeficiencyList implements OnInit, OnChanges{
-  public deficiencies: IWDeficiency[] = MOCK_WATER_DEFICIENCIES;
+  public deficiencies: IWaterDeficiency[] = MOCK_WATER_DEFICIENCIES;
 
   public search: string = "";
 
-  constructor(private stationsDataService: DataSetService,
+  constructor(private stationsDataService: DataSetWaterService,
       private router: Router,
       private mapViewService: MapViewService) {
    }
@@ -142,7 +142,7 @@ export class WaterDeficiencyList implements OnInit, OnChanges{
     this.router.navigate([`water/add`]);
   }
 
-  public onRemove(station: IWDeficiency){
+  public onRemove(station: IWaterDeficiency){
     this.changeMapFocus(station.id)
 
     this.stationsDataService.deleteWaterDeficiency(station.id)

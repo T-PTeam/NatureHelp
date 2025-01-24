@@ -1,4 +1,5 @@
-import { DataSetService } from '@/modules/water-deficiency/services/data-set.service';
+import { DataSetWaterService } from '@/modules/water-deficiency/services/data-set-water.service';
+import { DataSetSoilService } from '@/modules/soil-deficiency/services/data-set-soil.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,13 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit{
 
-  constructor(private stationsDataService: DataSetService,
+  constructor(private waterDataService: DataSetWaterService, private soilDataService: DataSetSoilService,
     private mapViewService: MapViewService) { }
 
   ngOnInit (): void {
     this.mapViewService.initMap();
 
-    this.stationsDataService.getAllWaterDeficiencies()
+    this.waterDataService.getAllWaterDeficiencies()
       .subscribe(stations => this.mapViewService.makeStationMarkers(stations));
   }
 

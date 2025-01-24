@@ -1,5 +1,5 @@
-import { IWDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
-import { ISDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
+import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
+import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -8,10 +8,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: IWDeficiency[], searchValue: string): IWDeficiency[] {
+  transform(value: IWaterDeficiency[], searchValue: string): IWaterDeficiency[] {
     if (!searchValue) return value;
 
-    return value.filter((v: IWDeficiency) =>
+    return value.filter((v: IWaterDeficiency) =>
       v.title.toLowerCase().indexOf(searchValue.toLowerCase()) > -1)
   }
 
