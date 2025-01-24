@@ -2,6 +2,7 @@
   margin-top: 16px;
   background-color: #0058af;
   border-radius: 8px 8px 0px 0px;
+  margin-right: 16px;
 }
 
 .header h2 {
@@ -21,6 +22,10 @@
   float: inline-end;
   margin: 15px;
   font-size: 18px;
+}
+
+.list {
+  margin-right: 16px;
 }
 
 .list .table {
