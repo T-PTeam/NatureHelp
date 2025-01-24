@@ -4,7 +4,7 @@ import { IMetric } from "@/modules/water-deficiency/models/IMetric";
 import { IBaseEntity } from "./IBaseEntity";
 import { IUser } from "./IUser";
 
-export interface IDeficiency extends IBaseEntity {
+export interface IWaterDeficiency extends IBaseEntity {
     title: string;
     description: string;
     type: EDeficiencyType;

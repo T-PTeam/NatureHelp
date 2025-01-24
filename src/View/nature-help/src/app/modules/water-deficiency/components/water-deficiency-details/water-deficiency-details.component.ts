@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataSetService } from '@/modules/water-deficiency/services/data-set.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { EDeficiencyType, EDangerState } from '../../models/enums';
-import { IWaterDeficiency } from '../../models/IWaterDeficiency';
+import { IDeficiency } from '../../models/IWaterDeficiency';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import moment from 'moment'
 
@@ -47,7 +47,7 @@ const MOCK_WATER_DEFICIENCY = {
   standalone: false,
 })
 export class WaterDeficiencyDetail implements OnInit {
-  public details: IWaterDeficiency = MOCK_WATER_DEFICIENCY;
+  public details: IDeficiency = MOCK_WATER_DEFICIENCY;
   // {
   //   populationAffected: 0,
   //   economicImpact: 0,

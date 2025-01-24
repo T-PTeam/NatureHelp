@@ -15,7 +15,7 @@
         <th>Resolved Date</th>
         <th>Exp. Resol. Date</th>
         <th>Caused</th>
-        <th>Water Quality Level</th>
+        <th>Soil Quality Level</th>
         <th></th>
         <th></th>
       </tr>
@@ -29,7 +29,7 @@
         <td>{{ deficiency.resolvedDate | date }}</td>
         <td>{{ deficiency.expectedResolutionDate | date }}</td>
         <td>{{ deficiency.caused }}</td>
-        <td>{{ deficiency.waterQualityLevel }}</td>
+        <td>{{ deficiency.soilQualityLevel }}</td>
         <td class="btn-ceil">
           <button (click)="navigateToDetail(deficiency.id)" class="action-btn" id="edit-btn">
             <i class="fa fa-edit"></i>

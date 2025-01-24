@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
+import { IDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 
 @Injectable()
 export class DataSetService {
@@ -16,20 +16,20 @@ export class DataSetService {
 
     }
 
-  public getAllWaterDeficiencies(): Observable<IWaterDeficiency[]> {
-    return this.http.get<IWaterDeficiency[]>(this.watersUrl + "all");
+  public getAllWaterDeficiencies(): Observable<IDeficiency[]> {
+    return this.http.get<IDeficiency[]>(this.watersUrl + "all");
   }
 
-  public getWaterDeficiencyById(id: string): Observable<IWaterDeficiency> {
-    return this.http.get<IWaterDeficiency>(this.watersUrl + id.toString());
+  public getWaterDeficiencyById(id: string): Observable<IDeficiency> {
+    return this.http.get<IDeficiency>(this.watersUrl + id.toString());
   }
 
-  public addNewWaterDeficiency(value: IWaterDeficiency):Observable<IWaterDeficiency>{
-    return this.http.post<IWaterDeficiency>(this.watersUrl, JSON.stringify(value), this.httpOptions);
+  public addNewWaterDeficiency(value: IDeficiency):Observable<IDeficiency>{
+    return this.http.post<IDeficiency>(this.watersUrl, JSON.stringify(value), this.httpOptions);
   }
 
-  public updateWaterDeficiency(id: string, value: IWaterDeficiency):Observable<IWaterDeficiency>{
-    return this.http.put<IWaterDeficiency>(this.watersUrl + id, JSON.stringify(value), this.httpOptions);
+  public updateWaterDeficiency(id: string, value: IDeficiency):Observable<IDeficiency>{
+    return this.http.put<IDeficiency>(this.watersUrl + id, JSON.stringify(value), this.httpOptions);
   }
 
   public deleteWaterDeficiency(id: string):Observable<any>{
