@@ -1,0 +1,58 @@
+<mat-card *ngIf="details" class="soil-deficiency-card">
+    <mat-card-title>Soil Deficiency</mat-card-title>
+    <div class="form-container">
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="details.title" name="title" />
+      </mat-form-field>
+      <mat-form-field style="grid-column: 2; grid-row: 1/3;">
+        <mat-label>Description</mat-label>
+        <textarea rows="5" matInput [(ngModel)]="details.description" name="description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Type</mat-label>
+        <mat-select [(ngModel)]="details.type" name="type">
+          <mat-option *ngFor="let type of deficiencyTypes" [value]="type">{{ type }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Population Affected</mat-label>
+        <input matInput type="number" [(ngModel)]="details.populationAffected" name="populationAffected" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Economic Impact</mat-label>
+        <input matInput type="number" [(ngModel)]="details.economicImpact" name="economicImpact" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Health Impact</mat-label>
+        <input matInput [(ngModel)]="details.healthImpact" name="healthImpact" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Resolved Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="details.resolvedDate" name="resolvedDate">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Expected Resolution Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="details.expectedResolutionDate" name="expectedResolutionDate">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Caused</mat-label>
+        <input matInput [(ngModel)]="details.caused" name="caused" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Soil Quality Level</mat-label>
+        <input matInput type="number" [(ngModel)]="details.soilQualityLevel" name="soilQualityLevel" />
+      </mat-form-field>
+      <div class="button-group-wrapper">
+        <div class="button-group">
+          <button mat-flat-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
+          <button mat-flat-button color="primary" type="submit" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+  
