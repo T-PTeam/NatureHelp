@@ -1,9 +1,10 @@
 ﻿using Domain.Interfaces;
+using Domain.Models;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
-public class BaseRepository<T> : IBaseRepository<T> where T : class
+public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
 {
     protected readonly IDbContextFactory<ApplicationContext> _contextFactory;
 
@@ -17,6 +18,24 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
         using (var context = _contextFactory.CreateDbContext())
         {
             return await context.Set<T>().ToListAsync();
+        }
+    }
+
+    public async Task<T?> GetByIdAsync(Guid id)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            return await context.Set<T>().FirstOrDefaultAsync(x => x.Id == id);
+        }
+    }
+
+    public async Task<T> AddAsync(T entity)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            await context.Set<T>().AddAsync(entity);
+            await context.SaveChangesAsync();
+            return entity;
         }
     }
 

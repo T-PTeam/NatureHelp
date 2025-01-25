@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc.Filters;
 using NatureHelp.Interfaces;
 
 namespace NatureHelp.Filters
@@ -23,7 +22,8 @@ namespace NatureHelp.Filters
             {
                 _handlers.First(e => e.CanHandle(context)).Handle(context);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 _logger.LogError(ex, "Exception can not be processed...");
             }
         }

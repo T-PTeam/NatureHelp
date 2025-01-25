@@ -1,6 +1,6 @@
 ﻿namespace Domain.Models.Organization;
 
-public class Person : BaseEntity
+public class Person : BaseModel
 {
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;

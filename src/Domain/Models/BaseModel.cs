@@ -1,5 +1,5 @@
 ﻿namespace Domain.Models;
-public class BaseEntity
+public class BaseModel
 {
     public Guid Id { get; set; }
 
