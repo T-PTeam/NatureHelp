@@ -35,16 +35,36 @@ export class MapViewService {
       this.gasStationsList = stations;
     }
 
-    this.gasStationsList.map((station) => {
-      const lon = station.location.longitude;
-      const lat = station.location.latitude;
+    if (!this.gasStationsList.length) {
+      console.error('No stations found to display.');
+      return;
+    }
 
-      this.makeMarker(station, lon, lat);
+    // this.gasStationsList.map((station) => {
+    //   const lon = station.location.longitude;
+    //   const lat = station.location.latitude;
+
+    //   this.makeMarker(station, lon, lat);
+    // });
+
+    this.gasStationsList.forEach((station) => {
+      const { longitude, latitude } = station.location;
+      if (latitude && longitude) {
+        this.makeMarker(station, longitude, latitude);
+      } else {
+        console.warn(`Station ${station.title} does not have valid coordinates.`);
+      }
     });
   }
 
-  private makeMarker(station: IWaterDeficiency, lon: number, lat: number){
-    const circle = new L.CircleMarker([lat, lon], {radius: 10});
+  private makeMarker(station: IWaterDeficiency, lon: number, lat: number): void {
+    const circle = L.circleMarker([lat, lon], {
+      radius: 8,
+      color: 'blue',
+      fillColor: '#3f51b5',
+      fillOpacity: 0.6,
+    });
+
     circle.bindPopup(this.makeStationPopup(station));
 
     circle.addTo(this.map);
@@ -61,8 +81,12 @@ export class MapViewService {
   }
 
   public makeStationPopup(station: IWaterDeficiency){
-    return `` +
-      `<div><b>${ station.title }<b></div>` +
-      `<div>Type: ${ station.type }</div>`
+    return `
+    <div>
+      <b>${station.title}</b>
+      <div>Type: ${station.type}</div>
+      <div>Coordinates: ${station.location.latitude}, ${station.location.longitude}</div>
+    </div>
+  `;
   }
 }

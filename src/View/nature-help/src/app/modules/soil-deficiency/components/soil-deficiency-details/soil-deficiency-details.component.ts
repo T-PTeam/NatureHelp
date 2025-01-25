@@ -142,13 +142,13 @@ export class SoilDeficiencyDetail implements OnInit {
     }
 
     this.deficiencyDataService.getAllSoilDeficiencies();
-    this.router.navigate(["/"]);
+    this.router.navigate(["/soil"]);
   }
 
   public onCancel(){
     this.changeMapView();
 
-    this.router.navigate(["/"]);
+    this.router.navigate(["/soil"]);
   }
   
   private changeMapView(){

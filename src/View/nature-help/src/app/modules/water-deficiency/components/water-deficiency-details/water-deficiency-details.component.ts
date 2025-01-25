@@ -142,13 +142,13 @@ export class WaterDeficiencyDetail implements OnInit {
     }
 
     this.deficiencyDataService.getAllWaterDeficiencies();
-    this.router.navigate(["/"]);
+    this.router.navigate(["/water"]);
   }
 
   public onCancel(){
     this.changeMapView();
 
-    this.router.navigate(["/"]);
+    this.router.navigate(["/water"]);
   }
   
   private changeMapView(){
