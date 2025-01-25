@@ -158,7 +158,7 @@ export class WaterDeficiencyList implements OnInit, OnChanges{
     const foundGasStation = this.deficiencies.find(st => st.id === id);
 
     if (foundGasStation !== undefined) {
-      this.mapViewService.changeStationFocus(foundGasStation.location.latitude, foundGasStation.location.longitude, 17);
+      this.mapViewService.changeDeficiencyFocus(foundGasStation.location.latitude, foundGasStation.location.longitude, 17);
     }
   }
 
