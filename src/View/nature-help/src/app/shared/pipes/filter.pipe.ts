@@ -1,5 +1,4 @@
 import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
-import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

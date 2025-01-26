@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataSetSoilService } from '@/modules/soil-deficiency/services/data-set-soil.service';
 import { MapViewService } from '@/shared/services/map-view.service';
-import { EDeficiencyType, EDangerState } from '../../models/enums';
+import { EDeficiencyType, EDangerState } from '../../../../models/enums';
 import { ISoilDeficiency } from '../../models/ISoilDeficiency';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import moment from 'moment'

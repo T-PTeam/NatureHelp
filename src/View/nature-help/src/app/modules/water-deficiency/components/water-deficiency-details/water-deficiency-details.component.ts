@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataSetWaterService } from '@/modules/water-deficiency/services/data-set-water.service';
 import { MapViewService } from '@/shared/services/map-view.service';
-import { EDeficiencyType, EDangerState } from '../../models/enums';
+import { EDeficiencyType, EDangerState } from '../../../../models/enums';
 import { IWaterDeficiency } from '../../models/IWaterDeficiency';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import moment from 'moment'

@@ -3,7 +3,7 @@ import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { ISoilDeficiency } from '../../models/ISoilDeficiency';
-import { EDangerState, EDeficiencyType } from '../../models/enums';
+import { EDangerState, EDeficiencyType } from '../../../../models/enums';
 
 export const MOCK_SOIL_DEFICIENCIES: ISoilDeficiency[] = [
   {
@@ -129,8 +129,6 @@ export class SoilDeficiencyList implements OnInit, OnChanges{
   }
 
   ngOnInit (): void {
-    // this.stationsDataService.getAllSoilDeficiencies()
-    //   .subscribe(stations => this.deficiencies = stations);
   }
 
   public navigateToDetail(id?: string){

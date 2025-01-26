@@ -1,4 +1,4 @@
-import { EDeficiencyType, EDangerState } from "@/modules/soil-deficiency/models/enums";
+import { EDeficiencyType, EDangerState } from "./enums";
 import { ILocation } from "@/modules/soil-deficiency/models/ILocation";
 import { IMetric } from "@/modules/soil-deficiency/models/IMetric";
 import { IBaseEntity } from "./IBaseEntity";

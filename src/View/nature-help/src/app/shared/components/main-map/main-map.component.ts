@@ -32,16 +32,6 @@ export class MapComponent implements OnInit{
         this.mapViewService.makeMarkers(MOCK_SOIL_DEFICIENCIES, 'brown');
       }
     });
-
-    // this.mapViewService.makeMarkers(MOCK_WATER_DEFICIENCIES);
-
-    // this.waterDataService.getAllWaterDeficiencies().subscribe((defs) => {
-    //   if (defs) {
-    //     this.mapViewService.makeMarkers(defs);
-    //   } else {
-    //     console.error('No water deficiencies data received.');
-    //   }
-    // });
   }
 
   public goToFullScreen(){

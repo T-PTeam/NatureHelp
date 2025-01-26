@@ -3,7 +3,7 @@ import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { IWaterDeficiency } from '../../models/IWaterDeficiency';
-import { EDangerState, EDeficiencyType } from '../../models/enums';
+import { EDangerState, EDeficiencyType } from '../../../../models/enums';
 
 export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
   {
@@ -129,8 +129,6 @@ export class WaterDeficiencyList implements OnInit, OnChanges{
   }
 
   ngOnInit (): void {
-    // this.stationsDataService.getAllWaterDeficiencies()
-    //   .subscribe(stations => this.deficiencies = stations);
   }
 
   public navigateToDetail(id?: string){

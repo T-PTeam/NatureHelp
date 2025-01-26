@@ -10,7 +10,6 @@ import { IDeficiency } from '@/models/IDeficiency';
 })
 export class MapViewService {
   private markedList: IDeficiency[] = [];
-  // private soilsList: IDeficiency[] = [];
 
   private map: any;
 
@@ -41,13 +40,6 @@ export class MapViewService {
       console.error('No deficiencies found to display.');
       return;
     }
-
-    // this.watersList.map((def) => {
-    //   const lon = def.location.longitude;
-    //   const lat = def.location.latitude;
-
-    //   this.makeMarker(def, lon, lat);
-    // });
 
     this.markedList.forEach((def) => {
       const { longitude, latitude } = def.location;
