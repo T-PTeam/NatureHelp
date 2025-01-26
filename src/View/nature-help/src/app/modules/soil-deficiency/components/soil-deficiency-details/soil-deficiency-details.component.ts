@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataSetWaterService } from '@/modules/water-deficiency/services/data-set-water.service';
+import { DataSetSoilService } from '@/modules/soil-deficiency/services/data-set-soil.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { EDeficiencyType, EDangerState } from '../../../../models/enums';
-import { IWaterDeficiency } from '../../models/IWaterDeficiency';
+import { ISoilDeficiency } from '../../models/ISoilDeficiency';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import moment from 'moment'
 
-const MOCK_WATER_DEFICIENCY = {
-  id: "",
-  createdAt: new Date(),
+const MOCK_SOIL_DEFICIENCY = {
+    id: "",
+   createdAt: new Date(),
   updatedAt: new Date(),
   title: '',
   description: '',
-  type: EDeficiencyType.Water,
+  type: EDeficiencyType.Soil,
   creator: {
     id: "", name: '',
     email: '',
@@ -36,25 +36,25 @@ const MOCK_WATER_DEFICIENCY = {
   resolvedDate: new Date('2025-01-10'),
   expectedResolutionDate: new Date('2025-01-20'),
   caused: '',
-  waterQualityLevel: 0
+  soilQualityLevel: 0
 }
 
 @Component({
-  selector: 'n-water-deficiency-details',
-  templateUrl: './water-deficiency-details.component.html',
-  styleUrls: ['./water-deficiency-details.component.css'],
+  selector: 'n-soil-deficiency-details',
+  templateUrl: './soil-deficiency-details.component.html',
+  styleUrls: ['./soil-deficiency-details.component.css'],
   standalone: false,
 })
-export class WaterDeficiencyDetail implements OnInit {
-  public details: IWaterDeficiency = MOCK_WATER_DEFICIENCY;
+export class SoilDeficiencyDetail implements OnInit {
+  public details: ISoilDeficiency = MOCK_SOIL_DEFICIENCY;
   // {
   //   populationAffected: 0,
   //   economicImpact: 0,
   //   caused: '',
-  //   waterQualityLevel: 0,
+  //   soilQualityLevel: 0,
   //   title: '',
   //   description: '',
-  //   type: EDeficiencyType.Water,
+  //   type: EDeficiencyType.Soil,
   //   creator: {} as IUser,
   //   location: {} as ILocation,
   //   eDangerState: EDangerState.Moderate,
@@ -67,7 +67,7 @@ export class WaterDeficiencyDetail implements OnInit {
   detailsForm!: FormGroup;
   deficiencyTypes = Object.values(EDeficiencyType); //.filter(x => Number(x) || Number(x) === 0).map(x => Number(x));
   
-  constructor(private deficiencyDataService: DataSetWaterService,
+  constructor(private deficiencyDataService: DataSetSoilService,
       private activatedRoute: ActivatedRoute,
       private router: Router,
       private mapViewService: MapViewService,
@@ -83,7 +83,7 @@ export class WaterDeficiencyDetail implements OnInit {
 
       if (id){
         this.deficiencyDataService
-          .getWaterDeficiencyById(id)
+          .getSoilDeficiencyById(id)
           .subscribe(def => this.details = def);
       }
     });
@@ -96,7 +96,7 @@ export class WaterDeficiencyDetail implements OnInit {
       updatedAt: [this.details.updatedAt],
       title: [this.details.title || '', Validators.required],
       description: [this.details.description || '', Validators.required],
-      type: [this.details.type || EDeficiencyType.Water, Validators.required],
+      type: [this.details.type || EDeficiencyType.Soil, Validators.required],
       creator: this.fb.group({
         id: [this.details.creator.id],
         name: [this.details.creator.name, Validators.required],
@@ -122,32 +122,32 @@ export class WaterDeficiencyDetail implements OnInit {
       resolvedDate: [this.details.resolvedDate || moment()],
       expectedResolutionDate: [this.details.expectedResolutionDate || moment()],
       caused: [this.details.caused || '', Validators.required],
-      waterQualityLevel: [this.details.waterQualityLevel, [Validators.required, Validators.min(0), Validators.max(10)]],
+      soilQualityLevel: [this.details.soilQualityLevel, [Validators.required, Validators.min(0), Validators.max(10)]],
     });
   }
 
   public onSubmit(){
     if (this.isAddingDeficiency){
       this.deficiencyDataService
-        .addNewWaterDeficiency(this.details)
+        .addNewSoilDeficiency(this.details)
         .subscribe(def => console.log(def));
     }
     else{
       this.changeMapView();
 
       this.deficiencyDataService
-        .updateWaterDeficiency(this.details.id, this.details)
+        .updateSoilDeficiency(this.details.id, this.details)
         .subscribe(def => console.log(def));
     }
 
-    this.deficiencyDataService.getAllWaterDeficiencies();
-    this.router.navigate(["/water"]);
+    this.deficiencyDataService.getAllSoilDeficiencies();
+    this.router.navigate(["/soil"]);
   }
 
   public onCancel(){
     this.changeMapView();
 
-    this.router.navigate(["/water"]);
+    this.router.navigate(["/soil"]);
   }
   
   private changeMapView(){

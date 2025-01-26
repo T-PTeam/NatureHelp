@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'n-main-container',
@@ -6,8 +7,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-container.component.css'],
   standalone: false,
 })
-export class MainContainerComponent {
+export class MainContainerComponent implements OnInit {
+  showWaterTable: boolean = true;
 
-  constructor() { }
+  constructor(private router: Router) {}
 
+  ngOnInit(): void {
+    this.updateTableState(this.router.url);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.updateTableState(event.urlAfterRedirects);
+      }
+    });
+  }
+
+  updateTableState(currentUrl: string): void {
+    if (currentUrl.includes('soil')) {
+      this.showWaterTable = false;
+    } else if (currentUrl.includes('water')) {
+      this.showWaterTable = true;
+    }
+  }
+
+  toggleTable(): void {
+    this.showWaterTable = !this.showWaterTable;
+    if (this.showWaterTable) {
+      this.router.navigate(['water']);
+    } else {
+      this.router.navigate(['soil']);
+    }
+  }
 }

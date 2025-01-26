@@ -7,6 +7,7 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MatModule } from '@/mat.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -15,7 +16,9 @@ import { MatModule } from '@/mat.module';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    MatModule
+    MatModule,
+    ReactiveFormsModule,
+    FormsModule
 ],
   declarations: [
     MainContainerComponent,
@@ -27,3 +30,5 @@ import { MatModule } from '@/mat.module';
   ]
 })
 export class MainModule { }
+
+

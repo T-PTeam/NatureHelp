@@ -4,7 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 
 @Injectable()
-export class DataSetService {
+export class DataSetWaterService {
   private watersUrl = 'https://localhost:7077/api/Waters/';
 
   httpOptions = {

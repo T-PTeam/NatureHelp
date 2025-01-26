@@ -1,18 +1,18 @@
-import { DataSetWaterService } from '@/modules/water-deficiency/services/data-set-water.service';
+import { DataSetSoilService } from '@/modules/soil-deficiency/services/data-set-soil.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { IWaterDeficiency } from '../../models/IWaterDeficiency';
+import { ISoilDeficiency } from '../../models/ISoilDeficiency';
 import { EDangerState, EDeficiencyType } from '../../../../models/enums';
 
-export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
+export const MOCK_SOIL_DEFICIENCIES: ISoilDeficiency[] = [
   {
     id: "1",
     createdAt: new Date('2025-01-01'),
     updatedAt: new Date('2025-01-10'),
-    title: 'Water Shortage in Village',
-    description: 'Severe water shortage affecting daily life.',
-    type: EDeficiencyType.Water,
+    title: 'Soil Shortage in Village',
+    description: 'Severe soil shortage affecting daily life.',
+    type: EDeficiencyType.Soil,
     creator: {
       id: "1", name: 'Admin',
       email: '',
@@ -35,7 +35,7 @@ export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
     resolvedDate: new Date('2025-01-15'),
     expectedResolutionDate: new Date('2025-02-01'),
     caused: 'Drought',
-    waterQualityLevel: 3
+    soilQualityLevel: 3
   },
   {
     id: "2",
@@ -43,7 +43,7 @@ export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
     updatedAt: new Date('2025-01-20'),
     title: 'Polluted River',
     description: 'Pollution causing health issues.',
-    type: EDeficiencyType.Water,
+    type: EDeficiencyType.Soil,
     creator: {
       id: "3", name: 'Admin',
       email: '',
@@ -66,15 +66,15 @@ export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
     resolvedDate: new Date('2025-01-10'),
     expectedResolutionDate: new Date('2025-03-15'),
     caused: 'Pollution',
-    waterQualityLevel: 2
+    soilQualityLevel: 2
   },
   {
     id: "3",
     createdAt: new Date('2025-01-07'),
     updatedAt: new Date('2025-01-15'),
     title: 'Broken Pipeline',
-    description: 'Pipeline failure causing water wastage.',
-    type: EDeficiencyType.Water,
+    description: 'Pipeline failure causing soil wastage.',
+    type: EDeficiencyType.Soil,
     creator: {
       id: "1", name: 'Admin',
       email: '',
@@ -97,24 +97,24 @@ export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
     resolvedDate: new Date('2025-01-10'),
     expectedResolutionDate: new Date('2025-01-20'),
     caused: 'Infrastructure failure',
-    waterQualityLevel: 5
+    soilQualityLevel: 5
   }
 ];
 
 
 
 @Component({
-  selector: 'n-water-deficiencys-deficiencies',
-  templateUrl: './water-deficiency-list.component.html',
-  styleUrls: ['./water-deficiency-list.component.css'],
+  selector: 'n-soil-deficiencys-deficiencies',
+  templateUrl: './soil-deficiency-list.component.html',
+  styleUrls: ['./soil-deficiency-list.component.css'],
   standalone: false,
 })
-export class WaterDeficiencyList implements OnInit, OnChanges{
-  public deficiencies: IWaterDeficiency[] = MOCK_WATER_DEFICIENCIES;
+export class SoilDeficiencyList implements OnInit, OnChanges{
+  public deficiencies: ISoilDeficiency[] = MOCK_SOIL_DEFICIENCIES;
 
   public search: string = "";
 
-  constructor(private stationsDataService: DataSetWaterService,
+  constructor(private stationsDataService: DataSetSoilService,
       private router: Router,
       private mapViewService: MapViewService) {
    }
@@ -134,16 +134,16 @@ export class WaterDeficiencyList implements OnInit, OnChanges{
       this.router.navigate([`/${id!}`]);
     }
 
-    this.router.navigate([`water/add`]);
+    this.router.navigate([`soil/add`]);
   }
 
-  public onRemove(station: IWaterDeficiency){
+  public onRemove(station: ISoilDeficiency){
     this.changeMapFocus(station.id)
 
-    this.stationsDataService.deleteWaterDeficiency(station.id)
+    this.stationsDataService.deleteSoilDeficiency(station.id)
       .subscribe((data) => {
         console.log(data);
-        this.stationsDataService.getAllWaterDeficiencies()
+        this.stationsDataService.getAllSoilDeficiencies()
           .subscribe(stations => { this.deficiencies = stations });
 
       });

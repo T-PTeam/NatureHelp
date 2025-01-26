@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { DataSetService } from '../../modules/water-deficiency/services/data-set.service';
+import { DataSetWaterService } from '../../modules/water-deficiency/services/data-set-water.service';
+import { DataSetSoilService } from '../../modules/soil-deficiency/services/data-set-soil.service';
 import L, { LatLng } from 'leaflet';
 import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
+import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
+import { IDeficiency } from '@/models/IDeficiency';
 @Injectable({
   providedIn: 'root'
 })
 export class MapViewService {
-  private gasStationsList: IWaterDeficiency[] = [];
+  private markedList: IDeficiency[] = [];
 
   private map: any;
 
@@ -25,30 +28,44 @@ export class MapViewService {
     tiles.addTo(this.map);
   }
 
-  constructor(private stationsDataService: DataSetService) {
+  constructor(private WaterDataService: DataSetWaterService, private SoilDataService: DataSetSoilService) {
   }
 
-  public makeStationMarkers(stations?: IWaterDeficiency[]): void {
-    if (stations){
-      this.gasStationsList = stations;
+  public makeMarkers(defs?: IDeficiency[], color: string = 'blue'): void {
+    if (defs){
+      this.markedList = defs;
     }
 
-    this.gasStationsList.map((station) => {
-      const lon = station.location.longitude;
-      const lat = station.location.latitude;
+    if (!this.markedList.length) {
+      console.error('No deficiencies found to display.');
+      return;
+    }
 
-      this.makeMarker(station, lon, lat);
+    this.markedList.forEach((def) => {
+      const { longitude, latitude } = def.location;
+      if (latitude && longitude) {
+        this.makeMarker(def, longitude, latitude, color);
+      } else {
+        console.warn(`Deficiency ${def.title} does not have valid coordinates.`);
+      }
     });
   }
 
-  private makeMarker(station: IWaterDeficiency, lon: number, lat: number){
-    const circle = new L.CircleMarker([lat, lon], {radius: 10});
-    circle.bindPopup(this.makeStationPopup(station));
+  private makeMarker(def: IDeficiency, lon: number, lat: number, color: string): void {
+    const circle = L.circleMarker([lat, lon], {
+      radius: 8,
+      color: color,
+      opacity: 0.6,
+      fillColor: color,
+      fillOpacity: 0.2
+    });
+
+    circle.bindPopup(this.makePopup(def));
 
     circle.addTo(this.map);
   }
 
-  public changeStationFocus(lat: number, lon: number, zoom: number){
+  public changeDeficiencyFocus(lat: number, lon: number, zoom: number){
     this.map.setView([lat, lon], zoom);
   }
 
@@ -58,9 +75,13 @@ export class MapViewService {
     mapObject!.style.height = "100%";
   }
 
-  public makeStationPopup(station: IWaterDeficiency){
-    return `` +
-      `<div><b>${ station.title }<b></div>` +
-      `<div>Type: ${ station.type }</div>`
+  public makePopup(def: IDeficiency){
+    return `
+    <div>
+      <b>${def.title}</b>
+      <div>Type: ${def.type}</div>
+      <div>Coordinates: ${def.location.latitude}, ${def.location.longitude}</div>
+    </div>
+  `;
   }
 }
