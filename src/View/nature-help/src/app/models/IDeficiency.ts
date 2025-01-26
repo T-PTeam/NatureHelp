@@ -1,5 +1,5 @@
 import { EDeficiencyType, EDangerState } from "./enums";
-import { ILocation } from "@/modules/soil-deficiency/models/ILocation";
+import { ILocation } from "./ILocation";
 import { IBaseEntity } from "./IBaseEntity";
 import { IUser } from "./IUser";
 
