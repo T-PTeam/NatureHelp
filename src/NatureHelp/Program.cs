@@ -31,7 +31,9 @@ builder.Services.AddDbContextFactory<ApplicationContext>(options =>
             .MaxBatchSize(500);
 
         /* To add migration open src folder and run the following command:
-dotnet ef migrations add InitialCreate --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj --output-dir Migrations */
+            dotnet ef migrations add InitialCreate --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj --output-dir Migrations */
+
+        /* dotnet ef database update --project Infrastructure\Infrastructure.csproj--startup - project NatureHelp\NatureHelp.csproj--output - dir Migrations--verbose */
     });
 
     if ((Environment.GetEnvironmentVariable("AspNetCore_ENVIRONMENT") ?? "Development").Equals("Development"))
@@ -57,9 +59,9 @@ builder.Services.AddApplicationServices();
 var app = builder.Build();
 
 app.UseCors(options =>
-    options.AllowAnyHeader()
-    .AllowAnyOrigin()
-    .AllowAnyMethod());
+options.AllowAnyHeader()
+.AllowAnyOrigin()
+.AllowAnyMethod());
 
 if (app.Environment.IsDevelopment())
 {

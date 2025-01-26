@@ -1,5 +1,5 @@
 ﻿namespace Domain.Models.Location;
-public abstract class ACoordinates : BaseEntity
+public abstract class ACoordinates : BaseModel
 {
     private double latitude;
     private double longitude;

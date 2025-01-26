@@ -1,21 +1,40 @@
-﻿using Application.Interfaces.Services;
-using Domain.Interfaces;
+﻿using Application.Interfaces.Services.Organization;
+using Application.Providers;
 using Domain.Models.Organization;
-using Shared.Models.DTOs;
+using Infrastructure.Interfaces;
 
 namespace Application.Services.Organization;
 public class UserService : IUserService
 {
-    private readonly IBaseRepository<User> _userRepository;
-    public UserService() { }
+    private readonly IUserRepository _userRepository;
+    public UserService(IUserRepository userRepository)
+    {
+        _userRepository = userRepository;
+    }
 
-    public Task<AuthDTO> LoginAsync()
+    public Task<User> RegisterAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<AuthDTO> RegisterAsync()
+    public async Task<User> LoginAsync(User user)
     {
-        throw new NotImplementedException();
+        user = await _userRepository.GetUserByCredentials(user.Email, user.PasswordHash) ?? user;
+
+        if (user.AccessTokenExpireTime is null || user.AccessTokenExpireTime < DateTime.UtcNow)
+        {
+            user.AccessToken = AuthTokenProvider.MakeAccessToken(user.Email);
+            user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
+        }
+
+        if (user.RefreshTokenExpireTime is null || user.RefreshTokenExpireTime < DateTime.UtcNow)
+        {
+            user.RefreshToken = AuthTokenProvider.MakeRefreshToken(user.Email);
+            user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
+        }
+
+        await _userRepository.UpdateAsync(user);
+
+        return user;
     }
 }
