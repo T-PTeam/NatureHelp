@@ -24,7 +24,6 @@ const MOCK_WATER_DEFICIENCY = {
     email: '',
     role: ''
   },
-  metrics: [],
   location: {
     latitude: 1, longitude: 1,
     city: '',
