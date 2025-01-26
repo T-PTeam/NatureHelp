@@ -5,101 +5,101 @@ import { Router } from '@angular/router';
 import { IWaterDeficiency } from '../../models/IWaterDeficiency';
 import { EDangerState, EDeficiencyType } from '../../../../models/enums';
 
-export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
-  {
-    id: "1",
-    createdAt: new Date('2025-01-01'),
-    updatedAt: new Date('2025-01-10'),
-    title: 'Water Shortage in Village',
-    description: 'Severe water shortage affecting daily life.',
-    type: EDeficiencyType.Water,
-    creator: {
-      id: "1", name: 'Admin',
-      email: '',
-      role: ''
-    },
-    responsibleUser: {
-      id: "2", name: 'John Doe',
-      email: '',
-      role: ''
-    },
-    location: {
-      latitude: 40.7128, longitude: -74.0060,
-      city: '',
-      country: ''
-    },
-    eDangerState: EDangerState.Dangerous,
-    populationAffected: 5000,
-    economicImpact: 250000,
-    healthImpact: 'Moderate',
-    resolvedDate: new Date('2025-01-15'),
-    expectedResolutionDate: new Date('2025-02-01'),
-    caused: 'Drought',
-    waterQualityLevel: 3
-  },
-  {
-    id: "2",
-    createdAt: new Date('2025-01-05'),
-    updatedAt: new Date('2025-01-20'),
-    title: 'Polluted River',
-    description: 'Pollution causing health issues.',
-    type: EDeficiencyType.Water,
-    creator: {
-      id: "3", name: 'Admin',
-      email: '',
-      role: ''
-    },
-    responsibleUser: {
-      id: "3", name: 'Jane Smith',
-      email: '',
-      role: ''
-    },
-    location: {
-      latitude: 34.0522, longitude: -118.2437,
-      city: '',
-      country: ''
-    },
-    eDangerState: EDangerState.Critical,
-    populationAffected: 12000,
-    economicImpact: 500000,
-    healthImpact: 'Severe',
-    resolvedDate: new Date('2025-01-10'),
-    expectedResolutionDate: new Date('2025-03-15'),
-    caused: 'Pollution',
-    waterQualityLevel: 2
-  },
-  {
-    id: "3",
-    createdAt: new Date('2025-01-07'),
-    updatedAt: new Date('2025-01-15'),
-    title: 'Broken Pipeline',
-    description: 'Pipeline failure causing water wastage.',
-    type: EDeficiencyType.Water,
-    creator: {
-      id: "1", name: 'Admin',
-      email: '',
-      role: ''
-    },
-    responsibleUser: {
-      id: "4", name: 'Alice Brown',
-      email: '',
-      role: ''
-    },
-    location: {
-      latitude: 51.5074, longitude: -0.1278,
-      city: '',
-      country: ''
-    },
-    eDangerState: EDangerState.Moderate,
-    populationAffected: 3000,
-    economicImpact: 100000,
-    healthImpact: 'Low',
-    resolvedDate: new Date('2025-01-10'),
-    expectedResolutionDate: new Date('2025-01-20'),
-    caused: 'Infrastructure failure',
-    waterQualityLevel: 5
-  }
-];
+// export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
+//   {
+//     id: "1",
+//     createdAt: new Date('2025-01-01'),
+//     updatedAt: new Date('2025-01-10'),
+//     title: 'Water Shortage in Village',
+//     description: 'Severe water shortage affecting daily life.',
+//     type: EDeficiencyType.Water,
+//     creator: {
+//       id: "1", name: 'Admin',
+//       email: '',
+//       role: ''
+//     },
+//     responsibleUser: {
+//       id: "2", name: 'John Doe',
+//       email: '',
+//       role: ''
+//     },
+//     location: {
+//       latitude: 40.7128, longitude: -74.0060,
+//       city: '',
+//       country: ''
+//     },
+//     eDangerState: EDangerState.Dangerous,
+//     populationAffected: 5000,
+//     economicImpact: 250000,
+//     healthImpact: 'Moderate',
+//     resolvedDate: new Date('2025-01-15'),
+//     expectedResolutionDate: new Date('2025-02-01'),
+//     caused: 'Drought',
+//     waterQualityLevel: 3
+//   },
+//   {
+//     id: "2",
+//     createdAt: new Date('2025-01-05'),
+//     updatedAt: new Date('2025-01-20'),
+//     title: 'Polluted River',
+//     description: 'Pollution causing health issues.',
+//     type: EDeficiencyType.Water,
+//     creator: {
+//       id: "3", name: 'Admin',
+//       email: '',
+//       role: ''
+//     },
+//     responsibleUser: {
+//       id: "3", name: 'Jane Smith',
+//       email: '',
+//       role: ''
+//     },
+//     location: {
+//       latitude: 34.0522, longitude: -118.2437,
+//       city: '',
+//       country: ''
+//     },
+//     eDangerState: EDangerState.Critical,
+//     populationAffected: 12000,
+//     economicImpact: 500000,
+//     healthImpact: 'Severe',
+//     resolvedDate: new Date('2025-01-10'),
+//     expectedResolutionDate: new Date('2025-03-15'),
+//     caused: 'Pollution',
+//     waterQualityLevel: 2
+//   },
+//   {
+//     id: "3",
+//     createdAt: new Date('2025-01-07'),
+//     updatedAt: new Date('2025-01-15'),
+//     title: 'Broken Pipeline',
+//     description: 'Pipeline failure causing water wastage.',
+//     type: EDeficiencyType.Water,
+//     creator: {
+//       id: "1", name: 'Admin',
+//       email: '',
+//       role: ''
+//     },
+//     responsibleUser: {
+//       id: "4", name: 'Alice Brown',
+//       email: '',
+//       role: ''
+//     },
+//     location: {
+//       latitude: 51.5074, longitude: -0.1278,
+//       city: '',
+//       country: ''
+//     },
+//     eDangerState: EDangerState.Moderate,
+//     populationAffected: 3000,
+//     economicImpact: 100000,
+//     healthImpact: 'Low',
+//     resolvedDate: new Date('2025-01-10'),
+//     expectedResolutionDate: new Date('2025-01-20'),
+//     caused: 'Infrastructure failure',
+//     waterQualityLevel: 5
+//   }
+// ];
 
 
 
@@ -110,43 +110,58 @@ export const MOCK_WATER_DEFICIENCIES: IWaterDeficiency[] = [
   standalone: false,
 })
 export class WaterDeficiencyList implements OnInit, OnChanges{
-  public deficiencies: IWaterDeficiency[] = MOCK_WATER_DEFICIENCIES;
-
+  public deficiencies: IWaterDeficiency[] = [];
   public search: string = "";
 
-  constructor(private stationsDataService: DataSetWaterService,
-      private router: Router,
-      private mapViewService: MapViewService) {
-   }
+  constructor(
+    private stationsDataService: DataSetWaterService,
+    private router: Router,
+    private mapViewService: MapViewService
+  ) {}
 
   ngOnChanges (changes: SimpleChanges): void {
-    if (changes['deficiencies'].currentValue != changes['deficiencies'].previousValue) {
+    if (changes['deficiencies'] && changes['deficiencies'].currentValue !== changes['deficiencies'].previousValue) {
       this.deficiencies = changes['deficiencies'].currentValue;
     }
   }
 
   ngOnInit (): void {
+    this.loadWaterDeficiencies();
+  }
+
+  private loadWaterDeficiencies(): void {
+    this.stationsDataService.getAllWaterDeficiencies()
+      .subscribe(
+        (data: IWaterDeficiency[]) => {
+          this.deficiencies = data;
+        },
+        (error) => {
+          console.error('Error fetching water deficiencies:', error);
+        }
+      );
   }
 
   public navigateToDetail(id?: string){
     if (id) {
-      this.changeMapFocus(id!)
-      this.router.navigate([`/${id!}`]);
+      this.changeMapFocus(id);
+      this.router.navigate([`/${id}`]);
+    } else {
+      this.router.navigate(['water/add']);
     }
-
-    this.router.navigate([`water/add`]);
   }
 
   public onRemove(station: IWaterDeficiency){
-    this.changeMapFocus(station.id)
+    this.changeMapFocus(station.id);
 
     this.stationsDataService.deleteWaterDeficiency(station.id)
-      .subscribe((data) => {
-        console.log(data);
-        this.stationsDataService.getAllWaterDeficiencies()
-          .subscribe(stations => { this.deficiencies = stations });
-
-      });
+      .subscribe(
+        () => {
+          this.loadWaterDeficiencies();
+        },
+        (error) => {
+          console.error('Error: ', error);
+        }
+      );
   }
 
   private changeMapFocus(id: string){

@@ -5,7 +5,7 @@ import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficienc
 
 @Injectable()
 export class DataSetSoilService {
-  private soilsUrl = 'https://localhost:7077/api/Soils/';
+  private soilsUrl = 'https://localhost:7077/api/soil';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,7 +17,7 @@ export class DataSetSoilService {
     }
 
   public getAllSoilDeficiencies(): Observable<ISoilDeficiency[]> {
-    return this.http.get<ISoilDeficiency[]>(this.soilsUrl + "all");
+    return this.http.get<ISoilDeficiency[]>(this.soilsUrl);
   }
 
   public getSoilDeficiencyById(id: string): Observable<ISoilDeficiency> {
