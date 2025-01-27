@@ -43,6 +43,7 @@ export class MapViewService {
 
     this.markedList.forEach((def) => {
       const { longitude, latitude } = def.location;
+      console.log(longitude, latitude);
       if (latitude && longitude) {
         this.makeMarker(def, longitude, latitude, color);
       } else {

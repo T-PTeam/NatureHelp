@@ -9,11 +9,12 @@ const routes: Routes = [
   { path: '', component: WaterDeficiencyList },
   { path: 'water', component: WaterDeficiencyList },
   { path: 'water/add', component: WaterDeficiencyDetail },
-  { path: 'water/{id}', component: WaterDeficiencyDetail },
+  { path: 'water/:id', component: WaterDeficiencyDetail },
 
+  // http://localhost:4200/water
   { path: 'soil', component: SoilDeficiencyList },
   { path: 'soil/add', component: SoilDeficiencyDetail },
-  { path: 'water/{id}', component: SoilDeficiencyDetail },
+  { path: 'soil/{id}', component: SoilDeficiencyDetail },
 
   { path: 'labs', component: WaterDeficiencyList },
   { path: 'reports', component: WaterDeficiencyList },
