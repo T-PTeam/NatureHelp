@@ -46,7 +46,7 @@ export class WaterDeficiencyList implements OnInit, OnChanges{
   public navigateToDetail(id?: string){
     console.log(id)
     if (id) {
-      this.changeMapFocus(id);
+      // this.changeMapFocus(id);
       // this.router.navigate([`/${id}`]);
       this.router.navigate([`/water/${id}`]);
     } else {
@@ -55,7 +55,7 @@ export class WaterDeficiencyList implements OnInit, OnChanges{
   }
 
   public onRemove(def: IWaterDeficiency){
-    this.changeMapFocus(def.id);
+    // this.changeMapFocus(def.id);
 
     this.waterDataService.deleteWaterDeficiency(def.id)
       .subscribe(
@@ -68,12 +68,12 @@ export class WaterDeficiencyList implements OnInit, OnChanges{
       );
   }
 
-  private changeMapFocus(id: string){
-    const foundDeficiency = this.deficiencies.find(st => st.id === id);
+  // private changeMapFocus(id: string){
+  //   const foundDeficiency = this.deficiencies.find(st => st.id === id);
 
-    if (foundDeficiency !== undefined) {
-      this.mapViewService.changeDeficiencyFocus(foundDeficiency.location.latitude, foundDeficiency.location.longitude, 17);
-    }
-  }
+  //   if (foundDeficiency !== undefined) {
+  //     this.mapViewService.changeDeficiencyFocus(foundDeficiency.location.latitude, foundDeficiency.location.longitude, 17);
+  //   }
+  // }
 
 }

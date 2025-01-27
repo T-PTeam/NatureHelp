@@ -5,7 +5,7 @@ import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficienc
 
 @Injectable()
 export class SoilAPIService {
-  private soilsUrl = 'https://localhost:7077/soil';
+  private soilsUrl = 'https://localhost:7077/soil/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

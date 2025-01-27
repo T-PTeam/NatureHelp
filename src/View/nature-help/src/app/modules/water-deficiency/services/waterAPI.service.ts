@@ -5,7 +5,7 @@ import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDefici
 
 @Injectable()
 export class WaterAPIService {
-  private watersUrl = 'https://localhost:7077/water';
+  private watersUrl = 'https://localhost:7077/water/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

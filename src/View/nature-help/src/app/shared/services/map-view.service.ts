@@ -41,15 +41,15 @@ export class MapViewService {
       return;
     }
 
-    this.markedList.forEach((def) => {
-      const { longitude, latitude } = def.location;
-      console.log(longitude, latitude);
-      if (latitude && longitude) {
-        this.makeMarker(def, longitude, latitude, color);
-      } else {
-        console.warn(`Deficiency ${def.title} does not have valid coordinates.`);
-      }
-    });
+    // this.markedList.forEach((def) => {
+    //   const { longitude, latitude } = def.location;
+    //   console.log(longitude, latitude);
+    //   if (latitude && longitude) {
+    //     this.makeMarker(def, longitude, latitude, color);
+    //   } else {
+    //     console.warn(`Deficiency ${def.title} does not have valid coordinates.`);
+    //   }
+    // });
   }
 
   private makeMarker(def: IDeficiency, lon: number, lat: number, color: string): void {
