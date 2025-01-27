@@ -8,28 +8,30 @@
   <table class="table">
     <thead class="table-header">
       <tr>
-        <th>Id</th>
-        <th>Population Affected</th>
-        <th>Economic Impact</th>
-        <th>Health Impact</th>
-        <th>Resolved Date</th>
-        <th>Exp. Resol. Date</th>
-        <th>Caused</th>
-        <th>Water Quality Level</th>
+        <th>ph</th>
+        <th>Dissolved Oxygen</th>
+        <th>Lead Concentration</th>
+        <th>Nitrate Concentration</th>
+        <th>Chemical Ox. Demand</th>
+        <th>Toxicity Level</th>
+        <th>Creator</th>
+        <th>Responsible User</th>
+        <th>eDanger State</th>
         <th></th>
         <th></th>
       </tr>
     </thead>
     <tbody class="table-body">
       <tr *ngFor="let deficiency of deficiencies">
-        <td>{{ deficiency.id }}</td>
-        <td>{{ deficiency.populationAffected }}</td>
-        <td>{{ deficiency.economicImpact }}</td>
-        <td>{{ deficiency.healthImpact }}</td>
-        <td>{{ deficiency.resolvedDate | date }}</td>
-        <td>{{ deficiency.expectedResolutionDate | date }}</td>
-        <td>{{ deficiency.caused }}</td>
-        <td>{{ deficiency.waterQualityLevel }}</td>
+        <td>{{ deficiency.ph }}</td>
+        <td>{{ deficiency.dissolvedOxygen }}</td>
+        <td>{{ deficiency.leadConcentration }}</td>
+        <td>{{ deficiency.nitrateConcentration }}</td>
+        <td>{{ deficiency.chemicalOxygenDemand }}</td>
+        <td>{{ deficiency.toxicityLevel }}</td>
+        <td>{{ deficiency.creator }}</td>
+        <td>{{ deficiency.responsibleUser }}</td>
+        <td>{{ deficiency.eDangerState }}</td>
         <td class="btn-ceil">
           <button (click)="navigateToDetail(deficiency.id)" class="action-btn" id="edit-btn">
             <i class="fa fa-edit"></i>

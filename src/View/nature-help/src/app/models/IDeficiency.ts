@@ -7,11 +7,8 @@ export interface IDeficiency extends IBaseEntity {
     title: string;
     description: string;
     type: EDeficiencyType;
-    //
     creator: IUser;
-    //
     responsibleUser?: IUser;
     location: ILocation;
-    //
     eDangerState: EDangerState;
   }
