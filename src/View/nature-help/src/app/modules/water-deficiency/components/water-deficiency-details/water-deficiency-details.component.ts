@@ -1,43 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataSetWaterService } from '@/modules/water-deficiency/services/data-set-water.service';
+import { WaterAPIService } from '@/modules/water-deficiency/services/waterAPI.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { EDeficiencyType, EDangerState } from '../../../../models/enums';
 import { IWaterDeficiency } from '../../models/IWaterDeficiency';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import moment from 'moment'
-
-// const MOCK_WATER_DEFICIENCY = {
-//   id: "",
-//   createdAt: new Date(),
-//   updatedAt: new Date(),
-//   title: '',
-//   description: '',
-//   type: EDeficiencyType.Water,
-//   creator: {
-//     id: "", name: '',
-//     email: '',
-//     role: ''
-//   },
-//   responsibleUser: {
-//     id: "", name: '',
-//     email: '',
-//     role: ''
-//   },
-//   location: {
-//     latitude: 1, longitude: 1,
-//     city: '',
-//     country: ''
-//   },
-//   eDangerState: EDangerState.Moderate,
-//   populationAffected: 0,
-//   economicImpact: 0,
-//   healthImpact: '',
-//   resolvedDate: new Date('2025-01-10'),
-//   expectedResolutionDate: new Date('2025-01-20'),
-//   caused: '',
-//   waterQualityLevel: 0
-// }
 
 @Component({
   selector: 'n-water-deficiency-details',
@@ -52,7 +20,7 @@ export class WaterDeficiencyDetail implements OnInit {
     deficiencyTypes = Object.values(EDeficiencyType);
 
   
-  constructor(private deficiencyDataService: DataSetWaterService,
+  constructor(private deficiencyDataService: WaterAPIService,
       private activatedRoute: ActivatedRoute,
       private router: Router,
       private mapViewService: MapViewService,

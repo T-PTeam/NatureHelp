@@ -1,43 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataSetSoilService } from '@/modules/soil-deficiency/services/data-set-soil.service';
+import { SoilAPIService } from '@/modules/soil-deficiency/services/soilAPI.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { EDeficiencyType, EDangerState } from '../../../../models/enums';
 import { ISoilDeficiency } from '../../models/ISoilDeficiency';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import moment from 'moment'
-
-// const MOCK_SOIL_DEFICIENCY = {
-//     id: "",
-//    createdAt: new Date(),
-//   updatedAt: new Date(),
-//   title: '',
-//   description: '',
-//   type: EDeficiencyType.Soil,
-//   creator: {
-//     id: "", name: '',
-//     email: '',
-//     role: ''
-//   },
-//   responsibleUser: {
-//     id: "", name: '',
-//     email: '',
-//     role: ''
-//   },
-//   location: {
-//     latitude: 1, longitude: 1,
-//     city: '',
-//     country: ''
-//   },
-//   eDangerState: EDangerState.Moderate,
-//   populationAffected: 0,
-//   economicImpact: 0,
-//   healthImpact: '',
-//   resolvedDate: new Date('2025-01-10'),
-//   expectedResolutionDate: new Date('2025-01-20'),
-//   caused: '',
-//   soilQualityLevel: 0
-// }
 
 @Component({
   selector: 'n-soil-deficiency-details',
@@ -52,7 +20,7 @@ export class SoilDeficiencyDetail implements OnInit {
   deficiencyTypes = Object.values(EDeficiencyType);
 
   constructor(
-    private deficiencyDataService: DataSetSoilService,
+    private deficiencyDataService: SoilAPIService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private mapViewService: MapViewService,

@@ -1,10 +1,8 @@
 import { Router, NavigationEnd } from '@angular/router';
-import { DataSetWaterService } from '@/modules/water-deficiency/services/data-set-water.service';
-import { DataSetSoilService } from '@/modules/soil-deficiency/services/data-set-soil.service';
+import { WaterAPIService } from '@/modules/water-deficiency/services/waterAPI.service';
+import { SoilAPIService } from '@/modules/soil-deficiency/services/soilAPI.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnInit } from '@angular/core';
-// import { MOCK_WATER_DEFICIENCIES } from '../../../modules/water-deficiency/components/water-deficiency-list/water-deficiency-list.component';
-// import { MOCK_SOIL_DEFICIENCIES } from '../../../modules/soil-deficiency/components/soil-deficiency-list/soil-deficiency-list.component';
 
 @Component({
   selector: 'n-map',
@@ -15,8 +13,8 @@ import { Component, OnInit } from '@angular/core';
 export class MapComponent implements OnInit{
 
   constructor(
-    private waterDataService: DataSetWaterService,
-    private soilDataService: DataSetSoilService,
+    private waterDataService: WaterAPIService,
+    private soilDataService: SoilAPIService,
     private mapViewService: MapViewService,
     private router: Router
   ) {}
