@@ -3,6 +3,9 @@ using Domain.Models.Organization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers.Organization;
+
+[Route("api/[controller]")]
+[ApiController]
 public class UserController : Controller
 {
     private readonly IUserService _userService;
