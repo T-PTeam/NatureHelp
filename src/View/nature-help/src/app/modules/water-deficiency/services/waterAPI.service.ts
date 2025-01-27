@@ -17,7 +17,7 @@ export class WaterAPIService {
     }
 
   public getAllWaterDeficiencies(): Observable<IWaterDeficiency[]> {
-    return this.http.get<IWaterDeficiency[]>(this.watersUrl + "all");
+    return this.http.get<IWaterDeficiency[]>(this.watersUrl);
   }
 
   public getWaterDeficiencyById(id: string): Observable<IWaterDeficiency> {

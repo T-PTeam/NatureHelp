@@ -7,7 +7,7 @@ export interface ISoilDeficiency extends IDeficiency {
     cadmiumConcentration: number;
     mercuryConcentration: number;
     pesticidesContent: number;
-    nitrateConcentration: number;
+    nitratesConcentration: number;
     heavyMetalsConcentration: number;
     electricalConductivity: number;
     toxicityLevel: number;
