@@ -13,9 +13,23 @@ public class DeficiencyService : IDeficiencyService
         _waterRepository = waterRepository;
         _soilRepository = soilRepository;
     }
-    public async Task<IEnumerable<WaterDeficiency>> GetWaterDeficiencies() => await _waterRepository.GetAllAsync();
+    public async Task<IEnumerable<WaterDeficiency>> GetWaterDeficiencyList() => await _waterRepository.GetAllAsync();
 
-    public async Task<IEnumerable<SoilDeficiency>> GetSoilDeficiencies() => await _soilRepository.GetAllAsync();
+    public async Task<IEnumerable<SoilDeficiency>> GetSoilDeficiencyList() => await _soilRepository.GetAllAsync();
+
+    public async Task<WaterDeficiency> GetWaterDeficiency(Guid id)
+    {
+        var deficiency = await _waterRepository.GetByIdAsync(id);
+
+        return deficiency;
+    }
+
+    public async Task<SoilDeficiency> GetSoilDeficiency(Guid id)
+    {
+        var deficiency = await _soilRepository.GetByIdAsync(id);
+
+        return deficiency;
+    }
 
     public async Task<Deficiency> Create(Deficiency deficiency)
     {

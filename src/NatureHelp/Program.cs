@@ -1,4 +1,5 @@
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NatureHelp;
 using NatureHelp.Filters;
@@ -33,7 +34,7 @@ builder.Services.AddDbContextFactory<ApplicationContext>(options =>
         /* To add migration open src folder and run the following command:
             dotnet ef migrations add InitialCreate --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj --output-dir Migrations */
 
-        /* dotnet ef database update --project Infrastructure\Infrastructure.csproj--startup - project NatureHelp\NatureHelp.csproj--output - dir Migrations--verbose */
+        /* dotnet ef database update --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj */
     });
 
     if ((Environment.GetEnvironmentVariable("AspNetCore_ENVIRONMENT") ?? "Development").Equals("Development"))
@@ -55,6 +56,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructureServices(configuration);
 builder.Services.AddApplicationServices();
+
+builder.Services.Configure<RouteOptions>(options =>
+{
+    options.LowercaseUrls = true; // Optional: Makes URLs lowercase.
+});
 
 var app = builder.Build();
 

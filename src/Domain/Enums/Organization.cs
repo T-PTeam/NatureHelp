@@ -5,7 +5,7 @@ public enum ERole
     SuperAdmin,
     Owner,
     Manager,
-    Foreman,
+    Supervisor,
     Researcher,
     Guest
 }
