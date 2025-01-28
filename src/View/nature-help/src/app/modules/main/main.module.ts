@@ -7,7 +7,7 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MatModule } from '@/mat.module';
-import { ToggleSwitchComponent } from './../switch/toggle-switch.component';
+import { ToggleSwitchComponent } from '../../shared/components/switch/toggle-switch.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({

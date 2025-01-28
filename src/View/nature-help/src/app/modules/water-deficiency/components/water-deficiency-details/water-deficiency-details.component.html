@@ -16,37 +16,79 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Population Affected</mat-label>
-      <input matInput type="number" [(ngModel)]="details.populationAffected" name="populationAffected" />
+      <mat-label>ph</mat-label>
+      <input matInput type="number" [(ngModel)]="details.ph" name="ph" />
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Economic Impact</mat-label>
-      <input matInput type="number" [(ngModel)]="details.economicImpact" name="economicImpact" />
+      <mat-label>Dissolved Oxygen</mat-label>
+      <input matInput type="number" [(ngModel)]="details.dissolvedOxygen" name="dissolvedOxygen" />
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Health Impact</mat-label>
-      <input matInput [(ngModel)]="details.healthImpact" name="healthImpact" />
+      <mat-label>Lead Concentration</mat-label>
+      <input matInput type="number" [(ngModel)]="details.leadConcentration" name="leadConcentration" />
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Resolved Date</mat-label>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="details.resolvedDate" name="resolvedDate">
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <mat-label>MercuryConcentration</mat-label>
+      <input matInput type="number" [(ngModel)]="details.mercuryConcentration" name="mercuryConcentration" />
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Expected Resolution Date</mat-label>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="details.expectedResolutionDate" name="expectedResolutionDate">
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <mat-label>Nitrate Concentration</mat-label>
+      <input matInput type="number" [(ngModel)]="details.nitrateConcentration" name="nitrateConcentration" />
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Caused</mat-label>
-      <input matInput [(ngModel)]="details.caused" name="caused" />
+      <mat-label>Pesticides Content</mat-label>
+      <input matInput type="number" [(ngModel)]="details.pesticidesContent" name="pesticidesContent" />
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Water Quality Level</mat-label>
-      <input matInput type="number" [(ngModel)]="details.waterQualityLevel" name="waterQualityLevel" />
+      <mat-label>Microbial Activity</mat-label>
+      <input matInput type="number" [(ngModel)]="details.microbialActivity" name="microbialActivity" />
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>Radiation Level</mat-label>
+      <input matInput type="number" [(ngModel)]="details.radiationLevel" name="radiationLevel" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Chemical Oxygen Demand</mat-label>
+      <input matInput type="number" [(ngModel)]="details.chemicalOxygenDemand" name="chemicalOxygenDemand" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Biological Oxygen Demand</mat-label>
+      <input matInput type="number" [(ngModel)]="details.biologicalOxygenDemand" name="biologicalOxygenDemand" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Toxicity Level</mat-label>
+      <input matInput type="string" [(ngModel)]="details.toxicityLevel" name="toxicityLevel" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phosphate Concentration</mat-label>
+      <input matInput type="number" [(ngModel)]="details.phosphateConcentration" name="phosphateConcentration" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Cadmium Concentration</mat-label>
+      <input matInput type="number" [(ngModel)]="details.cadmiumConcentration" name="cadmiumConcentration" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Total Dissolved Solids</mat-label>
+      <input matInput type="number" [(ngModel)]="details.totalDissolvedSolids" name="totalDissolvedSolids" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Electrical Conductivity</mat-label>
+      <input matInput type="number" [(ngModel)]="details.electricalConductivity" name="electricalConductivity" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Microbial Load</mat-label>
+      <input matInput type="number" [(ngModel)]="details.microbialLoad" name="microbialLoad" />
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Creator</mat-label>
+      <input matInput type="IUser" [(ngModel)]="details.creator" name="creator" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Responsible User</mat-label>
+      <input matInput type="IUser" [(ngModel)]="details.responsibleUser" name="responsibleUser" />
+    </mat-form-field>
+
     <div class="button-group-wrapper">
       <div class="button-group">
         <button mat-flat-button color="primary" type="submit" (click)="onSubmit()">Submit</button>

@@ -79,22 +79,48 @@ export class SoilDeficiencyDetail implements OnInit {
         country: [deficiency?.location?.country || ''],
       }),
       eDangerState: [deficiency?.eDangerState || EDangerState.Moderate, Validators.required],
-      populationAffected: [
-        deficiency?.populationAffected || 0,
+      ph: [
+        deficiency?.ph || 6.5,
         [Validators.required, Validators.min(0)],
       ],
-      economicImpact: [
-        deficiency?.economicImpact || 0,
+      organicMatter: [
+        deficiency?.organicMatter || 0,
         [Validators.required, Validators.min(0)],
       ],
-      healthImpact: [deficiency?.healthImpact || '', Validators.required],
-      resolvedDate: [deficiency?.resolvedDate || moment()],
-      expectedResolutionDate: [deficiency?.expectedResolutionDate || moment()],
-      caused: [deficiency?.caused || '', Validators.required],
-      soilQualityLevel: [
-        deficiency?.soilQualityLevel || 0,
-        [Validators.required, Validators.min(0), Validators.max(10)],
+      leadConcentration: [
+        deficiency?.leadConcentration || 0,
+        [Validators.required, Validators.min(0)],
       ],
+      cadmiumConcentration: [
+        deficiency?.cadmiumConcentration || 0,
+        [Validators.required, Validators.min(0)],
+      ],
+      mercuryConcentration: [
+        deficiency?.mercuryConcentration || 0,
+        [Validators.required, Validators.min(0)],
+      ],
+      pesticidesContent: [
+        deficiency?.pesticidesContent || 0,
+        [Validators.required, Validators.min(0)],
+      ],
+      nitratesConcentration: [
+        deficiency?.nitratesConcentration || 0,
+        [Validators.required, Validators.min(0)],
+      ],
+      heavyMetalsConcentration: [
+        deficiency?.heavyMetalsConcentration || 0,
+        [Validators.required, Validators.min(0)],
+      ],
+      electricalConductivity: [
+        deficiency?.electricalConductivity || 0,
+        [Validators.required, Validators.min(0)],
+      ],
+      toxicityLevel: [deficiency?.toxicityLevel || '', Validators.required],
+      microbialActivity: [
+        deficiency?.microbialActivity || 0,
+        [Validators.required, Validators.min(0)],
+      ],
+      analysisDate: [deficiency?.analysisDate || moment()],
     });
   }
 

@@ -10,16 +10,8 @@ export interface ISoilDeficiency extends IDeficiency {
     nitratesConcentration: number;
     heavyMetalsConcentration: number;
     electricalConductivity: number;
-    toxicityLevel: number;
+    toxicityLevel: string;
     microbialActivity: number;
-    AnalysisDate: Date;
-
-    populationAffected: number;
-    economicImpact: number;
-    healthImpact?: string;
-    resolvedDate?: Date;
-    expectedResolutionDate?: Date;
-    caused: string;
-    soilQualityLevel: number;
+    analysisDate: Date;
   }
   
