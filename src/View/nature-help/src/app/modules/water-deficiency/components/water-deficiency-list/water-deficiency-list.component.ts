@@ -47,7 +47,7 @@ export class WaterDeficiencyList implements OnInit, OnChanges{
     console.log(id)
     if (id) {
       // this.changeMapFocus(id);
-      // this.router.navigate([`/${id}`]);
+      this.router.navigate([`/${id}`]);
       this.router.navigate([`/water/${id}`]);
     } else {
       this.router.navigate(['water/add']);

@@ -46,6 +46,19 @@ export class WaterDeficiencyDetail implements OnInit {
   
   ngOnInit(): void {
     this.initializeForm();
+
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+
+    if (id) {
+      this.deficiencyDataService.getWaterDeficiencyById(id).subscribe(
+        (data) => {
+          this.details = data;
+        },
+        (error) => {
+          console.error('Error fetching deficiency:', error);
+        }
+      );
+    }
   }
 
   private initializeForm(deficiency: IWaterDeficiency | null = null) {
@@ -147,9 +160,12 @@ export class WaterDeficiencyDetail implements OnInit {
 
   public onSubmit(){
     if (this.detailsForm.invalid) {
-      return;
+      console.log('Form is invalid:', this.getFormErrors(this.detailsForm));
+      // return;
     }
-
+  
+    console.log('Form data:', this.detailsForm.value);
+  
     const formData: IWaterDeficiency = this.detailsForm.value;
 
     if (this.isAddingDeficiency) {
@@ -167,6 +183,19 @@ export class WaterDeficiencyDetail implements OnInit {
           this.router.navigate(['/water']);
         });
     }
+  }
+
+  private getFormErrors(formGroup: FormGroup): any {
+    const errors: any = {};
+    Object.keys(formGroup.controls).forEach((key) => {
+      const control = formGroup.controls[key];
+      if (control instanceof FormGroup) {
+        errors[key] = this.getFormErrors(control); 
+      } else if (control.invalid) {
+        errors[key] = control.errors;
+      }
+    });
+    return errors;
   }
 
   public onCancel(){

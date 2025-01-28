@@ -29,7 +29,7 @@ export class WaterAPIService {
   }
 
   public updateWaterDeficiency(id: string, value: IWaterDeficiency):Observable<IWaterDeficiency>{
-    return this.http.put<IWaterDeficiency>(this.watersUrl + id, JSON.stringify(value), this.httpOptions);
+    return this.http.put<IWaterDeficiency>(this.watersUrl, JSON.stringify(value), this.httpOptions);
   }
 
   public deleteWaterDeficiency(id: string):Observable<any>{
