@@ -19,6 +19,7 @@ import { MatModule } from '@/mat.module';
   declarations: [
     WaterDeficiencyDetail,
     WaterDeficiencyList
-  ]
+  ],
+  exports: [WaterDeficiencyList, WaterDeficiencyDetail],
 })
 export class WaterDeficiencyModule { }

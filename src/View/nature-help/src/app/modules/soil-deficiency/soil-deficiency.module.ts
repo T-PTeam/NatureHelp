@@ -18,7 +18,8 @@ import { MatModule } from '@/mat.module';
   ],
   declarations: [
     SoilDeficiencyDetail,
-    SoilDeficiencyList
-  ]
+    SoilDeficiencyList,
+  ],
+  exports: [SoilDeficiencyList, SoilDeficiencyDetail],
 })
 export class SoilDeficiencyModule { }

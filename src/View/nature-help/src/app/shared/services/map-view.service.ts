@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { DataSetWaterService } from '../../modules/water-deficiency/services/data-set-water.service';
-import { DataSetSoilService } from '../../modules/soil-deficiency/services/data-set-soil.service';
+import { WaterAPIService } from '../../modules/water-deficiency/services/waterAPI.service';
+import { SoilAPIService } from '../../modules/soil-deficiency/services/soilAPI.service';
 import L, { LatLng } from 'leaflet';
 import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
@@ -28,7 +28,7 @@ export class MapViewService {
     tiles.addTo(this.map);
   }
 
-  constructor(private WaterDataService: DataSetWaterService, private SoilDataService: DataSetSoilService) {
+  constructor(private WaterDataService: WaterAPIService, private SoilDataService: SoilAPIService) {
   }
 
   public makeMarkers(defs?: IDeficiency[], color: string = 'blue'): void {
@@ -41,14 +41,15 @@ export class MapViewService {
       return;
     }
 
-    this.markedList.forEach((def) => {
-      const { longitude, latitude } = def.location;
-      if (latitude && longitude) {
-        this.makeMarker(def, longitude, latitude, color);
-      } else {
-        console.warn(`Deficiency ${def.title} does not have valid coordinates.`);
-      }
-    });
+    // this.markedList.forEach((def) => {
+    //   const { longitude, latitude } = def.location;
+    //   console.log(longitude, latitude);
+    //   if (latitude && longitude) {
+    //     this.makeMarker(def, longitude, latitude, color);
+    //   } else {
+    //     console.warn(`Deficiency ${def.title} does not have valid coordinates.`);
+    //   }
+    // });
   }
 
   private makeMarker(def: IDeficiency, lon: number, lat: number, color: string): void {
@@ -60,7 +61,7 @@ export class MapViewService {
       fillOpacity: 0.2
     });
 
-    circle.bindPopup(this.makePopup(def));
+    // circle.bindPopup(this.makePopup(def));
 
     circle.addTo(this.map);
   }
@@ -75,13 +76,13 @@ export class MapViewService {
     mapObject!.style.height = "100%";
   }
 
-  public makePopup(def: IDeficiency){
-    return `
-    <div>
-      <b>${def.title}</b>
-      <div>Type: ${def.type}</div>
-      <div>Coordinates: ${def.location.latitude}, ${def.location.longitude}</div>
-    </div>
-  `;
-  }
+  // public makePopup(def: IDeficiency){
+  //   return `
+  //   <div>
+  //     <b>${def.title}</b>
+  //     <div>Type: ${def.type}</div>
+  //     <div>Coordinates: ${def.location.latitude}, ${def.location.longitude}</div>
+  //   </div>
+  // `;
+  // }
 }

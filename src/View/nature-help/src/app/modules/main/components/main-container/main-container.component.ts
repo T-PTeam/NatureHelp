@@ -9,6 +9,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class MainContainerComponent implements OnInit {
   showWaterTable: boolean = true;
+  showSwitch: boolean = false;
 
   constructor(private router: Router) {}
 
@@ -22,19 +23,23 @@ export class MainContainerComponent implements OnInit {
   }
 
   updateTableState(currentUrl: string): void {
+    if (['/', '/water', '/soil'].includes(currentUrl)) {
+      this.showSwitch = true; 
+    } else {
+      this.showSwitch = false;
+    }
+
     if (currentUrl.includes('soil')) {
       this.showWaterTable = false;
     } else if (currentUrl.includes('water')) {
       this.showWaterTable = true;
+    } else if (currentUrl === '/') {
+      this.showWaterTable = true;
     }
   }
 
-  toggleTable(): void {
-    this.showWaterTable = !this.showWaterTable;
-    if (this.showWaterTable) {
-      this.router.navigate(['water']);
-    } else {
-      this.router.navigate(['soil']);
-    }
+  onToggleSwitch(value: boolean): void {
+    this.showWaterTable = value;
+    this.router.navigate([value ? 'water' : 'soil']);
   }
 }

@@ -1,10 +1,8 @@
-import { Router, NavigationEnd } from '@angular/router';
-import { DataSetWaterService } from '@/modules/water-deficiency/services/data-set-water.service';
-import { DataSetSoilService } from '@/modules/soil-deficiency/services/data-set-soil.service';
+import { Router } from '@angular/router';
+import { WaterAPIService } from '@/modules/water-deficiency/services/waterAPI.service';
+import { SoilAPIService } from '@/modules/soil-deficiency/services/soilAPI.service';
 import { MapViewService } from '@/shared/services/map-view.service';
-import { Component, OnInit } from '@angular/core';
-import { MOCK_WATER_DEFICIENCIES } from '../../../modules/water-deficiency/components/water-deficiency-list/water-deficiency-list.component';
-import { MOCK_SOIL_DEFICIENCIES } from '../../../modules/soil-deficiency/components/soil-deficiency-list/soil-deficiency-list.component';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'n-map',
@@ -12,30 +10,105 @@ import { MOCK_SOIL_DEFICIENCIES } from '../../../modules/soil-deficiency/compone
   styleUrls: ['./main-map.component.css'],
   standalone: false,
 })
-export class MapComponent implements OnInit{
+export class MapComponent implements OnInit {
+  isFullScreen: boolean = false;
 
-  constructor(private waterDataService: DataSetWaterService, private soilDataService: DataSetSoilService,
-    private mapViewService: MapViewService, private router: Router) { }
+  constructor(
+    private waterDataService: WaterAPIService,
+    private soilDataService: SoilAPIService,
+    private mapViewService: MapViewService,
+    private router: Router
+  ) {}
 
-  ngOnInit (): void {
+  ngOnInit(): void {
     this.mapViewService.initMap();
-
-    // this.waterDataService.getAllWaterDeficiencies()
-    //   .subscribe(defs => this.mapViewService.makeMarkers(defs));
 
     this.router.events.subscribe(() => {
       const routePath = this.router.url;
 
       if (routePath.includes('water')) {
-        this.mapViewService.makeMarkers(MOCK_WATER_DEFICIENCIES, 'blue');
+        this.loadWaterDeficiencies();
       } else if (routePath.includes('soil')) {
-        this.mapViewService.makeMarkers(MOCK_SOIL_DEFICIENCIES, 'brown');
+        this.loadSoilDeficiencies();
       }
     });
   }
 
-  public goToFullScreen(){
-    this.mapViewService.fullScreenMap();
+  private loadWaterDeficiencies(): void {
+    this.waterDataService.getAllWaterDeficiencies().subscribe(
+      (data) => {
+        this.mapViewService.makeMarkers(data, 'blue');
+      },
+      (error) => {
+        console.error('Error: ', error);
+      }
+    );
   }
 
+  private loadSoilDeficiencies(): void {
+    this.soilDataService.getAllSoilDeficiencies().subscribe(
+      (data) => {
+        this.mapViewService.makeMarkers(data, 'brown');
+      },
+      (error) => {
+        console.error('Error:', error);
+      }
+    );
+  }
+
+  public goToFullScreen(): void {
+    const mapElement = document.getElementById('map');
+    if (!mapElement) return;
+
+    if (!this.isFullScreen) {
+      this.enterFullScreen(mapElement);
+    } else {
+      this.exitFullScreen(mapElement);
+    }
+  }
+
+  private enterFullScreen(mapElement: HTMLElement): void {
+    if (mapElement.requestFullscreen) {
+      mapElement.requestFullscreen();
+    } else if ((mapElement as any).webkitRequestFullscreen) {
+      (mapElement as any).webkitRequestFullscreen();
+    } else if ((mapElement as any).mozRequestFullScreen) {
+      (mapElement as any).mozRequestFullScreen();
+    } else if ((mapElement as any).msRequestFullscreen) {
+      (mapElement as any).msRequestFullscreen();
+    }
+
+    mapElement.style.width = '100vw';
+    mapElement.style.height = '100vh';
+    this.isFullScreen = true;
+  }
+
+  private exitFullScreen(mapElement: HTMLElement): void {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if ((document as any).webkitExitFullscreen) {
+      (document as any).webkitExitFullscreen();
+    } else if ((document as any).mozCancelFullScreen) {
+      (document as any).mozCancelFullScreen();
+    } else if ((document as any).msExitFullscreen) {
+      (document as any).msExitFullscreen();
+    }
+
+    mapElement.style.width = '100%';
+    mapElement.style.height = '100%';
+    this.isFullScreen = false;
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  onKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Escape' && this.isFullScreen) {
+      const mapElement = document.getElementById('map');
+      if (mapElement) {
+        this.exitFullScreen(mapElement);
+        setTimeout(() => {
+          this.exitFullScreen(mapElement);
+        }, 0);
+      }
+    }
+  }
 }

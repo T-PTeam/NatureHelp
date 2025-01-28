@@ -12,5 +12,3 @@ export interface IDeficiency extends IBaseEntity {
     location: ILocation;
     eDangerState: EDangerState;
   }
-
-  

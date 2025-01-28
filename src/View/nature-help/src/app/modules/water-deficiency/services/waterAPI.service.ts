@@ -4,8 +4,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 
 @Injectable()
-export class DataSetWaterService {
-  private watersUrl = 'https://localhost:7077/api/Waters/';
+export class WaterAPIService {
+  private watersUrl = 'https://localhost:7077/water/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,7 +17,7 @@ export class DataSetWaterService {
     }
 
   public getAllWaterDeficiencies(): Observable<IWaterDeficiency[]> {
-    return this.http.get<IWaterDeficiency[]>(this.watersUrl + "all");
+    return this.http.get<IWaterDeficiency[]>(this.watersUrl);
   }
 
   public getWaterDeficiencyById(id: string): Observable<IWaterDeficiency> {

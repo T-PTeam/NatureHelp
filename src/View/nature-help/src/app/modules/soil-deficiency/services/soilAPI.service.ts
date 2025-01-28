@@ -4,8 +4,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
 
 @Injectable()
-export class DataSetSoilService {
-  private soilsUrl = 'https://localhost:7077/api/Soils/';
+export class SoilAPIService {
+  private soilsUrl = 'https://localhost:7077/soil/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,7 +17,7 @@ export class DataSetSoilService {
     }
 
   public getAllSoilDeficiencies(): Observable<ISoilDeficiency[]> {
-    return this.http.get<ISoilDeficiency[]>(this.soilsUrl + "all");
+    return this.http.get<ISoilDeficiency[]>(this.soilsUrl);
   }
 
   public getSoilDeficiencyById(id: string): Observable<ISoilDeficiency> {

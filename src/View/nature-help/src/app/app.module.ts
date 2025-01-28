@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { DataSetWaterService } from './modules/water-deficiency/services/data-set-water.service';
-import { DataSetSoilService } from './modules/soil-deficiency/services/data-set-soil.service';
+import { WaterAPIService } from './modules/water-deficiency/services/waterAPI.service';
+import { SoilAPIService } from './modules/soil-deficiency/services/soilAPI.service';
 import { MapViewService } from './shared/services/map-view.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SharedModule } from './shared/shared.module';
@@ -41,8 +41,8 @@ const UKRAINIAN_DATE_FORMATS = {
   ],
   bootstrap: [AppComponent],
   providers: [
-    DataSetWaterService,
-    DataSetSoilService,
+    WaterAPIService,
+    SoilAPIService,
     MapViewService,
     provideAnimationsAsync(),
 
