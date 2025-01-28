@@ -61,7 +61,7 @@ export class MapViewService {
       fillOpacity: 0.2
     });
 
-    circle.bindPopup(this.makePopup(def));
+    // circle.bindPopup(this.makePopup(def));
 
     circle.addTo(this.map);
   }
@@ -76,13 +76,13 @@ export class MapViewService {
     mapObject!.style.height = "100%";
   }
 
-  public makePopup(def: IDeficiency){
-    return `
-    <div>
-      <b>${def.title}</b>
-      <div>Type: ${def.type}</div>
-      <div>Coordinates: ${def.location.latitude}, ${def.location.longitude}</div>
-    </div>
-  `;
-  }
+  // public makePopup(def: IDeficiency){
+  //   return `
+  //   <div>
+  //     <b>${def.title}</b>
+  //     <div>Type: ${def.type}</div>
+  //     <div>Coordinates: ${def.location.latitude}, ${def.location.longitude}</div>
+  //   </div>
+  // `;
+  // }
 }

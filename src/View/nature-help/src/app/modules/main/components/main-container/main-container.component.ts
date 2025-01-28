@@ -33,15 +33,13 @@ export class MainContainerComponent implements OnInit {
       this.showWaterTable = false;
     } else if (currentUrl.includes('water')) {
       this.showWaterTable = true;
+    } else if (currentUrl === '/') {
+      this.showWaterTable = true;
     }
   }
 
-  toggleTable(): void {
-    this.showWaterTable = !this.showWaterTable;
-    if (this.showWaterTable) {
-      this.router.navigate(['water']);
-    } else {
-      this.router.navigate(['soil']);
-    }
+  onToggleSwitch(value: boolean): void {
+    this.showWaterTable = value;
+    this.router.navigate([value ? 'water' : 'soil']);
   }
 }

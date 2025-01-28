@@ -14,7 +14,7 @@ const routes: Routes = [
   // http://localhost:4200/water
   { path: 'soil', component: SoilDeficiencyList },
   { path: 'soil/add', component: SoilDeficiencyDetail },
-  { path: 'soil/{id}', component: SoilDeficiencyDetail },
+  { path: 'soil/:id', component: SoilDeficiencyDetail },
 
   { path: 'labs', component: WaterDeficiencyList },
   { path: 'reports', component: WaterDeficiencyList },

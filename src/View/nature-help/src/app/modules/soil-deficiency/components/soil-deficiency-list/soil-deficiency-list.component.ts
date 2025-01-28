@@ -15,7 +15,8 @@ export class SoilDeficiencyList implements OnInit, OnChanges{
   public deficiencies: ISoilDeficiency[] = [];
   public search: string = "";
 
-  constructor(private soilDataService: SoilAPIService,
+  constructor(
+    private soilDataService: SoilAPIService,
     private router: Router,
     private mapViewService: MapViewService) {
    }
@@ -27,35 +28,38 @@ export class SoilDeficiencyList implements OnInit, OnChanges{
   }
 
   ngOnInit (): void {
-    this.loadDeficiencies();
+    this.loadSoilDeficiencies();
   }
 
-  private loadDeficiencies(): void {
-    this.soilDataService.getAllSoilDeficiencies().subscribe(
-      (data) => {
+  private loadSoilDeficiencies(): void {
+    this.soilDataService.getAllSoilDeficiencies()
+    .subscribe(
+      (data: ISoilDeficiency[]) => {
         this.deficiencies = data;
       },
       (error) => {
-        console.error('Помилка завантаження дефіцитів ґрунту:', error);
+        console.error('Error fetching soil deficiencies:', error);
       }
     );
   }
 
   public navigateToDetail(id?: string){
     if (id) {
-      this.changeMapFocus(id);
-      this.router.navigate([`/${id}`]);
+      // this.changeMapFocus(id);
+      // this.router.navigate([`/${id}`]);
+      this.router.navigate([`/soil/${id}`]);
     } else {
       this.router.navigate([`soil/add`]);
     }
   }
 
   public onRemove(def: ISoilDeficiency){
-    this.changeMapFocus(def.id)
+    // this.changeMapFocus(def.id)
 
-    this.soilDataService.deleteSoilDeficiency(def.id).subscribe(
+    this.soilDataService.deleteSoilDeficiency(def.id)
+    .subscribe(
       () => {
-        this.loadDeficiencies();
+        this.loadSoilDeficiencies();
       },
       (error) => {
         console.error('Error: ', error);
@@ -63,12 +67,12 @@ export class SoilDeficiencyList implements OnInit, OnChanges{
     );
   }
 
-  private changeMapFocus(id: string){
-    const foundDeficiency = this.deficiencies.find(st => st.id === id);
+  // private changeMapFocus(id: string){
+  //   const foundDeficiency = this.deficiencies.find(st => st.id === id);
 
-    if (foundDeficiency !== undefined) {
-      this.mapViewService.changeDeficiencyFocus(foundDeficiency.location.latitude, foundDeficiency.location.longitude, 17);
-    }
-  }
+  //   if (foundDeficiency !== undefined) {
+  //     this.mapViewService.changeDeficiencyFocus(foundDeficiency.location.latitude, foundDeficiency.location.longitude, 17);
+  //   }
+  // }
 
 }
