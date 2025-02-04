@@ -64,12 +64,6 @@ public class WaterDeficiency : Deficiency
     public double BiologicalOxygenDemand { get; set; }
 
     /// <summary>
-    /// Загальний рівень токсичності води (описовий або числовий показник).
-    /// </summary>
-    /// <example>Low</example>
-    public string ToxicityLevel { get; set; } = null!;
-
-    /// <summary>
     /// Концентрація фосфатів у воді (мг/л).
     /// </summary>
     /// <example>0.5</example>

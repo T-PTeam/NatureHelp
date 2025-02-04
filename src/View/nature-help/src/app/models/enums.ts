@@ -4,7 +4,7 @@ export enum EDeficiencyType {
   }
   
   export enum EDangerState {
-    Moderate = "Low",
-    Dangerous = "Medium",
-    Critical = "High"
+    Moderate,
+    Dangerous,
+    Critical
   }

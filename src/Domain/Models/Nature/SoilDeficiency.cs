@@ -59,12 +59,6 @@ public class SoilDeficiency : Deficiency
     public double ElectricalConductivity { get; set; }
 
     /// <summary>
-    /// Загальна токсичність ґрунту (описовий або числовий показник).
-    /// </summary>
-    /// <example>High</example>
-    public string ToxicityLevel { get; set; } = null!;
-
-    /// <summary>
     /// Мікробіологічна активність у ґрунті (КУО/г).
     /// </summary>
     /// <example>3000</example>

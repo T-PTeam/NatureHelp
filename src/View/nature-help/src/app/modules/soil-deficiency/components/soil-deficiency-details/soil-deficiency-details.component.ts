@@ -56,13 +56,13 @@ export class SoilDeficiencyDetail implements OnInit {
       type: [deficiency?.type || EDeficiencyType.Soil, Validators.required],
       creator: this.fb.group({
         id: [deficiency?.creator?.id || ''],
-        name: [deficiency?.creator?.name || '', Validators.required],
+        name: [`${deficiency?.creator?.firstName} ${deficiency?.creator?.lastName}` || '', Validators.required],
         email: [deficiency?.creator?.email || '', Validators.email],
         role: [deficiency?.creator?.role || ''],
       }),
       responsibleUser: this.fb.group({
         id: [deficiency?.responsibleUser?.id || ''],
-        name: [deficiency?.responsibleUser?.name || '', Validators.required],
+        name: [`${deficiency?.creator?.firstName} ${deficiency?.creator?.lastName}` || '', Validators.required],
         email: [deficiency?.responsibleUser?.email || '', Validators.email],
         role: [deficiency?.responsibleUser?.role || ''],
       }),

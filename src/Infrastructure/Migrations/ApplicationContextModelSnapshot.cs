@@ -106,6 +106,12 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<double>("Latitude")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("double precision");
+
                     b.Property<double>("RadiusAffected")
                         .HasColumnType("double precision");
 
@@ -121,6 +127,8 @@ namespace Infrastructure.Migrations
                             Country = "Ethiopia",
                             CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Latitude = 50.450099999999999,
+                            Longitude = 30.523399999999999,
                             RadiusAffected = 10.0
                         },
                         new
@@ -130,6 +138,8 @@ namespace Infrastructure.Migrations
                             Country = "India",
                             CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Latitude = 49.8429,
+                            Longitude = 24.031600000000001,
                             RadiusAffected = 10.0
                         },
                         new
@@ -139,6 +149,8 @@ namespace Infrastructure.Migrations
                             Country = "USA",
                             CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Latitude = 46.482500000000002,
+                            Longitude = 30.732600000000001,
                             RadiusAffected = 10.0
                         },
                         new
@@ -148,6 +160,8 @@ namespace Infrastructure.Migrations
                             Country = "Australia",
                             CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Latitude = 50.450099999999999,
+                            Longitude = 30.523399999999999,
                             RadiusAffected = 10.0
                         },
                         new
@@ -157,6 +171,8 @@ namespace Infrastructure.Migrations
                             Country = "China",
                             CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Latitude = 49.993499999999997,
+                            Longitude = 36.229199999999999,
                             RadiusAffected = 10.0
                         },
                         new
@@ -166,6 +182,8 @@ namespace Infrastructure.Migrations
                             Country = "Ukraine",
                             CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Latitude = 48.464700000000001,
+                            Longitude = 35.0456,
                             RadiusAffected = 10.0
                         });
                 });
@@ -235,10 +253,6 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ToxicityLevel")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<int>("Type")
                         .HasColumnType("integer");
 
@@ -275,7 +289,6 @@ namespace Infrastructure.Migrations
                             PesticidesContent = 0.80000000000000004,
                             ResponsibleUserId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
                             Title = "First Soil def",
-                            ToxicityLevel = "Moderate",
                             Type = 0
                         },
                         new
@@ -287,7 +300,7 @@ namespace Infrastructure.Migrations
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatorId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                             Description = "",
-                            EDangerState = 0,
+                            EDangerState = 2,
                             ElectricalConductivity = 0.90000000000000002,
                             HeavyMetalsConcentration = 200.0,
                             LeadConcentration = 250.0,
@@ -300,7 +313,6 @@ namespace Infrastructure.Migrations
                             PesticidesContent = 1.5,
                             ResponsibleUserId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
                             Title = "Second Soil def",
-                            ToxicityLevel = "High",
                             Type = 0
                         },
                         new
@@ -312,7 +324,7 @@ namespace Infrastructure.Migrations
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatorId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                             Description = "",
-                            EDangerState = 0,
+                            EDangerState = 1,
                             ElectricalConductivity = 0.5,
                             HeavyMetalsConcentration = 50.0,
                             LeadConcentration = 80.0,
@@ -325,7 +337,6 @@ namespace Infrastructure.Migrations
                             PesticidesContent = 0.5,
                             ResponsibleUserId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
                             Title = "Third Soil def",
-                            ToxicityLevel = "Low",
                             Type = 0
                         });
                 });
@@ -407,10 +418,6 @@ namespace Infrastructure.Migrations
                     b.Property<double>("TotalDissolvedSolids")
                         .HasColumnType("double precision");
 
-                    b.Property<string>("ToxicityLevel")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<int>("Type")
                         .HasColumnType("integer");
 
@@ -451,7 +458,6 @@ namespace Infrastructure.Migrations
                             ResponsibleUserId = new Guid("11112222-3333-4444-5555-666677778888"),
                             Title = "First Water def",
                             TotalDissolvedSolids = 500.0,
-                            ToxicityLevel = "Moderate",
                             Type = 0
                         },
                         new
@@ -465,7 +471,7 @@ namespace Infrastructure.Migrations
                             CreatorId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
                             Description = "",
                             DissolvedOxygen = 4.0,
-                            EDangerState = 0,
+                            EDangerState = 2,
                             ElectricalConductivity = 2.5,
                             LeadConcentration = 0.5,
                             LocationId = new Guid("b2222222-2222-2222-2222-222222222222"),
@@ -480,7 +486,6 @@ namespace Infrastructure.Migrations
                             ResponsibleUserId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                             Title = "Second Water def",
                             TotalDissolvedSolids = 800.0,
-                            ToxicityLevel = "High",
                             Type = 0
                         },
                         new
@@ -494,7 +499,7 @@ namespace Infrastructure.Migrations
                             CreatorId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                             Description = "",
                             DissolvedOxygen = 7.5,
-                            EDangerState = 0,
+                            EDangerState = 1,
                             ElectricalConductivity = 0.90000000000000002,
                             LeadConcentration = 0.050000000000000003,
                             LocationId = new Guid("b3333333-3333-3333-3333-333333333333"),
@@ -509,7 +514,6 @@ namespace Infrastructure.Migrations
                             ResponsibleUserId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
                             Title = "Third Water def",
                             TotalDissolvedSolids = 350.0,
-                            ToxicityLevel = "Low",
                             Type = 0
                         });
                 });
