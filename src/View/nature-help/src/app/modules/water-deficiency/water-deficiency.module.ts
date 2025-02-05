@@ -13,8 +13,8 @@ import { MatModule } from '@/mat.module';
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
-    SharedModule,
-    MatModule
+    MatModule,
+    SharedModule
   ],
   declarations: [
     WaterDeficiencyDetail,

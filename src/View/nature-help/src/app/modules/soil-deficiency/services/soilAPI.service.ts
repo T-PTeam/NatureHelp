@@ -1,22 +1,41 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, shareReplay, Subscription, tap, throwError } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoadingService } from '@/shared/services/loading.service';
 
 @Injectable()
 export class SoilAPIService {
-  private soilsUrl = 'https://localhost:7077/soil/';
+  private subject = new BehaviorSubject<ISoilDeficiency[]>([]);
+  public deficiencies$: Observable<ISoilDeficiency[]> = this.subject.asObservable();
+  private soilsUrl = 'https://localhost:7077/api/deficiency/soil/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   constructor(
-    private http: HttpClient){
-
+    private http: HttpClient,
+    private notify: MatSnackBar,
+    private loading: LoadingService){
+      this.loadAllSoilDeficiencies();
     }
 
-  public getAllSoilDeficiencies(): Observable<ISoilDeficiency[]> {
+  public loadAllSoilDeficiencies(): Observable<ISoilDeficiency[]> {
+    const loadCourses$ = this.http.get<ISoilDeficiency[]>(this.soilsUrl)
+      .pipe(
+        catchError(err => {
+          const message = "Could not load water deficiencies";
+
+          this.notify.open(message);
+          console.log(message, err);
+          return throwError(err);
+        }),
+        tap(courses => this.subject.next(courses)),
+        shareReplay()
+    );
+    this.loading.showLoaderUntilCompleted(loadCourses$).subscribe();
     return this.http.get<ISoilDeficiency[]>(this.soilsUrl);
   }
 

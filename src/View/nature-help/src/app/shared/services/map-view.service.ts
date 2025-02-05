@@ -41,27 +41,27 @@ export class MapViewService {
       return;
     }
 
-    // this.markedList.forEach((def) => {
-    //   const { longitude, latitude } = def.location;
-    //   console.log(longitude, latitude);
-    //   if (latitude && longitude) {
-    //     this.makeMarker(def, longitude, latitude, color);
-    //   } else {
-    //     console.warn(`Deficiency ${def.title} does not have valid coordinates.`);
-    //   }
-    // });
+    this.markedList.forEach((def) => {
+      const { longitude, latitude } = def.location;
+      console.log(longitude, latitude);
+      if (latitude && longitude) {
+        this.makeMarker(def, longitude, latitude, color);
+      } else {
+        console.warn(`Deficiency ${def.title} does not have valid coordinates.`);
+      }
+    });
   }
 
   private makeMarker(def: IDeficiency, lon: number, lat: number, color: string): void {
     const circle = L.circleMarker([lat, lon], {
-      radius: 8,
+      radius: 20,
       color: color,
       opacity: 0.6,
       fillColor: color,
       fillOpacity: 0.2
     });
 
-    // circle.bindPopup(this.makePopup(def));
+    circle.bindPopup(this.makePopup(def));
 
     circle.addTo(this.map);
   }
@@ -76,13 +76,13 @@ export class MapViewService {
     mapObject!.style.height = "100%";
   }
 
-  // public makePopup(def: IDeficiency){
-  //   return `
-  //   <div>
-  //     <b>${def.title}</b>
-  //     <div>Type: ${def.type}</div>
-  //     <div>Coordinates: ${def.location.latitude}, ${def.location.longitude}</div>
-  //   </div>
-  // `;
-  // }
+  public makePopup(def: IDeficiency){
+    return `
+    <div>
+      <b>${def.title}</b>
+      <div>Type: ${def.type}</div>
+      <div>Coordinates: ${def.location.latitude}, ${def.location.longitude}</div>
+    </div>
+  `;
+  }
 }

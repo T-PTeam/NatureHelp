@@ -72,6 +72,13 @@ tr td {
   color: #582F0E;
 }
 
+#map-focus-btn {
+  border: 1px solid black;
+  color: rgb(186, 84, 254);
+  background-color: white;
+  font-size: 16px;
+}
+
 #edit-btn {
   border: 1px solid black;
   background-color: rgb(254, 254, 75);

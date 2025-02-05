@@ -1,14 +1,15 @@
 ﻿using Application.Interfaces.Services.Nature;
 using Domain.Interfaces;
 using Domain.Models.Nature;
+using Infrastructure.Interfaces;
 
 namespace Application.Services.Nature;
 public class DeficiencyService : IDeficiencyService
 {
-    private readonly IBaseRepository<WaterDeficiency> _waterRepository;
-    private readonly IBaseRepository<SoilDeficiency> _soilRepository;
+    private readonly IDeficiencyRepository<WaterDeficiency> _waterRepository;
+    private readonly IDeficiencyRepository<SoilDeficiency> _soilRepository;
 
-    public DeficiencyService(IBaseRepository<WaterDeficiency> waterRepository, IBaseRepository<SoilDeficiency> soilRepository)
+    public DeficiencyService(IDeficiencyRepository<WaterDeficiency> waterRepository, IDeficiencyRepository<SoilDeficiency> soilRepository)
     {
         _waterRepository = waterRepository;
         _soilRepository = soilRepository;

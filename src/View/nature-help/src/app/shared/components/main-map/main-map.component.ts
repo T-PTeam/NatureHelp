@@ -22,38 +22,6 @@ export class MapComponent implements OnInit {
 
   ngOnInit(): void {
     this.mapViewService.initMap();
-
-    this.router.events.subscribe(() => {
-      const routePath = this.router.url;
-
-      if (routePath.includes('water')) {
-        this.loadWaterDeficiencies();
-      } else if (routePath.includes('soil')) {
-        this.loadSoilDeficiencies();
-      }
-    });
-  }
-
-  private loadWaterDeficiencies(): void {
-    this.waterDataService.getAllWaterDeficiencies().subscribe(
-      (data) => {
-        this.mapViewService.makeMarkers(data, 'blue');
-      },
-      (error) => {
-        console.error('Error: ', error);
-      }
-    );
-  }
-
-  private loadSoilDeficiencies(): void {
-    this.soilDataService.getAllSoilDeficiencies().subscribe(
-      (data) => {
-        this.mapViewService.makeMarkers(data, 'brown');
-      },
-      (error) => {
-        console.error('Error:', error);
-      }
-    );
   }
 
   public goToFullScreen(): void {

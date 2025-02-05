@@ -10,6 +10,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [
@@ -24,6 +27,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatNativeDateModule,
     MatRadioModule,
     MatSelectModule,
+    MatSlideToggleModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
   ],
   exports: [
     MatIconModule,
@@ -36,6 +42,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatNativeDateModule,
     MatRadioModule,
     MatSelectModule,
+    MatSlideToggleModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
   ],
 })
 export class MatModule { }

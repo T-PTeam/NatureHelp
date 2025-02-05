@@ -15,8 +15,8 @@ namespace NatureHelp
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IBaseRepository<User>, BaseRepository<User>>();
-            services.AddScoped<IBaseRepository<WaterDeficiency>, BaseRepository<WaterDeficiency>>();
-            services.AddScoped<IBaseRepository<SoilDeficiency>, BaseRepository<SoilDeficiency>>();
+            services.AddScoped<IDeficiencyRepository<WaterDeficiency>, DeficiencyRepository<WaterDeficiency>>();
+            services.AddScoped<IDeficiencyRepository<SoilDeficiency>, DeficiencyRepository<SoilDeficiency>>();
             services.AddScoped<IUserRepository, UserRepository>();
 
             return services;

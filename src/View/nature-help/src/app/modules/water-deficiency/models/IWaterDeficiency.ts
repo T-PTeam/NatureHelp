@@ -4,7 +4,6 @@ export interface IWaterDeficiency extends IDeficiency {
     ph : number;
     dissolvedOxygen: number;
     leadConcentration: number;
-    populationAffected: number;
     mercuryConcentration: number;
     nitrateConcentration: number;
     pesticidesContent: number;
@@ -18,13 +17,6 @@ export interface IWaterDeficiency extends IDeficiency {
     totalDissolvedSolids: number;
     electricalConductivity: number;
     microbialLoad: number;
-
-    economicImpact: number;
-    healthImpact?: string;
-    resolvedDate?: Date;
-    expectedResolutionDate?: Date;
-    caused: string;
-    waterQualityLevel: number;
   }
   
   

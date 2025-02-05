@@ -13,7 +13,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
         _contextFactory = contextFactory;
     }
 
-    public async Task<IEnumerable<T>> GetAllAsync()
+    public virtual async Task<IEnumerable<T>> GetAllAsync()
     {
         using (var context = _contextFactory.CreateDbContext())
         {
@@ -21,7 +21,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
         }
     }
 
-    public async Task<T?> GetByIdAsync(Guid id)
+    public virtual async Task<T?> GetByIdAsync(Guid id)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
@@ -29,7 +29,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
         }
     }
 
-    public async Task<T> AddAsync(T entity)
+    public virtual async Task<T> AddAsync(T entity)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
@@ -39,7 +39,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
         }
     }
 
-    public async Task<T> UpdateAsync(T entity)
+    public virtual async Task<T> UpdateAsync(T entity)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
@@ -49,7 +49,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
         }
     }
 
-    public async Task<bool> UpdateRangeAsync(IEnumerable<T> list)
+    public virtual async Task<bool> UpdateRangeAsync(IEnumerable<T> list)
     {
         using (var context = _contextFactory.CreateDbContext())
         {

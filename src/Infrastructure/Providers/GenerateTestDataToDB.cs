@@ -209,12 +209,14 @@ public static class GenerateTestDataToDB
 
     public static List<Domain.Models.Nature.Location> NatureLocations = new List<Domain.Models.Nature.Location>
 {
-    new Domain.Models.Nature.Location { Id = new Guid("b1111111-1111-1111-1111-111111111111"), Country = "Ethiopia", City = "Addis Ababa" },
-    new Domain.Models.Nature.Location { Id = new Guid("b2222222-2222-2222-2222-222222222222"), Country = "India", City = "Mumbai" },
-    new Domain.Models.Nature.Location { Id = new Guid("b3333333-3333-3333-3333-333333333333"), Country = "USA", City = "Phoenix" },
-    new Domain.Models.Nature.Location { Id = new Guid("b4444444-4444-4444-4444-444444444444"), Country = "Australia", City = "Sydney" },
-    new Domain.Models.Nature.Location { Id = new Guid("b5555555-5555-5555-5555-555555555555"), Country = "China", City = "Beijing" },
-    new Domain.Models.Nature.Location { Id = new Guid("b6666666-6666-6666-6666-666666666666"), Country = "Ukraine", City = "Uzhhorod" }
+
+    new Domain.Models.Nature.Location { Id = new Guid("b1111111-1111-1111-1111-111111111111"), Country = "Ethiopia", City = "Addis Ababa", Longitude = 30.5234, Latitude = 50.4501
+},
+    new Domain.Models.Nature.Location { Id = new Guid("b2222222-2222-2222-2222-222222222222"), Country = "India", City = "Mumbai" , Longitude = 24.0316, Latitude = 49.8429},
+    new Domain.Models.Nature.Location { Id = new Guid("b3333333-3333-3333-3333-333333333333"), Country = "USA", City = "Phoenix", Longitude = 30.7326, Latitude = 46.4825 },
+    new Domain.Models.Nature.Location { Id = new Guid("b4444444-4444-4444-4444-444444444444"), Country = "Australia", City = "Sydney" , Longitude = 30.5234, Latitude = 50.4501},
+    new Domain.Models.Nature.Location { Id = new Guid("b5555555-5555-5555-5555-555555555555"), Country = "China", City = "Beijing", Longitude = 36.2292, Latitude = 49.9935 },
+    new Domain.Models.Nature.Location { Id = new Guid("b6666666-6666-6666-6666-666666666666"), Country = "Ukraine", City = "Uzhhorod" , Longitude = 35.0456, Latitude = 48.4647}
 };
 
     public static List<WaterDeficiency> WaterDeficiencies = new List<WaterDeficiency>
@@ -234,7 +236,7 @@ public static class GenerateTestDataToDB
         PesticidesContent = 0.1,
         TotalDissolvedSolids = 500.0,
         ElectricalConductivity = 1.2,
-        ToxicityLevel = "Moderate",
+        EDangerState = EDangerState.Moderate,
         MicrobialLoad = 1500,
         CreatorId = Users[0].Id,
         ResponsibleUserId = Users[0].Id,
@@ -255,7 +257,7 @@ public static class GenerateTestDataToDB
         PesticidesContent = 0.8,
         TotalDissolvedSolids = 800.0,
         ElectricalConductivity = 2.5,
-        ToxicityLevel = "High",
+        EDangerState = EDangerState.Critical,
         MicrobialLoad = 4000,
         CreatorId = Users[2].Id,
         ResponsibleUserId = Users[1].Id,
@@ -276,11 +278,11 @@ public static class GenerateTestDataToDB
         PesticidesContent = 0.05,
         TotalDissolvedSolids = 350.0,
         ElectricalConductivity = 0.9,
-        ToxicityLevel = "Low",
         MicrobialLoad = 800,
         CreatorId = Users[1].Id,
         ResponsibleUserId = Users[2].Id,
         LocationId = NatureLocations[2].Id,
+        EDangerState = EDangerState.Dangerous
     }
 };
 
@@ -299,7 +301,7 @@ public static class GenerateTestDataToDB
         NitratesConcentration = 45.0,
         HeavyMetalsConcentration = 120.0,
         ElectricalConductivity = 0.7,
-        ToxicityLevel = "Moderate",
+        EDangerState = EDangerState.Moderate,
         MicrobialActivity = 3200,
         AnalysisDate = new DateTime(2025, 1, 15).ToUniversalTime(),
         CreatorId = Users[1].Id,
@@ -319,12 +321,12 @@ public static class GenerateTestDataToDB
         NitratesConcentration = 60.0,
         HeavyMetalsConcentration = 200.0,
         ElectricalConductivity = 0.9,
-        ToxicityLevel = "High",
         MicrobialActivity = 1500,
         AnalysisDate = new DateTime(2025, 1, 18).ToUniversalTime(),
         CreatorId = Users[1].Id,
         ResponsibleUserId = Users[2].Id,
         LocationId = NatureLocations[4].Id,
+        EDangerState = EDangerState.Critical,
     },
     new SoilDeficiency
     {
@@ -339,7 +341,7 @@ public static class GenerateTestDataToDB
         NitratesConcentration = 30.0,
         HeavyMetalsConcentration = 50.0,
         ElectricalConductivity = 0.5,
-        ToxicityLevel = "Low",
+        EDangerState = EDangerState.Dangerous,
         MicrobialActivity = 4000,
         AnalysisDate = new DateTime(2025, 1, 20).ToUniversalTime(),
         CreatorId = Users[1].Id,
