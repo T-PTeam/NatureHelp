@@ -12,6 +12,7 @@
 - `@angular/forms`
 - `@angular/common`
 - `@angular/http`
+- `@auth0/angular-jwt`
 
 ## UI & Styling Libraries:
 - `primeicons`

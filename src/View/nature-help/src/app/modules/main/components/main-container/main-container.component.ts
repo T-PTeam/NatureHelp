@@ -9,8 +9,6 @@ import { Router, NavigationEnd } from '@angular/router';
   standalone: false,
 })
 export class MainContainerComponent implements OnInit {
-  showWaterTable: boolean = true;
-
   constructor(public loading: LoadingService) {}
 
   ngOnInit(): void {

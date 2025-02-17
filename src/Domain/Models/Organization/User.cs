@@ -5,7 +5,9 @@ namespace Domain.Models.Organization;
 
 public class User : Person
 {
-    private ERole role;
+    private ERole role = ERole.Guest;
+
+    public ERole Role { get => role; private set => role = value; }
     public string Email { get; set; } = null!;
     public string PasswordHash { get; set; } = null!;
     public Organization? Organization { get; set; }
@@ -23,6 +25,9 @@ public class User : Person
 
     [ForeignKey(nameof(Address))]
     public Guid AddressId { get; set; }
+
+    [NotMapped]
+    public string Password { get; set; } = null!;
     public bool IsEmailValid(string password)
     {
         if (string.IsNullOrWhiteSpace(password))

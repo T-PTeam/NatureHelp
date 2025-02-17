@@ -1,6 +1,6 @@
-export interface ILocation {
-    latitude: number;
-    longitude: number;
+import { ICoordinates } from "./ICoordinates";
+
+export interface ILocation extends ICoordinates {
     city: string;
     country: string;
   }

@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces.Services.Nature;
 using Domain.Models.Nature;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers.Nature;
@@ -14,6 +15,7 @@ public class DeficiencyController : Controller
         _deficiencyService = deficiencyService;
     }
 
+    [Authorize(Roles = "Manager")]
     [HttpGet("water")]
     public async Task<IActionResult> WaterList()
     {

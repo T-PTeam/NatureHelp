@@ -25,14 +25,13 @@ export class SoilAPIService {
   public loadAllSoilDeficiencies(): Observable<ISoilDeficiency[]> {
     const loadCourses$ = this.http.get<ISoilDeficiency[]>(this.soilsUrl)
       .pipe(
-        catchError(err => {
-          const message = "Could not load water deficiencies";
-
-          this.notify.open(message);
-          console.log(message, err);
-          return throwError(err);
-        }),
         tap(courses => this.subject.next(courses)),
+        catchError(err => {
+          const message = "Could not load soil deficiencies";
+
+          this.notify.open(message, 'Close', { duration: 2000 });
+          return err;
+        }),
         shareReplay()
     );
     this.loading.showLoaderUntilCompleted(loadCourses$).subscribe();

@@ -1,5 +1,4 @@
 import { SoilAPIService } from '@/modules/soil-deficiency/services/soilAPI.service';
-import { MapViewService } from '@/shared/services/map-view.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -15,7 +14,7 @@ export class SoilDeficiencyList {
   constructor(
     public soilAPIService: SoilAPIService,
     private router: Router,
-    private mapViewService: MapViewService) {
+  ) {
    }
 
   public navigateToDetail(id?: string){

@@ -1,5 +1,4 @@
 import { WaterAPIService } from '@/modules/water-deficiency/services/waterAPI.service';
-import { MapViewService } from '@/shared/services/map-view.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IWaterDeficiency } from '../../models/IWaterDeficiency';
@@ -17,7 +16,6 @@ export class WaterDeficiencyList {
   constructor(
     public waterAPIService: WaterAPIService,
     private router: Router,
-    private mapViewService: MapViewService,
   ) {}
 
   public navigateToDetail(id?: string){

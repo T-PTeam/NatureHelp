@@ -1,15 +1,23 @@
 import { Injectable } from '@angular/core';
 import { WaterAPIService } from '../../modules/water-deficiency/services/waterAPI.service';
 import { SoilAPIService } from '../../modules/soil-deficiency/services/soilAPI.service';
-import L, { LatLng } from 'leaflet';
+import L, { LatLng, popup } from 'leaflet';
 import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
 import { IDeficiency } from '@/models/IDeficiency';
+import { ICoordinates } from '@/models/ICoordinates';
+import { combineLatest, map } from 'rxjs';
+import { ILaboratory } from '@/modules/laboratories/models/ILaboratory';
 @Injectable({
   providedIn: 'root'
 })
 export class MapViewService {
-  private markedList: IDeficiency[] = [];
+  private markerList$ = combineLatest([
+    this.waterDataService.deficiencies$,
+    this.soilDataService.deficiencies$
+  ]).pipe(
+    map(([waterList, soilList]) => [...waterList, ...soilList])
+  );
 
   private map: any;
 
@@ -28,32 +36,45 @@ export class MapViewService {
     tiles.addTo(this.map);
   }
 
-  constructor(private WaterDataService: WaterAPIService, private SoilDataService: SoilAPIService) {
+  constructor(private waterDataService: WaterAPIService, private soilDataService: SoilAPIService) {
   }
 
-  public makeMarkers(defs?: IDeficiency[], color: string = 'blue'): void {
-    if (defs){
-      this.markedList = defs;
-    }
-
-    if (!this.markedList.length) {
-      console.error('No deficiencies found to display.');
-      return;
-    }
-
-    this.markedList.forEach((def) => {
-      const { longitude, latitude } = def.location;
-      console.log(longitude, latitude);
-      if (latitude && longitude) {
-        this.makeMarker(def, longitude, latitude, color);
-      } else {
-        console.warn(`Deficiency ${def.title} does not have valid coordinates.`);
-      }
-    });
+  private isWaterDeficiency(obj: any): obj is IWaterDeficiency {
+    return (obj as IWaterDeficiency).microbialLoad !== undefined;
   }
 
-  private makeMarker(def: IDeficiency, lon: number, lat: number, color: string): void {
-    const circle = L.circleMarker([lat, lon], {
+  private isSoilDeficiency(obj: any): obj is ISoilDeficiency {
+    return (obj as ISoilDeficiency).organicMatter !== undefined;
+  }
+
+  private isLaboratory(obj: any): obj is ILaboratory {
+    return (obj as ILaboratory).researches !== undefined;
+  }
+
+  public makeMarkers(): void {
+    this.markerList$.pipe(
+      map(list => {
+        if (Array.isArray(list)) {
+          if (this.isWaterDeficiency(list[0])) {
+            list.map(def => this.makeMarker(def, def.location, 'blue'));
+          } else if (this.isSoilDeficiency(list[0])) {
+            list.map(def => this.makeMarker(def, def.location, 'brown'));
+          } else if (this.isLaboratory(list[0])) {
+            list.map(def => this.makeMarker(def, def.location, 'green'));
+          }
+        }
+      })
+    ).subscribe();
+  }
+
+
+  private makeMarker(
+    def: IDeficiency, 
+    coordinates: ICoordinates,
+    color: string,
+    popupTags: string | null = null): void 
+  {
+    const circle = L.circleMarker([coordinates.latitude, coordinates.longitude], {
       radius: 20,
       color: color,
       opacity: 0.6,
@@ -61,28 +82,18 @@ export class MapViewService {
       fillOpacity: 0.2
     });
 
-    circle.bindPopup(this.makePopup(def));
+    if (popupTags) circle.bindPopup(popupTags);
 
     circle.addTo(this.map);
   }
 
-  public changeDeficiencyFocus(lat: number, lon: number, zoom: number){
-    this.map.setView([lat, lon], zoom);
+  public changeFocus(coordinates: ICoordinates, zoom: number){
+    this.map.setView([coordinates.latitude, coordinates.longitude], zoom);
   }
 
   public fullScreenMap(){
     const mapObject = document.getElementById("map");
 
     mapObject!.style.height = "100%";
-  }
-
-  public makePopup(def: IDeficiency){
-    return `
-    <div>
-      <b>${def.title}</b>
-      <div>Type: ${def.type}</div>
-      <div>Coordinates: ${def.location.latitude}, ${def.location.longitude}</div>
-    </div>
-  `;
   }
 }
