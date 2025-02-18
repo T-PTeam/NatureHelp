@@ -8,24 +8,66 @@ import { AboutComponent } from './modules/main/components/about/about.component'
 import { LabsTableComponent } from './modules/laboratories/components/labs-table/labs-table.component';
 import { LabDetailsComponent } from './modules/laboratories/components/lab-details/lab-details.component';
 import { ReportsTableComponent } from './modules/reports/components/reports-table/reports-table.component';
+import { RoleGuard } from './shared/guards/role.guard';
+import { UnauthorisedComponent } from './shared/components/unauthorised/unauthorised.component';
 
 const routes: Routes = [
   { path: '', component: WaterDeficiencyList },
+  
   { path: 'water', component: WaterDeficiencyList },
-  { path: 'water/add', component: WaterDeficiencyDetail },
-  { path: 'water/:id', component: WaterDeficiencyDetail },
+  { 
+    path: 'water/add', 
+    component: WaterDeficiencyDetail, 
+    canActivate: [RoleGuard],
+    data: { excludeRoles: ['researcher', 'guest'] }
+  },
+  { path: 'water/:id', 
+    component: WaterDeficiencyDetail,
+    canActivate: [RoleGuard],
+    data: { excludeRoles: ['researcher', 'guest'] }
+   },
 
   { path: 'soil', component: SoilDeficiencyList },
-  { path: 'soil/add', component: SoilDeficiencyDetail },
-  { path: 'soil/:id', component: SoilDeficiencyDetail },
+  { 
+    path: 'soil/add', 
+    component: SoilDeficiencyDetail, 
+    canActivate: [RoleGuard],
+    data: { excludeRoles: ['researcher', 'guest'] } },
+  { 
+    path: 'soil/:id', 
+    component: SoilDeficiencyDetail, 
+    canActivate: [RoleGuard],
+    data: { excludeRoles: ['researcher', 'guest'] } },
 
-  { path: 'labs', component: LabsTableComponent },
-  { path: 'labs/:id', component: LabDetailsComponent },
+  { 
+    path: 'labs', 
+    component: LabsTableComponent, 
+    canActivate: [RoleGuard],
+    data: { includeRoles: ['researcher', 'owner'] }
+  },
+  { path: 'labs/:id', 
+    component: LabDetailsComponent, 
+    canActivate: [RoleGuard],
+    data: { includeRoles: ['researcher', 'owner'] }
+  },
 
-  { path: 'reports', component: ReportsTableComponent },
-  { path: 'reports/:id', component: ReportsTableComponent },
+  { 
+    path: 'reports', 
+    component: ReportsTableComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ['manager', 'owner'] }
+   },
+  { 
+    path: 'reports/:id', 
+    component: ReportsTableComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ['manager', 'owner'] }
+   },
 
   { path: 'about', component: AboutComponent },
+
+  { path: 'unauthorized', component: UnauthorisedComponent },
+  { path: '**', redirectTo: '/unauthorized' }
 ];
 
 @NgModule({
