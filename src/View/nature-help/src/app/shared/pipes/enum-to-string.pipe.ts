@@ -6,7 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: false,
 })
 export class EnumToStringPipe implements PipeTransform {
-  transform(value: EDangerState): string {
-    return EDangerState[value];
+  transform(value: any, type: string): string {
+    if (type === typeof EDangerState){
+      return EDangerState[value];
+    }
+
+    return value;
   }
 }

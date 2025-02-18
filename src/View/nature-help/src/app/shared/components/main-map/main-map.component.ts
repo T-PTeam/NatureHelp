@@ -5,7 +5,7 @@ import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'n-map',
+  selector: 'nat-map',
   templateUrl: './main-map.component.html',
   styleUrls: ['./main-map.component.css'],
   standalone: false,

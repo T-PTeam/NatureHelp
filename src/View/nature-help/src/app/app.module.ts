@@ -14,6 +14,8 @@ import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapte
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
 import moment from 'moment';
 import 'moment/locale/uk';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './shared/services/auth-interceptor.service';
 
 const UKRAINIAN_DATE_FORMATS = {
   parse: {
@@ -49,6 +51,7 @@ const UKRAINIAN_DATE_FORMATS = {
     { provide: MAT_DATE_LOCALE, useValue: 'uk-UA' }, 
     { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } }, 
     { provide: MAT_DATE_FORMATS, useValue: UKRAINIAN_DATE_FORMATS },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ]
 })
 export class AppModule {

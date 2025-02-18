@@ -1,5 +1,5 @@
-﻿using Application.Interfaces.Services.Organization;
-using Domain.Models.Organization;
+﻿using Application.Dtos;
+using Application.Interfaces.Services.Organization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers.Organization;
@@ -15,15 +15,25 @@ public class UserController : Controller
         _userService = userService;
     }
 
+    /// <summary>
+    /// Register user
+    /// </summary>
+    /// <returns></returns>
     [HttpPost("register")]
-    public async Task<IActionResult> Register()
+    public async Task<IActionResult> RegisterAsync()
     {
         return Ok(await _userService.RegisterAsync());
     }
 
+    /// <summary>
+    /// Login user
+    /// </summary>
+    /// <param name="user"></param>
+    /// <returns></returns>
     [HttpPost("login")]
-    public async Task<IActionResult> Login(User user)
+    public async Task<IActionResult> LoginAsync(UserLoginDto user)
     {
         return Ok(await _userService.LoginAsync(user));
     }
+
 }

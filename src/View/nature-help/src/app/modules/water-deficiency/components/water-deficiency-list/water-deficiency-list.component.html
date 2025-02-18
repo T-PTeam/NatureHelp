@@ -1,6 +1,6 @@
 <div class="header">
   <h2>Deficiencies (Water)</h2>
-  <input type="search" placeholder="Search for deficiencie..." [(ngModel)]="search">
+  <input type="search" placeholder="Search for deficiencies..." [(ngModel)]="search">
   <button (click)="navigateToDetail()" class="action-btn" id="add-btn"><i class="material-icons">add</i></button>
   <mat-slide-toggle
       [checked]="false"
@@ -33,7 +33,7 @@
         <td>{{ deficiency.chemicalOxygenDemand }}</td>
         <td>{{ deficiency.creator.firstName }} {{ deficiency.creator.lastName }}</td>
         <td>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</td>
-        <td>{{ deficiency.eDangerState | enumToString }}</td>
+        <td>{{ deficiency.eDangerState | enumToString:'EDangerState' }}</td>
         <td class="btn-ceil">
           <button class="action-btn" id="map-focus-btn">
             <i class="fa fa-crosshairs"></i>

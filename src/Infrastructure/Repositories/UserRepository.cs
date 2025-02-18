@@ -9,11 +9,11 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     public UserRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }
 
-    public async Task<User?> GetUserByCredentials(string email, string passwordHash)
+    public async Task<User?> GetUserByEmail(string email)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
-            return await context.Set<User>().FirstOrDefaultAsync(u => u.Email == email && u.PasswordHash == passwordHash);
+            return await context.Set<User>().FirstOrDefaultAsync(u => u.Email == email);
         }
     }
 }

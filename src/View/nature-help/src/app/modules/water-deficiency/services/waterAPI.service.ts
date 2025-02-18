@@ -26,14 +26,13 @@ export class WaterAPIService {
   public loadAllWaterDeficiencies() {
     const loadCourses$ = this.http.get<IWaterDeficiency[]>(this.watersUrl)
       .pipe(
+        tap(deficiencies => this.subject.next(deficiencies)),
         catchError(err => {
           const message = "Could not load water deficiencies";
 
-          this.notify.open(message);
-          console.log(message, err);
-          return throwError(err);
+          this.notify.open(message, 'Close', { duration: 2000 });
+          return err;
         }),
-        tap(courses => this.subject.next(courses)),
         shareReplay()
     );
     this.loading.showLoaderUntilCompleted(loadCourses$).subscribe();
@@ -70,10 +69,11 @@ export class WaterAPIService {
       .put(`api/courses/${courseId}`, changes)
       .pipe(
         catchError(err => {
-          const message = "Could not save course";
+          const message = "Could not update water deficiency";
 
-          this.notify.open(message);
-          return throwError(err);
+          this.notify.open(message, 'Close', { duration: 2000 });
+
+          return err;
         }),
         shareReplay())
   }

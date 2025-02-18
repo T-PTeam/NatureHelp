@@ -1,11 +1,14 @@
+using Application.Providers;
 using Infrastructure.Data;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using NatureHelp;
 using NatureHelp.Filters;
 using NatureHelp.Interfaces;
 using NatureHelp.Providers;
 using Serilog;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +47,23 @@ builder.Services.AddDbContextFactory<ApplicationContext>(options =>
     }
 });
 
+builder.Services.AddAuthorization();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+
+            ValidIssuer = AuthTokensProvider.ISSUER,
+            ValidAudience = AuthTokensProvider.AUDIENCE,
+            IssuerSigningKey = AuthTokensProvider.GetSecurityKey()
+        };
+    });
+
 builder.Services.AddScoped<IObjectsProvider<IExceptionHandler>, ErrorHandlersProvider>();
 
 builder.Services.AddControllers(config =>
@@ -52,14 +72,50 @@ builder.Services.AddControllers(config =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "LightSide",
+        Description = "Swagger API controlling of knowledge assessment system",
+    });
+
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = @"Write authorization JWT token",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer",
+                        }
+                    },
+                    Array.Empty<string>()
+                }
+            });
+});
 
 builder.Services.AddInfrastructureServices(configuration);
 builder.Services.AddApplicationServices();
 
 builder.Services.Configure<RouteOptions>(options =>
 {
-    options.LowercaseUrls = true; // Optional: Makes URLs lowercase.
+    options.LowercaseUrls = true;
 });
 
 var app = builder.Build();

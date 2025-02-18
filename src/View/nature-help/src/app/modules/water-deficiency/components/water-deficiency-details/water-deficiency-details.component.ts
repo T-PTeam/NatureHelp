@@ -205,7 +205,7 @@ export class WaterDeficiencyDetail implements OnInit {
   }
   
   private changeMapView(){
-    this.mapViewService.changeDeficiencyFocus(48.65, 22.26, 12);
+    this.mapViewService.changeFocus({latitude: 48.65, longitude: 22.26}, 12);
   }
 
 }
