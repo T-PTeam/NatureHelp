@@ -1,10 +1,10 @@
 <h2 mat-dialog-title>Login</h2>
 <div mat-dialog-content>
-  <form [formGroup]="loginForm">
+  <form [formGroup]="formGroup">
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Email</mat-label>
       <input matInput type="email" formControlName="email">
-      <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+      <mat-error *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
         Please enter a valid email
       </mat-error>
     </mat-form-field>
@@ -15,7 +15,7 @@
       <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
         <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
       </button>
-      <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+      <mat-error *ngIf="formGroup.get('password')?.invalid && formGroup.get('password')?.touched">
         Password must be at least 6 characters
       </mat-error>
     </mat-form-field>
@@ -24,5 +24,5 @@
 
 <div mat-dialog-actions>
   <button mat-button (click)="closeDialog()">Cancel</button>
-  <button mat-flat-button color="primary" (click)="onLogin()" [disabled]="loginForm.invalid">Login</button>
+  <button mat-flat-button color="primary" (click)="onSubmit()" [disabled]="formGroup.invalid">Login</button>
 </div>

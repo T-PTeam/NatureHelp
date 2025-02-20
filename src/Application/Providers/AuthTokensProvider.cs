@@ -44,6 +44,21 @@ namespace Application.Providers
             return encodedJwt;
         }
 
+        public static bool IsTokenExpired(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            if (!tokenHandler.CanReadToken(token))
+            {
+                return true;
+            }
+
+            var jwtToken = tokenHandler.ReadJwtToken(token);
+            var expiration = jwtToken.ValidTo;
+
+            return expiration < DateTime.UtcNow;
+        }
+
         private static List<Claim> GetClaimsFromUser(User user)
         {
             var claims = new List<Claim>

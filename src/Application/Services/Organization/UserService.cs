@@ -3,7 +3,6 @@ using Application.Interfaces.Services.Organization;
 using Application.Providers;
 using Domain.Models.Organization;
 using Infrastructure.Interfaces;
-using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 
 namespace Application.Services.Organization;
@@ -16,9 +15,18 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
-    public Task<User> RegisterAsync()
+    public async Task<User> RegisterAsync(User user)
     {
-        throw new NotImplementedException();
+        user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
+        user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
+
+        user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
+        user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
+
+        await _userRepository.AddAsync(user);
+        await _userRepository.SaveChangesAsync();
+
+        return user;
     }
 
     public async Task<User> LoginAsync(UserLoginDto userLoginDto)
@@ -43,7 +51,25 @@ public class UserService : IUserService
         }
 
         await _userRepository.UpdateAsync(user);
+        await _userRepository.SaveChangesAsync();
 
+        return user;
+    }
+
+    public bool IsTokenExpired(string token)
+    {
+        return AuthTokensProvider.IsTokenExpired(token);
+    }
+
+    public async Task<User?> RefreshAccessTokenAsync(string refreshToken)
+    {
+        var user = await _userRepository.GetUserByRefreshTokenAsync(refreshToken);
+        if (user == null || user.RefreshTokenExpireTime < DateTime.UtcNow)
+        {
+            return null;
+        }
+
+        user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
         return user;
     }
 
