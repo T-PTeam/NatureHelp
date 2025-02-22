@@ -5,13 +5,18 @@ using System.Net;
 
 namespace NatureHelp.Exceptions.Handlers;
 
+/// <summary>
+/// 
+/// </summary>
 public class SystemExceptionsHandler : IExceptionHandler
 {
+    /// <inheritdoc/>
     public bool CanHandle(ExceptionContext exceptionContext)
     {
         return exceptionContext.Exception is not null;
     }
 
+    /// <inheritdoc/>
     public void Handle(ExceptionContext exceptionContext)
     {
         exceptionContext.Result = new ContentResult
@@ -22,10 +27,5 @@ public class SystemExceptionsHandler : IExceptionHandler
         };
 
         exceptionContext.ExceptionHandled = true;
-    }
-
-    public ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
     }
 }

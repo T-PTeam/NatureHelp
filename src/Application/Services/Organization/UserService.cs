@@ -1,6 +1,7 @@
 ﻿using Application.Dtos;
 using Application.Interfaces.Services.Organization;
 using Application.Providers;
+using Domain.Enums;
 using Domain.Models.Organization;
 using Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -24,7 +25,6 @@ public class UserService : IUserService
         user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
 
         await _userRepository.AddAsync(user);
-        await _userRepository.SaveChangesAsync();
 
         return user;
     }
@@ -35,8 +35,7 @@ public class UserService : IUserService
 
         var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, userLoginDto.Password);
 
-        if (result == Microsoft.AspNetCore.Identity.PasswordVerificationResult.Failed)
-            return null;
+        if (result == PasswordVerificationResult.Failed) throw new UnauthorizedAccessException("Password verification failed");
 
         if (user.AccessTokenExpireTime is null || user.AccessTokenExpireTime < DateTime.UtcNow)
         {
@@ -51,7 +50,6 @@ public class UserService : IUserService
         }
 
         await _userRepository.UpdateAsync(user);
-        await _userRepository.SaveChangesAsync();
 
         return user;
     }
@@ -76,5 +74,26 @@ public class UserService : IUserService
     private void SetPasswordHash(User user)
     {
         user.PasswordHash = _passwordHasher.HashPassword(user, user.Password);
+    }
+
+    public async Task<User> AddUserToOrganizationAsync(Guid userId, Guid organizationId)
+    {
+        User user = await _userRepository.GetByIdAsync(userId) ?? throw new NullReferenceException("User was not found");
+
+        user.OrganizationId = organizationId;
+
+        await _userRepository.UpdateAsync(user);
+
+        return user;
+    }
+
+    public async Task<User> AssignRoleToUserAsync(Guid userId, ERole role)
+    {
+        User user = await _userRepository.GetByIdAsync(userId) ?? throw new NullReferenceException("User was not found");
+        user.AssignRole(role);
+
+        await _userRepository.UpdateAsync(user);
+
+        return user;
     }
 }

@@ -1,5 +1,4 @@
-﻿using Domain.Enums;
-using Domain.Models.Organization;
+﻿using Domain.Models.Organization;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

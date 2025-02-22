@@ -72,13 +72,14 @@ builder.Services.AddControllers(config =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "LightSide",
-        Description = "Swagger API controlling of knowledge assessment system",
+        Title = "NatureHelp",
+        Description = "Swagger API controlling of ERP monitoring system",
     });
 
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

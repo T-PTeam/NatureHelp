@@ -1,5 +1,4 @@
 ﻿using Application.Interfaces.Services.Nature;
-using Domain.Interfaces;
 using Domain.Models.Nature;
 using Infrastructure.Interfaces;
 
@@ -14,25 +13,25 @@ public class DeficiencyService : IDeficiencyService
         _waterRepository = waterRepository;
         _soilRepository = soilRepository;
     }
-    public async Task<IEnumerable<WaterDeficiency>> GetWaterDeficiencyList() => await _waterRepository.GetAllAsync();
+    public async Task<IEnumerable<WaterDeficiency>> GetWaterDeficiencyListAsync() => await _waterRepository.GetAllAsync();
 
-    public async Task<IEnumerable<SoilDeficiency>> GetSoilDeficiencyList() => await _soilRepository.GetAllAsync();
+    public async Task<IEnumerable<SoilDeficiency>> GetSoilDeficiencyListAsync() => await _soilRepository.GetAllAsync();
 
-    public async Task<WaterDeficiency> GetWaterDeficiency(Guid id)
+    public async Task<WaterDeficiency> GetWaterDeficiencyAsync(Guid id)
     {
         var deficiency = await _waterRepository.GetByIdAsync(id);
 
         return deficiency;
     }
 
-    public async Task<SoilDeficiency> GetSoilDeficiency(Guid id)
+    public async Task<SoilDeficiency> GetSoilDeficiencyAsync(Guid id)
     {
         var deficiency = await _soilRepository.GetByIdAsync(id);
 
         return deficiency;
     }
 
-    public async Task<Deficiency> Create(Deficiency deficiency)
+    public async Task<Deficiency> CreateAsync(Deficiency deficiency)
     {
         if (deficiency is WaterDeficiency waterDeficiency)
         {
@@ -44,11 +43,11 @@ public class DeficiencyService : IDeficiencyService
         }
         else
         {
-            throw new InvalidCastException("Can not casst deficiency for correct creating...");
+            throw new InvalidCastException("Can not cast deficiency for correct creating...");
         }
     }
 
-    public async Task<Deficiency> Update(Deficiency deficiency)
+    public async Task<Deficiency> UpdateAsync(Deficiency deficiency)
     {
         if (deficiency is WaterDeficiency waterDeficiency)
         {
