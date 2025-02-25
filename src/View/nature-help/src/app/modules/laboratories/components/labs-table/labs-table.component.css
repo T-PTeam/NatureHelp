@@ -1,0 +1,91 @@
+.header {
+    margin-top: 16px;
+    background-color: #00a2ff;
+    border-radius: 8px 8px 0px 0px;
+    margin-right: 16px;
+  }
+  
+  .header h2 {
+    display: inline-block;
+    margin: 15px;
+    color: #f0f5ff;
+    letter-spacing: 2px;
+  }
+  
+  .header button {
+    float: inline-end;
+    margin: 15px;
+    font-size: 18px;
+  }
+  
+  .list {
+    margin-right: 16px;
+  }
+  
+  .header input {
+    float: inline-end;
+    margin: 15px;
+    font-size: 18px;
+  }
+  
+  .list .table {
+    border: 3px solid #009dff;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .list .table * {
+    border: 1px solid #0004ff;
+    padding: 5px;
+  }
+  
+  .list .table thead {
+    border: 2px solid #0059ff;
+  }
+  
+  .list .table .btn-ceil * {
+    border: none;
+  }
+  
+  .list .table .action-btn {
+    color: #001233;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  tr {
+    color: #2b1300;
+  }
+  
+  tr th {
+    font-size: 12px;
+  }
+  
+  tr td {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  #add-btn {
+    border: 1px solid black;
+    background-color: white;
+    color: #582F0E;
+  }
+  
+  #map-focus-btn {
+    border: 1px solid black;
+    color: rgb(186, 84, 254);
+    background-color: white;
+    font-size: 16px;
+  }
+  
+  #edit-btn {
+    border: 1px solid black;
+    background-color: rgb(254, 254, 75);
+  }
+  
+  #remove-btn{
+    border: 1px solid black;
+    background-color: rgb(255, 65, 65);
+  }
+  

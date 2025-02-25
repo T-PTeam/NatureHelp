@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { WaterAPIService } from './modules/water-deficiency/services/waterAPI.service';
-import { SoilAPIService } from './modules/soil-deficiency/services/soilAPI.service';
+import { WaterAPIService } from './modules/water-deficiency/services/water-api.service';
+import { SoilAPIService } from './modules/soil-deficiency/services/soil-api.service';
 import { MapViewService } from './shared/services/map-view.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SharedModule } from './shared/shared.module';
@@ -16,6 +16,8 @@ import moment from 'moment';
 import 'moment/locale/uk';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/services/auth-interceptor.service';
+import { LabsModule } from './modules/laboratories/labs.module';
+import { LabsAPIService } from './modules/laboratories/services/labs-api.service';
 
 const UKRAINIAN_DATE_FORMATS = {
   parse: {
@@ -36,7 +38,8 @@ const UKRAINIAN_DATE_FORMATS = {
     WaterDeficiencyModule,
     SoilDeficiencyModule,
     MainModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LabsModule
   ],
   declarations: [
     AppComponent,
@@ -45,6 +48,8 @@ const UKRAINIAN_DATE_FORMATS = {
   providers: [
     WaterAPIService,
     SoilAPIService,
+    LabsAPIService,
+
     MapViewService,
     provideAnimationsAsync(),
 

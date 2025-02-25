@@ -25,4 +25,4 @@ import { LabDetailsComponent } from './components/lab-details/lab-details.compon
     LabDetailsComponent
   ],
 })
-export class SoilDeficiencyModule { }
+export class LabsModule { }

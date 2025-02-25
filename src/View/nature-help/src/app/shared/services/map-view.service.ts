@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { WaterAPIService } from '../../modules/water-deficiency/services/waterAPI.service';
-import { SoilAPIService } from '../../modules/soil-deficiency/services/soilAPI.service';
+import { WaterAPIService } from '../../modules/water-deficiency/services/water-api.service';
+import { SoilAPIService } from '../../modules/soil-deficiency/services/soil-api.service';
 import L, { LatLng, popup } from 'leaflet';
 import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';

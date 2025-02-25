@@ -46,13 +46,13 @@ export class WaterAPIService {
     return this.http.post<IWaterDeficiency>(this.watersUrl, JSON.stringify(value), this.httpOptions);
   }
 
-  public updateWaterDeficiency(
-    courseId: string,
+  public updateWaterDeficiencyById( // TODO
+    id: string,
     changes: Partial<IWaterDeficiency>
   ): Observable<any> {
     const courses = this.subject.getValue();
 
-    const index = courses.findIndex(course => course.id == courseId);
+    const index = courses.findIndex(course => course.id == id);
 
     const newCourse: IWaterDeficiency = {
       ...courses[index],
@@ -66,7 +66,7 @@ export class WaterAPIService {
     this.subject.next(newCourses);
 
     return this.http
-      .put(`api/courses/${courseId}`, changes)
+      .put(`api/courses/${id}`, changes)
       .pipe(
         catchError(err => {
           const message = "Could not update water deficiency";

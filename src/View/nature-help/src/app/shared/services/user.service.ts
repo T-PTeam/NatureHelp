@@ -91,6 +91,7 @@ export class UserService {
     if (authOptions.refreshToken) localStorage.setItem('refreshToken', authOptions.refreshToken);
 
     const decodedTokenRole = this.jwtHelper.decodeToken(authOptions.accessToken);
+    console.log("TOKEN: ", this.jwtHelper.decodeToken(authOptions.accessToken))
     if (decodedTokenRole) localStorage.setItem('role', decodedTokenRole['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']);
 
     this.subject.next(authOptions);

@@ -1,16 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { LabsAPIService } from '../../services/labs-api.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-labs-table',
+  selector: 'nat-labs-table',
   templateUrl: './labs-table.component.html',
   styleUrls: ['./labs-table.component.css'],
   standalone: false,
 })
 export class LabsTableComponent implements OnInit {
+  public search: string = "";
 
-  constructor() { }
+  constructor(
+    public labsAPI: LabsAPIService,
+    private router: Router,
+  ) {
+   }
 
-  ngOnInit() {
+  ngOnInit (): void {
   }
 
+  public navigateToDetail(id?: string){
+    if (id) {
+      this.router.navigate([`/labs/${id}`]);
+    } else {
+      this.router.navigate([`labs/add`]);
+    }
+  }
 }

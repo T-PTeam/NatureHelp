@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
-import { WaterAPIService } from '@/modules/water-deficiency/services/waterAPI.service';
-import { SoilAPIService } from '@/modules/soil-deficiency/services/soilAPI.service';
+import { WaterAPIService } from '@/modules/water-deficiency/services/water-api.service';
+import { SoilAPIService } from '@/modules/soil-deficiency/services/soil-api.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 

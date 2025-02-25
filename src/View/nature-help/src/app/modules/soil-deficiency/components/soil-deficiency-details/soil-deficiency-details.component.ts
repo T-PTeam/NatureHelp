@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SoilAPIService } from '@/modules/soil-deficiency/services/soilAPI.service';
+import { SoilAPIService } from '@/modules/soil-deficiency/services/soil-api.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { EDeficiencyType, EDangerState } from '../../../../models/enums';
 import { ISoilDeficiency } from '../../models/ISoilDeficiency';
@@ -140,7 +140,7 @@ export class SoilDeficiencyDetail implements OnInit {
         });
     } else {
       this.deficiencyDataService
-        .updateSoilDeficiency(formData.id, formData)
+        .updateSoilDeficiencyById(formData.id, formData)
         .subscribe((def) => {
           console.log('Updated:', def);
           this.router.navigate(['/soil']);

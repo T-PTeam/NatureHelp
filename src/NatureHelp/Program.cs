@@ -2,6 +2,7 @@ using Application.Providers;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NatureHelp;
 using NatureHelp.Filters;
@@ -47,7 +48,6 @@ builder.Services.AddDbContextFactory<ApplicationContext>(options =>
     }
 });
 
-builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -60,9 +60,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
             ValidIssuer = AuthTokensProvider.ISSUER,
             ValidAudience = AuthTokensProvider.AUDIENCE,
-            IssuerSigningKey = AuthTokensProvider.GetSecurityKey()
+            IssuerSigningKey = AuthTokensProvider.GetSecurityKey(),
+
+            RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
         };
     });
+
+builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<IObjectsProvider<IExceptionHandler>, ErrorHandlersProvider>();
 
@@ -134,6 +138,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

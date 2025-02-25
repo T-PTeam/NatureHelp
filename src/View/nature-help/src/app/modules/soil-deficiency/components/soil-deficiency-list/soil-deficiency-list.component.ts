@@ -1,4 +1,4 @@
-import { SoilAPIService } from '@/modules/soil-deficiency/services/soilAPI.service';
+import { SoilAPIService } from '@/modules/soil-deficiency/services/soil-api.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 

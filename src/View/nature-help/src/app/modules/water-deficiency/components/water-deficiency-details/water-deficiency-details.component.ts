@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { WaterAPIService } from '@/modules/water-deficiency/services/waterAPI.service';
+import { WaterAPIService } from '@/modules/water-deficiency/services/water-api.service';
 import { MapViewService } from '@/shared/services/map-view.service';
 import { EDeficiencyType, EDangerState } from '../../../../models/enums';
 import { IWaterDeficiency } from '../../models/IWaterDeficiency';
@@ -177,7 +177,7 @@ export class WaterDeficiencyDetail implements OnInit {
         });
     } else {
       this.deficiencyDataService
-        .updateWaterDeficiency(formData.id, formData)
+        .updateWaterDeficiencyById(formData.id, formData)
         .subscribe((def) => {
           console.log('Updated:', def);
           this.router.navigate(['/water']);

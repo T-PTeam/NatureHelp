@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers.Nature;
 
-[Authorize(Roles = "SuperAdmin, Manager, Supervisor")]
+[Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor")]
 [Route("api/[controller]")]
 public class DeficiencyController : Controller
 {

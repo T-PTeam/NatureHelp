@@ -46,11 +46,11 @@ export class SoilAPIService {
     return this.http.post<ISoilDeficiency>(this.soilsUrl, JSON.stringify(value), this.httpOptions);
   }
 
-  public updateSoilDeficiency(id: string, value: ISoilDeficiency):Observable<ISoilDeficiency>{
+  public updateSoilDeficiencyById(id: string, value: ISoilDeficiency):Observable<ISoilDeficiency>{
     return this.http.put<ISoilDeficiency>(this.soilsUrl + id, JSON.stringify(value), this.httpOptions);
   }
 
-  public deleteSoilDeficiency(id: string):Observable<any>{
+  public deleteSoilDeficiencyById(id: string):Observable<any>{
     return this.http.delete<any>(this.soilsUrl + id);
   }
 }
