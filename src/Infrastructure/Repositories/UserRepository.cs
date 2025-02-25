@@ -16,4 +16,12 @@ public class UserRepository : BaseRepository<User>, IUserRepository
             return await context.Set<User>().FirstOrDefaultAsync(u => u.Email == email);
         }
     }
+
+    public async Task<User?> GetUserByRefreshTokenAsync(string refreshToken)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            return await context.Set<User>().FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+        }
+    }
 }

@@ -16,8 +16,9 @@
       <mat-icon class="icon-large">person</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="openLoginDialog()" [disabled]="">Login</button>
-      <button mat-menu-item>Logout</button>
+      <button mat-menu-item (click)="openAuthDialog(false)" [disabled]="userService.isLoggedIn$ | async">Login</button>
+      <button mat-menu-item (click)="openAuthDialog(true)" [disabled]="userService.isLoggedIn$ | async">Register</button>
+      <button mat-menu-item (click)="logout()" [disabled]="userService.isLoggedOut$ | async">Logout</button>
     </mat-menu>
   </div>
 </nav>

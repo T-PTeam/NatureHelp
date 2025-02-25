@@ -1,9 +1,9 @@
 ﻿using Application.Dtos;
 using Application.Interfaces.Services.Organization;
 using Application.Providers;
+using Domain.Enums;
 using Domain.Models.Organization;
 using Infrastructure.Interfaces;
-using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 
 namespace Application.Services.Organization;
@@ -16,9 +16,17 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
-    public Task<User> RegisterAsync()
+    public async Task<User> RegisterAsync(User user)
     {
-        throw new NotImplementedException();
+        user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
+        user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
+
+        user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
+        user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
+
+        await _userRepository.AddAsync(user);
+
+        return user;
     }
 
     public async Task<User> LoginAsync(UserLoginDto userLoginDto)
@@ -27,8 +35,7 @@ public class UserService : IUserService
 
         var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, userLoginDto.Password);
 
-        if (result == Microsoft.AspNetCore.Identity.PasswordVerificationResult.Failed)
-            return null;
+        if (result == PasswordVerificationResult.Failed) throw new UnauthorizedAccessException("Password verification failed");
 
         if (user.AccessTokenExpireTime is null || user.AccessTokenExpireTime < DateTime.UtcNow)
         {
@@ -47,8 +54,46 @@ public class UserService : IUserService
         return user;
     }
 
+    public bool IsTokenExpired(string token)
+    {
+        return AuthTokensProvider.IsTokenExpired(token);
+    }
+
+    public async Task<User?> RefreshAccessTokenAsync(string refreshToken)
+    {
+        var user = await _userRepository.GetUserByRefreshTokenAsync(refreshToken);
+        if (user == null || user.RefreshTokenExpireTime < DateTime.UtcNow)
+        {
+            return null;
+        }
+
+        user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
+        return user;
+    }
+
     private void SetPasswordHash(User user)
     {
         user.PasswordHash = _passwordHasher.HashPassword(user, user.Password);
+    }
+
+    public async Task<User> AddUserToOrganizationAsync(Guid userId, Guid organizationId)
+    {
+        User user = await _userRepository.GetByIdAsync(userId) ?? throw new NullReferenceException("User was not found");
+
+        user.OrganizationId = organizationId;
+
+        await _userRepository.UpdateAsync(user);
+
+        return user;
+    }
+
+    public async Task<User> AssignRoleToUserAsync(Guid userId, ERole role)
+    {
+        User user = await _userRepository.GetByIdAsync(userId) ?? throw new NullReferenceException("User was not found");
+        user.AssignRole(role);
+
+        await _userRepository.UpdateAsync(user);
+
+        return user;
     }
 }

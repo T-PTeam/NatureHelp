@@ -1,5 +1,4 @@
-﻿using Domain.Enums;
-using Domain.Models.Organization;
+﻿using Domain.Models.Organization;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -42,6 +41,21 @@ namespace Application.Providers
             var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
 
             return encodedJwt;
+        }
+
+        public static bool IsTokenExpired(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            if (!tokenHandler.CanReadToken(token))
+            {
+                return true;
+            }
+
+            var jwtToken = tokenHandler.ReadJwtToken(token);
+            var expiration = jwtToken.ValidTo;
+
+            return expiration < DateTime.UtcNow;
         }
 
         private static List<Claim> GetClaimsFromUser(User user)
