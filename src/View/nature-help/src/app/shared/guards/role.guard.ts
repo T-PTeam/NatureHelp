@@ -10,12 +10,10 @@ export class RoleGuard implements CanActivate {
   constructor(private notify: MatSnackBar) {}
   
   canActivate (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-    const includeRoles = route.data['includeRoles'];
-    const excludeRoles = route.data['excludeRoles'];
+    const includeRoles = route.data['includeRoles'] || [];
+    const excludeRoles = route.data['excludeRoles'] || [];
     
-    const userRole = localStorage.getItem('role');
-    
-    console.log("USERROLE: ", userRole)
+    const userRole = localStorage.getItem('role')?.toLowerCase();
     if (userRole)
     {
       if (userRole === 'superadmin') return true;

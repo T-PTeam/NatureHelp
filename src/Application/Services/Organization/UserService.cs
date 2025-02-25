@@ -29,7 +29,7 @@ public class UserService : IUserService
         return user;
     }
 
-    public async Task<User> LoginAsync(UserLoginDto userLoginDto)
+    public async Task<User> AutoLoginAsync(UserLoginDto userLoginDto)
     {
         var user = await _userRepository.GetUserByEmail(userLoginDto.Email) ?? throw new NullReferenceException("User was not found.");
 
@@ -47,7 +47,28 @@ public class UserService : IUserService
         {
             user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
             user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
+
+            throw new UnauthorizedAccessException("Login to your profile, please...");
         }
+
+        await _userRepository.UpdateAsync(user);
+
+        return user;
+    }
+
+    public async Task<User> LoginAsync(UserLoginDto userLoginDto)
+    {
+        var user = await _userRepository.GetUserByEmail(userLoginDto.Email) ?? throw new NullReferenceException("User was not found.");
+
+        var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, userLoginDto.Password);
+
+        if (result == PasswordVerificationResult.Failed) throw new UnauthorizedAccessException("Password verification failed");
+
+        user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
+        user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
+
+        user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
+        user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
 
         await _userRepository.UpdateAsync(user);
 

@@ -33,8 +33,19 @@ public class UserController : Controller
     /// </summary>
     /// <param name="user"></param>
     /// <returns></returns>
+    [HttpPost("autologin")]
+    public async Task<IActionResult> AutoLoginAsync([FromBody] UserLoginDto user)
+    {
+        return Ok(await _userService.AutoLoginAsync(user));
+    }
+
+    /// <summary>
+    /// Login user
+    /// </summary>
+    /// <param name="user"></param>
+    /// <returns></returns>
     [HttpPost("login")]
-    public async Task<IActionResult> LoginAsync(UserLoginDto user)
+    public async Task<IActionResult> LoginAsync([FromBody] UserLoginDto user)
     {
         return Ok(await _userService.LoginAsync(user));
     }
