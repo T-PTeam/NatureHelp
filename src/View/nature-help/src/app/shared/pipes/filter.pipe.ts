@@ -1,5 +1,6 @@
-import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 import { Pipe, PipeTransform } from '@angular/core';
+
+import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 
 @Pipe({
   name: 'filter',

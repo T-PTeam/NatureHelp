@@ -1,8 +1,9 @@
-import { AuthDialogComponent } from '@/shared/components/dialogs/login-dialog/auth-dialog.component';
-import { UserService } from '@/shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { AuthDialogComponent } from '@/shared/components/dialogs/login-dialog/auth-dialog.component';
+import { UserService } from '@/shared/services/user.service';
 
 @Component({
   selector: 'n-navigation-bar',

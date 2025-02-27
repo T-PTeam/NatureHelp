@@ -1,9 +1,10 @@
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, map, Observable, shareReplay, Subscription, tap, throwError } from 'rxjs';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { BehaviorSubject, catchError, Observable, shareReplay, tap } from 'rxjs';
+
 import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 import { LoadingService } from '@/shared/services/loading.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable()
 export class WaterAPIService {

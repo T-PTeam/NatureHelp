@@ -1,6 +1,7 @@
 # FuelStationsServer
 
 ## Core Angular Libraries:
+
 - `@angular/material`
 - `@angular/cdk`
 - `@angular/animations`
@@ -15,6 +16,7 @@
 - `@auth0/angular-jwt`
 
 ## UI & Styling Libraries:
+
 - `primeicons`
 - `primeng`
 - `tailwindcss`
@@ -22,6 +24,7 @@
 - `autoprefixer`
 
 ## Additional Utilities:
+
 - `cypress` (development dependency)
 - `moment`
 - `ngx-translate/core`

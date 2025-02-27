@@ -1,8 +1,9 @@
+import { Component, HostListener,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { WaterAPIService } from '@/modules/water-deficiency/services/water-api.service';
+
 import { SoilAPIService } from '@/modules/soil-deficiency/services/soil-api.service';
+import { WaterAPIService } from '@/modules/water-deficiency/services/water-api.service';
 import { MapViewService } from '@/shared/services/map-view.service';
-import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'nat-map',

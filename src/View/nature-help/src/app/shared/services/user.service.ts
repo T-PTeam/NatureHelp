@@ -1,9 +1,10 @@
-import { IAuthResponse } from '@/models/IAuthResponse';
-import { IUser } from '@/models/IUser';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map, tap, shareReplay } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { BehaviorSubject, map, Observable, shareReplay,tap } from 'rxjs';
+
+import { IAuthResponse } from '@/models/IAuthResponse';
+import { IUser } from '@/models/IUser';
 
 @Injectable({
   providedIn: 'root'

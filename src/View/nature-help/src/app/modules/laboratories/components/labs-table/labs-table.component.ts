@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LabsAPIService } from '../../services/labs-api.service';
 import { Router } from '@angular/router';
+
+import { LabsAPIService } from '../../services/labs-api.service';
 
 @Component({
   selector: 'nat-labs-table',

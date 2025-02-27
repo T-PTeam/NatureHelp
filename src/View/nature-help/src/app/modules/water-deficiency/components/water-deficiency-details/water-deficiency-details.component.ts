@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import moment from 'moment';
+
 import { WaterAPIService } from '@/modules/water-deficiency/services/water-api.service';
 import { MapViewService } from '@/shared/services/map-view.service';
-import { EDeficiencyType, EDangerState } from '../../../../models/enums';
+
+import { EDangerState,EDeficiencyType } from '../../../../models/enums';
 import { IWaterDeficiency } from '../../models/IWaterDeficiency';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import moment from 'moment'
 
 @Component({
   selector: 'n-water-deficiency-details',
@@ -64,20 +66,20 @@ export class WaterDeficiencyDetail implements OnInit {
   private initializeForm(deficiency: IWaterDeficiency | null = null) {
       this.detailsForm = this.fb.group({
         id: [deficiency?.id || ''],
-        createdAt: [deficiency?.createdAt || new Date()],
-        updatedAt: [deficiency?.updatedAt || new Date()],
+        createdAt: [deficiency?.createdAt || moment()],
+        updatedAt: [deficiency?.updatedAt || moment()],
         title: [deficiency?.title || '', Validators.required],
         description: [deficiency?.description || '', Validators.required],
         type: [deficiency?.type || EDeficiencyType.Water, Validators.required],
         creator: this.fb.group({
           id: [deficiency?.creator?.id || ''],
-          name: [`${deficiency?.creator?.firstName} ${deficiency?.creator?.lastName}` || '', Validators.required],
+          name: [`${deficiency?.creator?.firstName} ${deficiency?.creator?.lastName}`, Validators.required],
           email: [deficiency?.creator?.email || '', Validators.email],
           role: [deficiency?.creator?.role || ''],
         }),
         responsibleUser: this.fb.group({
           id: [deficiency?.responsibleUser?.id || ''],
-          name: [`${deficiency?.creator?.firstName} ${deficiency?.creator?.lastName}` || '', Validators.required],
+          name: [`${deficiency?.creator?.firstName} ${deficiency?.creator?.lastName}`, Validators.required],
           email: [deficiency?.responsibleUser?.email || '', Validators.email],
           role: [deficiency?.responsibleUser?.role || ''],
         }),

@@ -1,23 +1,25 @@
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { WaterAPIService } from './modules/water-deficiency/services/water-api.service';
-import { SoilAPIService } from './modules/soil-deficiency/services/soil-api.service';
-import { MapViewService } from './shared/services/map-view.service';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { SharedModule } from './shared/shared.module';
-import { MatModule } from './mat.module';
-import { WaterDeficiencyModule } from './modules/water-deficiency/water-deficiency.module';
-import { SoilDeficiencyModule } from './modules/soil-deficiency/soil-deficiency.module';
-import { MainModule } from './modules/main/main.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter'; 
-import { MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
-import moment from 'moment';
 import 'moment/locale/uk';
+
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './shared/services/auth-interceptor.service';
+import { NgModule } from '@angular/core';
+import { MAT_DATE_FORMATS,MAT_DATE_LOCALE } from '@angular/material/core';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import moment from 'moment';
+
+import { AppComponent } from './app.component';
+import { MatModule } from './mat.module';
 import { LabsModule } from './modules/laboratories/labs.module';
 import { LabsAPIService } from './modules/laboratories/services/labs-api.service';
+import { MainModule } from './modules/main/main.module';
+import { SoilAPIService } from './modules/soil-deficiency/services/soil-api.service';
+import { SoilDeficiencyModule } from './modules/soil-deficiency/soil-deficiency.module';
+import { WaterAPIService } from './modules/water-deficiency/services/water-api.service';
+import { WaterDeficiencyModule } from './modules/water-deficiency/water-deficiency.module';
+import { AuthInterceptor } from './shared/services/auth-interceptor.service';
+import { MapViewService } from './shared/services/map-view.service';
+import { SharedModule } from './shared/shared.module';
 
 const UKRAINIAN_DATE_FORMATS = {
   parse: {

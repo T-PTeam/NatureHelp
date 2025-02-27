@@ -1,6 +1,7 @@
-import { SoilAPIService } from '@/modules/soil-deficiency/services/soil-api.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { SoilAPIService } from '@/modules/soil-deficiency/services/soil-api.service';
 
 @Component({
   selector: 'n-soil-deficiencys-deficiencies',

@@ -6,5 +6,5 @@ export interface ILaboratory {
     title: string,
     researches: IUser[],
     location: ILocation,
-    researchersCount: Number,
+    researchersCount: number,
 }

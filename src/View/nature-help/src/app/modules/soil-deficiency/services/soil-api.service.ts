@@ -1,8 +1,9 @@
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Observable, shareReplay, Subscription, tap, throwError } from 'rxjs';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { BehaviorSubject, catchError, Observable, shareReplay, tap } from 'rxjs';
+
+import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
 import { LoadingService } from '@/shared/services/loading.service';
 
 @Injectable()

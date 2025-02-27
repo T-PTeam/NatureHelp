@@ -1,8 +1,10 @@
-import { LoadingService } from '@/shared/services/loading.service';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { BehaviorSubject, Observable, tap, catchError, shareReplay } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, shareReplay,tap } from 'rxjs';
+
+import { LoadingService } from '@/shared/services/loading.service';
+
 import { ILaboratory } from '../models/ILaboratory';
 
 @Injectable({

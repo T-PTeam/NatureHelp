@@ -1,6 +1,8 @@
-import { WaterAPIService } from '@/modules/water-deficiency/services/water-api.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { WaterAPIService } from '@/modules/water-deficiency/services/water-api.service';
+
 import { IWaterDeficiency } from '../../models/IWaterDeficiency';
 
 @Component({
