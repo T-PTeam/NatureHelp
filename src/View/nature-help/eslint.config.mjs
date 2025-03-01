@@ -1,11 +1,10 @@
-import pluginJs from "@eslint/js";
 import tseslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import cypress from "eslint-plugin-cypress";
 import importPlugin from "eslint-plugin-import";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import unicorn from "eslint-plugin-unicorn";
-import * as espree from "espree"; 
+import * as espree from "espree";
 import globals from "globals";
 import prettier from "eslint-plugin-prettier";
 import angular from "eslint-plugin-angular";
@@ -13,25 +12,7 @@ import angular from "eslint-plugin-angular";
 /** @type {import('eslint').FlatConfig[]} */
 export default [
   {
-    ignores: [
-      "cypress.config.ts",
-      "cypress/**/*.ts",
-      "eslint.config.mjs",
-      "prettier.config.js",
-      "lint-staged.config.js",
-      "postcss.config.js",
-      ".angular/cache/**"
-    ],
-  },
-  {
-    ignores: [
-      ".angular/cache/**",
-      "vite/deps/**",
-      "node_modules/**",
-      "dist/**",
-      "build/**"
-    ],
-    files: ["**/I*.ts"], // Match only interface files
+    files: ["**/I*.ts"],
     rules: {
       "unicorn/filename-case": "off",
     },
@@ -42,47 +23,23 @@ export default [
       "vite/deps/**",
       "node_modules/**",
       "dist/**",
-      "build/**"
+      "build/**",
+      
+      "src/**/*.cy.ts",
+      "cypress/**/*.ts",
+      "*.config.{js,mjs,cjs,ts}",
     ],
-    files: ["**/*.ts", "**/*.tsx"],
-    languageOptions: {
-      parser: tsParser,
-      ecmaVersion: "latest",
-      sourceType: "module",
-    },
-    plugins: {
-      unicorn,
-    },
-    rules: {
-      "unicorn/filename-case": [
-        "error",
-        {
-          cases: {
-            kebabCase: true,
-          },
-        },
-      ],
-    },
-  },
-  {
-    ignores: [
-      ".angular/cache/**",
-      "vite/deps/**",
-      "node_modules/**",
-      "dist/**",
-      "build/**"
-    ],
-    files: ["**/*.{js,mjs,cjs,ts}"],
+    files: ["**/*.{js,ts}"],
     languageOptions: {
       globals: {
-        ...globals.browser,  // Spread browser globals from `globals` package
-        module: "readonly",  // Allow `module` to be used without errors
+        ...globals.browser, // Spread browser globals from `globals` package
+        module: "readonly", // Allow `module` to be used without errors
       },
-      parser: tsParser,  // Use TypeScript parser
+      parser: tsParser, // Use TypeScript parser
       parserOptions: {
-        ecmaVersion: "latest",  // Use the latest ECMAScript version
-        sourceType: "module",  // Use modules (ESM)
-        project: "./tsconfig.json",  // Path to your TypeScript config
+        ecmaVersion: "latest", // Use the latest ECMAScript version
+        sourceType: "module", // Use modules (ESM)
+        project: "./tsconfig.json", // Path to your TypeScript config
       },
     },
     plugins: {
@@ -95,7 +52,6 @@ export default [
       angular: angular,
     },
     rules: {
-      ...pluginJs.configs.recommended.rules,  // ESLint recommended rules
       ...tseslint.configs.recommended.rules, // TypeScript plugin recommended rules
 
       // Import Sorting
@@ -111,7 +67,7 @@ export default [
       "unicorn/filename-case": "off",
 
       // Cypress Rules
-      "cypress/no-unnecessary-waiting": "warn",  // Warn about unnecessary waiting
+      "cypress/no-unnecessary-waiting": "warn", // Warn about unnecessary waiting
     },
   },
   {
@@ -122,13 +78,13 @@ export default [
     rules: {}, // Tailwind config specific rules if any
   },
   {
-    files: ["*rc.ts", "*.config.ts"],  // Override for specific TypeScript files
+    files: ["*rc.ts", "*.config.ts"], // Override for specific TypeScript files
     rules: {
-      "unicorn/prefer-module": "off",  // Turn off the prefer-module rule
-      "unicorn/filename-case": "off",  // Turn off the filename-case rule
+      "unicorn/prefer-module": "off", // Turn off the prefer-module rule
+      "unicorn/filename-case": "off", // Turn off the filename-case rule
     },
   },
   {
-    ignores: ["lint-staged.config.js", "postcss.config.js"]
-  }
+    ignores: ["lint-staged.config.js", "postcss.config.js"],
+  },
 ];

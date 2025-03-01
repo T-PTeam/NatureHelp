@@ -26,7 +26,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/app/*"]
-    }
+    },
+    "types": ["cypress"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -34,6 +35,10 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "cypress/**/*.ts",
+    "cypress/support/**/*.js"
+  ],
+  "exclude": ["node_modules", "**/*.cy.ts"]
 }
