@@ -2,7 +2,6 @@ import tseslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import cypress from "eslint-plugin-cypress";
 import importPlugin from "eslint-plugin-import";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
 import unicorn from "eslint-plugin-unicorn";
 import * as espree from "espree";
 import globals from "globals";
@@ -45,7 +44,6 @@ export default [
     plugins: {
       "@typescript-eslint": tseslint,
       import: importPlugin,
-      "simple-import-sort": simpleImportSort,
       unicorn: unicorn,
       cypress: cypress,
       prettier: prettier,
@@ -55,8 +53,6 @@ export default [
       ...tseslint.configs.recommended.rules, // TypeScript plugin recommended rules
 
       // Import Sorting
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
       "import/first": "error",
       "import/newline-after-import": "error",
       "import/namespace": ["error", { allowComputed: true }],

@@ -13,11 +13,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": true,
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/nature-help",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -32,12 +35,17 @@
             "scripts": []
           },
           "configurations": {
+            "uk": {
+              "localize": [
+                "uk"
+              ]
+            },
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1.5mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -63,6 +71,9 @@
             },
             "development": {
               "buildTarget": "nature-help:build:development"
+            },
+            "uk": {
+              "buildTarget": "nature-help:build:production,uk"          
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +89,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
@@ -90,6 +102,12 @@
             ],
             "scripts": []
           }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "uk": "src/locale/messages.uk.xlf"
         }
       }
     }
