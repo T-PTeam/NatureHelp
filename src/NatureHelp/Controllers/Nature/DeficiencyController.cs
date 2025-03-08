@@ -22,9 +22,9 @@ public class DeficiencyController : Controller
     /// <returns></returns>
     [AllowAnonymous]
     [HttpGet("water")]
-    public async Task<IActionResult> WaterList()
+    public async Task<IActionResult> WaterList([FromQuery] int scrollCount)
     {
-        return Ok(await _deficiencyService.GetWaterDeficiencyListAsync());
+        return Ok(await _deficiencyService.GetWaterDeficiencyListAsync(scrollCount));
     }
 
     /// <summary>
@@ -33,9 +33,9 @@ public class DeficiencyController : Controller
     /// <returns></returns>
     [AllowAnonymous]
     [HttpGet("soil")]
-    public async Task<IActionResult> SoilList()
+    public async Task<IActionResult> SoilList([FromQuery] int scrollCount)
     {
-        return Ok(await _deficiencyService.GetSoilDeficiencyListAsync());
+        return Ok(await _deficiencyService.GetSoilDeficiencyListAsync(scrollCount));
     }
 
     /// <summary>

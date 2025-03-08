@@ -8,6 +8,7 @@ import { SharedModule } from '@/shared/shared.module';
 
 import { SoilDeficiencyDetail } from './components/soil-deficiency-details/soil-deficiency-details.component';
 import { SoilDeficiencyList } from './components/soil-deficiency-list/soil-deficiency-list.component';
+import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { SoilDeficiencyList } from './components/soil-deficiency-list/soil-defic
     BrowserModule,
     FormsModule,
     SharedModule,
-    MatModule
+    MatModule,
+    InfiniteScrollDirective
   ],
   declarations: [
     SoilDeficiencyDetail,

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { SoilAPIService } from '@/modules/soil-deficiency/services/soil-api.service';
+import { withLatestFrom } from 'rxjs';
 
 @Component({
   selector: 'n-soil-deficiencys-deficiencies',
@@ -11,6 +12,9 @@ import { SoilAPIService } from '@/modules/soil-deficiency/services/soil-api.serv
 })
 export class SoilDeficiencyList {
   public search: string = "";
+  public scrollCheckDisabled: boolean = false;
+
+  private listScrollCount = 0;
 
   constructor(
     public soilAPIService: SoilAPIService,
@@ -24,6 +28,17 @@ export class SoilDeficiencyList {
     } else {
       this.router.navigate([`soil/add`]);
     }
+  }
+
+  onScroll(){
+    this.listScrollCount++;
+    this.soilAPIService.loadSoilDeficiencies(this.listScrollCount); 
+
+    this.soilAPIService.deficiencies$.pipe(
+      withLatestFrom(this.soilAPIService.totalCount$),
+    ).subscribe(([deficiencies, totalCount]) => {
+      this.scrollCheckDisabled = totalCount <= deficiencies.length;
+    }); 
   }
 
   public goToWater(){

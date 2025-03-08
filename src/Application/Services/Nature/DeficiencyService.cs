@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.Services.Nature;
 using Domain.Models.Nature;
 using Infrastructure.Interfaces;
+using Shared.Dtos;
 
 namespace Application.Services.Nature;
 public class DeficiencyService : IDeficiencyService
@@ -13,9 +14,36 @@ public class DeficiencyService : IDeficiencyService
         _waterRepository = waterRepository;
         _soilRepository = soilRepository;
     }
-    public async Task<IEnumerable<WaterDeficiency>> GetWaterDeficiencyListAsync() => await _waterRepository.GetAllAsync();
 
-    public async Task<IEnumerable<SoilDeficiency>> GetSoilDeficiencyListAsync() => await _soilRepository.GetAllAsync();
+    public async Task<ListData<WaterDeficiency>> GetWaterDeficiencyListAsync(int scrollCount)
+    {
+        var originalData = await _waterRepository.GetAllAsync();
+
+        var totalCount = await _waterRepository.GetTotalCount();
+
+        var result = new ListData<WaterDeficiency>()
+        {
+            List = originalData.Skip(scrollCount * 20).Take(20).ToList(),
+            TotalCount = totalCount,
+        };
+
+        return result;
+    }
+
+    public async Task<ListData<SoilDeficiency>> GetSoilDeficiencyListAsync(int scrollCount)
+    {
+        var originalData = await _soilRepository.GetAllAsync();
+
+        var totalCount = await _soilRepository.GetTotalCount();
+
+        var result = new ListData<SoilDeficiency>()
+        {
+            List = originalData.Skip(scrollCount * 20).Take(20).ToList(),
+            TotalCount = totalCount,
+        };
+
+        return result;
+    }
 
     public async Task<WaterDeficiency> GetWaterDeficiencyAsync(Guid id)
     {
