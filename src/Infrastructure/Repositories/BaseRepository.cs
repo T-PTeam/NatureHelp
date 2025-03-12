@@ -2,6 +2,7 @@
 using Domain.Models;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace Infrastructure.Repositories;
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
@@ -56,6 +57,14 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
             context.Set<T>().UpdateRange(list);
             await context.SaveChangesAsync();
             return true;
+        }
+    }
+
+    public virtual async Task<int> GetTotalCount()
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            return await context.Set<T>().CountAsync();
         }
     }
 

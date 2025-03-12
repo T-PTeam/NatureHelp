@@ -1,6 +1,6 @@
-import { LoadingService } from '@/shared/services/loading.service';
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+
+import { LoadingService } from '@/shared/services/loading.service';
 
 @Component({
   selector: 'n-main-container',

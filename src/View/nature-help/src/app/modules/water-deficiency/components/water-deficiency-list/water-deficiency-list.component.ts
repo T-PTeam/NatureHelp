@@ -1,7 +1,9 @@
-import { WaterAPIService } from '@/modules/water-deficiency/services/waterAPI.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IWaterDeficiency } from '../../models/IWaterDeficiency';
+
+import { WaterAPIService } from '@/modules/water-deficiency/services/water-api.service';
+
+import { withLatestFrom } from 'rxjs';
 
 @Component({
   selector: 'n-water-deficiencys-deficiencies',
@@ -10,13 +12,15 @@ import { IWaterDeficiency } from '../../models/IWaterDeficiency';
   standalone: false,
 })
 export class WaterDeficiencyList {
-  public deficiencies: IWaterDeficiency[] = [];
   public search: string = "";
+  public scrollCheckDisabled: boolean = false;
+
+  private listScrollCount = 0;
 
   constructor(
     public waterAPIService: WaterAPIService,
     private router: Router,
-  ) {}
+  ) { }
 
   public navigateToDetail(id?: string){
     if (id) {
@@ -24,6 +28,17 @@ export class WaterDeficiencyList {
     } else {
       this.router.navigate(['water/add']);
     }
+  }
+
+  onScroll(){
+    this.listScrollCount++;
+    this.waterAPIService.loadWaterDeficiencies(this.listScrollCount); 
+
+    this.waterAPIService.deficiencies$.pipe(
+      withLatestFrom(this.waterAPIService.totalCount$),
+    ).subscribe(([deficiencies, totalCount]) => {
+      this.scrollCheckDisabled = totalCount <= deficiencies.length;
+    }); 
   }
 
   public goToSoil(){

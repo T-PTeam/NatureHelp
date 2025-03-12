@@ -1,3 +1,36 @@
-<p>
-  labs-table works!
-</p>
+<div class="header">
+  <h2>Laboratories</h2>
+  <input type="search" placeholder="Search for laboratories..." [(ngModel)]="search">
+  <button (click)="navigateToDetail()" class="action-btn" id="add-btn"><i class="material-icons">add</i></button>
+</div>
+
+<div class="list">
+  <table class="table">
+    <thead class="table-header">
+      <tr>
+        <th>Title</th>
+        <th>Location</th>
+        <th>Researches number</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="table-body">
+      <tr *ngFor="let laboratory of labsAPI.labs$ | async">
+        <td>{{ laboratory.title }}</td>
+        <td>{{ laboratory.location.country }}, {{ laboratory.location.city }}</td>
+        <td>{{ laboratory.researchersCount }}</td>
+        <td class="btn-ceil">
+          <button class="action-btn" id="map-focus-btn">
+            <i class="fa fa-crosshairs"></i>
+          </button>
+        </td>
+        <td class="btn-ceil">
+          <button (click)="navigateToDetail(laboratory.id)" class="action-btn" id="edit-btn">
+            <i class="fa fa-edit"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

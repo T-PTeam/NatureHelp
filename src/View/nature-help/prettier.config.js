@@ -11,7 +11,9 @@ const config = {
   arrowParens: "always",
   proseWrap: "preserve",
   endOfLine: "lf",
-  singleAttributePerLine: true
+  singleAttributePerLine: true,
+  plugins: [tailwindPlugin],
+  formatOnSave: true
 };
 
 export default config;

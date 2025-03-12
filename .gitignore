@@ -405,3 +405,13 @@ src/NatureHelp/ClientApp/nature-help/typings/
 # System files
 .DS_Store
 Thumbs.db
+
+# TypeScript info files
+*.tsbuildinfo
+
+# Environment configuration files
+.env
+
+# Prettier, ESLint, Husky configs should be included (don't ignore them)
+!.eslintrc.js
+!.prettierrc

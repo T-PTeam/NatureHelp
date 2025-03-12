@@ -1,8 +1,10 @@
 .header {
-  margin-top: 16px;
+  height: 60px;
+  margin: 16px 8px 0px 0px;
+  padding: 0 20px;
+  box-sizing: border-box;
   background-color: #582F0E;
   border-radius: 8px 8px 0px 0px;
-  margin-right: 16px;
 }
 
 .header h2 {
@@ -18,58 +20,10 @@
   font-size: 18px;
 }
 
-.list {
-  margin-right: 16px;
-}
-
 .header input {
   float: inline-end;
-  margin: 15px;
+  margin: 15px 0px;
   font-size: 18px;
-}
-
-.list .table {
-  border: 3px solid #582F0E;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.list .table * {
-  border: 1px solid #582F0E;
-  padding: 5px;
-}
-
-.list .table thead {
-  border: 2px solid #582F0E;
-}
-
-.list .table .btn-ceil * {
-  border: none;
-}
-
-.list .table .action-btn {
-  color: #001233;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-tr {
-  color: #2b1300;
-}
-
-tr th {
-  font-size: 12px;
-}
-
-tr td {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#add-btn {
-  border: 1px solid black;
-  background-color: white;
-  color: #582F0E;
 }
 
 #map-focus-btn {
@@ -79,12 +33,81 @@ tr td {
   font-size: 16px;
 }
 
+#add-btn {
+  border: 1px solid black;
+  background-color: white;
+  color: #0058af;
+}
+
 #edit-btn {
   border: 1px solid black;
   background-color: rgb(254, 254, 75);
 }
 
-#remove-btn{
-  border: 1px solid black;
-  background-color: rgb(255, 65, 65);
+.search-results {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+}
+
+.item {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.grid-header, .grid-row {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+  text-align: center;
+  align-items: center;
+}
+
+.grid-header {
+  font-weight: bold;
+  background-color: #f4f4f4;
+  padding: 10px 0;  
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #888;
+}
+
+.grid-body {
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden; 
+}
+
+.grid-row {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.grid-header div, .grid-row div {
+  padding: 8px 5px; 
+  border-right: 1px solid #bbb;
+  word-wrap: break-word; 
+  overflow-wrap: anywhere; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.grid-header div:last-child, .grid-row div:last-child {
+  border-right: none;
+}
+
+
+.grid-body::-webkit-scrollbar {
+  width: 8px;
 }

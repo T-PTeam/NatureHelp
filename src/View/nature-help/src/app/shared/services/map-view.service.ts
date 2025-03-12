@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { WaterAPIService } from '../../modules/water-deficiency/services/waterAPI.service';
-import { SoilAPIService } from '../../modules/soil-deficiency/services/soilAPI.service';
-import L, { LatLng, popup } from 'leaflet';
-import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
-import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
-import { IDeficiency } from '@/models/IDeficiency';
-import { ICoordinates } from '@/models/ICoordinates';
+import L from 'leaflet';
 import { combineLatest, map } from 'rxjs';
+
+import { ICoordinates } from '@/models/ICoordinates';
+import { IDeficiency } from '@/models/IDeficiency';
 import { ILaboratory } from '@/modules/laboratories/models/ILaboratory';
+import { ISoilDeficiency } from '@/modules/soil-deficiency/models/ISoilDeficiency';
+import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
+
+import { SoilAPIService } from '../../modules/soil-deficiency/services/soil-api.service';
+import { WaterAPIService } from '../../modules/water-deficiency/services/water-api.service';
+
 @Injectable({
   providedIn: 'root'
 })

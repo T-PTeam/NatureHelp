@@ -1,5 +1,6 @@
-import { EDangerState } from '@/models/enums';
 import { Pipe, PipeTransform } from '@angular/core';
+
+import { EDangerState } from '@/models/enums';
 
 @Pipe({
   name: 'enumToString',

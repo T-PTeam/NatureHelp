@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MapComponent } from './components/main-map/main-map.component';
-import { FilterPipe } from './pipes/filter.pipe';
-import { EnumToStringPipe } from './pipes/enum-to-string.pipe';
-import { LoadingService } from './services/loading.service';
-import { MatModule } from '@/mat.module';
-import { AuthDialogComponent } from './components/dialogs/login-dialog/auth-dialog.component';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatModule } from '@/mat.module';
+
+import { AuthDialogComponent } from './components/dialogs/login-dialog/auth-dialog.component';
+import { MapComponent } from './components/main-map/main-map.component';
+import { EnumToStringPipe } from './pipes/enum-to-string.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { LoadingService } from './services/loading.service';
 
 @NgModule({
   imports: [

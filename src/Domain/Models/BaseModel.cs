@@ -5,5 +5,5 @@ public class BaseModel
 
     public Guid CreatedBy { get; set; }
 
-    public DateTime CreatedOn { get; set; }
+    public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 }

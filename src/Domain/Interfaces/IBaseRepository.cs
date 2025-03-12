@@ -7,6 +7,7 @@
         Task<T> AddAsync(T entity);
         Task<T> UpdateAsync(T entity);
         Task<bool> UpdateRangeAsync(IEnumerable<T> list);
+        Task<int> GetTotalCount();
         Task SaveChangesAsync();
     }
 }

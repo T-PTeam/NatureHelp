@@ -1,14 +1,18 @@
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, map, Observable, shareReplay, Subscription, tap, throwError } from 'rxjs';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from 'rxjs';
+
 import { IWaterDeficiency } from '@/modules/water-deficiency/models/IWaterDeficiency';
 import { LoadingService } from '@/shared/services/loading.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { IListData } from '@/shared/models/IListData';
 
 @Injectable()
 export class WaterAPIService {
-  private subject = new BehaviorSubject<IWaterDeficiency[]>([]);
-  public deficiencies$: Observable<IWaterDeficiency[]> = this.subject.asObservable();
+  private listSubject = new BehaviorSubject<IWaterDeficiency[]>([]);
+  private totalCountSubject = new BehaviorSubject<number>(0);
+  public deficiencies$: Observable<IWaterDeficiency[]> = this.listSubject.asObservable();
+  public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
   private watersUrl = 'https://localhost:7077/api/deficiency/water/';
 
   httpOptions = {
@@ -20,18 +24,22 @@ export class WaterAPIService {
     private loading: LoadingService,
     private notify: MatSnackBar
   ) {
-      this.loadAllWaterDeficiencies();
+      this.loadWaterDeficiencies(0);
     }
 
-  public loadAllWaterDeficiencies() {
-    const loadCourses$ = this.http.get<IWaterDeficiency[]>(this.watersUrl)
+  public loadWaterDeficiencies(scrollCount: number) {
+    const loadCourses$ = this.http.get<IListData<IWaterDeficiency>>(`${this.watersUrl}?scrollCount=${scrollCount}`)
       .pipe(
-        tap(deficiencies => this.subject.next(deficiencies)),
+        tap(listData => {
+          this.listSubject.next([...this.listSubject.getValue(), ...listData.list]);
+          this.totalCountSubject.next(listData.totalCount);
+        }),
         catchError(err => {
           const message = "Could not load water deficiencies";
 
+          console.error(err);
           this.notify.open(message, 'Close', { duration: 2000 });
-          return err;
+          return of({ list: [], totalCount: 0 });
         }),
         shareReplay()
     );
@@ -46,13 +54,13 @@ export class WaterAPIService {
     return this.http.post<IWaterDeficiency>(this.watersUrl, JSON.stringify(value), this.httpOptions);
   }
 
-  public updateWaterDeficiency(
-    courseId: string,
+  public updateWaterDeficiencyById( // TODO
+    id: string,
     changes: Partial<IWaterDeficiency>
   ): Observable<any> {
-    const courses = this.subject.getValue();
+    const courses = this.listSubject.getValue();
 
-    const index = courses.findIndex(course => course.id == courseId);
+    const index = courses.findIndex(course => course.id == id);
 
     const newCourse: IWaterDeficiency = {
       ...courses[index],
@@ -63,10 +71,10 @@ export class WaterAPIService {
 
     newCourses[index] = newCourse;
 
-    this.subject.next(newCourses);
+    this.listSubject.next(newCourses);
 
     return this.http
-      .put(`api/courses/${courseId}`, changes)
+      .put(`api/courses/${id}`, changes)
       .pipe(
         catchError(err => {
           const message = "Could not update water deficiency";

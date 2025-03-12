@@ -1,50 +1,54 @@
 <div class="header">
-  <h2>Deficiencies (Water)</h2>
+  <h2 i18n>Deficiencies (Water)</h2>
   <input type="search" placeholder="Search for deficiencies..." [(ngModel)]="search">
   <button (click)="navigateToDetail()" class="action-btn" id="add-btn"><i class="material-icons">add</i></button>
   <mat-slide-toggle
-      [checked]="false"
+      style="transform: rotate(180deg);"
+      [checked]="true"
       (change)="goToSoil()">
   </mat-slide-toggle>
 </div>
 
-<div class="list">
-  <table class="table">
-    <thead class="table-header">
-      <tr>
-        <th>Dissolved Oxygen</th>
-        <th>Ph</th>
-        <th>Lead Concentration</th>
-        <th>Nitrate Concentration</th>
-        <th>Chemical Ox. Demand</th>
-        <th>Creator</th>
-        <th>Responsible User</th>
-        <th>Danger State</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody class="table-body">
-      <tr *ngFor="let deficiency of waterAPIService.deficiencies$ | async">
-        <td>{{ deficiency.dissolvedOxygen }}</td>
-        <td>{{ deficiency.ph }}</td>
-        <td>{{ deficiency.leadConcentration }}</td>
-        <td>{{ deficiency.nitrateConcentration }}</td>
-        <td>{{ deficiency.chemicalOxygenDemand }}</td>
-        <td>{{ deficiency.creator.firstName }} {{ deficiency.creator.lastName }}</td>
-        <td>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</td>
-        <td>{{ deficiency.eDangerState | enumToString:'EDangerState' }}</td>
-        <td class="btn-ceil">
-          <button class="action-btn" id="map-focus-btn">
-            <i class="fa fa-crosshairs"></i>
-          </button>
-        </td>
-        <td class="btn-ceil">
-          <button (click)="navigateToDetail(deficiency.id)" class="action-btn" id="edit-btn">
-            <i class="fa fa-edit"></i>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="grid-container">
+  <div class="grid-header">
+    <div>Dissolved Oxygen</div>
+    <div>pH</div>
+    <div>Lead Concentration</div>
+    <div>Nitrate Concentration</div>
+    <div>Chemical Ox. Demand</div>
+    <div>Creator</div>
+    <div>Responsible User</div>
+    <div>Danger State</div>
+    <div>Map</div>
+    <div>Edit</div>
+  </div>
+  <div 
+    class="grid-body" 
+    infiniteScroll 
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="500"
+    [infiniteScrollDisabled]="scrollCheckDisabled"
+    (scrolled)="onScroll()"
+  >
+    <div *ngFor="let deficiency of waterAPIService.deficiencies$ | async" class="grid-row">
+      <div>{{ deficiency.dissolvedOxygen }}</div>
+      <div>{{ deficiency.ph }}</div>
+      <div>{{ deficiency.leadConcentration }}</div>
+      <div>{{ deficiency.nitrateConcentration }}</div>
+      <div>{{ deficiency.chemicalOxygenDemand }}</div>
+      <div>{{ deficiency.creator.firstName }} {{ deficiency.creator.lastName }}</div>
+      <div>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</div>
+      <div>{{ deficiency.eDangerState | enumToString:'EDangerState' }}</div>
+      <div>
+        <button id="map-focus-btn" class="action-btn">
+          <i class="fa fa-crosshairs"></i>
+        </button>
+      </div>
+      <div>
+        <button id="edit-btn" (click)="navigateToDetail(deficiency.id)" class="action-btn">
+          <i class="fa fa-edit"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

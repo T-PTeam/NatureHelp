@@ -1,7 +1,7 @@
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRouteSnapshot, CanActivate } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +9,11 @@ import { Injectable } from '@angular/core';
 export class RoleGuard implements CanActivate {
   constructor(private notify: MatSnackBar) {}
   
-  canActivate (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-    const includeRoles = route.data['includeRoles'];
-    const excludeRoles = route.data['excludeRoles'];
+  canActivate (route: ActivatedRouteSnapshot): Observable<boolean> | boolean {
+    const includeRoles = route.data['includeRoles'] || [];
+    const excludeRoles = route.data['excludeRoles'] || [];
     
-    const userRole = localStorage.getItem('role');
-    
-    console.log("USERROLE: ", userRole)
+    const userRole = localStorage.getItem('role')?.toLowerCase();
     if (userRole)
     {
       if (userRole === 'superadmin') return true;

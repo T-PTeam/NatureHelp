@@ -11,11 +11,12 @@
 }
 
 .main-container-content .left-side {
-  height: 650px;
+  height: calc(100vh - 80px);
   grid-column: 1;
 }
 
 .main-container-content .right-side {
+  height: calc(100vh - 80px);
   grid-column: 2;
 }
 
