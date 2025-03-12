@@ -10,77 +10,77 @@ import angular from "eslint-plugin-angular";
 
 /** @type {import('eslint').FlatConfig[]} */
 export default [
-  {
-    files: ["**/I*.ts"],
-    rules: {
-      "unicorn/filename-case": "off",
+    {
+        files: ["**/I*.ts"],
+        rules: {
+            "unicorn/filename-case": "off",
+        },
     },
-  },
-  {
-    ignores: [
-      ".angular/cache/**",
-      "vite/deps/**",
-      "node_modules/**",
-      "dist/**",
-      "build/**",
-      
-      "src/**/*.cy.ts",
-      "cypress/**/*.ts",
-      "*.config.{js,mjs,cjs,ts}",
-    ],
-    files: ["**/*.{js,ts}"],
-    languageOptions: {
-      globals: {
-        ...globals.browser, // Spread browser globals from `globals` package
-        module: "readonly", // Allow `module` to be used without errors
-      },
-      parser: tsParser, // Use TypeScript parser
-      parserOptions: {
-        ecmaVersion: "latest", // Use the latest ECMAScript version
-        sourceType: "module", // Use modules (ESM)
-        project: "./tsconfig.json", // Path to your TypeScript config
-      },
-    },
-    plugins: {
-      "@typescript-eslint": tseslint,
-      import: importPlugin,
-      unicorn: unicorn,
-      cypress: cypress,
-      prettier: prettier,
-      angular: angular,
-    },
-    rules: {
-      ...tseslint.configs.recommended.rules, // TypeScript plugin recommended rules
+    {
+        ignores: [
+            ".angular/cache/**",
+            "vite/deps/**",
+            "node_modules/**",
+            "dist/**",
+            "build/**",
 
-      // Import Sorting
-      "import/first": "error",
-      "import/newline-after-import": "error",
-      "import/namespace": ["error", { allowComputed: true }],
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": ["error"],
+            "src/**/*.cy.ts",
+            "cypress/**/*.ts",
+            "*.config.{js,mjs,cjs,ts}",
+        ],
+        files: ["**/*.{js,ts}"],
+        languageOptions: {
+            globals: {
+                ...globals.browser, // Spread browser globals from `globals` package
+                module: "readonly", // Allow `module` to be used without errors
+            },
+            parser: tsParser, // Use TypeScript parser
+            parserOptions: {
+                ecmaVersion: "latest", // Use the latest ECMAScript version
+                sourceType: "module", // Use modules (ESM)
+                project: "./tsconfig.json", // Path to your TypeScript config
+            },
+        },
+        plugins: {
+            "@typescript-eslint": tseslint,
+            import: importPlugin,
+            unicorn: unicorn,
+            cypress: cypress,
+            prettier: prettier,
+            angular: angular,
+        },
+        rules: {
+            ...tseslint.configs.recommended.rules, // TypeScript plugin recommended rules
 
-      "unicorn/no-empty-file": "off", // Disable empty file rule
-      "unicorn/filename-case": "off",
+            // Import Sorting
+            "import/first": "error",
+            "import/newline-after-import": "error",
+            "import/namespace": ["error", { allowComputed: true }],
+            "@typescript-eslint/no-explicit-any": "off",
+            "@typescript-eslint/no-unused-vars": ["error"],
 
-      // Cypress Rules
-      "cypress/no-unnecessary-waiting": "warn", // Warn about unnecessary waiting
+            "unicorn/no-empty-file": "off", // Disable empty file rule
+            "unicorn/filename-case": "off",
+
+            // Cypress Rules
+            "cypress/no-unnecessary-waiting": "warn", // Warn about unnecessary waiting
+        },
     },
-  },
-  {
-    files: ["tailwind.config.js"],
-    languageOptions: {
-      parser: espree, // Use the default JavaScript parser for non-TypeScript files
+    {
+        files: ["tailwind.config.js"],
+        languageOptions: {
+            parser: espree, // Use the default JavaScript parser for non-TypeScript files
+        },
+        rules: {}, // Tailwind config specific rules if any
     },
-    rules: {}, // Tailwind config specific rules if any
-  },
-  {
-    files: ["*rc.ts", "*.config.ts"], // Override for specific TypeScript files
-    rules: {
-      "unicorn/prefer-module": "off", // Turn off the prefer-module rule
-      "unicorn/filename-case": "off", // Turn off the filename-case rule
+    {
+        files: ["*rc.ts", "*.config.ts"], // Override for specific TypeScript files
+        rules: {
+            "unicorn/prefer-module": "off", // Turn off the prefer-module rule
+            "unicorn/filename-case": "off", // Turn off the filename-case rule
+        },
     },
-  },
-  {
-    ignores: ["lint-staged.config.js", "postcss.config.js"],
-  },
+    {
+        ignores: ["lint-staged.config.js", "postcss.config.js"],
+    },
 ];

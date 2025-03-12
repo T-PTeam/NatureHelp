@@ -1,4 +1,4 @@
 export interface IListData<T> {
-    list: T[],
-    totalCount: number,
+    list: T[];
+    totalCount: number;
 }

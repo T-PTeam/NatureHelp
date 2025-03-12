@@ -1,84 +1,168 @@
-<mat-card *ngIf="details" class="soil-deficiency-card">
+<mat-card
+    *ngIf="details"
+    class="soil-deficiency-card">
     <mat-card-title>Soil Deficiency</mat-card-title>
     <div class="form-container">
-      <mat-form-field>
-        <mat-label>Title</mat-label>
-        <input matInput [(ngModel)]="details.title" name="title" />
-      </mat-form-field>
-      <mat-form-field style="grid-column: 2; grid-row: 1/3;">
-        <mat-label>Description</mat-label>
-        <textarea rows="5" matInput [(ngModel)]="details.description" name="description"></textarea>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Type</mat-label>
-        <mat-select [(ngModel)]="details.type" name="type">
-          <mat-option *ngFor="let type of deficiencyTypes" [value]="type">{{ type }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>ph</mat-label>
-        <input matInput type="number" [(ngModel)]="details.ph" name="ph" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Organic Matter</mat-label>
-        <input matInput type="number" [(ngModel)]="details.organicMatter" name="organicMatter" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Lead Concentration</mat-label>
-        <input matInput type="number" [(ngModel)]="details.leadConcentration" name="leadConcentration" />
-      </mat-form-field><mat-form-field>
-        <mat-label>Cadmium Concentration</mat-label>
-        <input matInput type="number" [(ngModel)]="details.cadmiumConcentration" name="cadmiumConcentration" />
-      </mat-form-field><mat-form-field>
-        <mat-label>MercuryConcentration</mat-label>
-        <input matInput type="number" [(ngModel)]="details.mercuryConcentration" name="mercuryConcentration" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Pesticides Content</mat-label>
-        <input matInput type="number" [(ngModel)]="details.pesticidesContent" name="pesticidesContent" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Nitrates Concentration</mat-label>
-        <input matInput type="number" [(ngModel)]="details.nitratesConcentration" name="nitratesConcentration" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Heavy Metals Concentration</mat-label>
-        <input matInput type="number" [(ngModel)]="details.heavyMetalsConcentration" name="heavyMetalsConcentration" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Electrical Conductivity</mat-label>
-        <input matInput type="number" [(ngModel)]="details.electricalConductivity" name="electricalConductivity" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Toxicity Level</mat-label>
-        <input matInput type="string" [(ngModel)]="details.toxicityLevel" name="toxicityLevel" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Microbial Activity</mat-label>
-        <input matInput type="number" [(ngModel)]="details.microbialActivity" name="microbialActivity" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Analysis Date</mat-label>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="details.analysisDate" name="analysisDate">
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Creator</mat-label>
-        <input matInput type="IUser" [(ngModel)]="details.creator" name="creator" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Responsible User</mat-label>
-        <input matInput type="IUser" [(ngModel)]="details.responsibleUser" name="responsibleUser" />
-      </mat-form-field>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input
+                matInput
+                [(ngModel)]="details.title"
+                name="title" />
+        </mat-form-field>
+        <mat-form-field style="grid-column: 2; grid-row: 1/3">
+            <mat-label>Description</mat-label>
+            <textarea
+                rows="5"
+                matInput
+                [(ngModel)]="details.description"
+                name="description"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Type</mat-label>
+            <mat-select
+                [(ngModel)]="details.type"
+                name="type">
+                <mat-option
+                    *ngFor="let type of deficiencyTypes"
+                    [value]="type"
+                    >{{ type }}</mat-option
+                >
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>ph</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.ph"
+                name="ph" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Organic Matter</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.organicMatter"
+                name="organicMatter" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Lead Concentration</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.leadConcentration"
+                name="leadConcentration" /> </mat-form-field
+        ><mat-form-field>
+            <mat-label>Cadmium Concentration</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.cadmiumConcentration"
+                name="cadmiumConcentration" /> </mat-form-field
+        ><mat-form-field>
+            <mat-label>MercuryConcentration</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.mercuryConcentration"
+                name="mercuryConcentration" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Pesticides Content</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.pesticidesContent"
+                name="pesticidesContent" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Nitrates Concentration</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.nitratesConcentration"
+                name="nitratesConcentration" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Heavy Metals Concentration</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.heavyMetalsConcentration"
+                name="heavyMetalsConcentration" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Electrical Conductivity</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.electricalConductivity"
+                name="electricalConductivity" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Toxicity Level</mat-label>
+            <input
+                matInput
+                type="string"
+                [(ngModel)]="details.toxicityLevel"
+                name="toxicityLevel" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Microbial Activity</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.microbialActivity"
+                name="microbialActivity" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Analysis Date</mat-label>
+            <input
+                matInput
+                [matDatepicker]="picker"
+                [(ngModel)]="details.analysisDate"
+                name="analysisDate" />
+            <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
 
-      <div class="button-group-wrapper">
-        <div class="button-group">
-          <button mat-flat-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
-          <button mat-flat-button color="primary" type="submit" (click)="onCancel()">Cancel</button>
+        <mat-form-field>
+            <mat-label>Creator</mat-label>
+            <input
+                matInput
+                type="IUser"
+                [(ngModel)]="details.creator"
+                name="creator" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Responsible User</mat-label>
+            <input
+                matInput
+                type="IUser"
+                [(ngModel)]="details.responsibleUser"
+                name="responsibleUser" />
+        </mat-form-field>
+
+        <div class="button-group-wrapper">
+            <div class="button-group">
+                <button
+                    mat-flat-button
+                    color="primary"
+                    type="submit"
+                    (click)="onSubmit()">
+                    Submit
+                </button>
+                <button
+                    mat-flat-button
+                    color="primary"
+                    type="submit"
+                    (click)="onCancel()">
+                    Cancel
+                </button>
+            </div>
         </div>
-      </div>
     </div>
-  </mat-card>
-  
+</mat-card>

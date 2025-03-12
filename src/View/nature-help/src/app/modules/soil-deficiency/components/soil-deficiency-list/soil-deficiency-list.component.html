@@ -1,54 +1,68 @@
 <div class="header">
-  <h2>Deficiencies (Soil)</h2>
-  <input type="search" placeholder="Search for deficiencies..." [(ngModel)]="search">
-  <button (click)="navigateToDetail()" class="action-btn" id="add-btn"><i class="material-icons">add</i></button>
-  <mat-slide-toggle
-      style="transform: rotate(180deg);"
-      [checked]="false"
-      (change)="goToWater()">
-  </mat-slide-toggle>
+    <h2>Deficiencies (Soil)</h2>
+    <input
+        type="search"
+        placeholder="Search for deficiencies..."
+        [(ngModel)]="search" />
+    <button
+        (click)="navigateToDetail()"
+        class="action-btn"
+        id="add-btn">
+        <i class="material-icons">add</i>
+    </button>
+    <mat-slide-toggle
+        style="transform: rotate(180deg)"
+        [checked]="false"
+        (change)="goToWater()">
+    </mat-slide-toggle>
 </div>
 
 <div class="grid-container">
-  <div class="grid-header">
-    <div>Lead Concentration</div>
-    <div>pH</div>
-    <div>Cadmium Concentration</div>
-    <div>Pesticides Content</div>
-    <div>Nitrates Concentration</div>
-    <div>Creator</div>
-    <div>Responsible User</div>
-    <div>Danger State</div>
-    <div>Map</div>
-    <div>Edit</div>
-  </div>
-  <div 
-    class="grid-body" 
-    infiniteScroll 
-    [infiniteScrollDistance]="2"
-    [infiniteScrollThrottle]="500"
-    [infiniteScrollDisabled]="scrollCheckDisabled"
-    (scrolled)="onScroll()"
-  >
-    <div *ngFor="let deficiency of soilAPIService.deficiencies$ | async" class="grid-row">
-      <div>{{ deficiency.leadConcentration }}</div>
-      <div>{{ deficiency.ph }}</div>
-      <div>{{ deficiency.cadmiumConcentration }}</div>
-      <div>{{ deficiency.pesticidesContent }}</div>
-      <div>{{ deficiency.nitratesConcentration }}</div>
-      <div>{{ deficiency.creator.firstName }} {{ deficiency.creator.lastName }}</div>
-      <div>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</div>
-      <div>{{ deficiency.eDangerState | enumToString:'EDangerState' }}</div>
-      <div>
-        <button id="map-focus-btn" class="action-btn">
-          <i class="fa fa-crosshairs"></i>
-        </button>
-      </div>
-      <div>
-        <button id="edit-btn" (click)="navigateToDetail(deficiency.id)" class="action-btn">
-          <i class="fa fa-edit"></i>
-        </button>
-      </div>
+    <div class="grid-header">
+        <div>Lead Concentration</div>
+        <div>pH</div>
+        <div>Cadmium Concentration</div>
+        <div>Pesticides Content</div>
+        <div>Nitrates Concentration</div>
+        <div>Creator</div>
+        <div>Responsible User</div>
+        <div>Danger State</div>
+        <div>Map</div>
+        <div>Edit</div>
     </div>
-  </div>
+    <div
+        class="grid-body"
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="500"
+        [infiniteScrollDisabled]="scrollCheckDisabled"
+        (scrolled)="onScroll()">
+        <div
+            *ngFor="let deficiency of soilAPIService.deficiencies$ | async"
+            class="grid-row">
+            <div>{{ deficiency.leadConcentration }}</div>
+            <div>{{ deficiency.ph }}</div>
+            <div>{{ deficiency.cadmiumConcentration }}</div>
+            <div>{{ deficiency.pesticidesContent }}</div>
+            <div>{{ deficiency.nitratesConcentration }}</div>
+            <div>{{ deficiency.creator.firstName }} {{ deficiency.creator.lastName }}</div>
+            <div>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</div>
+            <div>{{ deficiency.eDangerState | enumToString: "EDangerState" }}</div>
+            <div>
+                <button
+                    id="map-focus-btn"
+                    class="action-btn">
+                    <i class="fa fa-crosshairs"></i>
+                </button>
+            </div>
+            <div>
+                <button
+                    id="edit-btn"
+                    (click)="navigateToDetail(deficiency.id)"
+                    class="action-btn">
+                    <i class="fa fa-edit"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>

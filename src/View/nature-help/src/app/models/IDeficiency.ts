@@ -1,4 +1,4 @@
-import { EDangerState,EDeficiencyType } from "./enums";
+import { EDangerState, EDeficiencyType } from "./enums";
 import { IBaseEntity } from "./IBaseEntity";
 import { ILocation } from "./ILocation";
 import { IUser } from "./IUser";
@@ -11,4 +11,4 @@ export interface IDeficiency extends IBaseEntity {
     responsibleUser?: IUser;
     location: ILocation;
     eDangerState: EDangerState;
-  }
+}
