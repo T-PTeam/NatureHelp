@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
 
 import { withLatestFrom } from "rxjs";
+import { ReportAPIService } from "@/shared/services/report-api.service";
 
 @Component({
     selector: "n-water-deficiencys-deficiencies",
@@ -20,7 +21,12 @@ export class WaterDeficiencyList {
     constructor(
         public waterAPIService: WaterAPIService,
         private router: Router,
+        private reportAPIService: ReportAPIService
     ) {}
+
+    public downloadExcel() {
+        this.reportAPIService.downloadWaterDeficiencyExcelListFile();
+    }
 
     public navigateToDetail(id?: string) {
         if (id) {

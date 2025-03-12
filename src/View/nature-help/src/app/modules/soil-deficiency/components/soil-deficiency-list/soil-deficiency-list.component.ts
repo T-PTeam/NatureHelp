@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
 import { withLatestFrom } from "rxjs";
+import { ReportAPIService } from "@/shared/services/report-api.service";
 
 @Component({
     selector: "n-soil-deficiencys-deficiencies",
@@ -19,7 +20,12 @@ export class SoilDeficiencyList {
     constructor(
         public soilAPIService: SoilAPIService,
         private router: Router,
+        private reportAPIService: ReportAPIService
     ) {}
+
+    public downloadExcel() {
+        this.reportAPIService.downloadSoilDeficiencyExcelListFile();
+    }
 
     public navigateToDetail(id?: string) {
         if (id) {

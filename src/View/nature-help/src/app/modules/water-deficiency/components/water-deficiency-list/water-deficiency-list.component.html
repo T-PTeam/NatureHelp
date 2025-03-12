@@ -5,6 +5,12 @@
         placeholder="Search for deficiencies..."
         [(ngModel)]="search" />
     <button
+        (click)="downloadExcel()"
+        class="action-btn"
+        id="export-btn">
+        <i class="material-icons">insert_drive_file</i>
+    </button>
+    <button
         (click)="navigateToDetail()"
         class="action-btn"
         id="add-btn">
