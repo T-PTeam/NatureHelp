@@ -20,7 +20,7 @@ export class SoilDeficiencyList {
     constructor(
         public soilAPIService: SoilAPIService,
         private router: Router,
-        private reportAPIService: ReportAPIService
+        private reportAPIService: ReportAPIService,
     ) {}
 
     public downloadExcel() {

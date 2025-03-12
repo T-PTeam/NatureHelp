@@ -21,7 +21,7 @@ export class WaterDeficiencyList {
     constructor(
         public waterAPIService: WaterAPIService,
         private router: Router,
-        private reportAPIService: ReportAPIService
+        private reportAPIService: ReportAPIService,
     ) {}
 
     public downloadExcel() {
