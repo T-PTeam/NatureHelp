@@ -47,6 +47,7 @@ namespace NatureHelp
             services.AddScoped<ILaboratoryService, LaboratoryService>();
             services.AddScoped<IOrganizationService, OrganizationService>();
             services.AddScoped<IReportService, ReportService>();
+            services.AddScoped<IExcelExportService, ExcelExportService>();
 
             return services;
         }
