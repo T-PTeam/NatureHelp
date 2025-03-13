@@ -24,15 +24,14 @@ export class UserAPIService {
 
     private organizationUsersSubject = new BehaviorSubject<IUser[]>([]);
     $organizationUsers: Observable<IUser[]> = this.organizationUsersSubject.asObservable();
-    
+
     private totalCountSubject = new BehaviorSubject<number>(0);
     $totalCount: Observable<number> = this.totalCountSubject.asObservable();
 
     constructor(
         private http: HttpClient,
         private loading: LoadingService,
-        private notify: MatSnackBar
-
+        private notify: MatSnackBar,
     ) {
         this.isLoggedIn$ = this.$user.pipe(map((user) => !!user));
         this.isLoggedOut$ = this.$user.pipe(map((user) => !user));
@@ -65,12 +64,14 @@ export class UserAPIService {
             return;
         }
 
-        if (scrollCount === -1){
+        if (scrollCount === -1) {
             this.organizationUsersSubject.next([]);
         }
 
         const loadOrganizationUsers$ = this.http
-            .get<IListData<IUser>>(`${this.apiUrl}/organization-users?organizationId=${organizationId}&scrollCount=${scrollCount}`)
+            .get<
+                IListData<IUser>
+            >(`${this.apiUrl}/organization-users?organizationId=${organizationId}&scrollCount=${scrollCount}`)
             .pipe(
                 tap((listData) => {
                     this.organizationUsersSubject.next([...this.organizationUsersSubject.getValue(), ...listData.list]);
@@ -88,27 +89,26 @@ export class UserAPIService {
         this.loading.showLoaderUntilCompleted(loadOrganizationUsers$).subscribe();
     }
 
-    changeUsersRoles(changedUsersRoles: Map<string, number>){
+    changeUsersRoles(changedUsersRoles: Map<string, number>) {
         const payload = Object.fromEntries(changedUsersRoles);
 
-        console.log("changeUsersRoles changedUsersRoles", changedUsersRoles)
-        const updateOrganizationUsersRoles$ = this.http.put<boolean>(`${this.apiUrl}/users-roles`, payload)
-        .pipe(
+        console.log("changeUsersRoles changedUsersRoles", changedUsersRoles);
+        const updateOrganizationUsersRoles$ = this.http.put<boolean>(`${this.apiUrl}/users-roles`, payload).pipe(
             tap((updateResult) => {
                 const message = updateResult
                     ? "Users' roles were successfully changed!"
                     : "Error occured by the updating users' roles...";
 
-                this.notify.open(message, "Close", { duration: 2000 })
+                this.notify.open(message, "Close", { duration: 2000 });
                 this.loadOrganizationUsers(-1);
             }),
             shareReplay(),
-            catchError(err => {
-                this.notify.open("Error: " + err, "Close", { duration: 2000 })
-                this.loadOrganizationUsers(-1)
+            catchError((err) => {
+                this.notify.open("Error: " + err, "Close", { duration: 2000 });
+                this.loadOrganizationUsers(-1);
 
-                return of(false); 
-            })
+                return of(false);
+            }),
         );
 
         this.loading.showLoaderUntilCompleted(updateOrganizationUsersRoles$).subscribe();

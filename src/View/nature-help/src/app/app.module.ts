@@ -43,7 +43,7 @@ const UKRAINIAN_DATE_FORMATS = {
         MainModule,
         BrowserAnimationsModule,
         LabsModule,
-        OwneryModule
+        OwneryModule,
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent],
