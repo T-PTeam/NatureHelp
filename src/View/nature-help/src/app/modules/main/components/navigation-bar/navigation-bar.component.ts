@@ -3,7 +3,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 import { AuthDialogComponent } from "@/shared/components/dialogs/login-dialog/auth-dialog.component";
-import { UserService } from "@/shared/services/user.service";
+import { UserAPIService } from "@/shared/services/user-api.service";
 
 @Component({
     selector: "n-navigation-bar",
@@ -14,7 +14,7 @@ import { UserService } from "@/shared/services/user.service";
 export class NavigationBarComponent implements OnInit {
     constructor(
         private dialog: MatDialog,
-        public userService: UserService,
+        public userService: UserAPIService,
         private notify: MatSnackBar,
     ) {}
 

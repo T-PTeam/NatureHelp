@@ -19,6 +19,29 @@ public class UserController : Controller
     }
 
     /// <summary>
+    /// Get organization users
+    /// </summary>
+    /// <returns></returns>
+    [AllowAnonymous]
+    [HttpGet("organization-users")]
+    public async Task<IActionResult> GetOrganizationUsers([FromQuery] Guid organizationId, [FromQuery] int scrollCount)
+    {
+        return Ok(await _userService.GetOrganizationUsers(organizationId, scrollCount));
+
+    }
+
+    /// <summary>
+    /// Get organization users
+    /// </summary>
+    /// <returns></returns>
+    [AllowAnonymous]
+    [HttpPut("users-roles")]
+    public async Task<IActionResult> ChangeUsersRoles([FromBody] Dictionary<Guid, int> changedUsersRoles)
+    {
+        return Ok(await _userService.ChangeUsersRoles(changedUsersRoles));
+    }
+
+    /// <summary>
     /// Register user
     /// </summary>
     /// <returns></returns>
@@ -71,18 +94,6 @@ public class UserController : Controller
     public async Task<IActionResult> RefreshAccessTokenAsync([FromBody] string refreshToken)
     {
         return Ok(await _userService.RefreshAccessTokenAsync(refreshToken));
-    }
-
-    /// <summary>
-    /// Check token expiration and availability
-    /// </summary>
-    /// <param name="userId"></param>
-    /// <param name="role"></param>
-    /// <returns>Assigning role to user</returns>
-    [HttpGet("assign-role/{userId}")]
-    public async Task<IActionResult> AssignRoleToUserAsync([FromRoute] Guid userId, [FromQuery] ERole role)
-    {
-        return Ok(await _userService.AssignRoleToUserAsync(userId, role));
     }
 
     /// <summary>

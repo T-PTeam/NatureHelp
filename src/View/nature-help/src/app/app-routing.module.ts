@@ -11,6 +11,7 @@ import { WaterDeficiencyDetail } from "./modules/water-deficiency/components/wat
 import { WaterDeficiencyList } from "./modules/water-deficiency/components/water-deficiency-list/water-deficiency-list.component";
 import { UnauthorisedComponent } from "./shared/components/unauthorised/unauthorised.component";
 import { RoleGuard } from "./shared/guards/role.guard";
+import { OwnerPageComponent } from "./modules/owner/components/owner-page/owner-page.component";
 
 const routes: Routes = [
     { path: "", component: WaterDeficiencyList },
@@ -67,6 +68,13 @@ const routes: Routes = [
         component: ReportsTableComponent,
         canActivate: [RoleGuard],
         data: { includeRoles: ["manager", "owner"] },
+    },
+
+    {
+        path: "owner",
+        component: OwnerPageComponent,
+        canActivate: [RoleGuard],
+        data: { includeRoles: ["owner"] },
     },
 
     { path: "about", component: AboutComponent },

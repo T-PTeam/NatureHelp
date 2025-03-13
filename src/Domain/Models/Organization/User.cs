@@ -5,7 +5,7 @@ namespace Domain.Models.Organization;
 
 public class User : Person
 {
-    private ERole role = ERole.Guest;
+    private ERole role = ERole.Supervisor;
 
     public ERole Role { get => role; private set => role = value; }
     public string Email { get; set; } = null!;
