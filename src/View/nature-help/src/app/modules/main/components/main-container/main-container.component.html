@@ -1,20 +1,20 @@
 <n-navigation-bar class="main-container-header"></n-navigation-bar>
 
-<div *ngIf="loading.loading$ | async" class="blured-background"></div>
-<mat-progress-spinner 
-        *ngIf="loading.loading$ | async"
-        class="spinner-overlay"
-        mode="indeterminate">
+<div
+    *ngIf="loading.loading$ | async"
+    class="blured-background"></div>
+<mat-progress-spinner
+    *ngIf="loading.loading$ | async"
+    class="spinner-overlay"
+    mode="indeterminate">
 </mat-progress-spinner>
 
 <div class="main-container-content">
-  <div class="left-side">
-    <nat-map>
+    <div class="left-side">
+        <nat-map> </nat-map>
+    </div>
 
-    </nat-map>
-  </div>
-
-  <div class="right-side">
-    <router-outlet></router-outlet>
-  </div>
+    <div class="right-side">
+        <router-outlet></router-outlet>
+    </div>
 </div>

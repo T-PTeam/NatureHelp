@@ -1,7 +1,7 @@
 import { IDeficiency } from "@/models/IDeficiency";
 
 export interface ISoilDeficiency extends IDeficiency {
-    ph : number;
+    ph: number;
     organicMatter: number;
     leadConcentration: number;
     cadmiumConcentration: number;
@@ -13,5 +13,4 @@ export interface ISoilDeficiency extends IDeficiency {
     toxicityLevel: string;
     microbialActivity: number;
     analysisDate: Date;
-  }
-  
+}

@@ -1,29 +1,29 @@
 .water-deficiency-card {
-  text-align: center;
-  margin-top: 16px;
-  margin-right: 16px;
+    text-align: center;
+    margin-top: 16px;
+    margin-right: 16px;
 }
 
 .water-deficiency-card mat-card-title {
-  padding: 12px;
-  color: #002855;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  letter-spacing: 1px;
+    padding: 12px;
+    color: #002855;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    letter-spacing: 1px;
 }
 
 .form-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: repeat(6, 1fr); 
-  gap: 12px;
-  position: relative; 
-  padding: 0 12px 0 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 12px;
+    position: relative;
+    padding: 0 12px 0 12px;
 }
 
 .button-group-wrapper {
-  grid-column: 0; 
-  display: flex;
-  justify-content: center; 
-  align-items: flex-start;
-  padding-top: 8px;
+    grid-column: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 8px;
 }
