@@ -15,14 +15,14 @@ import { LabsAPIService } from "../../services/labs-api.service";
 export class LabDetailsComponent implements OnInit {
     public details: ILaboratory | null = null;
     detailsForm!: FormGroup;
-    
+
     constructor(
         private labsAPIService: LabsAPIService,
         private activatedRoute: ActivatedRoute,
         private router: Router,
         private mapViewService: MapViewService,
         private fb: FormBuilder,
-    ) { }
+    ) {}
 
     ngOnInit(): void {
         this.activatedRoute.params.subscribe((params) => {
@@ -30,7 +30,7 @@ export class LabDetailsComponent implements OnInit {
 
             if (!id) {
                 this.initializeForm();
-                this.details = this.detailsForm.value
+                this.details = this.detailsForm.value;
             } else {
                 this.labsAPIService.getLabById(id).subscribe((def) => {
                     this.initializeForm(def);
@@ -38,11 +38,10 @@ export class LabDetailsComponent implements OnInit {
                 });
             }
         });
-
     }
 
     get researchersText(): string {
-        return this.details?.researchers?.map(r => `${r.firstName} ${r.lastName}`).join("\n") || "";
+        return this.details?.researchers?.map((r) => `${r.firstName} ${r.lastName}`).join("\n") || "";
     }
 
     private initializeForm(laboratory: ILaboratory | null = null) {
@@ -50,7 +49,7 @@ export class LabDetailsComponent implements OnInit {
             id: [laboratory?.id || ""],
             title: [laboratory?.title || moment()],
             researches: [laboratory?.researchers || []],
-            location: [laboratory?.location || { city: "", country: ""}, Validators.required],
+            location: [laboratory?.location || { city: "", country: "" }, Validators.required],
             researchersCount: [laboratory?.researchersCount || 0, Validators.required],
         });
     }

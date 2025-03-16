@@ -7,10 +7,15 @@ import { IUser } from "@/models/IUser";
 })
 export class LabResearchersPipe implements PipeTransform {
     transform(researchers: IUser[]): string {
-        if (researchers.length > 5){
-            return researchers.slice(0, 5).map(r => `${r.firstName} ${r.lastName}`).join(", ") + `and other ${researchers.length - 5} researchers`
+        if (researchers.length > 5) {
+            return (
+                researchers
+                    .slice(0, 5)
+                    .map((r) => `${r.firstName} ${r.lastName}`)
+                    .join(", ") + `and other ${researchers.length - 5} researchers`
+            );
         }
 
-        return researchers.map(r => `${r.firstName} ${r.lastName}`).join(", ");
+        return researchers.map((r) => `${r.firstName} ${r.lastName}`).join(", ");
     }
 }

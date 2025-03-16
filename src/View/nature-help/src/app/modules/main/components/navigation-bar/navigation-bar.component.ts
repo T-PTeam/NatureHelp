@@ -22,7 +22,7 @@ export class NavigationBarComponent implements OnInit {
 
     openAuthDialog(isRegister: boolean): void {
         const dialogRef = this.dialog.open(AuthDialogComponent, {
-            width: "400px",
+            width: "600px",
         });
 
         dialogRef.afterClosed().subscribe((result) => {

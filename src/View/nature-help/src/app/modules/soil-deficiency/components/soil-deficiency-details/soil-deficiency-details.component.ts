@@ -27,23 +27,23 @@ export class SoilDeficiencyDetail implements OnInit {
         private router: Router,
         private mapViewService: MapViewService,
         private fb: FormBuilder,
-    ) {
+    ) {}
+
+    ngOnInit(): void {
         this.activatedRoute.params.subscribe((params) => {
             const id = params["id"];
 
             if (!id) {
                 this.isAddingDeficiency = true;
+                this.initializeForm();
+                this.details = this.detailsForm.value;
             } else {
                 this.deficiencyDataService.getSoilDeficiencyById(id).subscribe((def) => {
-                    this.details = def;
                     this.initializeForm(def);
+                    this.details = def;
                 });
             }
         });
-    }
-
-    ngOnInit(): void {
-        this.initializeForm();
     }
 
     private initializeForm(deficiency: ISoilDeficiency | null = null) {

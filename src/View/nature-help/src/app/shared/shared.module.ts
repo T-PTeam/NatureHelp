@@ -15,9 +15,7 @@ import { LabResearchersPipe } from "./pipes/lab-researchers.pipe";
 
 @NgModule({
     imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
-    declarations: [MapComponent, AuthDialogComponent, FilterPipe, EnumToStringPipe, RoleStringPipe, 
-        LabResearchersPipe
-    ],
+    declarations: [MapComponent, AuthDialogComponent, FilterPipe, EnumToStringPipe, RoleStringPipe, LabResearchersPipe],
     exports: [MapComponent, AuthDialogComponent, FilterPipe, EnumToStringPipe, RoleStringPipe, LabResearchersPipe],
     providers: [LoadingService, ReportAPIService],
 })
