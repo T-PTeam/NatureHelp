@@ -1,1 +1,66 @@
-<p>lab-details works!</p>
+<mat-card
+    *ngIf="details"
+    class="lab-card">
+    <mat-card-title>Laboratory</mat-card-title>
+    <div class="form-container">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input
+                matInput
+                [(ngModel)]="details.title"
+                name="title" />
+        </mat-form-field>
+        <mat-form-field style="grid-column: 2; grid-row: 1/3">
+            <mat-label>Researches</mat-label>
+            <textarea
+                rows="5"
+                matInput
+                [(ngModel)]="researchersText"
+                name="researchers"
+                readonly></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Latitude</mat-label>
+            <input
+            matInput
+            type="number"
+            [(ngModel)]="details.location.latitude"
+            name="latitude" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Longitude</mat-label>
+            <input
+            matInput
+            type="number"
+            [(ngModel)]="details.location.longitude"
+            name="longitude" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Researchers Count</mat-label>
+            <input
+                matInput
+                type="number"
+                [(ngModel)]="details.researchersCount"
+                name="researchersCount" />
+        </mat-form-field>
+
+        <div class="button-group-wrapper">
+            <div class="button-group">
+                <button
+                    mat-flat-button
+                    color="primary"
+                    type="submit"
+                    (click)="onSubmit()">
+                    Submit
+                </button>
+                <button
+                    mat-flat-button
+                    color="primary"
+                    type="submit"
+                    (click)="onCancel()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>

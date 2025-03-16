@@ -13,7 +13,7 @@ import { ILaboratory } from "../models/ILaboratory";
 export class LabsAPIService {
     private subject = new BehaviorSubject<ILaboratory[]>([]);
     public labs$: Observable<ILaboratory[]> = this.subject.asObservable();
-    private labsUrl = "https://localhost:7077/api/laboratory";
+    private labsUrl = "https://localhost:7077/api/laboratory/";
 
     httpOptions = {
         headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -28,8 +28,8 @@ export class LabsAPIService {
     }
 
     public loadAllLabs(): Observable<ILaboratory[]> {
-        const loadCourses$ = this.http.get<ILaboratory[]>(this.labsUrl).pipe(
-            tap((courses) => this.subject.next(courses)),
+        const loadlabs$ = this.http.get<ILaboratory[]>(this.labsUrl).pipe(
+            tap((labs) => this.subject.next(labs)),
             catchError((err) => {
                 const message = "Could not load labs";
 
@@ -38,7 +38,7 @@ export class LabsAPIService {
             }),
             shareReplay(),
         );
-        this.loading.showLoaderUntilCompleted(loadCourses$).subscribe();
+        this.loading.showLoaderUntilCompleted(loadlabs$).subscribe();
         return this.http.get<ILaboratory[]>(this.labsUrl);
     }
 
