@@ -28,12 +28,14 @@ export class NavigationBarComponent implements OnInit {
 
         dialogRef.afterClosed().subscribe((result) => {
             if (result) {
-                this.userService.auth(isRegister ? EAuthType.Register : EAuthType.Login, result.email, result.password).subscribe({
-                    error: (err) => {
-                        this.notify.open("Login failed", "Close", { duration: 2000 });
-                        return err;
-                    },
-                });
+                this.userService
+                    .auth(isRegister ? EAuthType.Register : EAuthType.Login, result.email, result.password)
+                    .subscribe({
+                        error: (err) => {
+                            this.notify.open("Login failed", "Close", { duration: 2000 });
+                            return err;
+                        },
+                    });
             }
         });
     }

@@ -16,8 +16,24 @@ import { AddOrganizationUsersComponent } from "./components/dialogs/add-organiza
 
 @NgModule({
     imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
-    declarations: [MapComponent, AuthDialogComponent, AddOrganizationUsersComponent, FilterPipe, EnumToStringPipe, RoleStringPipe, LabResearchersPipe],
-    exports: [MapComponent, AuthDialogComponent, AddOrganizationUsersComponent, FilterPipe, EnumToStringPipe, RoleStringPipe, LabResearchersPipe],
+    declarations: [
+        MapComponent,
+        AuthDialogComponent,
+        AddOrganizationUsersComponent,
+        FilterPipe,
+        EnumToStringPipe,
+        RoleStringPipe,
+        LabResearchersPipe,
+    ],
+    exports: [
+        MapComponent,
+        AuthDialogComponent,
+        AddOrganizationUsersComponent,
+        FilterPipe,
+        EnumToStringPipe,
+        RoleStringPipe,
+        LabResearchersPipe,
+    ],
     providers: [LoadingService, ReportAPIService],
 })
 export class SharedModule {}

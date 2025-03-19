@@ -20,35 +20,37 @@ export class OwnerPageComponent {
     ) {}
 
     addUserToOrganization(isMultiple: boolean): void {
-
-        if (isMultiple){
+        if (isMultiple) {
             const dialogRef = this.dialog.open(AddOrganizationUsersComponent, {
                 width: "90vw",
                 maxWidth: "90vw",
             });
-    
+
             dialogRef.afterClosed().subscribe((result) => {
                 if (result) {
                     this.userService.addOrganizationUsers(EAuthType.AddMultipleToOrganization, result.users).subscribe({
                         error: (err) => {
-                            this.notify.open("Add multiple users to Your organization failed...", "Close", { duration: 2000 });
+                            this.notify.open("Add multiple users to Your organization failed...", "Close", {
+                                duration: 2000,
+                            });
                             return err;
                         },
                     });
                 }
             });
-        }
-        else {
+        } else {
             const dialogRef = this.dialog.open(AuthDialogComponent, {
                 width: "50vw",
                 maxWidth: "90vw",
             });
-    
+
             dialogRef.afterClosed().subscribe((result) => {
                 if (result) {
                     this.userService.auth(EAuthType.AddNewToOrganization, result.email, result.password).subscribe({
                         error: (err) => {
-                            this.notify.open("Add new user to Your organization failed...", "Close", { duration: 2000 });
+                            this.notify.open("Add new user to Your organization failed...", "Close", {
+                                duration: 2000,
+                            });
                             return err;
                         },
                     });

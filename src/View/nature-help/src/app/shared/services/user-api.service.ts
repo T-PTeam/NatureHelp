@@ -45,19 +45,26 @@ export class UserAPIService {
         this.loadOrganizationUsers(0);
     }
 
-    auth(authType: EAuthType, email: string, password: string): Observable<IAuthResponse> {        
-
-        if (authType === EAuthType.AddMultipleToOrganization){
+    auth(authType: EAuthType, email: string, password: string): Observable<IAuthResponse> {
+        if (authType === EAuthType.AddMultipleToOrganization) {
             return this.http
-                .post<IAuthResponse>(`${this.apiUrl}/${authType}`, { email, password, organizationId: localStorage.getItem("organizationId") })
+                .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
+                    email,
+                    password,
+                    organizationId: localStorage.getItem("organizationId"),
+                })
                 .pipe(
                     tap((authResponse) => this.setAuthOptions(authResponse)),
                     shareReplay(),
-                );    
+                );
         }
 
         return this.http
-            .post<IAuthResponse>(`${this.apiUrl}/${authType}`, { email, password, organizationId: localStorage.getItem("organizationId") })
+            .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
+                email,
+                password,
+                organizationId: localStorage.getItem("organizationId"),
+            })
             .pipe(
                 tap((authResponse) => this.setAuthOptions(authResponse)),
                 shareReplay(),
@@ -105,23 +112,24 @@ export class UserAPIService {
         this.loading.showLoaderUntilCompleted(loadOrganizationUsers$).subscribe();
     }
 
-    addOrganizationUsers(authType: EAuthType, users: IUser[]){
+    addOrganizationUsers(authType: EAuthType, users: IUser[]) {
         const organizationId = localStorage.getItem("organizationId");
 
-        users = users.map(u => {
+        users = users.map((u) => {
             u.organizationId = organizationId;
             return u;
         });
 
-        return this.http
-            .post<IUser[]>(`${this.apiUrl}/${authType}`, users)
-            .pipe(
-                tap((users) => this.notify.open(
-                    `Users (${users.map(u => u.email).join(", ")}) were added to Your organization`, 
-                    "Close", 
-                    { duration: 10000 })),
-                shareReplay(),
-            );
+        return this.http.post<IUser[]>(`${this.apiUrl}/${authType}`, users).pipe(
+            tap((users) =>
+                this.notify.open(
+                    `Users (${users.map((u) => u.email).join(", ")}) were added to Your organization`,
+                    "Close",
+                    { duration: 10000 },
+                ),
+            ),
+            shareReplay(),
+        );
     }
 
     changeUsersRoles(changedUsersRoles: Map<string, number>) {

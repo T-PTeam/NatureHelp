@@ -10,11 +10,15 @@
 </mat-progress-spinner>
 
 <div class="main-container-content">
-    <div class="left-side" *ngIf="isLeftSideVisible">
+    <div
+        class="left-side"
+        *ngIf="isLeftSideVisible">
         <nat-map> </nat-map>
     </div>
 
-    <div class="right-side" [ngStyle]="{'grid-column': isLeftSideVisible ? '2' : '1 / span 2'}">
+    <div
+        class="right-side"
+        [ngStyle]="{ 'grid-column': isLeftSideVisible ? '2' : '1 / span 2' }">
         <router-outlet></router-outlet>
     </div>
 </div>

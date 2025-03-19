@@ -12,10 +12,13 @@ import { NavigationEnd, Router } from "@angular/router";
 export class MainContainerComponent implements OnInit {
     isLeftSideVisible = true;
 
-    constructor(public loading: LoadingService, private router: Router) {
-        this.router.events.subscribe(event => {
+    constructor(
+        public loading: LoadingService,
+        private router: Router,
+    ) {
+        this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
-              this.isLeftSideVisible = !['/owner'].includes(event.url);
+                this.isLeftSideVisible = !["/owner"].includes(event.url);
             }
         });
     }

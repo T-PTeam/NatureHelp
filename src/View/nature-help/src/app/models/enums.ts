@@ -13,5 +13,5 @@ export enum EAuthType {
     Login = "login",
     Register = "register",
     AddNewToOrganization = "add-new-to-org",
-    AddMultipleToOrganization = "add-multiple-to-org"
+    AddMultipleToOrganization = "add-multiple-to-org",
 }
