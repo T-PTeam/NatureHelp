@@ -4,6 +4,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 
 import { AuthDialogComponent } from "@/shared/components/dialogs/login-dialog/auth-dialog.component";
 import { UserAPIService } from "@/shared/services/user-api.service";
+import { EAuthType } from "@/models/enums";
 
 @Component({
     selector: "n-navigation-bar",
@@ -27,7 +28,7 @@ export class NavigationBarComponent implements OnInit {
 
         dialogRef.afterClosed().subscribe((result) => {
             if (result) {
-                this.userService.auth(isRegister, result.email, result.password).subscribe({
+                this.userService.auth(isRegister ? EAuthType.Register : EAuthType.Login, result.email, result.password).subscribe({
                     error: (err) => {
                         this.notify.open("Login failed", "Close", { duration: 2000 });
                         return err;

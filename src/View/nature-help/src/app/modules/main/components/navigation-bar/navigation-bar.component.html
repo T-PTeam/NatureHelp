@@ -26,6 +26,7 @@
                 Login
             </button>
             <button
+                *ngIf="userService.isSuperAdmin$ | async"
                 mat-menu-item
                 (click)="openAuthDialog(true)"
                 [disabled]="userService.isLoggedIn$ | async">

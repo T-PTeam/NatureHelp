@@ -40,6 +40,16 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
         }
     }
 
+    public virtual async Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            await context.Set<T>().AddRangeAsync(entities);
+            await context.SaveChangesAsync();
+            return entities;
+        }
+    }
+
     public virtual async Task<T> UpdateAsync(T entity)
     {
         using (var context = _contextFactory.CreateDbContext())

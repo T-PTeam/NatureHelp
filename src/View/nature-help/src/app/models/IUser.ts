@@ -4,5 +4,5 @@ export interface IUser {
     lastName: string;
     email: string;
     role: number;
-    organizationId: string;
+    organizationId: string | null;
 }

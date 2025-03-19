@@ -19,5 +19,7 @@ public interface IUserService
     public Task<User?> RefreshAccessTokenAsync(string refreshToken);
 
 
-    public Task<User> AddUserToOrganizationAsync(Guid userId, Guid organizationId);
+    public Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto);
+    public Task<IEnumerable<User>> AddMultipleUsersToOrganizationAsync(IEnumerable<User> users);
+
 }

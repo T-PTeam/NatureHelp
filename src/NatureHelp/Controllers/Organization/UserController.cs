@@ -99,12 +99,22 @@ public class UserController : Controller
     /// <summary>
     /// Add user to organization
     /// </summary>
-    /// <param name="userId"></param>
-    /// <param name="organizationId"></param>
+    /// <param name="loginDto"></param>
     /// <returns>Assigning role to user</returns>
-    [HttpGet("add-to-organization/{userId}")]
-    public async Task<IActionResult> AddUserToOrganizationAsync([FromRoute] Guid userId, [FromQuery] Guid organizationId)
+    [HttpPost("add-new-to-org")]
+    public async Task<IActionResult> AddNewUserToOrganizationAsync([FromBody] UserLoginDto loginDto)
     {
-        return Ok(await _userService.AddUserToOrganizationAsync(userId, organizationId));
+        return Ok(await _userService.AddUserToOrganizationAsync(loginDto));
+    }
+
+    /// <summary>
+    /// Add user to organization
+    /// </summary>
+    /// <param name="loginDto"></param>
+    /// <returns>Assigning role to user</returns>
+    [HttpPost("add-multiple-to-org")]
+    public async Task<IActionResult> AddMultipleUsersToOrganizationAsync([FromBody] IEnumerable<User> users)
+    {
+        return Ok(await _userService.AddMultipleUsersToOrganizationAsync(users));
     }
 }

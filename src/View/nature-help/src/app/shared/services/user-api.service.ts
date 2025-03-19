@@ -8,6 +8,7 @@ import { IUser } from "@/models/IUser";
 import { IListData } from "../models/IListData";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { LoadingService } from "./loading.service";
+import { EAuthType } from "@/models/enums";
 
 @Injectable({
     providedIn: "root",
@@ -21,6 +22,8 @@ export class UserAPIService {
     $user: Observable<IUser | null> = this.subject.asObservable();
     isLoggedIn$: Observable<boolean>;
     isLoggedOut$: Observable<boolean>;
+
+    isSuperAdmin$: Observable<boolean>;
 
     private organizationUsersSubject = new BehaviorSubject<IUser[]>([]);
     $organizationUsers: Observable<IUser[]> = this.organizationUsersSubject.asObservable();
@@ -36,13 +39,25 @@ export class UserAPIService {
         this.isLoggedIn$ = this.$user.pipe(map((user) => !!user));
         this.isLoggedOut$ = this.$user.pipe(map((user) => !user));
 
+        this.isSuperAdmin$ = this.$user.pipe(map((user) => user?.role === 0));
+
         this.setAuthOptions(null);
         this.loadOrganizationUsers(0);
     }
 
-    auth(isRegister: boolean, email: string, password: string): Observable<IAuthResponse> {
+    auth(authType: EAuthType, email: string, password: string): Observable<IAuthResponse> {        
+
+        if (authType === EAuthType.AddMultipleToOrganization){
+            return this.http
+                .post<IAuthResponse>(`${this.apiUrl}/${authType}`, { email, password, organizationId: localStorage.getItem("organizationId") })
+                .pipe(
+                    tap((authResponse) => this.setAuthOptions(authResponse)),
+                    shareReplay(),
+                );    
+        }
+
         return this.http
-            .post<IAuthResponse>(`${this.apiUrl}/${isRegister ? "register" : "login"}`, { email, password })
+            .post<IAuthResponse>(`${this.apiUrl}/${authType}`, { email, password, organizationId: localStorage.getItem("organizationId") })
             .pipe(
                 tap((authResponse) => this.setAuthOptions(authResponse)),
                 shareReplay(),
@@ -53,6 +68,7 @@ export class UserAPIService {
         localStorage.removeItem("accessToken");
         localStorage.removeItem("refreshToken");
         localStorage.removeItem("role");
+        localStorage.removeItem("organizationId");
         this.subject.next(null);
     }
 
@@ -87,6 +103,25 @@ export class UserAPIService {
                 shareReplay(),
             );
         this.loading.showLoaderUntilCompleted(loadOrganizationUsers$).subscribe();
+    }
+
+    addOrganizationUsers(authType: EAuthType, users: IUser[]){
+        const organizationId = localStorage.getItem("organizationId");
+
+        users = users.map(u => {
+            u.organizationId = organizationId;
+            return u;
+        });
+
+        return this.http
+            .post<IUser[]>(`${this.apiUrl}/${authType}`, users)
+            .pipe(
+                tap((users) => this.notify.open(
+                    `Users (${users.map(u => u.email).join(", ")}) were added to Your organization`, 
+                    "Close", 
+                    { duration: 10000 })),
+                shareReplay(),
+            );
     }
 
     changeUsersRoles(changedUsersRoles: Map<string, number>) {

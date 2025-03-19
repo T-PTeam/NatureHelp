@@ -25,6 +25,8 @@ public class UserService : IUserService
         user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
         user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
 
+        SetPasswordHash(user);
+
         await _userRepository.AddAsync(user);
 
         return user;
@@ -136,14 +138,43 @@ public class UserService : IUserService
         user.PasswordHash = _passwordHasher.HashPassword(user, user.Password);
     }
 
-    public async Task<User> AddUserToOrganizationAsync(Guid userId, Guid organizationId)
+    public async Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto)
     {
-        User user = await _userRepository.GetByIdAsync(userId) ?? throw new NullReferenceException("User was not found");
+        User user = new User()
+        {
+            Email = loginDto.Email,
+            Password = loginDto.Password,
+            OrganizationId = loginDto.OrganizationId,
+        };
 
-        user.OrganizationId = organizationId;
-
-        await _userRepository.UpdateAsync(user);
+        await RegisterAsync(user);
 
         return user;
+    }
+
+    public async Task<IEnumerable<User>> AddMultipleUsersToOrganizationAsync(IEnumerable<User> users)
+    {
+        try
+        {
+            users = users.Select(user =>
+            {
+                user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
+                user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
+
+                user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
+                user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
+
+                SetPasswordHash(user);
+
+                return user;
+            });
+
+            await _userRepository.AddRangeAsync(users);
+
+            return users;
+        }
+        catch (Exception ex) {
+            return null;
+        }
     }
 }
