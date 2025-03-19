@@ -2,11 +2,13 @@
 using Domain.Models.Analitycs;
 using Domain.Models.Nature;
 using Domain.Models.Organization;
+using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure.Providers;
 
 public static class GenerateTestDataToDB
 {
+    private static PasswordHasher<User> _passwordHasher = new PasswordHasher<User>();
 
     public static List<Domain.Models.Organization.Location> Locations = new List<Domain.Models.Organization.Location>
 {
@@ -146,33 +148,69 @@ public static class GenerateTestDataToDB
         PhoneNumber = "+380501234567",
         AddressId = new Guid("44444444-4444-4444-4444-444444444444"),
         Email = "valentyn@example.com",
-        PasswordHash = "hashed_password_1",
+        PasswordHash = _passwordHasher.HashPassword(new User
+            {
+                Id = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
+                FirstName = "Valentyn",
+                LastName = "Riabinchak",
+                DateOfBirth = new DateTime(1990, 7, 15).ToUniversalTime(),
+                PhoneNumber = "+380631234567",
+                AddressId = new Guid("55555555-5555-5555-5555-555555555555"),
+                Email = "valentyn@example.com",
+                Password = "12341234",
+                LaboratoryId = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
+                OrganizationId = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc")
+            }, "12341234"),
         LaboratoryId = new Guid("dddddddd-dddd-dddd-dddd-dddddddddddd"),
         OrganizationId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb")
     },
     new User
     {
         Id = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
-        FirstName = "Vasylyna",
-        LastName = "Leheta",
+        FirstName = "Igor",
+        LastName = "Zayets",
         DateOfBirth = new DateTime(1990, 7, 15).ToUniversalTime(),
         PhoneNumber = "+380631234567",
         AddressId = new Guid("55555555-5555-5555-5555-555555555555"),
-        Email = "vasylyna@example.com",
-        PasswordHash = "hashed_password_2",
+        Email = "igorzayets@example.com",
+        PasswordHash = _passwordHasher.HashPassword(new User
+            {
+                Id = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
+                FirstName = "Igor",
+                LastName = "Zayets",
+                DateOfBirth = new DateTime(1990, 7, 15).ToUniversalTime(),
+                PhoneNumber = "+380631234567",
+                AddressId = new Guid("55555555-5555-5555-5555-555555555555"),
+                Email = "igorzayets@example.com",
+                Password = "10101010",
+                LaboratoryId = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
+                OrganizationId = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc")
+            }, "10101010"),
         LaboratoryId = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
         OrganizationId = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc")
     },
     new User
     {
         Id = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
-        FirstName = "Igor",
-        LastName = "Zaitsev",
+        FirstName = "Kateryna",
+        LastName = "Morozenko",
         DateOfBirth = new DateTime(1980, 3, 10).ToUniversalTime(),
         PhoneNumber = "+49 17612345678",
         AddressId = new Guid("66666666-6666-6666-6666-666666666666"),
-        Email = "igor@example.com",
-        PasswordHash = "hashed_password_3",
+        Email = "katerynamoroz@example.com@example.com",
+        PasswordHash = _passwordHasher.HashPassword(new User
+            {
+                Id = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
+                FirstName = "Kateryna",
+                LastName = "Morozenko",
+                DateOfBirth = new DateTime(1990, 7, 15).ToUniversalTime(),
+                PhoneNumber = "+380631234567",
+                AddressId = new Guid("55555555-5555-5555-5555-555555555555"),
+                Email = "katerynamoroz@example.com",
+                Password = "12345678",
+                LaboratoryId = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
+                OrganizationId = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc")
+            }, "12345678"),
         LaboratoryId = new Guid("ffffffff-ffff-ffff-ffff-ffffffffffff"),
         OrganizationId = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc")
     }

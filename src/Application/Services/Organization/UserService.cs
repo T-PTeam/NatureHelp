@@ -5,6 +5,7 @@ using Domain.Enums;
 using Domain.Models.Organization;
 using Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Shared.Dtos;
 
 namespace Application.Services.Organization;
 public class UserService : IUserService
@@ -23,6 +24,8 @@ public class UserService : IUserService
 
         user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
         user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
+
+        SetPasswordHash(user);
 
         await _userRepository.AddAsync(user);
 
@@ -75,6 +78,44 @@ public class UserService : IUserService
         return user;
     }
 
+    public async Task<ListData<User>> GetOrganizationUsers(Guid organizationId, int scrollCount)
+    {
+        var users = await _userRepository.GetAllAsync();
+
+        var totalCount = await _userRepository.GetTotalCount();
+
+        var result = new ListData<User>()
+        {
+            List = users.Where(u => u.OrganizationId == organizationId).Skip(scrollCount * 20).Take(20).ToList(),
+            TotalCount = totalCount,
+        };
+
+        return result;
+    }
+
+    public async Task<bool> ChangeUsersRoles(Dictionary<Guid, int> changedUsersRoles)
+    {
+        if (changedUsersRoles == null || !changedUsersRoles.Any())
+            return false;
+
+        var userIds = changedUsersRoles.Keys.ToList();
+
+        var users = await _userRepository.GetAllAsync();
+
+        foreach (var user in users
+            .Where(u => userIds.Contains(u.Id)))
+        {
+            if (changedUsersRoles.TryGetValue(user.Id, out int newRole))
+            {
+                user.AssignRole((ERole)newRole);
+            }
+        }
+
+        await _userRepository.UpdateRangeAsync(users);
+
+        return true;
+    }
+
     public bool IsTokenExpired(string token)
     {
         return AuthTokensProvider.IsTokenExpired(token);
@@ -97,24 +138,43 @@ public class UserService : IUserService
         user.PasswordHash = _passwordHasher.HashPassword(user, user.Password);
     }
 
-    public async Task<User> AddUserToOrganizationAsync(Guid userId, Guid organizationId)
+    public async Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto)
     {
-        User user = await _userRepository.GetByIdAsync(userId) ?? throw new NullReferenceException("User was not found");
+        User user = new User()
+        {
+            Email = loginDto.Email,
+            Password = loginDto.Password,
+            OrganizationId = loginDto.OrganizationId,
+        };
 
-        user.OrganizationId = organizationId;
-
-        await _userRepository.UpdateAsync(user);
+        await RegisterAsync(user);
 
         return user;
     }
 
-    public async Task<User> AssignRoleToUserAsync(Guid userId, ERole role)
+    public async Task<IEnumerable<User>> AddMultipleUsersToOrganizationAsync(IEnumerable<User> users)
     {
-        User user = await _userRepository.GetByIdAsync(userId) ?? throw new NullReferenceException("User was not found");
-        user.AssignRole(role);
+        try
+        {
+            users = users.Select(user =>
+            {
+                user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
+                user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
 
-        await _userRepository.UpdateAsync(user);
+                user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
+                user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
 
-        return user;
+                SetPasswordHash(user);
+
+                return user;
+            });
+
+            await _userRepository.AddRangeAsync(users);
+
+            return users;
+        }
+        catch (Exception ex) {
+            return null;
+        }
     }
 }

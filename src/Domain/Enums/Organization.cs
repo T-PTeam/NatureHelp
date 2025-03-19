@@ -7,5 +7,4 @@ public enum ERole
     Manager,
     Supervisor,
     Researcher,
-    Guest
 }

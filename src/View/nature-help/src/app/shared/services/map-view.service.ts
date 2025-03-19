@@ -50,7 +50,7 @@ export class MapViewService {
     }
 
     private isLaboratory(obj: any): obj is ILaboratory {
-        return (obj as ILaboratory).researches !== undefined;
+        return (obj as ILaboratory).researchers !== undefined;
     }
 
     public makeMarkers(): void {

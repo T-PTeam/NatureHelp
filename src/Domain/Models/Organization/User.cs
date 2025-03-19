@@ -5,7 +5,7 @@ namespace Domain.Models.Organization;
 
 public class User : Person
 {
-    private ERole role = ERole.Guest;
+    private ERole role = ERole.Supervisor;
 
     public ERole Role { get => role; private set => role = value; }
     public string Email { get; set; } = null!;
@@ -24,7 +24,7 @@ public class User : Person
     public Guid? LaboratoryId { get; set; }
 
     [ForeignKey(nameof(Address))]
-    public Guid AddressId { get; set; }
+    public Guid? AddressId { get; set; }
 
     [NotMapped]
     public string Password { get; set; } = null!;

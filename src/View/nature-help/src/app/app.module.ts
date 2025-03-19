@@ -20,6 +20,7 @@ import { WaterDeficiencyModule } from "./modules/water-deficiency/water-deficien
 import { AuthInterceptor } from "./shared/services/auth-interceptor.service";
 import { MapViewService } from "./shared/services/map-view.service";
 import { SharedModule } from "./shared/shared.module";
+import { OwneryModule } from "./modules/owner/owner.module";
 
 const UKRAINIAN_DATE_FORMATS = {
     parse: {
@@ -42,6 +43,7 @@ const UKRAINIAN_DATE_FORMATS = {
         MainModule,
         BrowserAnimationsModule,
         LabsModule,
+        OwneryModule,
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent],

@@ -15,12 +15,13 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, ILaboratoryRepos
         {
             return await context.Set<Laboratory>()
                 .Include(l => l.Location)
+                .Include(l => l.Researchers)
                 .Select(l => new Laboratory
                 {
                     Id = l.Id,
                     Title = l.Title,
                     Location = l.Location,
-
+                    Researchers = l.Researchers,
                     ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
                 })
                 .ToListAsync();
@@ -33,12 +34,13 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, ILaboratoryRepos
         {
             return await context.Set<Laboratory>()
                 .Include(l => l.Location)
+                .Include(l => l.Researchers)
                 .Select(l => new Laboratory
                 {
                     Id = l.Id,
                     Title = l.Title,
                     Location = l.Location,
-
+                    Researchers = l.Researchers,
                     ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
                 })
                 .FirstOrDefaultAsync(x => x.Id == id);

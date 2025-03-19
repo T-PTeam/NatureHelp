@@ -16,16 +16,18 @@ export class RoleGuard implements CanActivate {
         const userRole = localStorage.getItem("role")?.toLowerCase();
         if (userRole) {
             if (userRole === "superadmin") return true;
-            else if (includeRoles.includes(userRole) && !excludeRoles.includes(userRole)) return true;
+            else if (includeRoles.includes(userRole) || !excludeRoles.includes(userRole)) return true;
             else {
-                const message = "You do not have permission to access this page.";
-                this.notify.open(message, "Close", { duration: 2000 });
-                return false;
+                return this.showPermissionAccessError();
             }
         } else {
-            const message = "You do not have permission to access this page.";
-            this.notify.open(message, "Close", { duration: 2000 });
-            return false;
+            return this.showPermissionAccessError();
         }
+    }
+
+    private showPermissionAccessError(): boolean {
+        const message = "You do not have permission to access this page.";
+        this.notify.open(message, "Close", { duration: 2000 });
+        return false;
     }
 }

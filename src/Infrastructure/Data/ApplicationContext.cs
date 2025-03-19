@@ -17,35 +17,36 @@ public class ApplicationContext : DbContext
     public DbSet<User> Users { get; set; }
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
-        : base(options) { }
+        : base(options) { 
+    }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
 
         // Test DATA
-        builder.Entity<Report>()
-            .HasData(GenerateTestDataToDB.Reports);
+        //builder.Entity<Report>()
+        //    .HasData(GenerateTestDataToDB.Reports);
 
-        builder.Entity<WaterDeficiency>()
-            .HasData(GenerateTestDataToDB.WaterDeficiencies);
+        //builder.Entity<WaterDeficiency>()
+        //    .HasData(GenerateTestDataToDB.WaterDeficiencies);
 
-        builder.Entity<SoilDeficiency>()
-            .HasData(GenerateTestDataToDB.SoilDeficiencies);
+        //builder.Entity<SoilDeficiency>()
+        //    .HasData(GenerateTestDataToDB.SoilDeficiencies);
 
-        builder.Entity<Domain.Models.Organization.Location>()
-            .HasData(GenerateTestDataToDB.Locations.Concat(GenerateTestDataToDB.PersonLocations));
+        //builder.Entity<Domain.Models.Organization.Location>()
+        //    .HasData(GenerateTestDataToDB.Locations.Concat(GenerateTestDataToDB.PersonLocations));
 
-        builder.Entity<Laboratory>()
-            .HasData(GenerateTestDataToDB.Laboratories);
+        //builder.Entity<Laboratory>()
+        //    .HasData(GenerateTestDataToDB.Laboratories);
 
-        builder.Entity<Domain.Models.Nature.Location>()
-            .HasData(GenerateTestDataToDB.NatureLocations);
+        //builder.Entity<Domain.Models.Nature.Location>()
+        //    .HasData(GenerateTestDataToDB.NatureLocations);
 
-        builder.Entity<User>()
-            .HasData(GenerateTestDataToDB.Users);
+        //builder.Entity<User>()
+        //    .HasData(GenerateTestDataToDB.Users);
 
-        builder.Entity<Organization>()
-            .HasData(GenerateTestDataToDB.Organizations);
+        //builder.Entity<Organization>()
+        //    .HasData(GenerateTestDataToDB.Organizations);
     }
 }

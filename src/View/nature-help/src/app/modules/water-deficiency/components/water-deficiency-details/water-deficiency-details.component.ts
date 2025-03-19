@@ -27,36 +27,23 @@ export class WaterDeficiencyDetail implements OnInit {
         private router: Router,
         private mapViewService: MapViewService,
         private fb: FormBuilder,
-    ) {
+    ) {}
+
+    ngOnInit(): void {
         this.activatedRoute.params.subscribe((params) => {
             const id = params["id"];
 
             if (!id) {
                 this.isAddingDeficiency = true;
+                this.initializeForm();
+                this.details = this.detailsForm.value;
             } else {
                 this.deficiencyDataService.getWaterDeficiencyById(id).subscribe((def) => {
-                    this.details = def;
                     this.initializeForm(def);
+                    this.details = def;
                 });
             }
         });
-    }
-
-    ngOnInit(): void {
-        this.initializeForm();
-
-        const id = this.activatedRoute.snapshot.paramMap.get("id");
-
-        if (id) {
-            this.deficiencyDataService.getWaterDeficiencyById(id).subscribe(
-                (data) => {
-                    this.details = data;
-                },
-                (error) => {
-                    console.error("Error fetching deficiency:", error);
-                },
-            );
-        }
     }
 
     private initializeForm(deficiency: IWaterDeficiency | null = null) {
@@ -69,13 +56,19 @@ export class WaterDeficiencyDetail implements OnInit {
             type: [deficiency?.type || EDeficiencyType.Water, Validators.required],
             creator: this.fb.group({
                 id: [deficiency?.creator?.id || ""],
-                name: [`${deficiency?.creator?.firstName} ${deficiency?.creator?.lastName}`, Validators.required],
+                name: [
+                    `${deficiency?.creator?.firstName || ""} ${deficiency?.creator?.lastName || ""}`,
+                    Validators.required,
+                ],
                 email: [deficiency?.creator?.email || "", Validators.email],
                 role: [deficiency?.creator?.role || ""],
             }),
             responsibleUser: this.fb.group({
                 id: [deficiency?.responsibleUser?.id || ""],
-                name: [`${deficiency?.creator?.firstName} ${deficiency?.creator?.lastName}`, Validators.required],
+                name: [
+                    `${deficiency?.responsibleUser?.firstName || ""} ${deficiency?.responsibleUser?.lastName || ""}`,
+                    Validators.required,
+                ],
                 email: [deficiency?.responsibleUser?.email || "", Validators.email],
                 role: [deficiency?.responsibleUser?.role || ""],
             }),
@@ -114,7 +107,7 @@ export class WaterDeficiencyDetail implements OnInit {
     public onSubmit() {
         if (this.detailsForm.invalid) {
             console.log("Form is invalid:", this.getFormErrors(this.detailsForm));
-            // return;
+            return;
         }
 
         console.log("Form data:", this.detailsForm.value);

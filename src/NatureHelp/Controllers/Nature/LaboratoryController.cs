@@ -19,9 +19,20 @@ public class LaboratoryController : Controller
     /// Get list of laboratories
     /// </summary>
     /// <returns></returns>
-    [HttpGet]
+    [HttpGet("")]
     public async Task<IActionResult> LabsList()
     {
         return Ok(await _laboratoryService.GetLabsAsync());
+    }
+
+    /// <summary>
+    /// Get laboratory by id
+    /// </summary>
+    /// param name="labId"
+    /// <returns></returns>
+    [HttpGet("{labId}")]
+    public async Task<IActionResult> LabById([FromRoute] Guid labId)
+    {
+        return Ok(await _laboratoryService.GetLabByIdAsync(labId));
     }
 }

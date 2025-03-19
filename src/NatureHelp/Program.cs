@@ -1,6 +1,7 @@
 using Application.Providers;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -10,6 +11,7 @@ using NatureHelp.Interfaces;
 using NatureHelp.Providers;
 using Serilog;
 using System.Reflection;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +40,13 @@ builder.Services.AddDbContextFactory<ApplicationContext>(options =>
         /* To add migration open src folder and run the following command:
             dotnet ef migrations add InitialCreate --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj --output-dir Migrations */
 
-        /* dotnet ef database update --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj */
+        /* To Update DB
+        
+        dotnet ef database update --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj */
+
+        /* To generate SQL Script (choose previous migration ID)
+        
+        dotnet ef migrations script -i 20250319083430_Rewriting_Initial_Create --project Infrastructure\Infrastructure.csproj--startup - project NatureHelp\NatureHelp.csproj--output Infrastructure\Migrations\SQL\Autogenerating_Data.sql */
     });
 
     if ((Environment.GetEnvironmentVariable("AspNetCore_ENVIRONMENT") ?? "Development").Equals("Development"))

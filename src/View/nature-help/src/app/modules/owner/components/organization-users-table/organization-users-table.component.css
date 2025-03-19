@@ -16,7 +16,7 @@
 
 .header button {
     float: inline-end;
-    margin: 15px;
+    margin: 15px 5px;
     font-size: 18px;
 }
 
@@ -39,9 +39,9 @@
     color: #0058af;
 }
 
-#edit-btn {
+#save-btn {
     border: 1px solid black;
-    background-color: rgb(254, 254, 75);
+    background-color: aqua;
 }
 
 #export-btn {
@@ -72,7 +72,7 @@
 .grid-header,
 .grid-row {
     display: grid;
-    grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: center;
     align-items: center;
 }

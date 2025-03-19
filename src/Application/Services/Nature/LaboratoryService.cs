@@ -18,6 +18,13 @@ public class LaboratoryService : ILaboratoryService
         return labs;
     }
 
+    public async Task<Laboratory> GetLabByIdAsync(Guid id)
+    {
+        var lab = await _laboratoryRepository.GetByIdAsync(id);
+
+        return lab;
+    }
+
     public async Task<Laboratory> UpdateAsync(Laboratory lab)
     {
         await _laboratoryRepository.UpdateAsync(lab);

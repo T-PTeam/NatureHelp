@@ -19,6 +19,29 @@ public class UserController : Controller
     }
 
     /// <summary>
+    /// Get organization users
+    /// </summary>
+    /// <returns></returns>
+    [AllowAnonymous]
+    [HttpGet("organization-users")]
+    public async Task<IActionResult> GetOrganizationUsers([FromQuery] Guid organizationId, [FromQuery] int scrollCount)
+    {
+        return Ok(await _userService.GetOrganizationUsers(organizationId, scrollCount));
+
+    }
+
+    /// <summary>
+    /// Get organization users
+    /// </summary>
+    /// <returns></returns>
+    [AllowAnonymous]
+    [HttpPut("users-roles")]
+    public async Task<IActionResult> ChangeUsersRoles([FromBody] Dictionary<Guid, int> changedUsersRoles)
+    {
+        return Ok(await _userService.ChangeUsersRoles(changedUsersRoles));
+    }
+
+    /// <summary>
     /// Register user
     /// </summary>
     /// <returns></returns>
@@ -74,26 +97,24 @@ public class UserController : Controller
     }
 
     /// <summary>
-    /// Check token expiration and availability
+    /// Add user to organization
     /// </summary>
-    /// <param name="userId"></param>
-    /// <param name="role"></param>
+    /// <param name="loginDto"></param>
     /// <returns>Assigning role to user</returns>
-    [HttpGet("assign-role/{userId}")]
-    public async Task<IActionResult> AssignRoleToUserAsync([FromRoute] Guid userId, [FromQuery] ERole role)
+    [HttpPost("add-new-to-org")]
+    public async Task<IActionResult> AddNewUserToOrganizationAsync([FromBody] UserLoginDto loginDto)
     {
-        return Ok(await _userService.AssignRoleToUserAsync(userId, role));
+        return Ok(await _userService.AddUserToOrganizationAsync(loginDto));
     }
 
     /// <summary>
     /// Add user to organization
     /// </summary>
-    /// <param name="userId"></param>
-    /// <param name="organizationId"></param>
+    /// <param name="loginDto"></param>
     /// <returns>Assigning role to user</returns>
-    [HttpGet("add-to-organization/{userId}")]
-    public async Task<IActionResult> AddUserToOrganizationAsync([FromRoute] Guid userId, [FromQuery] Guid organizationId)
+    [HttpPost("add-multiple-to-org")]
+    public async Task<IActionResult> AddMultipleUsersToOrganizationAsync([FromBody] IEnumerable<User> users)
     {
-        return Ok(await _userService.AddUserToOrganizationAsync(userId, organizationId));
+        return Ok(await _userService.AddMultipleUsersToOrganizationAsync(users));
     }
 }
