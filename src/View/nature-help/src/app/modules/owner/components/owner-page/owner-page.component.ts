@@ -17,13 +17,16 @@ export class OwnerPageComponent {
         private dialog: MatDialog,
         public userService: UserAPIService,
         private notify: MatSnackBar,
-    ) {}
+    ) {
+        this.userService.loadOrganizationUsers(0);
+    }
 
     addUserToOrganization(isMultiple: boolean): void {
         if (isMultiple) {
             const dialogRef = this.dialog.open(AddOrganizationUsersComponent, {
                 width: "90vw",
                 maxWidth: "90vw",
+                height: "80vh"
             });
 
             dialogRef.afterClosed().subscribe((result) => {

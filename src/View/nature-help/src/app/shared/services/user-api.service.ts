@@ -24,6 +24,7 @@ export class UserAPIService {
     isLoggedOut$: Observable<boolean>;
 
     isSuperAdmin$: Observable<boolean>;
+    isOwner$: Observable<boolean>;
 
     private organizationUsersSubject = new BehaviorSubject<IUser[]>([]);
     $organizationUsers: Observable<IUser[]> = this.organizationUsersSubject.asObservable();
@@ -40,12 +41,12 @@ export class UserAPIService {
         this.isLoggedOut$ = this.$user.pipe(map((user) => !user));
 
         this.isSuperAdmin$ = this.$user.pipe(map((user) => user?.role === 0));
-
-        this.setAuthOptions(null);
-        this.loadOrganizationUsers(0);
+        this.isOwner$ = this.$user.pipe(map((user) => user?.role === 1));
+        
+        this.relogin();
     }
 
-    auth(authType: EAuthType, email: string, password: string): Observable<IAuthResponse> {
+    auth(authType: EAuthType, email: string, password: string | null, passwordHash: string | null = null): Observable<IAuthResponse> {
         if (authType === EAuthType.AddMultipleToOrganization) {
             return this.http
                 .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
@@ -59,16 +60,30 @@ export class UserAPIService {
                 );
         }
 
-        return this.http
-            .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
-                email,
-                password,
-                organizationId: localStorage.getItem("organizationId"),
-            })
-            .pipe(
-                tap((authResponse) => this.setAuthOptions(authResponse)),
-                shareReplay(),
-            );
+        if (password){
+            return this.http
+                .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
+                    email,
+                    password,
+                    organizationId: localStorage.getItem("organizationId"),
+                })
+                .pipe(
+                    tap((authResponse) => this.setAuthOptions(authResponse)),
+                    shareReplay(),
+                );
+        }
+        else {
+            return this.http
+                .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
+                    email,
+                    passwordHash,
+                    organizationId: localStorage.getItem("organizationId"),
+                })
+                .pipe(
+                    tap((authResponse) => this.setAuthOptions(authResponse)),
+                    shareReplay(),
+                );
+        }        
     }
 
     logout() {
@@ -76,6 +91,9 @@ export class UserAPIService {
         localStorage.removeItem("refreshToken");
         localStorage.removeItem("role");
         localStorage.removeItem("organizationId");
+        localStorage.removeItem("email");
+        localStorage.removeItem("passwordHash");
+
         this.subject.next(null);
     }
 
@@ -211,6 +229,8 @@ export class UserAPIService {
         if (authOptions.accessToken) localStorage.setItem("accessToken", authOptions.accessToken);
         if (authOptions.refreshToken) localStorage.setItem("refreshToken", authOptions.refreshToken);
         if (authOptions.organizationId) localStorage.setItem("organizationId", authOptions.organizationId);
+        if (authOptions.email) localStorage.setItem("email", authOptions.email);
+        if (authOptions.passwordHash) localStorage.setItem("passwordHash", authOptions.passwordHash);
 
         const decodedTokenRole = this.jwtHelper.decodeToken(authOptions.accessToken);
         if (decodedTokenRole)
@@ -223,9 +243,15 @@ export class UserAPIService {
     }
 
     private relogin(): void {
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
-        localStorage.removeItem("role");
-        this.subject.next(null);
+        const email = localStorage.getItem("email");
+        const passwordHash = localStorage.getItem("passwordHash");
+        this.logout();
+
+        if (email && passwordHash) this.auth(EAuthType.Login, email, null, passwordHash)
+            .subscribe({
+                error: (err) => {
+                    return err;
+                },
+            });
     }
 }

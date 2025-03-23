@@ -22,7 +22,7 @@ public class UserController : Controller
     /// Get organization users
     /// </summary>
     /// <returns></returns>
-    [AllowAnonymous]
+    [Authorize(Roles = "Owner, Manager")]
     [HttpGet("organization-users")]
     public async Task<IActionResult> GetOrganizationUsers([FromQuery] Guid organizationId, [FromQuery] int scrollCount)
     {
@@ -34,7 +34,7 @@ public class UserController : Controller
     /// Get organization users
     /// </summary>
     /// <returns></returns>
-    [AllowAnonymous]
+    [Authorize(Roles = "Owner")]
     [HttpPut("users-roles")]
     public async Task<IActionResult> ChangeUsersRoles([FromBody] Dictionary<Guid, int> changedUsersRoles)
     {
@@ -45,21 +45,11 @@ public class UserController : Controller
     /// Register user
     /// </summary>
     /// <returns></returns>
+    [Authorize(Roles = "SuperAdmin, Owner")]
     [HttpPost("register")]
     public async Task<IActionResult> RegisterAsync(User user)
     {
         return Ok(await _userService.RegisterAsync(user));
-    }
-
-    /// <summary>
-    /// Login user
-    /// </summary>
-    /// <param name="user"></param>
-    /// <returns></returns>
-    [HttpPost("autologin")]
-    public async Task<IActionResult> AutoLoginAsync([FromBody] UserLoginDto user)
-    {
-        return Ok(await _userService.AutoLoginAsync(user));
     }
 
     /// <summary>
@@ -101,6 +91,7 @@ public class UserController : Controller
     /// </summary>
     /// <param name="loginDto"></param>
     /// <returns>Assigning role to user</returns>
+    [Authorize(Roles = "Owner")]
     [HttpPost("add-new-to-org")]
     public async Task<IActionResult> AddNewUserToOrganizationAsync([FromBody] UserLoginDto loginDto)
     {
@@ -112,6 +103,7 @@ public class UserController : Controller
     /// </summary>
     /// <param name="loginDto"></param>
     /// <returns>Assigning role to user</returns>
+    [Authorize(Roles = "Owner")]
     [HttpPost("add-multiple-to-org")]
     public async Task<IActionResult> AddMultipleUsersToOrganizationAsync([FromBody] IEnumerable<User> users)
     {

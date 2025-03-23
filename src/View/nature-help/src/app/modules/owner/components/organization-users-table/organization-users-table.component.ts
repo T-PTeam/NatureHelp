@@ -30,14 +30,10 @@ export class OrganizationUsersTableComponent {
     registerNewOrganizationUser() {}
 
     userRoleChanged(userId: string, role: number) {
-        console.log("selection change: ", this.changedUsersRoles);
-
         this.changedUsersRoles.set(userId, role);
     }
 
     saveChangedRoles() {
-        console.log("SAVE CHANGES: ", this.changedUsersRoles);
-
         if (this.changedUsersRoles.size) this.usersAPIService.changeUsersRoles(this.changedUsersRoles);
         else this.notify.open("Nothing to update...", "Close", { duration: 2000 });
     }

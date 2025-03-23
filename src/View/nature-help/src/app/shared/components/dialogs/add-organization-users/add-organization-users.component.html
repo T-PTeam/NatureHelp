@@ -1,8 +1,7 @@
-<h2 mat-dialog-title>Login</h2>
+<h2 mat-dialog-title class="dialog-title">Add Users to Organization</h2>
 <div mat-dialog-content>
     <form [formGroup]="formGroup">
         <mat-form-field
-            appearance="outline"
             class="full-width">
             <mat-label>Users Count</mat-label>
             <input
@@ -20,7 +19,6 @@
                 [formGroupName]="i">
                 <div class="form-row">
                     <mat-form-field
-                        appearance="outline"
                         class="full-width">
                         <mat-label>Firstname</mat-label>
                         <input
@@ -33,7 +31,6 @@
                     </mat-form-field>
 
                     <mat-form-field
-                        appearance="outline"
                         class="full-width">
                         <mat-label>Lastname</mat-label>
                         <input
@@ -48,7 +45,6 @@
 
                 <div class="form-row">
                     <mat-form-field
-                        appearance="outline"
                         class="full-width">
                         <mat-label>Email</mat-label>
                         <input
@@ -61,7 +57,6 @@
                     </mat-form-field>
 
                     <mat-form-field
-                        appearance="outline"
                         class="full-width">
                         <mat-label>Password</mat-label>
                         <input
