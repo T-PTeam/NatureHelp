@@ -26,7 +26,7 @@ export class OwnerPageComponent {
             const dialogRef = this.dialog.open(AddOrganizationUsersComponent, {
                 width: "90vw",
                 maxWidth: "90vw",
-                height: "80vh"
+                height: "80vh",
             });
 
             dialogRef.afterClosed().subscribe((result) => {

@@ -42,11 +42,16 @@ export class UserAPIService {
 
         this.isSuperAdmin$ = this.$user.pipe(map((user) => user?.role === 0));
         this.isOwner$ = this.$user.pipe(map((user) => user?.role === 1));
-        
+
         this.relogin();
     }
 
-    auth(authType: EAuthType, email: string, password: string | null, passwordHash: string | null = null): Observable<IAuthResponse> {
+    auth(
+        authType: EAuthType,
+        email: string,
+        password: string | null,
+        passwordHash: string | null = null,
+    ): Observable<IAuthResponse> {
         if (authType === EAuthType.AddMultipleToOrganization) {
             return this.http
                 .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
@@ -60,7 +65,7 @@ export class UserAPIService {
                 );
         }
 
-        if (password){
+        if (password) {
             return this.http
                 .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
                     email,
@@ -71,8 +76,7 @@ export class UserAPIService {
                     tap((authResponse) => this.setAuthOptions(authResponse)),
                     shareReplay(),
                 );
-        }
-        else {
+        } else {
             return this.http
                 .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
                     email,
@@ -83,7 +87,7 @@ export class UserAPIService {
                     tap((authResponse) => this.setAuthOptions(authResponse)),
                     shareReplay(),
                 );
-        }        
+        }
     }
 
     logout() {
@@ -247,8 +251,8 @@ export class UserAPIService {
         const passwordHash = localStorage.getItem("passwordHash");
         this.logout();
 
-        if (email && passwordHash) this.auth(EAuthType.Login, email, null, passwordHash)
-            .subscribe({
+        if (email && passwordHash)
+            this.auth(EAuthType.Login, email, null, passwordHash).subscribe({
                 error: (err) => {
                     return err;
                 },

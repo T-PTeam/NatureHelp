@@ -25,7 +25,7 @@ export class NavigationBarComponent implements OnInit {
         const dialogRef = this.dialog.open(AuthDialogComponent, {
             width: "60vw",
             maxWidth: "60vw",
-            height: "300px"
+            height: "300px",
         });
 
         dialogRef.afterClosed().subscribe((result) => {
