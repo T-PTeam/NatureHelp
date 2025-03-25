@@ -24,4 +24,18 @@ public class UserRepository : BaseRepository<User>, IUserRepository
             return await context.Set<User>().FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
         }
     }
+
+    public async Task<IEnumerable<User>> GetNotLoginEver(Guid? organizationId)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            if (organizationId == null) 
+                return await context.Set<User>().Where(u => string.IsNullOrEmpty(u.AccessToken)).ToArrayAsync();
+
+            return await context.Set<User>()
+                .Where(u => string.IsNullOrEmpty(u.AccessToken) 
+                    && u.OrganizationId == organizationId)
+                .ToArrayAsync();
+        }
+    }
 }

@@ -99,7 +99,7 @@ public class UserController : Controller
     }
 
     /// <summary>
-    /// Add user to organization
+    /// Add multiple users to organization
     /// </summary>
     /// <param name="loginDto"></param>
     /// <returns>Assigning role to user</returns>
@@ -108,5 +108,16 @@ public class UserController : Controller
     public async Task<IActionResult> AddMultipleUsersToOrganizationAsync([FromBody] IEnumerable<User> users)
     {
         return Ok(await _userService.AddMultipleUsersToOrganizationAsync(users));
+    }
+
+    /// <summary>
+    /// Get users that were not login ever
+    /// </summary>
+    /// <returns>Assigning role to user</returns>
+    [Authorize(Roles = "Owner")]
+    [HttpGet("users-not-login-ever")]
+    public async Task<IActionResult> GetOrganizationUsersNotLoginEver([FromQuery] Guid organizationId)
+    {
+        return Ok(await _userService.GetOrganizationUsersNotLoginEver(organizationId));
     }
 }

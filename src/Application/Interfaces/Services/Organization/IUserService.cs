@@ -20,5 +20,7 @@ public interface IUserService
 
     public Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto);
     public Task<IEnumerable<User>> AddMultipleUsersToOrganizationAsync(IEnumerable<User> users);
+    public Task<ListData<User>> GetOrganizationUsersNotLoginEver(Guid organizationId);
+
 
 }

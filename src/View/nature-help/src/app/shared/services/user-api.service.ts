@@ -29,6 +29,9 @@ export class UserAPIService {
     private organizationUsersSubject = new BehaviorSubject<IUser[]>([]);
     $organizationUsers: Observable<IUser[]> = this.organizationUsersSubject.asObservable();
 
+    private notLoginEverOrganizationUsersSubject = new BehaviorSubject<IUser[]>([]);
+    $notLoginEverOrganizationUsers: Observable<IUser[]> = this.notLoginEverOrganizationUsersSubject.asObservable();
+
     private totalCountSubject = new BehaviorSubject<number>(0);
     $totalCount: Observable<number> = this.totalCountSubject.asObservable();
 
@@ -119,7 +122,13 @@ export class UserAPIService {
             >(`${this.apiUrl}/organization-users?organizationId=${organizationId}&scrollCount=${scrollCount}`)
             .pipe(
                 tap((listData) => {
-                    this.organizationUsersSubject.next([...this.organizationUsersSubject.getValue(), ...listData.list]);
+                    if (scrollCount === 0) this.organizationUsersSubject.next(listData.list);
+                    else
+                        this.organizationUsersSubject.next([
+                            ...this.organizationUsersSubject.getValue(),
+                            ...listData.list,
+                        ]);
+
                     this.totalCountSubject.next(listData.totalCount);
                 }),
                 catchError((err) => {
@@ -132,6 +141,33 @@ export class UserAPIService {
                 shareReplay(),
             );
         this.loading.showLoaderUntilCompleted(loadOrganizationUsers$).subscribe();
+    }
+
+    loadNotLoginEverOrganizationUsers() {
+        const organizationId = localStorage.getItem("organizationId");
+
+        if (!organizationId) {
+            this.notify.open("Relogin, please", "Close", { duration: 2000 });
+            return;
+        }
+
+        const loadNotLoginEverOrganizationUsers$ = this.http
+            .get<IListData<IUser>>(`${this.apiUrl}/users-not-login-ever?organizationId=${organizationId}`)
+            .pipe(
+                tap((listData) => {
+                    this.totalCountSubject.next(0);
+                    this.notLoginEverOrganizationUsersSubject.next(listData.list);
+                }),
+                catchError((err) => {
+                    const message = "Could not load organization users...";
+
+                    console.error(err);
+                    this.notify.open(message, "Close", { duration: 2000 });
+                    return of({ list: [], totalCount: 0 });
+                }),
+                shareReplay(),
+            );
+        this.loading.showLoaderUntilCompleted(loadNotLoginEverOrganizationUsers$).subscribe();
     }
 
     addOrganizationUsers(authType: EAuthType, users: IUser[]) {
@@ -157,7 +193,6 @@ export class UserAPIService {
     changeUsersRoles(changedUsersRoles: Map<string, number>) {
         const payload = Object.fromEntries(changedUsersRoles);
 
-        console.log("changeUsersRoles changedUsersRoles", changedUsersRoles);
         const updateOrganizationUsersRoles$ = this.http.put<boolean>(`${this.apiUrl}/users-roles`, payload).pipe(
             tap((updateResult) => {
                 const message = updateResult

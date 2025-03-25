@@ -13,6 +13,7 @@ import { withLatestFrom } from "rxjs";
 export class OrganizationUsersTableComponent {
     public search: string = "";
     public scrollCheckDisabled: boolean = false;
+    public isShowingAllOrgUsers: boolean = true;
 
     private listScrollCount = 0;
     private changedUsersRoles = new Map<string, number>();
@@ -47,5 +48,16 @@ export class OrganizationUsersTableComponent {
             .subscribe(([users, totalCount]) => {
                 this.scrollCheckDisabled = totalCount <= users.length;
             });
+    }
+
+    switchOrganizationUsers() {
+        this.isShowingAllOrgUsers = !this.isShowingAllOrgUsers;
+
+        if (!this.isShowingAllOrgUsers) {
+            this.usersAPIService.loadNotLoginEverOrganizationUsers();
+        } else {
+            this.listScrollCount = 0;
+            this.usersAPIService.loadOrganizationUsers(this.listScrollCount);
+        }
     }
 }

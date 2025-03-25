@@ -154,4 +154,16 @@ public class UserService : IUserService
             return null;
         }
     }
+
+    public async Task<ListData<User>> GetOrganizationUsersNotLoginEver(Guid organizationId)
+    {
+        var users = await _userRepository.GetNotLoginEver(organizationId);
+
+        var result = new ListData<User>()
+        {
+            List = users.Where(u => u.OrganizationId == organizationId).ToList()
+        };
+
+        return result;
+    }
 }
