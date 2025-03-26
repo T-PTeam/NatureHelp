@@ -1,9 +1,11 @@
-<h2 mat-dialog-title>Login</h2>
+<h2
+    mat-dialog-title
+    class="dialog-title">
+    Login
+</h2>
 <div mat-dialog-content>
     <form [formGroup]="formGroup">
-        <mat-form-field
-            appearance="outline"
-            class="full-width">
+        <mat-form-field class="full-width">
             <mat-label>Email</mat-label>
             <input
                 matInput
@@ -14,9 +16,7 @@
             </mat-error>
         </mat-form-field>
 
-        <mat-form-field
-            appearance="outline"
-            class="full-width">
+        <mat-form-field class="full-width">
             <mat-label>Password</mat-label>
             <input
                 matInput

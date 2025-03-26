@@ -15,3 +15,11 @@ export enum EAuthType {
     AddNewToOrganization = "add-new-to-org",
     AddMultipleToOrganization = "add-multiple-to-org",
 }
+
+export enum ERole {
+    SuperAdmin,
+    Owner,
+    Manager,
+    Supervisor,
+    Researcher,
+}

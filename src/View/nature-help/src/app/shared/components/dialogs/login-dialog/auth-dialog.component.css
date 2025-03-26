@@ -1,0 +1,9 @@
+.dialog-title {
+    text-align: center;
+}
+
+mat-form-field {
+    display: block;
+    width: calc(100% - 60px);
+    margin: 0px 30px 16px 30px;
+}

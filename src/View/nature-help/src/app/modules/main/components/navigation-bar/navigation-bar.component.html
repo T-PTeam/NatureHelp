@@ -3,8 +3,11 @@
         <button routerLink="/">Main</button>
         <button routerLink="water">Deficiencies</button>
         <button routerLink="labs">Laboratories</button>
-        <button routerLink="reports">Reports</button>
-        <button routerLink="owner">Organization View</button>
+        <button
+            routerLink="owner"
+            *ngIf="userService.isOwner$ | async">
+            Organization View
+        </button>
         <button routerLink="about">About us</button>
     </div>
 
@@ -24,13 +27,6 @@
                 (click)="openAuthDialog(false)"
                 [disabled]="userService.isLoggedIn$ | async">
                 Login
-            </button>
-            <button
-                *ngIf="userService.isSuperAdmin$ | async"
-                mat-menu-item
-                (click)="openAuthDialog(true)"
-                [disabled]="userService.isLoggedIn$ | async">
-                Register
             </button>
             <button
                 mat-menu-item

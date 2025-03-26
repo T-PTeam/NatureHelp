@@ -13,6 +13,7 @@ import { withLatestFrom } from "rxjs";
 export class OrganizationUsersTableComponent {
     public search: string = "";
     public scrollCheckDisabled: boolean = false;
+    public isShowingAllOrgUsers: boolean = true;
 
     private listScrollCount = 0;
     private changedUsersRoles = new Map<string, number>();
@@ -30,14 +31,10 @@ export class OrganizationUsersTableComponent {
     registerNewOrganizationUser() {}
 
     userRoleChanged(userId: string, role: number) {
-        console.log("selection change: ", this.changedUsersRoles);
-
         this.changedUsersRoles.set(userId, role);
     }
 
     saveChangedRoles() {
-        console.log("SAVE CHANGES: ", this.changedUsersRoles);
-
         if (this.changedUsersRoles.size) this.usersAPIService.changeUsersRoles(this.changedUsersRoles);
         else this.notify.open("Nothing to update...", "Close", { duration: 2000 });
     }
@@ -51,5 +48,16 @@ export class OrganizationUsersTableComponent {
             .subscribe(([users, totalCount]) => {
                 this.scrollCheckDisabled = totalCount <= users.length;
             });
+    }
+
+    switchOrganizationUsers() {
+        this.isShowingAllOrgUsers = !this.isShowingAllOrgUsers;
+
+        if (!this.isShowingAllOrgUsers) {
+            this.usersAPIService.loadNotLoginEverOrganizationUsers();
+        } else {
+            this.listScrollCount = 0;
+            this.usersAPIService.loadOrganizationUsers(this.listScrollCount);
+        }
     }
 }

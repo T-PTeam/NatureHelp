@@ -87,6 +87,7 @@ public class DeficiencyController : Controller
     /// </summary>
     /// <param name="deficiency"></param>
     /// <returns></returns>
+    [Authorize(Roles = "Owner, Manager, Supervisor")]
     [HttpPut("water")]
     public async Task<IActionResult> Update(WaterDeficiency deficiency)
     {
@@ -98,7 +99,7 @@ public class DeficiencyController : Controller
     /// </summary>
     /// <param name="deficiency"></param>
     /// <returns></returns>
-    [Authorize("")]
+    [Authorize(Roles = "Owner, Manager, Supervisor")]
     [HttpPut("soil")]
     public async Task<IActionResult> Update(SoilDeficiency deficiency)
     {

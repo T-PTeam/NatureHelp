@@ -1,6 +1,16 @@
+.dialog-title {
+    text-align: center;
+}
+
 .form-row {
     display: grid;
     margin: 10px 25px;
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-    gap: 16px; /* Adds space between form fields */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+mat-form-field {
+    display: block;
+    width: calc(100% - 60px);
+    margin: 0px 30px 16px 30px;
 }

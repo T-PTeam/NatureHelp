@@ -32,38 +32,15 @@ public class UserService : IUserService
         return user;
     }
 
-    public async Task<User> AutoLoginAsync(UserLoginDto userLoginDto)
-    {
-        var user = await _userRepository.GetUserByEmail(userLoginDto.Email) ?? throw new NullReferenceException("User was not found.");
-
-        var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, userLoginDto.Password);
-
-        if (result == PasswordVerificationResult.Failed) throw new UnauthorizedAccessException("Password verification failed");
-
-        if (user.AccessTokenExpireTime is null || user.AccessTokenExpireTime < DateTime.UtcNow)
-        {
-            user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
-            user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
-        }
-
-        if (user.RefreshTokenExpireTime is null || user.RefreshTokenExpireTime < DateTime.UtcNow)
-        {
-            user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
-            user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
-
-            throw new UnauthorizedAccessException("Login to your profile, please...");
-        }
-
-        await _userRepository.UpdateAsync(user);
-
-        return user;
-    }
-
     public async Task<User> LoginAsync(UserLoginDto userLoginDto)
     {
         var user = await _userRepository.GetUserByEmail(userLoginDto.Email) ?? throw new NullReferenceException("User was not found.");
+        var result = PasswordVerificationResult.Failed;
 
-        var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, userLoginDto.Password);
+        if (string.IsNullOrEmpty(userLoginDto.PasswordHash))
+            result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, userLoginDto.Password);
+        else if (userLoginDto.PasswordHash == user.PasswordHash) result = PasswordVerificationResult.Success;
+
 
         if (result == PasswordVerificationResult.Failed) throw new UnauthorizedAccessException("Password verification failed");
 
@@ -176,5 +153,17 @@ public class UserService : IUserService
         catch (Exception ex) {
             return null;
         }
+    }
+
+    public async Task<ListData<User>> GetOrganizationUsersNotLoginEver(Guid organizationId)
+    {
+        var users = await _userRepository.GetNotLoginEver(organizationId);
+
+        var result = new ListData<User>()
+        {
+            List = users.Where(u => u.OrganizationId == organizationId).ToList()
+        };
+
+        return result;
     }
 }

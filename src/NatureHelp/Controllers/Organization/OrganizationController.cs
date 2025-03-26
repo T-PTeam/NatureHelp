@@ -9,9 +9,11 @@ namespace NatureHelp.Controllers.Organization;
 public class OrganizationController : Controller
 {
     private readonly IOrganizationService _organizationService;
+    private readonly IUserService _userService;
 
-    public OrganizationController(IOrganizationService organizationService)
+    public OrganizationController(IOrganizationService organizationService, IUserService userService)
     {
+        _userService = userService;
         _organizationService = organizationService;
     }
 }

@@ -1,5 +1,9 @@
 <div class="header">
     <h2>Organization Users</h2>
+    <mat-slide-toggle
+        [checked]="false"
+        (change)="switchOrganizationUsers()">
+    </mat-slide-toggle>
     <input
         type="search"
         placeholder="Search for users..."
@@ -39,7 +43,12 @@
         [infiniteScrollDisabled]="scrollCheckDisabled"
         (scrolled)="onScroll()">
         <div
-            *ngFor="let user of usersAPIService.$organizationUsers | async"
+            *ngFor="
+                let user of (isShowingAllOrgUsers
+                    ? usersAPIService.$organizationUsers
+                    : usersAPIService.$notLoginEverOrganizationUsers
+                ) | async
+            "
             class="grid-row">
             <div>{{ user.firstName }}</div>
             <div>{{ user.lastName }}</div>

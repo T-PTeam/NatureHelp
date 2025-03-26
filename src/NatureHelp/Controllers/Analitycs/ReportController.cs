@@ -1,5 +1,4 @@
 ﻿using Application.Interfaces.Services.Analitycs;
-using Application.Interfaces.Services.Nature;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +8,7 @@ namespace NatureHelp.Controllers.Analytics;
 /// Controller for Reports
 /// </summary>
 [ApiController]
-[Authorize(Roles = "SuperAdmin, Manager, Supervisor")]
+[Authorize(Roles = "Owner, Manager, Supervisor")]
 [Route("api/[controller]")]
 public class ReportController : Controller
 {
