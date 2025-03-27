@@ -17,13 +17,13 @@ public class DeficiencyService : IDeficiencyService
 
     public async Task<ListData<WaterDeficiency>> GetWaterDeficiencyListAsync(int scrollCount)
     {
-        var originalData = await _waterRepository.GetAllAsync();
+        var originalData = await _waterRepository.GetAllAsync(scrollCount);
 
         var totalCount = await _waterRepository.GetTotalCount();
 
         var result = new ListData<WaterDeficiency>()
         {
-            List = originalData.Skip(scrollCount * 20).Take(20).ToList(),
+            List = originalData,
             TotalCount = totalCount,
         };
 
@@ -32,13 +32,13 @@ public class DeficiencyService : IDeficiencyService
 
     public async Task<ListData<SoilDeficiency>> GetSoilDeficiencyListAsync(int scrollCount)
     {
-        var originalData = await _soilRepository.GetAllAsync();
+        var originalData = await _soilRepository.GetAllAsync(scrollCount);
 
         var totalCount = await _soilRepository.GetTotalCount();
 
         var result = new ListData<SoilDeficiency>()
         {
-            List = originalData.Skip(scrollCount * 20).Take(20).ToList(),
+            List = originalData,
             TotalCount = totalCount,
         };
 

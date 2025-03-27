@@ -21,14 +21,14 @@ public class ExcelExportService : IExcelExportService
 
     public async Task<byte[]> GenerateWaterDeficienciesTable()
     {
-        var data = await _soilDeficiencyService.GetAllAsync();
+        var data = await _soilDeficiencyService.GetAllAsync(-1);
 
         return GenerateWorkBook(data);
     }
 
     public async Task<byte[]> GenerateSoilDeficienciesTable()
     {
-        var data = await _soilDeficiencyService.GetAllAsync();
+        var data = await _soilDeficiencyService.GetAllAsync(-1);
 
         return GenerateWorkBook(data);
     }

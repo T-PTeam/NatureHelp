@@ -12,6 +12,7 @@ import { WaterDeficiencyList } from "./modules/water-deficiency/components/water
 import { UnauthorisedComponent } from "./shared/components/unauthorised/unauthorised.component";
 import { RoleGuard } from "./shared/guards/role.guard";
 import { OwnerPageComponent } from "./modules/owner/components/owner-page/owner-page.component";
+import { ResearchTableComponent } from "./modules/laboratories/components/research-table/research-table.component";
 
 const routes: Routes = [
     { path: "", component: WaterDeficiencyList },
@@ -55,6 +56,10 @@ const routes: Routes = [
         component: LabDetailsComponent,
         canActivate: [RoleGuard],
         data: { includeRoles: ["researcher", "owner"] },
+    },
+    {
+        path: "researches",
+        component: ResearchTableComponent,
     },
 
     {

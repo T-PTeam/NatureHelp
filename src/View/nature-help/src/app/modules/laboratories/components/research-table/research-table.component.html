@@ -1,0 +1,36 @@
+<div class="header">
+  <h2>Researches</h2>
+  <input
+      type="search"
+      placeholder="Search for researches..."
+      [(ngModel)]="search" />
+  <mat-slide-toggle
+    style="transform: rotate(180deg)"
+    [checked]="false"
+    (change)="switchTable()"
+    [checked]="false">
+  </mat-slide-toggle>
+</div>
+
+<div class="list">
+  <table class="table">
+      <thead class="table-header">
+          <tr>
+              <th>Title</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Researcher</th>
+              <th>Location</th>
+          </tr>
+      </thead>
+      <tbody class="table-body">
+          <tr *ngFor="let research of labsAPI.researches$ | async">
+              <td>{{ research.title }}</td>
+              <td>{{ research.type }}</td>
+              <td>{{ research.date | date }}</td>
+              <td>{{ research.researcher.firstName }} {{ research.researcher.lastName }}</td>
+              <td>{{ research.laboratory.title }}, {{ research.laboratory.location.city }}({{ research.laboratory.location.country }})</td>
+          </tr>
+      </tbody>
+  </table>
+</div>

@@ -9,7 +9,7 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, ILaboratoryRepos
     public LaboratoryRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }
 
-    public override async Task<IEnumerable<Laboratory>> GetAllAsync()
+    public override async Task<IEnumerable<Laboratory>> GetAllAsync(int scrollCount)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
@@ -21,7 +21,13 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, ILaboratoryRepos
                     Id = l.Id,
                     Title = l.Title,
                     Location = l.Location,
-                    Researchers = l.Researchers,
+                    Researchers = l.Researchers != null 
+                        ? l.Researchers.Select(r => new User() 
+                        {
+                            FirstName = r.FirstName,
+                            LastName = r.LastName
+                        }).ToList() 
+                        : new List<User>(),
                     ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
                 })
                 .ToListAsync();

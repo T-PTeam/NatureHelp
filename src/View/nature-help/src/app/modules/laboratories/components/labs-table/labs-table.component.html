@@ -4,6 +4,12 @@
         type="search"
         placeholder="Search for laboratories..."
         [(ngModel)]="search" />
+    <mat-slide-toggle
+        style="transform: rotate(180deg)"
+        [checked]="false"
+        (change)="switchTable()"
+        [checked]="true">
+      </mat-slide-toggle>
     <button
         (click)="navigateToDetail()"
         class="action-btn"

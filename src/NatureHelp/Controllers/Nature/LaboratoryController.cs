@@ -20,9 +20,9 @@ public class LaboratoryController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpGet("")]
-    public async Task<IActionResult> LabsList()
+    public async Task<IActionResult> LabsList([FromQuery] int scrollCount)
     {
-        return Ok(await _laboratoryService.GetLabsAsync());
+        return Ok(await _laboratoryService.GetLabsAsync(scrollCount));
     }
 
     /// <summary>
@@ -34,5 +34,15 @@ public class LaboratoryController : Controller
     public async Task<IActionResult> LabById([FromRoute] Guid labId)
     {
         return Ok(await _laboratoryService.GetLabByIdAsync(labId));
+    }
+
+    /// <summary>
+    /// Get list of researches
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("researches")]
+    public async Task<IActionResult> ResearchesList([FromQuery] int scrollCount)
+    {
+        return Ok(await _laboratoryService.GetResearchesList(scrollCount));
     }
 }

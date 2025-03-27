@@ -57,13 +57,13 @@ public class UserService : IUserService
 
     public async Task<ListData<User>> GetOrganizationUsers(Guid organizationId, int scrollCount)
     {
-        var users = await _userRepository.GetAllAsync();
+        var users = await _userRepository.GetAllAsync(scrollCount);
 
         var totalCount = await _userRepository.GetTotalCount();
 
         var result = new ListData<User>()
         {
-            List = users.Where(u => u.OrganizationId == organizationId).Skip(scrollCount * 20).Take(20).ToList(),
+            List = users.Where(u => u.OrganizationId == organizationId).ToList(),
             TotalCount = totalCount,
         };
 
@@ -77,7 +77,7 @@ public class UserService : IUserService
 
         var userIds = changedUsersRoles.Keys.ToList();
 
-        var users = await _userRepository.GetAllAsync();
+        var users = await _userRepository.GetAllAsync(-1);
 
         foreach (var user in users
             .Where(u => userIds.Contains(u.Id)))

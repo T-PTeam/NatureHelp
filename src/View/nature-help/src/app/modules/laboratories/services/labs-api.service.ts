@@ -6,14 +6,23 @@ import { BehaviorSubject, catchError, Observable, shareReplay, tap } from "rxjs"
 import { LoadingService } from "@/shared/services/loading.service";
 
 import { ILaboratory } from "../models/ILaboratory";
+import { IResearch } from "../models/IResearch";
+import { IListData } from "@/shared/models/IListData";
 
 @Injectable({
     providedIn: "root",
 })
 export class LabsAPIService {
-    private subject = new BehaviorSubject<ILaboratory[]>([]);
-    public labs$: Observable<ILaboratory[]> = this.subject.asObservable();
     private labsUrl = "https://localhost:7077/api/laboratory/";
+
+    private labsSubject = new BehaviorSubject<ILaboratory[]>([]);
+    public labs$: Observable<ILaboratory[]> = this.labsSubject.asObservable();
+
+    private researchesSubject = new BehaviorSubject<IResearch[]>([]);
+    public researches$: Observable<IResearch[]> = this.researchesSubject.asObservable();
+
+    private totalCountSubject = new BehaviorSubject<number>(0);
+    public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
 
     httpOptions = {
         headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -29,7 +38,7 @@ export class LabsAPIService {
 
     public loadAllLabs(): Observable<ILaboratory[]> {
         const loadlabs$ = this.http.get<ILaboratory[]>(this.labsUrl).pipe(
-            tap((labs) => this.subject.next(labs)),
+            tap((labs) => this.labsSubject.next(labs)),
             catchError((err) => {
                 const message = "Could not load labs";
 
@@ -56,5 +65,25 @@ export class LabsAPIService {
 
     public deleteLabById(id: string): Observable<any> {
         return this.http.delete<any>(this.labsUrl + id);
+    }
+
+    public loadResearches(scrollCount: number): Observable<IResearch[]> {
+        const loadCourses$ = this.http
+            .get<IListData<IResearch>>(`${this.labsUrl}?scrollCount=${scrollCount}`)
+            .pipe(
+                tap((listData) => {
+                    this.researchesSubject.next([...this.researchesSubject.getValue(), ...listData.list]);
+                    this.totalCountSubject.next(listData.totalCount);
+                }),
+                catchError((err) => {
+                    const message = "Could not load soil deficiencies";
+
+                    this.notify.open(message, "Close", { duration: 2000 });
+                    return err;
+                }),
+                shareReplay(),
+            );
+        this.loading.showLoaderUntilCompleted(loadCourses$).subscribe();
+        return this.http.get<IResearch[]>(this.labsUrl);
     }
 }

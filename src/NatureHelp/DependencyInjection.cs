@@ -31,6 +31,7 @@ namespace NatureHelp
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ILaboratoryRepository, LaboratoryRepository>();
             services.AddScoped<IOrganizationRepository, OrganizationRepository>();
+            services.AddScoped<IResearchRepository, ResearchRepository>();
 
             return services;
         }

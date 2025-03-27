@@ -15,6 +15,7 @@ public class ApplicationContext : DbContext
     public DbSet<Domain.Models.Organization.Location> OrgLocations { get; set; }
     public DbSet<Organization> Organizations { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<Research> Researches { get; set; }
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options) { 

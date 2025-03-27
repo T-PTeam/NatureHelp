@@ -26,4 +26,8 @@ export class LabsTableComponent implements OnInit {
             this.router.navigate([`labs/add`]);
         }
     }
+
+    switchTable(){
+        this.router.navigateByUrl('researches');
+    }
 }
