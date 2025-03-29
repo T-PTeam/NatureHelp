@@ -1,7 +1,6 @@
 ﻿using Domain.Models.Analitycs;
 using Domain.Models.Nature;
 using Domain.Models.Organization;
-using Infrastructure.Providers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;
@@ -15,9 +14,11 @@ public class ApplicationContext : DbContext
     public DbSet<Domain.Models.Organization.Location> OrgLocations { get; set; }
     public DbSet<Organization> Organizations { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<Research> Researches { get; set; }
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
-        : base(options) { 
+        : base(options)
+    {
     }
 
     protected override void OnModelCreating(ModelBuilder builder)

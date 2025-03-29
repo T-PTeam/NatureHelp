@@ -8,10 +8,20 @@ import { SharedModule } from "@/shared/shared.module";
 
 import { LabDetailsComponent } from "./components/lab-details/lab-details.component";
 import { LabsTableComponent } from "./components/labs-table/labs-table.component";
+import { ResearchTableComponent } from "./components/research-table/research-table.component";
+import { InfiniteScrollDirective } from "ngx-infinite-scroll";
 
 @NgModule({
-    imports: [CommonModule, ReactiveFormsModule, BrowserModule, FormsModule, SharedModule, MatModule],
-    declarations: [LabsTableComponent, LabDetailsComponent],
-    exports: [LabsTableComponent, LabDetailsComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    FormsModule,
+    SharedModule,
+    MatModule,
+    InfiniteScrollDirective,
+  ],
+  declarations: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],
+  exports: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],
 })
 export class LabsModule {}

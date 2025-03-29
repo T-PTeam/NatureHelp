@@ -2,7 +2,7 @@ import { SoilDeficiencyList } from "@/modules/soil-deficiency/components/soil-de
 import { mount } from "cypress/angular";
 
 describe("LabsTableComponent", () => {
-    it("mounts with component", () => {
-        mount(SoilDeficiencyList);
-    });
+  it("mounts with component", () => {
+    mount(SoilDeficiencyList);
+  });
 });

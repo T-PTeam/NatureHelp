@@ -21,48 +21,50 @@ import { AuthInterceptor } from "./shared/services/auth-interceptor.service";
 import { MapViewService } from "./shared/services/map-view.service";
 import { SharedModule } from "./shared/shared.module";
 import { OwneryModule } from "./modules/owner/owner.module";
+import { ResearchesAPIService } from "./modules/laboratories/services/researches-api.service";
 
 const UKRAINIAN_DATE_FORMATS = {
-    parse: {
-        dateInput: "L",
-    },
-    display: {
-        dateInput: "L",
-        monthYearLabel: "MMMM YYYY",
-        dateA11yLabel: "LL",
-        monthYearA11yLabel: "MMMM YYYY",
-    },
+  parse: {
+    dateInput: "L",
+  },
+  display: {
+    dateInput: "L",
+    monthYearLabel: "MMMM YYYY",
+    dateA11yLabel: "LL",
+    monthYearA11yLabel: "MMMM YYYY",
+  },
 };
 
 @NgModule({
-    imports: [
-        SharedModule,
-        MatModule,
-        WaterDeficiencyModule,
-        SoilDeficiencyModule,
-        MainModule,
-        BrowserAnimationsModule,
-        LabsModule,
-        OwneryModule,
-    ],
-    declarations: [AppComponent],
-    bootstrap: [AppComponent],
-    providers: [
-        WaterAPIService,
-        SoilAPIService,
-        LabsAPIService,
+  imports: [
+    SharedModule,
+    MatModule,
+    WaterDeficiencyModule,
+    SoilDeficiencyModule,
+    MainModule,
+    BrowserAnimationsModule,
+    LabsModule,
+    OwneryModule,
+  ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
+  providers: [
+    WaterAPIService,
+    SoilAPIService,
+    LabsAPIService,
+    ResearchesAPIService,
 
-        MapViewService,
-        provideAnimationsAsync(),
+    MapViewService,
+    provideAnimationsAsync(),
 
-        { provide: MAT_DATE_LOCALE, useValue: "uk-UA" },
-        { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },
-        { provide: MAT_DATE_FORMATS, useValue: UKRAINIAN_DATE_FORMATS },
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    ],
+    { provide: MAT_DATE_LOCALE, useValue: "uk-UA" },
+    { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },
+    { provide: MAT_DATE_FORMATS, useValue: UKRAINIAN_DATE_FORMATS },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
 })
 export class AppModule {
-    constructor() {
-        moment.locale("uk");
-    }
+  constructor() {
+    moment.locale("uk");
+  }
 }

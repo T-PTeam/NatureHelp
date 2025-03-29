@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces.Services.Analitycs;
 using ClosedXML.Excel;
+using Domain.Interfaces;
 using Domain.Models.Nature;
 using Infrastructure.Interfaces;
 using System.Data;
@@ -7,12 +8,12 @@ using System.Data;
 namespace Application.Services.Analitycs;
 public class ExcelExportService : IExcelExportService
 {
-    private readonly IDeficiencyRepository<WaterDeficiency> _waterDeficiencyService;
-    private readonly IDeficiencyRepository<SoilDeficiency> _soilDeficiencyService;
+    private readonly IBaseRepository<WaterDeficiency> _waterDeficiencyService;
+    private readonly IBaseRepository<SoilDeficiency> _soilDeficiencyService;
 
     public ExcelExportService(
-        IDeficiencyRepository<WaterDeficiency> waterDeficiencyService,
-        IDeficiencyRepository<SoilDeficiency> soilDeficiencyService
+        IBaseRepository<WaterDeficiency> waterDeficiencyService,
+        IBaseRepository<SoilDeficiency> soilDeficiencyService
         )
     {
         _waterDeficiencyService = waterDeficiencyService;
@@ -21,14 +22,14 @@ public class ExcelExportService : IExcelExportService
 
     public async Task<byte[]> GenerateWaterDeficienciesTable()
     {
-        var data = await _soilDeficiencyService.GetAllAsync();
+        var data = await _soilDeficiencyService.GetAllAsync(-1);
 
         return GenerateWorkBook(data);
     }
 
     public async Task<byte[]> GenerateSoilDeficienciesTable()
     {
-        var data = await _soilDeficiencyService.GetAllAsync();
+        var data = await _soilDeficiencyService.GetAllAsync(-1);
 
         return GenerateWorkBook(data);
     }

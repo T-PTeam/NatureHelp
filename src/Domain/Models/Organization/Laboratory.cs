@@ -8,6 +8,7 @@ public class Laboratory : BaseModel
 
     [ForeignKey(nameof(Location))]
     public Guid LocationId { get; set; }
+
     [NotMapped]
     public int ResearchersCount { get; set; }
 

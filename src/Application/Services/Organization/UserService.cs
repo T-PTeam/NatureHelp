@@ -17,21 +17,6 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
-    public async Task<User> RegisterAsync(User user)
-    {
-        user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
-        user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
-
-        user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
-        user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
-
-        SetPasswordHash(user);
-
-        await _userRepository.AddAsync(user);
-
-        return user;
-    }
-
     public async Task<User> LoginAsync(UserLoginDto userLoginDto)
     {
         var user = await _userRepository.GetUserByEmail(userLoginDto.Email) ?? throw new NullReferenceException("User was not found.");
@@ -57,13 +42,13 @@ public class UserService : IUserService
 
     public async Task<ListData<User>> GetOrganizationUsers(Guid organizationId, int scrollCount)
     {
-        var users = await _userRepository.GetAllAsync();
+        var users = await _userRepository.GetAllAsync(scrollCount);
 
         var totalCount = await _userRepository.GetTotalCount();
 
         var result = new ListData<User>()
         {
-            List = users.Where(u => u.OrganizationId == organizationId).Skip(scrollCount * 20).Take(20).ToList(),
+            List = users.Where(u => u.OrganizationId == organizationId).ToList(),
             TotalCount = totalCount,
         };
 
@@ -77,7 +62,7 @@ public class UserService : IUserService
 
         var userIds = changedUsersRoles.Keys.ToList();
 
-        var users = await _userRepository.GetAllAsync();
+        var users = await _userRepository.GetAllAsync(-1);
 
         foreach (var user in users
             .Where(u => userIds.Contains(u.Id)))
@@ -119,40 +104,31 @@ public class UserService : IUserService
     {
         User user = new User()
         {
+            FirstName = loginDto.FirstName,
+            LastName = loginDto.LastName,
             Email = loginDto.Email,
             Password = loginDto.Password,
             OrganizationId = loginDto.OrganizationId,
         };
 
-        await RegisterAsync(user);
+        SetPasswordHash(user);
+
+        await _userRepository.AddAsync(user);
 
         return user;
     }
 
     public async Task<IEnumerable<User>> AddMultipleUsersToOrganizationAsync(IEnumerable<User> users)
     {
-        try
+        users = users.Select(user =>
         {
-            users = users.Select(user =>
-            {
-                user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
-                user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
+            SetPasswordHash(user);
+            return user;
+        });
 
-                user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
-                user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
+        await _userRepository.AddRangeAsync(users);
 
-                SetPasswordHash(user);
-
-                return user;
-            });
-
-            await _userRepository.AddRangeAsync(users);
-
-            return users;
-        }
-        catch (Exception ex) {
-            return null;
-        }
+        return users;
     }
 
     public async Task<ListData<User>> GetOrganizationUsersNotLoginEver(Guid organizationId)

@@ -1,10 +1,10 @@
-﻿using Application.Interfaces.Services.Analitycs;
-using Application.Interfaces.Services.Nature;
+﻿using Application.Interfaces.Services;
+using Application.Interfaces.Services.Analitycs;
 using Application.Interfaces.Services.Organization;
 using Application.Services.Analitycs;
-using Application.Services.Nature;
 using Application.Services.Organization;
 using Domain.Interfaces;
+using Domain.Models.Analitycs;
 using Domain.Models.Nature;
 using Domain.Models.Organization;
 using Infrastructure.Interfaces;
@@ -25,12 +25,13 @@ namespace NatureHelp
         /// <returns></returns>
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IBaseRepository<User>, BaseRepository<User>>();
-            services.AddScoped<IDeficiencyRepository<WaterDeficiency>, DeficiencyRepository<WaterDeficiency>>();
-            services.AddScoped<IDeficiencyRepository<SoilDeficiency>, DeficiencyRepository<SoilDeficiency>>();
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+
+            services.AddScoped<IBaseRepository<WaterDeficiency>, DeficiencyRepository<WaterDeficiency>>();
+            services.AddScoped<IBaseRepository<SoilDeficiency>, DeficiencyRepository<SoilDeficiency>>();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<ILaboratoryRepository, LaboratoryRepository>();
-            services.AddScoped<IOrganizationRepository, OrganizationRepository>();
+            services.AddScoped<IBaseRepository<Laboratory>, LaboratoryRepository>();
+            services.AddScoped<IBaseRepository<Research>, ResearchRepository>();
 
             return services;
         }
@@ -42,12 +43,19 @@ namespace NatureHelp
         /// <returns></returns>
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IDeficiencyService, DeficiencyService>();
-            services.AddScoped<ILaboratoryService, LaboratoryService>();
-            services.AddScoped<IOrganizationService, OrganizationService>();
-            services.AddScoped<IReportService, ReportService>();
+            services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IExcelExportService, ExcelExportService>();
+
+            services.AddScoped<IBaseService<User>, BaseService<User>>();
+            services.AddScoped<IBaseService<WaterDeficiency>, BaseService<WaterDeficiency>>();
+            services.AddScoped<IBaseService<SoilDeficiency>, BaseService<SoilDeficiency>>();
+            services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
+            services.AddScoped<IBaseService<Research>, BaseService<Research>>();
+
 
             return services;
         }

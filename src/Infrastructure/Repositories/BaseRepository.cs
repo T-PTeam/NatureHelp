@@ -2,7 +2,6 @@
 using Domain.Models;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace Infrastructure.Repositories;
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
@@ -14,11 +13,16 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
         _contextFactory = contextFactory;
     }
 
-    public virtual async Task<IEnumerable<T>> GetAllAsync()
+    public virtual async Task<IEnumerable<T>> GetAllAsync(int scrollCount)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
-            return await context.Set<T>().ToListAsync();
+            if (scrollCount == -1)
+            {
+                return await context.Set<T>().ToListAsync();
+            }
+
+            return await context.Set<T>().Skip(scrollCount * 20).Take(20).ToListAsync();
         }
     }
 

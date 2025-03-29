@@ -12,17 +12,17 @@ import { MainContainerComponent } from "./components/main-container/main-contain
 import { NavigationBarComponent } from "./components/navigation-bar/navigation-bar.component";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        SharedModule,
-        AppRoutingModule,
-        HttpClientModule,
-        RouterModule,
-        MatModule,
-        ReactiveFormsModule,
-        FormsModule,
-    ],
-    declarations: [MainContainerComponent, NavigationBarComponent],
-    exports: [MainContainerComponent, NavigationBarComponent],
+  imports: [
+    CommonModule,
+    SharedModule,
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule,
+    MatModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
+  declarations: [MainContainerComponent, NavigationBarComponent],
+  exports: [MainContainerComponent, NavigationBarComponent],
 })
 export class MainModule {}

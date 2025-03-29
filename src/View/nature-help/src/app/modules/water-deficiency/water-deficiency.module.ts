@@ -11,16 +11,16 @@ import { WaterDeficiencyList } from "./components/water-deficiency-list/water-de
 import { InfiniteScrollDirective } from "ngx-infinite-scroll";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        BrowserModule,
-        FormsModule,
-        MatModule,
-        SharedModule,
-        InfiniteScrollDirective,
-    ],
-    declarations: [WaterDeficiencyDetail, WaterDeficiencyList],
-    exports: [WaterDeficiencyList, WaterDeficiencyDetail],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    FormsModule,
+    MatModule,
+    SharedModule,
+    InfiniteScrollDirective,
+  ],
+  declarations: [WaterDeficiencyDetail, WaterDeficiencyList],
+  exports: [WaterDeficiencyList, WaterDeficiencyDetail],
 })
 export class WaterDeficiencyModule {}

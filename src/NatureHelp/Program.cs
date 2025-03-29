@@ -1,9 +1,7 @@
 using Application.Providers;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NatureHelp;
 using NatureHelp.Filters;
@@ -11,7 +9,6 @@ using NatureHelp.Interfaces;
 using NatureHelp.Providers;
 using Serilog;
 using System.Reflection;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -87,9 +84,9 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo
+    options.SwaggerDoc("v2", new OpenApiInfo
     {
-        Version = "v1",
+        Version = "v2",
         Title = "NatureHelp",
         Description = "Swagger API controlling of ERP monitoring system",
     });
@@ -121,6 +118,8 @@ builder.Services.AddSwaggerGen(options =>
                     Array.Empty<string>()
                 }
             });
+
+    options.CustomSchemaIds(type => type.FullName);
 });
 
 builder.Services.AddInfrastructureServices(configuration);
@@ -143,7 +142,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "NatureHelp v1");
+        c.SwaggerEndpoint("/swagger/v2/swagger.json", "NatureHelp v2");
     });
 }
 

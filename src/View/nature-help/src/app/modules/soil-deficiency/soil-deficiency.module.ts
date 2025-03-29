@@ -11,16 +11,16 @@ import { SoilDeficiencyList } from "./components/soil-deficiency-list/soil-defic
 import { InfiniteScrollDirective } from "ngx-infinite-scroll";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        BrowserModule,
-        FormsModule,
-        SharedModule,
-        MatModule,
-        InfiniteScrollDirective,
-    ],
-    declarations: [SoilDeficiencyDetail, SoilDeficiencyList],
-    exports: [SoilDeficiencyList, SoilDeficiencyDetail],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    FormsModule,
+    SharedModule,
+    MatModule,
+    InfiniteScrollDirective,
+  ],
+  declarations: [SoilDeficiencyDetail, SoilDeficiencyList],
+  exports: [SoilDeficiencyList, SoilDeficiencyDetail],
 })
 export class SoilDeficiencyModule {}
