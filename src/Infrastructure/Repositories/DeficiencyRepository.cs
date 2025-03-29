@@ -4,7 +4,7 @@ using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
-public class DeficiencyRepository<D> : BaseRepository<D>, IDeficiencyRepository<D> where D : Deficiency
+public class DeficiencyRepository<D> : BaseRepository<D> where D : Deficiency
 {
     public DeficiencyRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }

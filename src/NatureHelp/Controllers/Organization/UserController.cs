@@ -1,6 +1,5 @@
 ﻿using Application.Dtos;
 using Application.Interfaces.Services.Organization;
-using Domain.Enums;
 using Domain.Models.Organization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -39,17 +38,6 @@ public class UserController : Controller
     public async Task<IActionResult> ChangeUsersRoles([FromBody] Dictionary<Guid, int> changedUsersRoles)
     {
         return Ok(await _userService.ChangeUsersRoles(changedUsersRoles));
-    }
-
-    /// <summary>
-    /// Register user
-    /// </summary>
-    /// <returns></returns>
-    [Authorize(Roles = "SuperAdmin, Owner")]
-    [HttpPost("register")]
-    public async Task<IActionResult> RegisterAsync(User user)
-    {
-        return Ok(await _userService.RegisterAsync(user));
     }
 
     /// <summary>

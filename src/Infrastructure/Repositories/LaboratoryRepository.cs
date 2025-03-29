@@ -1,10 +1,9 @@
 ﻿using Domain.Models.Organization;
 using Infrastructure.Data;
-using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
-public class LaboratoryRepository : BaseRepository<Laboratory>, ILaboratoryRepository
+public class LaboratoryRepository : BaseRepository<Laboratory>
 {
     public LaboratoryRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }
@@ -21,12 +20,12 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, ILaboratoryRepos
                     Id = l.Id,
                     Title = l.Title,
                     Location = l.Location,
-                    Researchers = l.Researchers != null 
-                        ? l.Researchers.Select(r => new User() 
+                    Researchers = l.Researchers != null
+                        ? l.Researchers.Select(r => new User()
                         {
                             FirstName = r.FirstName,
                             LastName = r.LastName
-                        }).ToList() 
+                        }).ToList()
                         : new List<User>(),
                     ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
                 })

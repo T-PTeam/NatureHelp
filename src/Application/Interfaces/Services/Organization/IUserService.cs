@@ -1,13 +1,10 @@
 ﻿using Application.Dtos;
-using Domain.Enums;
 using Domain.Models.Organization;
 using Shared.Dtos;
 
 namespace Application.Interfaces.Services.Organization;
 public interface IUserService
 {
-    public Task<User> RegisterAsync(User user);
-
     public Task<User> LoginAsync(UserLoginDto user);
 
     public Task<ListData<User>> GetOrganizationUsers(Guid organizationId, int scrollCount);

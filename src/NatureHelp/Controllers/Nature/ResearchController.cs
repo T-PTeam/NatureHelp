@@ -1,5 +1,5 @@
 ﻿using Domain.Interfaces;
-using Domain.Models.Organization;
+using Domain.Models.Analitycs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,8 +7,8 @@ namespace NatureHelp.Controllers.Nature;
 
 [Authorize(Roles = "SuperAdmin, Owner, Manager, Researcher")]
 [Route("api/[controller]")]
-public class LaboratoryController : BaseController<Laboratory>
+public class ResearchController : BaseController<Research>
 {
-    public LaboratoryController(IBaseService<Laboratory> laboratoryService)
-        : base(laboratoryService) { }
+    public ResearchController(IBaseService<Research> researchService)
+        : base(researchService) { }
 }

@@ -15,81 +15,81 @@ import { OwnerPageComponent } from "./modules/owner/components/owner-page/owner-
 import { ResearchTableComponent } from "./modules/laboratories/components/research-table/research-table.component";
 
 const routes: Routes = [
-    { path: "", component: WaterDeficiencyList },
+  { path: "", component: WaterDeficiencyList },
 
-    { path: "water", component: WaterDeficiencyList },
-    {
-        path: "water/add",
-        component: WaterDeficiencyDetail,
-        canActivate: [RoleGuard],
-        data: { excludeRoles: ["researcher", "guest"] },
-    },
-    {
-        path: "water/:id",
-        component: WaterDeficiencyDetail,
-        canActivate: [RoleGuard],
-        data: { excludeRoles: ["researcher", "guest"] },
-    },
+  { path: "water", component: WaterDeficiencyList },
+  {
+    path: "water/add",
+    component: WaterDeficiencyDetail,
+    canActivate: [RoleGuard],
+    data: { excludeRoles: ["researcher", "guest"] },
+  },
+  {
+    path: "water/:id",
+    component: WaterDeficiencyDetail,
+    canActivate: [RoleGuard],
+    data: { excludeRoles: ["researcher", "guest"] },
+  },
 
-    { path: "soil", component: SoilDeficiencyList },
-    {
-        path: "soil/add",
-        component: SoilDeficiencyDetail,
-        canActivate: [RoleGuard],
-        data: { excludeRoles: ["researcher", "guest"] },
-    },
-    {
-        path: "soil/:id",
-        component: SoilDeficiencyDetail,
-        canActivate: [RoleGuard],
-        data: { excludeRoles: ["researcher", "guest"] },
-    },
+  { path: "soil", component: SoilDeficiencyList },
+  {
+    path: "soil/add",
+    component: SoilDeficiencyDetail,
+    canActivate: [RoleGuard],
+    data: { excludeRoles: ["researcher", "guest"] },
+  },
+  {
+    path: "soil/:id",
+    component: SoilDeficiencyDetail,
+    canActivate: [RoleGuard],
+    data: { excludeRoles: ["researcher", "guest"] },
+  },
 
-    {
-        path: "labs",
-        component: LabsTableComponent,
-        canActivate: [RoleGuard],
-        data: { includeRoles: ["researcher", "owner"] },
-    },
-    {
-        path: "labs/:id",
-        component: LabDetailsComponent,
-        canActivate: [RoleGuard],
-        data: { includeRoles: ["researcher", "owner"] },
-    },
-    {
-        path: "researches",
-        component: ResearchTableComponent,
-    },
+  {
+    path: "labs",
+    component: LabsTableComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["researcher", "owner"] },
+  },
+  {
+    path: "labs/:id",
+    component: LabDetailsComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["researcher", "owner"] },
+  },
+  {
+    path: "researches",
+    component: ResearchTableComponent,
+  },
 
-    {
-        path: "reports",
-        component: ReportsTableComponent,
-        canActivate: [RoleGuard],
-        data: { includeRoles: ["manager", "owner"] },
-    },
-    {
-        path: "reports/:id",
-        component: ReportsTableComponent,
-        canActivate: [RoleGuard],
-        data: { includeRoles: ["manager", "owner"] },
-    },
+  {
+    path: "reports",
+    component: ReportsTableComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["manager", "owner"] },
+  },
+  {
+    path: "reports/:id",
+    component: ReportsTableComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["manager", "owner"] },
+  },
 
-    {
-        path: "owner",
-        component: OwnerPageComponent,
-        canActivate: [RoleGuard],
-        data: { includeRoles: ["owner"] },
-    },
+  {
+    path: "owner",
+    component: OwnerPageComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["owner"] },
+  },
 
-    { path: "about", component: AboutComponent },
+  { path: "about", component: AboutComponent },
 
-    { path: "unauthorized", component: UnauthorisedComponent },
-    { path: "**", redirectTo: "/unauthorized" },
+  { path: "unauthorized", component: UnauthorisedComponent },
+  { path: "**", redirectTo: "/unauthorized" },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

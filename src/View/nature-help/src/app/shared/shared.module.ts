@@ -15,25 +15,25 @@ import { LabResearchersPipe } from "./pipes/lab-researchers.pipe";
 import { AddOrganizationUsersComponent } from "./components/dialogs/add-organization-users/add-organization-users.component";
 
 @NgModule({
-    imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
-    declarations: [
-        MapComponent,
-        AuthDialogComponent,
-        AddOrganizationUsersComponent,
-        FilterPipe,
-        EnumToStringPipe,
-        RoleStringPipe,
-        LabResearchersPipe,
-    ],
-    exports: [
-        MapComponent,
-        AuthDialogComponent,
-        AddOrganizationUsersComponent,
-        FilterPipe,
-        EnumToStringPipe,
-        RoleStringPipe,
-        LabResearchersPipe,
-    ],
-    providers: [LoadingService, ReportAPIService],
+  imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
+  declarations: [
+    MapComponent,
+    AuthDialogComponent,
+    AddOrganizationUsersComponent,
+    FilterPipe,
+    EnumToStringPipe,
+    RoleStringPipe,
+    LabResearchersPipe,
+  ],
+  exports: [
+    MapComponent,
+    AuthDialogComponent,
+    AddOrganizationUsersComponent,
+    FilterPipe,
+    EnumToStringPipe,
+    RoleStringPipe,
+    LabResearchersPipe,
+  ],
+  providers: [LoadingService, ReportAPIService],
 })
 export class SharedModule {}

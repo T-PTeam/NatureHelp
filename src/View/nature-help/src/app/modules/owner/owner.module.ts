@@ -11,16 +11,16 @@ import { OwnerPageComponent } from "./components/owner-page/owner-page.component
 import { OrganizationUsersTableComponent } from "./components/organization-users-table/organization-users-table.component";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        BrowserModule,
-        FormsModule,
-        SharedModule,
-        MatModule,
-        InfiniteScrollDirective,
-    ],
-    declarations: [OwnerPageComponent, OrganizationUsersTableComponent],
-    exports: [OwnerPageComponent, OrganizationUsersTableComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    FormsModule,
+    SharedModule,
+    MatModule,
+    InfiniteScrollDirective,
+  ],
+  declarations: [OwnerPageComponent, OrganizationUsersTableComponent],
+  exports: [OwnerPageComponent, OrganizationUsersTableComponent],
 })
 export class OwneryModule {}

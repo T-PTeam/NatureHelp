@@ -2,7 +2,6 @@
 using Domain.Models;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace Infrastructure.Repositories;
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel

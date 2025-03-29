@@ -17,21 +17,6 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
-    public async Task<User> RegisterAsync(User user)
-    {
-        user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
-        user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
-
-        user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
-        user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
-
-        SetPasswordHash(user);
-
-        await _userRepository.AddAsync(user);
-
-        return user;
-    }
-
     public async Task<User> LoginAsync(UserLoginDto userLoginDto)
     {
         var user = await _userRepository.GetUserByEmail(userLoginDto.Email) ?? throw new NullReferenceException("User was not found.");
@@ -124,35 +109,24 @@ public class UserService : IUserService
             OrganizationId = loginDto.OrganizationId,
         };
 
-        await RegisterAsync(user);
+        SetPasswordHash(user);
+
+        await _userRepository.AddAsync(user);
 
         return user;
     }
 
     public async Task<IEnumerable<User>> AddMultipleUsersToOrganizationAsync(IEnumerable<User> users)
     {
-        try
+        users = users.Select(user =>
         {
-            users = users.Select(user =>
-            {
-                user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
-                user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
+            SetPasswordHash(user);
+            return user;
+        });
 
-                user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
-                user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
+        await _userRepository.AddRangeAsync(users);
 
-                SetPasswordHash(user);
-
-                return user;
-            });
-
-            await _userRepository.AddRangeAsync(users);
-
-            return users;
-        }
-        catch (Exception ex) {
-            return null;
-        }
+        return users;
     }
 
     public async Task<ListData<User>> GetOrganizationUsersNotLoginEver(Guid organizationId)

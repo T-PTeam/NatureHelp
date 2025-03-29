@@ -1,24 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { LabsAPIService } from '../../services/labs-api.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { ResearchesAPIService } from "../../services/researches-api.service";
+import { withLatestFrom } from "rxjs";
 
 @Component({
-  selector: 'app-research-table',
-  templateUrl: './research-table.component.html',
-  styleUrls: ['./research-table.component.css'],
+  selector: "app-research-table",
+  templateUrl: "./research-table.component.html",
+  styleUrls: ["./research-table.component.css"],
   standalone: false,
 })
 export class ResearchTableComponent implements OnInit {
   public search: string = "";
+  public scrollCheckDisabled: boolean = false;
 
-  constructor(public labsAPI: LabsAPIService,
-    private router: Router
+  private listScrollCount = 0;
+
+  constructor(
+    public researchesAPIService: ResearchesAPIService,
+    private router: Router,
   ) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  switchTable() {
+    this.router.navigateByUrl("labs");
   }
 
-  switchTable(){
-    this.router.navigateByUrl('labs');
-  }
+  onScroll() {
+      this.listScrollCount++;
+      this.researchesAPIService.loadResearches(this.listScrollCount);
+  
+      this.researchesAPIService.researches$
+        .pipe(withLatestFrom(this.researchesAPIService.totalCount$))
+        .subscribe(([researches, totalCount]) => {
+          this.scrollCheckDisabled = totalCount <= researches.length;
+        });
+    }
 }
