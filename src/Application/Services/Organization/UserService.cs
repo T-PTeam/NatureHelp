@@ -102,27 +102,20 @@ public class UserService : IUserService
 
     public async Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto)
     {
-        try
+        User user = new User()
         {
-            User user = new User()
-            {
-                FirstName = loginDto.FirstName,
-                LastName = loginDto.LastName,
-                Email = loginDto.Email,
-                Password = loginDto.Password,
-                OrganizationId = loginDto.OrganizationId,
-            };
+            FirstName = loginDto.FirstName,
+            LastName = loginDto.LastName,
+            Email = loginDto.Email,
+            Password = loginDto.Password,
+            OrganizationId = loginDto.OrganizationId,
+        };
 
-            SetPasswordHash(user);
+        SetPasswordHash(user);
 
-            await _userRepository.AddAsync(user);
+        await _userRepository.AddAsync(user);
 
-            return user;
-        }
-        catch (Exception ex)
-        {
-            return null;
-        }
+        return user;
     }
 
     public async Task<IEnumerable<User>> AddMultipleUsersToOrganizationAsync(IEnumerable<User> users)
