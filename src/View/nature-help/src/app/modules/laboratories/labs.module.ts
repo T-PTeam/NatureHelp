@@ -12,7 +12,15 @@ import { ResearchTableComponent } from "./components/research-table/research-tab
 import { InfiniteScrollDirective } from "ngx-infinite-scroll";
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, BrowserModule, FormsModule, SharedModule, MatModule, InfiniteScrollDirective],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    FormsModule,
+    SharedModule,
+    MatModule,
+    InfiniteScrollDirective,
+  ],
   declarations: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],
   exports: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],
 })

@@ -55,19 +55,6 @@ export class UserAPIService {
     password: string | null,
     passwordHash: string | null = null,
   ): Observable<IAuthResponse> {
-    if (authType === EAuthType.AddMultipleToOrganization) {
-      return this.http
-        .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
-          email,
-          password,
-          organizationId: localStorage.getItem("organizationId"),
-        })
-        .pipe(
-          tap((authResponse) => this.setAuthOptions(authResponse)),
-          shareReplay(),
-        );
-    }
-
     if (password) {
       return this.http
         .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
@@ -178,6 +165,21 @@ export class UserAPIService {
       tap((users) =>
         this.notify.open(`Users (${users.map((u) => u.email).join(", ")}) were added to Your organization`, "Close", {
           duration: 10000,
+        }),
+      ),
+      shareReplay(),
+    );
+  }
+
+  addOrganizationUser(authType: EAuthType, user: IUser) {
+    const organizationId = localStorage.getItem("organizationId");
+
+    user.organizationId = organizationId;
+
+    return this.http.post<IUser>(`${this.apiUrl}/${authType}`, user).pipe(
+      tap((user) =>
+        this.notify.open(`User (${user.email}) was added to Your organization`, "Close", {
+          duration: 6000,
         }),
       ),
       shareReplay(),

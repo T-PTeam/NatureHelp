@@ -1,6 +1,5 @@
 import { EAuthType } from "@/models/enums";
 import { AddOrganizationUsersComponent } from "@/shared/components/dialogs/add-organization-users/add-organization-users.component";
-import { AuthDialogComponent } from "@/shared/components/dialogs/login-dialog/auth-dialog.component";
 import { UserAPIService } from "@/shared/services/user-api.service";
 import { Component } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
@@ -27,6 +26,9 @@ export class OwnerPageComponent {
         width: "90vw",
         maxWidth: "90vw",
         height: "80vh",
+        data: {
+          isAddingOneUser: false,
+        },
       });
 
       dialogRef.afterClosed().subscribe((result) => {
@@ -42,14 +44,17 @@ export class OwnerPageComponent {
         }
       });
     } else {
-      const dialogRef = this.dialog.open(AuthDialogComponent, {
+      const dialogRef = this.dialog.open(AddOrganizationUsersComponent, {
         width: "50vw",
         maxWidth: "90vw",
+        data: {
+          isAddingOneUser: true,
+        },
       });
 
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
-          this.userService.auth(EAuthType.AddNewToOrganization, result.email, result.password).subscribe({
+          this.userService.addOrganizationUser(EAuthType.AddOneToOrganization, result.users[0]).subscribe({
             error: (err) => {
               this.notify.open("Add new user to Your organization failed...", "Close", {
                 duration: 2000,

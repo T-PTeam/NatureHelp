@@ -27,13 +27,13 @@ export class ResearchTableComponent implements OnInit {
   }
 
   onScroll() {
-      this.listScrollCount++;
-      this.researchesAPIService.loadResearches(this.listScrollCount);
-  
-      this.researchesAPIService.researches$
-        .pipe(withLatestFrom(this.researchesAPIService.totalCount$))
-        .subscribe(([researches, totalCount]) => {
-          this.scrollCheckDisabled = totalCount <= researches.length;
-        });
-    }
+    this.listScrollCount++;
+    this.researchesAPIService.loadResearches(this.listScrollCount);
+
+    this.researchesAPIService.researches$
+      .pipe(withLatestFrom(this.researchesAPIService.totalCount$))
+      .subscribe(([researches, totalCount]) => {
+        this.scrollCheckDisabled = totalCount <= researches.length;
+      });
+  }
 }

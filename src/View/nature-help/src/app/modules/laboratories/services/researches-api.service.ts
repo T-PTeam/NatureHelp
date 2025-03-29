@@ -1,13 +1,13 @@
-import { IListData } from '@/shared/models/IListData';
-import { LoadingService } from '@/shared/services/loading.service';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { BehaviorSubject, Observable, tap, catchError, shareReplay } from 'rxjs';
-import { IResearch } from '../models/IResearch';
+import { IListData } from "@/shared/models/IListData";
+import { LoadingService } from "@/shared/services/loading.service";
+import { HttpHeaders, HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { BehaviorSubject, Observable, tap, catchError, shareReplay } from "rxjs";
+import { IResearch } from "../models/IResearch";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ResearchesAPIService {
   private researchesUrl = "https://localhost:7077/api/research";
@@ -44,7 +44,7 @@ export class ResearchesAPIService {
       }),
       shareReplay(),
     );
-    
+
     this.loading.showLoaderUntilCompleted(loadCourses$).subscribe();
     return this.http.get<IResearch[]>(`${this.researchesUrl}?scrollCount=${scrollCount}`);
   }

@@ -1,11 +1,13 @@
 <h2
   mat-dialog-title
   class="dialog-title">
-  Add Users to Organization
+  {{ data.isAddingOneUser ? "Add User to Organization" : "Add Users to Organization" }}
 </h2>
 <div mat-dialog-content>
   <form [formGroup]="formGroup">
-    <mat-form-field class="full-width">
+    <mat-form-field
+      class="full-width"
+      *ngIf="!data.isAddingOneUser">
       <mat-label>Users Count</mat-label>
       <input
         matInput
@@ -90,6 +92,6 @@
     color="primary"
     (click)="onSubmit()"
     [disabled]="formGroup.invalid">
-    Add users
+    {{ data.isAddingOneUser ? "Add" : "Add all" }}
   </button>
 </div>
