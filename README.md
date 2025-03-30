@@ -34,3 +34,7 @@
 - `eslint-config-prettier` (development dependency)
 - `eslint-plugin-prettier` (development dependency)
 - `husky` (development dependency)
+
+## Firebase Deployed
+
+[Visit NatureHelp Site](https://naturehelp-c4212.web.app/uk/water)
