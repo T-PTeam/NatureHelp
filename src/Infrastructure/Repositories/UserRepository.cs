@@ -9,6 +9,14 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     public UserRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }
 
+    public override async Task<IEnumerable<User>> GetAllAsync(int scrollCount)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            return await context.Set<User>().Include(u => u.Address).ToListAsync();
+        }
+    }
+
     public async Task<User?> GetUserByEmail(string email)
     {
         using (var context = _contextFactory.CreateDbContext())

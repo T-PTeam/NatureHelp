@@ -2,6 +2,7 @@
 using Infrastructure.Data;
 using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace Infrastructure.Repositories;
 public class DeficiencyRepository<D> : BaseRepository<D> where D : Deficiency
@@ -28,9 +29,35 @@ public class DeficiencyRepository<D> : BaseRepository<D> where D : Deficiency
         {
             return await context.Set<D>()
                 .Include(d => d.Creator)
+                    .ThenInclude(c => c.Address)
                 .Include(d => d.ResponsibleUser)
+                    .ThenInclude(u => u.Address)
                 .Include(d => d.Location)
                 .FirstOrDefaultAsync(x => x.Id == id);
+        }
+    }
+
+    public override async Task<D> UpdateAsync(D entity)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            var existingEntity = await context.Set<D>()
+                .Include(d => d.Creator)
+                    .ThenInclude(c => c.Address)
+                .Include(d => d.ResponsibleUser)
+                    .ThenInclude(u => u.Address)
+                .Include(d => d.Location)
+                .FirstAsync(e => e.Id == entity.Id);
+
+            entity.Creator = existingEntity.Creator;
+            entity.ResponsibleUser = existingEntity.ResponsibleUser;
+
+            context.Entry(existingEntity).State = EntityState.Detached;
+            context.Set<D>().Attach(entity);
+
+            context.Set<D>().Update(entity);
+            await context.SaveChangesAsync();
+            return entity;
         }
     }
 }

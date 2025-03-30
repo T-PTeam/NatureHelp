@@ -13,7 +13,6 @@ const config = {
   endOfLine: "lf",
   singleAttributePerLine: true,
   plugins: [tailwindPlugin],
-  formatOnSave: true,
 };
 
 export default config;

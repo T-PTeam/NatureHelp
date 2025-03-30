@@ -28,8 +28,6 @@ export class OrganizationUsersTableComponent {
     this.reportAPIService.downloadSoilDeficiencyExcelListFile();
   }
 
-  registerNewOrganizationUser() {}
-
   userRoleChanged(userId: string, role: number) {
     this.changedUsersRoles.set(userId, role);
   }
