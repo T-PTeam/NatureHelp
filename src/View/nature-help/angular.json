@@ -67,9 +67,12 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",
           "options": {
-            "buildTarget": "nature-help:build"
+            "buildTarget": "nature-help:build",
+            "format": "xlf",
+            "outputPath": "src/locale",
+            "targetFiles": ["messages.uk.xlf"]
           }
         },
         "test": {
