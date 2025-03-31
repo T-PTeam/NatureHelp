@@ -31,16 +31,16 @@ export class WaterDeficiencyDetail implements OnInit {
     private router: Router,
     private mapViewService: MapViewService,
     private fb: FormBuilder,
-    private usersAPIService: UserAPIService,
+    public usersAPIService: UserAPIService,
   ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params["id"];
 
+      this.loadOrganizationUsers();
       if (!id) {
         this.isAddingDeficiency = true;
-        this.loadOrganizationUsers();
       } else {
         this.deficiencyDataService.getWaterDeficiencyById(id).subscribe((def) => {
           this.initializeForm(def);
@@ -141,7 +141,7 @@ export class WaterDeficiencyDetail implements OnInit {
       microbialLoad: [deficiency?.microbialLoad || 0, [Validators.required, Validators.min(0), Validators.max(2000)]],
 
       createdBy: [deficiency?.creator?.id || this.currentUser?.id],
-      responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id],
+      responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id, [Validators.required]],
     });
 
     this.details = {

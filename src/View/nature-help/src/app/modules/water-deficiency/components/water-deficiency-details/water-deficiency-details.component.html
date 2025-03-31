@@ -254,14 +254,16 @@
         [value]="details.creator.firstName + ' ' + details.creator.lastName"
         name="creator" />
     </mat-form-field>
+
     <mat-form-field>
       <mat-label>Responsible User</mat-label>
-      <input
-        matInput
-        type="IUser"
-        readonly
-        [value]="details.responsibleUser?.firstName + ' ' + details.responsibleUser?.lastName"
-        name="responsibleUser" />
+      <mat-select formControlName="responsibleUserId">
+        <mat-option
+          *ngFor="let user of usersAPIService.$organizationUsers | async"
+          [value]="user.id">
+          {{ user.firstName }} {{ user.lastName }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <div class="button-group-wrapper">
