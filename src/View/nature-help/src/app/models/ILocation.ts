@@ -5,4 +5,5 @@ export interface ILocation extends ICoordinates {
   region: string;
   district: string;
   city: string;
+  radiusAffected: number;
 }

@@ -1,8 +1,4 @@
 import { Component, HostListener, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-
-import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
-import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
 
 @Component({
@@ -14,15 +10,13 @@ import { MapViewService } from "@/shared/services/map-view.service";
 export class MapComponent implements OnInit {
   isFullScreen: boolean = false;
 
-  constructor(
-    private waterDataService: WaterAPIService,
-    private soilDataService: SoilAPIService,
-    private mapViewService: MapViewService,
-    private router: Router,
-  ) {}
+  constructor(private mapViewService: MapViewService) {}
 
   ngOnInit(): void {
     this.mapViewService.initMap();
+
+    this.mapViewService.makeDeficiencyMarkers();
+    this.mapViewService.makeLabMarkers();
   }
 
   public goToFullScreen(): void {

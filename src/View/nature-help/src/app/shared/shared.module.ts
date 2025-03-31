@@ -13,6 +13,7 @@ import { ReportAPIService } from "./services/report-api.service";
 import { RoleStringPipe } from "./pipes/role-string.pipe";
 import { LabResearchersPipe } from "./pipes/lab-researchers.pipe";
 import { AddOrganizationUsersComponent } from "./components/dialogs/add-organization-users/add-organization-users.component";
+import { MapViewService } from "./services/map-view.service";
 
 @NgModule({
   imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
@@ -34,6 +35,6 @@ import { AddOrganizationUsersComponent } from "./components/dialogs/add-organiza
     RoleStringPipe,
     LabResearchersPipe,
   ],
-  providers: [LoadingService, ReportAPIService],
+  providers: [LoadingService, ReportAPIService, MapViewService],
 })
 export class SharedModule {}

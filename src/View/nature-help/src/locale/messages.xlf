@@ -86,13 +86,6 @@
           <context context-type="linenumber">55,56</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="toxicityLevel" datatype="html">
-        <source>Toxicity Level</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">59,60</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="phosphateConcentration" datatype="html">
         <source>Phosphate Concentration</source>
         <context-group purpose="location">
