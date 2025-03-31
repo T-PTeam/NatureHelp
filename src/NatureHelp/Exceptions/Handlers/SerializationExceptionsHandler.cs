@@ -21,7 +21,7 @@ public class SerializationExceptionsHandler : IExceptionHandler
     {
         exceptionContext.Result = new ContentResult
         {
-            Content = "Data access error: " + exceptionContext.Exception.Message,
+            Content = "Serialization error: " + exceptionContext.Exception.Message,
             ContentType = "text/plain",
             StatusCode = (int)HttpStatusCode.InternalServerError
         };

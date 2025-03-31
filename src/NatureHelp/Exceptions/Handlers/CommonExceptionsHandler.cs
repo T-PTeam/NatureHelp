@@ -28,7 +28,7 @@ public class CommonExceptionsHandler : IExceptionHandler
     {
         exceptionContext.Result = new ContentResult
         {
-            Content = "Data access error: " + exceptionContext.Exception.Message,
+            Content = "Common error: " + exceptionContext.Exception.Message,
             ContentType = "text/plain",
             StatusCode = (int)HttpStatusCode.InternalServerError
         };

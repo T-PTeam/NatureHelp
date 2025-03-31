@@ -28,7 +28,7 @@ public class FileExceptionsHandler : IExceptionHandler
     {
         exceptionContext.Result = new ContentResult
         {
-            Content = "Data access error: " + exceptionContext.Exception.Message,
+            Content = "File error: " + exceptionContext.Exception.Message,
             ContentType = "text/plain",
             StatusCode = (int)HttpStatusCode.InternalServerError
         };

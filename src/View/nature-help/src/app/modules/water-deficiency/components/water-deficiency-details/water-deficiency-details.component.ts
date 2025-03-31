@@ -73,7 +73,6 @@ export class WaterDeficiencyDetail implements OnInit {
   }
 
   private initializeForm(deficiency: IWaterDeficiency | null = null) {
-    console.log("CUR USER: ", this.currentUser);
     this.detailsForm = this.fb.group({
       id: [deficiency?.id || crypto.randomUUID()],
       createdAt: [deficiency?.createdAt || moment()],
@@ -141,35 +140,21 @@ export class WaterDeficiencyDetail implements OnInit {
       ],
       microbialLoad: [deficiency?.microbialLoad || 0, [Validators.required, Validators.min(0), Validators.max(2000)]],
 
-      creator: this.fb.group({
-        firstName: [deficiency?.creator?.firstName || this.currentUser?.firstName],
-        lastName: [deficiency?.creator?.lastName || this.currentUser?.lastName],
-        email: [deficiency?.creator?.email || this.currentUser?.email],
-        password: [deficiency?.creator?.password || ""],
-        passwordHash: [deficiency?.creator?.passwordHash || this.currentUser?.passwordHash],
-        address: this.fb.group({
-          country: [deficiency?.creator?.address?.country || this.currentUser?.address?.country],
-          region: [deficiency?.creator?.address?.region || this.currentUser?.address?.region],
-          district: [deficiency?.creator?.address?.district || this.currentUser?.address?.district],
-          city: [deficiency?.creator?.address?.city || this.currentUser?.address?.city],
-        }),
-      }),
-      responsibleUser: this.fb.group({
-        firstName: [deficiency?.responsibleUser?.firstName || this.currentUser?.firstName],
-        lastName: [deficiency?.responsibleUser?.lastName || this.currentUser?.lastName],
-        email: [deficiency?.responsibleUser?.email || this.currentUser?.email],
-        password: [deficiency?.creator?.password || ""],
-        passwordHash: [deficiency?.responsibleUser?.passwordHash || this.currentUser?.passwordHash],
-        address: this.fb.group({
-          country: [deficiency?.creator?.address?.country || this.currentUser?.address?.country],
-          region: [deficiency?.creator?.address?.region || this.currentUser?.address?.region],
-          district: [deficiency?.creator?.address?.district || this.currentUser?.address?.district],
-          city: [deficiency?.creator?.address?.city || this.currentUser?.address?.city],
-        }),
-      }),
+      createdBy: [deficiency?.creator?.id || this.currentUser?.id],
+      responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id],
     });
 
-    this.details = this.detailsForm.value;
+    this.details = {
+      ...this.detailsForm.value,
+      creator: {
+        firstName: deficiency?.creator?.firstName || this.currentUser?.firstName,
+        lastName: deficiency?.creator?.lastName || this.currentUser?.lastName,
+      },
+      responsibleUser: {
+        firstName: deficiency?.responsibleUser?.firstName || this.currentUser?.firstName,
+        lastName: deficiency?.responsibleUser?.lastName || this.currentUser?.lastName,
+      },
+    };
   }
 
   private loadOrganizationUsers() {

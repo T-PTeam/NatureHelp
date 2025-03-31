@@ -108,13 +108,4 @@ public class WaterDeficiency : Deficiency
     /// <example>1500</example>
     [Range(0, 2000, ErrorMessage = "Мікробне навантаження повинно бути в межах 0 - 2000 КУО/мл.")]
     public double MicrobialLoad { get; set; }
-
-    [ForeignKey(nameof(Creator))]
-    public Guid CreatorId { get; set; }
-
-    [ForeignKey(nameof(ResponsibleUser))]
-    public Guid? ResponsibleUserId { get; set; }
-
-    [ForeignKey(nameof(Location))]
-    public Guid LocationId { get; set; }
 }
