@@ -2,6 +2,12 @@
   text-align: center;
   margin-top: 16px;
   margin-right: 16px;
+
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .soil-deficiency-card mat-card-title {

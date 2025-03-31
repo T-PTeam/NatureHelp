@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
 import { withLatestFrom } from "rxjs";
 import { ReportAPIService } from "@/shared/services/report-api.service";
+import { MapViewService } from "@/shared/services/map-view.service";
+import { ILocation } from "@/models/ILocation";
 
 @Component({
   selector: "n-soil-deficiencys-deficiencies",
@@ -21,6 +23,7 @@ export class SoilDeficiencyList {
     public soilAPIService: SoilAPIService,
     private router: Router,
     private reportAPIService: ReportAPIService,
+    private mapViewService: MapViewService,
   ) {}
 
   public downloadExcel() {
@@ -48,5 +51,9 @@ export class SoilDeficiencyList {
 
   public goToWater() {
     this.router.navigateByUrl("/water");
+  }
+
+  changeMapFocus(location: ILocation) {
+    this.mapViewService.changeFocus(location, 20);
   }
 }

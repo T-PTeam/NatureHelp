@@ -87,6 +87,7 @@ export class UserAPIService {
     localStorage.removeItem("organizationId");
     localStorage.removeItem("email");
     localStorage.removeItem("passwordHash");
+    localStorage.removeItem("userId");
 
     this.subject.next(null);
   }
@@ -261,6 +262,7 @@ export class UserAPIService {
       return;
     }
 
+    if (authOptions.id) localStorage.setItem("userId", authOptions.id);
     if (authOptions.accessToken) localStorage.setItem("accessToken", authOptions.accessToken);
     if (authOptions.refreshToken) localStorage.setItem("refreshToken", authOptions.refreshToken);
     if (authOptions.organizationId) localStorage.setItem("organizationId", authOptions.organizationId);

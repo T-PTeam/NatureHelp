@@ -38,3 +38,8 @@
 ## Firebase Deployed
 
 [Visit NatureHelp Site](https://naturehelp-c4212.web.app/uk/water)
+
+## Useful commands:
+
+- extract localization files:
+ng extract-i18n --output-path=src/locale --format=xlf                                   

@@ -10,7 +10,6 @@ export interface ISoilDeficiency extends IDeficiency {
   nitratesConcentration: number;
   heavyMetalsConcentration: number;
   electricalConductivity: number;
-  toxicityLevel: string;
   microbialActivity: number;
   analysisDate: Date;
 }

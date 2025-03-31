@@ -8,6 +8,8 @@ import { MapViewService } from "@/shared/services/map-view.service";
 
 import { EDangerState, EDeficiencyType } from "../../../../models/enums";
 import { IWaterDeficiency } from "../../models/IWaterDeficiency";
+import { UserAPIService } from "@/shared/services/user-api.service";
+import { IUser } from "@/models/IUser";
 
 @Component({
   selector: "n-water-deficiency-details",
@@ -16,10 +18,12 @@ import { IWaterDeficiency } from "../../models/IWaterDeficiency";
   standalone: false,
 })
 export class WaterDeficiencyDetail implements OnInit {
-  public details: IWaterDeficiency | null = null;
-  private isAddingDeficiency: boolean = false;
+  details: IWaterDeficiency | null = null;
   detailsForm!: FormGroup;
   deficiencyTypes = Object.values(EDeficiencyType);
+
+  private isAddingDeficiency: boolean = false;
+  private currentUser: IUser | null = null;
 
   constructor(
     private deficiencyDataService: WaterAPIService,
@@ -27,84 +31,31 @@ export class WaterDeficiencyDetail implements OnInit {
     private router: Router,
     private mapViewService: MapViewService,
     private fb: FormBuilder,
+    public usersAPIService: UserAPIService,
   ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params["id"];
 
+      this.loadOrganizationUsers();
       if (!id) {
         this.isAddingDeficiency = true;
-        this.initializeForm();
-        this.details = this.detailsForm.value;
       } else {
         this.deficiencyDataService.getWaterDeficiencyById(id).subscribe((def) => {
           this.initializeForm(def);
-          this.details = def;
         });
       }
-    });
-  }
-
-  private initializeForm(deficiency: IWaterDeficiency | null = null) {
-    this.detailsForm = this.fb.group({
-      id: [deficiency?.id || ""],
-      createdAt: [deficiency?.createdAt || moment()],
-      updatedAt: [deficiency?.updatedAt || moment()],
-      title: [deficiency?.title || "", Validators.required],
-      description: [deficiency?.description || "", Validators.required],
-      type: [deficiency?.type || EDeficiencyType.Water, Validators.required],
-      creator: this.fb.group({
-        id: [deficiency?.creator?.id || ""],
-        name: [`${deficiency?.creator?.firstName || ""} ${deficiency?.creator?.lastName || ""}`, Validators.required],
-        email: [deficiency?.creator?.email || "", Validators.email],
-        role: [deficiency?.creator?.role || ""],
-      }),
-      responsibleUser: this.fb.group({
-        id: [deficiency?.responsibleUser?.id || ""],
-        name: [
-          `${deficiency?.responsibleUser?.firstName || ""} ${deficiency?.responsibleUser?.lastName || ""}`,
-          Validators.required,
-        ],
-        email: [deficiency?.responsibleUser?.email || "", Validators.email],
-        role: [deficiency?.responsibleUser?.role || ""],
-      }),
-      location: this.fb.group({
-        latitude: [deficiency?.location?.latitude || 0, [Validators.required, Validators.min(-90), Validators.max(90)]],
-        longitude: [
-          deficiency?.location?.longitude || 0,
-          [Validators.required, Validators.min(-180), Validators.max(180)],
-        ],
-        city: [deficiency?.location?.city || ""],
-        country: [deficiency?.location?.country || ""],
-      }),
-      eDangerState: [deficiency?.eDangerState || EDangerState.Moderate, Validators.required],
-      ph: [deficiency?.ph || 6.5, [Validators.required, Validators.min(0)]],
-      dissolvedOxygen: [deficiency?.dissolvedOxygen || 0, [Validators.required, Validators.min(0)]],
-      leadConcentration: [deficiency?.leadConcentration || 0, [Validators.required, Validators.min(0)]],
-      mercuryConcentration: [deficiency?.mercuryConcentration || 0, [Validators.required, Validators.min(0)]],
-      nitratesConcentration: [deficiency?.nitratesConcentration || 0, [Validators.required, Validators.min(0)]],
-      pesticidesContent: [deficiency?.pesticidesContent || 0, [Validators.required, Validators.min(0)]],
-      microbialActivity: [deficiency?.microbialActivity || 0, [Validators.required, Validators.min(0)]],
-      radiationLevel: [deficiency?.radiationLevel || 0, [Validators.required, Validators.min(0)]],
-      chemicalOxygenDemand: [deficiency?.chemicalOxygenDemand || 0, [Validators.required, Validators.min(0)]],
-      biologicalOxygenDemand: [deficiency?.biologicalOxygenDemand || 0, [Validators.required, Validators.min(0)]],
-      phosphateConcentration: [deficiency?.phosphateConcentration || 0, [Validators.required, Validators.min(0)]],
-      cadmiumConcentration: [deficiency?.cadmiumConcentration || 0, [Validators.required, Validators.min(0)]],
-      totalDissolvedSolids: [deficiency?.totalDissolvedSolids || 0, [Validators.required, Validators.min(0)]],
-      electricalConductivity: [deficiency?.electricalConductivity || 0, [Validators.required, Validators.min(0)]],
-      microbialLoad: [deficiency?.microbialLoad || 0, [Validators.required, Validators.min(0)]],
-      toxicityLevel: [deficiency?.toxicityLevel || "", Validators.required],
     });
   }
 
   public onSubmit() {
     if (this.detailsForm.invalid) {
       console.log("Form is invalid:", this.getFormErrors(this.detailsForm));
+
+      this.detailsForm.markAllAsTouched();
       return;
     }
-
-    console.log("Form data:", this.detailsForm.value);
 
     const formData: IWaterDeficiency = this.detailsForm.value;
 
@@ -119,6 +70,106 @@ export class WaterDeficiencyDetail implements OnInit {
         this.router.navigate(["/water"]);
       });
     }
+  }
+
+  private initializeForm(deficiency: IWaterDeficiency | null = null) {
+    this.detailsForm = this.fb.group({
+      id: [deficiency?.id || crypto.randomUUID()],
+      createdAt: [deficiency?.createdAt || moment()],
+      updatedAt: [deficiency?.updatedAt || moment()],
+      title: [deficiency?.title || "", Validators.required],
+      description: [deficiency?.description || "", Validators.required],
+      type: [deficiency?.type || EDeficiencyType.Water, Validators.required],
+      location: this.fb.group({
+        latitude: [deficiency?.location?.latitude || 0, [Validators.required, Validators.min(-90), Validators.max(90)]],
+        longitude: [
+          deficiency?.location?.longitude || 0,
+          [Validators.required, Validators.min(-180), Validators.max(180)],
+        ],
+        city: [deficiency?.location?.city || ""],
+        country: [deficiency?.location?.country || ""],
+      }),
+      eDangerState: [deficiency?.eDangerState || EDangerState.Moderate, Validators.required],
+
+      ph: [deficiency?.ph || 0, [Validators.required, Validators.min(0), Validators.max(14)]],
+      dissolvedOxygen: [deficiency?.dissolvedOxygen || 0, [Validators.required, Validators.min(0), Validators.max(20)]],
+      leadConcentration: [
+        deficiency?.leadConcentration || 0,
+        [Validators.required, Validators.min(0), Validators.max(0.01)],
+      ],
+      mercuryConcentration: [
+        deficiency?.mercuryConcentration || 0,
+        [Validators.required, Validators.min(0), Validators.max(0.001)],
+      ],
+      nitratesConcentration: [
+        deficiency?.nitratesConcentration || 0,
+        [Validators.required, Validators.min(0), Validators.max(50)],
+      ],
+      pesticidesContent: [
+        deficiency?.pesticidesContent || 0,
+        [Validators.required, Validators.min(0), Validators.max(0.005)],
+      ],
+      microbialActivity: [
+        deficiency?.microbialActivity || 0,
+        [Validators.required, Validators.min(0), Validators.max(1000)],
+      ],
+      radiationLevel: [deficiency?.radiationLevel || 0, [Validators.required, Validators.min(0), Validators.max(10)]],
+      chemicalOxygenDemand: [
+        deficiency?.chemicalOxygenDemand || 0,
+        [Validators.required, Validators.min(0), Validators.max(1000)],
+      ],
+      biologicalOxygenDemand: [
+        deficiency?.biologicalOxygenDemand || 0,
+        [Validators.required, Validators.min(0), Validators.max(50)],
+      ],
+      phosphateConcentration: [
+        deficiency?.phosphateConcentration || 0,
+        [Validators.required, Validators.min(0), Validators.max(2)],
+      ],
+      cadmiumConcentration: [
+        deficiency?.cadmiumConcentration || 0,
+        [Validators.required, Validators.min(0), Validators.max(0.005)],
+      ],
+      totalDissolvedSolids: [
+        deficiency?.totalDissolvedSolids || 0,
+        [Validators.required, Validators.min(0), Validators.max(1500)],
+      ],
+      electricalConductivity: [
+        deficiency?.electricalConductivity || 0,
+        [Validators.required, Validators.min(0), Validators.max(2500)],
+      ],
+      microbialLoad: [deficiency?.microbialLoad || 0, [Validators.required, Validators.min(0), Validators.max(2000)]],
+
+      createdBy: [deficiency?.creator?.id || this.currentUser?.id],
+      responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id, [Validators.required]],
+    });
+
+    this.details = {
+      ...this.detailsForm.value,
+      creator: {
+        firstName: deficiency?.creator?.firstName || this.currentUser?.firstName,
+        lastName: deficiency?.creator?.lastName || this.currentUser?.lastName,
+      },
+      responsibleUser: {
+        firstName: deficiency?.responsibleUser?.firstName || this.currentUser?.firstName,
+        lastName: deficiency?.responsibleUser?.lastName || this.currentUser?.lastName,
+      },
+    };
+  }
+
+  private loadOrganizationUsers() {
+    this.usersAPIService.$organizationUsers.subscribe((orgUsers) => {
+      const userId = localStorage.getItem("userId");
+
+      this.currentUser = orgUsers.find((u) => u.id === userId) ?? null;
+
+      console.log("CUR USER ASIGN: ", this.currentUser, " FROM ", orgUsers);
+      if (this.isAddingDeficiency && !this.detailsForm && this.currentUser && this.currentUser.address) {
+        this.initializeForm();
+      }
+    });
+
+    this.usersAPIService.loadOrganizationUsers(-1);
   }
 
   private getFormErrors(formGroup: FormGroup): any {

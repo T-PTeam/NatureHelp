@@ -12,6 +12,5 @@
   "proseWrap": "preserve",
   "endOfLine": "lf",
   "singleAttributePerLine": true,
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "formatOnSave": true
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

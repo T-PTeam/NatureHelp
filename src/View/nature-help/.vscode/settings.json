@@ -18,5 +18,6 @@
   "eslint.format.enable": true,
   "files.exclude": {
     "**/.git": false
-  }
+  },
+  "editor.formatOnSave": true
 }

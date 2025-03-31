@@ -21,7 +21,7 @@ public class SystemExceptionsHandler : IExceptionHandler
     {
         exceptionContext.Result = new ContentResult
         {
-            Content = "Data access error: " + exceptionContext.Exception.Message,
+            Content = "System error: " + exceptionContext.Exception.Message,
             ContentType = "text/plain",
             StatusCode = (int)HttpStatusCode.InternalServerError
         };

@@ -1,6 +1,9 @@
 import { ICoordinates } from "./ICoordinates";
 
 export interface ILocation extends ICoordinates {
-  city: string;
   country: string;
+  region: string;
+  district: string;
+  city: string;
+  radiusAffected: number;
 }

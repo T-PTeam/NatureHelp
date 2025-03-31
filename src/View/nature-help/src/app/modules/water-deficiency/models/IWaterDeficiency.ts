@@ -11,7 +11,6 @@ export interface IWaterDeficiency extends IDeficiency {
   radiationLevel: number;
   chemicalOxygenDemand: number;
   biologicalOxygenDemand: number;
-  toxicityLevel: number;
   phosphateConcentration: number;
   cadmiumConcentration: number;
   totalDissolvedSolids: number;

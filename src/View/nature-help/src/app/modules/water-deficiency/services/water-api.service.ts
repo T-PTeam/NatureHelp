@@ -48,7 +48,7 @@ export class WaterAPIService {
   }
 
   public getWaterDeficiencyById(id: string): Observable<IWaterDeficiency> {
-    return this.http.get<IWaterDeficiency>(this.watersUrl + id.toString());
+    return this.http.get<IWaterDeficiency>(`${this.watersUrl}/${id.toString()}`);
   }
 
   public addNewWaterDeficiency(value: IWaterDeficiency): Observable<IWaterDeficiency> {
@@ -75,7 +75,7 @@ export class WaterAPIService {
 
     this.listSubject.next(newCourses);
 
-    return this.http.put(`api/courses/${id}`, changes).pipe(
+    return this.http.put(`${this.watersUrl}/${id}`, changes).pipe(
       catchError((err) => {
         const message = "Could not update water deficiency";
 

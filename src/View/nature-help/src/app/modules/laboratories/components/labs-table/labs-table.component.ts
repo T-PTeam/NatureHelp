@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { LabsAPIService } from "../../services/labs-api.service";
+import { MapViewService } from "@/shared/services/map-view.service";
+import { ILocation } from "@/models/ILocation";
 
 @Component({
   selector: "nat-labs-table",
@@ -15,6 +17,7 @@ export class LabsTableComponent implements OnInit {
   constructor(
     public labsAPI: LabsAPIService,
     private router: Router,
+    private mapViewService: MapViewService,
   ) {}
 
   ngOnInit(): void {}
@@ -29,5 +32,9 @@ export class LabsTableComponent implements OnInit {
 
   switchTable() {
     this.router.navigateByUrl("researches");
+  }
+
+  changeMapFocus(location: ILocation) {
+    this.mapViewService.changeFocus(location, 20);
   }
 }

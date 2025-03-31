@@ -3,6 +3,7 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20250331100324_DeficiencyRelationships")]
+    partial class DeficiencyRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -196,8 +199,6 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedBy");
-
                     b.HasIndex("LocationId");
 
                     b.HasIndex("ResponsibleUserId");
@@ -284,8 +285,6 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedBy");
-
                     b.HasIndex("LocationId");
 
                     b.HasIndex("ResponsibleUserId");
@@ -342,12 +341,6 @@ namespace Infrastructure.Migrations
                     b.Property<string>("District")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<double>("Latitude")
-                        .HasColumnType("double precision");
-
-                    b.Property<double>("Longitude")
-                        .HasColumnType("double precision");
 
                     b.Property<string>("Region")
                         .IsRequired()
@@ -485,12 +478,6 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Models.Nature.SoilDeficiency", b =>
                 {
-                    b.HasOne("Domain.Models.Organization.User", "Creator")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.Models.Nature.Location", "Location")
                         .WithMany()
                         .HasForeignKey("LocationId")
@@ -500,8 +487,6 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Models.Organization.User", "ResponsibleUser")
                         .WithMany()
                         .HasForeignKey("ResponsibleUserId");
-
-                    b.Navigation("Creator");
 
                     b.Navigation("Location");
 
@@ -510,12 +495,6 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Models.Nature.WaterDeficiency", b =>
                 {
-                    b.HasOne("Domain.Models.Organization.User", "Creator")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.Models.Nature.Location", "Location")
                         .WithMany()
                         .HasForeignKey("LocationId")
@@ -525,8 +504,6 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Models.Organization.User", "ResponsibleUser")
                         .WithMany()
                         .HasForeignKey("ResponsibleUserId");
-
-                    b.Navigation("Creator");
 
                     b.Navigation("Location");
 

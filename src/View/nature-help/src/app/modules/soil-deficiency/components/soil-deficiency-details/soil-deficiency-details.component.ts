@@ -85,7 +85,6 @@ export class SoilDeficiencyDetail implements OnInit {
       nitratesConcentration: [deficiency?.nitratesConcentration || 0, [Validators.required, Validators.min(0)]],
       heavyMetalsConcentration: [deficiency?.heavyMetalsConcentration || 0, [Validators.required, Validators.min(0)]],
       electricalConductivity: [deficiency?.electricalConductivity || 0, [Validators.required, Validators.min(0)]],
-      toxicityLevel: [deficiency?.toxicityLevel || "", Validators.required],
       microbialActivity: [deficiency?.microbialActivity || 0, [Validators.required, Validators.min(0)]],
       analysisDate: [deficiency?.analysisDate || moment()],
     });

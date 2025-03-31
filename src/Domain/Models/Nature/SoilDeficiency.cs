@@ -69,13 +69,4 @@ public class SoilDeficiency : Deficiency
     /// </summary>
     /// <example>2025-01-24</example>
     public DateTime AnalysisDate { get; set; }
-
-    [ForeignKey(nameof(Creator))]
-    public Guid CreatorId { get; set; }
-
-    [ForeignKey(nameof(ResponsibleUser))]
-    public Guid? ResponsibleUserId { get; set; }
-
-    [ForeignKey(nameof(Location))]
-    public Guid LocationId { get; set; }
 }

@@ -2,138 +2,59 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="title" datatype="html">
-        <source>Title</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">5,6</context>
-        </context-group>
+      <trans-unit id="7278527838336975723" datatype="html">
+        <source>Deficiencies (Water)</source>
       </trans-unit>
-      <trans-unit id="description" datatype="html">
-        <source>Description</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">9,10</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="type" datatype="html">
-        <source>Type</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">13,14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="dissolvedOxygen" datatype="html">
-        <source>Dissolved Oxygen</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">23,24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="leadConcentration" datatype="html">
-        <source>Lead Concentration</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">27,28</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="mercuryConcentration" datatype="html">
-        <source>Mercury Concentration</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">31,32</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="nitrateConcentration" datatype="html">
-        <source>Nitrate Concentration</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">35,36</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="pesticidesContent" datatype="html">
-        <source>Pesticides Content</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">39,40</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="microbialActivity" datatype="html">
-        <source>Microbial Activity</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">43,44</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="radiationLevel" datatype="html">
-        <source>Radiation Level</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">47,48</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="chOxygenDemand" datatype="html">
-        <source>Chemical Oxygen Demand</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">51,52</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="bOxygenDemand" datatype="html">
+      <trans-unit id="biologicalOxygenDemand" datatype="html">
         <source>Biological Oxygen Demand</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">55,56</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="toxicityLevel" datatype="html">
-        <source>Toxicity Level</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">59,60</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="phosphateConcentration" datatype="html">
-        <source>Phosphate Concentration</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">63,64</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="cadmiumConcentration" datatype="html">
         <source>Cadmium Concentration</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">67,68</context>
-        </context-group>
       </trans-unit>
-      <trans-unit id="dissolvedSolids" datatype="html">
-        <source>Total Dissolved Solids</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">71,72</context>
-        </context-group>
+      <trans-unit id="chemicalOxygenDemand" datatype="html">
+        <source>Chemical Oxygen Demand</source>
+      </trans-unit>
+      <trans-unit id="description" datatype="html">
+        <source>Description</source>
+      </trans-unit>
+      <trans-unit id="dissolvedOxygen" datatype="html">
+        <source>Dissolved Oxygen</source>
       </trans-unit>
       <trans-unit id="electricalConductivity" datatype="html">
         <source>Electrical Conductivity</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">75,76</context>
-        </context-group>
+      </trans-unit>
+      <trans-unit id="leadConcentration" datatype="html">
+        <source>Lead Concentration</source>
+      </trans-unit>
+      <trans-unit id="mercuryConcentration" datatype="html">
+        <source>Mercury Concentration</source>
+      </trans-unit>
+      <trans-unit id="microbialActivity" datatype="html">
+        <source>Microbial Activity</source>
       </trans-unit>
       <trans-unit id="microbialLoad" datatype="html">
         <source>Microbial Load</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html</context>
-          <context context-type="linenumber">79,80</context>
-        </context-group>
       </trans-unit>
-      <trans-unit id="7278527838336975723" datatype="html">
-        <source>Deficiencies (Water)</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/water-deficiency/components/water-deficiency-list/water-deficiency-list.component.html</context>
-          <context context-type="linenumber">2,3</context>
-        </context-group>
+      <trans-unit id="nitrateConcentration" datatype="html">
+        <source>Nitrate Concentration</source>
+      </trans-unit>
+      <trans-unit id="pesticidesContent" datatype="html">
+        <source>Pesticides Content</source>
+      </trans-unit>
+      <trans-unit id="phosphateConcentration" datatype="html">
+        <source>Biological Oxygen Demand</source>
+      </trans-unit>
+      <trans-unit id="radiationLevel" datatype="html">
+        <source>Radiation Level</source>
+      </trans-unit>
+      <trans-unit id="title" datatype="html">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="totalDissolvedSolids" datatype="html">
+        <source>Total Dissolved Solids</source>
+      </trans-unit>
+      <trans-unit id="type" datatype="html">
+        <source>Type</source>
       </trans-unit>
     </body>
   </file>
