@@ -23,4 +23,4 @@ import { InfiniteScrollDirective } from "ngx-infinite-scroll";
   declarations: [WaterDeficiencyDetail, WaterDeficiencyTable],
   exports: [WaterDeficiencyTable, WaterDeficiencyDetail],
 })
-export class WaterDeficiencyModule { }
+export class WaterDeficiencyModule {}

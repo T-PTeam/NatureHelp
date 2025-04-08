@@ -23,4 +23,4 @@ import { InfiniteScrollDirective } from "ngx-infinite-scroll";
   declarations: [SoilDeficiencyDetail, SoilDeficiencyTable],
   exports: [SoilDeficiencyTable, SoilDeficiencyDetail],
 })
-export class SoilDeficiencyModule { }
+export class SoilDeficiencyModule {}
