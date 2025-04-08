@@ -1,23 +1,13 @@
 <div class="header">
   <h2>Organization Users</h2>
-  <mat-slide-toggle
-    [checked]="false"
-    (change)="switchOrganizationUsers()">
+  <mat-slide-toggle [checked]="false" (change)="switchOrganizationUsers()">
   </mat-slide-toggle>
-  <input
-    type="search"
-    placeholder="Search for users..."
-    [(ngModel)]="search" />
-  <button
-    (click)="saveChangedRoles()"
-    class="action-btn"
-    id="save-btn">
+  <h2>Not logined Users ever</h2>
+  <input type="search" placeholder="Search for users..." [(ngModel)]="search" />
+  <button (click)="saveChangedRoles()" class="action-btn" id="save-btn">
     <i class="material-icons">save</i>
   </button>
-  <button
-    (click)="downloadExcel()"
-    class="action-btn"
-    id="export-btn">
+  <button (click)="downloadExcel()" class="action-btn" id="export-btn">
     <i class="material-icons">insert_drive_file</i>
   </button>
 </div>
@@ -29,31 +19,18 @@
     <div>Role</div>
     <div>Email</div>
   </div>
-  <div
-    class="grid-body"
-    infiniteScroll
-    [infiniteScrollDistance]="2"
-    [infiniteScrollThrottle]="500"
-    [infiniteScrollDisabled]="scrollCheckDisabled"
-    (scrolled)="onScroll()">
-    <div
-      *ngFor="
+  <div class="grid-body" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500"
+    [infiniteScrollDisabled]="scrollCheckDisabled" (scrolled)="onScroll()">
+    <div *ngFor="
         let user of (isShowingAllOrgUsers
           ? usersAPIService.$organizationUsers
           : usersAPIService.$notLoginEverOrganizationUsers
         ) | async
-      "
-      class="grid-row">
+      " class="grid-row">
       <div>{{ user.firstName }}</div>
       <div>{{ user.lastName }}</div>
-      <mat-select
-        [value]="user.role"
-        (selectionChange)="userRoleChanged(user.id, $event.value)">
-        <mat-option
-          [value]="role"
-          *ngFor="let role of [0, 1, 2, 3, 4]"
-          >{{ role | roleString }}</mat-option
-        >
+      <mat-select [value]="user.role" (selectionChange)="userRoleChanged(user.id, $event.value)">
+        <mat-option [value]="role" *ngFor="let role of [0, 1, 2, 3, 4]">{{ role | roleString }}</mat-option>
       </mat-select>
       <div>{{ user.email }}</div>
     </div>

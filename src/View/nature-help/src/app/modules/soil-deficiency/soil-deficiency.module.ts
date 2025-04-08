@@ -7,7 +7,7 @@ import { MatModule } from "@/mat.module";
 import { SharedModule } from "@/shared/shared.module";
 
 import { SoilDeficiencyDetail } from "./components/soil-deficiency-details/soil-deficiency-details.component";
-import { SoilDeficiencyList } from "./components/soil-deficiency-list/soil-deficiency-list.component";
+import { SoilDeficiencyTable } from "./components/soil-deficiency-table/soil-deficiency-table.component";
 import { InfiniteScrollDirective } from "ngx-infinite-scroll";
 
 @NgModule({
@@ -20,7 +20,7 @@ import { InfiniteScrollDirective } from "ngx-infinite-scroll";
     MatModule,
     InfiniteScrollDirective,
   ],
-  declarations: [SoilDeficiencyDetail, SoilDeficiencyList],
-  exports: [SoilDeficiencyList, SoilDeficiencyDetail],
+  declarations: [SoilDeficiencyDetail, SoilDeficiencyTable],
+  exports: [SoilDeficiencyTable, SoilDeficiencyDetail],
 })
-export class SoilDeficiencyModule {}
+export class SoilDeficiencyModule { }

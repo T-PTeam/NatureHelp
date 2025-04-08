@@ -6,18 +6,18 @@ import { LabsTableComponent } from "./modules/laboratories/components/labs-table
 import { AboutComponent } from "./modules/main/components/about/about.component";
 import { ReportsTableComponent } from "./modules/reports/components/reports-table/reports-table.component";
 import { SoilDeficiencyDetail } from "./modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component";
-import { SoilDeficiencyList } from "./modules/soil-deficiency/components/soil-deficiency-list/soil-deficiency-list.component";
+import { SoilDeficiencyTable } from "./modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component";
 import { WaterDeficiencyDetail } from "./modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component";
-import { WaterDeficiencyList } from "./modules/water-deficiency/components/water-deficiency-list/water-deficiency-list.component";
+import { WaterDeficiencyTable } from "./modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component";
 import { UnauthorisedComponent } from "./shared/components/unauthorised/unauthorised.component";
 import { RoleGuard } from "./shared/guards/role.guard";
 import { OwnerPageComponent } from "./modules/owner/components/owner-page/owner-page.component";
 import { ResearchTableComponent } from "./modules/laboratories/components/research-table/research-table.component";
 
 const routes: Routes = [
-  { path: "", component: WaterDeficiencyList },
+  { path: "", component: WaterDeficiencyTable },
 
-  { path: "water", component: WaterDeficiencyList },
+  { path: "water", component: WaterDeficiencyTable },
   {
     path: "water/add",
     component: WaterDeficiencyDetail,
@@ -31,7 +31,7 @@ const routes: Routes = [
     data: { excludeRoles: ["researcher", "guest"] },
   },
 
-  { path: "soil", component: SoilDeficiencyList },
+  { path: "soil", component: SoilDeficiencyTable },
   {
     path: "soil/add",
     component: SoilDeficiencyDetail,
@@ -92,4 +92,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

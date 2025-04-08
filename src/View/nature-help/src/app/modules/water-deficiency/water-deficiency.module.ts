@@ -7,7 +7,7 @@ import { MatModule } from "@/mat.module";
 import { SharedModule } from "@/shared/shared.module";
 
 import { WaterDeficiencyDetail } from "./components/water-deficiency-details/water-deficiency-details.component";
-import { WaterDeficiencyList } from "./components/water-deficiency-list/water-deficiency-list.component";
+import { WaterDeficiencyTable } from "./components/water-deficiency-table/water-deficiency-table.component";
 import { InfiniteScrollDirective } from "ngx-infinite-scroll";
 
 @NgModule({
@@ -20,7 +20,7 @@ import { InfiniteScrollDirective } from "ngx-infinite-scroll";
     SharedModule,
     InfiniteScrollDirective,
   ],
-  declarations: [WaterDeficiencyDetail, WaterDeficiencyList],
-  exports: [WaterDeficiencyList, WaterDeficiencyDetail],
+  declarations: [WaterDeficiencyDetail, WaterDeficiencyTable],
+  exports: [WaterDeficiencyTable, WaterDeficiencyDetail],
 })
-export class WaterDeficiencyModule {}
+export class WaterDeficiencyModule { }
