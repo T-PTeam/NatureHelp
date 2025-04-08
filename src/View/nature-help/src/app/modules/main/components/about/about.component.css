@@ -1,0 +1,39 @@
+.about-container {
+  padding: 20px;
+  background-color: #f7fefc;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+  color: #2d3a3a;
+  height: calc(100vh - 65px);
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.about-container h1 {
+  text-align: center;
+  color: #207a55;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-container h2 {
+  color: #1d5e45;
+  margin-top: 30px;
+}
+
+.about-container p,
+.about-container ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-container li::before {
+  content: "🌿 ";
+}

@@ -1,57 +1,56 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
-
+import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
 import { withLatestFrom } from "rxjs";
 import { ReportAPIService } from "@/shared/services/report-api.service";
-import { ILocation } from "@/models/ILocation";
 import { MapViewService } from "@/shared/services/map-view.service";
+import { ILocation } from "@/models/ILocation";
 
 @Component({
-  selector: "n-water-deficiencys-deficiencies",
-  templateUrl: "./water-deficiency-list.component.html",
-  styleUrls: ["./water-deficiency-list.component.css"],
+  selector: "n-soil-deficiencies",
+  templateUrl: "./soil-deficiency-table.component.html",
+  styleUrls: ["./soil-deficiency-table.component.css"],
   standalone: false,
 })
-export class WaterDeficiencyList {
+export class SoilDeficiencyTable {
   public search: string = "";
   public scrollCheckDisabled: boolean = false;
 
   private listScrollCount = 0;
 
   constructor(
-    public waterAPIService: WaterAPIService,
+    public soilAPIService: SoilAPIService,
     private router: Router,
     private reportAPIService: ReportAPIService,
     private mapViewService: MapViewService,
   ) {}
 
   public downloadExcel() {
-    this.reportAPIService.downloadWaterDeficiencyExcelListFile();
+    this.reportAPIService.downloadSoilDeficiencyExcelListFile();
   }
 
   public navigateToDetail(id?: string) {
     if (id) {
-      this.router.navigate([`/water/${id}`]);
+      this.router.navigate([`/soil/${id}`]);
     } else {
-      this.router.navigate(["water/add"]);
+      this.router.navigate([`soil/add`]);
     }
   }
 
   onScroll() {
     this.listScrollCount++;
-    this.waterAPIService.loadWaterDeficiencies(this.listScrollCount);
+    this.soilAPIService.loadSoilDeficiencies(this.listScrollCount);
 
-    this.waterAPIService.deficiencies$
-      .pipe(withLatestFrom(this.waterAPIService.totalCount$))
+    this.soilAPIService.deficiencies$
+      .pipe(withLatestFrom(this.soilAPIService.totalCount$))
       .subscribe(([deficiencies, totalCount]) => {
         this.scrollCheckDisabled = totalCount <= deficiencies.length;
       });
   }
 
-  public goToSoil() {
-    this.router.navigateByUrl("soil");
+  public goToWater() {
+    this.router.navigateByUrl("/water");
   }
 
   changeMapFocus(location: ILocation) {
