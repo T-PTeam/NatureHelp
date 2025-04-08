@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { LabsAPIService } from "../../services/labs-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
 import { ILocation } from "@/models/ILocation";
+import { withLatestFrom } from "rxjs";
 
 @Component({
   selector: "nat-labs-table",
@@ -13,9 +14,12 @@ import { ILocation } from "@/models/ILocation";
 })
 export class LabsTableComponent implements OnInit {
   public search: string = "";
+  public scrollCheckDisabled: boolean = false;
+
+  private listScrollCount = 0;
 
   constructor(
-    public labsAPI: LabsAPIService,
+    public labsAPIService: LabsAPIService,
     private router: Router,
     private mapViewService: MapViewService,
   ) {}
@@ -36,5 +40,14 @@ export class LabsTableComponent implements OnInit {
 
   changeMapFocus(location: ILocation) {
     this.mapViewService.changeFocus(location, 20);
+  }
+
+  onScroll() {
+    this.listScrollCount++;
+    this.labsAPIService.loadLabs(this.listScrollCount);
+
+    this.labsAPIService.labs$.pipe(withLatestFrom(this.labsAPIService.totalCount$)).subscribe(([labs, totalCount]) => {
+      this.scrollCheckDisabled = totalCount <= labs.length;
+    });
   }
 }

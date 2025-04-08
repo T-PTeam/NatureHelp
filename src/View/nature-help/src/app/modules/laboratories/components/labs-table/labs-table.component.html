@@ -12,41 +12,45 @@
   </button>
 </div>
 
-<div class="list">
-  <table class="table">
-    <thead class="table-header">
-      <tr>
-        <th>Title</th>
-        <th>Location</th>
-        <th>Researchers</th>
-        <th>Researches number</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody class="table-body">
-      <tr *ngFor="let laboratory of labsAPI.labs$ | async">
-        <td>{{ laboratory.title }}</td>
-        <td>{{ laboratory.location.country }}, {{ laboratory.location.city }}</td>
-        <td>{{ laboratory.researchers | labResearchers }}</td>
-        <td>{{ laboratory.researchersCount }}</td>
-        <td class="btn-ceil">
-          <button
-            class="action-btn"
-            (click)="changeMapFocus(laboratory.location)"
-            id="map-focus-btn">
-            <i class="fa fa-crosshairs"></i>
-          </button>
-        </td>
-        <td class="btn-ceil">
-          <button
-            (click)="navigateToDetail(laboratory.id)"
-            class="action-btn"
-            id="edit-btn">
-            <i class="fa fa-edit"></i>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="grid-container">
+  <div class="grid-header">
+    <div>Title</div>
+    <div>Location</div>
+    <div>Researchers</div>
+    <div>Researches number</div>
+    <div>Map</div>
+    <div>Edit</div>
+  </div>
+  <div
+    class="grid-body"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="500"
+    [infiniteScrollDisabled]="scrollCheckDisabled"
+    (scrolled)="onScroll()">
+    <div
+      *ngFor="let lab of labsAPIService.labs$ | async"
+      class="grid-row">
+      <div>{{ lab.title }}</div>
+      <div>{{ lab.location.country }}, {{ lab.location.city }}</div>
+      <div>{{ lab.researchers | labResearchers }}</div>
+      <div>{{ lab.researchersCount }}</div>
+      <div class="btn-ceil">
+        <button
+          class="action-btn"
+          (click)="changeMapFocus(lab.location)"
+          id="map-focus-btn">
+          <i class="fa fa-crosshairs"></i>
+        </button>
+      </div>
+      <div class="btn-ceil">
+        <button
+          (click)="navigateToDetail(lab.id)"
+          class="action-btn"
+          id="edit-btn">
+          <i class="fa fa-edit"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

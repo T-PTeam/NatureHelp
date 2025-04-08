@@ -63,7 +63,10 @@ export class UserAPIService {
           organizationId: localStorage.getItem("organizationId"),
         })
         .pipe(
-          tap((authResponse) => this.setAuthOptions(authResponse)),
+          tap((authResponse) => {
+            this.logout();
+            this.setAuthOptions(authResponse);
+          }),
           shareReplay(),
         );
     } else {
@@ -74,7 +77,10 @@ export class UserAPIService {
           organizationId: localStorage.getItem("organizationId"),
         })
         .pipe(
-          tap((authResponse) => this.setAuthOptions(authResponse)),
+          tap((authResponse) => {
+            this.logout();
+            this.setAuthOptions(authResponse);
+          }),
           shareReplay(),
         );
     }
@@ -279,7 +285,6 @@ export class UserAPIService {
   private relogin(): void {
     const email = localStorage.getItem("email");
     const passwordHash = localStorage.getItem("passwordHash");
-    this.logout();
 
     if (email && passwordHash)
       this.auth(EAuthType.Login, email, null, passwordHash).subscribe({

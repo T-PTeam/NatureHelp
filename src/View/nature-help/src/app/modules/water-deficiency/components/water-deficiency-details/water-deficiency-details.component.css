@@ -18,12 +18,15 @@
 }
 
 .form-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(6, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   position: relative;
-  padding: 0 12px 0 12px;
+  padding: 0 12px;
+}
+
+.form-container > * {
+  flex: 1 1 calc(50% - 12px);
 }
 
 .button-group {

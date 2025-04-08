@@ -49,29 +49,6 @@ export class WaterDeficiencyDetail implements OnInit {
     });
   }
 
-  public onSubmit() {
-    if (this.detailsForm.invalid) {
-      console.log("Form is invalid:", this.getFormErrors(this.detailsForm));
-
-      this.detailsForm.markAllAsTouched();
-      return;
-    }
-
-    const formData: IWaterDeficiency = this.detailsForm.value;
-
-    if (this.isAddingDeficiency) {
-      this.deficiencyDataService.addNewWaterDeficiency(formData).subscribe((def) => {
-        console.log("Created:", def);
-        this.router.navigate(["/water"]);
-      });
-    } else {
-      this.deficiencyDataService.updateWaterDeficiencyById(formData.id, formData).subscribe((def) => {
-        console.log("Updated:", def);
-        this.router.navigate(["/water"]);
-      });
-    }
-  }
-
   private initializeForm(deficiency: IWaterDeficiency | null = null) {
     this.detailsForm = this.fb.group({
       id: [deficiency?.id || crypto.randomUUID()],
@@ -163,7 +140,6 @@ export class WaterDeficiencyDetail implements OnInit {
 
       this.currentUser = orgUsers.find((u) => u.id === userId) ?? null;
 
-      console.log("CUR USER ASIGN: ", this.currentUser, " FROM ", orgUsers);
       if (this.isAddingDeficiency && !this.detailsForm && this.currentUser && this.currentUser.address) {
         this.initializeForm();
       }
@@ -183,6 +159,25 @@ export class WaterDeficiencyDetail implements OnInit {
       }
     });
     return errors;
+  }
+
+  public onSubmit() {
+    if (this.detailsForm.invalid) {
+      this.detailsForm.markAllAsTouched();
+      return;
+    }
+
+    const formData: IWaterDeficiency = this.detailsForm.value;
+
+    if (this.isAddingDeficiency) {
+      this.deficiencyDataService.addNewWaterDeficiency(formData).subscribe(() => {
+        this.router.navigate(["/water"]);
+      });
+    } else {
+      this.deficiencyDataService.updateWaterDeficiencyById(formData.id, formData).subscribe(() => {
+        this.router.navigate(["/water"]);
+      });
+    }
   }
 
   public onCancel() {
