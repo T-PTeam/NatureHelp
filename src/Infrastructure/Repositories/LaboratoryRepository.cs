@@ -12,6 +12,11 @@ public class LaboratoryRepository : BaseRepository<Laboratory>
     {
         using (var context = _contextFactory.CreateDbContext())
         {
+            if (scrollCount == -1)
+            {
+                return await context.Set<Laboratory>().ToListAsync();
+            }
+
             return await context.Set<Laboratory>()
                 .Include(l => l.Location)
                 .Include(l => l.Researchers)
@@ -29,6 +34,7 @@ public class LaboratoryRepository : BaseRepository<Laboratory>
                         : new List<User>(),
                     ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
                 })
+                .Skip(scrollCount * 20).Take(20)
                 .ToListAsync();
         }
     }

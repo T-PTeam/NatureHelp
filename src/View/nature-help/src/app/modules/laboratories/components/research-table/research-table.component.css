@@ -17,7 +17,13 @@
 .header button {
   float: inline-end;
   margin: 15px;
-  font-size: 18px;
+  font-size: 22px;
+  padding: 0px 7px;
+}
+
+.btn-ceil button {
+  font-size: 22px;
+  padding: 0px 7px;
 }
 
 .header input {
@@ -30,7 +36,6 @@
   border: 1px solid black;
   color: rgb(186, 84, 254);
   background-color: white;
-  font-size: 16px;
 }
 
 #add-btn {

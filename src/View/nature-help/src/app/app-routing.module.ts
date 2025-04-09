@@ -49,6 +49,12 @@ const routes: Routes = [
     component: LabsTableComponent,
   },
   {
+    path: "labs/add",
+    component: LabDetailsComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["researcher", "owner"] },
+  },
+  {
     path: "labs/:id",
     component: LabDetailsComponent,
     canActivate: [RoleGuard],

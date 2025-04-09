@@ -3,7 +3,6 @@ import { ILaboratory } from "../../models/ILaboratory";
 import { MapViewService } from "@/shared/services/map-view.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import moment from "moment";
 import { LabsAPIService } from "../../services/labs-api.service";
 
 @Component({
@@ -15,6 +14,8 @@ import { LabsAPIService } from "../../services/labs-api.service";
 export class LabDetailsComponent implements OnInit {
   public details: ILaboratory | null = null;
   detailsForm!: FormGroup;
+
+  private isAddingLaboratory: boolean = false;
 
   constructor(
     private labsAPIService: LabsAPIService,
@@ -29,12 +30,11 @@ export class LabDetailsComponent implements OnInit {
       const id = params["id"];
 
       if (!id) {
+        this.isAddingLaboratory = true;
         this.initializeForm();
-        this.details = this.detailsForm.value;
       } else {
-        this.labsAPIService.getLabById(id).subscribe((def) => {
-          this.initializeForm(def);
-          this.details = def;
+        this.labsAPIService.getLabById(id).subscribe((lab) => {
+          this.initializeForm(lab);
         });
       }
     });
@@ -44,27 +44,61 @@ export class LabDetailsComponent implements OnInit {
     return this.details?.researchers?.map((r) => `${r.firstName} ${r.lastName}`).join("\n") || "";
   }
 
-  private initializeForm(laboratory: ILaboratory | null = null) {
+  private initializeForm(laboratory: ILaboratory | null = null): void {
     this.detailsForm = this.fb.group({
-      id: [laboratory?.id || ""],
-      title: [laboratory?.title || moment()],
-      researches: [laboratory?.researchers || []],
-      location: [laboratory?.location || { city: "", country: "" }, Validators.required],
-      researchersCount: [laboratory?.researchersCount || 0, Validators.required],
+      id: [laboratory?.id || crypto.randomUUID()],
+      title: [laboratory?.title || "", Validators.required],
+      researchers: [laboratory?.researchers || []],
+      location: this.fb.group({
+        latitude: [laboratory?.location?.latitude || 0, [Validators.required, Validators.min(-90), Validators.max(90)]],
+        longitude: [
+          laboratory?.location?.longitude || 0,
+          [Validators.required, Validators.min(-180), Validators.max(180)],
+        ],
+        city: [laboratory?.location?.city || ""],
+        country: [laboratory?.location?.country || ""],
+        region: [laboratory?.location?.region || ""],
+        district: [laboratory?.location?.district || ""],
+      }),
+      researchersCount: [laboratory?.researchersCount ?? 0, [Validators.required, Validators.min(0)]],
     });
+
+    this.details = {
+      ...this.detailsForm.value,
+    };
+  }
+
+  private getFormErrors(formGroup: FormGroup): any {
+    const errors: any = {};
+    Object.keys(formGroup.controls).forEach((key) => {
+      const control = formGroup.controls[key];
+      if (control instanceof FormGroup) {
+        errors[key] = this.getFormErrors(control);
+      } else if (control.invalid) {
+        errors[key] = control.errors;
+      }
+    });
+    return errors;
   }
 
   public onSubmit() {
     if (this.detailsForm.invalid) {
+      this.detailsForm.markAllAsTouched();
       return;
     }
 
     const formData: ILaboratory = this.detailsForm.value;
+    formData.researchers = [];
 
-    this.labsAPIService.updateLabById(formData.id, formData).subscribe((lab) => {
-      console.log("Updated:", lab);
-      this.router.navigate(["/labs"]);
-    });
+    if (this.isAddingLaboratory) {
+      this.labsAPIService.addLab(formData).subscribe(() => {
+        this.router.navigate(["/labs"]);
+      });
+    } else {
+      this.labsAPIService.updateLabById(formData.id, formData).subscribe(() => {
+        this.router.navigate(["/labs"]);
+      });
+    }
   }
 
   public onCancel() {

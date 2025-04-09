@@ -13,6 +13,7 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     MatSlideToggleModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
+    MatTooltipModule,
   ],
   exports: [
     MatIconModule,
@@ -45,6 +47,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     MatSlideToggleModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
+    MatTooltipModule,
   ],
 })
 export class MatModule {}

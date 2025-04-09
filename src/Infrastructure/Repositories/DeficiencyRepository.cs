@@ -14,6 +14,11 @@ public class DeficiencyRepository<D> : BaseRepository<D> where D : Deficiency
     {
         using (var context = _contextFactory.CreateDbContext())
         {
+            if (scrollCount == -1)
+            {
+                return await context.Set<D>().ToListAsync();
+            }
+
             return await context.Set<D>()
                 .Include(d => d.Creator)
                 .Include(d => d.ResponsibleUser)

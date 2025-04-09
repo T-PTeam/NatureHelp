@@ -14,7 +14,6 @@ export class RoleGuard implements CanActivate {
     const excludeRoles = route.data["excludeRoles"] || [];
 
     const userRole = localStorage.getItem("role")?.toLowerCase();
-    console.log("ROLE: ", userRole);
     if (userRole) {
       if (userRole === "superadmin") return true;
       else if (includeRoles.includes(userRole) || !excludeRoles.includes(userRole)) return true;

@@ -1,47 +1,63 @@
 <mat-card
-  *ngIf="details"
+  *ngIf="detailsForm"
   class="lab-card">
   <mat-card-title>Laboratory</mat-card-title>
-  <div class="form-container">
+  <form
+    [formGroup]="detailsForm"
+    (ngSubmit)="onSubmit()"
+    class="form-container">
     <mat-form-field>
       <mat-label>Title</mat-label>
       <input
         matInput
-        [(ngModel)]="details.title"
-        name="title" />
+        formControlName="title" />
     </mat-form-field>
-    <mat-form-field style="grid-column: 2; grid-row: 1/3">
+
+    <mat-form-field style="grid-column: 2; grid-row: 1 / 3">
       <mat-label>Researches</mat-label>
       <textarea
+        matInput
         rows="5"
-        matInput
-        [(ngModel)]="researchersText"
-        name="researchers"
-        readonly></textarea>
+        [value]="researchersText"
+        readonly>
+      </textarea>
     </mat-form-field>
-    <mat-form-field>
-      <mat-label>Latitude</mat-label>
-      <input
-        matInput
-        type="number"
-        [(ngModel)]="details.location.latitude"
-        name="latitude" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Longitude</mat-label>
-      <input
-        matInput
-        type="number"
-        [(ngModel)]="details.location.longitude"
-        name="longitude" />
-    </mat-form-field>
+
+    <div formGroupName="location">
+      <mat-form-field>
+        <mat-label>Latitude</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="latitude" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Longitude</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="longitude" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input
+          matInput
+          formControlName="city" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <input
+          matInput
+          formControlName="country" />
+      </mat-form-field>
+    </div>
+
     <mat-form-field>
       <mat-label>Researchers Count</mat-label>
       <input
         matInput
         type="number"
-        [(ngModel)]="details.researchersCount"
-        name="researchersCount" />
+        formControlName="researchersCount" />
     </mat-form-field>
 
     <div class="button-group-wrapper">
@@ -49,18 +65,17 @@
         <button
           mat-flat-button
           color="primary"
-          type="submit"
-          (click)="onSubmit()">
+          type="submit">
           Submit
         </button>
         <button
           mat-flat-button
-          color="primary"
-          type="submit"
+          color="warn"
+          type="button"
           (click)="onCancel()">
           Cancel
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </mat-card>

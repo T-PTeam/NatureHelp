@@ -25,16 +25,32 @@
 
 <div class="grid-container">
   <div class="grid-header">
-    <div i18n="@@dissolvedOxygen">Dissolved Oxygen</div>
-    <div>pH</div>
-    <div i18n="@@leadConcentration">Lead Concentration</div>
-    <div i18n="@@nitrateConcentration">Nitrate Concentration</div>
-    <div i18n="@@chemicalOxygenDemand">Chemical Ox. Demand</div>
-    <div>Creator</div>
-    <div>Responsible User</div>
-    <div>Danger State</div>
-    <div>Map</div>
-    <div>Edit</div>
+    <div
+      matTooltip="Dissolved Oxygen"
+      i18n="@@dissolvedOxygen">
+      Dissolved Oxygen
+    </div>
+    <div matTooltip="pH">pH</div>
+    <div
+      matTooltip="Lead Concentration"
+      i18n="@@leadConcentration">
+      Lead Concentration
+    </div>
+    <div
+      matTooltip="Nitrate Concentration"
+      i18n="@@nitrateConcentration">
+      Nitrate Concentration
+    </div>
+    <div
+      matTooltip="Chemical Ox. Demand"
+      i18n="@@chemicalOxygenDemand">
+      Chemical Ox. Demand
+    </div>
+    <div matTooltip="Creator">Creator</div>
+    <div matTooltip="Responsible User">Responsible User</div>
+    <div matTooltip="Danger State">Danger State</div>
+    <div matTooltip="Map">Map</div>
+    <div matTooltip="Edit">Edit</div>
   </div>
   <div
     class="grid-body"
@@ -54,7 +70,7 @@
       <div>{{ deficiency.creator.firstName }} {{ deficiency.creator.lastName }}</div>
       <div>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</div>
       <div>{{ deficiency.eDangerState | enumToString: "EDangerState" }}</div>
-      <div>
+      <div class="btn-ceil">
         <button
           id="map-focus-btn"
           (click)="changeMapFocus(deficiency.location)"
@@ -62,7 +78,7 @@
           <i class="fa fa-crosshairs"></i>
         </button>
       </div>
-      <div>
+      <div class="btn-ceil">
         <button
           id="edit-btn"
           (click)="navigateToDetail(deficiency.id)"
