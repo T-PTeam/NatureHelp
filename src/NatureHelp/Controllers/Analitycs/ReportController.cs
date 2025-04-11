@@ -44,4 +44,15 @@ public class ReportController : Controller
     {
         return File(await _excelExportService.GenerateSoilDeficienciesTable(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Water Deficiencies");
     }
+
+    /// <summary>
+    /// Returns Excel file with soil deficiencies
+    /// </summary>
+    /// <returns></returns>
+    [AllowAnonymous]
+    [HttpGet("org-users")]
+    public async Task<FileResult> GetOrgUsersExcelFile()
+    {
+        return File(await _excelExportService.GenerateOrgUsersTable(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Organization Users");
+    }
 }

@@ -8,8 +8,6 @@ import { RoleCodeStrings } from "../constants/user-constants";
 export class RoleStringPipe implements PipeTransform {
   transform(roleCode: number): string {
     switch (roleCode) {
-      case 0:
-        return RoleCodeStrings[0];
       case 1:
         return RoleCodeStrings[1];
       case 2:

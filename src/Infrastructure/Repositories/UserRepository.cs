@@ -13,7 +13,34 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     {
         using (var context = _contextFactory.CreateDbContext())
         {
-            return await context.Set<User>().Include(u => u.Address).ToListAsync();
+            if (scrollCount == -1)
+            {
+                IQueryable<User> fullList = context.Set<User>()
+                    .Include(u => u.Address)
+                    .Include(u => u.Organization)
+                    .Include(u => u.Laboratory);
+
+                foreach (var user in fullList)
+                {
+                    if (user.Laboratory != null) user.Laboratory.Researchers = null;
+                }
+
+                return await fullList.ToListAsync();
+            }
+
+            IQueryable<User> list = context.Set<User>()
+                    .Include(u => u.Address)
+                    .Include(u => u.Organization)
+                    .Include(u => u.Laboratory)
+                    .Skip(scrollCount * 20).Take(20);
+
+            foreach (var user in list)
+            {
+                if (user.Laboratory != null) user.Laboratory.Researchers = null;
+            }
+
+            return await list
+                .ToListAsync();
         }
     }
 

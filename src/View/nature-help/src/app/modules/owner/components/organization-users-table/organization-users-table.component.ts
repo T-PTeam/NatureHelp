@@ -7,7 +7,7 @@ import { withLatestFrom } from "rxjs";
 @Component({
   selector: "nat-organization-users-table",
   templateUrl: "./organization-users-table.component.html",
-  styleUrls: ["./organization-users-table.component.css"],
+  styleUrls: ["./organization-users-table.component.css", "../../../../shared/styles/table-list.component.css"],
   standalone: false,
 })
 export class OrganizationUsersTableComponent {
@@ -25,7 +25,7 @@ export class OrganizationUsersTableComponent {
   ) {}
 
   downloadExcel() {
-    this.reportAPIService.downloadSoilDeficiencyExcelListFile();
+    this.reportAPIService.downloadOrgUsersExcelListFile();
   }
 
   userRoleChanged(userId: string, role: number) {

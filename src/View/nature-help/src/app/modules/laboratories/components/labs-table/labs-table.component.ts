@@ -9,7 +9,7 @@ import { withLatestFrom } from "rxjs";
 @Component({
   selector: "nat-labs-table",
   templateUrl: "./labs-table.component.html",
-  styleUrls: ["./labs-table.component.css"],
+  styleUrls: ["./labs-table.component.css", "../../../../shared/styles/table-list.component.css"],
   standalone: false,
 })
 export class LabsTableComponent implements OnInit {

@@ -10,7 +10,7 @@ import { ILocation } from "@/models/ILocation";
 @Component({
   selector: "n-soil-deficiencies",
   templateUrl: "./soil-deficiency-table.component.html",
-  styleUrls: ["./soil-deficiency-table.component.css"],
+  styleUrls: ["./soil-deficiency-table.component.css", "../../../../shared/styles/table-list.component.css"],
   standalone: false,
 })
 export class SoilDeficiencyTable {
