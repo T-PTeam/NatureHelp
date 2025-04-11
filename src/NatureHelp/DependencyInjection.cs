@@ -1,7 +1,10 @@
 ﻿using Application.Interfaces.Services;
 using Application.Interfaces.Services.Analitycs;
+using Application.Interfaces.Services.Audit;
 using Application.Interfaces.Services.Organization;
 using Application.Services.Analitycs;
+using Application.Services.Audit;
+using Application.Services.Nature;
 using Application.Services.Organization;
 using Domain.Interfaces;
 using Domain.Models.Analitycs;
@@ -32,6 +35,7 @@ namespace NatureHelp
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IBaseRepository<Laboratory>, LaboratoryRepository>();
             services.AddScoped<IBaseRepository<Research>, ResearchRepository>();
+            services.AddScoped<IChangedModelLogRepository, ChangedModelLogRepository>();
 
             return services;
         }
@@ -51,11 +55,11 @@ namespace NatureHelp
             services.AddScoped<IExcelExportService, ExcelExportService>();
 
             services.AddScoped<IBaseService<User>, BaseService<User>>();
-            services.AddScoped<IBaseService<WaterDeficiency>, BaseService<WaterDeficiency>>();
-            services.AddScoped<IBaseService<SoilDeficiency>, BaseService<SoilDeficiency>>();
+            services.AddScoped<IBaseService<WaterDeficiency>, WaterDeficiencyService>();
+            services.AddScoped<IBaseService<SoilDeficiency>, SoilDeficiencyService>();
             services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
             services.AddScoped<IBaseService<Research>, BaseService<Research>>();
-
+            services.AddScoped<IChangedModelLogService, ChangedModelLogService>();
 
             return services;
         }

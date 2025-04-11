@@ -2,7 +2,6 @@
 using Domain.Models.Nature;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Application.Dtos;
 
 namespace NatureHelp.Controllers.Nature;
 

@@ -1,14 +1,20 @@
-﻿using Domain.Models.Nature;
+﻿using Domain.Interfaces;
+using Domain.Models.Audit;
+using Domain.Models.Nature;
 using Infrastructure.Data;
-using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace Infrastructure.Repositories;
 public class DeficiencyRepository<D> : BaseRepository<D> where D : Deficiency
 {
-    public DeficiencyRepository(IDbContextFactory<ApplicationContext> contextFactory)
-        : base(contextFactory) { }
+    private readonly IBaseRepository<ChangedModelLog> _changedModelLogRepository;
+    public DeficiencyRepository(
+        IDbContextFactory<ApplicationContext> contextFactory,
+        IBaseRepository<ChangedModelLog> changedModelLogRepository)
+        : base(contextFactory)
+    {
+        _changedModelLogRepository = changedModelLogRepository;
+    }
 
     public override async Task<IEnumerable<D>> GetAllAsync(int scrollCount)
     {

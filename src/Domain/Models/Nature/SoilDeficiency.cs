@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Domain.Models.Nature;
+﻿namespace Domain.Models.Nature;
 
 public class SoilDeficiency : Deficiency
 {
