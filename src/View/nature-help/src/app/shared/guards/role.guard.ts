@@ -18,15 +18,15 @@ export class RoleGuard implements CanActivate {
       if (userRole === "superadmin") return true;
       else if (includeRoles.includes(userRole) || !excludeRoles.includes(userRole)) return true;
       else {
-        return this.showPermissionAccessError();
+        return this.showPermissionAccessError(true);
       }
     } else {
       return this.showPermissionAccessError();
     }
   }
 
-  private showPermissionAccessError(): boolean {
-    const message = "You do not have permission to access this page.";
+  private showPermissionAccessError(isAuthorized: boolean = false): boolean {
+    const message = isAuthorized ? "You do not have permission to access this page." : "Please, login to account";
     this.notify.open(message, "Close", { duration: 2000 });
     return false;
   }

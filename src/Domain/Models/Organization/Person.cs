@@ -10,7 +10,7 @@ public class Person : BaseModel
     public string? PhoneNumber { get; set; }
 
     [ForeignKey(nameof(Address))]
-    public Guid AddressId { get; set; }
+    public Guid? AddressId { get; set; }
     public Location? Address { get; set; }
 
 

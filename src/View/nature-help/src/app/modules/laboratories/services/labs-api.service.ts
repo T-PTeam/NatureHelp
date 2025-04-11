@@ -52,18 +52,22 @@ export class LabsAPIService {
   }
 
   public getLabById(id: string): Observable<ILaboratory> {
-    return this.http.get<ILaboratory>(this.labsUrl + id.toString());
+    return this.http.get<ILaboratory>(`${this.labsUrl}/${id}`);
   }
 
   public addUserToLab(value: ILaboratory): Observable<ILaboratory> {
     return this.http.post<ILaboratory>(this.labsUrl, JSON.stringify(value), this.httpOptions);
   }
 
+  public addLab(value: ILaboratory): Observable<ILaboratory> {
+    return this.http.post<ILaboratory>(`${this.labsUrl}`, JSON.stringify(value), this.httpOptions);
+  }
+
   public updateLabById(id: string, value: ILaboratory): Observable<ILaboratory> {
-    return this.http.put<ILaboratory>(this.labsUrl + id, JSON.stringify(value), this.httpOptions);
+    return this.http.put<ILaboratory>(`${this.labsUrl}/${id}`, JSON.stringify(value), this.httpOptions);
   }
 
   public deleteLabById(id: string): Observable<any> {
-    return this.http.delete<any>(this.labsUrl + id);
+    return this.http.delete<any>(`${this.labsUrl}/${id}`);
   }
 }

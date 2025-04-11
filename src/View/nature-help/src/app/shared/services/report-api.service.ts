@@ -29,4 +29,10 @@ export class ReportAPIService {
       .get(this.reportsUrl + "soil", { responseType: "blob" })
       .subscribe((fileBlob) => saveAs(fileBlob, "Soil Deficiencies"));
   }
+
+  public downloadOrgUsersExcelListFile(): any {
+    return this.http
+      .get(this.reportsUrl + "org-users", { responseType: "blob" })
+      .subscribe((fileBlob) => saveAs(fileBlob, "Organization Users"));
+  }
 }

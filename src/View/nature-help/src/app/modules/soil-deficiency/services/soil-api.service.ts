@@ -28,25 +28,27 @@ export class SoilAPIService {
   }
 
   public loadSoilDeficiencies(scrollCount: number): Observable<ISoilDeficiency[]> {
-    const loadCourses$ = this.http.get<IListData<ISoilDeficiency>>(`${this.soilsUrl}?scrollCount=${scrollCount}`).pipe(
-      tap((listData) => {
-        this.listSubject.next([...this.listSubject.getValue(), ...listData.list]);
-        this.totalCountSubject.next(listData.totalCount);
-      }),
-      catchError((err) => {
-        const message = "Could not load soil deficiencies";
+    const loadDeficiencies$ = this.http
+      .get<IListData<ISoilDeficiency>>(`${this.soilsUrl}?scrollCount=${scrollCount}`)
+      .pipe(
+        tap((listData) => {
+          this.listSubject.next([...this.listSubject.getValue(), ...listData.list]);
+          this.totalCountSubject.next(listData.totalCount);
+        }),
+        catchError((err) => {
+          const message = "Could not load soil deficiencies";
 
-        this.notify.open(message, "Close", { duration: 2000 });
-        return err;
-      }),
-      shareReplay(),
-    );
-    this.loading.showLoaderUntilCompleted(loadCourses$).subscribe();
+          this.notify.open(message, "Close", { duration: 2000 });
+          return err;
+        }),
+        shareReplay(),
+      );
+    this.loading.showLoaderUntilCompleted(loadDeficiencies$).subscribe();
     return this.http.get<ISoilDeficiency[]>(`${this.soilsUrl}?scrollCount=${scrollCount}`);
   }
 
   public getSoilDeficiencyById(id: string): Observable<ISoilDeficiency> {
-    return this.http.get<ISoilDeficiency>(this.soilsUrl + id.toString());
+    return this.http.get<ISoilDeficiency>(`${this.soilsUrl}/${id}`);
   }
 
   public addNewSoilDeficiency(value: ISoilDeficiency): Observable<ISoilDeficiency> {
@@ -54,7 +56,7 @@ export class SoilAPIService {
   }
 
   public updateSoilDeficiencyById(id: string, value: ISoilDeficiency): Observable<ISoilDeficiency> {
-    return this.http.put<ISoilDeficiency>(this.soilsUrl + id, JSON.stringify(value), this.httpOptions);
+    return this.http.put<ISoilDeficiency>(`${this.soilsUrl}/${id}`, JSON.stringify(value), this.httpOptions);
   }
 
   public deleteSoilDeficiencyById(id: string): Observable<any> {

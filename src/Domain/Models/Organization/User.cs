@@ -23,9 +23,6 @@ public class User : Person
     [ForeignKey(nameof(Laboratory))]
     public Guid? LaboratoryId { get; set; }
 
-    [ForeignKey(nameof(Address))]
-    public Guid? AddressId { get; set; }
-
     [NotMapped]
     public string Password { get; set; } = null!;
     public bool IsEmailValid(string password)

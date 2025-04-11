@@ -52,7 +52,7 @@
         (selectionChange)="userRoleChanged(user.id, $event.value)">
         <mat-option
           [value]="role"
-          *ngFor="let role of [0, 1, 2, 3, 4]"
+          *ngFor="let role of [1, 2, 3, 4]"
           >{{ role | roleString }}</mat-option
         >
       </mat-select>

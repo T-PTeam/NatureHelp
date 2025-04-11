@@ -11,7 +11,7 @@ import { MapViewService } from "@/shared/services/map-view.service";
 @Component({
   selector: "n-water-deficiencies",
   templateUrl: "./water-deficiency-table.component.html",
-  styleUrls: ["./water-deficiency-table.component.css"],
+  styleUrls: ["./water-deficiency-table.component.css", "../../../../shared/styles/table-list.component.css"],
   standalone: false,
 })
 export class WaterDeficiencyTable {

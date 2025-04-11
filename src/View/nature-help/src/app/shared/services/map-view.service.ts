@@ -142,8 +142,6 @@ export class MapViewService {
   }
 
   private isWaterDeficiency(obj: any): obj is IWaterDeficiency {
-    console.log("isWaterDeficiency: ", obj);
-
     return (obj as IWaterDeficiency).microbialLoad !== undefined;
   }
 }

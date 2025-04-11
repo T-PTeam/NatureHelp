@@ -28,7 +28,7 @@ export class WaterAPIService {
   }
 
   public loadWaterDeficiencies(scrollCount: number) {
-    const loadCourses$ = this.http
+    const loaddeficiencies$ = this.http
       .get<IListData<IWaterDeficiency>>(`${this.watersUrl}?scrollCount=${scrollCount}`)
       .pipe(
         tap((listData) => {
@@ -44,7 +44,7 @@ export class WaterAPIService {
         }),
         shareReplay(),
       );
-    this.loading.showLoaderUntilCompleted(loadCourses$).subscribe();
+    this.loading.showLoaderUntilCompleted(loaddeficiencies$).subscribe();
   }
 
   public getWaterDeficiencyById(id: string): Observable<IWaterDeficiency> {
@@ -60,20 +60,20 @@ export class WaterAPIService {
     id: string,
     changes: Partial<IWaterDeficiency>,
   ): Observable<any> {
-    const courses = this.listSubject.getValue();
+    const deficiencies = this.listSubject.getValue();
 
-    const index = courses.findIndex((course) => course.id == id);
+    const index = deficiencies.findIndex((deficiency) => deficiency.id == id);
 
-    const newCourse: IWaterDeficiency = {
-      ...courses[index],
+    const newDeficiency: IWaterDeficiency = {
+      ...deficiencies[index],
       ...changes,
     };
 
-    const newCourses: IWaterDeficiency[] = courses.slice(0);
+    const newDeficiencies: IWaterDeficiency[] = deficiencies.slice(0);
 
-    newCourses[index] = newCourse;
+    newDeficiencies[index] = newDeficiency;
 
-    this.listSubject.next(newCourses);
+    this.listSubject.next(newDeficiencies);
 
     return this.http.put(`${this.watersUrl}/${id}`, changes).pipe(
       catchError((err) => {

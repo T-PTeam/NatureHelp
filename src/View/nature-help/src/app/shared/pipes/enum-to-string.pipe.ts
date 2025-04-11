@@ -8,8 +8,8 @@ import { EDangerState } from "@/models/enums";
 })
 export class EnumToStringPipe implements PipeTransform {
   transform(value: any, type: string): string {
-    if (type === typeof EDangerState) {
-      return EDangerState[value];
+    if (type === "EDangerState") {
+      return EDangerState[value] ?? value;
     }
 
     return value;
