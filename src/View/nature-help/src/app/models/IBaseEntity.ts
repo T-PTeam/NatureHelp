@@ -1,5 +1,7 @@
+import { IUser } from "./IUser";
+
 export interface IBaseEntity {
   id: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdBy: IUser;
+  createdOn: Date;
 }

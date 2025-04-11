@@ -21,6 +21,7 @@ export class WaterDeficiencyDetail implements OnInit {
   details: IWaterDeficiency | null = null;
   detailsForm!: FormGroup;
   deficiencyTypes = Object.values(EDeficiencyType);
+  changedModelLogsOpened: boolean = false;
 
   private isAddingDeficiency: boolean = false;
   private currentUser: IUser | null = null;
@@ -52,8 +53,6 @@ export class WaterDeficiencyDetail implements OnInit {
   private initializeForm(deficiency: IWaterDeficiency | null = null) {
     this.detailsForm = this.fb.group({
       id: [deficiency?.id || crypto.randomUUID()],
-      createdAt: [deficiency?.createdAt || moment()],
-      updatedAt: [deficiency?.updatedAt || moment()],
       title: [deficiency?.title || "", Validators.required],
       description: [deficiency?.description || "", Validators.required],
       type: [deficiency?.type || EDeficiencyType.Water, Validators.required],
@@ -118,7 +117,9 @@ export class WaterDeficiencyDetail implements OnInit {
       microbialLoad: [deficiency?.microbialLoad || 0, [Validators.required, Validators.min(0), Validators.max(2000)]],
 
       createdBy: [deficiency?.creator?.id || this.currentUser?.id],
+      createdOn: [deficiency?.createdOn || moment()],
       responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id, [Validators.required]],
+      locationId: [deficiency?.location?.id || null],
     });
 
     this.details = {
