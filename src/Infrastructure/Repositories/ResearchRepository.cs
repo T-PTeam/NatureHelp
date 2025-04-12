@@ -9,7 +9,7 @@ public class ResearchRepository : BaseRepository<Research>, IResearchRepository
     public ResearchRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }
 
-    public override async Task<IEnumerable<Research>> GetAllAsync(int scrollCount)
+    public override async Task<IEnumerable<Research>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters)
     {
         using (var context = _contextFactory.CreateDbContext())
         {

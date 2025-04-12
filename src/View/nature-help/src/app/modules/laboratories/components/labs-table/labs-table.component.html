@@ -1,3 +1,68 @@
+<mat-expansion-panel class="filter-panel">
+  <mat-expansion-panel-header class="filter-header">
+    <mat-panel-title class="filter-title">Filter</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <form
+    [formGroup]="filterForm"
+    (ngSubmit)="applyFilter()"
+    class="filter-form">
+    <div
+      formGroupName="location"
+      class="filter-fields">
+      <mat-form-field class="form-field">
+        <mat-label>Country</mat-label>
+        <input
+          matInput
+          formControlName="country"
+          class="form-input" />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Region</mat-label>
+        <input
+          matInput
+          formControlName="region"
+          class="form-input" />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>District</mat-label>
+        <input
+          matInput
+          formControlName="district"
+          class="form-input" />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>City</mat-label>
+        <input
+          matInput
+          formControlName="city"
+          class="form-input" />
+      </mat-form-field>
+    </div>
+
+    <div class="action-buttons">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="apply-button">
+        Apply
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="filterForm.reset()"
+        class="reset-button">
+        Clear
+      </button>
+    </div>
+  </form>
+</mat-expansion-panel>
+
 <div class="header">
   <h2>Laboratories</h2>
   <input

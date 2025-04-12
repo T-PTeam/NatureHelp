@@ -1,5 +1,4 @@
-﻿using Application.Interfaces.Services;
-using Application.Interfaces.Services.Audit;
+﻿using Application.Interfaces.Services.Audit;
 using Domain.Enums;
 using Domain.Models.Audit;
 using Domain.Models.Nature;

@@ -1,3 +1,100 @@
+/* FILTER */
+
+.filter-panel {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.filter-header {
+  background-color: #f4f7fb;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filter-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.filter-form {
+  padding: 16px;
+}
+
+.filter-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.apply-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #0056b3;
+}
+
+.reset-button {
+  background-color: #ff3d00;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #c33c00;
+}
+
+@media (max-width: 600px) {
+  .filter-form {
+    padding: 8px;
+  }
+
+  .location-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .apply-button,
+  .reset-button {
+    width: 100%;
+  }
+}
+
+/* TABLE */
+
 .header {
   height: 60px;
   margin: 16px 8px 0px 0px;
@@ -93,7 +190,7 @@
 .grid-body {
   display: flex;
   flex-direction: column;
-  max-height: 70vh;
+  max-height: 65vh;
   overflow-y: auto;
   overflow-x: hidden;
 }

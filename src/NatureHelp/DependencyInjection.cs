@@ -1,7 +1,7 @@
-﻿using Application.Interfaces.Services;
-using Application.Interfaces.Services.Analitycs;
+﻿using Application.Interfaces.Services.Analitycs;
 using Application.Interfaces.Services.Audit;
 using Application.Interfaces.Services.Organization;
+using Application.Services;
 using Application.Services.Analitycs;
 using Application.Services.Audit;
 using Application.Services.Nature;

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { BehaviorSubject, catchError, Observable, shareReplay, tap } from "rxjs";
@@ -7,12 +7,13 @@ import { LoadingService } from "@/shared/services/loading.service";
 
 import { ILaboratory } from "../models/ILaboratory";
 import { IListData } from "@/shared/models/IListData";
+import { ILaboratorFilter } from "../models/ILaboratoryFilter";
 
 @Injectable({
   providedIn: "root",
 })
 export class LabsAPIService {
-  private labsUrl = "https://localhost:7077/api/laboratory";
+  private labsUrl = "https://localhost:7077/api/Laboratory";
 
   private labsSubject = new BehaviorSubject<ILaboratory[]>([]);
   public labs$: Observable<ILaboratory[]> = this.labsSubject.asObservable();
@@ -29,13 +30,22 @@ export class LabsAPIService {
     private notify: MatSnackBar,
     private loading: LoadingService,
   ) {
-    this.loadLabs(0);
+    this.loadLabs(0, null);
   }
 
-  public loadLabs(scrollCount: number): Observable<ILaboratory[]> {
-    const loadlabs$ = this.http.get<IListData<ILaboratory>>(`${this.labsUrl}?scrollCount=${scrollCount}`).pipe(
+  public loadLabs(scrollCount: number, filter: ILaboratorFilter | null): Observable<ILaboratory[]> {
+    let params = new HttpParams();
+
+    if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
+    if (filter?.location) {
+      params = params.set("Location", JSON.stringify(filter.location));
+    }
+
+    const loadlabs$ = this.http.get<IListData<ILaboratory>>(`${this.labsUrl}`, { params }).pipe(
       tap((listData) => {
-        this.labsSubject.next([...this.labsSubject.getValue(), ...listData.list]);
+        if (scrollCount === 0) this.labsSubject.next(listData.list);
+        else this.labsSubject.next([...this.labsSubject.getValue(), ...listData.list]);
+
         this.totalCountSubject.next(listData.totalCount);
       }),
       catchError((err) => {

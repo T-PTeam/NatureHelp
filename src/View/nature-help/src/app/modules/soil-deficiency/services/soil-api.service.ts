@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { BehaviorSubject, catchError, Observable, shareReplay, tap } from "rxjs";
@@ -6,6 +6,7 @@ import { BehaviorSubject, catchError, Observable, shareReplay, tap } from "rxjs"
 import { ISoilDeficiency } from "@/modules/soil-deficiency/models/ISoilDeficiency";
 import { LoadingService } from "@/shared/services/loading.service";
 import { IListData } from "@/shared/models/IListData";
+import { ISoilDeficiencyFilter } from "../models/ISoilDeficiencyFilter";
 
 @Injectable()
 export class SoilAPIService {
@@ -24,25 +25,35 @@ export class SoilAPIService {
     private notify: MatSnackBar,
     private loading: LoadingService,
   ) {
-    this.loadSoilDeficiencies(0);
+    this.loadSoilDeficiencies(0, null);
   }
 
-  public loadSoilDeficiencies(scrollCount: number): Observable<ISoilDeficiency[]> {
-    const loadDeficiencies$ = this.http
-      .get<IListData<ISoilDeficiency>>(`${this.soilsUrl}?scrollCount=${scrollCount}`)
-      .pipe(
-        tap((listData) => {
-          this.listSubject.next([...this.listSubject.getValue(), ...listData.list]);
-          this.totalCountSubject.next(listData.totalCount);
-        }),
-        catchError((err) => {
-          const message = "Could not load soil deficiencies";
+  public loadSoilDeficiencies(
+    scrollCount: number,
+    filter: ISoilDeficiencyFilter | null,
+  ): Observable<ISoilDeficiency[]> {
+    let params = new HttpParams();
 
-          this.notify.open(message, "Close", { duration: 2000 });
-          return err;
-        }),
-        shareReplay(),
-      );
+    if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
+    if (filter?.title) params = params.set("Title", filter.title);
+    if (filter?.description) params = params.set("Description", filter.description);
+    if (filter?.eDangerState) params = params.set("EDangerState", filter.eDangerState.toString());
+
+    const loadDeficiencies$ = this.http.get<IListData<ISoilDeficiency>>(`${this.soilsUrl}`, { params }).pipe(
+      tap((listData) => {
+        if (scrollCount === 0) this.listSubject.next(listData.list);
+        else this.listSubject.next([...this.listSubject.getValue(), ...listData.list]);
+
+        this.totalCountSubject.next(listData.totalCount);
+      }),
+      catchError((err) => {
+        const message = "Could not load soil deficiencies";
+
+        this.notify.open(message, "Close", { duration: 2000 });
+        return err;
+      }),
+      shareReplay(),
+    );
     this.loading.showLoaderUntilCompleted(loadDeficiencies$).subscribe();
     return this.http.get<ISoilDeficiency[]>(`${this.soilsUrl}?scrollCount=${scrollCount}`);
   }

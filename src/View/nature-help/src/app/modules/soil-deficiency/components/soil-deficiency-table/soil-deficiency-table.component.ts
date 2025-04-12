@@ -6,6 +6,11 @@ import { withLatestFrom } from "rxjs";
 import { ReportAPIService } from "@/shared/services/report-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
 import { ILocation } from "@/models/ILocation";
+import { ISoilDeficiencyFilter } from "../../models/ISoilDeficiencyFilter";
+import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
+import { EDangerState } from "@/models/enums";
+import { ISelectOption } from "@/shared/models/ISelectOption";
+import { FormGroup, FormBuilder } from "@angular/forms";
 
 @Component({
   selector: "n-soil-deficiencies",
@@ -14,23 +19,41 @@ import { ILocation } from "@/models/ILocation";
   standalone: false,
 })
 export class SoilDeficiencyTable {
-  public search: string = "";
-  public scrollCheckDisabled: boolean = false;
+  search: string = "";
+  scrollCheckDisabled: boolean = false;
+  filterForm!: FormGroup;
+  dangerStates: ISelectOption<EDangerState>[] = [];
 
   private listScrollCount = 0;
+  private isFilterChanged: boolean = false;
 
   constructor(
     public soilAPIService: SoilAPIService,
     private router: Router,
     private reportAPIService: ReportAPIService,
     private mapViewService: MapViewService,
-  ) {}
+    private fb: FormBuilder,
+  ) {
+    this.dangerStates = enumToSelectOptions(EDangerState);
 
-  public downloadExcel() {
+    this.filterForm = this.fb.group({
+      title: [""],
+      description: [""],
+      type: [null],
+      eDangerState: [null],
+      changedModelLogId: [""],
+    });
+
+    this.filterForm.valueChanges.subscribe(() => {
+      this.isFilterChanged = true;
+    });
+  }
+
+  downloadExcel() {
     this.reportAPIService.downloadSoilDeficiencyExcelListFile();
   }
 
-  public navigateToDetail(id?: string) {
+  navigateToDetail(id?: string) {
     if (id) {
       this.router.navigate([`/soil/${id}`]);
     } else {
@@ -40,7 +63,7 @@ export class SoilDeficiencyTable {
 
   onScroll() {
     this.listScrollCount++;
-    this.soilAPIService.loadSoilDeficiencies(this.listScrollCount);
+    this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, this.filterForm.value);
 
     this.soilAPIService.deficiencies$
       .pipe(withLatestFrom(this.soilAPIService.totalCount$))
@@ -49,11 +72,19 @@ export class SoilDeficiencyTable {
       });
   }
 
-  public goToWater() {
+  goToWater() {
     this.router.navigateByUrl("/water");
   }
 
   changeMapFocus(location: ILocation) {
     this.mapViewService.changeFocus(location, 20);
+  }
+
+  applyFilter(): void {
+    const filter: ISoilDeficiencyFilter = this.filterForm.value;
+
+    if (this.isFilterChanged) this.listScrollCount = 0;
+
+    this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, filter);
   }
 }
