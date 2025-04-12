@@ -25,21 +25,21 @@ public class ExcelExportService : IExcelExportService
         _userRepository = userRepository;
     }
 
-    public async Task<byte[]> GenerateWaterDeficienciesTable()
+    public async Task<byte[]> GenerateWaterDeficienciesTableAsync()
     {
         var data = await _waterDeficiencyRepository.GetAllAsync(-1);
 
         return GenerateWorkBook(data);
     }
 
-    public async Task<byte[]> GenerateSoilDeficienciesTable()
+    public async Task<byte[]> GenerateSoilDeficienciesTableAsync()
     {
         var data = await _soilDeficiencyRepository.GetAllAsync(-1);
 
         return GenerateWorkBook(data);
     }
 
-    public async Task<byte[]> GenerateOrgUsersTable()
+    public async Task<byte[]> GenerateOrgUsersTableAsync()
     {
         var data = await _userRepository.GetAllAsync(-1);
 

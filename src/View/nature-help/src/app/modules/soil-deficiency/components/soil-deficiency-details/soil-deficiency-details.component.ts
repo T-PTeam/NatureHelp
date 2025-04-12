@@ -53,8 +53,6 @@ export class SoilDeficiencyDetail implements OnInit {
   private initializeForm(deficiency: ISoilDeficiency | null = null): void {
     this.detailsForm = this.fb.group({
       id: [deficiency?.id || crypto.randomUUID()],
-      createdAt: [deficiency?.createdAt || moment()],
-      updatedAt: [deficiency?.updatedAt || moment()],
       title: [deficiency?.title || "", Validators.required],
       description: [deficiency?.description || "", Validators.required],
       type: [deficiency?.type || EDeficiencyType.Soil, Validators.required],
@@ -82,7 +80,9 @@ export class SoilDeficiencyDetail implements OnInit {
       analysisDate: [deficiency?.analysisDate || moment()],
 
       createdBy: [deficiency?.creator?.id || this.currentUser?.id],
+      createdOn: [deficiency?.createdOn || moment()],
       responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id, [Validators.required]],
+      locationId: [deficiency?.location?.id || null],
     });
 
     this.details = {

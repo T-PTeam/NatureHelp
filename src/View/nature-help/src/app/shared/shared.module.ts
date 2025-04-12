@@ -14,6 +14,7 @@ import { RoleStringPipe } from "./pipes/role-string.pipe";
 import { LabResearchersPipe } from "./pipes/lab-researchers.pipe";
 import { AddOrganizationUsersComponent } from "./components/dialogs/add-organization-users/add-organization-users.component";
 import { MapViewService } from "./services/map-view.service";
+import { AuditListComponent } from "./components/audit-list/audit-list.component";
 
 @NgModule({
   imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
@@ -21,6 +22,8 @@ import { MapViewService } from "./services/map-view.service";
     MapComponent,
     AuthDialogComponent,
     AddOrganizationUsersComponent,
+    AuditListComponent,
+
     FilterPipe,
     EnumToStringPipe,
     RoleStringPipe,
@@ -30,6 +33,8 @@ import { MapViewService } from "./services/map-view.service";
     MapComponent,
     AuthDialogComponent,
     AddOrganizationUsersComponent,
+    AuditListComponent,
+
     FilterPipe,
     EnumToStringPipe,
     RoleStringPipe,

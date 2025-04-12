@@ -1,4 +1,5 @@
 ﻿using Domain.Enums;
+using Domain.Models.Audit;
 using Domain.Models.Organization;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,6 +19,9 @@ public class Deficiency : BaseModel
     public Location? Location { get; set; }
     public EDangerState EDangerState { get; set; } = EDangerState.Moderate;
 
+    [ForeignKey(nameof(ChangedModelLog))]
+    public Guid? ChangedModelLogEntityId { get; set; }
+    public ChangedModelLog? ChangedModelLog { get; set; }
 
     [ForeignKey(nameof(Creator))]
     public Guid CreatedBy { get; set; }

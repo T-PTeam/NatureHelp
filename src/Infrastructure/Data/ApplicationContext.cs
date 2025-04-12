@@ -1,4 +1,5 @@
 ﻿using Domain.Models.Analitycs;
+using Domain.Models.Audit;
 using Domain.Models.Nature;
 using Domain.Models.Organization;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ public class ApplicationContext : DbContext
     public DbSet<Organization> Organizations { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Research> Researches { get; set; }
+    public DbSet<ChangedModelLog> ChangedModelLogs { get; set; }
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)

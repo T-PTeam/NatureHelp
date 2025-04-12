@@ -31,7 +31,7 @@ public class ReportController : Controller
     [HttpGet("water")]
     public async Task<FileResult> GetWaterDeficienciesExcelFile()
     {
-        return File(await _excelExportService.GenerateWaterDeficienciesTable(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Water Deficiencies");
+        return File(await _excelExportService.GenerateWaterDeficienciesTableAsync(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Water Deficiencies");
     }
 
     /// <summary>
@@ -42,7 +42,7 @@ public class ReportController : Controller
     [HttpGet("soil")]
     public async Task<FileResult> GetSoilDeficienciesExcelFile()
     {
-        return File(await _excelExportService.GenerateSoilDeficienciesTable(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Water Deficiencies");
+        return File(await _excelExportService.GenerateSoilDeficienciesTableAsync(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Water Deficiencies");
     }
 
     /// <summary>
@@ -53,6 +53,6 @@ public class ReportController : Controller
     [HttpGet("org-users")]
     public async Task<FileResult> GetOrgUsersExcelFile()
     {
-        return File(await _excelExportService.GenerateOrgUsersTable(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Organization Users");
+        return File(await _excelExportService.GenerateOrgUsersTableAsync(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Organization Users");
     }
 }

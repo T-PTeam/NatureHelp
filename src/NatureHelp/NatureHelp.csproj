@@ -11,6 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Exceptions\Models\**" />
+    <Compile Remove="Middlewares\**" />
+    <Content Remove="Exceptions\Models\**" />
+    <Content Remove="Middlewares\**" />
+    <EmbeddedResource Remove="Exceptions\Models\**" />
+    <EmbeddedResource Remove="Middlewares\**" />
+    <None Remove="Exceptions\Models\**" />
+    <None Remove="Middlewares\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3">
@@ -32,11 +43,6 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Exceptions\Models\" />
-    <Folder Include="Middlewares\" />
   </ItemGroup>
 
 </Project>
