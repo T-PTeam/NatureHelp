@@ -36,13 +36,17 @@
   </form>
 </div>
 
-<div mat-dialog-actions>
+<div
+  mat-dialog-actions
+  class="action-buttons">
   <button
-    mat-button
+    class="apply-button"
+    mat-raised-button
     (click)="closeDialog()">
     Cancel
   </button>
   <button
+    class="reset-button"
     mat-flat-button
     color="primary"
     (click)="onSubmit()"

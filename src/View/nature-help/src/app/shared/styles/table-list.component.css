@@ -201,7 +201,7 @@
 }
 
 .grid-header div,
-.grid-row div {
+.grid-row div div {
   padding: 8px 5px;
   border-right: 1px solid #bbb;
   white-space: nowrap;
@@ -209,7 +209,7 @@
   text-overflow: ellipsis;
 }
 
-.grid-row div {
+.grid-row div div {
   white-space: wrap;
 }
 

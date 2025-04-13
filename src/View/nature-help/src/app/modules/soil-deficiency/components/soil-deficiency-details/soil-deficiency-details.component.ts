@@ -10,6 +10,7 @@ import { EDangerState, EDeficiencyType } from "../../../../models/enums";
 import { ISoilDeficiency } from "../../models/ISoilDeficiency";
 import { IUser } from "@/models/IUser";
 import { UserAPIService } from "@/shared/services/user-api.service";
+import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
 
 @Component({
   selector: "n-soil-deficiency-details",
@@ -20,8 +21,7 @@ import { UserAPIService } from "@/shared/services/user-api.service";
 export class SoilDeficiencyDetail implements OnInit {
   details: ISoilDeficiency | null = null;
   detailsForm!: FormGroup;
-  EDeficiencyType = Object.values(EDeficiencyType);
-  EDangerState = Object.values(EDangerState);
+  dangerStates = enumToSelectOptions(EDangerState);
 
   private isAddingDeficiency: boolean = false;
   private currentUser: IUser | null = null;
