@@ -24,7 +24,7 @@ export enum ERole {
   Researcher,
 }
 
-export enum ResearchType {
+export enum EResearchType {
   SoilChemicalAnalysis, // Хімічний аналіз ґрунту
   SoilProfileStudy, // Вивчення ґрунтових профілів
   GeochemicalResearch, // Геохімічні дослідження ґрунту

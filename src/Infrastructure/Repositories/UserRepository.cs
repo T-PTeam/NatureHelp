@@ -9,7 +9,7 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     public UserRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }
 
-    public override async Task<IEnumerable<User>> GetAllAsync(int scrollCount)
+    public override async Task<IEnumerable<User>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters)
     {
         using (var context = _contextFactory.CreateDbContext())
         {

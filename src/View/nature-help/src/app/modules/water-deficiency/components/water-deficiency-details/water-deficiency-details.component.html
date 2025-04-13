@@ -27,12 +27,15 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label i18n="@@type">Type</mat-label>
-      <mat-select formControlName="type">
+      <mat-label>Danger state</mat-label>
+      <mat-select
+        formControlName="eDangerState"
+        class="form-input">
+        <mat-option [value]="null">None</mat-option>
         <mat-option
-          *ngFor="let type of deficiencyTypes"
-          [value]="type">
-          {{ type }}
+          *ngFor="let danger of dangerStates"
+          [value]="danger.value">
+          {{ danger.label }}
         </mat-option>
       </mat-select>
     </mat-form-field>

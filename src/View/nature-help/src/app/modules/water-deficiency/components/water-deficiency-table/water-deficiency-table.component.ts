@@ -7,6 +7,11 @@ import { withLatestFrom } from "rxjs";
 import { ReportAPIService } from "@/shared/services/report-api.service";
 import { ILocation } from "@/models/ILocation";
 import { MapViewService } from "@/shared/services/map-view.service";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { IWaterDeficiencyFilter } from "../../models/IWaterDeficiencyFilter";
+import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
+import { EDangerState } from "@/models/enums";
+import { ISelectOption } from "@/shared/models/ISelectOption";
 
 @Component({
   selector: "n-water-deficiencies",
@@ -15,23 +20,42 @@ import { MapViewService } from "@/shared/services/map-view.service";
   standalone: false,
 })
 export class WaterDeficiencyTable {
-  public search: string = "";
-  public scrollCheckDisabled: boolean = false;
+  search: string = "";
+  scrollCheckDisabled: boolean = false;
+  filterForm!: FormGroup;
+
+  dangerStates: ISelectOption<EDangerState>[] = [];
 
   private listScrollCount = 0;
+  private isFilterChanged: boolean = false;
 
   constructor(
     public waterAPIService: WaterAPIService,
     private router: Router,
     private reportAPIService: ReportAPIService,
     private mapViewService: MapViewService,
-  ) {}
+    private fb: FormBuilder,
+  ) {
+    this.dangerStates = enumToSelectOptions(EDangerState);
 
-  public downloadExcel() {
+    this.filterForm = this.fb.group({
+      title: [""],
+      description: [""],
+      type: [null],
+      eDangerState: [null],
+      changedModelLogId: [""],
+    });
+
+    this.filterForm.valueChanges.subscribe(() => {
+      this.isFilterChanged = true;
+    });
+  }
+
+  downloadExcel() {
     this.reportAPIService.downloadWaterDeficiencyExcelListFile();
   }
 
-  public navigateToDetail(id?: string) {
+  navigateToDetail(id?: string) {
     if (id) {
       this.router.navigate([`/water/${id}`]);
     } else {
@@ -41,7 +65,7 @@ export class WaterDeficiencyTable {
 
   onScroll() {
     this.listScrollCount++;
-    this.waterAPIService.loadWaterDeficiencies(this.listScrollCount);
+    this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, this.filterForm.value);
 
     this.waterAPIService.deficiencies$
       .pipe(withLatestFrom(this.waterAPIService.totalCount$))
@@ -50,11 +74,19 @@ export class WaterDeficiencyTable {
       });
   }
 
-  public goToSoil() {
+  goToSoil() {
     this.router.navigateByUrl("soil");
   }
 
   changeMapFocus(location: ILocation) {
     this.mapViewService.changeFocus(location, 20);
+  }
+
+  applyFilter(): void {
+    const filter: IWaterDeficiencyFilter = this.filterForm.value;
+
+    if (this.isFilterChanged) this.listScrollCount = 0;
+
+    this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, filter);
   }
 }

@@ -53,7 +53,10 @@ public class ExcelExportService : IExcelExportService
         DataTable dt = new DataTable(nameof(T));
 
         Type type = typeof(T);
-        var propertyNames = type.GetProperties().Select(p => new DataColumn(p.Name)).ToArray();
+        var propertyNames = type.GetProperties()
+            .Where(p => !p.Name.Contains("Id"))
+            .Select(p => new DataColumn(p.Name))
+            .ToArray();
 
         foreach (var item in propertyNames)
         {
@@ -67,7 +70,7 @@ public class ExcelExportService : IExcelExportService
             {
                 if (property.Name.Contains("Id") || property.GetValue(item) == null)
                 {
-                    break;
+                    continue;
                 }
 
                 if (property.Name == "Creator")

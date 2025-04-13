@@ -27,24 +27,16 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Type</mat-label>
-      <mat-select formControlName="type">
+      <mat-label>Danger state</mat-label>
+      <mat-select
+        formControlName="eDangerState"
+        class="form-input">
+        <mat-option [value]="null">None</mat-option>
         <mat-option
-          *ngFor="let type of EDeficiencyType"
-          [value]="type"
-          >{{ type }}</mat-option
-        >
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Danger Level</mat-label>
-      <mat-select formControlName="eDangerState">
-        <mat-option
-          *ngFor="let dangerState of EDangerState"
-          [value]="dangerState"
-          >{{ dangerState }}</mat-option
-        >
+          *ngFor="let danger of dangerStates"
+          [value]="danger.value">
+          {{ danger.label }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
 

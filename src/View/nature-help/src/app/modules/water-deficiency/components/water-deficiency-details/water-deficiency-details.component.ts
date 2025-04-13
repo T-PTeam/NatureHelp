@@ -10,6 +10,7 @@ import { EDangerState, EDeficiencyType } from "../../../../models/enums";
 import { IWaterDeficiency } from "../../models/IWaterDeficiency";
 import { UserAPIService } from "@/shared/services/user-api.service";
 import { IUser } from "@/models/IUser";
+import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
 
 @Component({
   selector: "n-water-deficiency-details",
@@ -20,7 +21,7 @@ import { IUser } from "@/models/IUser";
 export class WaterDeficiencyDetail implements OnInit {
   details: IWaterDeficiency | null = null;
   detailsForm!: FormGroup;
-  deficiencyTypes = Object.values(EDeficiencyType);
+  dangerStates = enumToSelectOptions(EDangerState);
   changedModelLogsOpened: boolean = false;
 
   private isAddingDeficiency: boolean = false;

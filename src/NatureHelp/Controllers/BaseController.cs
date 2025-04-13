@@ -16,7 +16,7 @@ public class BaseController<T> : Controller where T : class
     }
 
     [HttpGet("")]
-    public virtual async Task<IActionResult> GetList([FromQuery] int scrollCount) => Ok(await _service.GetList(scrollCount));
+    public virtual async Task<IActionResult> GetList([FromQuery] int scrollCount, [FromQuery] IDictionary<string, string?>? filters) => Ok(await _service.GetList(scrollCount, filters));
 
     [HttpGet("{id}")]
     public virtual async Task<IActionResult> GetById(Guid id)

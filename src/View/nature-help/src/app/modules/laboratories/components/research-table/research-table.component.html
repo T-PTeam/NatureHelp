@@ -25,7 +25,7 @@
       *ngFor="let research of researchesAPIService.researches$ | async"
       class="grid-row">
       <div>{{ research.title }}</div>
-      <div>{{ research.type }}</div>
+      <div>{{ research.type | enumToString: "ResearchType" }}</div>
       <div>{{ research.date | date }}</div>
       <div>{{ research.researcher.firstName }} {{ research.researcher.lastName }}</div>
       <div>

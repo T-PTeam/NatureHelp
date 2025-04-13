@@ -2,6 +2,27 @@
   text-align: center;
 }
 
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin: 0px 30px 16px 30px;
+}
+
+.apply-button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
 mat-form-field {
   display: block;
   width: calc(100% - 60px);

@@ -1,9 +1,9 @@
 ﻿using Domain.Interfaces;
 using Domain.Models;
 using Infrastructure.Data;
+using Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories;
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
 {
     protected readonly IDbContextFactory<ApplicationContext> _contextFactory;
@@ -13,80 +13,69 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
         _contextFactory = contextFactory;
     }
 
-    public virtual async Task<IEnumerable<T>> GetAllAsync(int scrollCount)
-    {
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            if (scrollCount == -1)
-            {
-                return await context.Set<T>().ToListAsync();
-            }
+    private ApplicationContext GetContext() => _contextFactory.CreateDbContext();
 
-            return await context.Set<T>().Skip(scrollCount * 20).Take(20).ToListAsync();
+    public virtual async Task<IEnumerable<T>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters = null)
+    {
+        var context = GetContext();
+
+        var query = context.Set<T>().AsQueryable().ApplyFilters(filters ?? new Dictionary<string, string?>());
+
+        if (scrollCount != -1)
+        {
+            query = query.Skip(scrollCount * 20).Take(20);
         }
+
+        return await query.ToListAsync();
     }
 
     public virtual async Task<T?> GetByIdAsync(Guid id)
     {
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            return await context.Set<T>().FirstOrDefaultAsync(x => x.Id == id);
-        }
+        var context = GetContext();
+        return await context.Set<T>().FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public virtual async Task<T> AddAsync(T entity)
     {
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            await context.Set<T>().AddAsync(entity);
-            await context.SaveChangesAsync();
-            return entity;
-        }
+        var context = GetContext();
+        await context.Set<T>().AddAsync(entity);
+        await context.SaveChangesAsync();
+        return entity;
     }
 
     public virtual async Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities)
     {
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            await context.Set<T>().AddRangeAsync(entities);
-            await context.SaveChangesAsync();
-            return entities;
-        }
+        var context = GetContext();
+        await context.Set<T>().AddRangeAsync(entities);
+        await context.SaveChangesAsync();
+        return entities;
     }
 
     public virtual async Task<T> UpdateAsync(T entity)
     {
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            context.Set<T>().Update(entity);
-            await context.SaveChangesAsync();
-            return entity;
-        }
+        var context = GetContext();
+        context.Set<T>().Update(entity);
+        await context.SaveChangesAsync();
+        return entity;
     }
 
     public virtual async Task<bool> UpdateRangeAsync(IEnumerable<T> list)
     {
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            context.Set<T>().UpdateRange(list);
-            await context.SaveChangesAsync();
-            return true;
-        }
+        var context = GetContext();
+        context.Set<T>().UpdateRange(list);
+        await context.SaveChangesAsync();
+        return true;
     }
 
     public virtual async Task<int> GetTotalCount()
     {
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            return await context.Set<T>().CountAsync();
-        }
+        var context = GetContext();
+        return await context.Set<T>().CountAsync();
     }
 
     public async Task SaveChangesAsync()
     {
-        using (var context = _contextFactory.CreateDbContext())
-        {
-            await context.SaveChangesAsync();
-        }
+        var context = GetContext();
+        await context.SaveChangesAsync();
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Domain.Interfaces;
 using Shared.Dtos;
 
-namespace Application.Interfaces.Services;
+namespace Application.Services;
 public class BaseService<T> : IBaseService<T> where T : class
 {
     protected readonly IBaseRepository<T> _repository;
@@ -11,9 +11,9 @@ public class BaseService<T> : IBaseService<T> where T : class
         _repository = repository;
     }
 
-    public virtual async Task<ListData<T>> GetList(int scrollCount)
+    public virtual async Task<ListData<T>> GetList(int scrollCount, IDictionary<string, string?>? filters)
     {
-        var originalData = await _repository.GetAllAsync(scrollCount);
+        var originalData = await _repository.GetAllAsync(scrollCount, filters);
 
         var totalCount = await _repository.GetTotalCount();
 

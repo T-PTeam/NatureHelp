@@ -28,11 +28,3 @@
 .form-container > * {
   flex: 1 1 calc(50% - 12px);
 }
-
-.button-group {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  justify-content: space-around;
-  align-items: center;
-}
