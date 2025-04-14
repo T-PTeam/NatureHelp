@@ -1,0 +1,23 @@
+{
+  "eslint.probe": [
+    "astro",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "mdx",
+    "vue",
+    "markdown",
+    "json",
+    "jsonc",
+    "ts",
+    "typescript"
+  ],
+  "eslint.debug": true,
+  "eslint.format.enable": true,
+  "files.exclude": {
+    "**/.git": false
+  },
+  "editor.formatOnSave": true
+}

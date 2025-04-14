@@ -1,0 +1,8 @@
+.header {
+  background-color: #582f0e;
+}
+
+.grid-header,
+.grid-row {
+  grid-template-columns: repeat(5, 1fr) repeat(3, 3fr) repeat(2, 1fr);
+}

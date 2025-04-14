@@ -1,0 +1,121 @@
+<mat-expansion-panel class="filter-panel">
+  <mat-expansion-panel-header class="filter-header">
+    <mat-panel-title class="filter-title">Filter</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <form
+    [formGroup]="filterForm"
+    (ngSubmit)="applyFilter()"
+    class="filter-form">
+    <div
+      formGroupName="location"
+      class="filter-fields">
+      <mat-form-field class="form-field">
+        <mat-label>Country</mat-label>
+        <input
+          matInput
+          formControlName="country"
+          class="form-input" />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Region</mat-label>
+        <input
+          matInput
+          formControlName="region"
+          class="form-input" />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>District</mat-label>
+        <input
+          matInput
+          formControlName="district"
+          class="form-input" />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>City</mat-label>
+        <input
+          matInput
+          formControlName="city"
+          class="form-input" />
+      </mat-form-field>
+    </div>
+
+    <div class="action-buttons">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="apply-button">
+        Apply
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="filterForm.reset()"
+        class="reset-button">
+        Clear
+      </button>
+    </div>
+  </form>
+</mat-expansion-panel>
+
+<div class="header">
+  <h2>Laboratories</h2>
+  <input
+    type="search"
+    placeholder="Search for laboratories..."
+    [(ngModel)]="search" />
+  <button
+    (click)="navigateToDetail()"
+    class="action-btn"
+    id="add-btn">
+    <i class="material-icons">add</i>
+  </button>
+</div>
+
+<div class="grid-container">
+  <div class="grid-header">
+    <div matTooltip="Title">Title</div>
+    <div matTooltip="Location">Location</div>
+    <div matTooltip="Researchers">Researchers</div>
+    <div matTooltip="Researches number">Researchers number</div>
+    <div matTooltip="Map">Map</div>
+    <div matTooltip="Edit">Edit</div>
+  </div>
+  <div
+    class="grid-body"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="500"
+    [infiniteScrollDisabled]="scrollCheckDisabled"
+    (scrolled)="onScroll()">
+    <div
+      *ngFor="let lab of labsAPIService.labs$ | async"
+      class="grid-row">
+      <div>{{ lab.title }}</div>
+      <div>{{ lab.location.country }}, {{ lab.location.city }}</div>
+      <div>{{ lab.researchersCount ? (lab.researchers | labResearchers) : "—" }}</div>
+      <div>{{ lab.researchersCount }}</div>
+      <div class="btn-ceil">
+        <button
+          class="action-btn"
+          (click)="changeMapFocus(lab.location)"
+          id="map-focus-btn">
+          <i class="fa fa-crosshairs"></i>
+        </button>
+      </div>
+      <div class="btn-ceil">
+        <button
+          (click)="navigateToDetail(lab.id)"
+          class="action-btn"
+          id="edit-btn">
+          <i class="fa fa-edit"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

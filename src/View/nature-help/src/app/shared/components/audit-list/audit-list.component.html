@@ -1,0 +1,89 @@
+<ng-container *ngIf="auditService.deficiencyHistory$ | async as logs">
+  <mat-accordion>
+    <mat-expansion-panel (opened)="loadChangedModelHistory(deficiency.id, deficiency.type)">
+      <mat-expansion-panel-header>
+        <mat-panel-title> History of changes </mat-panel-title>
+        <mat-panel-description>
+          {{ logs && logs.length ? logs.length + " entries" : "" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="logs.length; else noLogs">
+        <div
+          *ngFor="let log of logs"
+          class="log-entry">
+          <div class="log-header mb-2">
+            <strong>ID {{ log.deficiencyId }}</strong>
+            <p class="user">Changed by {{ log.createdBy }}</p>
+            <span class="time">Changed on {{ log.createdOn | date: "short" }}</span>
+          </div>
+
+          <table
+            mat-table
+            [dataSource]="getParsedChangesArray(log.changesJson)"
+            class="mat-elevation-z2"
+            multiTemplateDataRows>
+            <!-- Property Column -->
+            <ng-container matColumnDef="property">
+              <th
+                mat-header-cell
+                *matHeaderCellDef>
+                Property
+              </th>
+              <td
+                mat-cell
+                *matCellDef="let element">
+                {{ element.key }}
+              </td>
+            </ng-container>
+
+            <!-- Old Value Column -->
+            <ng-container matColumnDef="old">
+              <th
+                mat-header-cell
+                *matHeaderCellDef>
+                Old
+              </th>
+              <td
+                mat-cell
+                *matCellDef="let element">
+                {{ element.old }}
+              </td>
+            </ng-container>
+
+            <!-- New Value Column -->
+            <ng-container matColumnDef="new">
+              <th
+                mat-header-cell
+                *matHeaderCellDef>
+                New
+              </th>
+              <td
+                mat-cell
+                *matCellDef="let element">
+                {{ element.new }}
+              </td>
+            </ng-container>
+
+            <tr
+              mat-header-row
+              *matHeaderRowDef="displayedColumns"></tr>
+            <tr
+              mat-row
+              *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+
+          <mat-divider class="my-4"></mat-divider>
+        </div>
+      </div>
+
+      <ng-template #noLogs>
+        <p class="text-muted p-3">No change history available.</p>
+      </ng-template>
+
+      <ng-template #noLogs>
+        <p class="text-muted p-4">No change history available.</p>
+      </ng-template>
+    </mat-expansion-panel>
+  </mat-accordion>
+</ng-container>

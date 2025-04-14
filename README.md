@@ -1,6 +1,7 @@
 # FuelStationsServer
 
 ## Core Angular Libraries:
+
 - `@angular/material`
 - `@angular/cdk`
 - `@angular/animations`
@@ -12,8 +13,10 @@
 - `@angular/forms`
 - `@angular/common`
 - `@angular/http`
+- `@auth0/angular-jwt`
 
 ## UI & Styling Libraries:
+
 - `primeicons`
 - `primeng`
 - `tailwindcss`
@@ -21,6 +24,7 @@
 - `autoprefixer`
 
 ## Additional Utilities:
+
 - `cypress` (development dependency)
 - `moment`
 - `ngx-translate/core`
@@ -30,3 +34,12 @@
 - `eslint-config-prettier` (development dependency)
 - `eslint-plugin-prettier` (development dependency)
 - `husky` (development dependency)
+
+## Firebase Deployed
+
+[Visit NatureHelp Site](https://naturehelp-c4212.web.app/uk/water)
+
+## Useful commands:
+
+- extract localization files:
+ng extract-i18n --output-path=src/locale --format=xlf                                   

@@ -1,8 +1,8 @@
 ﻿namespace Domain.Models.Location;
-public abstract class ACoordinates : BaseEntity
+public abstract class ACoordinates : BaseModel
 {
-    private double latitude;
-    private double longitude;
+    public double Longitude { get; set; } = 50.4501;
+    public double Latitude { get; set; } = 30.5234;
 
     public bool IsNearby(ACoordinates otherLocation, double radiusInKm)
     {
@@ -10,10 +10,10 @@ public abstract class ACoordinates : BaseEntity
         const double EarthRadiusKm = 6371.0;
 
         // Convert latitude and longitude from degrees to radians
-        double lat1 = this.latitude * Math.PI / 180.0;
-        double lon1 = this.longitude * Math.PI / 180.0;
-        double lat2 = otherLocation.latitude * Math.PI / 180.0;
-        double lon2 = otherLocation.longitude * Math.PI / 180.0;
+        double lat1 = this.Latitude * Math.PI / 180.0;
+        double lon1 = this.Longitude * Math.PI / 180.0;
+        double lat2 = otherLocation.Latitude * Math.PI / 180.0;
+        double lon2 = otherLocation.Longitude * Math.PI / 180.0;
 
         // Calculate the differences between the latitudes and longitudes
         double dLat = lat2 - lat1;
@@ -35,7 +35,7 @@ public abstract class ACoordinates : BaseEntity
 
     public void UpdateCoordinates(double latitude, double longitude)
     {
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.Latitude = latitude;
+        this.Longitude = longitude;
     }
 }

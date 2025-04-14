@@ -1,0 +1,78 @@
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="uk" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="title" datatype="html">
+        <source>Title</source>
+        <target state="new">Заголовок</target>
+      </trans-unit>
+      <trans-unit id="description" datatype="html">
+        <source>Description</source>
+        <target state="new">Опис</target>
+      </trans-unit>
+      <trans-unit id="type" datatype="html">
+        <source>Type</source>
+        <target state="new">Тип</target>
+      </trans-unit>
+      <trans-unit id="dissolvedOxygen" datatype="html">
+        <source>Dissolved Oxygen</source>
+        <target state="new">Розчинений кисень</target>
+      </trans-unit>
+      <trans-unit id="leadConcentration" datatype="html">
+        <source>Lead Concentration</source>
+        <target state="new">Концентрація свинцю</target>
+      </trans-unit>
+      <trans-unit id="mercuryConcentration" datatype="html">
+        <source>Mercury Concentration</source>
+        <target state="new">Концентрація ртуті</target>
+      </trans-unit>
+      <trans-unit id="nitrateConcentration" datatype="html">
+        <source>Nitrate Concentration</source>
+        <target state="new">Концентрація нітратів</target>
+      </trans-unit>
+      <trans-unit id="pesticidesContent" datatype="html">
+        <source>Pesticides Content</source>
+        <target state="new">Вміст пестицидів</target>
+      </trans-unit>
+      <trans-unit id="microbialActivity" datatype="html">
+        <source>Microbial Activity</source>
+        <target state="new">Мікробна активність</target>
+      </trans-unit>
+      <trans-unit id="radiationLevel" datatype="html">
+        <source>Radiation Level</source>
+        <target state="new">Рівень радіації</target>
+      </trans-unit>
+      <trans-unit id="chemicalOxygenDemand" datatype="html">
+        <source>Chemical Oxygen Demand</source>
+        <target state="new">Хімічне споживання кисню</target>
+      </trans-unit>
+      <trans-unit id="biologicalOxygenDemand" datatype="html">
+        <source>Biological Oxygen Demand</source>
+        <target state="new">Біологічне споживання кисню</target>
+      </trans-unit>
+      <trans-unit id="phosphateConcentration" datatype="html">
+        <source>Biological Oxygen Demand</source>
+        <target state="new">Біологічне споживання кисню</target>
+      </trans-unit>
+      <trans-unit id="cadmiumConcentration" datatype="html">
+        <source>Cadmium Concentration</source>
+        <target state="new">Концентрація кадмію</target>
+      </trans-unit>
+      <trans-unit id="totalDissolvedSolids" datatype="html">
+        <source>Total Dissolved Solids</source>
+        <target state="new">Загальна кількість розчинених твердих речовин</target>
+      </trans-unit>
+      <trans-unit id="electricalConductivity" datatype="html">
+        <source>Electrical Conductivity</source>
+        <target state="new">Електропровідність</target>
+      </trans-unit>
+      <trans-unit id="microbialLoad" datatype="html">
+        <source>Microbial Load</source>
+        <target state="new">Мікробне навантаження</target>
+      </trans-unit>
+      <trans-unit id="7278527838336975723" datatype="html">
+        <source>Deficiencies (Water)</source>
+        <target state="new">Недоліки (Вода)</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

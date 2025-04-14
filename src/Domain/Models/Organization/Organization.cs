@@ -1,14 +1,14 @@
 ﻿namespace Domain.Models.Organization;
 
-public class Organization : BaseEntity
+public class Organization : BaseModel
 {
     private List<User> staff = new List<User>();
 
 
     public string Title { get; set; } = null!;
-    public Location Location { get; set; } = null!;
-
-    void AddMember(User user)
+    public Location? Location { get; set; }
+    public Guid LocationId { get; set; }
+    public void AddMember(User user)
     {
         staff.Add(user);
     }

@@ -1,0 +1,219 @@
+<mat-card
+  *ngIf="details"
+  class="soil-deficiency-card">
+  <mat-card-title>Soil Deficiency</mat-card-title>
+  <div
+    class="form-container"
+    [formGroup]="detailsForm">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        formControlName="title" />
+      <mat-error *ngIf="detailsForm.get('title')?.invalid && detailsForm.get('title')?.touched">
+        Title is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        rows="5"
+        formControlName="description"></textarea>
+      <mat-error *ngIf="detailsForm.get('description')?.invalid && detailsForm.get('description')?.touched">
+        Description is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Danger state</mat-label>
+      <mat-select
+        formControlName="eDangerState"
+        class="form-input">
+        <mat-option [value]="null">None</mat-option>
+        <mat-option
+          *ngFor="let danger of dangerStates"
+          [value]="danger.value">
+          {{ danger.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div formGroupName="location">
+      <mat-form-field>
+        <mat-label>Latitude</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="latitude" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Longitude</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="longitude" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input
+          matInput
+          formControlName="city" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <input
+          matInput
+          formControlName="country" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Radius affected</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="radiusAffected" />
+        <mat-error
+          *ngIf="
+            detailsForm.get('location.radiusAffected')?.invalid && detailsForm.get('location.radiusAffected')?.touched
+          ">
+          <span *ngIf="detailsForm.get('location.radiusAffected')?.hasError('required')"
+            >Radius affected is required.</span
+          >
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>pH</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="ph" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Organic Matter</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="organicMatter" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Lead Concentration</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="leadConcentration" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Cadmium Concentration</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="cadmiumConcentration" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <mat-label>Mercury Concentration</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="mercuryConcentration" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Pesticides Content</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="pesticidesContent" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nitrates Concentration</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="nitratesConcentration" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Heavy Metals Concentration</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="heavyMetalsConcentration" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Electrical Conductivity</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="electricalConductivity" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Microbial Activity</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="microbialActivity" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Analysis Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="analysisDate" />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Creator</mat-label>
+      <input
+        matInput
+        readonly
+        [value]="details.creator.firstName + ' ' + details.creator.lastName" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Responsible User</mat-label>
+      <mat-select formControlName="responsibleUserId">
+        <mat-option
+          *ngFor="let user of usersAPIService.$organizationUsers | async"
+          [value]="user.id">
+          {{ user.firstName }} {{ user.lastName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="button-group-wrapper">
+      <div class="button-group">
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="onSubmit()">
+          Submit
+        </button>
+        <button
+          mat-flat-button
+          color="warn"
+          (click)="onCancel()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <nt-audit-list [deficiency]="details"></nt-audit-list>
+</mat-card>

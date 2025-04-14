@@ -1,0 +1,223 @@
+/* FILTER */
+
+.filter-panel {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.filter-header {
+  background-color: #f4f7fb;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filter-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.filter-form {
+  padding: 16px;
+}
+
+.filter-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.apply-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #0056b3;
+}
+
+.reset-button {
+  background-color: #ff3d00;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #c33c00;
+}
+
+@media (max-width: 600px) {
+  .filter-form {
+    padding: 8px;
+  }
+
+  .location-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .apply-button,
+  .reset-button {
+    width: 100%;
+  }
+}
+
+/* TABLE */
+
+.header {
+  height: 60px;
+  margin: 16px 8px 0px 0px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-radius: 8px 8px 0px 0px;
+  color: #f0f5ff;
+}
+
+.header h2 {
+  display: inline-block;
+  margin: 15px;
+  letter-spacing: 2px;
+}
+
+.header button {
+  float: inline-end;
+  margin: 15px;
+  font-size: 22px;
+  padding: 0px 7px;
+}
+
+.btn-ceil button {
+  font-size: 22px;
+  padding: 0px 7px;
+}
+
+.header input {
+  float: inline-end;
+  margin: 15px 0px;
+  font-size: 18px;
+}
+
+#map-focus-btn {
+  border: 1px solid black;
+  color: rgb(186, 84, 254);
+  background-color: white;
+}
+
+#add-btn {
+  border: 1px solid black;
+  background-color: white;
+  color: #0058af;
+}
+
+#edit-btn {
+  border: 1px solid black;
+  background-color: rgb(254, 254, 75);
+}
+
+#export-btn {
+  border: 1px solid black;
+  background-color: greenyellow;
+}
+
+.search-results {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+}
+
+.item {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.grid-header,
+.grid-row {
+  display: grid;
+  text-align: center;
+  align-items: center;
+}
+
+.grid-header {
+  font-weight: bold;
+  background-color: #f4f4f4;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #888;
+}
+
+.grid-body {
+  display: flex;
+  flex-direction: column;
+  max-height: 65vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.grid-row {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.grid-header div,
+.grid-row div div {
+  padding: 8px 5px;
+  border-right: 1px solid #bbb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-row div div {
+  white-space: wrap;
+}
+
+.grid-header div:last-child,
+.grid-row div:last-child {
+  border-right: none;
+}
+
+.grid-body::-webkit-scrollbar {
+  width: 8px;
+}

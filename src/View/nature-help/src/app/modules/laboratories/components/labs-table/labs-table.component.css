@@ -1,0 +1,16 @@
+.header {
+  background-color: #0eac4b;
+}
+
+.grid-header,
+.grid-row {
+  grid-template-columns: repeat(3, 3fr) 2fr repeat(2, 1fr);
+}
+
+.button-group {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+}

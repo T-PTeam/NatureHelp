@@ -1,16 +1,30 @@
 ﻿using Domain.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Models.Organization;
 
 public class User : Person
 {
-    private ERole role;
+    private ERole role = ERole.Supervisor;
 
-
+    public ERole Role { get => role; private set => role = value; }
     public string Email { get; set; } = null!;
     public string PasswordHash { get; set; } = null!;
     public Organization? Organization { get; set; }
+    public Laboratory? Laboratory { get; set; }
+    public string? AccessToken { get; set; }
+    public DateTime? AccessTokenExpireTime { get; set; }
+    public string? RefreshToken { get; set; }
+    public DateTime? RefreshTokenExpireTime { get; set; }
 
+    [ForeignKey(nameof(Organization))]
+    public Guid? OrganizationId { get; set; }
+
+    [ForeignKey(nameof(Laboratory))]
+    public Guid? LaboratoryId { get; set; }
+
+    [NotMapped]
+    public string Password { get; set; } = null!;
     public bool IsEmailValid(string password)
     {
         if (string.IsNullOrWhiteSpace(password))

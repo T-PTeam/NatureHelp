@@ -1,0 +1,12 @@
+.header {
+  background-color: #ffe600;
+}
+
+.header h2 {
+  color: black;
+}
+
+.grid-header,
+.grid-row {
+  grid-template-columns: 3fr 1.5fr 3fr 3fr 3fr;
+}

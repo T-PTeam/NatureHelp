@@ -1,0 +1,38 @@
+<div class="header">
+  <h2>Researches</h2>
+  <input
+    type="search"
+    placeholder="Search for researches..."
+    [(ngModel)]="search" />
+</div>
+
+<div class="grid-container">
+  <div class="grid-header">
+    <div matTooltip="Title">Title</div>
+    <div matTooltip="Type">Type</div>
+    <div matTooltip="Date">Date</div>
+    <div matTooltip="Researcher">Researcher</div>
+    <div matTooltip="Laboratory">Laboratory</div>
+  </div>
+  <div
+    class="grid-body"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="500"
+    [infiniteScrollDisabled]="scrollCheckDisabled"
+    (scrolled)="onScroll()">
+    <div
+      *ngFor="let research of researchesAPIService.researches$ | async"
+      class="grid-row">
+      <div>{{ research.title }}</div>
+      <div>{{ research.type | enumToString: "ResearchType" }}</div>
+      <div>{{ research.date | date }}</div>
+      <div>{{ research.researcher.firstName }} {{ research.researcher.lastName }}</div>
+      <div>
+        {{ research.laboratory.title }}, {{ research.laboratory.location.city }}({{
+          research.laboratory.location.country
+        }})
+      </div>
+    </div>
+  </div>
+</div>
