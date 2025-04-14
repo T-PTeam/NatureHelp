@@ -10,3 +10,34 @@ body {
   box-sizing: border-box;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.cluster-wrapper {
+  background-color: transparent;
+  border: none;
+}
+
+.cluster {
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.lab-cluster {
+  background-image: url("./assets/icons/map/lab.png");
+  color: white;
+}
+
+.water-def-cluster {
+  background: #4285f4;
+  color: white;
+}
+
+.soil-def-cluster {
+  background: brown;
+  color: white;
+}

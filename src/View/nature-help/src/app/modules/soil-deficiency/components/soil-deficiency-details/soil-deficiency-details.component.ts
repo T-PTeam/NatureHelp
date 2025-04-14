@@ -64,6 +64,7 @@ export class SoilDeficiencyDetail implements OnInit {
         ],
         city: [deficiency?.location?.city || ""],
         country: [deficiency?.location?.country || ""],
+        radiusAffected: [deficiency?.location?.radiusAffected || 10],
       }),
       eDangerState: [deficiency?.eDangerState || EDangerState.Moderate, Validators.required],
 
@@ -82,7 +83,7 @@ export class SoilDeficiencyDetail implements OnInit {
       createdBy: [deficiency?.creator?.id || this.currentUser?.id],
       createdOn: [deficiency?.createdOn || moment()],
       responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id, [Validators.required]],
-      locationId: [deficiency?.location?.id || null],
+      locationId: [deficiency?.location?.id || crypto.randomUUID()],
     });
 
     this.details = {

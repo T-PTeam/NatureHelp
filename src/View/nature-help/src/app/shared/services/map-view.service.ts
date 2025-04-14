@@ -11,12 +11,70 @@ import { LabsAPIService } from "@/modules/laboratories/services/labs-api.service
 import { ILocation } from "@/models/ILocation";
 import { ILaboratory } from "@/modules/laboratories/models/ILaboratory";
 import { IDeficiency } from "@/models/IDeficiency";
-import { EDangerState, EDeficiencyType } from "@/models/enums";
+import { EDangerState, EDeficiencyType, EMapLayer } from "@/models/enums";
+import "leaflet.markercluster";
 
 @Injectable({
   providedIn: "root",
 })
 export class MapViewService {
+  osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "OpenStreetMap",
+  });
+
+  satellite = L.tileLayer("https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}", {
+    subdomains: ["mt0", "mt1", "mt2", "mt3"],
+    attribution: "Google Satellite",
+  });
+
+  laboratoriesLayer = L.markerClusterGroup({
+    disableClusteringAtZoom: 17,
+    iconCreateFunction: function (cluster) {
+      const count = cluster.getChildCount();
+
+      return L.divIcon({
+        html: `<div class="cluster lab-cluster">${count}</div>`,
+        className: "cluster-wrapper",
+        iconSize: [40, 40],
+      });
+    },
+  });
+  waterDeficienciesLayer = L.markerClusterGroup({
+    disableClusteringAtZoom: 17,
+    iconCreateFunction: function (cluster) {
+      const count = cluster.getChildCount();
+
+      return L.divIcon({
+        html: `<div class="cluster water-def-cluster">${count}</div>`,
+        className: "cluster-wrapper",
+        iconSize: [40, 40],
+      });
+    },
+  });
+  soilDeficienciesLayer = L.markerClusterGroup({
+    disableClusteringAtZoom: 17,
+    iconCreateFunction: function (cluster) {
+      const count = cluster.getChildCount();
+
+      return L.divIcon({
+        html: `<div class="cluster soil-def-cluster">${count}</div>`,
+        className: "cluster-wrapper",
+        iconSize: [40, 40],
+      });
+    },
+  });
+
+  baseMaps = {
+    Scheme: this.osm,
+    Satellite: this.satellite,
+  };
+
+  overlayMaps = {
+    Laboratories: this.laboratoriesLayer,
+    "Water Deficiencies": this.waterDeficienciesLayer,
+    "Soil Deficiencies": this.soilDeficienciesLayer,
+  };
+
   private markerList$ = combineLatest([this.waterDataService.deficiencies$, this.soilDataService.deficiencies$]).pipe(
     map(([waterList, soilList]) => [...waterList, ...soilList]),
   );
@@ -24,17 +82,22 @@ export class MapViewService {
   private map: any;
 
   private labIcon = L.icon({
-    iconUrl: "assets/icons/map/lab.png", // Path to your icon image
-    iconSize: [32, 32], // Size of the icon
-    iconAnchor: [16, 32], // Point of the icon that corresponds to the marker's location
-    popupAnchor: [0, -32], // Point from which the popup should open
+    iconUrl: "assets/icons/map/lab.png",
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32],
   });
 
   public initMap(): void {
     this.map = L.map("map", {
       center: [48.65, 22.26],
       zoom: 13,
+      maxZoom: 18,
     });
+
+    L.control.layers(this.baseMaps, this.overlayMaps).addTo(this.map);
+
+    this.addAllLayersToMap(); // TODO: it makes double markers
 
     const tiles = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 18,
@@ -66,11 +129,13 @@ export class MapViewService {
       .pipe(
         map((list) => {
           if (list && list.length) {
+            this.clearDeficienciesLayersFromMap();
+
             list.forEach((d) => {
               if (this.isWaterDeficiency(d)) {
-                this.makeCircleMarker(d.location, "blue", this.getDeficiencyPopup(d));
+                this.makeCircleMarker(EMapLayer.WaterDeficiency, d.location, "#4285f4", this.getDeficiencyPopup(d));
               } else {
-                this.makeCircleMarker(d.location, "brown", this.getDeficiencyPopup(d));
+                this.makeCircleMarker(EMapLayer.SoilDeficiency, d.location, "brown", this.getDeficiencyPopup(d));
               }
             });
           }
@@ -83,13 +148,22 @@ export class MapViewService {
     this.labsAPIService.labs$
       .pipe(
         map((list) => {
-          list.map((lab) => this.makeIconMarker(lab.location, this.labIcon, this.getLabPopup(lab)));
+          this.laboratoriesLayer.clearLayers();
+
+          list.map((lab) =>
+            this.makeIconMarker(EMapLayer.Laboratories, lab.location, this.labIcon, this.getLabPopup(lab)),
+          );
         }),
       )
       .subscribe();
   }
 
-  private makeCircleMarker(location: ILocation, color: string, popupTags: string | null = null): void {
+  private makeCircleMarker(
+    mapLayer: EMapLayer,
+    location: ILocation,
+    color: string,
+    popupTags: string | null = null,
+  ): void {
     const circle = L.circleMarker([location.latitude ?? 50.4501, location.longitude ?? 30.5234], {
       radius: location.radiusAffected ?? 10,
       color: color,
@@ -100,10 +174,23 @@ export class MapViewService {
 
     if (popupTags) circle.bindPopup(popupTags);
 
-    circle.addTo(this.map);
+    switch (mapLayer) {
+      case EMapLayer.WaterDeficiency:
+        this.waterDeficienciesLayer.addLayer(circle);
+        break;
+      case EMapLayer.SoilDeficiency:
+        this.soilDeficienciesLayer.addLayer(circle);
+        break;
+      case EMapLayer.Laboratories:
+        this.laboratoriesLayer.addLayer(circle);
+        break;
+      default:
+        circle.addTo(this.map);
+        break;
+    }
   }
 
-  private makeIconMarker(location: ILocation, icon: Icon, popupTags: string | null = null): void {
+  private makeIconMarker(mapLayer: EMapLayer, location: ILocation, icon: Icon, popupTags: string | null = null): void {
     const circle = L.marker([location.latitude ?? 50.4501, location.longitude ?? 30.5234], {
       opacity: 0.6,
       icon: icon,
@@ -111,7 +198,20 @@ export class MapViewService {
 
     if (popupTags) circle.bindPopup(popupTags);
 
-    circle.addTo(this.map);
+    switch (mapLayer) {
+      case EMapLayer.WaterDeficiency:
+        this.waterDeficienciesLayer.addLayer(circle);
+        break;
+      case EMapLayer.SoilDeficiency:
+        this.soilDeficienciesLayer.addLayer(circle);
+        break;
+      case EMapLayer.Laboratories:
+        this.laboratoriesLayer.addLayer(circle);
+        break;
+      default:
+        circle.addTo(this.map);
+        break;
+    }
   }
 
   getDeficiencyPopup(item: IDeficiency) {
@@ -143,5 +243,16 @@ export class MapViewService {
 
   private isWaterDeficiency(obj: any): obj is IWaterDeficiency {
     return (obj as IWaterDeficiency).microbialLoad !== undefined;
+  }
+
+  private addAllLayersToMap() {
+    this.waterDeficienciesLayer.addTo(this.map);
+    this.soilDeficienciesLayer.addTo(this.map);
+    this.laboratoriesLayer.addTo(this.map);
+  }
+
+  private clearDeficienciesLayersFromMap() {
+    this.waterDeficienciesLayer.clearLayers();
+    this.soilDeficienciesLayer.clearLayers();
   }
 }

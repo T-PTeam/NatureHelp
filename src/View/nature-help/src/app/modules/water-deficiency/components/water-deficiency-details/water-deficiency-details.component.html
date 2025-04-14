@@ -64,6 +64,22 @@
           <span *ngIf="detailsForm.get('location.longitude')?.hasError('required')">Longitude is required.</span>
         </mat-error>
       </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Radius affected</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="radiusAffected" />
+        <mat-error
+          *ngIf="
+            detailsForm.get('location.radiusAffected')?.invalid && detailsForm.get('location.radiusAffected')?.touched
+          ">
+          <span *ngIf="detailsForm.get('location.radiusAffected')?.hasError('required')"
+            >Radius affected is required.</span
+          >
+        </mat-error>
+      </mat-form-field>
     </div>
 
     <mat-form-field>

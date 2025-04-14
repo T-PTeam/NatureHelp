@@ -32,3 +32,9 @@ export enum EResearchType {
   WaterBiologicalMonitoring, // Біологічний моніторинг води
   HydromorphologicalAnalysis, // Гідроморфологічний аналіз води
 }
+
+export enum EMapLayer {
+  WaterDeficiency = "Water Deficiency",
+  SoilDeficiency = "Soil Deficiency",
+  Laboratories = "Laboratories",
+}
