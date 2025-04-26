@@ -11,7 +11,7 @@ import angular from "eslint-plugin-angular";
 /** @type {import('eslint').FlatConfig[]} */
 export default [
   {
-    files: ["**/I*.ts"],
+    files: [ "**/I*.ts" ],
     rules: {
       "unicorn/filename-case": "off",
     },
@@ -28,7 +28,7 @@ export default [
       "cypress/**/*.ts",
       "*.config.{js,mjs,cjs,ts}",
     ],
-    files: ["**/*.{js,ts}"],
+    files: [ "**/*.{js,ts}" ],
     languageOptions: {
       globals: {
         ...globals.browser, // Spread browser globals from `globals` package
@@ -55,9 +55,13 @@ export default [
       // Import Sorting
       "import/first": "error",
       "import/newline-after-import": "error",
-      "import/namespace": ["error", { allowComputed: true }],
+      "import/namespace": [ "error", { allowComputed: true } ],
       "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": ["error"],
+      "@typescript-eslint/no-unused-vars": [ "error" ],
+
+      "@typescript-eslint/no-unused-expressions": "off",
+      "@typescript-eslint/no-this-alias": "off",
+      "@typescript-eslint/no-unused-vars": "off",
 
       "unicorn/no-empty-file": "off", // Disable empty file rule
       "unicorn/filename-case": "off",
@@ -67,20 +71,20 @@ export default [
     },
   },
   {
-    files: ["tailwind.config.js"],
+    files: [ "tailwind.config.js" ],
     languageOptions: {
       parser: espree, // Use the default JavaScript parser for non-TypeScript files
     },
     rules: {}, // Tailwind config specific rules if any
   },
   {
-    files: ["*rc.ts", "*.config.ts"], // Override for specific TypeScript files
+    files: [ "*rc.ts", "*.config.ts" ], // Override for specific TypeScript files
     rules: {
       "unicorn/prefer-module": "off", // Turn off the prefer-module rule
       "unicorn/filename-case": "off", // Turn off the filename-case rule
     },
   },
   {
-    ignores: ["lint-staged.config.js", "postcss.config.js"],
+    ignores: [ "lint-staged.config.js", "postcss.config.js" ],
   },
 ];
