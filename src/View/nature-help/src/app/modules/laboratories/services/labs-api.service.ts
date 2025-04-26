@@ -8,12 +8,13 @@ import { LoadingService } from "@/shared/services/loading.service";
 import { ILaboratory } from "../models/ILaboratory";
 import { IListData } from "@/shared/models/IListData";
 import { ILaboratorFilter } from "../models/ILaboratoryFilter";
+import { environment } from "src/environments/environment.dev";
 
 @Injectable({
   providedIn: "root",
 })
 export class LabsAPIService {
-  private labsUrl = "https://localhost:7077/api/Laboratory";
+  private labsUrl = `${environment.apiUrl}/Laboratory`;
 
   private labsSubject = new BehaviorSubject<ILaboratory[]>([]);
   public labs$: Observable<ILaboratory[]> = this.labsSubject.asObservable();
@@ -58,7 +59,7 @@ export class LabsAPIService {
     );
 
     this.loading.showLoaderUntilCompleted(loadlabs$).subscribe();
-    return this.http.get<ILaboratory[]>(`${this.labsUrl}?scrollCount=${scrollCount}`);
+    return this.http.get<ILaboratory[]>(`${this.labsUrl}?scrollCount = ${scrollCount} `);
   }
 
   public getLabById(id: string): Observable<ILaboratory> {

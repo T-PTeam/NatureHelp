@@ -59,6 +59,10 @@ export default [
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": ["error"],
 
+      "@typescript-eslint/no-unused-expressions": "off",
+      "@typescript-eslint/no-this-alias": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+
       "unicorn/no-empty-file": "off", // Disable empty file rule
       "unicorn/filename-case": "off",
 
