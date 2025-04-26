@@ -25,7 +25,7 @@ jobs:
         working-directory: src/View/nature-help
 
       - name: Build Angular app
-        run: ng build --configuration=production --localize --base-href /nature-help/
+        run: npm run build -- --configuration=production --localize --base-href /nature-help/
         working-directory: src/View/nature-help
 
       - name: Deploy to Firebase Hosting (Preview)
