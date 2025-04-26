@@ -3,10 +3,11 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { saveAs } from "file-saver";
 import { LoadingService } from "@/shared/services/loading.service";
+import { environment } from "src/environments/environment.dev";
 
 @Injectable()
 export class ReportAPIService {
-  private reportsUrl = "https://localhost:7077/api/report/";
+  private reportsUrl = `${environment}apiUrl/api/report`;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),

@@ -9,12 +9,13 @@ import { IListData } from "../models/IListData";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { LoadingService } from "./loading.service";
 import { EAuthType } from "@/models/enums";
+import { environment } from "src/environments/environment.dev";
 
 @Injectable({
   providedIn: "root",
 })
 export class UserAPIService {
-  private apiUrl = "https://localhost:7077/api/user";
+  private apiUrl = `${environment.apiUrl}/user`;
 
   private jwtHelper = new JwtHelperService();
   private subject = new BehaviorSubject<IUser | null>(null);

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import L, { Icon } from "leaflet";
+import * as L from "leaflet";
 import { combineLatest, map } from "rxjs";
 
 import { ICoordinates } from "@/models/ICoordinates";
@@ -29,7 +29,7 @@ export class MapViewService {
 
   laboratoriesLayer = L.markerClusterGroup({
     disableClusteringAtZoom: 17,
-    iconCreateFunction: function (cluster) {
+    iconCreateFunction: function (cluster: L.MarkerCluster) {
       const count = cluster.getChildCount();
 
       return L.divIcon({
@@ -41,7 +41,7 @@ export class MapViewService {
   });
   waterDeficienciesLayer = L.markerClusterGroup({
     disableClusteringAtZoom: 17,
-    iconCreateFunction: function (cluster) {
+    iconCreateFunction: function (cluster: L.MarkerCluster) {
       const count = cluster.getChildCount();
 
       return L.divIcon({
@@ -53,7 +53,7 @@ export class MapViewService {
   });
   soilDeficienciesLayer = L.markerClusterGroup({
     disableClusteringAtZoom: 17,
-    iconCreateFunction: function (cluster) {
+    iconCreateFunction: function (cluster: L.MarkerCluster) {
       const count = cluster.getChildCount();
 
       return L.divIcon({
@@ -190,7 +190,12 @@ export class MapViewService {
     }
   }
 
-  private makeIconMarker(mapLayer: EMapLayer, location: ILocation, icon: Icon, popupTags: string | null = null): void {
+  private makeIconMarker(
+    mapLayer: EMapLayer,
+    location: ILocation,
+    icon: L.Icon,
+    popupTags: string | null = null,
+  ): void {
     const circle = L.marker([location.latitude ?? 50.4501, location.longitude ?? 30.5234], {
       opacity: 0.6,
       icon: icon,

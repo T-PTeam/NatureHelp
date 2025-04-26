@@ -13,7 +13,7 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 var configuration = new ConfigurationBuilder()
-    .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("AspNetCore_ENVIRONMENT")}.json", optional: true, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true, reloadOnChange: true)
     .Build();
 
 builder.Host.UseSerilog((context, services, configuration) =>
@@ -26,7 +26,9 @@ builder.Host.UseSerilog((context, services, configuration) =>
 
 builder.Services.AddDbContextFactory<ApplicationContext>(options =>
 {
-    string connectionString = configuration.GetConnectionString("LocalConnection") ?? String.Empty;
+    string connectionString = configuration.GetConnectionString("LocalConnection") 
+        ?? configuration.GetConnectionString("DefaultConnection") 
+        ?? String.Empty;
 
     options.UseNpgsql(connectionString, npgsqlOptions =>
     {

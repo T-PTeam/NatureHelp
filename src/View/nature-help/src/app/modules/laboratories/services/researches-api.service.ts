@@ -5,12 +5,13 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { BehaviorSubject, Observable, tap, catchError, shareReplay } from "rxjs";
 import { IResearch } from "../models/IResearch";
+import { environment } from "src/environments/environment.dev";
 
 @Injectable({
   providedIn: "root",
 })
 export class ResearchesAPIService {
-  private researchesUrl = "https://localhost:7077/api/research";
+  private researchesUrl = `${environment.apiUrl}/research`;
 
   private researchesSubject = new BehaviorSubject<IResearch[]>([]);
   public researches$: Observable<IResearch[]> = this.researchesSubject.asObservable();
@@ -31,21 +32,23 @@ export class ResearchesAPIService {
   }
 
   public loadResearches(scrollCount: number): Observable<IResearch[]> {
-    const loadCourses$ = this.http.get<IListData<IResearch>>(`${this.researchesUrl}?scrollCount=${scrollCount}`).pipe(
-      tap((listData) => {
-        this.researchesSubject.next([...this.researchesSubject.getValue(), ...listData.list]);
-        this.totalCountSubject.next(listData.totalCount);
-      }),
-      catchError((err) => {
-        const message = "Could not load soil deficiencies";
+    const loadCourses$ = this.http
+      .get<IListData<IResearch>>(`${this.researchesUrl}?scrollCount = ${scrollCount} `)
+      .pipe(
+        tap((listData) => {
+          this.researchesSubject.next([...this.researchesSubject.getValue(), ...listData.list]);
+          this.totalCountSubject.next(listData.totalCount);
+        }),
+        catchError((err) => {
+          const message = "Could not load soil deficiencies";
 
-        this.notify.open(message, "Close", { duration: 2000 });
-        return err;
-      }),
-      shareReplay(),
-    );
+          this.notify.open(message, "Close", { duration: 2000 });
+          return err;
+        }),
+        shareReplay(),
+      );
 
     this.loading.showLoaderUntilCompleted(loadCourses$).subscribe();
-    return this.http.get<IResearch[]>(`${this.researchesUrl}?scrollCount=${scrollCount}`);
+    return this.http.get<IResearch[]>(`${this.researchesUrl}?scrollCount = ${scrollCount} `);
   }
 }

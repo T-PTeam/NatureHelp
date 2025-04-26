@@ -9,26 +9,44 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "n",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "uk": {
+            "translation": "src/locale/messages.uk.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "localize": true,
-            "i18nMissingTranslation": "error",
+            "i18nMissingTranslation": "warning",
             "outputPath": "dist/nature-help",
             "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": ["zone.js", "@angular/localize/init"],
+            "main": "src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets", "src/web.config"],
             "styles": ["src/custom-theme.scss", "./node_modules/leaflet/dist/leaflet.css", "src/styles.css"],
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "localize": ["en"]
+            },
             "uk": {
               "localize": ["uk"]
             },
             "production": {
+              "localize": ["en-US"],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.dev.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -37,31 +55,41 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "1.5mb",
+                  "maximumError": "2mb"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
+              "localize": ["en-US"],
+              "buildOptimizer": false,
               "optimization": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "nature-help:build:uk"
+          },
           "configurations": {
+            "uk": {
+              "buildTarget": "nature-help:build:production,uk"
+            },
+            "en": {
+              "buildTarget": "nature-help:build:production"
+            },
             "production": {
               "buildTarget": "nature-help:build:production"
             },
             "development": {
               "buildTarget": "nature-help:build:development"
-            },
-            "uk": {
-              "buildTarget": "nature-help:build:production,uk"
             }
           },
           "defaultConfiguration": "development"
@@ -69,10 +97,9 @@
         "extract-i18n": {
           "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",
           "options": {
-            "buildTarget": "nature-help:build",
+            "browserTarget": "nature-help:build",
             "format": "xlf",
-            "outputPath": "src/locale",
-            "targetFiles": ["messages.uk.xlf"]
+            "outputPath": "src/locale"
           }
         },
         "test": {
@@ -84,17 +111,21 @@
             "styles": ["src/styles.css"],
             "scripts": []
           }
-        }
-      },
-      "i18n": {
-        "sourceLocale": "en-US",
-        "locales": {
-          "uk": "src/locale/messages.uk.xlf"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }
