@@ -1,6 +1,10 @@
 {
   "hosting": {
-    "public": "dist/nature-help/browser",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "public": "dist/nature-help",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
   }
 }
