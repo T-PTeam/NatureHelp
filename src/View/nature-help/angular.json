@@ -41,6 +41,12 @@
             },
             "production": {
               "localize": ["en-US"],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.dev.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -74,16 +80,16 @@
           },
           "configurations": {
             "uk": {
-              "browserTarget": "nature-help:build:production,uk"
+              "buildTarget": "nature-help:build:production,uk"
             },
             "en": {
-              "browserTarget": "nature-help:build:production"
+              "buildTarget": "nature-help:build:production"
             },
             "production": {
-              "browserTarget": "nature-help:build:production"
+              "buildTarget": "nature-help:build:production"
             },
             "development": {
-              "browserTarget": "nature-help:build:development"
+              "buildTarget": "nature-help:build:development"
             }
           },
           "defaultConfiguration": "development"

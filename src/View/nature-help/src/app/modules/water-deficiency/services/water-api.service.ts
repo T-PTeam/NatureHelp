@@ -7,6 +7,7 @@ import { IWaterDeficiency } from "@/modules/water-deficiency/models/IWaterDefici
 import { LoadingService } from "@/shared/services/loading.service";
 import { IListData } from "@/shared/models/IListData";
 import { IWaterDeficiencyFilter } from "../models/IWaterDeficiencyFilter";
+import { environment } from "src/environments/environment.dev";
 
 @Injectable()
 export class WaterAPIService {
@@ -14,7 +15,7 @@ export class WaterAPIService {
   private totalCountSubject = new BehaviorSubject<number>(0);
   public deficiencies$: Observable<IWaterDeficiency[]> = this.listSubject.asObservable();
   public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
-  private watersUrl = "https://localhost:7077/api/WaterDeficiency";
+  private watersUrl = `${environment.apiUrl}/WaterDeficiency`;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),

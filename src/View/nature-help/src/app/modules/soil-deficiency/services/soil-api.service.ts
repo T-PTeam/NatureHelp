@@ -7,6 +7,7 @@ import { ISoilDeficiency } from "@/modules/soil-deficiency/models/ISoilDeficienc
 import { LoadingService } from "@/shared/services/loading.service";
 import { IListData } from "@/shared/models/IListData";
 import { ISoilDeficiencyFilter } from "../models/ISoilDeficiencyFilter";
+import { environment } from "src/environments/environment.dev";
 
 @Injectable()
 export class SoilAPIService {
@@ -14,7 +15,7 @@ export class SoilAPIService {
   private totalCountSubject = new BehaviorSubject<number>(0);
   public deficiencies$: Observable<ISoilDeficiency[]> = this.listSubject.asObservable();
   public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
-  private soilsUrl = "https://localhost:7077/api/SoilDeficiency";
+  private soilsUrl = `${environment.apiUrl}/SoilDeficiency`;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -55,7 +56,7 @@ export class SoilAPIService {
       shareReplay(),
     );
     this.loading.showLoaderUntilCompleted(loadDeficiencies$).subscribe();
-    return this.http.get<ISoilDeficiency[]>(`${this.soilsUrl}?scrollCount=${scrollCount}`);
+    return this.http.get<ISoilDeficiency[]>(`${this.soilsUrl}?scrollCount = ${scrollCount} `);
   }
 
   public getSoilDeficiencyById(id: string): Observable<ISoilDeficiency> {

@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable, tap, catchError, of, shareReplay } from "r
 import { LoadingService } from "./loading.service";
 import { IChangedModelLog } from "@/models/IChangedModelLog";
 import { EDeficiencyType } from "@/models/enums";
+import { environment } from "src/environments/environment.dev";
 
 @Injectable({
   providedIn: "root",
@@ -12,7 +13,7 @@ import { EDeficiencyType } from "@/models/enums";
 export class AuditService {
   private deficiencyHistorySybject = new BehaviorSubject<IChangedModelLog[]>([]);
   public deficiencyHistory$: Observable<IChangedModelLog[]> = this.deficiencyHistorySybject.asObservable();
-  private auditUrl = "https://localhost:7077/api/ChangedModelLogs";
+  private auditUrl = `${environment}/api/ChangedModelLogs`;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
