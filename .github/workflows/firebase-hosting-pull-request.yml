@@ -21,11 +21,11 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
         working-directory: src/View/nature-help
 
       - name: Build Angular app
-        run: npm run build --configuration=uk
+        run: ng build --configuration=production --localize --base-href /nature-help/
         working-directory: src/View/nature-help
 
       - name: Deploy to Firebase Hosting (Preview)
