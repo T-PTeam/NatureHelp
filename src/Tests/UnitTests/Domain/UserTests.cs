@@ -22,13 +22,15 @@ public class UserTests
 
     [Theory]
     [InlineData("", false)]
-    [InlineData("plainaddress", false)]
-    [InlineData("@missingusername.com", false)]
-    [InlineData("username@.com", false)]
-    [InlineData("username@com", false)]
-    [InlineData("username@domain.com", true)]
-    [InlineData("user.name+tag@sub.domain.co", true)]
-    [InlineData("user_name@domain.co.uk", true)]
+    [InlineData("password", false)]
+    [InlineData("Password", false)]
+    [InlineData("Password1", false)]
+    [InlineData("Pass1@", false)]
+    [InlineData("Password1@", true)]
+    [InlineData("P@ssw0rd", true)]
+    [InlineData("MyPass123!", true)]
+    [InlineData("mypassword1@", false)]
+    [InlineData("MYPASSWORD1@", false)]
     public void UserPasswordChecking(string password, bool expectedResult)
     {
         var user = new User();
