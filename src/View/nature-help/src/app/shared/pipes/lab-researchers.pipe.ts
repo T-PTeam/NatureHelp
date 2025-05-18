@@ -12,7 +12,7 @@ export class LabResearchersPipe implements PipeTransform {
         researchers
           .slice(0, 5)
           .map((r) => `${r.firstName} ${r.lastName}`)
-          .join(", ") + `and other ${researchers.length - 5} researchers`
+          .join(", ") + ` and other ${researchers.length - 5} researchers`
       );
     }
 
