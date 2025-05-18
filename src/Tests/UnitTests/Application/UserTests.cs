@@ -1,6 +1,9 @@
 ﻿using Application.Dtos;
 using Application.Interfaces.Services.Organization;
+using Application.Providers;
 using Application.Services.Organization;
+using DocumentFormat.OpenXml.Spreadsheet;
+using Domain.Enums;
 using Domain.Models.Organization;
 using FluentAssertions;
 using Infrastructure.Interfaces;
@@ -99,5 +102,60 @@ public class UserTests
         result.Should().NotBeNull();
         result.AccessToken.Should().NotBeNullOrEmpty();
         result.RefreshToken.Should().NotBeNullOrEmpty();
+    }
+
+    [Theory]
+    [InlineData("user@example.com", ERole.Supervisor)]
+    [InlineData("admin@example.com", ERole.Owner)]
+    [InlineData("manager@example.com", ERole.Manager)]
+    [InlineData("researcher@example.com", ERole.Researcher)]
+    public void GeneratingToken_And_IsTokenExpired_Method(string email, ERole role)
+    {
+        var user = new User { Email = email };
+        user.AssignRole(role);
+
+        user.Role.Should().Be(role);
+
+        string refreshToken = AuthTokensProvider.GenerateRefreshToken(user);
+        string accessToken = AuthTokensProvider.GenerateAccessToken(user);
+
+        refreshToken.Should().NotBeNullOrEmpty();
+        accessToken.Should().NotBeNullOrEmpty();
+
+        bool isExpiredRefreshToken = AuthTokensProvider.IsTokenExpired(refreshToken);
+        bool isExpiredAccessToken = AuthTokensProvider.IsTokenExpired(accessToken);
+
+        isExpiredAccessToken.Should().BeFalse(); 
+        isExpiredRefreshToken.Should().BeFalse();
+    }
+
+
+
+    [Theory]
+    [InlineData("user@example.com", ERole.Supervisor)]
+    [InlineData("admin@example.com", ERole.Owner)]
+    [InlineData("manager@example.com", ERole.Manager)]
+    [InlineData("researcher@example.com", ERole.Researcher)]
+    public async Task UpdateAccessTokenByRefreshToken(string email, ERole role)
+    {
+        var user = new User { Email = email };
+        user.AssignRole(role);
+
+        user.Role.Should().Be(role);
+
+        string refreshToken = AuthTokensProvider.GenerateRefreshToken(user);
+        string accessToken = AuthTokensProvider.GenerateAccessToken(user);
+
+        refreshToken.Should().NotBeNullOrEmpty();
+        accessToken.Should().NotBeNullOrEmpty();
+
+        _userRepositoryMock
+            .Setup(x => x.GetUserByRefreshTokenAsync(refreshToken))
+            .ReturnsAsync(user);
+
+        var resultUser = await _userService.RefreshAccessTokenAsync(refreshToken);
+
+        resultUser?.AccessToken.Should().NotBeNullOrEmpty();
+        resultUser?.AccessToken.Should().NotBeEquivalentTo(accessToken);
     }
 }
