@@ -49,7 +49,7 @@ namespace Application.Providers
 
             if (!tokenHandler.CanReadToken(token))
             {
-                return true;
+                throw new InvalidOperationException("The token can not be read...");
             }
 
             var jwtToken = tokenHandler.ReadJwtToken(token);
