@@ -13,7 +13,7 @@ import { environment } from "src/environments/environment.dev";
 export class AuditService {
   private deficiencyHistorySybject = new BehaviorSubject<IChangedModelLog[]>([]);
   public deficiencyHistory$: Observable<IChangedModelLog[]> = this.deficiencyHistorySybject.asObservable();
-  private auditUrl = `${environment}/api/ChangedModelLogs`;
+  private auditUrl = `${environment.apiUrl}/ChangedModelLogs`;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),

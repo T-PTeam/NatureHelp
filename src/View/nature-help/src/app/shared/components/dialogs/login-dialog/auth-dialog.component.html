@@ -40,17 +40,18 @@
   mat-dialog-actions
   class="action-buttons">
   <button
-    class="apply-button"
+    class="reset-button"
     mat-raised-button
     (click)="closeDialog()">
     Cancel
   </button>
   <button
-    class="reset-button"
+    class="apply-button"
     mat-flat-button
     color="primary"
     (click)="onSubmit()"
-    [disabled]="formGroup.invalid">
+    [disabled]="formGroup.invalid"
+    type="submit">
     Login
   </button>
 </div>
