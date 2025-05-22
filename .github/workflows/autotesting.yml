@@ -59,11 +59,10 @@ jobs:
 
       # Start ASP.NET Core backend
       - name: Start ASP.NET app
-        run: dotnet run --project ./src/NatureHelp/NatureHelp.API --launch-profile prod &
+        run: dotnet run --project ./src/NatureHelp/NatureHelp.csproj --urls=http://localhost:7077 &
         env:
           ASPNETCORE_ENVIRONMENT: Testing
           ConnectionStrings__DefaultConnection: Host=localhost;Database=testdb;Username=postgres;Password=postgres;
-
 
       - name: Wait for API to be ready
         run: npx wait-on http://localhost:7077
