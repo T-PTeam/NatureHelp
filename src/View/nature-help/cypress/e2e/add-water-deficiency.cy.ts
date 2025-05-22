@@ -2,19 +2,15 @@ describe("Add Water Deficiency", () => {
   beforeEach(() => {
     cy.visit("/");
 
-    // 2. Відкрити діалог (залежить від вашого компонента, наприклад, натиснення кнопки входу)
     cy.get('[data-cy="auth-menu"]').click();
     cy.get('[data-cy="login-button"]').click();
 
-    // 3. Ввести email і пароль
     cy.get('input[formcontrolname="email"]').type("valentyn@example.com");
     cy.get('input[formcontrolname="password"]').type("12341234");
 
-    // 4. Натиснути кнопку "Login"
     cy.get('button[type="submit"]').contains("Login").click();
 
-    // 5. Перевірити, що діалог закрився і користувач перейшов у систему
-    cy.get("mat-dialog-container").should("not.exist"); // перевірка, що діалог закрився
+    cy.get("mat-dialog-container").should("not.exist");
 
     cy.wait(2000);
     cy.visit("/water/add");
@@ -24,7 +20,7 @@ describe("Add Water Deficiency", () => {
     cy.get('input[formControlName="title"]').type("Test Deficiency");
     cy.get('textarea[formControlName="description"]').type("Test Description");
     cy.get('mat-select[formControlName="eDangerState"]').click();
-    cy.get("mat-option").contains("Dangerous").click(); // або інше доступне значення
+    cy.get("mat-option").contains("Dangerous").click();
 
     cy.get('input[formControlName="latitude"]').type("49.8419");
     cy.get('input[formControlName="longitude"]').type("24.0315");
@@ -47,11 +43,10 @@ describe("Add Water Deficiency", () => {
     cy.get('input[formControlName="microbialLoad"]').type("800");
 
     cy.get('mat-select[formControlName="responsibleUserId"]').click();
-    cy.get("mat-option").first().click(); // або шукай за іменем
+    cy.get("mat-option").first().click();
 
     cy.contains("button", "Submit").click();
 
-    // Очікування результату
-    cy.url().should("not.include", "/add"); // перенаправлення
+    cy.url().should("not.include", "/add");
   });
 });
