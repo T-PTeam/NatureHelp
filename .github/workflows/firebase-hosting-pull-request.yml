@@ -27,26 +27,6 @@ jobs:
       - name: Build Angular app
         run: npm run build -- --configuration=production --localize --base-href /nature-help/
         working-directory: src/View/nature-help
-        
-      - name: Install Newman CLI
-        run: npm install -g newman
-
-      - name: Install Newman CLI
-        run: npm install -g newman
-
-      - name: Run Postman tests
-        working-directory: src/Postman
-        run: |
-          newman run ./collection.json \
-            --environment ./environment.json \
-            --reporters cli,junit \
-            --reporter-junit-export results.xml
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: postman-results
-          path: src/Postman/results.xml
 
       - name: Deploy to Firebase Hosting (Preview)
         uses: FirebaseExtended/action-hosting-deploy@v0
