@@ -60,7 +60,7 @@ jobs:
       # Start ASP.NET Core backend
       - name: Start ASP.NET app
         run: |
-          dotnet run --project ./src/NatureHelp/NatureHelp.csproj
+          nohup dotnet run --project ./src/NatureHelp/NatureHelp.csproj > backend.log 2>&1 &
           echo "✅ ASP.NET Core app started"
         env:
           ASPNETCORE_ENVIRONMENT: Development
