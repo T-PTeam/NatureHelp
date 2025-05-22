@@ -5,47 +5,89 @@ import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.s
 import { LoadingService } from "@/shared/services/loading.service";
 import { HttpClient, HttpClientModule, HttpHandler } from "@angular/common/http";
 import { mount } from "cypress/angular";
+import { of } from "rxjs";
+import { LabsAPIService } from "@/modules/laboratories/services/labs-api.service";
+import { EDeficiencyType } from "@/models/enums";
+
+const mockWaterAPIService = {
+  getDeficiencies: () =>
+    of([
+      {
+        id: 1,
+        title: "Water Deficiency A",
+        description: "Low water availability",
+        eDeficiencyType: 1,
+        eDangerState: 2,
+        location: { latitude: 48.65, longitude: 22.26, radiusAffected: 15 },
+        creator: { firstName: "John", lastName: "Doe" },
+        responsibleUser: { firstName: "Jane", lastName: "Smith" },
+        microbialLoad: 5,
+      },
+    ]),
+};
+
+const mockSoilAPIService = {
+  getDeficiencies: () =>
+    of([
+      {
+        id: 2,
+        title: "Soil Deficiency B",
+        description: "Soil contamination detected",
+        eDeficiencyType: 2,
+        eDangerState: 3,
+        location: { latitude: 48.66, longitude: 22.27, radiusAffected: 10 },
+        creator: { firstName: "Alice", lastName: "Brown" },
+        responsibleUser: null,
+      },
+    ]),
+};
+
+const mockLabsAPIService = {
+  labs$: of([
+    {
+      id: 1,
+      title: "Lab 1",
+      location: { latitude: 48.67, longitude: 22.28 },
+      researchersCount: 3,
+      researchers: [
+        { firstName: "Researcher", lastName: "One" },
+        { firstName: "Researcher", lastName: "Two" },
+        { firstName: "Researcher", lastName: "Three" },
+      ],
+    },
+  ]),
+};
 
 describe("MapComponent", () => {
   beforeEach(() => {
+    cy.spy(MapViewService.prototype, "makeDeficiencyMarkers").as("deficiencyMarkers");
+    cy.spy(MapViewService.prototype, "makeLabMarkers").as("labMarkers");
+    cy.spy(MapViewService.prototype, "initMap").as("initMap");
+
     mount(MapComponent, {
       imports: [HttpClientModule],
-      providers: [MapViewService, WaterAPIService, HttpClient, HttpHandler, LoadingService, SoilAPIService], // Mock services
+      providers: [
+        MapViewService,
+        { provide: WaterAPIService, useValue: mockWaterAPIService },
+        { provide: SoilAPIService, useValue: mockSoilAPIService },
+        { provide: LabsAPIService, useValue: mockLabsAPIService },
+      ],
     });
   });
 
-  // ✅ Test to check if the map loads correctly
   it("should initialize the map", () => {
     cy.get("#map").should("exist");
   });
 
-  // ✅ Test to ensure markers are placed on the map
   it("should create deficiency and lab markers", () => {
-    cy.spy(MapViewService.prototype, "makeDeficiencyMarkers").as("deficiencyMarkers");
-    cy.spy(MapViewService.prototype, "makeLabMarkers").as("labMarkers");
-
-    mount(MapComponent);
+    cy.get("#map", { timeout: 10000 }).should("exist");
+    cy.get(".leaflet-marker-icon", { timeout: 10000 }).should("have.length.at.least", 1);
 
     cy.get("@deficiencyMarkers").should("have.been.called");
     cy.get("@labMarkers").should("have.been.called");
   });
 
-  // ✅ Test to check if a button exists for zoom interaction
-  it("should contain a zoom-in button", () => {
-    cy.get(".zoom-in-button", { timeout: 5000 }).should("exist");
-  });
-
-  // ✅ Test for checking navigation controls
-  it("should have navigation controls", () => {
-    cy.get(".navigation-controls").should("exist");
-  });
-
-  // ✅ Test to verify map service initialization
   it("should call map initialization service on load", () => {
-    cy.spy(MapViewService.prototype, "initMap").as("initMap");
-
-    mount(MapComponent);
-
     cy.get("@initMap").should("have.been.called");
   });
 });

@@ -1,28 +1,30 @@
 import "@angular/localize/init";
 import { mount } from "cypress/angular";
-import { WaterDeficiencyTable } from "./water-deficiency-table.component";
 
 import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
+// Angular Material
 import { MatTableModule } from "@angular/material/table";
-import { MatFormFieldControl, MatFormFieldModule } from "@angular/material/form-field";
+import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
+// Services (mock or real)
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
 import { LoadingService } from "@/shared/services/loading.service";
 import { ReportAPIService } from "@/shared/services/report-api.service";
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
-import { LabResearchersPipe } from "@/shared/pipes/lab-researchers.pipe";
-import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { EnumToStringPipe } from "@/shared/pipes/enum-to-string.pipe";
 
-describe("WaterDeficiencyTable Component", () => {
+import { LabsTableComponent } from "./labs-table.component";
+import { HttpClient } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
+
+describe("LabsTable Component", () => {
   it("renders correctly", () => {
-    mount(WaterDeficiencyTable, {
+    mount(LabsTableComponent, {
       imports: [
         CommonModule,
         ReactiveFormsModule,
@@ -35,10 +37,9 @@ describe("WaterDeficiencyTable Component", () => {
         MatTooltipModule,
         MatProgressSpinnerModule,
         HttpClientModule,
-        MatFormFieldControl,
       ],
       providers: [WaterAPIService, LoadingService, ReportAPIService, SoilAPIService, HttpClient],
-      declarations: [LabResearchersPipe, EnumToStringPipe],
+      declarations: [],
     });
 
     cy.get(".grid-container").should("be.visible");
