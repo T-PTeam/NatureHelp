@@ -9,6 +9,7 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     services:
       postgres:
         image: postgres:13
@@ -33,7 +34,6 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      # Restore & run xUnit (.NET) tests
       - name: Restore dependencies
         run: dotnet restore
 
@@ -43,7 +43,7 @@ jobs:
       - name: Run xUnit tests
         run: dotnet test --no-build --verbosity normal
 
-      # Setup Node.js for Cypress
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -53,19 +53,19 @@ jobs:
         run: npm ci
         working-directory: ./src/View/nature-help
 
-      # Run Cypress component tests
       - name: Run Cypress Component Tests
         run: npm run cy:component
         working-directory: ./src/View/nature-help
 
-      # Run Cypress E2E tests (with server)
-      - name: Start ASP.NET app
-        run: dotnet run --project ./src/NatureHelp/NatureHelp.API &
+      # Start ASP.NET Core backend
+      - name: Start ASP.NET API
+        run: |
+          dotnet run --project ./src/NatureHelp/NatureHelp.API --urls=http://localhost:7077 &
         env:
           ASPNETCORE_ENVIRONMENT: Testing
           ConnectionStrings__DefaultConnection: Host=localhost;Database=testdb;Username=postgres;Password=postgres;
 
-      - name: Wait for server to be ready
+      - name: Wait for API to be ready
         run: npx wait-on http://localhost:7077
 
       - name: Run Cypress E2E Tests
