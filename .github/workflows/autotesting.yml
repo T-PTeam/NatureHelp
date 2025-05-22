@@ -60,11 +60,15 @@ jobs:
       # Start ASP.NET Core backend
       - name: Start ASP.NET app
         run: |
-          nohup dotnet run --project ./src/NatureHelp/NatureHelp.csproj > backend.log 2>&1 &
+          nohup dotnet run --project ./src/NatureHelp/NatureHelp.csproj > server.log 2>&1 &
           echo "✅ ASP.NET Core app started"
         env:
           ASPNETCORE_ENVIRONMENT: Development
+          ASPNETCORE_URLS: http://localhost:7077
           ConnectionStrings__DefaultConnection: Host=localhost;Database=testdb;Username=postgres;Password=postgres;
+      
+      - name: Wait for API to be ready
+        run: npx wait-on http://localhost:7077 --timeout 60000
 
       - name: Wait for API to be ready
         run: npx wait-on --race http://localhost:7077 http://localhost:5242 --timeout 60000
