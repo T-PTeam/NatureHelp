@@ -61,12 +61,12 @@ jobs:
       - name: Start ASP.NET app
         run: dotnet run --project ./src/NatureHelp/NatureHelp.csproj --urls=http://localhost:7077 &
         env:
-          ASPNETCORE_ENVIRONMENT: Testing
+          ASPNETCORE_ENVIRONMENT: Development
           ConnectionStrings__DefaultConnection: Host=localhost;Database=testdb;Username=postgres;Password=postgres;
 
       - name: Wait for API to be ready
-        run: npx wait-on http://localhost:7077
-
+        run: npx wait-on --race http://localhost:7077 http://localhost:5242
+        
       - name: Run Cypress E2E Tests
         run: npm run cy:e2e
         working-directory: ./src/View/nature-help
