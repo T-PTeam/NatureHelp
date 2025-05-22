@@ -51,12 +51,12 @@ jobs:
 
       - name: Install NPM dependencies
         run: npm ci
-        working-directory: ./src/NatureHelp/ClientApp/nature-help
+        working-directory: ./src/View/nature-help
 
       # Run Cypress component tests
       - name: Run Cypress Component Tests
         run: npm run cy:component
-        working-directory: ./src/NatureHelp/ClientApp/nature-help
+        working-directory: ./src/View/nature-help
 
       # Run Cypress E2E tests (with server)
       - name: Start ASP.NET app
@@ -70,4 +70,4 @@ jobs:
 
       - name: Run Cypress E2E Tests
         run: npm run cy:e2e
-        working-directory: ./src/NatureHelp/ClientApp/nature-help
+        working-directory: ./src/View/nature-help
