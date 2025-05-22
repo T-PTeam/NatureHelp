@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
-    "webpack": "webpack serve --open --mode development"
+    "webpack": "webpack serve --open --mode development",
+    "cy:component": "cypress run --component",
+    "cy:e2e": "cypress run"
   },
   "private": true,
   "dependencies": {

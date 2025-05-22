@@ -66,7 +66,7 @@ jobs:
           ConnectionStrings__DefaultConnection: Host=localhost;Database=testdb;Username=postgres;Password=postgres;
 
       - name: Wait for server to be ready
-        run: npx wait-on http://localhost:5000
+        run: npx wait-on http://localhost:7077
 
       - name: Run Cypress E2E Tests
         run: npm run cy:e2e
