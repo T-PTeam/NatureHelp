@@ -1,4 +1,4 @@
-name: Run .NET and Cypress Tests
+name: Cypress E2E Tests
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main, dev]
 
 jobs:
-  build-and-test:
+  cypress-e2e:
     runs-on: ubuntu-latest
 
     services:
@@ -28,25 +28,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Setup .NET
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore
-        working-directory: ./src/NatureHelp
-
-      - name: Build project
-        run: dotnet build --no-restore
-        working-directory: ./src/NatureHelp
-
-      - name: Run xUnit tests
-        run: dotnet test --no-build --verbosity normal
-        working-directory: ./src/NatureHelp
-
-      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -56,11 +42,10 @@ jobs:
         run: npm ci
         working-directory: ./src/View/nature-help
 
-      - name: Run Cypress Component Tests
-        run: npm run cy:component
-        working-directory: ./src/View/nature-help
+      - name: Restore backend
+        run: dotnet restore
+        working-directory: ./src/NatureHelp
 
-      # Start ASP.NET Core backend
       - name: Start ASP.NET Core App
         run: |
           nohup dotnet run --project ./src/NatureHelp/NatureHelp.csproj > server.log 2>&1 &
@@ -71,8 +56,7 @@ jobs:
           ConnectionStrings__DefaultConnection: Host=localhost;Database=testdb;Username=postgres;Password=postgres;
 
       - name: Wait for backend
-        run: |
-          npx wait-on http://localhost:7077 --timeout 60000
+        run: npx wait-on http://localhost:7077 --timeout 60000
 
       - name: Check logs
         run: cat server.log
