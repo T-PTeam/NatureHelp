@@ -24,10 +24,7 @@ jobs:
 
     - name: Run Postman tests
       run: |
-        newman run ./tests/postman/collection.json \
-          --environment ./tests/postman/environment.json \
-          --reporters cli,json \
-          --reporter-json-export newman-report.json
+        newman run ./tests/postman/collection.json --reporters cli,json --reporter-json-export newman-report.json
 
     - name: Upload Newman report
       uses: actions/upload-artifact@v4
