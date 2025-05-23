@@ -10,6 +10,6 @@ describe("Login Dialog", () => {
 
     cy.get('button[type="submit"]').contains("Login").click();
 
-    cy.get("mat-dialog-container").should("not.exist"); // перевірка, що діалог закрився
+    cy.get("mat-dialog-container").should("not.exist");
   });
 });
