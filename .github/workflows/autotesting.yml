@@ -61,14 +61,22 @@ jobs:
       - name: Start ASP.NET app
         run: |
           nohup dotnet run --project ./src/NatureHelp/NatureHelp.csproj > server.log 2>&1 &
+          sleep 5
           echo "✅ ASP.NET Core app started"
+
         env:
           ASPNETCORE_ENVIRONMENT: Development
           ASPNETCORE_URLS: http://localhost:7077
           ConnectionStrings__DefaultConnection: Host=localhost;Database=testdb;Username=postgres;Password=postgres;
       
-      - name: Wait for API (default port)
-        run: npx wait-on http://localhost:5000 --timeout 60000
+      - name: Check logs
+        run: cat server.log
+      
+      - name: Check port
+        run: lsof -i :7077 || echo "❌ Нічого не слухає порт 7077"
+      
+      - name: Wait for backend
+        run: npx wait-on http://localhost:7077 --timeout 60000
 
       - name: Wait for API to be ready
         run: npx wait-on --race http://localhost:7077 http://localhost:5242 --timeout 60000
