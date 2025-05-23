@@ -95,11 +95,6 @@ public class UserService : IUserService
         return user;
     }
 
-    private void SetPasswordHash(User user)
-    {
-        user.PasswordHash = _passwordHasher.HashPassword(user, user.Password);
-    }
-
     public async Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto)
     {
         User user = new User()
@@ -141,5 +136,10 @@ public class UserService : IUserService
         };
 
         return result;
+    }
+
+    private void SetPasswordHash(User user)
+    {
+        user.PasswordHash = _passwordHasher.HashPassword(user, user.Password);
     }
 }

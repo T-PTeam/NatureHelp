@@ -25,16 +25,16 @@ public class User : Person
 
     [NotMapped]
     public string Password { get; set; } = null!;
-    public bool IsEmailValid(string password)
+    public bool IsEmailValid(string email)
     {
-        if (string.IsNullOrWhiteSpace(password))
+        if (string.IsNullOrWhiteSpace(email))
         {
             return false;
         }
 
         string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
-        return System.Text.RegularExpressions.Regex.IsMatch(password, pattern);
+        return System.Text.RegularExpressions.Regex.IsMatch(email, pattern);
     }
     public bool IsPasswordValid(string password)
     {

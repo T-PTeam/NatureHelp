@@ -1,6 +1,8 @@
 <ng-container *ngIf="auditService.deficiencyHistory$ | async as logs">
   <mat-accordion>
-    <mat-expansion-panel (opened)="loadChangedModelHistory(deficiency.id, deficiency.type)">
+    <mat-expansion-panel
+      data-cy="history-expansion-panel"
+      (opened)="loadChangedModelHistory(deficiency.id, deficiency.type)">
       <mat-expansion-panel-header>
         <mat-panel-title> History of changes </mat-panel-title>
         <mat-panel-description>
