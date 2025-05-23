@@ -52,11 +52,12 @@ jobs:
           echo "⏳ ASP.NET Core app starting..."
         env:
           ASPNETCORE_ENVIRONMENT: Development
-          ASPNETCORE_URLS: http://localhost:7077
+          ASPNETCORE_URLS: http://0.0.0.0:7077
           ConnectionStrings__DefaultConnection: Host=localhost;Database=testdb;Username=postgres;Password=postgres;
 
       - name: Wait for backend
-        run: npx wait-on http://localhost:7077 --timeout 60000
+        run: |
+          npx wait-on http://localhost:7077 --timeout 60000 || (echo "Backend did not start in time" && cat server.log && exit 1)
 
       - name: Check logs
         run: cat server.log
