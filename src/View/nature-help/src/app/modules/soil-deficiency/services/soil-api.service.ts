@@ -38,7 +38,8 @@ export class SoilAPIService {
     if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
     if (filter?.title) params = params.set("Title", filter.title);
     if (filter?.description) params = params.set("Description", filter.description);
-    if (filter?.eDangerState) params = params.set("EDangerState", filter.eDangerState.toString());
+    if (filter?.eDangerState || filter?.eDangerState === 0)
+      params = params.set("EDangerState", filter.eDangerState.toString());
 
     const loadDeficiencies$ = this.http.get<IListData<ISoilDeficiency>>(`${this.soilsUrl}`, { params }).pipe(
       tap((listData) => {

@@ -11,7 +11,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 @Component({
   selector: "nat-labs-table",
   templateUrl: "./labs-table.component.html",
-  styleUrls: ["./labs-table.component.css", "../../../../shared/styles/table-list.component.css"],
+  styleUrls: ["../../../../shared/styles/table-list.component.css", "./labs-table.component.css"],
   standalone: false,
 })
 export class LabsTableComponent implements OnInit {
