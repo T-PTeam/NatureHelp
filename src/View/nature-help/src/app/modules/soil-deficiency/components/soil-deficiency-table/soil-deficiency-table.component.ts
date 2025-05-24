@@ -15,7 +15,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 @Component({
   selector: "n-soil-deficiencies",
   templateUrl: "./soil-deficiency-table.component.html",
-  styleUrls: ["./soil-deficiency-table.component.css", "../../../../shared/styles/table-list.component.css"],
+  styleUrls: ["../../../../shared/styles/table-list.component.css", "./soil-deficiency-table.component.css"],
   standalone: false,
 })
 export class SoilDeficiencyTable {

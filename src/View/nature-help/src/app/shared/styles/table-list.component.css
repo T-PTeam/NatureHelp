@@ -168,11 +168,14 @@
   flex-direction: column;
   width: 100%;
   border: 1px solid #ccc;
+  font-size: 14px;
+  overflow-x: auto;
 }
 
 .grid-header,
 .grid-row {
   display: grid;
+  grid-template-columns: 2fr repeat(5, 1fr) repeat(3, 2fr) repeat(2, 1fr);
   text-align: center;
   align-items: center;
 }

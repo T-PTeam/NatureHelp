@@ -16,7 +16,7 @@ import { ISelectOption } from "@/shared/models/ISelectOption";
 @Component({
   selector: "n-water-deficiencies",
   templateUrl: "./water-deficiency-table.component.html",
-  styleUrls: ["./water-deficiency-table.component.css", "../../../../shared/styles/table-list.component.css"],
+  styleUrls: ["../../../../shared/styles/table-list.component.css", "./water-deficiency-table.component.css"],
   standalone: false,
 })
 export class WaterDeficiencyTable {

@@ -12,7 +12,9 @@
     "prepare": "husky",
     "webpack": "webpack serve --open --mode development",
     "cy:component": "cypress run --component",
-    "cy:e2e": "cypress run"
+    "cy:e2e": "cypress run",
+    "build:prod": "ng build --confiuration=production --localize --base-href /nature-help/",
+    "e18n:extract": "ng run extract-i18n"
   },
   "private": true,
   "dependencies": {

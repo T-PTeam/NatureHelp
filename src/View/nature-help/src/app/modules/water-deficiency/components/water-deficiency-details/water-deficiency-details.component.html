@@ -1,7 +1,7 @@
 <mat-card
   *ngIf="details"
   class="water-deficiency-card">
-  <mat-card-title>Water Deficiency</mat-card-title>
+  <mat-card-title i18n="@@waterDeficiency">Water Deficiency</mat-card-title>
   <div
     class="form-container"
     [formGroup]="detailsForm">
@@ -27,7 +27,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Danger state</mat-label>
+      <mat-label i18n="@@dangerState">Danger state</mat-label>
       <mat-select
         formControlName="eDangerState"
         class="form-input">
@@ -42,7 +42,7 @@
 
     <div formGroupName="location">
       <mat-form-field>
-        <mat-label>Location Latitude</mat-label>
+        <mat-label i18n="@@latitude">Latitude</mat-label>
         <input
           matInput
           type="number"
@@ -54,7 +54,7 @@
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Location Longitude</mat-label>
+        <mat-label i18n="@@longitude">Longitude</mat-label>
         <input
           matInput
           type="number"
@@ -66,7 +66,7 @@
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Radius affected</mat-label>
+        <mat-label i18n="@@radiusAffected">Radius affected</mat-label>
         <input
           matInput
           type="number"
@@ -265,7 +265,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Creator</mat-label>
+      <mat-label i18n="@@creator">Creator</mat-label>
       <input
         matInput
         type="IUser"
@@ -275,7 +275,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Responsible User</mat-label>
+      <mat-label i18n="@@responsibleUser">Responsible User</mat-label>
       <mat-select formControlName="responsibleUserId">
         <mat-option
           *ngFor="let user of usersAPIService.$organizationUsers | async"
@@ -288,6 +288,7 @@
     <div class="button-group-wrapper">
       <div class="button-group">
         <button
+          i18n="@@submitBtn"
           mat-flat-button
           color="primary"
           type="submit"
@@ -295,6 +296,7 @@
           Submit
         </button>
         <button
+          i18n="@@canceltBtn"
           mat-flat-button
           color="primary"
           type="submit"

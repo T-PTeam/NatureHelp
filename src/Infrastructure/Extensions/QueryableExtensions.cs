@@ -43,9 +43,27 @@ public static class QueryableExtensions
             else
             {
                 var left = Expression.Property(parameter, property);
-                var right = Expression.Constant(Convert.ChangeType(filter.Value, property.PropertyType));
-                var equals = Expression.Equal(left, right);
-                var lambda = Expression.Lambda<Func<T, bool>>(equals, parameter);
+                Expression predicate;
+
+                if (property.PropertyType == typeof(string))
+                {
+                    var method = typeof(string).GetMethod("Contains", new[] { typeof(string) });
+                    var right = Expression.Constant(filter.Value.ToString(), typeof(string));
+                    predicate = Expression.Call(left, method, right);
+                }
+                else if (property.PropertyType.IsEnum)
+                {
+                    var value = Enum.Parse(property.PropertyType, filter.Value.ToString(), ignoreCase: true);
+                    var right = Expression.Constant(value);
+                    predicate = Expression.Equal(left, right);
+                }
+                else
+                {
+                    var right = Expression.Constant(Convert.ChangeType(filter.Value, property.PropertyType));
+                    predicate = Expression.Equal(left, right);
+                }
+
+                var lambda = Expression.Lambda<Func<T, bool>>(predicate, parameter);
                 query = query.Where(lambda);
             }
         }

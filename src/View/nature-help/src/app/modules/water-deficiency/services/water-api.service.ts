@@ -31,11 +31,13 @@ export class WaterAPIService {
 
   public loadWaterDeficiencies(scrollCount: number, filter: IWaterDeficiencyFilter | null) {
     let params = new HttpParams();
+    console.log("EDANGERSTATE ENUM: ", filter);
 
     if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
     if (filter?.title) params = params.set("Title", filter.title);
     if (filter?.description) params = params.set("Description", filter.description);
-    if (filter?.eDangerState) params = params.set("EDangerState", filter.eDangerState.toString());
+    if (filter?.eDangerState || filter?.eDangerState === 0)
+      params = params.set("EDangerState", filter.eDangerState.toString());
 
     const loaddeficiencies$ = this.http.get<IListData<IWaterDeficiency>>(`${this.watersUrl}`, { params }).pipe(
       tap((listData) => {

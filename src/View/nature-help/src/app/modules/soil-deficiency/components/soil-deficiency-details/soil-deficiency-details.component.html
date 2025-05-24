@@ -1,12 +1,12 @@
 <mat-card
   *ngIf="details"
   class="soil-deficiency-card">
-  <mat-card-title>Soil Deficiency</mat-card-title>
+  <mat-card-title i18n="@@soilDeficiency">Soil Deficiency</mat-card-title>
   <div
     class="form-container"
     [formGroup]="detailsForm">
     <mat-form-field>
-      <mat-label>Title</mat-label>
+      <mat-label i18n="@@title">Title</mat-label>
       <input
         matInput
         formControlName="title" />
@@ -16,7 +16,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Description</mat-label>
+      <mat-label i18n="@@description">Description</mat-label>
       <textarea
         matInput
         rows="5"
@@ -27,11 +27,15 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Danger state</mat-label>
+      <mat-label i18n="@@dangerState">Danger state</mat-label>
       <mat-select
         formControlName="eDangerState"
         class="form-input">
-        <mat-option [value]="null">None</mat-option>
+        <mat-option
+          [value]="null"
+          i18n="@@none"
+          >None</mat-option
+        >
         <mat-option
           *ngFor="let danger of dangerStates"
           [value]="danger.value">
@@ -42,33 +46,33 @@
 
     <div formGroupName="location">
       <mat-form-field>
-        <mat-label>Latitude</mat-label>
+        <mat-label i18n="@@latitude">Latitude</mat-label>
         <input
           matInput
           type="number"
           formControlName="latitude" />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Longitude</mat-label>
+        <mat-label i18n="@@longitude">Longitude</mat-label>
         <input
           matInput
           type="number"
           formControlName="longitude" />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>City</mat-label>
+        <mat-label i18n="@@city">City</mat-label>
         <input
           matInput
           formControlName="city" />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Country</mat-label>
+        <mat-label i18n="@@country">Country</mat-label>
         <input
           matInput
           formControlName="country" />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Radius affected</mat-label>
+        <mat-label i18n="@@radiusAffected">Radius affected</mat-label>
         <input
           matInput
           type="number"
@@ -77,49 +81,49 @@
           *ngIf="
             detailsForm.get('location.radiusAffected')?.invalid && detailsForm.get('location.radiusAffected')?.touched
           ">
-          <span *ngIf="detailsForm.get('location.radiusAffected')?.hasError('required')"
-            >Radius affected is required.</span
-          >
+          <span
+            *ngIf="detailsForm.get('location.radiusAffected')?.hasError('required')"
+            i18n="@@radiusRequired">
+            Radius affected is required.
+          </span>
         </mat-error>
       </mat-form-field>
     </div>
 
-    <div>
-      <mat-form-field>
-        <mat-label>pH</mat-label>
-        <input
-          matInput
-          type="number"
-          formControlName="ph" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Organic Matter</mat-label>
-        <input
-          matInput
-          type="number"
-          formControlName="organicMatter" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Lead Concentration</mat-label>
-        <input
-          matInput
-          type="number"
-          formControlName="leadConcentration" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Cadmium Concentration</mat-label>
-        <input
-          matInput
-          type="number"
-          formControlName="cadmiumConcentration" />
-      </mat-form-field>
-    </div>
+    <mat-form-field>
+      <mat-label>pH</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="ph" />
+    </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Mercury Concentration</mat-label>
+      <mat-label i18n="@@organicMatter">Organic Matter</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="organicMatter" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label i18n="@@leadConcentration">Lead Concentration</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="leadConcentration" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label i18n="@@cadmiumConcentration">Cadmium Concentration</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="cadmiumConcentration" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label i18n="@@mercuryConcentration">Mercury Concentration</mat-label>
       <input
         matInput
         type="number"
@@ -127,7 +131,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Pesticides Content</mat-label>
+      <mat-label i18n="@@pesticidesContent">Pesticides Content</mat-label>
       <input
         matInput
         type="number"
@@ -135,7 +139,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Nitrates Concentration</mat-label>
+      <mat-label i18n="@@nitratesConcentration">Nitrates Concentration</mat-label>
       <input
         matInput
         type="number"
@@ -143,7 +147,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Heavy Metals Concentration</mat-label>
+      <mat-label i18n="@@heavyMetalsConcentration">Heavy Metals Concentration</mat-label>
       <input
         matInput
         type="number"
@@ -151,7 +155,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Electrical Conductivity</mat-label>
+      <mat-label i18n="@@electricalConductivity">Electrical Conductivity</mat-label>
       <input
         matInput
         type="number"
@@ -159,7 +163,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Microbial Activity</mat-label>
+      <mat-label i18n="@@microbialActivity">Microbial Activity</mat-label>
       <input
         matInput
         type="number"
@@ -167,7 +171,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Analysis Date</mat-label>
+      <mat-label i18n="@@analysisDate">Analysis Date</mat-label>
       <input
         matInput
         [matDatepicker]="picker"
@@ -179,7 +183,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Creator</mat-label>
+      <mat-label i18n="@@creator">Creator</mat-label>
       <input
         matInput
         readonly
@@ -187,7 +191,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Responsible User</mat-label>
+      <mat-label i18n="@@responsibleUser">Responsible User</mat-label>
       <mat-select formControlName="responsibleUserId">
         <mat-option
           *ngFor="let user of usersAPIService.$organizationUsers | async"
@@ -202,13 +206,15 @@
         <button
           mat-flat-button
           color="primary"
-          (click)="onSubmit()">
+          (click)="onSubmit()"
+          i18n="@@submitBtn">
           Submit
         </button>
         <button
           mat-flat-button
           color="warn"
-          (click)="onCancel()">
+          (click)="onCancel()"
+          i18n="@@cancelBtn">
           Cancel
         </button>
       </div>
