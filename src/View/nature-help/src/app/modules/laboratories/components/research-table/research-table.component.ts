@@ -6,7 +6,7 @@ import { withLatestFrom } from "rxjs";
 @Component({
   selector: "app-research-table",
   templateUrl: "./research-table.component.html",
-  styleUrls: ["./research-table.component.css", "../../../../shared/styles/table-list.component.css"],
+  styleUrls: ["../../../../shared/styles/table-list.component.css", "./research-table.component.css"],
   standalone: false,
 })
 export class ResearchTableComponent implements OnInit {

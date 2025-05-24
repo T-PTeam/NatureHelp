@@ -1,14 +1,31 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <button routerLink="water">Deficiencies</button>
-    <button routerLink="labs">Laboratories</button>
-    <button routerLink="researches">Researches</button>
     <button
+      i18n="@@deficienciesTab"
+      routerLink="water">
+      Deficiencies
+    </button>
+    <button
+      i18n="@@laboratoriesTab"
+      routerLink="labs">
+      Laboratories
+    </button>
+    <button
+      i18n="@@researchesTab"
+      routerLink="researches">
+      Researches
+    </button>
+    <button
+      i18n="@@organizationViewTab"
       routerLink="owner"
       *ngIf="userService.isOwner$ | async">
       Organization View
     </button>
-    <button routerLink="about">About us</button>
+    <button
+      i18n="@@aboutUs"
+      routerLink="about">
+      About us
+    </button>
   </div>
 
   <div class="navbar-center">
@@ -24,6 +41,7 @@
     </button>
     <mat-menu #menu="matMenu">
       <button
+        i18n="@@loginBtn"
         data-cy="login-button"
         mat-menu-item
         (click)="openAuthDialog(false)"
@@ -31,6 +49,7 @@
         Login
       </button>
       <button
+        i18n="@@logoutBtn"
         mat-menu-item
         (click)="logout()"
         [disabled]="userService.isLoggedOut$ | async">
