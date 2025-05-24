@@ -87,6 +87,11 @@
 <div class="grid-container">
   <div class="grid-header">
     <div
+      matTooltip="Title"
+      >
+      Title
+    </div>
+    <div
       matTooltip="Lead Concentration"
       i18n="@@leadConcentration">
       Lead Concentration
@@ -115,6 +120,7 @@
     <div
       *ngFor="let deficiency of soilAPIService.deficiencies$ | async"
       class="grid-row">
+      <div>{{ deficiency.title }}</div>
       <div>{{ deficiency.leadConcentration }}</div>
       <div>{{ deficiency.ph }}</div>
       <div>{{ deficiency.cadmiumConcentration }}</div>

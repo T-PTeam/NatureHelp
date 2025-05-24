@@ -12,7 +12,8 @@
     "prepare": "husky",
     "webpack": "webpack serve --open --mode development",
     "cy:component": "cypress run --component",
-    "cy:e2e": "cypress run"
+    "cy:e2e": "cypress run",
+    "build:prod": "ng build --configuration=production --localize --base-href /nature-help/"
   },
   "private": true,
   "dependencies": {

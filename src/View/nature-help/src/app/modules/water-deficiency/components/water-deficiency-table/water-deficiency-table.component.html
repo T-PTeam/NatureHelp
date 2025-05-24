@@ -87,6 +87,11 @@
 <div class="grid-container">
   <div class="grid-header">
     <div
+      matTooltip="Title"
+      >
+      Title
+    </div>
+    <div
       matTooltip="Dissolved Oxygen"
       i18n="@@dissolvedOxygen">
       Dissolved Oxygen
@@ -123,6 +128,7 @@
     <div
       *ngFor="let deficiency of waterAPIService.deficiencies$ | async"
       class="grid-row">
+      <div>{{ deficiency.title }}</div>
       <div>{{ deficiency.dissolvedOxygen || 0 }}</div>
       <div>{{ deficiency.ph || 0 }}</div>
       <div>{{ deficiency.leadConcentration || 0 }}</div>
