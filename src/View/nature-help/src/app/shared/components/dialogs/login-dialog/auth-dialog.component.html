@@ -1,23 +1,26 @@
 <h2
   mat-dialog-title
-  class="dialog-title">
+  class="dialog-title"
+  i18n="@@loginTitle">
   Login
 </h2>
 <div mat-dialog-content>
   <form [formGroup]="formGroup">
     <mat-form-field class="full-width">
-      <mat-label>Email</mat-label>
+      <mat-label i18n="@@emailLabel">Email</mat-label>
       <input
         matInput
         type="email"
         formControlName="email" />
-      <mat-error *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+      <mat-error
+        i18n="@@emailError"
+        *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
         Please enter a valid email
       </mat-error>
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <mat-label>Password</mat-label>
+      <mat-label i18n="@@passwordLabel">Password</mat-label>
       <input
         matInput
         [type]="hidePassword ? 'password' : 'text'"
@@ -29,7 +32,9 @@
         type="button">
         <mat-icon>{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon>
       </button>
-      <mat-error *ngIf="formGroup.get('password')?.invalid && formGroup.get('password')?.touched">
+      <mat-error
+        i18n="@@passwordError"
+        *ngIf="formGroup.get('password')?.invalid && formGroup.get('password')?.touched">
         Password must be at least 6 characters
       </mat-error>
     </mat-form-field>
@@ -40,12 +45,14 @@
   mat-dialog-actions
   class="action-buttons">
   <button
+    i18n="@@cancelBtn"
     class="reset-button"
     mat-raised-button
     (click)="closeDialog()">
     Cancel
   </button>
   <button
+    i18n="@@loginBtn"
     class="apply-button"
     mat-flat-button
     color="primary"

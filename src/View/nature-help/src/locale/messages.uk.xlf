@@ -1,78 +1,567 @@
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" target-language="uk" datatype="plaintext" original="ng2.template">
-    <body>
-      <trans-unit id="title" datatype="html">
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US">
+  <file id="ngi18n" original="ng.template">
+    <unit id="labTitle">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:4</note>
+      </notes>
+      <segment>
+        <source>Laboratory</source>
+        <target>Лабораторія</target>
+      </segment>
+    </unit>
+    <unit id="title">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:12</note>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:83</note>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:83</note>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:12</note>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:12</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:5</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:12</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:90</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:90</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:9</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:12</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:90</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:90</note>
+      </notes>
+      <segment>
         <source>Title</source>
-        <target state="new">Заголовок</target>
-      </trans-unit>
-      <trans-unit id="description" datatype="html">
-        <source>Description</source>
-        <target state="new">Опис</target>
-      </trans-unit>
-      <trans-unit id="type" datatype="html">
-        <source>Type</source>
-        <target state="new">Тип</target>
-      </trans-unit>
-      <trans-unit id="dissolvedOxygen" datatype="html">
-        <source>Dissolved Oxygen</source>
-        <target state="new">Розчинений кисень</target>
-      </trans-unit>
-      <trans-unit id="leadConcentration" datatype="html">
-        <source>Lead Concentration</source>
-        <target state="new">Концентрація свинцю</target>
-      </trans-unit>
-      <trans-unit id="mercuryConcentration" datatype="html">
-        <source>Mercury Concentration</source>
-        <target state="new">Концентрація ртуті</target>
-      </trans-unit>
-      <trans-unit id="nitrateConcentration" datatype="html">
-        <source>Nitrate Concentration</source>
-        <target state="new">Концентрація нітратів</target>
-      </trans-unit>
-      <trans-unit id="pesticidesContent" datatype="html">
-        <source>Pesticides Content</source>
-        <target state="new">Вміст пестицидів</target>
-      </trans-unit>
-      <trans-unit id="microbialActivity" datatype="html">
-        <source>Microbial Activity</source>
-        <target state="new">Мікробна активність</target>
-      </trans-unit>
-      <trans-unit id="radiationLevel" datatype="html">
-        <source>Radiation Level</source>
-        <target state="new">Рівень радіації</target>
-      </trans-unit>
-      <trans-unit id="chemicalOxygenDemand" datatype="html">
-        <source>Chemical Oxygen Demand</source>
-        <target state="new">Хімічне споживання кисню</target>
-      </trans-unit>
-      <trans-unit id="biologicalOxygenDemand" datatype="html">
-        <source>Biological Oxygen Demand</source>
-        <target state="new">Біологічне споживання кисню</target>
-      </trans-unit>
-      <trans-unit id="phosphateConcentration" datatype="html">
-        <source>Biological Oxygen Demand</source>
-        <target state="new">Біологічне споживання кисню</target>
-      </trans-unit>
-      <trans-unit id="cadmiumConcentration" datatype="html">
-        <source>Cadmium Concentration</source>
-        <target state="new">Концентрація кадмію</target>
-      </trans-unit>
-      <trans-unit id="totalDissolvedSolids" datatype="html">
-        <source>Total Dissolved Solids</source>
-        <target state="new">Загальна кількість розчинених твердих речовин</target>
-      </trans-unit>
-      <trans-unit id="electricalConductivity" datatype="html">
-        <source>Electrical Conductivity</source>
-        <target state="new">Електропровідність</target>
-      </trans-unit>
-      <trans-unit id="microbialLoad" datatype="html">
-        <source>Microbial Load</source>
-        <target state="new">Мікробне навантаження</target>
-      </trans-unit>
-      <trans-unit id="7278527838336975723" datatype="html">
-        <source>Deficiencies (Water)</source>
-        <target state="new">Недоліки (Вода)</target>
-      </trans-unit>
-    </body>
+        <target>Заголовок</target>
+      </segment>
+    </unit>
+    <unit id="researchesLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:19</note>
+      </notes>
+      <segment>
+        <source>Researches</source>
+        <target>Дослідження</target>
+      </segment>
+    </unit>
+    <unit id="latitudeLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:30</note>
+      </notes>
+      <segment>
+        <source>Latitude</source>
+        <target>Широта</target>
+      </segment>
+    </unit>
+    <unit id="longitudeLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:37</note>
+      </notes>
+      <segment>
+        <source>Longitude</source>
+        <target>Довгота</target>
+      </segment>
+    </unit>
+    <unit id="cityLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:44</note>
+      </notes>
+      <segment>
+        <source>City</source>
+        <target>Місто</target>
+      </segment>
+    </unit>
+    <unit id="countryLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:50</note>
+      </notes>
+      <segment>
+        <source>Country</source>
+        <target>Країна</target>
+      </segment>
+    </unit>
+    <unit id="researchersCountLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:58</note>
+      </notes>
+      <segment>
+        <source>Researchers Count</source>
+        <target>Кількість дослідників</target>
+      </segment>
+    </unit>
+    <unit id="submitBtn">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:71,73</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:134</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:294,296</note>
+      </notes>
+      <segment>
+        <source> Submit </source>
+        <target> Надіслати </target>
+      </segment>
+    </unit>
+    <unit id="cancelBtn">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:79,81</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:135</note>
+        <note category="location">src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html:46,48</note>
+      </notes>
+      <segment>
+        <source> Cancel </source>
+        <target> Скасувати </target>
+      </segment>
+    </unit>
+    <unit id="filterTitle">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:3</note>
+      </notes>
+      <segment>
+        <source>Filter</source>
+        <target>Фільтр</target>
+      </segment>
+    </unit>
+    <unit id="country">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:14</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:44</note>
+      </notes>
+      <segment>
+        <source>Country</source>
+        <target>Країна</target>
+      </segment>
+    </unit>
+    <unit id="region">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:22</note>
+      </notes>
+      <segment>
+        <source>Region</source>
+        <target>Регіон</target>
+      </segment>
+    </unit>
+    <unit id="district">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:30</note>
+      </notes>
+      <segment>
+        <source>District</source>
+        <target>Район</target>
+      </segment>
+    </unit>
+    <unit id="city">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:38</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:40</note>
+      </notes>
+      <segment>
+        <source>City</source>
+        <target>Місто</target>
+      </segment>
+    </unit>
+    <unit id="applyBtn">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:51,53</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:47,49</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:47,49</note>
+      </notes>
+      <segment>
+        <source> Apply </source>
+        <target> Застосувати </target>
+      </segment>
+    </unit>
+    <unit id="clearBtn">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:59,61</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:55,57</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:55,57</note>
+      </notes>
+      <segment>
+        <source> Clear </source>
+        <target> Очистити </target>
+      </segment>
+    </unit>
+    <unit id="laboratories">
+  <segment>
+    <source>Лабораторії</source>
+  </segment>
+</unit>
+<unit id="searchPlaceholder">
+  <segment>
+    <source>Пошук...</source>
+  </segment>
+</unit>
+<unit id="location">
+  <segment>
+    <source>Локація</source>
+  </segment>
+</unit>
+<unit id="researchers">
+  <segment>
+    <source>Дослідники</source>
+  </segment>
+</unit>
+<unit id="researchesNumber">
+  <segment>
+    <source>Кількість досліджень</source>
+  </segment>
+</unit>
+<unit id="researchesTitle">
+  <segment>
+    <source>Дослідження</source>
+  </segment>
+</unit>
+<unit id="type">
+  <segment>
+    <source>Тип</source>
+  </segment>
+</unit>
+<unit id="date">
+  <segment>
+    <source>Дата</source>
+  </segment>
+</unit>
+<unit id="researcher">
+  <segment>
+    <source>Дослідник</source>
+  </segment>
+</unit>
+<unit id="laboratory">
+  <segment>
+    <source>Лабораторія</source>
+  </segment>
+</unit>
+<unit id="aboutTitle">
+  <segment>
+    <source>Про NatureHelp</source>
+  </segment>
+</unit>
+<unit id="aboutIntro">
+  <segment>
+    <source>NatureHelp — це платформа, створена для захисту та збереження нашого довкілля, що дає змогу людям, дослідникам і громадам моніторити та розуміти стан природи.</source>
+  </segment>
+</unit>
+<unit id="missionTitle">
+  <segment>
+    <source>Наша місія</source>
+  </segment>
+</unit>
+<unit id="missionText">
+  <segment>
+    <source>Сприяти екологічній відповідальності, з’єднуючи людей із інструментами та знаннями для турботи про навколишній світ.</source>
+  </segment>
+</unit>
+<unit id="whatWeDoTitle">
+  <segment>
+    <source>Що ми робимо</source>
+  </segment>
+</unit>
+<unit id="whatWeDoSupport">
+  <segment>
+    <source>🧪 Підтримуємо дослідників інструментами для аналізу та візуалізації даних лабораторій</source>
+  </segment>
+</unit>
+<unit id="whatWeDoVisualize">
+  <segment>
+    <source>🗺️ Візуалізуємо зміни довкілля за допомогою інтерактивних карт і звітів у реальному часі</source>
+  </segment>
+</unit>
+<unit id="whatWeDoInvolve">
+  <segment>
+    <source>🌱 Залучаємо громади до захисту їхніх екосистем</source>
+  </segment>
+</unit>
+<unit id="whatWeDoMonitor">
+  <segment>
+    <source>🔍 Забезпечуємо прозорий моніторинг стану ґрунтів і води</source>
+  </segment>
+</unit>
+<unit id="whoWeAreTitle">
+  <segment>
+    <source>Для кого ми</source>
+  </segment>
+</unit>
+<unit id="audienceScientists">
+  <segment>
+    <source>Екологічні науковці</source>
+  </segment>
+</unit>
+<unit id="audienceCommunities">
+  <segment>
+    <source>Місцеві громади</source>
+  </segment>
+</unit>
+<unit id="audienceEducation">
+  <segment>
+    <source>Викладачі та студенти</source>
+  </segment>
+</unit>
+<unit id="audienceAnyone">
+  <segment>
+    <source>Всі, хто піклується про природу</source>
+  </segment>
+</unit>
+<unit id="whyItMattersTitle">
+  <segment>
+    <source>Чому це важливо</source>
+  </segment>
+</unit>
+<unit id="whyItMattersText">
+  <segment>
+    <source>NatureHelp поєднує дані з діями — даючи кожному шанс стати частиною рішення для зеленішого майбутнього.</source>
+  </segment>
+</unit>
+<unit id="deficienciesTab">
+  <segment>
+    <source>Недоліки</source>
+  </segment>
+</unit>
+<unit id="laboratoriesTab">
+  <segment>
+    <source>Лабораторії</source>
+  </segment>
+</unit>
+<unit id="researchesTab">
+  <segment>
+    <source>Дослідження</source>
+  </segment>
+</unit>
+    <unit id="organizationViewTab">
+  <segment>
+    <target>Організація</target>
+  </segment>
+</unit>
+<unit id="aboutUs">
+  <segment>
+    <target>Про нас</target>
+  </segment>
+</unit>
+<unit id="loginBtn">
+  <segment>
+    <target>Увійти</target>
+  </segment>
+</unit>
+<unit id="logoutBtn">
+  <segment>
+    <target>Вийти</target>
+  </segment>
+</unit>
+<unit id="soilDeficiency">
+  <segment>
+    <target>Дефіцит ґрунту</target>
+  </segment>
+</unit>
+<unit id="description">
+  <segment>
+    <target>Опис</target>
+  </segment>
+</unit>
+<unit id="dangerState">
+  <segment>
+    <target>Небезпечний стан</target>
+  </segment>
+</unit>
+<unit id="none">
+  <segment>
+    <target>Відсутній</target>
+  </segment>
+</unit>
+<unit id="latitude">
+  <segment>
+    <target>Широта</target>
+  </segment>
+</unit>
+<unit id="longitude">
+  <segment>
+    <target>Довгота</target>
+  </segment>
+</unit>
+<unit id="radiusAffected">
+  <segment>
+    <target>Радіус ураження</target>
+  </segment>
+</unit>
+<unit id="radiusRequired">
+  <segment>
+    <target>Радіус ураження є обов’язковим.</target>
+  </segment>
+</unit>
+<unit id="organicMatter">
+  <segment>
+    <target>Органічна речовина</target>
+  </segment>
+</unit>
+<unit id="leadConcentration">
+  <segment>
+    <target>Концентрація свинцю</target>
+  </segment>
+</unit>
+<unit id="cadmiumConcentration">
+  <segment>
+    <target>Концентрація кадмію</target>
+  </segment>
+</unit>
+<unit id="mercuryConcentration">
+  <segment>
+    <target>Концентрація ртуті</target>
+  </segment>
+</unit>
+<unit id="pesticidesContent">
+  <segment>
+    <target>Вміст пестицидів</target>
+  </segment>
+</unit>
+<unit id="nitratesConcentration">
+  <segment>
+    <target>Концентрація нітратів</target>
+  </segment>
+</unit>
+<unit id="heavyMetalsConcentration">
+  <segment>
+    <target>Концентрація важких металів</target>
+  </segment>
+</unit>
+<unit id="electricalConductivity">
+  <segment>
+    <target>Електропровідність</target>
+  </segment>
+</unit>
+<unit id="microbialActivity">
+  <segment>
+    <target>Мікробіологічна активність</target>
+  </segment>
+</unit>
+
+    <unit id="analysisDate">
+  <segment>
+    <target>Дата аналізу</target>
+  </segment>
+</unit>
+<unit id="creator">
+  <segment>
+    <target>Автор</target>
+  </segment>
+</unit>
+<unit id="responsibleUser">
+  <segment>
+    <target>Відповідальний користувач</target>
+  </segment>
+</unit>
+<unit id="soilDeficienciesTableTitle">
+  <segment>
+    <target>Недоліки (Ґрунт)</target>
+  </segment>
+</unit>
+<unit id="nitrateConcentration">
+  <segment>
+    <target>Концентрація нітратів</target>
+  </segment>
+</unit>
+<unit id="waterDeficiency">
+  <segment>
+    <target>Водний дефіцит</target>
+  </segment>
+</unit>
+<unit id="dissolvedOxygen">
+  <segment>
+    <target>Розчинений кисень</target>
+  </segment>
+</unit>
+<unit id="radiationLevel">
+  <segment>
+    <target>Рівень радіації</target>
+  </segment>
+</unit>
+<unit id="chemicalOxygenDemand">
+  <segment>
+    <target>Хімічне споживання кисню</target>
+  </segment>
+</unit>
+<unit id="biologicalOxygenDemand">
+  <segment>
+    <target>Біологічне споживання кисню</target>
+  </segment>
+</unit>
+<unit id="phosphateConcentration">
+  <segment>
+    <target>Концентрація фосфатів</target>
+  </segment>
+</unit>
+<unit id="totalDissolvedSolids">
+  <segment>
+    <target>Загальна кількість розчинених речовин</target>
+  </segment>
+</unit>
+<unit id="microbialLoad">
+  <segment>
+    <target>Мікробне навантаження</target>
+  </segment>
+</unit>
+<unit id="canceltBtn">
+  <segment>
+    <target>Скасувати</target>
+  </segment>
+</unit>
+
+    <unit id="waterDeficienciesTableTitle">
+  <segment>
+    <target>Недоліки (Вода)</target>
+  </segment>
+</unit>
+<unit id="historyOfChanges">
+  <segment>
+    <target>Історія змін</target>
+  </segment>
+</unit>
+<unit id="changedBy">
+  <segment>
+    <target>Змінено користувачем <ph id="0" equiv="INTERPOLATION" disp="{{ log.createdBy }}"/></target>
+  </segment>
+</unit>
+<unit id="changedOn">
+  <segment>
+    <target>Змінено <ph id="0" equiv="INTERPOLATION" disp="{{ log.createdOn | date: &quot;short&quot; }}"/></target>
+  </segment>
+</unit>
+<unit id="property">
+  <segment>
+    <target>Властивість</target>
+  </segment>
+</unit>
+<unit id="oldValue">
+  <segment>
+    <target>Стара</target>
+  </segment>
+</unit>
+<unit id="newValue">
+  <segment>
+    <target>Нова</target>
+  </segment>
+</unit>
+<unit id="noChangeHistory">
+  <segment>
+    <target>Історія змін відсутня.</target>
+  </segment>
+</unit>
+<unit id="loginTitle">
+  <segment>
+    <target>Вхід</target>
+  </segment>
+</unit>
+<unit id="emailLabel">
+  <segment>
+    <target>Електронна пошта</target>
+  </segment>
+</unit>
+<unit id="emailError">
+  <segment>
+    <target>Введіть дійсну електронну пошту</target>
+  </segment>
+</unit>
+<unit id="passwordLabel">
+  <segment>
+    <target>Пароль</target>
+  </segment>
+</unit>
+<unit id="passwordError">
+  <segment>
+    <target>Пароль повинен містити щонайменше 6 символів</target>
+  </segment>
+</unit>
   </file>
 </xliff>

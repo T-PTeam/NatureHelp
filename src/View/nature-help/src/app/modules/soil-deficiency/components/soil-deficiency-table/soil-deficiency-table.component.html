@@ -1,6 +1,10 @@
 <mat-expansion-panel class="filter-panel">
   <mat-expansion-panel-header class="filter-header">
-    <mat-panel-title class="filter-title">Filter</mat-panel-title>
+    <mat-panel-title
+      i18n="@@filterTitle"
+      class="filter-title"
+      >Filter</mat-panel-title
+    >
   </mat-expansion-panel-header>
 
   <form
@@ -9,7 +13,7 @@
     class="filter-form">
     <div class="filter-fields">
       <mat-form-field class="form-field">
-        <mat-label>Title</mat-label>
+        <mat-label i18n="@@title">Title</mat-label>
         <input
           matInput
           formControlName="title"
@@ -17,7 +21,7 @@
       </mat-form-field>
 
       <mat-form-field class="form-field">
-        <mat-label>Description</mat-label>
+        <mat-label i18n="@@description">Description</mat-label>
         <input
           matInput
           formControlName="description"
@@ -25,7 +29,7 @@
       </mat-form-field>
 
       <mat-form-field class="form-field">
-        <mat-label>Danger state</mat-label>
+        <mat-label i18n="@@dangerState">Danger state</mat-label>
         <mat-select
           formControlName="eDangerState"
           class="form-input">
@@ -41,6 +45,7 @@
 
     <div class="action-buttons">
       <button
+        i18n="@@applyBtn"
         mat-raised-button
         color="primary"
         type="submit"
@@ -48,6 +53,7 @@
         Apply
       </button>
       <button
+        i18n="@@clearBtn"
         mat-raised-button
         color="warn"
         type="button"
@@ -60,10 +66,15 @@
 </mat-expansion-panel>
 
 <div class="header">
-  <h2>Deficiencies (Soil)</h2>
+  <h2
+    i18n="@@soilDeficienciesTableTitle"
+    i18n-matTooltip="@@soilDeficienciesTableTitle">
+    Deficiencies (Soil)
+  </h2>
   <input
     type="search"
-    placeholder="Search for deficiencies..."
+    placeholder="Search..."
+    i18n-placeholder="@@searchPlaceholder"
     [(ngModel)]="search" />
   <button
     (click)="downloadExcel()"
@@ -87,21 +98,54 @@
 <div class="grid-container">
   <div class="grid-header">
     <div
+      i18n="@@title"
+      i18n-matTooltip="@@title"
+      matTooltip="Title">
+      Title
+    </div>
+    <div
       matTooltip="Lead Concentration"
-      i18n="@@leadConcentration">
+      i18n="@@leadConcentration"
+      i18n-matTooltip="@@leadConcentration">
       Lead Concentration
     </div>
     <div matTooltip="pH">pH</div>
-    <div matTooltip="Cadmium Concentration">Cadmium Concentration</div>
-    <div matTooltip="Pesticides Content">Pesticides Content</div>
+    <div
+      i18n="@@cadmiumConcentration"
+      i18n-matTooltip="@@cadmiumConcentration"
+      matTooltip="Cadmium Concentration">
+      Cadmium Concentration
+    </div>
+    <div
+      i18n="@@pesticidesContent"
+      i18n-matTooltip="@@pesticidesContent"
+      matTooltip="Pesticides Content">
+      Pesticides Content
+    </div>
     <div
       matTooltip="Nitrate Concentration"
-      i18n="@@nitrateConcentration">
+      i18n="@@nitrateConcentration"
+      i18n-matTooltip="@@nitrateConcentration">
       Nitrates Concentration
     </div>
-    <div matTooltip="Creator">Creator</div>
-    <div matTooltip="Responsible User">Responsible User</div>
-    <div matTooltip="Danger State">Danger State</div>
+    <div
+      i18n="@@creator"
+      i18n-matTooltip="@@creator"
+      matTooltip="Creator">
+      Creator
+    </div>
+    <div
+      i18n="@@responsibleUser"
+      i18n-matTooltip="@@responsibleUser"
+      matTooltip="Responsible User">
+      Responsible User
+    </div>
+    <div
+      i18n="@@dangerState"
+      i18n-matTooltip="@@dangerState"
+      matTooltip="Danger State">
+      Danger State
+    </div>
     <div matTooltip="Map">Map</div>
     <div matTooltip="Edit">Edit</div>
   </div>
@@ -115,6 +159,7 @@
     <div
       *ngFor="let deficiency of soilAPIService.deficiencies$ | async"
       class="grid-row">
+      <div>{{ deficiency.title }}</div>
       <div>{{ deficiency.leadConcentration }}</div>
       <div>{{ deficiency.ph }}</div>
       <div>{{ deficiency.cadmiumConcentration }}</div>

@@ -1,61 +1,830 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
-    <body>
-      <trans-unit id="7278527838336975723" datatype="html">
-        <source>Deficiencies (Water)</source>
-      </trans-unit>
-      <trans-unit id="biologicalOxygenDemand" datatype="html">
-        <source>Biological Oxygen Demand</source>
-      </trans-unit>
-      <trans-unit id="cadmiumConcentration" datatype="html">
-        <source>Cadmium Concentration</source>
-      </trans-unit>
-      <trans-unit id="chemicalOxygenDemand" datatype="html">
-        <source>Chemical Oxygen Demand</source>
-      </trans-unit>
-      <trans-unit id="description" datatype="html">
-        <source>Description</source>
-      </trans-unit>
-      <trans-unit id="dissolvedOxygen" datatype="html">
-        <source>Dissolved Oxygen</source>
-      </trans-unit>
-      <trans-unit id="electricalConductivity" datatype="html">
-        <source>Electrical Conductivity</source>
-      </trans-unit>
-      <trans-unit id="leadConcentration" datatype="html">
-        <source>Lead Concentration</source>
-      </trans-unit>
-      <trans-unit id="mercuryConcentration" datatype="html">
-        <source>Mercury Concentration</source>
-      </trans-unit>
-      <trans-unit id="microbialActivity" datatype="html">
-        <source>Microbial Activity</source>
-      </trans-unit>
-      <trans-unit id="microbialLoad" datatype="html">
-        <source>Microbial Load</source>
-      </trans-unit>
-      <trans-unit id="nitrateConcentration" datatype="html">
-        <source>Nitrate Concentration</source>
-      </trans-unit>
-      <trans-unit id="pesticidesContent" datatype="html">
-        <source>Pesticides Content</source>
-      </trans-unit>
-      <trans-unit id="phosphateConcentration" datatype="html">
-        <source>Biological Oxygen Demand</source>
-      </trans-unit>
-      <trans-unit id="radiationLevel" datatype="html">
-        <source>Radiation Level</source>
-      </trans-unit>
-      <trans-unit id="title" datatype="html">
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US">
+  <file id="ngi18n" original="ng.template">
+    <unit id="labTitle">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:4</note>
+      </notes>
+      <segment>
+        <source>Laboratory</source>
+      </segment>
+    </unit>
+    <unit id="title">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:12</note>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:83</note>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:83</note>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:12</note>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:12</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:5</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:12</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:90</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:90</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:9</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:12</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:90</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:90</note>
+      </notes>
+      <segment>
         <source>Title</source>
-      </trans-unit>
-      <trans-unit id="totalDissolvedSolids" datatype="html">
-        <source>Total Dissolved Solids</source>
-      </trans-unit>
-      <trans-unit id="type" datatype="html">
+      </segment>
+    </unit>
+    <unit id="researchesLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:19</note>
+      </notes>
+      <segment>
+        <source>Researches</source>
+      </segment>
+    </unit>
+    <unit id="latitudeLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:30</note>
+      </notes>
+      <segment>
+        <source>Latitude</source>
+      </segment>
+    </unit>
+    <unit id="longitudeLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:37</note>
+      </notes>
+      <segment>
+        <source>Longitude</source>
+      </segment>
+    </unit>
+    <unit id="cityLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:44</note>
+      </notes>
+      <segment>
+        <source>City</source>
+      </segment>
+    </unit>
+    <unit id="countryLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:50</note>
+      </notes>
+      <segment>
+        <source>Country</source>
+      </segment>
+    </unit>
+    <unit id="researchersCountLabel">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:58</note>
+      </notes>
+      <segment>
+        <source>Researchers Count</source>
+      </segment>
+    </unit>
+    <unit id="submitBtn">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:71,73</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:134</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:294,296</note>
+      </notes>
+      <segment>
+        <source> Submit </source>
+      </segment>
+    </unit>
+    <unit id="cancelBtn">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/lab-details/lab-details.component.html:79,81</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:135</note>
+        <note category="location">src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html:46,48</note>
+      </notes>
+      <segment>
+        <source> Cancel </source>
+      </segment>
+    </unit>
+    <unit id="filterTitle">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:3</note>
+      </notes>
+      <segment>
+        <source>Filter</source>
+      </segment>
+    </unit>
+    <unit id="country">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:14</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:44</note>
+      </notes>
+      <segment>
+        <source>Country</source>
+      </segment>
+    </unit>
+    <unit id="region">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:22</note>
+      </notes>
+      <segment>
+        <source>Region</source>
+      </segment>
+    </unit>
+    <unit id="district">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:30</note>
+      </notes>
+      <segment>
+        <source>District</source>
+      </segment>
+    </unit>
+    <unit id="city">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:38</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:40</note>
+      </notes>
+      <segment>
+        <source>City</source>
+      </segment>
+    </unit>
+    <unit id="applyBtn">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:51,53</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:47,49</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:47,49</note>
+      </notes>
+      <segment>
+        <source> Apply </source>
+      </segment>
+    </unit>
+    <unit id="clearBtn">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:59,61</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:55,57</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:55,57</note>
+      </notes>
+      <segment>
+        <source> Clear </source>
+      </segment>
+    </unit>
+    <unit id="laboratories">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:67</note>
+      </notes>
+      <segment>
+        <source>Laboratories</source>
+      </segment>
+    </unit>
+    <unit id="searchPlaceholder">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:70</note>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:5</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:66</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:66</note>
+      </notes>
+      <segment>
+        <source>Search...</source>
+      </segment>
+    </unit>
+    <unit id="location">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:84</note>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:84</note>
+      </notes>
+      <segment>
+        <source>Location</source>
+      </segment>
+    </unit>
+    <unit id="researchers">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:85</note>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:85</note>
+      </notes>
+      <segment>
+        <source>Researchers</source>
+      </segment>
+    </unit>
+    <unit id="researchesNumber">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:86</note>
+        <note category="location">src/app/modules/laboratories/components/labs-table/labs-table.component.html:86</note>
+      </notes>
+      <segment>
+        <source>Researches number</source>
+      </segment>
+    </unit>
+    <unit id="researchesTitle">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:2</note>
+      </notes>
+      <segment>
+        <source>Researches</source>
+      </segment>
+    </unit>
+    <unit id="type">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:13</note>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:13</note>
+      </notes>
+      <segment>
         <source>Type</source>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
+    <unit id="date">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:14</note>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:14</note>
+      </notes>
+      <segment>
+        <source>Date</source>
+      </segment>
+    </unit>
+    <unit id="researcher">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:15</note>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:15</note>
+      </notes>
+      <segment>
+        <source>Researcher</source>
+      </segment>
+    </unit>
+    <unit id="laboratory">
+      <notes>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:16</note>
+        <note category="location">src/app/modules/laboratories/components/research-table/research-table.component.html:16</note>
+      </notes>
+      <segment>
+        <source>Laboratory</source>
+      </segment>
+    </unit>
+    <unit id="aboutTitle">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:2</note>
+      </notes>
+      <segment>
+        <source>About NatureHelp</source>
+      </segment>
+    </unit>
+    <unit id="aboutIntro">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:3,6</note>
+      </notes>
+      <segment>
+        <source> NatureHelp is a platform designed to protect and preserve our environment by empowering individuals, researchers, and communities with tools to monitor and understand the state of nature. </source>
+      </segment>
+    </unit>
+    <unit id="missionTitle">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:8</note>
+      </notes>
+      <segment>
+        <source>Our Mission</source>
+      </segment>
+    </unit>
+    <unit id="missionText">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:9,12</note>
+      </notes>
+      <segment>
+        <source> To foster environmental responsibility by connecting people with the tools and knowledge to care for the natural world around them. </source>
+      </segment>
+    </unit>
+    <unit id="whatWeDoTitle">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:14</note>
+      </notes>
+      <segment>
+        <source>What We Do</source>
+      </segment>
+    </unit>
+    <unit id="whatWeDoSupport">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:16</note>
+      </notes>
+      <segment>
+        <source>🧪 Support Researchers with tools to analyze and map lab data</source>
+      </segment>
+    </unit>
+    <unit id="whatWeDoVisualize">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:17</note>
+      </notes>
+      <segment>
+        <source>🗺️ Visualize Environmental Changes using interactive maps and real-time reports</source>
+      </segment>
+    </unit>
+    <unit id="whatWeDoInvolve">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:18</note>
+      </notes>
+      <segment>
+        <source>🌱 Involve Communities in protecting their ecosystems</source>
+      </segment>
+    </unit>
+    <unit id="whatWeDoMonitor">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:19</note>
+      </notes>
+      <segment>
+        <source>🔍 Enable Transparent Monitoring of soil and water conditions</source>
+      </segment>
+    </unit>
+    <unit id="whoWeAreTitle">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:22</note>
+      </notes>
+      <segment>
+        <source>Who We’re For</source>
+      </segment>
+    </unit>
+    <unit id="audienceScientists">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:24</note>
+      </notes>
+      <segment>
+        <source>Environmental scientists</source>
+      </segment>
+    </unit>
+    <unit id="audienceCommunities">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:25</note>
+      </notes>
+      <segment>
+        <source>Local communities</source>
+      </segment>
+    </unit>
+    <unit id="audienceEducation">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:26</note>
+      </notes>
+      <segment>
+        <source>Educators and students</source>
+      </segment>
+    </unit>
+    <unit id="audienceAnyone">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:27</note>
+      </notes>
+      <segment>
+        <source>Anyone who cares about nature</source>
+      </segment>
+    </unit>
+    <unit id="whyItMattersTitle">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:30</note>
+      </notes>
+      <segment>
+        <source>Why It Matters</source>
+      </segment>
+    </unit>
+    <unit id="whyItMattersText">
+      <notes>
+        <note category="location">src/app/modules/main/components/about/about.component.html:31,34</note>
+      </notes>
+      <segment>
+        <source> NatureHelp bridges the gap between data and action — giving every user a chance to become part of the solution for a greener future. </source>
+      </segment>
+    </unit>
+    <unit id="deficienciesTab">
+      <notes>
+        <note category="location">src/app/modules/main/components/navigation-bar/navigation-bar.component.html:3</note>
+      </notes>
+      <segment>
+        <source>Deficiencies</source>
+      </segment>
+    </unit>
+    <unit id="laboratoriesTab">
+      <notes>
+        <note category="location">src/app/modules/main/components/navigation-bar/navigation-bar.component.html:4</note>
+      </notes>
+      <segment>
+        <source>Laboratories</source>
+      </segment>
+    </unit>
+    <unit id="researchesTab">
+      <notes>
+        <note category="location">src/app/modules/main/components/navigation-bar/navigation-bar.component.html:5</note>
+      </notes>
+      <segment>
+        <source>Researches</source>
+      </segment>
+    </unit>
+    <unit id="organizationViewTab">
+      <notes>
+        <note category="location">src/app/modules/main/components/navigation-bar/navigation-bar.component.html:8,10</note>
+      </notes>
+      <segment>
+        <source> Organization View </source>
+      </segment>
+    </unit>
+    <unit id="aboutUs">
+      <notes>
+        <note category="location">src/app/modules/main/components/navigation-bar/navigation-bar.component.html:11,5</note>
+      </notes>
+      <segment>
+        <source> About Us </source>
+      </segment>
+    </unit>
+    <unit id="loginBtn">
+      <notes>
+        <note category="location">src/app/modules/main/components/navigation-bar/navigation-bar.component.html:30,32</note>
+        <note category="location">src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html:55,57</note>
+      </notes>
+      <segment>
+        <source> Login </source>
+      </segment>
+    </unit>
+    <unit id="logoutBtn">
+      <notes>
+        <note category="location">src/app/modules/main/components/navigation-bar/navigation-bar.component.html:36,38</note>
+      </notes>
+      <segment>
+        <source> Logout </source>
+      </segment>
+    </unit>
+    <unit id="soilDeficiency">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:2</note>
+      </notes>
+      <segment>
+        <source>Soil Deficiency</source>
+      </segment>
+    </unit>
+    <unit id="description">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:13</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:20</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:19</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:20</note>
+      </notes>
+      <segment>
+        <source>Description</source>
+      </segment>
+    </unit>
+    <unit id="dangerState">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:21</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:28</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:108</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:108</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:28</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:118</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:118</note>
+      </notes>
+      <segment>
+        <source>Danger state</source>
+      </segment>
+    </unit>
+    <unit id="none">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:23</note>
+      </notes>
+      <segment>
+        <source>None</source>
+      </segment>
+    </unit>
+    <unit id="latitude">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:32</note>
+      </notes>
+      <segment>
+        <source>Latitude</source>
+      </segment>
+    </unit>
+    <unit id="longitude">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:36</note>
+      </notes>
+      <segment>
+        <source>Longitude</source>
+      </segment>
+    </unit>
+    <unit id="radiusAffected">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:48</note>
+      </notes>
+      <segment>
+        <source>Radius affected</source>
+      </segment>
+    </unit>
+    <unit id="radiusRequired">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:52,54</note>
+      </notes>
+      <segment>
+        <source> Radius affected is required. </source>
+      </segment>
+    </unit>
+    <unit id="organicMatter">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:65</note>
+      </notes>
+      <segment>
+        <source>Organic Matter</source>
+      </segment>
+    </unit>
+    <unit id="leadConcentration">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:70</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:92</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:94,96</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:111</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:99</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:101,103</note>
+      </notes>
+      <segment>
+        <source>Lead Concentration</source>
+      </segment>
+    </unit>
+    <unit id="cadmiumConcentration">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:75</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:98</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:98</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:219</note>
+      </notes>
+      <segment>
+        <source>Cadmium Concentration</source>
+      </segment>
+    </unit>
+    <unit id="mercuryConcentration">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:80</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:122</note>
+      </notes>
+      <segment>
+        <source>Mercury Concentration</source>
+      </segment>
+    </unit>
+    <unit id="pesticidesContent">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:85</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:99</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:99</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:146</note>
+      </notes>
+      <segment>
+        <source>Pesticides Content</source>
+      </segment>
+    </unit>
+    <unit id="nitratesConcentration">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:90</note>
+      </notes>
+      <segment>
+        <source>Nitrates Concentration</source>
+      </segment>
+    </unit>
+    <unit id="heavyMetalsConcentration">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:95</note>
+      </notes>
+      <segment>
+        <source>Heavy Metals Concentration</source>
+      </segment>
+    </unit>
+    <unit id="electricalConductivity">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:100</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:243</note>
+      </notes>
+      <segment>
+        <source>Electrical Conductivity</source>
+      </segment>
+    </unit>
+    <unit id="microbialActivity">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:105</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:157</note>
+      </notes>
+      <segment>
+        <source>Microbial Activity</source>
+      </segment>
+    </unit>
+    <unit id="analysisDate">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:110</note>
+      </notes>
+      <segment>
+        <source>Analysis Date</source>
+      </segment>
+    </unit>
+    <unit id="creator">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:117</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:106</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:106</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:116</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:116</note>
+      </notes>
+      <segment>
+        <source>Creator</source>
+      </segment>
+    </unit>
+    <unit id="responsibleUser">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:122</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:107</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:107</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:117</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:117</note>
+      </notes>
+      <segment>
+        <source>Responsible User</source>
+      </segment>
+    </unit>
+    <unit id="soilDeficienciesTableTitle">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:63</note>
+      </notes>
+      <segment>
+        <source>Deficiencies (Soil)</source>
+      </segment>
+    </unit>
+    <unit id="nitrateConcentration">
+      <notes>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:101</note>
+        <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html:103,105</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:134</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:105</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:107,109</note>
+      </notes>
+      <segment>
+        <source>Nitrate Concentration</source>
+      </segment>
+    </unit>
+    <unit id="waterDeficiency">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:4</note>
+      </notes>
+      <segment>
+        <source>Water Deficiency</source>
+      </segment>
+    </unit>
+    <unit id="dissolvedOxygen">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:100</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:92</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:94,96</note>
+      </notes>
+      <segment>
+        <source>Dissolved Oxygen</source>
+      </segment>
+    </unit>
+    <unit id="radiationLevel">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:168</note>
+      </notes>
+      <segment>
+        <source>Radiation Level</source>
+      </segment>
+    </unit>
+    <unit id="chemicalOxygenDemand">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:179</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:111</note>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:113,115</note>
+      </notes>
+      <segment>
+        <source>Chemical Oxygen Demand</source>
+      </segment>
+    </unit>
+    <unit id="biologicalOxygenDemand">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:191</note>
+      </notes>
+      <segment>
+        <source>Biological Oxygen Demand</source>
+      </segment>
+    </unit>
+    <unit id="phosphateConcentration">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:205</note>
+      </notes>
+      <segment>
+        <source>Biological Oxygen Demand</source>
+      </segment>
+    </unit>
+    <unit id="totalDissolvedSolids">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:231</note>
+      </notes>
+      <segment>
+        <source>Total Dissolved Solids</source>
+      </segment>
+    </unit>
+    <unit id="microbialLoad">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:257</note>
+      </notes>
+      <segment>
+        <source>Microbial Load</source>
+      </segment>
+    </unit>
+    <unit id="canceltBtn">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html:301,303</note>
+      </notes>
+      <segment>
+        <source> Cancel </source>
+      </segment>
+    </unit>
+    <unit id="waterDeficienciesTableTitle">
+      <notes>
+        <note category="location">src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html:63</note>
+      </notes>
+      <segment>
+        <source>Deficiencies (Water)</source>
+      </segment>
+    </unit>
+    <unit id="historyOfChanges">
+      <notes>
+        <note category="location">src/app/shared/components/audit-list/audit-list.component.html:7</note>
+      </notes>
+      <segment>
+        <source> History of changes </source>
+      </segment>
+    </unit>
+    <unit id="changedBy">
+      <notes>
+        <note category="location">src/app/shared/components/audit-list/audit-list.component.html:19,20</note>
+      </notes>
+      <segment>
+        <source>Changed by <ph id="0" equiv="INTERPOLATION" disp="{{ log.createdBy }}"/></source>
+      </segment>
+    </unit>
+    <unit id="changedOn">
+      <notes>
+        <note category="location">src/app/shared/components/audit-list/audit-list.component.html:20,21</note>
+      </notes>
+      <segment>
+        <source>Changed on <ph id="0" equiv="INTERPOLATION" disp="{{ log.createdOn | date: &quot;short&quot; }}"/></source>
+      </segment>
+    </unit>
+    <unit id="property">
+      <notes>
+        <note category="location">src/app/shared/components/audit-list/audit-list.component.html:32,34</note>
+      </notes>
+      <segment>
+        <source> Property </source>
+      </segment>
+    </unit>
+    <unit id="oldValue">
+      <notes>
+        <note category="location">src/app/shared/components/audit-list/audit-list.component.html:46,48</note>
+      </notes>
+      <segment>
+        <source> Old </source>
+      </segment>
+    </unit>
+    <unit id="newValue">
+      <notes>
+        <note category="location">src/app/shared/components/audit-list/audit-list.component.html:60,62</note>
+      </notes>
+      <segment>
+        <source> New </source>
+      </segment>
+    </unit>
+    <unit id="noChangeHistory">
+      <notes>
+        <note category="location">src/app/shared/components/audit-list/audit-list.component.html:83</note>
+      </notes>
+      <segment>
+        <source>No change history available.</source>
+      </segment>
+    </unit>
+    <unit id="loginTitle">
+      <notes>
+        <note category="location">src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html:4,6</note>
+      </notes>
+      <segment>
+        <source> Login
+</source>
+      </segment>
+    </unit>
+    <unit id="emailLabel">
+      <notes>
+        <note category="location">src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html:10</note>
+      </notes>
+      <segment>
+        <source>Email</source>
+      </segment>
+    </unit>
+    <unit id="emailError">
+      <notes>
+        <note category="location">src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html:15,17</note>
+      </notes>
+      <segment>
+        <source> Please enter a valid email </source>
+      </segment>
+    </unit>
+    <unit id="passwordLabel">
+      <notes>
+        <note category="location">src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html:21</note>
+      </notes>
+      <segment>
+        <source>Password</source>
+      </segment>
+    </unit>
+    <unit id="passwordError">
+      <notes>
+        <note category="location">src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html:33,35</note>
+      </notes>
+      <segment>
+        <source> Password must be at least 6 characters </source>
+      </segment>
+    </unit>
   </file>
 </xliff>

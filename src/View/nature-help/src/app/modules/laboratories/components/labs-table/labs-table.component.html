@@ -1,6 +1,10 @@
 <mat-expansion-panel class="filter-panel">
   <mat-expansion-panel-header class="filter-header">
-    <mat-panel-title class="filter-title">Filter</mat-panel-title>
+    <mat-panel-title
+      i18n="@@filterTitle"
+      class="filter-title"
+      >Filter</mat-panel-title
+    >
   </mat-expansion-panel-header>
 
   <form
@@ -11,7 +15,7 @@
       formGroupName="location"
       class="filter-fields">
       <mat-form-field class="form-field">
-        <mat-label>Country</mat-label>
+        <mat-label i18n="@@country">Country</mat-label>
         <input
           matInput
           formControlName="country"
@@ -19,7 +23,7 @@
       </mat-form-field>
 
       <mat-form-field class="form-field">
-        <mat-label>Region</mat-label>
+        <mat-label i18n="@@region">Region</mat-label>
         <input
           matInput
           formControlName="region"
@@ -27,7 +31,7 @@
       </mat-form-field>
 
       <mat-form-field class="form-field">
-        <mat-label>District</mat-label>
+        <mat-label i18n="@@district">District</mat-label>
         <input
           matInput
           formControlName="district"
@@ -35,7 +39,7 @@
       </mat-form-field>
 
       <mat-form-field class="form-field">
-        <mat-label>City</mat-label>
+        <mat-label i18n="@@city">City</mat-label>
         <input
           matInput
           formControlName="city"
@@ -45,6 +49,7 @@
 
     <div class="action-buttons">
       <button
+        i18n="@@applyBtn"
         mat-raised-button
         color="primary"
         type="submit"
@@ -52,6 +57,7 @@
         Apply
       </button>
       <button
+        i18n="@@clearBtn"
         mat-raised-button
         color="warn"
         type="button"
@@ -64,10 +70,11 @@
 </mat-expansion-panel>
 
 <div class="header">
-  <h2>Laboratories</h2>
+  <h2 i18n="@@laboratories">Laboratories</h2>
   <input
     type="search"
-    placeholder="Search for laboratories..."
+    placeholder="Search..."
+    i18n-placeholder="@@searchPlaceholder"
     [(ngModel)]="search" />
   <button
     (click)="navigateToDetail()"
@@ -79,10 +86,30 @@
 
 <div class="grid-container">
   <div class="grid-header">
-    <div matTooltip="Title">Title</div>
-    <div matTooltip="Location">Location</div>
-    <div matTooltip="Researchers">Researchers</div>
-    <div matTooltip="Researches number">Researchers number</div>
+    <div
+      i18n="@@title"
+      i18n-matTooltip="@@title"
+      matTooltip="Title">
+      Title
+    </div>
+    <div
+      i18n="@@location"
+      i18n-matTooltip="@@location"
+      matTooltip="Location">
+      Location
+    </div>
+    <div
+      i18n="@@researchers"
+      i18n-matTooltip="@@researchers"
+      matTooltip="Researchers">
+      Researchers
+    </div>
+    <div
+      i18n="@@researchesNumber"
+      i18n-matTooltip="@@researchesNumber"
+      matTooltip="Researches number">
+      Researchers number
+    </div>
     <div matTooltip="Map">Map</div>
     <div matTooltip="Edit">Edit</div>
   </div>

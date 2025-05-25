@@ -29,24 +29,32 @@ public class ExcelExportService : IExcelExportService
     {
         var data = await _waterDeficiencyRepository.GetAllAsync(-1);
 
-        return GenerateWorkBook(data);
+        string[] excludeColumns = {
+            "ChangedModelLog"
+        };
+
+        return GenerateWorkBook(data, excludeColumns);
     }
 
     public async Task<byte[]> GenerateSoilDeficienciesTableAsync()
     {
         var data = await _soilDeficiencyRepository.GetAllAsync(-1);
 
-        return GenerateWorkBook(data);
+        string[] excludeColumns = {
+            "ChangedModelLog"
+        };
+
+        return GenerateWorkBook(data, excludeColumns);
     }
 
     public async Task<byte[]> GenerateOrgUsersTableAsync()
     {
         var data = await _userRepository.GetAllAsync(-1);
 
-        return GenerateWorkBook(data);
+        return GenerateWorkBook(data, []);
     }
 
-    private byte[] GenerateWorkBook<T>(IEnumerable<T> data)
+    private byte[] GenerateWorkBook<T>(IEnumerable<T> data, string[] excludeColumns)
     {
         using var wb = new XLWorkbook();
 
@@ -54,7 +62,7 @@ public class ExcelExportService : IExcelExportService
 
         Type type = typeof(T);
         var propertyNames = type.GetProperties()
-            .Where(p => !p.Name.Contains("Id"))
+            .Where(p => !p.Name.Contains("Id") && !excludeColumns.Contains(p.Name))
             .Select(p => new DataColumn(p.Name))
             .ToArray();
 
