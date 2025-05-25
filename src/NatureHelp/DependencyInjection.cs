@@ -1,9 +1,11 @@
 ﻿using Application.Interfaces.Services.Analitycs;
 using Application.Interfaces.Services.Audit;
+using Application.Interfaces.Services.Cache;
 using Application.Interfaces.Services.Organization;
 using Application.Services;
 using Application.Services.Analitycs;
 using Application.Services.Audit;
+using Application.Services.Cache;
 using Application.Services.Nature;
 using Application.Services.Organization;
 using Domain.Interfaces;
@@ -36,6 +38,7 @@ namespace NatureHelp
             services.AddScoped<IBaseRepository<Laboratory>, LaboratoryRepository>();
             services.AddScoped<IBaseRepository<Research>, ResearchRepository>();
             services.AddScoped<IChangedModelLogRepository, ChangedModelLogRepository>();
+            services.AddSingleton<IRedisCacheService, RedisCacheService>();
 
             return services;
         }
