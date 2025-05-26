@@ -7,4 +7,5 @@ public interface IBaseService<T> where T : class
     Task<T?> GetByIdAsync(Guid id);
     Task<T> AddAsync(T entity);
     Task<T> UpdateAsync(T entity);
+    Task<ListData<T>> GetOrSetAsync(Func<Task<ListData<T>>> fetchFromDb);
 }

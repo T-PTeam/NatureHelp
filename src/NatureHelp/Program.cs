@@ -8,6 +8,7 @@ using NatureHelp.Filters;
 using NatureHelp.Interfaces;
 using NatureHelp.Providers;
 using Serilog;
+using StackExchange.Redis;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -134,6 +135,15 @@ builder.Services.AddApplicationServices();
 builder.Services.Configure<RouteOptions>(options =>
 {
     options.LowercaseUrls = true;
+});
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    var configuration = builder.Configuration.GetSection("Redis")["ConnectionString"];
+    if (string.IsNullOrEmpty(configuration))
+        throw new InvalidOperationException("Redis connection string is not configured.");
+
+    return ConnectionMultiplexer.Connect(configuration);
 });
 
 var app = builder.Build();
