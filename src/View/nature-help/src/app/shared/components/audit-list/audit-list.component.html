@@ -13,7 +13,11 @@
       <div *ngIf="logs.length; else noLogs">
         <div>
           <div class="log-header mb-2">
-            <p> <strong>{{ deficiency.type | enumToString:"EDeficiencyType" }}</strong> deficiency {{ deficiency.title }} was created by {{deficiency.creator.firstName}} {{deficiency.creator.lastName}} ({{ deficiency.createdOn | date }})</p>
+            <p>
+              <strong>{{ deficiency.type | enumToString: "EDeficiencyType" }}</strong> deficiency
+              {{ deficiency.title }} was created by {{ deficiency.creator.firstName }}
+              {{ deficiency.creator.lastName }} ({{ deficiency.createdOn | date }})
+            </p>
           </div>
         </div>
         <div

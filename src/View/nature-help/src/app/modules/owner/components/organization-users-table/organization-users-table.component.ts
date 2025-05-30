@@ -7,7 +7,7 @@ import { withLatestFrom } from "rxjs";
 @Component({
   selector: "nat-organization-users-table",
   templateUrl: "./organization-users-table.component.html",
-  styleUrls: ["../../../../shared/styles/table-list.component.css", "./organization-users-table.component.css" ],
+  styleUrls: ["../../../../shared/styles/table-list.component.css", "./organization-users-table.component.css"],
   standalone: false,
 })
 export class OrganizationUsersTableComponent {
