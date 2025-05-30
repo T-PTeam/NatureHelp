@@ -415,3 +415,4 @@ Thumbs.db
 # Prettier, ESLint, Husky configs should be included (don't ignore them)
 !.eslintrc.js
 !.prettierrc
+/src/NatureHelp/appsettings.Production.json

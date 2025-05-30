@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { EDangerState, EResearchType } from "@/models/enums";
+import { EDangerState, EDeficiencyType, EResearchType } from "@/models/enums";
 
 @Pipe({
   name: "enumToString",
@@ -14,6 +14,9 @@ export class EnumToStringPipe implements PipeTransform {
       const formattedValue = EResearchType[value] ?? value;
       return formattedValue.replace(/([A-Z])/g, " $1").trim();
     }
+    else if (type === "EDeficiencyType") {
+      return EDeficiencyType[value] ?? value;
+    }  
 
     return value;
   }

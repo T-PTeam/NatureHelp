@@ -9,6 +9,7 @@ namespace Application.Services.Audit;
 public class ChangedModelLogService : BaseService<ChangedModelLog>, IChangedModelLogService
 {
     private readonly IChangedModelLogRepository _changedModelLogRepository;
+
     public ChangedModelLogService(IChangedModelLogRepository changedModelLogReposiroty)
         : base(changedModelLogReposiroty)
     {
