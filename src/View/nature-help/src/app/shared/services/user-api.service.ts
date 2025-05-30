@@ -50,11 +50,7 @@ export class UserAPIService {
     this.refreshAccessToken();
   }
 
-  auth(
-    authType: EAuthType,
-    email: string,
-    password: string | null,
-  ): Observable<IAuthResponse> {
+  auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {
     if (password) {
       return this.http
         .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
@@ -85,10 +81,10 @@ export class UserAPIService {
     }
   }
 
-  refreshAccessToken(){
+  refreshAccessToken() {
     this.http
       .post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {
-        refreshToken: localStorage.getItem("refreshToken")
+        refreshToken: localStorage.getItem("refreshToken"),
       })
       .pipe(
         tap((authResponse) => {
@@ -96,7 +92,8 @@ export class UserAPIService {
           this.setAuthOptions(authResponse);
         }),
         shareReplay(),
-      ).subscribe();
+      )
+      .subscribe();
   }
 
   logout() {
