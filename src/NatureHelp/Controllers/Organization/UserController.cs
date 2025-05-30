@@ -3,6 +3,7 @@ using Application.Interfaces.Services.Organization;
 using Domain.Models.Organization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Dtos;
 
 namespace NatureHelp.Controllers.Organization;
 
@@ -54,24 +55,14 @@ public class UserController : Controller
     /// <summary>
     /// Check token expiration and availability
     /// </summary>
-    /// <param name="token"></param>
-    /// <returns>true - is expired</returns>
-    /// <returns>false - working</returns>
-    [HttpPost("check-token-expiration")]
-    public IActionResult CheckTokenExpiration([FromBody] string token)
-    {
-        return Ok(_userService.IsTokenExpired(token));
-    }
-
-    /// <summary>
-    /// Check token expiration and availability
-    /// </summary>
-    /// <param name="refreshToken"></param>
+    /// <param name="tokensDto"></param>
     /// <returns>User options with new access token</returns>
     [HttpPost("refresh-access-token")]
-    public async Task<IActionResult> RefreshAccessTokenAsync([FromBody] string refreshToken)
+    public async Task<IActionResult> RefreshAccessTokenAsync([FromBody] TokensDto tokensDto)
     {
-        return Ok(await _userService.RefreshAccessTokenAsync(refreshToken));
+        if (string.IsNullOrEmpty(tokensDto.RefreshToken)) return BadRequest("Token was not found...");
+
+        return Ok(await _userService.RefreshAccessTokenAsync(tokensDto.RefreshToken!));
     }
 
     /// <summary>
@@ -89,7 +80,7 @@ public class UserController : Controller
     /// <summary>
     /// Add multiple users to organization
     /// </summary>
-    /// <param name="loginDto"></param>
+    /// <param name="users"></param>
     /// <returns>Assigning role to user</returns>
     [Authorize(Roles = "Owner")]
     [HttpPost("add-multiple-to-org")]
@@ -101,6 +92,7 @@ public class UserController : Controller
     /// <summary>
     /// Get users that were not login ever
     /// </summary>
+    /// <param name="organizationId"></param>
     /// <returns>Assigning role to user</returns>
     [Authorize(Roles = "Owner")]
     [HttpGet("users-not-login-ever")]
