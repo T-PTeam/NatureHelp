@@ -24,7 +24,7 @@ public class User : Person
     public Guid? LaboratoryId { get; set; }
 
     [NotMapped]
-    public string Password { get; set; } = null!;
+    public string? Password { get; set; }
     public bool IsEmailValid(string email)
     {
         if (string.IsNullOrWhiteSpace(email))
