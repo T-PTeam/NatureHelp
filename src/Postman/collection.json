@@ -5,7 +5,7 @@
 		"description": "Swagger API controlling of ERP monitoring system",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26586585",
-		"_collection_link": "https://qa-main.postman.co/workspace/498cc2cc-6d07-45e1-a21f-c09148ec204c/collection/26586585-b8b8ecd9-4296-422b-92d2-5baf9bac9e00?action=share&source=collection_link&creator=26586585"
+		"_collection_link": "https://qa-main.postman.co/workspace/NatureHelp~498cc2cc-6d07-45e1-a21f-c09148ec204c/collection/26586585-b8b8ecd9-4296-422b-92d2-5baf9bac9e00?action=share&source=collection_link&creator=26586585"
 	},
 	"item": [
 		{
@@ -124,97 +124,17 @@
 											}
 										}
 									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/changedmodellogs/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"changedmodellogs",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": "<API Key>",
-														"description": "Added as a part of security scheme: apikey"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/changedmodellogs/:id",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"changedmodellogs",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/changedmodellogs/:id",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Status code is 200 or 201\", function () {\r",
-													"    pm.expect([200, 201]).to.include(pm.response.code);\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": \"6ba4f548-9c4c-c913-d82b-b62d22f14757\",\n  \"createdBy\": \"38754256-7c4f-3942-4a3a-e26bb2a3f669\",\n  \"createdOn\": \"1980-06-10T12:11:13.347Z\",\n  \"deficiencyType\": 0,\n  \"deficiencyId\": \"e632c186-f429-ae84-e7ca-1ff4d1b2ec0a\",\n  \"changesJson\": \"consequat ut voluptate aliquip\"\n}",
+											"raw": "",
 											"options": {
 												"raw": {
-													"headerFamily": "json",
 													"language": "json"
 												}
 											}
@@ -232,7 +152,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
+													"value": "0196f9ac-7ad4-79cb-8f95-a53c5cdab52d",
 													"description": "(Required) "
 												}
 											]
@@ -242,28 +162,14 @@
 										{
 											"name": "Success",
 											"originalRequest": {
-												"method": "PUT",
+												"method": "GET",
 												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
 													{
 														"key": "Authorization",
 														"value": "<API Key>",
 														"description": "Added as a part of security scheme: apikey"
 													}
 												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"id\": \"6ba4f548-9c4c-c913-d82b-b62d22f14757\",\n  \"createdBy\": \"38754256-7c4f-3942-4a3a-e26bb2a3f669\",\n  \"createdOn\": \"1980-06-10T12:11:13.347Z\",\n  \"deficiencyType\": 0,\n  \"deficiencyId\": \"e632c186-f429-ae84-e7ca-1ff4d1b2ec0a\",\n  \"changesJson\": \"consequat ut voluptate aliquip\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
 												"url": {
 													"raw": "{{baseUrl}}/api/changedmodellogs/:id",
 													"host": [
@@ -390,98 +296,6 @@
 									"body": ""
 								}
 							]
-						},
-						{
-							"name": "/api/changedmodellogs",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200 or 201\", function () {\r",
-											"    pm.expect([200, 201]).to.include(pm.response.code);\r",
-											"});\r",
-											""
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"id\": \"6ba4f548-9c4c-c913-d82b-b62d22f14757\",\n  \"createdBy\": \"38754256-7c4f-3942-4a3a-e26bb2a3f669\",\n  \"createdOn\": \"1980-06-10T12:11:13.347Z\",\n  \"deficiencyType\": 0,\n  \"deficiencyId\": \"e632c186-f429-ae84-e7ca-1ff4d1b2ec0a\",\n  \"changesJson\": \"consequat ut voluptate aliquip\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/api/changedmodellogs",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"changedmodellogs"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "<API Key>",
-												"description": "Added as a part of security scheme: apikey"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": \"6ba4f548-9c4c-c913-d82b-b62d22f14757\",\n  \"createdBy\": \"38754256-7c4f-3942-4a3a-e26bb2a3f669\",\n  \"createdOn\": \"1980-06-10T12:11:13.347Z\",\n  \"deficiencyType\": 0,\n  \"deficiencyId\": \"e632c186-f429-ae84-e7ca-1ff4d1b2ec0a\",\n  \"changesJson\": \"consequat ut voluptate aliquip\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/changedmodellogs",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"changedmodellogs"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
 						}
 					]
 				},
@@ -524,7 +338,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
+													"value": "dddddddd-dddd-dddd-dddd-dddddddddddd",
 													"description": "(Required) "
 												}
 											]
@@ -595,7 +409,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": \"urn:uuid:e756015f-647e-57b9-d27e-c142c396e980\",\n  \"createdBy\": \"a101af2e-f432-eab1-7af2-d0dca05a429f\",\n  \"createdOn\": \"1991-03-13T03:56:40.760Z\",\n  \"title\": \"sunt quis sed Lorem magna\",\n  \"locationId\": \"c8c898ab-63c0-352e-c3e8-94dea6b67405\",\n  \"researchersCount\": -61819699,\n  \"researchers\": [\n    {\n      \"id\": \"urn:uuid:22ad5bfa-0fe9-1d18-d692-08c1c475d635\",\n      \"createdBy\": \"urn:uuid:04abcf6f-0913-1c7f-5443-26166e90bb43\",\n      \"createdOn\": \"1961-12-16T23:50:07.012Z\",\n      \"firstName\": \"amet adipisicing in\",\n      \"lastName\": \"aute deserunt labore\",\n      \"dateOfBirth\": \"1993-02-06T18:16:43.528Z\",\n      \"phoneNumber\": \"velit\",\n      \"addressId\": \"3bfee25d-9be3-b640-68bf-34f805418bc6\",\n      \"address\": {\n        \"id\": \"urn:uuid:c8edbfd6-e19f-3258-4b48-78380c1ddca7\",\n        \"createdBy\": \"6cfb54f5-d7b2-83e9-db23-4dd0a7b6e60a\",\n        \"createdOn\": \"1982-06-05T07:26:51.063Z\",\n        \"longitude\": 98692839.99658561,\n        \"latitude\": -92600917.35652903,\n        \"country\": \"aliqua\",\n        \"region\": \"ipsum\",\n        \"district\": \"aliqua dolore laboris voluptate reprehenderit\",\n        \"city\": \"in sint\"\n      },\n      \"role\": 0,\n      \"email\": \"minim mollit dolor fugiat dolore\",\n      \"passwordHash\": \"anim adipisicing sit commodo\",\n      \"organization\": {\n        \"id\": \"a4374903-849c-9580-2d97-0be4e4e65f41\",\n        \"createdBy\": \"6780484e-11ef-e561-8645-bc9a55d0f03c\",\n        \"createdOn\": \"2003-02-02T09:47:48.346Z\",\n        \"title\": \"ullamco Lorem\",\n        \"location\": {\n          \"id\": \"f8958ad2-55fa-f952-9380-fc3f28eed2df\",\n          \"createdBy\": \"e0587171-a4d9-3351-855c-33a48d01f80c\",\n          \"createdOn\": \"1983-04-10T05:05:39.953Z\",\n          \"longitude\": 34953100.12868339,\n          \"latitude\": -33175777.31025978,\n          \"country\": \"Duis tempor\",\n          \"region\": \"exercitation deserunt aliquip\",\n          \"district\": \"cupidatat incididunt reprehenderit proident\",\n          \"city\": \"exercita\"\n        },\n        \"locationId\": \"urn:uuid:c4acfb74-fe08-adaa-2797-d4370a7b34b9\"\n      },\n      \"laboratory\": {\n        \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n      },\n      \"accessToken\": \"esse\",\n      \"accessTokenExpireTime\": \"2004-06-02T01:17:22.925Z\",\n      \"refreshToken\": \"laborum q\",\n      \"refreshTokenExpireTime\": \"1992-04-05T06:12:30.211Z\",\n      \"organizationId\": \"urn:uuid:a0751f6c-d90e-dfd6-5147-cdfcfb0060e4\",\n      \"laboratoryId\": \"urn:uuid:9e87bebc-fa11-0818-2423-7ae5dfaed694\",\n      \"password\": \"velit\"\n    },\n    {\n      \"id\": \"ca909d45-66cf-b17c-1c40-dc921e58d2a9\",\n      \"createdBy\": \"urn:uuid:6987c421-4066-d7dc-9454-e902bd9ed10d\",\n      \"createdOn\": \"2002-06-15T21:09:16.003Z\",\n      \"firstName\": \"et culpa reprehenderit ut\",\n      \"lastName\": \"do sit non\",\n      \"dateOfBirth\": \"1994-11-28T15:43:17.036Z\",\n      \"phoneNumber\": \"adipisicing quis occaecat nulla consectetur\",\n      \"addressId\": \"221d478a-1620-76b6-3700-464b5278ff94\",\n      \"address\": {\n        \"id\": \"urn:uuid:9a233290-5135-16fd-b381-ad3f6a8ec293\",\n        \"createdBy\": \"urn:uuid:5fd94301-a17e-5ebb-5e9a-72a5d873b282\",\n        \"createdOn\": \"1948-12-16T16:04:46.243Z\",\n        \"longitude\": 55857838.63894293,\n        \"latitude\": -57459711.790033504,\n        \"country\": \"sed laboris eiusmod\",\n        \"region\": \"enim mollit\",\n        \"district\": \"Lorem\",\n        \"city\": \"non officia ex\"\n      },\n      \"role\": 0,\n      \"email\": \"e\",\n      \"passwordHash\": \"ipsum in dolor in irure\",\n      \"organization\": {\n        \"id\": \"urn:uuid:b1d953ed-128a-cb33-4029-00afa13c9711\",\n        \"createdBy\": \"e7816842-4c68-07b0-36b4-584fecf66042\",\n        \"createdOn\": \"2022-06-18T08:09:51.896Z\",\n        \"title\": \"officia est\",\n        \"location\": {\n          \"id\": \"urn:uuid:80b47411-38a8-e68c-95e2-aa60d7231a18\",\n          \"createdBy\": \"urn:uuid:c2c593e0-139f-3f44-7d0e-b83c4168b248\",\n          \"createdOn\": \"2005-09-21T10:55:26.765Z\",\n          \"longitude\": 93493062.56611508,\n          \"latitude\": -80458447.91544715,\n          \"country\": \"ex\",\n          \"region\": \"elit cillum\",\n          \"district\": \"ullamco esse\",\n          \"city\": \"est reprehenderit Ut exercitation aute\"\n        },\n        \"locationId\": \"urn:uuid:a45fcb8e-d707-3b64-f7b1-c54b690c35f7\"\n      },\n      \"laboratory\": {\n        \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n      },\n      \"accessToken\": \"amet\",\n      \"accessTokenExpireTime\": \"2021-05-24T03:20:12.855Z\",\n      \"refreshToken\": \"minim nisi\",\n      \"refreshTokenExpireTime\": \"1961-08-04T17:45:53.057Z\",\n      \"organizationId\": \"urn:uuid:112c1df5-7b8f-af83-15ea-77fb947284fa\",\n      \"laboratoryId\": \"urn:uuid:30613460-3e50-c555-5db4-a4479bd4e5cf\",\n      \"password\": \"dolore adipisicin\"\n    }\n  ],\n  \"location\": {\n    \"id\": \"0b035d6e-d2a7-725a-e0bf-a20057cf58e6\",\n    \"createdBy\": \"6841df2b-3fb3-eab8-4c02-796ca8b0bf8c\",\n    \"createdOn\": \"1991-10-20T11:13:24.833Z\",\n    \"longitude\": 81827768.90243673,\n    \"latitude\": 67293646.39996985,\n    \"country\": \"irure ea sint magna\",\n    \"region\": \"culpa\",\n    \"district\": \"laborum\",\n    \"city\": \"anim dolore\"\n  }\n}",
+											"raw": "{\n    \"id\": \"{{laboratoryId}}\",\n    \"title\": \"Biomedical Research Lab Postman test 1\",\n    \"researchers\": [],\n    \"location\": {\n        \"latitude\": 0,\n        \"longitude\": 0,\n        \"city\": \"Kyiv\",\n        \"country\": \"Ukraine\",\n        \"region\": \"Kyiv\",\n        \"district\": \"Shevchenkivsky\"\n    },\n    \"researchersCount\": 1\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -616,7 +430,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
+													"value": "dddddddd-dddd-dddd-dddd-dddddddddddd",
 													"description": "(Required) "
 												}
 											]
@@ -802,7 +616,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": \"urn:uuid:e756015f-647e-57b9-d27e-c142c396e980\",\n  \"createdBy\": \"a101af2e-f432-eab1-7af2-d0dca05a429f\",\n  \"createdOn\": \"1991-03-13T03:56:40.760Z\",\n  \"title\": \"sunt quis sed Lorem magna\",\n  \"locationId\": \"c8c898ab-63c0-352e-c3e8-94dea6b67405\",\n  \"researchersCount\": -61819699,\n  \"researchers\": [\n    {\n      \"id\": \"urn:uuid:22ad5bfa-0fe9-1d18-d692-08c1c475d635\",\n      \"createdBy\": \"urn:uuid:04abcf6f-0913-1c7f-5443-26166e90bb43\",\n      \"createdOn\": \"1961-12-16T23:50:07.012Z\",\n      \"firstName\": \"amet adipisicing in\",\n      \"lastName\": \"aute deserunt labore\",\n      \"dateOfBirth\": \"1993-02-06T18:16:43.528Z\",\n      \"phoneNumber\": \"velit\",\n      \"addressId\": \"3bfee25d-9be3-b640-68bf-34f805418bc6\",\n      \"address\": {\n        \"id\": \"urn:uuid:c8edbfd6-e19f-3258-4b48-78380c1ddca7\",\n        \"createdBy\": \"6cfb54f5-d7b2-83e9-db23-4dd0a7b6e60a\",\n        \"createdOn\": \"1982-06-05T07:26:51.063Z\",\n        \"longitude\": 98692839.99658561,\n        \"latitude\": -92600917.35652903,\n        \"country\": \"aliqua\",\n        \"region\": \"ipsum\",\n        \"district\": \"aliqua dolore laboris voluptate reprehenderit\",\n        \"city\": \"in sint\"\n      },\n      \"role\": 0,\n      \"email\": \"minim mollit dolor fugiat dolore\",\n      \"passwordHash\": \"anim adipisicing sit commodo\",\n      \"organization\": {\n        \"id\": \"a4374903-849c-9580-2d97-0be4e4e65f41\",\n        \"createdBy\": \"6780484e-11ef-e561-8645-bc9a55d0f03c\",\n        \"createdOn\": \"2003-02-02T09:47:48.346Z\",\n        \"title\": \"ullamco Lorem\",\n        \"location\": {\n          \"id\": \"f8958ad2-55fa-f952-9380-fc3f28eed2df\",\n          \"createdBy\": \"e0587171-a4d9-3351-855c-33a48d01f80c\",\n          \"createdOn\": \"1983-04-10T05:05:39.953Z\",\n          \"longitude\": 34953100.12868339,\n          \"latitude\": -33175777.31025978,\n          \"country\": \"Duis tempor\",\n          \"region\": \"exercitation deserunt aliquip\",\n          \"district\": \"cupidatat incididunt reprehenderit proident\",\n          \"city\": \"exercita\"\n        },\n        \"locationId\": \"urn:uuid:c4acfb74-fe08-adaa-2797-d4370a7b34b9\"\n      },\n      \"laboratory\": {\n        \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n      },\n      \"accessToken\": \"esse\",\n      \"accessTokenExpireTime\": \"2004-06-02T01:17:22.925Z\",\n      \"refreshToken\": \"laborum q\",\n      \"refreshTokenExpireTime\": \"1992-04-05T06:12:30.211Z\",\n      \"organizationId\": \"urn:uuid:a0751f6c-d90e-dfd6-5147-cdfcfb0060e4\",\n      \"laboratoryId\": \"urn:uuid:9e87bebc-fa11-0818-2423-7ae5dfaed694\",\n      \"password\": \"velit\"\n    },\n    {\n      \"id\": \"ca909d45-66cf-b17c-1c40-dc921e58d2a9\",\n      \"createdBy\": \"urn:uuid:6987c421-4066-d7dc-9454-e902bd9ed10d\",\n      \"createdOn\": \"2002-06-15T21:09:16.003Z\",\n      \"firstName\": \"et culpa reprehenderit ut\",\n      \"lastName\": \"do sit non\",\n      \"dateOfBirth\": \"1994-11-28T15:43:17.036Z\",\n      \"phoneNumber\": \"adipisicing quis occaecat nulla consectetur\",\n      \"addressId\": \"221d478a-1620-76b6-3700-464b5278ff94\",\n      \"address\": {\n        \"id\": \"urn:uuid:9a233290-5135-16fd-b381-ad3f6a8ec293\",\n        \"createdBy\": \"urn:uuid:5fd94301-a17e-5ebb-5e9a-72a5d873b282\",\n        \"createdOn\": \"1948-12-16T16:04:46.243Z\",\n        \"longitude\": 55857838.63894293,\n        \"latitude\": -57459711.790033504,\n        \"country\": \"sed laboris eiusmod\",\n        \"region\": \"enim mollit\",\n        \"district\": \"Lorem\",\n        \"city\": \"non officia ex\"\n      },\n      \"role\": 0,\n      \"email\": \"e\",\n      \"passwordHash\": \"ipsum in dolor in irure\",\n      \"organization\": {\n        \"id\": \"urn:uuid:b1d953ed-128a-cb33-4029-00afa13c9711\",\n        \"createdBy\": \"e7816842-4c68-07b0-36b4-584fecf66042\",\n        \"createdOn\": \"2022-06-18T08:09:51.896Z\",\n        \"title\": \"officia est\",\n        \"location\": {\n          \"id\": \"urn:uuid:80b47411-38a8-e68c-95e2-aa60d7231a18\",\n          \"createdBy\": \"urn:uuid:c2c593e0-139f-3f44-7d0e-b83c4168b248\",\n          \"createdOn\": \"2005-09-21T10:55:26.765Z\",\n          \"longitude\": 93493062.56611508,\n          \"latitude\": -80458447.91544715,\n          \"country\": \"ex\",\n          \"region\": \"elit cillum\",\n          \"district\": \"ullamco esse\",\n          \"city\": \"est reprehenderit Ut exercitation aute\"\n        },\n        \"locationId\": \"urn:uuid:a45fcb8e-d707-3b64-f7b1-c54b690c35f7\"\n      },\n      \"laboratory\": {\n        \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n      },\n      \"accessToken\": \"amet\",\n      \"accessTokenExpireTime\": \"2021-05-24T03:20:12.855Z\",\n      \"refreshToken\": \"minim nisi\",\n      \"refreshTokenExpireTime\": \"1961-08-04T17:45:53.057Z\",\n      \"organizationId\": \"urn:uuid:112c1df5-7b8f-af83-15ea-77fb947284fa\",\n      \"laboratoryId\": \"urn:uuid:30613460-3e50-c555-5db4-a4479bd4e5cf\",\n      \"password\": \"dolore adipisicin\"\n    }\n  ],\n  \"location\": {\n    \"id\": \"0b035d6e-d2a7-725a-e0bf-a20057cf58e6\",\n    \"createdBy\": \"6841df2b-3fb3-eab8-4c02-796ca8b0bf8c\",\n    \"createdOn\": \"1991-10-20T11:13:24.833Z\",\n    \"longitude\": 81827768.90243673,\n    \"latitude\": 67293646.39996985,\n    \"country\": \"irure ea sint magna\",\n    \"region\": \"culpa\",\n    \"district\": \"laborum\",\n    \"city\": \"anim dolore\"\n  }\n}",
+									"raw": "{\n    \"id\": \"{{$randomUUID}}\",\n    \"title\": \"Test lab\",\n    \"researchers\": [],\n    \"location\": {\n        \"latitude\": 34,\n        \"longitude\": 67,\n        \"city\": \"Lviv\",\n        \"country\": \"Ukraine\",\n        \"region\": \"\",\n        \"district\": \"\"\n    },\n    \"researchersCount\": 1\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -870,221 +684,6 @@
 					]
 				},
 				{
-					"name": "report",
-					"item": [
-						{
-							"name": "water",
-							"item": [
-								{
-									"name": "Returns Excel file with water deficiencies",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Status code is 200 or 201\", function () {\r",
-													"    pm.expect([200, 201]).to.include(pm.response.code);\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/report/water",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"report",
-												"water"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": "<API Key>",
-														"description": "Added as a part of security scheme: apikey"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/report/water",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"report",
-														"water"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "soil",
-							"item": [
-								{
-									"name": "Returns Excel file with soil deficiencies",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Status code is 200 or 201\", function () {\r",
-													"    pm.expect([200, 201]).to.include(pm.response.code);\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/report/soil",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"report",
-												"soil"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": "<API Key>",
-														"description": "Added as a part of security scheme: apikey"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/report/soil",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"report",
-														"soil"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "org-users",
-							"item": [
-								{
-									"name": "Returns Excel file with soil deficiencies",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Status code is 200 or 201\", function () {\r",
-													"    pm.expect([200, 201]).to.include(pm.response.code);\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/report/org-users",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"report",
-												"org-users"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": "<API Key>",
-														"description": "Added as a part of security scheme: apikey"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/report/org-users",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"report",
-														"org-users"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
 					"name": "research",
 					"item": [
 						{
@@ -1123,7 +722,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
+													"value": "7194769b-e76a-1cdf-a032-a23c61d09f5b",
 													"description": "(Required) "
 												}
 											]
@@ -1141,112 +740,6 @@
 														"description": "Added as a part of security scheme: apikey"
 													}
 												],
-												"url": {
-													"raw": "{{baseUrl}}/api/research/:id",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"research",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/research/:id",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Status code is 200 or 201\", function () {\r",
-													"    pm.expect([200, 201]).to.include(pm.response.code);\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": \"7194769b-e76a-1cdf-a032-a23c61d09f5b\",\n  \"createdBy\": \"urn:uuid:384bf955-107a-dd89-9458-ed8ac3dd4e85\",\n  \"createdOn\": \"1971-03-02T20:38:02.287Z\",\n  \"title\": \"laboris dolor ex\",\n  \"type\": 3,\n  \"date\": \"2019-06-22T05:44:57.554Z\",\n  \"description\": \"nostrud ex pariatur p\",\n  \"laboratoryId\": \"45368932-fe73-5bc0-e47b-334359f893db\",\n  \"laboratory\": {\n    \"id\": \"764805e2-8939-ef6d-52a1-c9ee7fd45239\",\n    \"createdBy\": \"7db8d572-3476-7dbd-3f6b-7049a432fd81\",\n    \"createdOn\": \"1969-08-15T14:46:02.329Z\",\n    \"title\": \"Duis sit\",\n    \"locationId\": \"urn:uuid:3adbf47c-58fb-d11b-70ac-bd51d6caf227\",\n    \"researchersCount\": -24994351,\n    \"researchers\": [\n      {\n        \"id\": \"b94fc6a9-6771-2468-dec3-fa98224ea93c\",\n        \"createdBy\": \"6124a2c2-5c2f-957f-1a02-bc598be9513c\",\n        \"createdOn\": \"1985-03-09T07:16:46.362Z\",\n        \"firstName\": \"reprehenderit laboris incididunt do\",\n        \"lastName\": \"do consequat tempor\",\n        \"dateOfBirth\": \"2022-11-05T18:52:52.095Z\",\n        \"phoneNumber\": \"adipisicing quis nostrud dolor\",\n        \"addressId\": \"urn:uuid:a6453805-3d43-d582-4bc3-d7828c6242e0\",\n        \"address\": {\n          \"id\": \"urn:uuid:6c30385e-d43b-431f-da34-96ec8105d6de\",\n          \"createdBy\": \"urn:uuid:fd46c830-36c7-6c8b-7df9-63cdb39a57e8\",\n          \"createdOn\": \"2013-08-27T04:56:17.625Z\",\n          \"longitude\": 51405078.348061174,\n          \"latitude\": 19552924.986690596,\n          \"country\": \"non\",\n          \"region\": \"ad Ut\",\n          \"district\": \"cupidatat dolor dolore Ut\",\n          \"city\": \"dolore\"\n        },\n        \"role\": 2,\n        \"email\": \"sint est dolor proident\",\n        \"passwordHash\": \"reprehenderit in aute qui cupidatat\",\n        \"organization\": {\n          \"id\": \"668d92e1-69e5-ca42-c454-2dcf3fd0f3ba\",\n          \"createdBy\": \"2d695c44-4dce-d5e8-2cdb-458db4555617\",\n          \"createdOn\": \"2010-12-19T08:50:08.763Z\",\n          \"title\": \"cillum dolore ess\",\n          \"location\": {\n            \"id\": \"998982cc-c228-176d-0eb6-bbb9cf5d38c0\",\n            \"createdBy\": \"urn:uuid:4fce575d-1326-12e0-19c3-d7d511c74bef\",\n            \"createdOn\": \"1948-12-09T03:43:05.961Z\",\n            \"longitude\": 64276872.37050527,\n            \"latitude\": -64254360.4604384,\n            \"country\": \"proident aliquip ex\",\n            \"region\": \"voluptate incididunt in\",\n            \"district\": \"irure\",\n            \"city\": \"veniam et occaecat eiusmod dolor\"\n          },\n          \"locationId\": \"b05fca89-574c-075e-f6b1-cb807073c6bd\"\n        },\n        \"laboratory\": {\n          \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n        },\n        \"accessToken\": \"cupidatat\",\n        \"accessTokenExpireTime\": \"2014-12-13T10:10:21.846Z\",\n        \"refreshToken\": \"veniam\",\n        \"refreshTokenExpireTime\": \"2017-06-09T22:01:57.003Z\",\n        \"organizationId\": \"urn:uuid:1c1f7c43-8046-4931-4b92-245bc1bce11c\",\n        \"laboratoryId\": \"9ebd47d1-3ccf-a80f-87ea-5c59d96324de\",\n        \"password\": \"culpa pariatur exercitation adipisicing dolore\"\n      },\n      {\n        \"id\": \"urn:uuid:72db68ca-d96a-260c-3e17-c5d4fceb553d\",\n        \"createdBy\": \"urn:uuid:d5834a5b-7e91-7c9d-a3fa-9d7c74165367\",\n        \"createdOn\": \"1972-06-14T05:17:06.150Z\",\n        \"firstName\": \"id ex minim reprehenderit eiusmod\",\n        \"lastName\": \"magna veniam mollit\",\n        \"dateOfBirth\": \"1965-12-02T01:26:39.209Z\",\n        \"phoneNumber\": \"officia\",\n        \"addressId\": \"7037eae9-5e5c-96e2-afac-1e25b19c16da\",\n        \"address\": {\n          \"id\": \"urn:uuid:3f8ea543-d866-815b-1abb-b94e38ae5e23\",\n          \"createdBy\": \"urn:uuid:4537dafe-2433-78f3-0478-93a01f7a8c1b\",\n          \"createdOn\": \"1986-09-13T04:24:42.098Z\",\n          \"longitude\": -31306534.56389518,\n          \"latitude\": 31847786.503682137,\n          \"country\": \"eiusmod labore\",\n          \"region\": \"occaecat adipisicing minim\",\n          \"district\": \"Ut Duis deserunt aliquip\",\n          \"city\": \"irure in esse laborum qui\"\n        },\n        \"role\": 3,\n        \"email\": \"pariatur tempor\",\n        \"passwordHash\": \"in\",\n        \"organization\": {\n          \"id\": \"029c39f5-5327-4373-cdce-ddb4d01b77cb\",\n          \"createdBy\": \"urn:uuid:51c27a6d-8a9e-e0a9-5414-a87d9f12436f\",\n          \"createdOn\": \"1958-02-11T01:32:28.513Z\",\n          \"title\": \"quis cillum\",\n          \"location\": {\n            \"id\": \"urn:uuid:b983f96e-140b-2e6f-b081-9d6fc5312eec\",\n            \"createdBy\": \"urn:uuid:c9f28fba-3f95-e24f-835a-384fbb8a120d\",\n            \"createdOn\": \"1990-01-13T07:26:24.561Z\",\n            \"longitude\": 9378471.003740534,\n            \"latitude\": -27595810.44198875,\n            \"country\": \"in nulla\",\n            \"region\": \"voluptate fugiat\",\n            \"district\": \"\",\n            \"city\": \"commodo occaecat in ad in\"\n          },\n          \"locationId\": \"urn:uuid:abef0d4a-f76c-8bba-d5eb-9c2ac4f6c025\"\n        },\n        \"laboratory\": {\n          \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n        },\n        \"accessToken\": \"consequat sunt eu quis\",\n        \"accessTokenExpireTime\": \"1958-01-30T20:58:37.086Z\",\n        \"refreshToken\": \"deserunt aute commodo qui laborum\",\n        \"refreshTokenExpireTime\": \"1973-01-12T08:47:20.322Z\",\n        \"organizationId\": \"urn:uuid:571fbc64-965f-c513-f1ea-29f18b50390c\",\n        \"laboratoryId\": \"urn:uuid:8906e0e4-ee0b-a069-2512-e436635ffbc9\",\n        \"password\": \"proident dolor ut magna\"\n      }\n    ],\n    \"location\": {\n      \"id\": \"1910aac5-a29b-2332-49be-3d74f0553801\",\n      \"createdBy\": \"37e72a20-d67d-7e8c-aa7d-dee5e3144b71\",\n      \"createdOn\": \"1949-11-30T15:31:50.362Z\",\n      \"longitude\": 52708303.07988566,\n      \"latitude\": 93274060.3828147,\n      \"country\": \"ut\",\n      \"region\": \"Excepteur sed in irure\",\n      \"district\": \"eiusmod consequat Excepteur et\",\n      \"city\": \"in enim voluptate\"\n    }\n  },\n  \"researcherId\": \"urn:uuid:57d0a512-0e89-5cc6-67c8-ad4f99e1002c\",\n  \"researcher\": {\n    \"id\": \"urn:uuid:9680ba26-ad7d-4f75-f0f3-a674c18c4b51\",\n    \"createdBy\": \"73b20c79-fb51-9583-b46b-466d2ea8cf8e\",\n    \"createdOn\": \"1969-06-02T11:28:58.638Z\",\n    \"firstName\": \"dolore culpa ad\",\n    \"lastName\": \"ad reprehen\",\n    \"dateOfBirth\": \"1980-09-08T09:11:31.650Z\",\n    \"phoneNumber\": \"mini\",\n    \"addressId\": \"urn:uuid:fc79d800-c882-9547-c094-9e5735a5cfe1\",\n    \"address\": {\n      \"id\": \"032b1808-debf-1f70-610e-c00fb113b496\",\n      \"createdBy\": \"urn:uuid:d8b24803-7958-d0be-403c-58953b83d69b\",\n      \"createdOn\": \"2016-01-07T17:17:29.994Z\",\n      \"longitude\": 52779498.503281236,\n      \"latitude\": 87447467.76338276,\n      \"country\": \"minim laboris\",\n      \"region\": \"pa\",\n      \"district\": \"laborum qui Lorem\",\n      \"city\": \"do\"\n    },\n    \"role\": 2,\n    \"email\": \"occaecat ea pariatur\",\n    \"passwordHash\": \"enim mollit\",\n    \"organization\": {\n      \"id\": \"1dcb6a38-ac08-d616-0dfc-c25298e5478e\",\n      \"createdBy\": \"a569be36-79aa-aa16-f669-191b05e7791d\",\n      \"createdOn\": \"1987-01-07T23:38:44.071Z\",\n      \"title\": \"elit laboris dolore\",\n      \"location\": {\n        \"id\": \"urn:uuid:2e8f2458-14cc-2d9a-5658-8d864274e8d3\",\n        \"createdBy\": \"urn:uuid:41e10508-9adc-1ce5-7a6a-693af6ebcc04\",\n        \"createdOn\": \"1964-01-05T11:47:04.095Z\",\n        \"longitude\": -33646047.06897876,\n        \"latitude\": 14833736.001598224,\n        \"country\": \"anim do irure ut nulla\",\n        \"region\": \"elit ea incididunt sunt dolor\",\n        \"district\": \"occaecat culpa Excepteur\",\n        \"city\": \"pariatur enim sint\"\n      },\n      \"locationId\": \"2bc2e146-a176-b688-38d8-203360a4e17e\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"elit in qui\",\n    \"accessTokenExpireTime\": \"1965-07-23T02:50:36.342Z\",\n    \"refreshToken\": \"cillum nisi\",\n    \"refreshTokenExpireTime\": \"1971-12-10T18:11:13.253Z\",\n    \"organizationId\": \"urn:uuid:b423c8c4-5645-1a9a-4e4f-95c7e1437b3b\",\n    \"laboratoryId\": \"c861565b-f92b-a0c8-9b54-10debb75b02e\",\n    \"password\": \"dolore \"\n  }\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/research/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"research",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Success",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Authorization",
-														"value": "<API Key>",
-														"description": "Added as a part of security scheme: apikey"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"id\": \"7194769b-e76a-1cdf-a032-a23c61d09f5b\",\n  \"createdBy\": \"urn:uuid:384bf955-107a-dd89-9458-ed8ac3dd4e85\",\n  \"createdOn\": \"1971-03-02T20:38:02.287Z\",\n  \"title\": \"laboris dolor ex\",\n  \"type\": 3,\n  \"date\": \"2019-06-22T05:44:57.554Z\",\n  \"description\": \"nostrud ex pariatur p\",\n  \"laboratoryId\": \"45368932-fe73-5bc0-e47b-334359f893db\",\n  \"laboratory\": {\n    \"id\": \"764805e2-8939-ef6d-52a1-c9ee7fd45239\",\n    \"createdBy\": \"7db8d572-3476-7dbd-3f6b-7049a432fd81\",\n    \"createdOn\": \"1969-08-15T14:46:02.329Z\",\n    \"title\": \"Duis sit\",\n    \"locationId\": \"urn:uuid:3adbf47c-58fb-d11b-70ac-bd51d6caf227\",\n    \"researchersCount\": -24994351,\n    \"researchers\": [\n      {\n        \"id\": \"b94fc6a9-6771-2468-dec3-fa98224ea93c\",\n        \"createdBy\": \"6124a2c2-5c2f-957f-1a02-bc598be9513c\",\n        \"createdOn\": \"1985-03-09T07:16:46.362Z\",\n        \"firstName\": \"reprehenderit laboris incididunt do\",\n        \"lastName\": \"do consequat tempor\",\n        \"dateOfBirth\": \"2022-11-05T18:52:52.095Z\",\n        \"phoneNumber\": \"adipisicing quis nostrud dolor\",\n        \"addressId\": \"urn:uuid:a6453805-3d43-d582-4bc3-d7828c6242e0\",\n        \"address\": {\n          \"id\": \"urn:uuid:6c30385e-d43b-431f-da34-96ec8105d6de\",\n          \"createdBy\": \"urn:uuid:fd46c830-36c7-6c8b-7df9-63cdb39a57e8\",\n          \"createdOn\": \"2013-08-27T04:56:17.625Z\",\n          \"longitude\": 51405078.348061174,\n          \"latitude\": 19552924.986690596,\n          \"country\": \"non\",\n          \"region\": \"ad Ut\",\n          \"district\": \"cupidatat dolor dolore Ut\",\n          \"city\": \"dolore\"\n        },\n        \"role\": 2,\n        \"email\": \"sint est dolor proident\",\n        \"passwordHash\": \"reprehenderit in aute qui cupidatat\",\n        \"organization\": {\n          \"id\": \"668d92e1-69e5-ca42-c454-2dcf3fd0f3ba\",\n          \"createdBy\": \"2d695c44-4dce-d5e8-2cdb-458db4555617\",\n          \"createdOn\": \"2010-12-19T08:50:08.763Z\",\n          \"title\": \"cillum dolore ess\",\n          \"location\": {\n            \"id\": \"998982cc-c228-176d-0eb6-bbb9cf5d38c0\",\n            \"createdBy\": \"urn:uuid:4fce575d-1326-12e0-19c3-d7d511c74bef\",\n            \"createdOn\": \"1948-12-09T03:43:05.961Z\",\n            \"longitude\": 64276872.37050527,\n            \"latitude\": -64254360.4604384,\n            \"country\": \"proident aliquip ex\",\n            \"region\": \"voluptate incididunt in\",\n            \"district\": \"irure\",\n            \"city\": \"veniam et occaecat eiusmod dolor\"\n          },\n          \"locationId\": \"b05fca89-574c-075e-f6b1-cb807073c6bd\"\n        },\n        \"laboratory\": {\n          \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n        },\n        \"accessToken\": \"cupidatat\",\n        \"accessTokenExpireTime\": \"2014-12-13T10:10:21.846Z\",\n        \"refreshToken\": \"veniam\",\n        \"refreshTokenExpireTime\": \"2017-06-09T22:01:57.003Z\",\n        \"organizationId\": \"urn:uuid:1c1f7c43-8046-4931-4b92-245bc1bce11c\",\n        \"laboratoryId\": \"9ebd47d1-3ccf-a80f-87ea-5c59d96324de\",\n        \"password\": \"culpa pariatur exercitation adipisicing dolore\"\n      },\n      {\n        \"id\": \"urn:uuid:72db68ca-d96a-260c-3e17-c5d4fceb553d\",\n        \"createdBy\": \"urn:uuid:d5834a5b-7e91-7c9d-a3fa-9d7c74165367\",\n        \"createdOn\": \"1972-06-14T05:17:06.150Z\",\n        \"firstName\": \"id ex minim reprehenderit eiusmod\",\n        \"lastName\": \"magna veniam mollit\",\n        \"dateOfBirth\": \"1965-12-02T01:26:39.209Z\",\n        \"phoneNumber\": \"officia\",\n        \"addressId\": \"7037eae9-5e5c-96e2-afac-1e25b19c16da\",\n        \"address\": {\n          \"id\": \"urn:uuid:3f8ea543-d866-815b-1abb-b94e38ae5e23\",\n          \"createdBy\": \"urn:uuid:4537dafe-2433-78f3-0478-93a01f7a8c1b\",\n          \"createdOn\": \"1986-09-13T04:24:42.098Z\",\n          \"longitude\": -31306534.56389518,\n          \"latitude\": 31847786.503682137,\n          \"country\": \"eiusmod labore\",\n          \"region\": \"occaecat adipisicing minim\",\n          \"district\": \"Ut Duis deserunt aliquip\",\n          \"city\": \"irure in esse laborum qui\"\n        },\n        \"role\": 3,\n        \"email\": \"pariatur tempor\",\n        \"passwordHash\": \"in\",\n        \"organization\": {\n          \"id\": \"029c39f5-5327-4373-cdce-ddb4d01b77cb\",\n          \"createdBy\": \"urn:uuid:51c27a6d-8a9e-e0a9-5414-a87d9f12436f\",\n          \"createdOn\": \"1958-02-11T01:32:28.513Z\",\n          \"title\": \"quis cillum\",\n          \"location\": {\n            \"id\": \"urn:uuid:b983f96e-140b-2e6f-b081-9d6fc5312eec\",\n            \"createdBy\": \"urn:uuid:c9f28fba-3f95-e24f-835a-384fbb8a120d\",\n            \"createdOn\": \"1990-01-13T07:26:24.561Z\",\n            \"longitude\": 9378471.003740534,\n            \"latitude\": -27595810.44198875,\n            \"country\": \"in nulla\",\n            \"region\": \"voluptate fugiat\",\n            \"district\": \"\",\n            \"city\": \"commodo occaecat in ad in\"\n          },\n          \"locationId\": \"urn:uuid:abef0d4a-f76c-8bba-d5eb-9c2ac4f6c025\"\n        },\n        \"laboratory\": {\n          \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n        },\n        \"accessToken\": \"consequat sunt eu quis\",\n        \"accessTokenExpireTime\": \"1958-01-30T20:58:37.086Z\",\n        \"refreshToken\": \"deserunt aute commodo qui laborum\",\n        \"refreshTokenExpireTime\": \"1973-01-12T08:47:20.322Z\",\n        \"organizationId\": \"urn:uuid:571fbc64-965f-c513-f1ea-29f18b50390c\",\n        \"laboratoryId\": \"urn:uuid:8906e0e4-ee0b-a069-2512-e436635ffbc9\",\n        \"password\": \"proident dolor ut magna\"\n      }\n    ],\n    \"location\": {\n      \"id\": \"1910aac5-a29b-2332-49be-3d74f0553801\",\n      \"createdBy\": \"37e72a20-d67d-7e8c-aa7d-dee5e3144b71\",\n      \"createdOn\": \"1949-11-30T15:31:50.362Z\",\n      \"longitude\": 52708303.07988566,\n      \"latitude\": 93274060.3828147,\n      \"country\": \"ut\",\n      \"region\": \"Excepteur sed in irure\",\n      \"district\": \"eiusmod consequat Excepteur et\",\n      \"city\": \"in enim voluptate\"\n    }\n  },\n  \"researcherId\": \"urn:uuid:57d0a512-0e89-5cc6-67c8-ad4f99e1002c\",\n  \"researcher\": {\n    \"id\": \"urn:uuid:9680ba26-ad7d-4f75-f0f3-a674c18c4b51\",\n    \"createdBy\": \"73b20c79-fb51-9583-b46b-466d2ea8cf8e\",\n    \"createdOn\": \"1969-06-02T11:28:58.638Z\",\n    \"firstName\": \"dolore culpa ad\",\n    \"lastName\": \"ad reprehen\",\n    \"dateOfBirth\": \"1980-09-08T09:11:31.650Z\",\n    \"phoneNumber\": \"mini\",\n    \"addressId\": \"urn:uuid:fc79d800-c882-9547-c094-9e5735a5cfe1\",\n    \"address\": {\n      \"id\": \"032b1808-debf-1f70-610e-c00fb113b496\",\n      \"createdBy\": \"urn:uuid:d8b24803-7958-d0be-403c-58953b83d69b\",\n      \"createdOn\": \"2016-01-07T17:17:29.994Z\",\n      \"longitude\": 52779498.503281236,\n      \"latitude\": 87447467.76338276,\n      \"country\": \"minim laboris\",\n      \"region\": \"pa\",\n      \"district\": \"laborum qui Lorem\",\n      \"city\": \"do\"\n    },\n    \"role\": 2,\n    \"email\": \"occaecat ea pariatur\",\n    \"passwordHash\": \"enim mollit\",\n    \"organization\": {\n      \"id\": \"1dcb6a38-ac08-d616-0dfc-c25298e5478e\",\n      \"createdBy\": \"a569be36-79aa-aa16-f669-191b05e7791d\",\n      \"createdOn\": \"1987-01-07T23:38:44.071Z\",\n      \"title\": \"elit laboris dolore\",\n      \"location\": {\n        \"id\": \"urn:uuid:2e8f2458-14cc-2d9a-5658-8d864274e8d3\",\n        \"createdBy\": \"urn:uuid:41e10508-9adc-1ce5-7a6a-693af6ebcc04\",\n        \"createdOn\": \"1964-01-05T11:47:04.095Z\",\n        \"longitude\": -33646047.06897876,\n        \"latitude\": 14833736.001598224,\n        \"country\": \"anim do irure ut nulla\",\n        \"region\": \"elit ea incididunt sunt dolor\",\n        \"district\": \"occaecat culpa Excepteur\",\n        \"city\": \"pariatur enim sint\"\n      },\n      \"locationId\": \"2bc2e146-a176-b688-38d8-203360a4e17e\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"elit in qui\",\n    \"accessTokenExpireTime\": \"1965-07-23T02:50:36.342Z\",\n    \"refreshToken\": \"cillum nisi\",\n    \"refreshTokenExpireTime\": \"1971-12-10T18:11:13.253Z\",\n    \"organizationId\": \"urn:uuid:b423c8c4-5645-1a9a-4e4f-95c7e1437b3b\",\n    \"laboratoryId\": \"c861565b-f92b-a0c8-9b54-10debb75b02e\",\n    \"password\": \"dolore \"\n  }\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
 												"url": {
 													"raw": "{{baseUrl}}/api/research/:id",
 													"host": [
@@ -1401,7 +894,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": \"7194769b-e76a-1cdf-a032-a23c61d09f5b\",\n  \"createdBy\": \"urn:uuid:384bf955-107a-dd89-9458-ed8ac3dd4e85\",\n  \"createdOn\": \"1971-03-02T20:38:02.287Z\",\n  \"title\": \"laboris dolor ex\",\n  \"type\": 3,\n  \"date\": \"2019-06-22T05:44:57.554Z\",\n  \"description\": \"nostrud ex pariatur p\",\n  \"laboratoryId\": \"45368932-fe73-5bc0-e47b-334359f893db\",\n  \"laboratory\": {\n    \"id\": \"764805e2-8939-ef6d-52a1-c9ee7fd45239\",\n    \"createdBy\": \"7db8d572-3476-7dbd-3f6b-7049a432fd81\",\n    \"createdOn\": \"1969-08-15T14:46:02.329Z\",\n    \"title\": \"Duis sit\",\n    \"locationId\": \"urn:uuid:3adbf47c-58fb-d11b-70ac-bd51d6caf227\",\n    \"researchersCount\": -24994351,\n    \"researchers\": [\n      {\n        \"id\": \"b94fc6a9-6771-2468-dec3-fa98224ea93c\",\n        \"createdBy\": \"6124a2c2-5c2f-957f-1a02-bc598be9513c\",\n        \"createdOn\": \"1985-03-09T07:16:46.362Z\",\n        \"firstName\": \"reprehenderit laboris incididunt do\",\n        \"lastName\": \"do consequat tempor\",\n        \"dateOfBirth\": \"2022-11-05T18:52:52.095Z\",\n        \"phoneNumber\": \"adipisicing quis nostrud dolor\",\n        \"addressId\": \"urn:uuid:a6453805-3d43-d582-4bc3-d7828c6242e0\",\n        \"address\": {\n          \"id\": \"urn:uuid:6c30385e-d43b-431f-da34-96ec8105d6de\",\n          \"createdBy\": \"urn:uuid:fd46c830-36c7-6c8b-7df9-63cdb39a57e8\",\n          \"createdOn\": \"2013-08-27T04:56:17.625Z\",\n          \"longitude\": 51405078.348061174,\n          \"latitude\": 19552924.986690596,\n          \"country\": \"non\",\n          \"region\": \"ad Ut\",\n          \"district\": \"cupidatat dolor dolore Ut\",\n          \"city\": \"dolore\"\n        },\n        \"role\": 2,\n        \"email\": \"sint est dolor proident\",\n        \"passwordHash\": \"reprehenderit in aute qui cupidatat\",\n        \"organization\": {\n          \"id\": \"668d92e1-69e5-ca42-c454-2dcf3fd0f3ba\",\n          \"createdBy\": \"2d695c44-4dce-d5e8-2cdb-458db4555617\",\n          \"createdOn\": \"2010-12-19T08:50:08.763Z\",\n          \"title\": \"cillum dolore ess\",\n          \"location\": {\n            \"id\": \"998982cc-c228-176d-0eb6-bbb9cf5d38c0\",\n            \"createdBy\": \"urn:uuid:4fce575d-1326-12e0-19c3-d7d511c74bef\",\n            \"createdOn\": \"1948-12-09T03:43:05.961Z\",\n            \"longitude\": 64276872.37050527,\n            \"latitude\": -64254360.4604384,\n            \"country\": \"proident aliquip ex\",\n            \"region\": \"voluptate incididunt in\",\n            \"district\": \"irure\",\n            \"city\": \"veniam et occaecat eiusmod dolor\"\n          },\n          \"locationId\": \"b05fca89-574c-075e-f6b1-cb807073c6bd\"\n        },\n        \"laboratory\": {\n          \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n        },\n        \"accessToken\": \"cupidatat\",\n        \"accessTokenExpireTime\": \"2014-12-13T10:10:21.846Z\",\n        \"refreshToken\": \"veniam\",\n        \"refreshTokenExpireTime\": \"2017-06-09T22:01:57.003Z\",\n        \"organizationId\": \"urn:uuid:1c1f7c43-8046-4931-4b92-245bc1bce11c\",\n        \"laboratoryId\": \"9ebd47d1-3ccf-a80f-87ea-5c59d96324de\",\n        \"password\": \"culpa pariatur exercitation adipisicing dolore\"\n      },\n      {\n        \"id\": \"urn:uuid:72db68ca-d96a-260c-3e17-c5d4fceb553d\",\n        \"createdBy\": \"urn:uuid:d5834a5b-7e91-7c9d-a3fa-9d7c74165367\",\n        \"createdOn\": \"1972-06-14T05:17:06.150Z\",\n        \"firstName\": \"id ex minim reprehenderit eiusmod\",\n        \"lastName\": \"magna veniam mollit\",\n        \"dateOfBirth\": \"1965-12-02T01:26:39.209Z\",\n        \"phoneNumber\": \"officia\",\n        \"addressId\": \"7037eae9-5e5c-96e2-afac-1e25b19c16da\",\n        \"address\": {\n          \"id\": \"urn:uuid:3f8ea543-d866-815b-1abb-b94e38ae5e23\",\n          \"createdBy\": \"urn:uuid:4537dafe-2433-78f3-0478-93a01f7a8c1b\",\n          \"createdOn\": \"1986-09-13T04:24:42.098Z\",\n          \"longitude\": -31306534.56389518,\n          \"latitude\": 31847786.503682137,\n          \"country\": \"eiusmod labore\",\n          \"region\": \"occaecat adipisicing minim\",\n          \"district\": \"Ut Duis deserunt aliquip\",\n          \"city\": \"irure in esse laborum qui\"\n        },\n        \"role\": 3,\n        \"email\": \"pariatur tempor\",\n        \"passwordHash\": \"in\",\n        \"organization\": {\n          \"id\": \"029c39f5-5327-4373-cdce-ddb4d01b77cb\",\n          \"createdBy\": \"urn:uuid:51c27a6d-8a9e-e0a9-5414-a87d9f12436f\",\n          \"createdOn\": \"1958-02-11T01:32:28.513Z\",\n          \"title\": \"quis cillum\",\n          \"location\": {\n            \"id\": \"urn:uuid:b983f96e-140b-2e6f-b081-9d6fc5312eec\",\n            \"createdBy\": \"urn:uuid:c9f28fba-3f95-e24f-835a-384fbb8a120d\",\n            \"createdOn\": \"1990-01-13T07:26:24.561Z\",\n            \"longitude\": 9378471.003740534,\n            \"latitude\": -27595810.44198875,\n            \"country\": \"in nulla\",\n            \"region\": \"voluptate fugiat\",\n            \"district\": \"\",\n            \"city\": \"commodo occaecat in ad in\"\n          },\n          \"locationId\": \"urn:uuid:abef0d4a-f76c-8bba-d5eb-9c2ac4f6c025\"\n        },\n        \"laboratory\": {\n          \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n        },\n        \"accessToken\": \"consequat sunt eu quis\",\n        \"accessTokenExpireTime\": \"1958-01-30T20:58:37.086Z\",\n        \"refreshToken\": \"deserunt aute commodo qui laborum\",\n        \"refreshTokenExpireTime\": \"1973-01-12T08:47:20.322Z\",\n        \"organizationId\": \"urn:uuid:571fbc64-965f-c513-f1ea-29f18b50390c\",\n        \"laboratoryId\": \"urn:uuid:8906e0e4-ee0b-a069-2512-e436635ffbc9\",\n        \"password\": \"proident dolor ut magna\"\n      }\n    ],\n    \"location\": {\n      \"id\": \"1910aac5-a29b-2332-49be-3d74f0553801\",\n      \"createdBy\": \"37e72a20-d67d-7e8c-aa7d-dee5e3144b71\",\n      \"createdOn\": \"1949-11-30T15:31:50.362Z\",\n      \"longitude\": 52708303.07988566,\n      \"latitude\": 93274060.3828147,\n      \"country\": \"ut\",\n      \"region\": \"Excepteur sed in irure\",\n      \"district\": \"eiusmod consequat Excepteur et\",\n      \"city\": \"in enim voluptate\"\n    }\n  },\n  \"researcherId\": \"urn:uuid:57d0a512-0e89-5cc6-67c8-ad4f99e1002c\",\n  \"researcher\": {\n    \"id\": \"urn:uuid:9680ba26-ad7d-4f75-f0f3-a674c18c4b51\",\n    \"createdBy\": \"73b20c79-fb51-9583-b46b-466d2ea8cf8e\",\n    \"createdOn\": \"1969-06-02T11:28:58.638Z\",\n    \"firstName\": \"dolore culpa ad\",\n    \"lastName\": \"ad reprehen\",\n    \"dateOfBirth\": \"1980-09-08T09:11:31.650Z\",\n    \"phoneNumber\": \"mini\",\n    \"addressId\": \"urn:uuid:fc79d800-c882-9547-c094-9e5735a5cfe1\",\n    \"address\": {\n      \"id\": \"032b1808-debf-1f70-610e-c00fb113b496\",\n      \"createdBy\": \"urn:uuid:d8b24803-7958-d0be-403c-58953b83d69b\",\n      \"createdOn\": \"2016-01-07T17:17:29.994Z\",\n      \"longitude\": 52779498.503281236,\n      \"latitude\": 87447467.76338276,\n      \"country\": \"minim laboris\",\n      \"region\": \"pa\",\n      \"district\": \"laborum qui Lorem\",\n      \"city\": \"do\"\n    },\n    \"role\": 2,\n    \"email\": \"occaecat ea pariatur\",\n    \"passwordHash\": \"enim mollit\",\n    \"organization\": {\n      \"id\": \"1dcb6a38-ac08-d616-0dfc-c25298e5478e\",\n      \"createdBy\": \"a569be36-79aa-aa16-f669-191b05e7791d\",\n      \"createdOn\": \"1987-01-07T23:38:44.071Z\",\n      \"title\": \"elit laboris dolore\",\n      \"location\": {\n        \"id\": \"urn:uuid:2e8f2458-14cc-2d9a-5658-8d864274e8d3\",\n        \"createdBy\": \"urn:uuid:41e10508-9adc-1ce5-7a6a-693af6ebcc04\",\n        \"createdOn\": \"1964-01-05T11:47:04.095Z\",\n        \"longitude\": -33646047.06897876,\n        \"latitude\": 14833736.001598224,\n        \"country\": \"anim do irure ut nulla\",\n        \"region\": \"elit ea incididunt sunt dolor\",\n        \"district\": \"occaecat culpa Excepteur\",\n        \"city\": \"pariatur enim sint\"\n      },\n      \"locationId\": \"2bc2e146-a176-b688-38d8-203360a4e17e\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"elit in qui\",\n    \"accessTokenExpireTime\": \"1965-07-23T02:50:36.342Z\",\n    \"refreshToken\": \"cillum nisi\",\n    \"refreshTokenExpireTime\": \"1971-12-10T18:11:13.253Z\",\n    \"organizationId\": \"urn:uuid:b423c8c4-5645-1a9a-4e4f-95c7e1437b3b\",\n    \"laboratoryId\": \"c861565b-f92b-a0c8-9b54-10debb75b02e\",\n    \"password\": \"dolore \"\n  }\n}",
+									"raw": "{\n  \"id\": \"{{$randomUUID}}\",\n  \"createdBy\": \"{{supervisorId}}\",\n  \"createdOn\": \"1971-03-02T20:38:02.287Z\",\n  \"title\": \"laboris dolor ex\",\n  \"type\": 3,\n  \"date\": \"2019-06-22T05:44:57.554Z\",\n  \"description\": \"nostrud ex pariatur p\",\n  \"laboratoryId\": \"{{laboratoryId}}\",\n  \"researcherId\": \"{{researcherId}}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1507,7 +1000,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
+													"value": "d1111111-1111-1111-1111-111111111111",
 													"description": "(Required) "
 												}
 											]
@@ -1578,7 +1071,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": \"af223821-fcfc-6e42-ce7e-ea457cf004d6\",\n  \"createdOn\": \"2009-11-25T18:09:59.036Z\",\n  \"title\": \"non aute Ut\",\n  \"description\": \"veniam minim id tempor\",\n  \"type\": 1,\n  \"responsibleUserId\": \"urn:uuid:8a2ab04e-0004-faf0-04fe-14c4d1609bbb\",\n  \"responsibleUser\": {\n    \"id\": \"urn:uuid:f1f669ab-35e5-fb84-a110-e4762bcc92a9\",\n    \"createdBy\": \"urn:uuid:91052bec-1629-e579-6b7e-ccadc29e2760\",\n    \"createdOn\": \"1969-01-02T05:54:37.853Z\",\n    \"firstName\": \"tempor elit Ut ad\",\n    \"lastName\": \"id reprehenderit aliqua magna\",\n    \"dateOfBirth\": \"2024-08-09T15:38:41.804Z\",\n    \"phoneNumber\": \"velit mollit\",\n    \"addressId\": \"urn:uuid:d60fe810-937a-bd6e-ca06-88d047b219de\",\n    \"address\": {\n      \"id\": \"urn:uuid:bcaa5020-5cd9-97c3-5acd-1d3d61c7ea31\",\n      \"createdBy\": \"urn:uuid:4be7a5fc-674b-7d93-0352-0fa78675558e\",\n      \"createdOn\": \"2006-02-09T16:48:26.680Z\",\n      \"longitude\": -73741913.93772234,\n      \"latitude\": 99680267.71707097,\n      \"country\": \"pariatur nulla nostrud dolore\",\n      \"region\": \"eiusmod dolor sed mollit anim\",\n      \"district\": \"aliqua Lorem consequat dolor aliquip\",\n      \"city\": \"Ut magna culpa\"\n    },\n    \"role\": 3,\n    \"email\": \"amet adipisicing in sint\",\n    \"passwordHash\": \"consequat commodo proident incididunt\",\n    \"organization\": {\n      \"id\": \"41343e93-15a6-d0b9-a8e7-102c6562c00b\",\n      \"createdBy\": \"urn:uuid:d8832108-73e1-6d7b-793d-15a4fb4cad18\",\n      \"createdOn\": \"1974-12-05T12:44:22.915Z\",\n      \"title\": \"laborum\",\n      \"location\": {\n        \"id\": \"832ea46b-f2a5-3c76-d541-df220cf7ff37\",\n        \"createdBy\": \"6f71fb71-2df2-bce6-98b9-0b4170ed2aa4\",\n        \"createdOn\": \"1945-08-05T05:30:46.342Z\",\n        \"longitude\": 49540402.38743818,\n        \"latitude\": -49188628.81548123,\n        \"country\": \"sit\",\n        \"region\": \"ipsum Excepteur laborum sint\",\n        \"district\": \"nostrud nulla in est\",\n        \"city\": \"eiusmod ex\"\n      },\n      \"locationId\": \"urn:uuid:cdd2f77e-df48-2ab8-a68d-11293c1cf652\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"aute\",\n    \"accessTokenExpireTime\": \"1975-12-01T00:51:34.002Z\",\n    \"refreshToken\": \"aliquip non veniam mollit\",\n    \"refreshTokenExpireTime\": \"2003-10-14T14:29:35.879Z\",\n    \"organizationId\": \"80d6a1ea-d5b4-53ec-bbe9-73c0ec098255\",\n    \"laboratoryId\": \"6db033ae-ece2-d543-e65e-f599a5fb361c\",\n    \"password\": \"enim voluptate magna sint\"\n  },\n  \"locationId\": \"f792d4f7-cf98-c6a7-7e48-718c9c2853b0\",\n  \"location\": {\n    \"id\": \"urn:uuid:a31a1275-d477-1f87-a729-2ab2da1e064a\",\n    \"createdBy\": \"urn:uuid:acd77578-cd87-f209-e23f-05213af99a7f\",\n    \"createdOn\": \"2020-05-26T22:04:11.430Z\",\n    \"longitude\": 27216582.937835038,\n    \"latitude\": -92517709.1326779,\n    \"country\": \"ut eiusmod laboris\",\n    \"city\": \"reprehenderit officia\",\n    \"radiusAffected\": -1967038.60703215\n  },\n  \"eDangerState\": 1,\n  \"changedModelLogEntityId\": \"58731f19-44c1-2cb6-bb2c-468f90f808f1\",\n  \"changedModelLog\": {\n    \"id\": \"urn:uuid:44e0d960-6263-ff83-bffd-33aa4bf1f90c\",\n    \"createdBy\": \"de704135-3767-9098-d210-6094e81edc53\",\n    \"createdOn\": \"2023-04-04T10:01:33.901Z\",\n    \"deficiencyType\": 0,\n    \"deficiencyId\": \"urn:uuid:1ba0b39c-bba6-3828-7e8b-620d2a8c1138\",\n    \"changesJson\": \"reprehenderit tempor veniam\"\n  },\n  \"createdBy\": \"urn:uuid:7540aada-7297-b6e3-d559-538c2c37aa2a\",\n  \"creator\": {\n    \"id\": \"urn:uuid:6276e7c4-1dfc-62fd-1b6e-80262813e618\",\n    \"createdBy\": \"urn:uuid:8c4eee0c-e93d-ca65-d6cb-22f005d1888f\",\n    \"createdOn\": \"1953-02-05T05:38:33.120Z\",\n    \"firstName\": \"eu voluptate\",\n    \"lastName\": \"dolore laboris irure reprehenderit\",\n    \"dateOfBirth\": \"1966-08-06T20:54:29.469Z\",\n    \"phoneNumber\": \"ut aliqua est deserunt\",\n    \"addressId\": \"d08d9287-76da-4657-b355-9c4969b7c0a4\",\n    \"address\": {\n      \"id\": \"urn:uuid:07554e90-ba1f-dd06-e0cc-4bf9eced8027\",\n      \"createdBy\": \"35e1ecb9-058b-0130-3b3a-f58f169105c9\",\n      \"createdOn\": \"1990-07-01T13:30:15.667Z\",\n      \"longitude\": 3003623.694611445,\n      \"latitude\": 98734334.94676289,\n      \"country\": \"occaecat dolor officia aute\",\n      \"region\": \"in et\",\n      \"district\": \"dolor consequat ea\",\n      \"city\": \"amet sit eu magna commodo\"\n    },\n    \"role\": 1,\n    \"email\": \"cillum l\",\n    \"passwordHash\": \"Excepteur exercitation pariatur mollit\",\n    \"organization\": {\n      \"id\": \"0b80269f-f3b2-139e-c1ff-ecd4f187e241\",\n      \"createdBy\": \"urn:uuid:9034cd2a-2632-b06e-b79b-0b350cfed986\",\n      \"createdOn\": \"1964-03-02T13:14:00.656Z\",\n      \"title\": \"fugiat ea laboris commodo\",\n      \"location\": {\n        \"id\": \"urn:uuid:5094826e-3613-9724-2108-7ff878c0a7ec\",\n        \"createdBy\": \"urn:uuid:50be5a3c-30a7-eac4-d076-b2c9e96c5a5f\",\n        \"createdOn\": \"2001-09-23T00:50:44.821Z\",\n        \"longitude\": -87331467.42832902,\n        \"latitude\": -55726519.15706661,\n        \"country\": \"irure\",\n        \"region\": \"do Excepteur\",\n        \"district\": \"incididunt sunt aliquip magna\",\n        \"city\": \"nulla sit ex et\"\n      },\n      \"locationId\": \"ced58a6b-f97a-67b6-ff13-7a13209e69cb\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"ea\",\n    \"accessTokenExpireTime\": \"1993-04-12T16:10:35.359Z\",\n    \"refreshToken\": \"laboris\",\n    \"refreshTokenExpireTime\": \"1987-08-02T04:12:08.120Z\",\n    \"organizationId\": \"188e0cb4-1de3-e01f-e0c4-09e6b1cd8288\",\n    \"laboratoryId\": \"urn:uuid:402b18b3-26f3-bebc-7dac-036595a8751e\",\n    \"password\": \"voluptate aute quis\"\n  },\n  \"ph\": 1151236.8756707758,\n  \"organicMatter\": -12785239.20573464,\n  \"leadConcentration\": -82285041.7288028,\n  \"cadmiumConcentration\": 45274814.29671976,\n  \"mercuryConcentration\": -87261565.49751048,\n  \"pesticidesContent\": -17763479.77201,\n  \"nitratesConcentration\": 99397028.85995096,\n  \"heavyMetalsConcentration\": 5658613.902701393,\n  \"electricalConductivity\": -35309744.81418274,\n  \"microbialActivity\": -4920960.695609942,\n  \"analysisDate\": \"1972-09-16T02:37:24.467Z\"\n}",
+											"raw": "{\n    \"id\": \"d1111111-1111-1111-1111-111111111111\",\n    \"title\": \"First Soil def\",\n    \"description\": \"Test descr\",\n    \"type\": 1,\n    \"location\": {\n        \"latitude\": 50.4501,\n        \"longitude\": 30.5234,\n        \"city\": \"Sydney\",\n        \"country\": \"Australia\",\n        \"radiusAffected\": 10\n    },\n    \"eDangerState\": 0,\n    \"ph\": 6.5,\n    \"organicMatter\": 3.8,\n    \"leadConcentration\": 150,\n    \"cadmiumConcentration\": 1.2,\n    \"mercuryConcentration\": 0.6,\n    \"pesticidesContent\": 0.8,\n    \"nitratesConcentration\": 45,\n    \"heavyMetalsConcentration\": 120,\n    \"electricalConductivity\": 0.7,\n    \"microbialActivity\": 3200,\n    \"analysisDate\": \"2025-01-14T22:00:00Z\",\n    \"createdBy\": \"{{supervisorId}}\",\n    \"createdOn\": \"2025-03-19T09:06:35.635059Z\",\n    \"responsibleUserId\": \"{{supervisorId}}\",\n    \"locationId\": \"b4444444-4444-4444-4444-444444444444\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -1599,7 +1092,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
+													"value": "d1111111-1111-1111-1111-111111111111",
 													"description": "(Required) "
 												}
 											]
@@ -1680,7 +1173,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/soildeficiency?scrollCount=-68690176&esse_0=velit&cillum9=exercitation dolore&nulla23e=mollit elit consequat officia",
+									"raw": "{{baseUrl}}/api/soildeficiency?scrollCount=0&esse_0=velit&cillum9=exercitation dolore&nulla23e=mollit elit consequat officia",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1691,7 +1184,7 @@
 									"query": [
 										{
 											"key": "scrollCount",
-											"value": "-68690176"
+											"value": "0"
 										},
 										{
 											"key": "esse_0",
@@ -1785,7 +1278,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": \"af223821-fcfc-6e42-ce7e-ea457cf004d6\",\n  \"createdOn\": \"2009-11-25T18:09:59.036Z\",\n  \"title\": \"non aute Ut\",\n  \"description\": \"veniam minim id tempor\",\n  \"type\": 1,\n  \"responsibleUserId\": \"urn:uuid:8a2ab04e-0004-faf0-04fe-14c4d1609bbb\",\n  \"responsibleUser\": {\n    \"id\": \"urn:uuid:f1f669ab-35e5-fb84-a110-e4762bcc92a9\",\n    \"createdBy\": \"urn:uuid:91052bec-1629-e579-6b7e-ccadc29e2760\",\n    \"createdOn\": \"1969-01-02T05:54:37.853Z\",\n    \"firstName\": \"tempor elit Ut ad\",\n    \"lastName\": \"id reprehenderit aliqua magna\",\n    \"dateOfBirth\": \"2024-08-09T15:38:41.804Z\",\n    \"phoneNumber\": \"velit mollit\",\n    \"addressId\": \"urn:uuid:d60fe810-937a-bd6e-ca06-88d047b219de\",\n    \"address\": {\n      \"id\": \"urn:uuid:bcaa5020-5cd9-97c3-5acd-1d3d61c7ea31\",\n      \"createdBy\": \"urn:uuid:4be7a5fc-674b-7d93-0352-0fa78675558e\",\n      \"createdOn\": \"2006-02-09T16:48:26.680Z\",\n      \"longitude\": -73741913.93772234,\n      \"latitude\": 99680267.71707097,\n      \"country\": \"pariatur nulla nostrud dolore\",\n      \"region\": \"eiusmod dolor sed mollit anim\",\n      \"district\": \"aliqua Lorem consequat dolor aliquip\",\n      \"city\": \"Ut magna culpa\"\n    },\n    \"role\": 3,\n    \"email\": \"amet adipisicing in sint\",\n    \"passwordHash\": \"consequat commodo proident incididunt\",\n    \"organization\": {\n      \"id\": \"41343e93-15a6-d0b9-a8e7-102c6562c00b\",\n      \"createdBy\": \"urn:uuid:d8832108-73e1-6d7b-793d-15a4fb4cad18\",\n      \"createdOn\": \"1974-12-05T12:44:22.915Z\",\n      \"title\": \"laborum\",\n      \"location\": {\n        \"id\": \"832ea46b-f2a5-3c76-d541-df220cf7ff37\",\n        \"createdBy\": \"6f71fb71-2df2-bce6-98b9-0b4170ed2aa4\",\n        \"createdOn\": \"1945-08-05T05:30:46.342Z\",\n        \"longitude\": 49540402.38743818,\n        \"latitude\": -49188628.81548123,\n        \"country\": \"sit\",\n        \"region\": \"ipsum Excepteur laborum sint\",\n        \"district\": \"nostrud nulla in est\",\n        \"city\": \"eiusmod ex\"\n      },\n      \"locationId\": \"urn:uuid:cdd2f77e-df48-2ab8-a68d-11293c1cf652\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"aute\",\n    \"accessTokenExpireTime\": \"1975-12-01T00:51:34.002Z\",\n    \"refreshToken\": \"aliquip non veniam mollit\",\n    \"refreshTokenExpireTime\": \"2003-10-14T14:29:35.879Z\",\n    \"organizationId\": \"80d6a1ea-d5b4-53ec-bbe9-73c0ec098255\",\n    \"laboratoryId\": \"6db033ae-ece2-d543-e65e-f599a5fb361c\",\n    \"password\": \"enim voluptate magna sint\"\n  },\n  \"locationId\": \"f792d4f7-cf98-c6a7-7e48-718c9c2853b0\",\n  \"location\": {\n    \"id\": \"urn:uuid:a31a1275-d477-1f87-a729-2ab2da1e064a\",\n    \"createdBy\": \"urn:uuid:acd77578-cd87-f209-e23f-05213af99a7f\",\n    \"createdOn\": \"2020-05-26T22:04:11.430Z\",\n    \"longitude\": 27216582.937835038,\n    \"latitude\": -92517709.1326779,\n    \"country\": \"ut eiusmod laboris\",\n    \"city\": \"reprehenderit officia\",\n    \"radiusAffected\": -1967038.60703215\n  },\n  \"eDangerState\": 1,\n  \"changedModelLogEntityId\": \"58731f19-44c1-2cb6-bb2c-468f90f808f1\",\n  \"changedModelLog\": {\n    \"id\": \"urn:uuid:44e0d960-6263-ff83-bffd-33aa4bf1f90c\",\n    \"createdBy\": \"de704135-3767-9098-d210-6094e81edc53\",\n    \"createdOn\": \"2023-04-04T10:01:33.901Z\",\n    \"deficiencyType\": 0,\n    \"deficiencyId\": \"urn:uuid:1ba0b39c-bba6-3828-7e8b-620d2a8c1138\",\n    \"changesJson\": \"reprehenderit tempor veniam\"\n  },\n  \"createdBy\": \"urn:uuid:7540aada-7297-b6e3-d559-538c2c37aa2a\",\n  \"creator\": {\n    \"id\": \"urn:uuid:6276e7c4-1dfc-62fd-1b6e-80262813e618\",\n    \"createdBy\": \"urn:uuid:8c4eee0c-e93d-ca65-d6cb-22f005d1888f\",\n    \"createdOn\": \"1953-02-05T05:38:33.120Z\",\n    \"firstName\": \"eu voluptate\",\n    \"lastName\": \"dolore laboris irure reprehenderit\",\n    \"dateOfBirth\": \"1966-08-06T20:54:29.469Z\",\n    \"phoneNumber\": \"ut aliqua est deserunt\",\n    \"addressId\": \"d08d9287-76da-4657-b355-9c4969b7c0a4\",\n    \"address\": {\n      \"id\": \"urn:uuid:07554e90-ba1f-dd06-e0cc-4bf9eced8027\",\n      \"createdBy\": \"35e1ecb9-058b-0130-3b3a-f58f169105c9\",\n      \"createdOn\": \"1990-07-01T13:30:15.667Z\",\n      \"longitude\": 3003623.694611445,\n      \"latitude\": 98734334.94676289,\n      \"country\": \"occaecat dolor officia aute\",\n      \"region\": \"in et\",\n      \"district\": \"dolor consequat ea\",\n      \"city\": \"amet sit eu magna commodo\"\n    },\n    \"role\": 1,\n    \"email\": \"cillum l\",\n    \"passwordHash\": \"Excepteur exercitation pariatur mollit\",\n    \"organization\": {\n      \"id\": \"0b80269f-f3b2-139e-c1ff-ecd4f187e241\",\n      \"createdBy\": \"urn:uuid:9034cd2a-2632-b06e-b79b-0b350cfed986\",\n      \"createdOn\": \"1964-03-02T13:14:00.656Z\",\n      \"title\": \"fugiat ea laboris commodo\",\n      \"location\": {\n        \"id\": \"urn:uuid:5094826e-3613-9724-2108-7ff878c0a7ec\",\n        \"createdBy\": \"urn:uuid:50be5a3c-30a7-eac4-d076-b2c9e96c5a5f\",\n        \"createdOn\": \"2001-09-23T00:50:44.821Z\",\n        \"longitude\": -87331467.42832902,\n        \"latitude\": -55726519.15706661,\n        \"country\": \"irure\",\n        \"region\": \"do Excepteur\",\n        \"district\": \"incididunt sunt aliquip magna\",\n        \"city\": \"nulla sit ex et\"\n      },\n      \"locationId\": \"ced58a6b-f97a-67b6-ff13-7a13209e69cb\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"ea\",\n    \"accessTokenExpireTime\": \"1993-04-12T16:10:35.359Z\",\n    \"refreshToken\": \"laboris\",\n    \"refreshTokenExpireTime\": \"1987-08-02T04:12:08.120Z\",\n    \"organizationId\": \"188e0cb4-1de3-e01f-e0c4-09e6b1cd8288\",\n    \"laboratoryId\": \"urn:uuid:402b18b3-26f3-bebc-7dac-036595a8751e\",\n    \"password\": \"voluptate aute quis\"\n  },\n  \"ph\": 1151236.8756707758,\n  \"organicMatter\": -12785239.20573464,\n  \"leadConcentration\": -82285041.7288028,\n  \"cadmiumConcentration\": 45274814.29671976,\n  \"mercuryConcentration\": -87261565.49751048,\n  \"pesticidesContent\": -17763479.77201,\n  \"nitratesConcentration\": 99397028.85995096,\n  \"heavyMetalsConcentration\": 5658613.902701393,\n  \"electricalConductivity\": -35309744.81418274,\n  \"microbialActivity\": -4920960.695609942,\n  \"analysisDate\": \"1972-09-16T02:37:24.467Z\"\n}",
+									"raw": "{\n    \"id\": \"{{$randomUUID}}\",\n    \"title\": \"Test title\",\n    \"description\": \"test descr\",\n    \"type\": 1,\n    \"location\": {\n        \"latitude\": 34,\n        \"longitude\": 36,\n        \"city\": \"Test city\",\n        \"country\": \"test country\",\n        \"radiusAffected\": 10\n    },\n    \"eDangerState\": 0,\n    \"ph\": 6.5,\n    \"organicMatter\": 0,\n    \"leadConcentration\": 0,\n    \"cadmiumConcentration\": 0,\n    \"mercuryConcentration\": 0,\n    \"pesticidesContent\": 0,\n    \"nitratesConcentration\": 0,\n    \"heavyMetalsConcentration\": 0,\n    \"electricalConductivity\": 0,\n    \"microbialActivity\": 0,\n    \"analysisDate\": \"2025-05-21T21:00:00.000Z\",\n    \"createdBy\": \"{{supervisorId}}\",\n    \"createdOn\": \"2025-05-31T15:55:11.409Z\",\n    \"responsibleUserId\": \"{{supervisorId}}\",\n    \"locationId\": \"6fda8644-f4ab-4a68-baa5-30f08d7f8060\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1879,7 +1372,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/user/organization-users?organizationId=2f78745c-17a8-26a5-7576-0ef35b8e7897&scrollCount=-68690176",
+											"raw": "{{baseUrl}}/api/user/organization-users?organizationId=bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb&scrollCount=0",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -1891,11 +1384,11 @@
 											"query": [
 												{
 													"key": "organizationId",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897"
+													"value": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
 												},
 												{
 													"key": "scrollCount",
-													"value": "-68690176"
+													"value": "0"
 												}
 											]
 										}
@@ -2144,124 +1637,10 @@
 							]
 						},
 						{
-							"name": "check-token-expiration",
-							"item": [
-								{
-									"name": "Check token expiration and availability",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"console.log(\"Request Body:\", pm.request.body.raw);\r",
-													"\r",
-													"pm.test(\"Status code is 200 or 201\", function () {\r",
-													"    pm.expect([200, 201]).to.include(pm.response.code);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Response should be false\", function () {\r",
-													"    pm.expect(pm.response.json()).to.equal(false);\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"console.log(\"Request Body:\", pm.request.body.raw);"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "\"{{activeToken}}\"",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/user/check-token-expiration",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"user",
-												"check-token-expiration"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Authorization",
-														"value": "<API Key>",
-														"description": "Added as a part of security scheme: apikey"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "Ex",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseUrl}}/api/user/check-token-expiration",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"user",
-														"check-token-expiration"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
 							"name": "refresh-access-token",
 							"item": [
 								{
-									"name": "Check token expiration and availability",
+									"name": "Refresh access token",
 									"event": [
 										{
 											"listen": "test",
@@ -2287,7 +1666,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "\"{{activeToken}}\"",
+											"raw": "{\r\n    \"refreshToken\": \"{{refreshToken}}\"\r\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -2386,7 +1765,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"firstName\": \"anim ullamco ad Excepteur\",\n  \"lastName\": \"consequat ut mollit Excepteur\",\n  \"userId\": \"49cb41c9-21f1-8b33-3837-f4bca006849e\",\n  \"organizationId\": \"urn:uuid:b449ef2e-0fa6-3a52-d8f9-1f553b6efe96\",\n  \"email\": \"mo\",\n  \"password\": \"dolor\",\n  \"passwordHash\": \"ullamco sit tempor consequat\"\n}",
+											"raw": "{\n  \"firstName\": \"Anim\",\n  \"lastName\": \"Excepteur\",\n  \"organizationId\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb\",\n  \"email\": \"anim.excepteur@example.com\",\n  \"password\": \"StrongPass123!\",\n  \"passwordHash\": \"9c56cc51a42e7f8aee08d84f04f1738f7b93817f8ac2e4e0a5d10e3c45f930e9\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -2485,7 +1864,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "[\n  {\n    \"id\": \"urn:uuid:2e43ad06-13d8-3267-3362-927f00090e17\",\n    \"createdBy\": \"6e58108c-4366-7a87-4caa-d0239684c330\",\n    \"createdOn\": \"1966-05-28T11:34:20.638Z\",\n    \"firstName\": \"cillum in\",\n    \"lastName\": \"deserunt sunt\",\n    \"dateOfBirth\": \"2023-04-08T09:03:20.496Z\",\n    \"phoneNumber\": \"sint est\",\n    \"addressId\": \"482f0777-823a-fb9c-072b-a05f368edf96\",\n    \"address\": {\n      \"id\": \"a034fa0e-aef4-e2b2-172e-aa84cb63e669\",\n      \"createdBy\": \"d48576a5-f057-9a39-1dc2-e7132ff8644a\",\n      \"createdOn\": \"1983-01-22T05:39:31.273Z\",\n      \"longitude\": -74714593.91893518,\n      \"latitude\": -57980252.17271943,\n      \"country\": \"do nulla\",\n      \"region\": \"dolor proident aliqua\",\n      \"district\": \"ut laborum sin\",\n      \"city\": \"dolore nisi anim\"\n    },\n    \"role\": 4,\n    \"email\": \"dolor\",\n    \"passwordHash\": \"aliquip enim irure id\",\n    \"organization\": {\n      \"id\": \"26263798-d43b-b2be-8f02-b1ee9e7d09ec\",\n      \"createdBy\": \"912211f2-5b15-e5b8-c863-41697bcd7066\",\n      \"createdOn\": \"1987-10-23T12:04:53.866Z\",\n      \"title\": \"exercitation dolore sunt dolore\",\n      \"location\": {\n        \"id\": \"urn:uuid:02f88048-aadc-496b-5acf-5dd6e26f09e4\",\n        \"createdBy\": \"urn:uuid:f7ea121e-b74e-8ab5-2a2a-b771552eeb28\",\n        \"createdOn\": \"1984-05-07T04:29:17.165Z\",\n        \"longitude\": 99845354.41428038,\n        \"latitude\": 79459738.80863664,\n        \"country\": \"nisi quis cillum minim\",\n        \"region\": \"nostrud dolor eiusmod non\",\n        \"district\": \"sint aliqua\",\n        \"city\": \"eu do nostrud\"\n      },\n      \"locationId\": \"6a8165bd-f859-9b0f-ee0c-ecf11d29bb73\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"ut laboris\",\n    \"accessTokenExpireTime\": \"1952-01-09T03:29:01.320Z\",\n    \"refreshToken\": \"sunt qui nostrud minim\",\n    \"refreshTokenExpireTime\": \"2009-04-23T11:41:22.946Z\",\n    \"organizationId\": \"df2aa20d-ba40-be16-3aef-c38e476cf06b\",\n    \"laboratoryId\": \"urn:uuid:c5be3976-d646-a420-97ff-12c4ba5a5cbd\",\n    \"password\": \"dolore cupidatat culpa\"\n  },\n  {\n    \"id\": \"fad9ab0d-a487-5cb2-f64a-55535f7d3636\",\n    \"createdBy\": \"22877e33-ffc6-8ec7-a78b-4ea7e9bf38bb\",\n    \"createdOn\": \"2008-04-01T23:30:11.856Z\",\n    \"firstName\": \"in amet in incididunt nulla\",\n    \"lastName\": \"do nulla dolor fugiat proident\",\n    \"dateOfBirth\": \"2022-10-08T00:16:07.803Z\",\n    \"phoneNumber\": \"elit tempor irure minim\",\n    \"addressId\": \"urn:uuid:b05bb057-e78c-55e1-de6a-7f1cfbca416b\",\n    \"address\": {\n      \"id\": \"2109a403-daf1-bfb5-8454-6357cadf872b\",\n      \"createdBy\": \"712c29a3-f9aa-d95c-e856-cc8587f991fb\",\n      \"createdOn\": \"2021-02-26T00:51:01.985Z\",\n      \"longitude\": 33507508.753172815,\n      \"latitude\": -28980799.792970806,\n      \"country\": \"Excepteur quis sit\",\n      \"region\": \"qui dolore eu\",\n      \"district\": \"fugi\",\n      \"city\": \"dolor laborum sed\"\n    },\n    \"role\": 3,\n    \"email\": \"Duis officia\",\n    \"passwordHash\": \"nulla sint Ut laboris\",\n    \"organization\": {\n      \"id\": \"f6288282-7332-f4de-d508-5a1dc315ad31\",\n      \"createdBy\": \"urn:uuid:ed8dd0ca-df64-9659-34ad-f5e1644e9089\",\n      \"createdOn\": \"2019-07-19T19:26:40.759Z\",\n      \"title\": \"et pariatur aut\",\n      \"location\": {\n        \"id\": \"urn:uuid:d6b61632-8f0c-641d-b381-80ed316ff7a8\",\n        \"createdBy\": \"urn:uuid:305fc176-9702-7b82-a27c-a9f7a5ad5eaf\",\n        \"createdOn\": \"1969-12-01T17:27:57.915Z\",\n        \"longitude\": -91413034.75287054,\n        \"latitude\": -75602385.70016411,\n        \"country\": \"veniam\",\n        \"region\": \"ipsum\",\n        \"district\": \"quis irure\",\n        \"city\": \"sit amet nisi ullamco\"\n      },\n      \"locationId\": \"urn:uuid:d74b1050-0be2-6b5e-d028-079e85b5bb02\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"elit aliquip\",\n    \"accessTokenExpireTime\": \"1956-08-24T09:24:39.060Z\",\n    \"refreshToken\": \"amet \",\n    \"refreshTokenExpireTime\": \"1978-06-01T00:17:13.998Z\",\n    \"organizationId\": \"c45e5ed0-2a31-9815-11e1-f23218a9dd5a\",\n    \"laboratoryId\": \"05031579-cc00-fa4f-79ae-6413b26f46b0\",\n    \"password\": \"adipisicing laborum cupidatat\"\n  }\n]",
+											"raw": "[\n    {\n        \"firstName\": \"mkz97uf9pkyl\",\n        \"lastName\": \"ndyphzkv6ah2\",\n        \"email\": \"yw35t62nd3jy@example.com\",\n        \"password\": \"k8zbaCZd\",\n        \"organizationId\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb\"\n    },\n    {\n        \"firstName\": \"16w4bya9gk7b\",\n        \"lastName\": \"fonmyxvvtrak\",\n        \"email\": \"u6bxjg4d3cma@example.com\",\n        \"password\": \"h3Bwk&6z\",\n        \"organizationId\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb\"\n    }\n]",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -2677,7 +2056,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
+													"value": "c1111111-1111-1111-1111-111111111111",
 													"description": "(Required) "
 												}
 											]
@@ -2748,7 +2127,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": \"460b11d5-f4ce-c0c0-b984-484d10cace56\",\n  \"createdOn\": \"1993-12-05T06:55:23.865Z\",\n  \"title\": \"laborum occaecat eiusmod labore cupidatat\",\n  \"description\": \"amet sed irure\",\n  \"type\": 1,\n  \"responsibleUserId\": \"urn:uuid:fcb790c3-fd47-5bcc-af82-66333ee84fed\",\n  \"responsibleUser\": {\n    \"id\": \"urn:uuid:e2137dc7-c003-a13f-d999-75f7fd206c7a\",\n    \"createdBy\": \"8526ec5c-aeba-f39e-3270-b6063001d7c0\",\n    \"createdOn\": \"1984-09-30T21:20:22.086Z\",\n    \"firstName\": \"deserunt\",\n    \"lastName\": \"mollit quis sint ut\",\n    \"dateOfBirth\": \"1953-01-23T05:21:28.971Z\",\n    \"phoneNumber\": \"eiusmod veniam pariatur proident velit\",\n    \"addressId\": \"4941147b-c136-4430-97fe-4b91b11cac5a\",\n    \"address\": {\n      \"id\": \"b3e41583-a272-f41f-bd14-aba0ed6e3430\",\n      \"createdBy\": \"30cd54ab-c260-11a2-ca11-2fb56de7a554\",\n      \"createdOn\": \"2022-05-01T23:00:01.959Z\",\n      \"longitude\": 30935883.555111006,\n      \"latitude\": 80512968.91016099,\n      \"country\": \"et ad\",\n      \"region\": \"dolor aliquip\",\n      \"district\": \"Lorem labore cupidatat\",\n      \"city\": \"irure occaecat Excepteur\"\n    },\n    \"role\": 4,\n    \"email\": \"elit voluptate reprehenderit eiusmod\",\n    \"passwordHash\": \"consequat pariatur aliquip\",\n    \"organization\": {\n      \"id\": \"6726b496-9d9e-ca53-761f-1fb93e6a9102\",\n      \"createdBy\": \"urn:uuid:9535ff90-9887-b961-be8a-2b674a9957a1\",\n      \"createdOn\": \"1963-10-31T11:59:27.541Z\",\n      \"title\": \"do\",\n      \"location\": {\n        \"id\": \"urn:uuid:0f897c6f-fba2-f721-cf53-7afeb224deef\",\n        \"createdBy\": \"0ce4676b-dfce-80cc-9c51-d0db6c698e22\",\n        \"createdOn\": \"1959-05-23T07:05:24.178Z\",\n        \"longitude\": -22122110.06656839,\n        \"latitude\": 58925131.65041295,\n        \"country\": \"ea\",\n        \"region\": \"occaecat qui aute\",\n        \"district\": \"sed\",\n        \"city\": \"in est quis dolor\"\n      },\n      \"locationId\": \"12270754-f80c-48e7-be55-1a92d10438ab\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"minim anim\",\n    \"accessTokenExpireTime\": \"1986-10-31T20:45:02.241Z\",\n    \"refreshToken\": \"tempor ut elit ut\",\n    \"refreshTokenExpireTime\": \"2013-07-18T08:03:29.870Z\",\n    \"organizationId\": \"urn:uuid:cf0d7bf2-60f8-ef92-d5c1-71a95c86947a\",\n    \"laboratoryId\": \"urn:uuid:06cf8922-3e8b-f306-ecba-959097de7d56\",\n    \"password\": \"et laboris\"\n  },\n  \"locationId\": \"8fa2b4ed-d6a4-6ec8-7f8a-d3d927277bb7\",\n  \"location\": {\n    \"id\": \"urn:uuid:899fbd3b-1baa-d4ed-17d8-79bf24a88550\",\n    \"createdBy\": \"802a4a46-4247-150a-56d3-f7958d32c827\",\n    \"createdOn\": \"1993-09-04T05:15:50.181Z\",\n    \"longitude\": 36016334.2101849,\n    \"latitude\": -68537732.86271223,\n    \"country\": \"\",\n    \"city\": \"sit ea enim\",\n    \"radiusAffected\": -45176834.61069859\n  },\n  \"eDangerState\": 0,\n  \"changedModelLogEntityId\": \"urn:uuid:d3527f90-0997-e777-f9a8-fb1c55518cfe\",\n  \"changedModelLog\": {\n    \"id\": \"82c139d6-5bfb-6923-f331-39e86e3d38b3\",\n    \"createdBy\": \"0de6e0dc-9b27-779b-0241-3cae959a09b8\",\n    \"createdOn\": \"1952-06-29T14:22:22.410Z\",\n    \"deficiencyType\": 0,\n    \"deficiencyId\": \"cd1213e8-3558-23cc-9b9a-b3cc29b5392a\",\n    \"changesJson\": \"reprehenderit laborum irure eiusmod\"\n  },\n  \"createdBy\": \"bbd7f3e6-b393-7444-937c-8112cc52002b\",\n  \"creator\": {\n    \"id\": \"7e10820f-ee44-3d53-6e7a-b3851e2d5f04\",\n    \"createdBy\": \"urn:uuid:092b2a02-6324-0863-fb11-abd276ecec12\",\n    \"createdOn\": \"1971-05-18T19:54:29.216Z\",\n    \"firstName\": \"mollit sunt labore\",\n    \"lastName\": \"aliqua\",\n    \"dateOfBirth\": \"2018-10-03T10:18:55.913Z\",\n    \"phoneNumber\": \"aute in\",\n    \"addressId\": \"7b9661a8-3657-2c55-08d5-4a95c75a9fad\",\n    \"address\": {\n      \"id\": \"urn:uuid:6ab6bbb1-e1e9-bfc9-cbc7-d7be5206555e\",\n      \"createdBy\": \"urn:uuid:de9461cd-b194-b83d-d52f-f51ca06d01d8\",\n      \"createdOn\": \"1992-12-28T16:36:39.179Z\",\n      \"longitude\": 46717650.23673454,\n      \"latitude\": -88056218.69349016,\n      \"country\": \"pariatur sed velit\",\n      \"region\": \"magna pariatur irure ut\",\n      \"district\": \"commodo mol\",\n      \"city\": \"Duis adipisicing pariatur\"\n    },\n    \"role\": 1,\n    \"email\": \"ullamco consectetur anim Lorem\",\n    \"passwordHash\": \"dolore of\",\n    \"organization\": {\n      \"id\": \"urn:uuid:d700c33b-2652-e348-fb65-d23bb46b2d04\",\n      \"createdBy\": \"fb55bdb1-0473-4974-660f-d5201996aa92\",\n      \"createdOn\": \"1972-08-23T08:39:39.948Z\",\n      \"title\": \"eiusmod aliqua in\",\n      \"location\": {\n        \"id\": \"30f34fef-618a-270f-d1f4-e165d0d0447a\",\n        \"createdBy\": \"c870501c-0d42-8b69-8cf8-e6efcfcc1ff3\",\n        \"createdOn\": \"1948-06-01T04:03:43.483Z\",\n        \"longitude\": 78425935.44142279,\n        \"latitude\": -62287243.21095007,\n        \"country\": \"minim ut aliqua\",\n        \"region\": \"in laborum nulla\",\n        \"district\": \"adipisicing aliqua\",\n        \"city\": \"dolor fugiat ut laboris\"\n      },\n      \"locationId\": \"urn:uuid:6540ceb6-37fc-7834-2600-b34567917a24\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"consectetur occaeca\",\n    \"accessTokenExpireTime\": \"1998-05-15T22:33:44.371Z\",\n    \"refreshToken\": \"eiusmod aliqua mollit magna\",\n    \"refreshTokenExpireTime\": \"1954-04-23T20:33:14.342Z\",\n    \"organizationId\": \"2c6d28ee-3f08-a275-0e8c-dff2d28ebba0\",\n    \"laboratoryId\": \"ac71b051-8671-51b7-a458-d273740ea4b3\",\n    \"password\": \"deserunt elit\"\n  },\n  \"ph\": 3.52213399096059,\n  \"dissolvedOxygen\": 19.980200452239014,\n  \"leadConcentration\": 0.006122473265291178,\n  \"mercuryConcentration\": 0.0008738258657256527,\n  \"nitrateConcentration\": 5.763986397043308,\n  \"pesticidesContent\": 0.004780358343783509,\n  \"microbialActivity\": 171.55608923372046,\n  \"radiationLevel\": 2.021427303882888,\n  \"chemicalOxygenDemand\": 275.9018000638347,\n  \"biologicalOxygenDemand\": 12.12386809167803,\n  \"phosphateConcentration\": 1.2614260063918061,\n  \"cadmiumConcentration\": 0.004825756729712651,\n  \"totalDissolvedSolids\": 1268.4218183308888,\n  \"electricalConductivity\": 2246.428397074024,\n  \"microbialLoad\": 368.55496918121554\n}",
+											"raw": "{\n    \"id\": \"c1111111-1111-1111-1111-111111111111\",\n    \"title\": \"First Water def\",\n    \"description\": \"Test descr\",\n    \"type\": 0,\n    \"location\": {\n        \"latitude\": 50.4501,\n        \"longitude\": 30.5234,\n        \"city\": \"Addis Ababa\",\n        \"country\": \"Ethiopia\",\n        \"radiusAffected\": 10\n    },\n    \"eDangerState\": 0,\n    \"ph\": 7.2,\n    \"dissolvedOxygen\": 6.8,\n    \"leadConcentration\": 0.005,\n    \"mercuryConcentration\": 0.0003,\n    \"nitratesConcentration\": 0,\n    \"pesticidesContent\": 0.001,\n    \"microbialActivity\": 0,\n    \"radiationLevel\": 0,\n    \"chemicalOxygenDemand\": 0,\n    \"biologicalOxygenDemand\": 4.5,\n    \"phosphateConcentration\": 1.1,\n    \"cadmiumConcentration\": 0.003,\n    \"totalDissolvedSolids\": 500,\n    \"electricalConductivity\": 2,\n    \"microbialLoad\": 1500,\n    \"createdBy\": \"{{supervisorId}}\",\n    \"createdOn\": \"2025-03-19T09:06:35.634771Z\",\n    \"responsibleUserId\": \"{{supervisorId}}\",\n    \"locationId\": \"b1111111-1111-1111-1111-111111111111\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -2769,7 +2148,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "2f78745c-17a8-26a5-7576-0ef35b8e7897",
+													"value": "c1111111-1111-1111-1111-111111111111",
 													"description": "(Required) "
 												}
 											]
@@ -2850,7 +2229,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/waterdeficiency?scrollCount=-68690176&esse_0=velit&cillum9=exercitation dolore&nulla23e=mollit elit consequat officia",
+									"raw": "{{baseUrl}}/api/waterdeficiency?scrollCount=0&esse_0=velit&cillum9=exercitation dolore&nulla23e=mollit elit consequat officia",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -2861,7 +2240,7 @@
 									"query": [
 										{
 											"key": "scrollCount",
-											"value": "-68690176"
+											"value": "0"
 										},
 										{
 											"key": "esse_0",
@@ -2955,7 +2334,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": \"460b11d5-f4ce-c0c0-b984-484d10cace56\",\n  \"createdOn\": \"1993-12-05T06:55:23.865Z\",\n  \"title\": \"laborum occaecat eiusmod labore cupidatat\",\n  \"description\": \"amet sed irure\",\n  \"type\": 1,\n  \"responsibleUserId\": \"urn:uuid:fcb790c3-fd47-5bcc-af82-66333ee84fed\",\n  \"responsibleUser\": {\n    \"id\": \"urn:uuid:e2137dc7-c003-a13f-d999-75f7fd206c7a\",\n    \"createdBy\": \"8526ec5c-aeba-f39e-3270-b6063001d7c0\",\n    \"createdOn\": \"1984-09-30T21:20:22.086Z\",\n    \"firstName\": \"deserunt\",\n    \"lastName\": \"mollit quis sint ut\",\n    \"dateOfBirth\": \"1953-01-23T05:21:28.971Z\",\n    \"phoneNumber\": \"eiusmod veniam pariatur proident velit\",\n    \"addressId\": \"4941147b-c136-4430-97fe-4b91b11cac5a\",\n    \"address\": {\n      \"id\": \"b3e41583-a272-f41f-bd14-aba0ed6e3430\",\n      \"createdBy\": \"30cd54ab-c260-11a2-ca11-2fb56de7a554\",\n      \"createdOn\": \"2022-05-01T23:00:01.959Z\",\n      \"longitude\": 30935883.555111006,\n      \"latitude\": 80512968.91016099,\n      \"country\": \"et ad\",\n      \"region\": \"dolor aliquip\",\n      \"district\": \"Lorem labore cupidatat\",\n      \"city\": \"irure occaecat Excepteur\"\n    },\n    \"role\": 4,\n    \"email\": \"elit voluptate reprehenderit eiusmod\",\n    \"passwordHash\": \"consequat pariatur aliquip\",\n    \"organization\": {\n      \"id\": \"6726b496-9d9e-ca53-761f-1fb93e6a9102\",\n      \"createdBy\": \"urn:uuid:9535ff90-9887-b961-be8a-2b674a9957a1\",\n      \"createdOn\": \"1963-10-31T11:59:27.541Z\",\n      \"title\": \"do\",\n      \"location\": {\n        \"id\": \"urn:uuid:0f897c6f-fba2-f721-cf53-7afeb224deef\",\n        \"createdBy\": \"0ce4676b-dfce-80cc-9c51-d0db6c698e22\",\n        \"createdOn\": \"1959-05-23T07:05:24.178Z\",\n        \"longitude\": -22122110.06656839,\n        \"latitude\": 58925131.65041295,\n        \"country\": \"ea\",\n        \"region\": \"occaecat qui aute\",\n        \"district\": \"sed\",\n        \"city\": \"in est quis dolor\"\n      },\n      \"locationId\": \"12270754-f80c-48e7-be55-1a92d10438ab\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"minim anim\",\n    \"accessTokenExpireTime\": \"1986-10-31T20:45:02.241Z\",\n    \"refreshToken\": \"tempor ut elit ut\",\n    \"refreshTokenExpireTime\": \"2013-07-18T08:03:29.870Z\",\n    \"organizationId\": \"urn:uuid:cf0d7bf2-60f8-ef92-d5c1-71a95c86947a\",\n    \"laboratoryId\": \"urn:uuid:06cf8922-3e8b-f306-ecba-959097de7d56\",\n    \"password\": \"et laboris\"\n  },\n  \"locationId\": \"8fa2b4ed-d6a4-6ec8-7f8a-d3d927277bb7\",\n  \"location\": {\n    \"id\": \"urn:uuid:899fbd3b-1baa-d4ed-17d8-79bf24a88550\",\n    \"createdBy\": \"802a4a46-4247-150a-56d3-f7958d32c827\",\n    \"createdOn\": \"1993-09-04T05:15:50.181Z\",\n    \"longitude\": 36016334.2101849,\n    \"latitude\": -68537732.86271223,\n    \"country\": \"\",\n    \"city\": \"sit ea enim\",\n    \"radiusAffected\": -45176834.61069859\n  },\n  \"eDangerState\": 0,\n  \"changedModelLogEntityId\": \"urn:uuid:d3527f90-0997-e777-f9a8-fb1c55518cfe\",\n  \"changedModelLog\": {\n    \"id\": \"82c139d6-5bfb-6923-f331-39e86e3d38b3\",\n    \"createdBy\": \"0de6e0dc-9b27-779b-0241-3cae959a09b8\",\n    \"createdOn\": \"1952-06-29T14:22:22.410Z\",\n    \"deficiencyType\": 0,\n    \"deficiencyId\": \"cd1213e8-3558-23cc-9b9a-b3cc29b5392a\",\n    \"changesJson\": \"reprehenderit laborum irure eiusmod\"\n  },\n  \"createdBy\": \"bbd7f3e6-b393-7444-937c-8112cc52002b\",\n  \"creator\": {\n    \"id\": \"7e10820f-ee44-3d53-6e7a-b3851e2d5f04\",\n    \"createdBy\": \"urn:uuid:092b2a02-6324-0863-fb11-abd276ecec12\",\n    \"createdOn\": \"1971-05-18T19:54:29.216Z\",\n    \"firstName\": \"mollit sunt labore\",\n    \"lastName\": \"aliqua\",\n    \"dateOfBirth\": \"2018-10-03T10:18:55.913Z\",\n    \"phoneNumber\": \"aute in\",\n    \"addressId\": \"7b9661a8-3657-2c55-08d5-4a95c75a9fad\",\n    \"address\": {\n      \"id\": \"urn:uuid:6ab6bbb1-e1e9-bfc9-cbc7-d7be5206555e\",\n      \"createdBy\": \"urn:uuid:de9461cd-b194-b83d-d52f-f51ca06d01d8\",\n      \"createdOn\": \"1992-12-28T16:36:39.179Z\",\n      \"longitude\": 46717650.23673454,\n      \"latitude\": -88056218.69349016,\n      \"country\": \"pariatur sed velit\",\n      \"region\": \"magna pariatur irure ut\",\n      \"district\": \"commodo mol\",\n      \"city\": \"Duis adipisicing pariatur\"\n    },\n    \"role\": 1,\n    \"email\": \"ullamco consectetur anim Lorem\",\n    \"passwordHash\": \"dolore of\",\n    \"organization\": {\n      \"id\": \"urn:uuid:d700c33b-2652-e348-fb65-d23bb46b2d04\",\n      \"createdBy\": \"fb55bdb1-0473-4974-660f-d5201996aa92\",\n      \"createdOn\": \"1972-08-23T08:39:39.948Z\",\n      \"title\": \"eiusmod aliqua in\",\n      \"location\": {\n        \"id\": \"30f34fef-618a-270f-d1f4-e165d0d0447a\",\n        \"createdBy\": \"c870501c-0d42-8b69-8cf8-e6efcfcc1ff3\",\n        \"createdOn\": \"1948-06-01T04:03:43.483Z\",\n        \"longitude\": 78425935.44142279,\n        \"latitude\": -62287243.21095007,\n        \"country\": \"minim ut aliqua\",\n        \"region\": \"in laborum nulla\",\n        \"district\": \"adipisicing aliqua\",\n        \"city\": \"dolor fugiat ut laboris\"\n      },\n      \"locationId\": \"urn:uuid:6540ceb6-37fc-7834-2600-b34567917a24\"\n    },\n    \"laboratory\": {\n      \"value\": \"<Circular reference to #/components/schemas/Domain.Models.Organization.Laboratory detected>\"\n    },\n    \"accessToken\": \"consectetur occaeca\",\n    \"accessTokenExpireTime\": \"1998-05-15T22:33:44.371Z\",\n    \"refreshToken\": \"eiusmod aliqua mollit magna\",\n    \"refreshTokenExpireTime\": \"1954-04-23T20:33:14.342Z\",\n    \"organizationId\": \"2c6d28ee-3f08-a275-0e8c-dff2d28ebba0\",\n    \"laboratoryId\": \"ac71b051-8671-51b7-a458-d273740ea4b3\",\n    \"password\": \"deserunt elit\"\n  },\n  \"ph\": 3.52213399096059,\n  \"dissolvedOxygen\": 19.980200452239014,\n  \"leadConcentration\": 0.006122473265291178,\n  \"mercuryConcentration\": 0.0008738258657256527,\n  \"nitrateConcentration\": 5.763986397043308,\n  \"pesticidesContent\": 0.004780358343783509,\n  \"microbialActivity\": 171.55608923372046,\n  \"radiationLevel\": 2.021427303882888,\n  \"chemicalOxygenDemand\": 275.9018000638347,\n  \"biologicalOxygenDemand\": 12.12386809167803,\n  \"phosphateConcentration\": 1.2614260063918061,\n  \"cadmiumConcentration\": 0.004825756729712651,\n  \"totalDissolvedSolids\": 1268.4218183308888,\n  \"electricalConductivity\": 2246.428397074024,\n  \"microbialLoad\": 368.55496918121554\n}",
+									"raw": "{\n    \"id\": \"{{$randomUUID}}\",\n    \"title\": \"Test title\",\n    \"description\": \"Descr\",\n    \"type\": 0,\n    \"location\": {\n        \"latitude\": 45,\n        \"longitude\": 58,\n        \"city\": \"\",\n        \"country\": \"\",\n        \"radiusAffected\": 5\n    },\n    \"eDangerState\": 0,\n    \"ph\": 0,\n    \"dissolvedOxygen\": 0,\n    \"leadConcentration\": 0,\n    \"mercuryConcentration\": 0,\n    \"nitratesConcentration\": 0,\n    \"pesticidesContent\": 0,\n    \"microbialActivity\": 0,\n    \"radiationLevel\": 0,\n    \"chemicalOxygenDemand\": 0,\n    \"biologicalOxygenDemand\": 0,\n    \"phosphateConcentration\": 0,\n    \"cadmiumConcentration\": 0,\n    \"totalDissolvedSolids\": 0,\n    \"electricalConductivity\": 0,\n    \"microbialLoad\": 0,\n    \"createdBy\": \"{{supervisorId}}\",\n    \"createdOn\": \"2025-05-31T15:53:15.102Z\",\n    \"responsibleUserId\": \"{{supervisorId}}\",\n    \"locationId\": \"6a6cb843-a425-4b0c-be3d-cb0518ebb781\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -3071,6 +2450,36 @@
 		{
 			"key": "baseUrl",
 			"value": "https://naturehelp.store"
+		},
+		{
+			"key": "supervisorId",
+			"value": "11112222-3333-4444-5555-666677778888",
+			"type": "string"
+		},
+		{
+			"key": "researcherId",
+			"value": "11112222-3333-4444-5555-666677778888",
+			"type": "string"
+		},
+		{
+			"key": "ownerId",
+			"value": "11112222-3333-4444-5555-666677778888",
+			"type": "string"
+		},
+		{
+			"key": "organizationId",
+			"value": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+			"type": "string"
+		},
+		{
+			"key": "laboratoryId",
+			"value": "01972677-c01a-7ae2-b811-c517db3f4b41",
+			"type": "string"
+		},
+		{
+			"key": "refreshToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJ2YWxlbnR5bkBleGFtcGxlLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlN1cGVydmlzb3IiLCJqdGkiOiI1ZmY0NGRjYS0yMmY2LTRlNzctYmI0NC04MjQ4MTY5MmVlMzAiLCJleHAiOjE3NDg5NzgyMzUsImlzcyI6Ik5hdHVyZUhlbHBJc3N1ZXIiLCJhdWQiOiJXZUxpa2VOYXR1cmUifQ.QWRUUXjJC18u_h8RyksFY8oyzkW7Uxv6fqW3092LA80",
+			"type": "string"
 		}
 	]
 }
