@@ -47,15 +47,10 @@ export class UserAPIService {
     this.isSuperAdmin$ = this.$user.pipe(map((user) => user?.role === 0));
     this.isOwner$ = this.$user.pipe(map((user) => user?.role === 1));
 
-    this.relogin();
+    this.refreshAccessToken();
   }
 
-  auth(
-    authType: EAuthType,
-    email: string,
-    password: string | null,
-    passwordHash: string | null = null,
-  ): Observable<IAuthResponse> {
+  auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {
     if (password) {
       return this.http
         .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
@@ -74,7 +69,6 @@ export class UserAPIService {
       return this.http
         .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
           email,
-          passwordHash,
           organizationId: localStorage.getItem("organizationId"),
         })
         .pipe(
@@ -87,13 +81,27 @@ export class UserAPIService {
     }
   }
 
+  refreshAccessToken() {
+    this.http
+      .post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {
+        refreshToken: localStorage.getItem("refreshToken"),
+      })
+      .pipe(
+        tap((authResponse) => {
+          this.logout();
+          this.setAuthOptions(authResponse);
+        }),
+        shareReplay(),
+      )
+      .subscribe();
+  }
+
   logout() {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
     localStorage.removeItem("role");
     localStorage.removeItem("organizationId");
     localStorage.removeItem("email");
-    localStorage.removeItem("passwordHash");
     localStorage.removeItem("userId");
 
     this.subject.next(null);
@@ -218,52 +226,6 @@ export class UserAPIService {
     this.loading.showLoaderUntilCompleted(updateOrganizationUsersRoles$).subscribe();
   }
 
-  checkLocalAuthOptions(): void {
-    const accessToken = localStorage.getItem("accessToken");
-    const refreshToken = localStorage.getItem("refreshToken");
-
-    if (!accessToken) {
-      if (!refreshToken) {
-        this.relogin();
-        return;
-      }
-      this.refreshAccessToken(refreshToken);
-      return;
-    }
-
-    this.http
-      .post<boolean>(`${this.apiUrl}/check-token-expiration`, { token: accessToken })
-      .pipe(
-        tap((isExpired) => {
-          if (isExpired) {
-            if (!refreshToken) {
-              this.relogin();
-            } else {
-              this.refreshAccessToken(refreshToken);
-            }
-          }
-        }),
-        shareReplay(),
-      )
-      .subscribe();
-  }
-
-  private refreshAccessToken(refreshToken: string): void {
-    this.http
-      .post<{ accessToken: string }>(`${this.apiUrl}/refresh-token`, { refreshToken })
-      .pipe(
-        tap((response) => {
-          if (response.accessToken) {
-            localStorage.setItem("accessToken", response.accessToken);
-          } else {
-            this.relogin();
-          }
-        }),
-        shareReplay(),
-      )
-      .subscribe();
-  }
-
   private setAuthOptions(authOptions: any) {
     if (!authOptions) {
       return;
@@ -274,24 +236,11 @@ export class UserAPIService {
     if (authOptions.refreshToken) localStorage.setItem("refreshToken", authOptions.refreshToken);
     if (authOptions.organizationId) localStorage.setItem("organizationId", authOptions.organizationId);
     if (authOptions.email) localStorage.setItem("email", authOptions.email);
-    if (authOptions.passwordHash) localStorage.setItem("passwordHash", authOptions.passwordHash);
 
     const decodedTokenRole = this.jwtHelper.decodeToken(authOptions.accessToken);
     if (decodedTokenRole)
       localStorage.setItem("role", decodedTokenRole["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]);
 
     this.subject.next(authOptions);
-  }
-
-  private relogin(): void {
-    const email = localStorage.getItem("email");
-    const passwordHash = localStorage.getItem("passwordHash");
-
-    if (email && passwordHash)
-      this.auth(EAuthType.Login, email, null, passwordHash).subscribe({
-        error: (err) => {
-          return err;
-        },
-      });
   }
 }

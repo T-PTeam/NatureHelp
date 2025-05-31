@@ -51,7 +51,13 @@ public class ExcelExportService : IExcelExportService
     {
         var data = await _userRepository.GetAllAsync(-1);
 
-        return GenerateWorkBook(data, []);
+        string[] excludeColumns = {
+            "PasswordHash",
+            "AccessToken",
+            "RefreshToken"
+        };
+
+        return GenerateWorkBook(data, excludeColumns);
     }
 
     private byte[] GenerateWorkBook<T>(IEnumerable<T> data, string[] excludeColumns)
@@ -62,7 +68,8 @@ public class ExcelExportService : IExcelExportService
 
         Type type = typeof(T);
         var propertyNames = type.GetProperties()
-            .Where(p => !p.Name.Contains("Id") && !excludeColumns.Contains(p.Name))
+            .Where(p => !p.Name.Contains("Id")
+                && !excludeColumns.Contains(p.Name))
             .Select(p => new DataColumn(p.Name))
             .ToArray();
 
@@ -76,7 +83,9 @@ public class ExcelExportService : IExcelExportService
             DataRow row = dt.NewRow();
             foreach (var property in type.GetProperties())
             {
-                if (property.Name.Contains("Id") || property.GetValue(item) == null)
+                if (property.GetValue(item) == null 
+                    || property.Name.Contains("Id") 
+                    || excludeColumns.Contains(property.Name))
                 {
                     continue;
                 }

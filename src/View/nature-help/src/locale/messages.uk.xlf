@@ -343,7 +343,7 @@
 </unit>
 <unit id="soilDeficiency">
   <segment>
-    <target>Дефіцит ґрунту</target>
+    <target>Недолік ґрунту</target>
   </segment>
 </unit>
 <unit id="description">
@@ -454,7 +454,7 @@
 </unit>
 <unit id="waterDeficiency">
   <segment>
-    <target>Водний дефіцит</target>
+    <target>Водний недолік</target>
   </segment>
 </unit>
 <unit id="dissolvedOxygen">

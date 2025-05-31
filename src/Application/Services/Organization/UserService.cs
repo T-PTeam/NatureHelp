@@ -20,20 +20,15 @@ public class UserService : IUserService
     public async Task<User> LoginAsync(UserLoginDto userLoginDto)
     {
         var user = await _userRepository.GetUserByEmail(userLoginDto.Email) ?? throw new NullReferenceException("User was not found.");
-        var result = PasswordVerificationResult.Failed;
-
-        if (string.IsNullOrEmpty(userLoginDto.PasswordHash))
-            result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, userLoginDto.Password);
-        else if (userLoginDto.PasswordHash == user.PasswordHash) result = PasswordVerificationResult.Success;
-
+        var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, userLoginDto.Password);
 
         if (result == PasswordVerificationResult.Failed) throw new UnauthorizedAccessException("Password verification failed");
 
         user.AccessToken = AuthTokensProvider.GenerateAccessToken(user);
-        user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(0.5));
+        user.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromMinutes(10));
 
         user.RefreshToken = AuthTokensProvider.GenerateRefreshToken(user);
-        user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(3));
+        user.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(15));
 
         await _userRepository.UpdateAsync(user);
 
