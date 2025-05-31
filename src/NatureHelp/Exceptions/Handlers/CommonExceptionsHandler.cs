@@ -26,9 +26,13 @@ public class CommonExceptionsHandler : IExceptionHandler
     /// <param name="exceptionContext"></param>
     public void Handle(ExceptionContext exceptionContext)
     {
+        bool needSeeInnerException = exceptionContext.Exception.Message == "An error occurred while saving the entity changes. See the inner exception for details.";
+
         exceptionContext.Result = new ContentResult
         {
-            Content = "Common error: " + exceptionContext.Exception.Message,
+            Content = "Common error: " + (needSeeInnerException && exceptionContext.Exception.InnerException != null
+                ? exceptionContext.Exception.InnerException.Message
+                : exceptionContext.Exception.Message),
             ContentType = "text/plain",
             StatusCode = (int)HttpStatusCode.InternalServerError
         };

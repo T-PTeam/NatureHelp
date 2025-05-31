@@ -48,7 +48,9 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     {
         using (var context = _contextFactory.CreateDbContext())
         {
-            return await context.Set<User>().FirstOrDefaultAsync(u => u.Email == email);
+            return await context.Set<User>()
+                .Include(u => u.Organization)
+                .FirstOrDefaultAsync(u => u.Email == email);
         }
     }
 

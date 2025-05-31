@@ -10,6 +10,7 @@ using NatureHelp.Providers;
 using Serilog;
 using StackExchange.Redis;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -83,9 +84,14 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IObjectsProvider<IExceptionHandler>, ErrorHandlersProvider>();
 
 builder.Services.AddControllers(config =>
-{
-    config.Filters.Add<AppExceptionFilterAttribute>();
-});
+    {
+        config.Filters.Add<AppExceptionFilterAttribute>();
+    })
+    .AddJsonOptions(x =>
+    {
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        x.JsonSerializerOptions.WriteIndented = true;
+    }); ;
 
 builder.Services.AddEndpointsApiExplorer();
 
