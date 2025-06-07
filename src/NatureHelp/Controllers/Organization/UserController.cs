@@ -7,7 +7,6 @@ using Shared.Dtos;
 
 namespace NatureHelp.Controllers.Organization;
 
-[AllowAnonymous]
 [Route("api/[controller]")]
 public class UserController : Controller
 {

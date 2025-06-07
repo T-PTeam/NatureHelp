@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers.Audit;
 
-[AllowAnonymous]
 [Route("api/[controller]")]
 public class ChangedModelLogsController : BaseController<ChangedModelLog>
 {

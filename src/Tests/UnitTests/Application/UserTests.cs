@@ -2,7 +2,6 @@
 using Application.Interfaces.Services.Organization;
 using Application.Providers;
 using Application.Services.Organization;
-using DocumentFormat.OpenXml.Spreadsheet;
 using Domain.Enums;
 using Domain.Models.Organization;
 using FluentAssertions;

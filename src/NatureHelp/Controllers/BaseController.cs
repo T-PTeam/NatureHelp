@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers;
 [ApiController]
-[AllowAnonymous]
+[Authorize(Roles = "SuperAdmin,Owner,Manager,Supervisor,Researcher")]
 [Route("api/[controller]")]
 public class BaseController<T> : Controller where T : class
 {
