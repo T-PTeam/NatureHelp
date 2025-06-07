@@ -17,8 +17,10 @@ using Infrastructure.Repositories;
 
 namespace NatureHelp
 {
+    public partial class Program { }
+
     /// <summary>
-    /// 
+    /// Connecting DI to Program.cs
     /// </summary>
     public static class DependencyInjection
     {
