@@ -8,6 +8,8 @@
         Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entity);
         Task<T> UpdateAsync(T entity);
         Task<bool> UpdateRangeAsync(IEnumerable<T> list);
+        Task<Guid> DeleteAsync(Guid id);
+        Task<IEnumerable<Guid>> DeleteRangeAsync(IEnumerable<Guid> ids);
         Task<int> GetTotalCount();
         Task SaveChangesAsync();
     }
