@@ -17,8 +17,12 @@ public class WaterDeficiencyService : BaseService<WaterDeficiency>
 
     public override async Task<WaterDeficiency> UpdateAsync(WaterDeficiency entity)
     {
-        WaterDeficiency oldEntity = await base.GetByIdAsync(entity.Id);
+        WaterDeficiency? oldEntity = await GetByIdAsync(entity.Id);
 
+        if (oldEntity == null)
+        {
+            throw new NullReferenceException("Can not find entity with ID " + entity.Id);
+        }
         await _logService.LogDeficiencyChangesAsync(oldEntity, entity, EDeficiencyType.Water, entity.CreatedBy);
 
         return await base.UpdateAsync(entity);

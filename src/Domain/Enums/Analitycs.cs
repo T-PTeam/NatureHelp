@@ -22,3 +22,11 @@ public enum ResearchType
     WaterBiologicalMonitoring, // Біологічний моніторинг води
     HydromorphologicalAnalysis // Гідроморфологічний аналіз води
 }
+
+public enum EntityState
+{
+    New,
+    Edited,
+    Deleted,
+    Canceled,
+}

@@ -2,7 +2,6 @@
 using Application.Interfaces.Services.Organization;
 using Application.Providers;
 using Application.Services.Organization;
-using DocumentFormat.OpenXml.Spreadsheet;
 using Domain.Enums;
 using Domain.Models.Organization;
 using FluentAssertions;
@@ -62,7 +61,10 @@ public class UserTests
     [Fact]
     public async Task LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect()
     {
-        var user = new User { Email = "test@example.com", PasswordHash = "hashedpassword" };
+        var passwordHasher = new PasswordHasher<User>();
+
+        var user = new User { Email = "test@example.com" };
+        user.PasswordHash = passwordHasher.HashPassword(user, "password123");
 
         _userRepositoryMock.Setup(x => x.GetUserByEmail(user.Email))
             .ReturnsAsync(user);
@@ -73,7 +75,7 @@ public class UserTests
         _userRepositoryMock.Setup(x => x.UpdateAsync(It.IsAny<User>()))
             .Returns(Task.FromResult(user));
 
-        var result = await _userService.LoginAsync(new UserLoginDto { Email = user.Email, Password = "password123", PasswordHash = user.PasswordHash });
+        var result = await _userService.LoginAsync(new UserLoginDto { Email = user.Email, Password = "password123" });
 
         result.Should().NotBeNull();
         result.AccessToken.Should().NotBeNullOrEmpty();
@@ -85,7 +87,10 @@ public class UserTests
     [Fact]
     public async Task LoginAsync_ShouldSucceed_WhenPasswordHashMatches()
     {
-        var user = new User { Email = "test@example.com", PasswordHash = "correcthash" };
+        var passwordHasher = new PasswordHasher<User>();
+
+        var user = new User { Email = "test@example.com" };
+        user.PasswordHash = passwordHasher.HashPassword(user, "password123");
 
         _userRepositoryMock.Setup(x => x.GetUserByEmail(user.Email))
             .ReturnsAsync(user);
@@ -96,7 +101,7 @@ public class UserTests
         var result = await _userService.LoginAsync(new UserLoginDto
         {
             Email = user.Email,
-            PasswordHash = "correcthash"
+            Password = "password123"
         });
 
         result.Should().NotBeNull();

@@ -39,13 +39,15 @@ public class DeficiencyRepository<D> : BaseRepository<D> where D : Deficiency
     {
         var context = _contextFactory.CreateDbContext();
 
-        return await context.Set<D>()
+        var entity = await context.Set<D>()
             .Include(d => d.Creator)
                 .ThenInclude(c => c.Address)
             .Include(d => d.ResponsibleUser)
                 .ThenInclude(u => u.Address)
             .Include(d => d.Location)
-            .FirstOrDefaultAsync(x => x.Id == id);
+            .FirstOrDefaultAsync(x => x.Id.Equals(id));
+
+        return entity;
     }
 
     public override async Task<D> UpdateAsync(D entity)
