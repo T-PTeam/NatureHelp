@@ -14,13 +14,11 @@ public class LaboratoryRepository : BaseRepository<Laboratory>
         using (var context = _contextFactory.CreateDbContext())
         {
             var query = context.Set<Laboratory>()
-                .Include(l => l.Location)
                 .Include(l => l.Researchers)
                 .Select(l => new Laboratory
                 {
                     Id = l.Id,
                     Title = l.Title,
-                    Location = l.Location,
                     Researchers = l.Researchers != null
                         ? l.Researchers.Select(r => new User()
                         {
@@ -29,6 +27,8 @@ public class LaboratoryRepository : BaseRepository<Laboratory>
                         }).ToList()
                         : new List<User>(),
                     ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
+                    Latitude = l.Latitude,
+                    Longitude = l.Longitude
                 });
 
             if (filters != null && filters.Any())
@@ -50,15 +50,15 @@ public class LaboratoryRepository : BaseRepository<Laboratory>
         using (var context = _contextFactory.CreateDbContext())
         {
             return await context.Set<Laboratory>()
-                .Include(l => l.Location)
                 .Include(l => l.Researchers)
                 .Select(l => new Laboratory
                 {
                     Id = l.Id,
                     Title = l.Title,
-                    Location = l.Location,
                     Researchers = l.Researchers,
                     ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
+                    Latitude = l.Latitude,
+                    Longitude = l.Longitude
                 })
                 .FirstOrDefaultAsync(x => x.Id == id);
         }

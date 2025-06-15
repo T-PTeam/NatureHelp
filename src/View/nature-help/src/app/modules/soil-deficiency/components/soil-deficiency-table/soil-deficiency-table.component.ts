@@ -5,7 +5,6 @@ import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.serv
 import { withLatestFrom } from "rxjs";
 import { ReportAPIService } from "@/shared/services/report-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
-import { ILocation } from "@/models/ILocation";
 import { ISoilDeficiencyFilter } from "../../models/ISoilDeficiencyFilter";
 import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
 import { EDangerState } from "@/models/enums";
@@ -76,8 +75,8 @@ export class SoilDeficiencyTable {
     this.router.navigateByUrl("/water");
   }
 
-  changeMapFocus(location: ILocation) {
-    this.mapViewService.changeFocus(location, 20);
+  changeMapFocus(latitude: number, longitude: number) {
+    this.mapViewService.changeFocus({ latitude, longitude }, 12);
   }
 
   applyFilter(): void {

@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.Testing;
+﻿using Infrastructure.Data;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
-using Infrastructure.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Authentication;
 
 namespace Tests;
 public class NatureHelpWebAppFactory : WebApplicationFactory<NatureHelp.Program>

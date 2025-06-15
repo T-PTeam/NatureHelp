@@ -1,14 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc.Testing;
-using System.Net.Http.Json;
-using System.Net;
-using FluentAssertions;
+﻿using Domain.Enums;
 using Domain.Models.Nature;
-using Microsoft.Extensions.Logging;
+using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using DocumentFormat.OpenXml.Wordprocessing;
-using Infrastructure.Providers;
-using Domain.Enums;
+using System.Net;
+using System.Net.Http.Json;
 
 namespace Tests.IntegrationTests.Controllers;
 public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFactory>

@@ -5,7 +5,6 @@ using Domain.Models.Nature;
 using Domain.Models.Organization;
 using Infrastructure.Interfaces;
 using System.Data;
-using System.Text;
 
 namespace Application.Services.Analitycs;
 public class ExcelExportService : IExcelExportService
@@ -83,8 +82,8 @@ public class ExcelExportService : IExcelExportService
             DataRow row = dt.NewRow();
             foreach (var property in type.GetProperties())
             {
-                if (property.GetValue(item) == null 
-                    || property.Name.Contains("Id") 
+                if (property.GetValue(item) == null
+                    || property.Name.Contains("Id")
                     || excludeColumns.Contains(property.Name))
                 {
                     continue;
@@ -109,28 +108,6 @@ public class ExcelExportService : IExcelExportService
                 {
                     Laboratory lab = (property.GetValue(item) as Laboratory);
                     row[property.Name] = lab.Title;
-                }
-                else if (property.Name == "Location")
-                {
-                    Domain.Models.Nature.Location location = (property.GetValue(item) as Domain.Models.Nature.Location);
-
-                    StringBuilder strBuilder = new StringBuilder("");
-                    if (!string.IsNullOrEmpty(location.City))
-                    {
-                        strBuilder.Append(location.City);
-
-                        if (!string.IsNullOrEmpty(location.Country))
-                        {
-                            strBuilder.Append(", ");
-                            strBuilder.Append(location.Country);
-                        }
-                    }
-                    else if (!string.IsNullOrEmpty(location.Country))
-                    {
-                        strBuilder.Append(location.Country);
-                    }
-
-                    row[property.Name] = strBuilder.ToString();
                 }
                 else row[property.Name] = property.GetValue(item);
             }

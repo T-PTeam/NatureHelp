@@ -6,8 +6,8 @@ public class Organization : BaseModel
 
 
     public string Title { get; set; } = null!;
-    public Location? Location { get; set; }
-    public Guid LocationId { get; set; }
+    public int AllowedMembersCount { get; set; } = 11;
+
     public void AddMember(User user)
     {
         staff.Add(user);
