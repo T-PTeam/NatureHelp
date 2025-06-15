@@ -34,7 +34,7 @@ public class CommonExceptionsHandler : IExceptionHandler
                 ? exceptionContext.Exception.InnerException.Message
                 : exceptionContext.Exception.Message),
             ContentType = "text/plain",
-            StatusCode = (int)HttpStatusCode.InternalServerError
+            StatusCode = (int)HttpStatusCode.BadRequest
         };
 
         exceptionContext.ExceptionHandled = true;

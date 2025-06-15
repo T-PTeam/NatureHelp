@@ -166,10 +166,11 @@
       <div>{{ deficiency.eDangerState | enumToString: "EDangerState" }}</div>
       <div class="btn-ceil">
         <button
-          id="map-focus-btn"
-          (click)="changeMapFocus(deficiency.location)"
-          class="action-btn">
-          <i class="fa fa-crosshairs"></i>
+          mat-icon-button
+          color="primary"
+          (click)="changeMapFocus(deficiency.latitude, deficiency.longitude)"
+          matTooltip="Location">
+          <mat-icon>location_on</mat-icon>
         </button>
       </div>
       <div class="btn-ceil">

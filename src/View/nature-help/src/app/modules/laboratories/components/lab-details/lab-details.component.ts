@@ -4,6 +4,8 @@ import { MapViewService } from "@/shared/services/map-view.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { LabsAPIService } from "../../services/labs-api.service";
+import { IUser } from "@/models/IUser";
+import { UserAPIService } from "@/shared/services/user-api.service";
 
 @Component({
   selector: "app-lab-details",
@@ -35,6 +37,7 @@ export class LabDetailsComponent implements OnInit {
       } else {
         this.labsAPIService.getLabById(id).subscribe((lab) => {
           this.initializeForm(lab);
+          this.changeMapView();
         });
       }
     });
@@ -48,18 +51,9 @@ export class LabDetailsComponent implements OnInit {
     this.detailsForm = this.fb.group({
       id: [laboratory?.id || crypto.randomUUID()],
       title: [laboratory?.title || "", Validators.required],
+      latitude: [laboratory?.latitude || 0, [Validators.required, Validators.min(-90), Validators.max(90)]],
+      longitude: [laboratory?.longitude || 0, [Validators.required, Validators.min(-180), Validators.max(180)]],
       researchers: [laboratory?.researchers || []],
-      location: this.fb.group({
-        latitude: [laboratory?.location?.latitude || 0, [Validators.required, Validators.min(-90), Validators.max(90)]],
-        longitude: [
-          laboratory?.location?.longitude || 0,
-          [Validators.required, Validators.min(-180), Validators.max(180)],
-        ],
-        city: [laboratory?.location?.city || ""],
-        country: [laboratory?.location?.country || ""],
-        region: [laboratory?.location?.region || ""],
-        district: [laboratory?.location?.district || ""],
-      }),
       researchersCount: [laboratory?.researchersCount ?? 0, [Validators.required, Validators.min(0)]],
     });
 
@@ -107,6 +101,9 @@ export class LabDetailsComponent implements OnInit {
   }
 
   private changeMapView() {
-    this.mapViewService.changeFocus({ latitude: 48.65, longitude: 22.26 }, 12);
+    this.mapViewService.changeFocus(
+      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
+      12,
+    );
   }
 }

@@ -5,7 +5,6 @@ import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.s
 
 import { withLatestFrom } from "rxjs";
 import { ReportAPIService } from "@/shared/services/report-api.service";
-import { ILocation } from "@/models/ILocation";
 import { MapViewService } from "@/shared/services/map-view.service";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { IWaterDeficiencyFilter } from "../../models/IWaterDeficiencyFilter";
@@ -78,8 +77,8 @@ export class WaterDeficiencyTable {
     this.router.navigateByUrl("soil");
   }
 
-  changeMapFocus(location: ILocation) {
-    this.mapViewService.changeFocus(location, 20);
+  changeMapFocus(latitude: number, longitude: number) {
+    this.mapViewService.changeFocus({ latitude, longitude }, 12);
   }
 
   applyFilter(): void {

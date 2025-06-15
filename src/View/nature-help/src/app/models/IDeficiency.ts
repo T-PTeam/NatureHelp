@@ -1,7 +1,6 @@
 import { EDangerState, EDeficiencyType } from "./enums";
 import { IBaseEntity } from "./IBaseEntity";
 import { IChangedModelLog } from "./IChangedModelLog";
-import { ILocation } from "./ILocation";
 import { IUser } from "./IUser";
 
 export interface IDeficiency extends IBaseEntity {
@@ -10,7 +9,9 @@ export interface IDeficiency extends IBaseEntity {
   type: EDeficiencyType;
   creator: IUser;
   responsibleUser?: IUser;
-  location: ILocation;
+  latitude: number;
+  longitude: number;
+  radiusAffected: number;
   eDangerState: EDangerState;
   changedModelLogId: string;
   changedModelLog: IChangedModelLog[];

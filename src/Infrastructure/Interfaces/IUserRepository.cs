@@ -8,4 +8,5 @@ public interface IUserRepository : IBaseRepository<User>
     public Task<User?> GetUserByRefreshTokenAsync(string refreshToken);
 
     public Task<IEnumerable<User>> GetNotLoginEver(Guid? organizationId);
+    public Task<int> GetUsersCountByOrganization(Guid organizationId);
 }

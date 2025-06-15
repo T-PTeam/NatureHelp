@@ -41,7 +41,8 @@ public class UserTests
             Email = "test@example.com",
             Password = "10101010"
         };
-        User user = new User() { 
+        User user = new User()
+        {
             Id = Guid.NewGuid(),
             Email = "test@example.com",
             PasswordHash = "somepasswordHash"
@@ -61,10 +62,7 @@ public class UserTests
     [Fact]
     public async Task LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect()
     {
-        var passwordHasher = new PasswordHasher<User>();
-
-        var user = new User { Email = "test@example.com" };
-        user.PasswordHash = passwordHasher.HashPassword(user, "password123");
+        var user = new User { Email = "test@example.com", PasswordHash = "hashedpassword" };
 
         _userRepositoryMock.Setup(x => x.GetUserByEmail(user.Email))
             .ReturnsAsync(user);
@@ -75,7 +73,7 @@ public class UserTests
         _userRepositoryMock.Setup(x => x.UpdateAsync(It.IsAny<User>()))
             .Returns(Task.FromResult(user));
 
-        var result = await _userService.LoginAsync(new UserLoginDto { Email = user.Email, Password = "password123" });
+        var result = await _userService.LoginAsync(new UserLoginDto { Email = user.Email, Password = "password123", PasswordHash = user.PasswordHash });
 
         result.Should().NotBeNull();
         result.AccessToken.Should().NotBeNullOrEmpty();
@@ -87,10 +85,7 @@ public class UserTests
     [Fact]
     public async Task LoginAsync_ShouldSucceed_WhenPasswordHashMatches()
     {
-        var passwordHasher = new PasswordHasher<User>();
-
-        var user = new User { Email = "test@example.com" };
-        user.PasswordHash = passwordHasher.HashPassword(user, "password123");
+        var user = new User { Email = "test@example.com", PasswordHash = "correcthash" };
 
         _userRepositoryMock.Setup(x => x.GetUserByEmail(user.Email))
             .ReturnsAsync(user);
@@ -101,7 +96,7 @@ public class UserTests
         var result = await _userService.LoginAsync(new UserLoginDto
         {
             Email = user.Email,
-            Password = "password123"
+            PasswordHash = "correcthash"
         });
 
         result.Should().NotBeNull();
@@ -130,7 +125,7 @@ public class UserTests
         bool isExpiredRefreshToken = AuthTokensProvider.IsTokenExpired(refreshToken);
         bool isExpiredAccessToken = AuthTokensProvider.IsTokenExpired(accessToken);
 
-        isExpiredAccessToken.Should().BeFalse(); 
+        isExpiredAccessToken.Should().BeFalse();
         isExpiredRefreshToken.Should().BeFalse();
     }
 

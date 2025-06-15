@@ -8,7 +8,6 @@ import { IWaterDeficiency } from "@/modules/water-deficiency/models/IWaterDefici
 import { SoilAPIService } from "../../modules/soil-deficiency/services/soil-api.service";
 import { WaterAPIService } from "../../modules/water-deficiency/services/water-api.service";
 import { LabsAPIService } from "@/modules/laboratories/services/labs-api.service";
-import { ILocation } from "@/models/ILocation";
 import { ILaboratory } from "@/modules/laboratories/models/ILaboratory";
 import { IDeficiency } from "@/models/IDeficiency";
 import { EDangerState, EDeficiencyType, EMapLayer } from "@/models/enums";
@@ -133,9 +132,19 @@ export class MapViewService {
 
             list.forEach((d) => {
               if (this.isWaterDeficiency(d)) {
-                this.makeCircleMarker(EMapLayer.WaterDeficiency, d.location, "#4285f4", this.getDeficiencyPopup(d));
+                this.makeCircleMarker(
+                  EMapLayer.WaterDeficiency,
+                  { longitude: d.longitude, latitude: d.latitude },
+                  "#4285f4",
+                  this.getDeficiencyPopup(d),
+                );
               } else {
-                this.makeCircleMarker(EMapLayer.SoilDeficiency, d.location, "brown", this.getDeficiencyPopup(d));
+                this.makeCircleMarker(
+                  EMapLayer.SoilDeficiency,
+                  { longitude: d.longitude, latitude: d.latitude },
+                  "brown",
+                  this.getDeficiencyPopup(d),
+                );
               }
             });
           }
@@ -151,7 +160,12 @@ export class MapViewService {
           this.laboratoriesLayer.clearLayers();
 
           list.map((lab) =>
-            this.makeIconMarker(EMapLayer.Laboratories, lab.location, this.labIcon, this.getLabPopup(lab)),
+            this.makeIconMarker(
+              EMapLayer.Laboratories,
+              { longitude: lab.longitude, latitude: lab.latitude },
+              this.labIcon,
+              this.getLabPopup(lab),
+            ),
           );
         }),
       )
@@ -160,12 +174,12 @@ export class MapViewService {
 
   private makeCircleMarker(
     mapLayer: EMapLayer,
-    location: ILocation,
+    coordinates: ICoordinates,
     color: string,
     popupTags: string | null = null,
   ): void {
-    const circle = L.circleMarker([location.latitude ?? 50.4501, location.longitude ?? 30.5234], {
-      radius: location.radiusAffected ?? 10,
+    const circle = L.circleMarker([coordinates.latitude ?? 50.4501, coordinates.longitude ?? 30.5234], {
+      radius: 10,
       color: color,
       opacity: 0.6,
       fillColor: color,
@@ -192,11 +206,11 @@ export class MapViewService {
 
   private makeIconMarker(
     mapLayer: EMapLayer,
-    location: ILocation,
+    coordinates: ICoordinates,
     icon: L.Icon,
     popupTags: string | null = null,
   ): void {
-    const circle = L.marker([location.latitude ?? 50.4501, location.longitude ?? 30.5234], {
+    const circle = L.marker([coordinates.latitude ?? 50.4501, coordinates.longitude ?? 30.5234], {
       opacity: 0.6,
       icon: icon,
     });
@@ -226,7 +240,7 @@ export class MapViewService {
         <p><strong>Description:</strong> ${item.description}</p>
         <p><strong>Type:</strong> ${EDeficiencyType[item.type]}</p>
         <p><strong>Danger Level:</strong> ${EDangerState[item.eDangerState]}</p>
-        <p><strong>Location:</strong> ${item.location.latitude}, ${item.location.longitude}</p>
+        <p><strong>Location:</strong> ${item.latitude}, ${item.longitude}</p>
         <p><strong>Creator:</strong> ${item.creator.firstName} ${item.creator.lastName}</p>
         ${item.responsibleUser ? `<p><strong>Responsible User:</strong> ${item.responsibleUser.firstName} ${item.responsibleUser.lastName}</p>` : ""}
       </div>
@@ -237,7 +251,7 @@ export class MapViewService {
     return `
       <div>
         <h3>${item.title}</h3>
-        <p><strong>Location:</strong> ${item.location.latitude}, ${item.location.longitude}</p>
+        <p><strong>Location:</strong> ${item.latitude}, ${item.longitude}</p>
         <p><strong>Researchers:</strong> ${item.researchersCount}</p>
         <ul>
           ${item.researchers.map((r) => `<li>${r.firstName} ${r.lastName}</li>`).join("")}

@@ -14,7 +14,7 @@
         formControlName="title" />
     </mat-form-field>
 
-    <mat-form-field style="grid-column: 2; grid-row: 1 / 3">
+    <mat-form-field>
       <mat-label i18n="@@researchesLabel">Researches</mat-label>
       <textarea
         matInput
@@ -24,32 +24,35 @@
       </textarea>
     </mat-form-field>
 
-    <div formGroupName="location">
-      <mat-form-field>
-        <mat-label i18n="@@latitudeLabel">Latitude</mat-label>
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <mat-label>Latitude</mat-label>
         <input
           matInput
+          formControlName="latitude"
           type="number"
-          formControlName="latitude" />
+          step="0.000001" />
+        <mat-error *ngIf="detailsForm.get('latitude')?.invalid && detailsForm.get('latitude')?.touched">
+          <span *ngIf="detailsForm.get('latitude')?.hasError('required')">Latitude is required</span>
+          <span *ngIf="detailsForm.get('latitude')?.hasError('min') || detailsForm.get('latitude')?.hasError('max')">
+            Latitude must be between -90 and 90
+          </span>
+        </mat-error>
       </mat-form-field>
-      <mat-form-field>
-        <mat-label i18n="@@longitudeLabel">Longitude</mat-label>
+
+      <mat-form-field class="form-field">
+        <mat-label>Longitude</mat-label>
         <input
           matInput
+          formControlName="longitude"
           type="number"
-          formControlName="longitude" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label i18n="@@cityLabel">City</mat-label>
-        <input
-          matInput
-          formControlName="city" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label i18n="@@countryLabel">Country</mat-label>
-        <input
-          matInput
-          formControlName="country" />
+          step="0.000001" />
+        <mat-error *ngIf="detailsForm.get('longitude')?.invalid && detailsForm.get('longitude')?.touched">
+          <span *ngIf="detailsForm.get('longitude')?.hasError('required')">Longitude is required</span>
+          <span *ngIf="detailsForm.get('longitude')?.hasError('min') || detailsForm.get('longitude')?.hasError('max')">
+            Longitude must be between -180 and 180
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
 

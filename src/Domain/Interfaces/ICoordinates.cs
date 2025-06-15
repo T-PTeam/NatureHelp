@@ -1,17 +1,17 @@
-﻿namespace Domain.Models.Location;
-public abstract class ACoordinates : BaseModel
+﻿namespace Domain.Interfaces;
+public interface ICoordinates
 {
-    public double Longitude { get; set; } = 50.4501;
-    public double Latitude { get; set; } = 30.5234;
+    public double Longitude { get; set; }
+    public double Latitude { get; set; }
 
-    public bool IsNearby(ACoordinates otherLocation, double radiusInKm)
+    public bool IsNearby(ICoordinates otherLocation, double radiusInKm)
     {
         // Earth's radius in kilometers
         const double EarthRadiusKm = 6371.0;
 
         // Convert latitude and longitude from degrees to radians
-        double lat1 = this.Latitude * Math.PI / 180.0;
-        double lon1 = this.Longitude * Math.PI / 180.0;
+        double lat1 = Latitude * Math.PI / 180.0;
+        double lon1 = Longitude * Math.PI / 180.0;
         double lat2 = otherLocation.Latitude * Math.PI / 180.0;
         double lon2 = otherLocation.Longitude * Math.PI / 180.0;
 
@@ -35,7 +35,7 @@ public abstract class ACoordinates : BaseModel
 
     public void UpdateCoordinates(double latitude, double longitude)
     {
-        this.Latitude = latitude;
-        this.Longitude = longitude;
+        Latitude = latitude;
+        Longitude = longitude;
     }
 }

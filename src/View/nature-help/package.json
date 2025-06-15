@@ -14,7 +14,9 @@
     "cy:component": "cypress run --component",
     "cy:e2e": "cypress run",
     "build:prod": "ng build --configuration=production --localize --base-href /nature-help/",
-    "e18n:extract": "ng run extract-i18n"
+    "e18n:extract": "ng run extract-i18n",
+    "prettier:fix": "npx prettier --write .",
+    "eslint:fix": "npx eslint . --fix"
   },
   "private": true,
   "dependencies": {

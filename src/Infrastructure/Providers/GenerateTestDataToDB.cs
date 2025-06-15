@@ -10,107 +10,17 @@ public static class GenerateTestDataToDB
 {
     private static PasswordHasher<User> _passwordHasher = new PasswordHasher<User>();
 
-    public static List<Domain.Models.Organization.Location> Locations = new List<Domain.Models.Organization.Location>
-{
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("11111111-1111-1111-1111-111111111111"),
-        Country = "Ukraine",
-        Region = "Kyiv",
-        District = "Shevchenkivsky",
-        City = "Kyiv"
-    },
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("22222222-2222-2222-2222-222222222222"),
-        Country = "USA",
-        Region = "New York",
-        District = "Manhattan",
-        City = "New York"
-    },
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("33333333-3333-3333-3333-333333333333"),
-        Country = "Germany",
-        Region = "Berlin",
-        District = "Mitte",
-        City = "Berlin"
-    },
-};
-
-    public static List<Domain.Models.Organization.Location> PersonLocations = new List<Domain.Models.Organization.Location>
-{
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("44444444-4444-4444-4444-444444444444"),
-        Country = "Ukraine",
-        Region = "Kyiv Oblast",
-        District = "Kyiv City District",
-        City = "Kyiv"
-    },
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("55555555-5555-5555-5555-555555555555"),
-        Country = "USA",
-        Region = "New York State",
-        District = "Manhattan District",
-        City = "New York"
-    },
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("66666666-6666-6666-6666-666666666666"),
-        Country = "Germany",
-        Region = "Berlin",
-        District = "Mitte District",
-        City = "Berlin"
-    },
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("77777777-7777-7777-7777-777777777777"),
-        Country = "Brazil",
-        Region = "Rio de Janeiro State",
-        District = "Central District",
-        City = "Rio de Janeiro"
-    },
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("88888888-8888-8888-8888-888888888888"),
-        Country = "France",
-        Region = "Île-de-France",
-        District = "Paris City District",
-        City = "Paris"
-    },
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("99999999-9999-9999-9999-999999999999"),
-        Country = "Japan",
-        Region = "Kantō",
-        District = "Tokyo Metropolis District",
-        City = "Tokyo"
-    },
-    new Domain.Models.Organization.Location
-    {
-        Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
-        Country = "Italy",
-        Region = "Lazio",
-        District = "Rome City District",
-        City = "Rome"
-    },
-};
-
     public static List<Organization> Organizations = new List<Organization>
 {
     new Organization
     {
         Id = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
         Title = "Global Research Institute",
-        LocationId = new Guid("11111111-1111-1111-1111-111111111111"),
     },
     new Organization
     {
         Id = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc"),
         Title = "International Tech Hub",
-        LocationId = new Guid("33333333-3333-3333-3333-333333333333"),
     }
 };
 
@@ -120,20 +30,17 @@ public static class GenerateTestDataToDB
     {
         Id = new Guid("dddddddd-dddd-dddd-dddd-dddddddddddd"),
         Title = "Biomedical Research Lab",
-        LocationId = new Guid("11111111-1111-1111-1111-111111111111"),
     },
     new Laboratory
     {
         Id = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
         Title = "AI and Machine Learning Lab",
-        LocationId = new Guid("33333333-3333-3333-3333-333333333333"),
     },
     new Laboratory
     {
         Id = new Guid("ffffffff-ffff-ffff-ffff-ffffffffffff"),
         Title = "Genetics and Biotechnology Lab",
         Researchers = null,
-        LocationId = new Guid("22222222-2222-2222-2222-222222222222"),
     }
 };
 
@@ -146,7 +53,6 @@ public static class GenerateTestDataToDB
         LastName = "Riabinchak",
         DateOfBirth = new DateTime(1985, 5, 20).ToUniversalTime(),
         PhoneNumber = "+380501234567",
-        AddressId = new Guid("44444444-4444-4444-4444-444444444444"),
         Email = "valentyn@example.com",
         PasswordHash = _passwordHasher.HashPassword(new User
             {
@@ -155,7 +61,6 @@ public static class GenerateTestDataToDB
                 LastName = "Riabinchak",
                 DateOfBirth = new DateTime(1990, 7, 15).ToUniversalTime(),
                 PhoneNumber = "+380631234567",
-                AddressId = new Guid("55555555-5555-5555-5555-555555555555"),
                 Email = "valentyn@example.com",
                 Password = "12341234",
                 LaboratoryId = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
@@ -171,7 +76,6 @@ public static class GenerateTestDataToDB
         LastName = "Zayets",
         DateOfBirth = new DateTime(1990, 7, 15).ToUniversalTime(),
         PhoneNumber = "+380631234567",
-        AddressId = new Guid("55555555-5555-5555-5555-555555555555"),
         Email = "igorzayets@example.com",
         PasswordHash = _passwordHasher.HashPassword(new User
             {
@@ -180,7 +84,6 @@ public static class GenerateTestDataToDB
                 LastName = "Zayets",
                 DateOfBirth = new DateTime(1990, 7, 15).ToUniversalTime(),
                 PhoneNumber = "+380631234567",
-                AddressId = new Guid("55555555-5555-5555-5555-555555555555"),
                 Email = "igorzayets@example.com",
                 Password = "10101010",
                 LaboratoryId = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
@@ -196,7 +99,6 @@ public static class GenerateTestDataToDB
         LastName = "Morozenko",
         DateOfBirth = new DateTime(1980, 3, 10).ToUniversalTime(),
         PhoneNumber = "+49 17612345678",
-        AddressId = new Guid("66666666-6666-6666-6666-666666666666"),
         Email = "katerynamoroz@example.com@example.com",
         PasswordHash = _passwordHasher.HashPassword(new User
             {
@@ -205,7 +107,6 @@ public static class GenerateTestDataToDB
                 LastName = "Morozenko",
                 DateOfBirth = new DateTime(1990, 7, 15).ToUniversalTime(),
                 PhoneNumber = "+380631234567",
-                AddressId = new Guid("55555555-5555-5555-5555-555555555555"),
                 Email = "katerynamoroz@example.com",
                 Password = "12345678",
                 LaboratoryId = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
@@ -245,18 +146,6 @@ public static class GenerateTestDataToDB
     }
 };
 
-    public static List<Domain.Models.Nature.Location> NatureLocations = new List<Domain.Models.Nature.Location>
-{
-
-    new Domain.Models.Nature.Location { Id = new Guid("b1111111-1111-1111-1111-111111111111"), Country = "Ethiopia", City = "Addis Ababa", Longitude = 30.5234, Latitude = 50.4501
-},
-    new Domain.Models.Nature.Location { Id = new Guid("b2222222-2222-2222-2222-222222222222"), Country = "India", City = "Mumbai" , Longitude = 24.0316, Latitude = 49.8429},
-    new Domain.Models.Nature.Location { Id = new Guid("b3333333-3333-3333-3333-333333333333"), Country = "USA", City = "Phoenix", Longitude = 30.7326, Latitude = 46.4825 },
-    new Domain.Models.Nature.Location { Id = new Guid("b4444444-4444-4444-4444-444444444444"), Country = "Australia", City = "Sydney" , Longitude = 30.5234, Latitude = 50.4501},
-    new Domain.Models.Nature.Location { Id = new Guid("b5555555-5555-5555-5555-555555555555"), Country = "China", City = "Beijing", Longitude = 36.2292, Latitude = 49.9935 },
-    new Domain.Models.Nature.Location { Id = new Guid("b6666666-6666-6666-6666-666666666666"), Country = "Ukraine", City = "Uzhhorod" , Longitude = 35.0456, Latitude = 48.4647}
-};
-
     public static List<WaterDeficiency> WaterDeficiencies = new List<WaterDeficiency>
 {
     new WaterDeficiency
@@ -278,7 +167,6 @@ public static class GenerateTestDataToDB
         MicrobialLoad = 1500,
         CreatedBy = Users[0].Id,
         ResponsibleUserId = Users[0].Id,
-        LocationId = NatureLocations[0].Id,
     },
     new WaterDeficiency
     {
@@ -299,7 +187,6 @@ public static class GenerateTestDataToDB
         MicrobialLoad = 4000,
         CreatedBy = Users[2].Id,
         ResponsibleUserId = Users[1].Id,
-        LocationId = NatureLocations[1].Id,
     },
     new WaterDeficiency
     {
@@ -319,7 +206,6 @@ public static class GenerateTestDataToDB
         MicrobialLoad = 800,
         CreatedBy = Users[1].Id,
         ResponsibleUserId = Users[2].Id,
-        LocationId = NatureLocations[2].Id,
         EDangerState = EDangerState.Dangerous
     }
 };
@@ -343,7 +229,6 @@ public static class GenerateTestDataToDB
         MicrobialActivity = 3200,
         AnalysisDate = new DateTime(2025, 1, 15).ToUniversalTime(),
         ResponsibleUserId = Users[2].Id,
-        LocationId = NatureLocations[3].Id,
         CreatedBy = Users[1].Id,
     },
     new SoilDeficiency
@@ -363,7 +248,6 @@ public static class GenerateTestDataToDB
         AnalysisDate = new DateTime(2025, 1, 18).ToUniversalTime(),
         CreatedBy = Users[1].Id,
         ResponsibleUserId = Users[2].Id,
-        LocationId = NatureLocations[4].Id,
         EDangerState = EDangerState.Critical,
     },
     new SoilDeficiency
@@ -384,7 +268,6 @@ public static class GenerateTestDataToDB
         AnalysisDate = new DateTime(2025, 1, 20).ToUniversalTime(),
         CreatedBy = Users[1].Id,
         ResponsibleUserId = Users[2].Id,
-        LocationId = NatureLocations[5].Id,
     }
 };
 

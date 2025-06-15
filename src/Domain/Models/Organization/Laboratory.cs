@@ -1,17 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Domain.Interfaces;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Models.Organization;
 
-public class Laboratory : BaseModel
+public class Laboratory : BaseModel, ICoordinates
 {
     public string Title { get; set; } = null!;
-
-    [ForeignKey(nameof(Location))]
-    public Guid LocationId { get; set; }
 
     [NotMapped]
     public int ResearchersCount { get; set; }
 
     public List<User>? Researchers { get; set; }
-    public Location? Location { get; set; }
+
+    #region ICoordinates Implementation
+    public double Longitude { get; set; }
+    public double Latitude { get; set; }
+    #endregion
 }

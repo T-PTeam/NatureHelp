@@ -3,6 +3,7 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20250614134331_RemoveLocationBinding")]
+    partial class RemoveLocationBinding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -183,9 +186,6 @@ namespace Infrastructure.Migrations
                     b.Property<double>("PesticidesContent")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("RadiusAffected")
-                        .HasColumnType("double precision");
-
                     b.Property<Guid?>("ResponsibleUserId")
                         .HasColumnType("uuid");
 
@@ -275,9 +275,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("double precision");
 
                     b.Property<double>("RadiationLevel")
-                        .HasColumnType("double precision");
-
-                    b.Property<double>("RadiusAffected")
                         .HasColumnType("double precision");
 
                     b.Property<Guid?>("ResponsibleUserId")

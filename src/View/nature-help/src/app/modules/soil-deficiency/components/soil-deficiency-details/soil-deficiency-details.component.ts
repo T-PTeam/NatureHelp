@@ -45,6 +45,7 @@ export class SoilDeficiencyDetail implements OnInit {
       } else {
         this.deficiencyDataService.getSoilDeficiencyById(id).subscribe((def) => {
           this.initializeForm(def);
+          this.changeMapView();
         });
       }
     });
@@ -56,16 +57,9 @@ export class SoilDeficiencyDetail implements OnInit {
       title: [deficiency?.title || "", Validators.required],
       description: [deficiency?.description || "", Validators.required],
       type: [deficiency?.type || EDeficiencyType.Soil, Validators.required],
-      location: this.fb.group({
-        latitude: [deficiency?.location?.latitude || 0, [Validators.required, Validators.min(-90), Validators.max(90)]],
-        longitude: [
-          deficiency?.location?.longitude || 0,
-          [Validators.required, Validators.min(-180), Validators.max(180)],
-        ],
-        city: [deficiency?.location?.city || ""],
-        country: [deficiency?.location?.country || ""],
-        radiusAffected: [deficiency?.location?.radiusAffected || 10],
-      }),
+      latitude: [deficiency?.latitude || 0, [Validators.required, Validators.min(-90), Validators.max(90)]],
+      longitude: [deficiency?.longitude || 0, [Validators.required, Validators.min(-180), Validators.max(180)]],
+      radiusAffected: [deficiency?.radiusAffected || 0, [Validators.required, Validators.min(0)]],
       eDangerState: [deficiency?.eDangerState || EDangerState.Moderate, Validators.required],
 
       ph: [deficiency?.ph ?? 6.5, [Validators.required, Validators.min(0)]],
@@ -83,7 +77,6 @@ export class SoilDeficiencyDetail implements OnInit {
       createdBy: [deficiency?.creator?.id || this.currentUser?.id],
       createdOn: [deficiency?.createdOn || moment()],
       responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id, [Validators.required]],
-      locationId: [deficiency?.location?.id || crypto.randomUUID()],
     });
 
     this.details = {
@@ -109,7 +102,7 @@ export class SoilDeficiencyDetail implements OnInit {
 
       this.currentUser = orgUsers.find((u) => u.id === userId) ?? null;
 
-      if (this.isAddingDeficiency && !this.detailsForm && this.currentUser && this.currentUser.address) {
+      if (this.isAddingDeficiency && !this.detailsForm && this.currentUser) {
         this.initializeForm();
       }
     });
@@ -156,6 +149,9 @@ export class SoilDeficiencyDetail implements OnInit {
   }
 
   private changeMapView() {
-    this.mapViewService.changeFocus({ latitude: 48.65, longitude: 22.26 }, 12);
+    this.mapViewService.changeFocus(
+      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
+      12,
+    );
   }
 }
