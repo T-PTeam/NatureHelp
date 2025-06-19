@@ -127,7 +127,7 @@ export class MapViewService {
     private waterDataService: WaterAPIService,
     private soilDataService: SoilAPIService,
     private labsAPIService: LabsAPIService,
-    private http: HttpClient
+    private http: HttpClient,
   ) {}
 
   public changeFocus(coordinates: ICoordinates, zoom: number) {
@@ -294,9 +294,11 @@ export class MapViewService {
 
   private async lookupAddress(coordinates: ICoordinates): Promise<IAddress | null> {
     try {
-      const response = await this.http.get<any>(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${coordinates.latitude}&lon=${coordinates.longitude}&zoom=18&addressdetails=1`
-      ).toPromise();
+      const response = await this.http
+        .get<any>(
+          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${coordinates.latitude}&lon=${coordinates.longitude}&zoom=18&addressdetails=1`,
+        )
+        .toPromise();
 
       if (response) {
         const address = response.address;
@@ -306,12 +308,12 @@ export class MapViewService {
           city: address.city || address.town || address.village,
           state: address.state,
           country: address.country,
-          postalCode: address.postcode
+          postalCode: address.postcode,
         };
       }
       return null;
     } catch (error) {
-      console.error('Error looking up address:', error);
+      console.error("Error looking up address:", error);
       return null;
     }
   }
@@ -319,36 +321,36 @@ export class MapViewService {
   public enableCoordinateSelection() {
     // Change cursor style to crosshair
     const mapContainer = this.map.getContainer();
-    mapContainer.style.cursor = 'crosshair';
-    mapContainer.classList.add('crosshair');
-    
-    this.map.on('click', async (e: L.LeafletMouseEvent) => {
+    mapContainer.style.cursor = "crosshair";
+    mapContainer.classList.add("crosshair");
+
+    this.map.on("click", async (e: L.LeafletMouseEvent) => {
       const coordinates: ICoordinates = {
         latitude: e.latlng.lat,
-        longitude: e.latlng.lng
+        longitude: e.latlng.lng,
       };
       this.selectedCoordinatesSubject.next(coordinates);
-      
+
       // Look up address
       const address = await this.lookupAddress(coordinates);
       this.selectedAddressSubject.next(address);
-      
+
       // Add a temporary marker to show the selected location
       const marker = L.marker([coordinates.latitude, coordinates.longitude], {
         icon: L.divIcon({
-          className: 'selected-location-marker',
+          className: "selected-location-marker",
           html: '<div class="selected-location-pin"></div>',
-          iconSize: [20, 20]
-        })
+          iconSize: [20, 20],
+        }),
       });
-      
+
       // Remove any existing temporary markers
       this.map.eachLayer((layer: L.Layer) => {
-        if (layer instanceof L.Marker && layer.getIcon()?.options.className === 'selected-location-marker') {
+        if (layer instanceof L.Marker && layer.getIcon()?.options.className === "selected-location-marker") {
           this.map.removeLayer(layer);
         }
       });
-      
+
       marker.addTo(this.map);
 
       // Automatically disable coordinate selection after selection
@@ -359,16 +361,16 @@ export class MapViewService {
   public disableCoordinateSelection() {
     // Reset cursor style
     const mapContainer = this.map.getContainer();
-    mapContainer.style.cursor = '';
-    mapContainer.classList.remove('crosshair');
-    
-    this.map.off('click');
+    mapContainer.style.cursor = "";
+    mapContainer.classList.remove("crosshair");
+
+    this.map.off("click");
     this.selectedCoordinatesSubject.next(null);
     this.selectedAddressSubject.next(null);
-    
+
     // Remove any temporary markers
     this.map.eachLayer((layer: L.Layer) => {
-      if (layer instanceof L.Marker && layer.getIcon()?.options.className === 'selected-location-marker') {
+      if (layer instanceof L.Marker && layer.getIcon()?.options.className === "selected-location-marker") {
         this.map.removeLayer(layer);
       }
     });

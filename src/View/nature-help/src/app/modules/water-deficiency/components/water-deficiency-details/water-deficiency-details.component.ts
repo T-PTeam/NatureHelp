@@ -54,7 +54,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
           this.changeMapView();
         });
       }
-    });    
+    });
 
     this.subscribeToCoordinatesPicking();
   }
@@ -219,19 +219,17 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   }
 
   private subscribeToCoordinatesPicking(): void {
-    this.mapViewService.selectedCoordinates$.subscribe(coordinates => {
+    this.mapViewService.selectedCoordinates$.subscribe((coordinates) => {
       if (coordinates) {
         this.detailsForm.patchValue({
           latitude: coordinates.latitude,
-          longitude: coordinates.longitude
+          longitude: coordinates.longitude,
         });
         this.isSelectingCoordinates = false;
       }
     });
 
-    this.mapViewService.selectedAddress$.pipe(
-      takeUntil(this.destroy$)
-    ).subscribe(address => {
+    this.mapViewService.selectedAddress$.pipe(takeUntil(this.destroy$)).subscribe((address) => {
       this.selectedAddress = address;
       if (address) {
         this.detailsForm.patchValue({ address: address.displayName });

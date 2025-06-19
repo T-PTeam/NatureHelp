@@ -53,7 +53,7 @@ export class SoilDeficiencyDetail implements OnInit {
           this.changeMapView();
         });
       }
-    });    
+    });
 
     this.subscribeToCoordinatesPicking();
   }
@@ -184,9 +184,7 @@ export class SoilDeficiencyDetail implements OnInit {
   }
 
   private subscribeToCoordinatesPicking(): void {
-    this.mapViewService.selectedAddress$.pipe(
-      takeUntil(this.destroy$)
-    ).subscribe(address => {
+    this.mapViewService.selectedAddress$.pipe(takeUntil(this.destroy$)).subscribe((address) => {
       this.selectedAddress = address;
       if (address) {
         this.detailsForm.patchValue({ address: address.displayName });

@@ -32,7 +32,7 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private mapViewService: MapViewService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
   ) {}
 
   ngOnInit(): void {
@@ -77,7 +77,7 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
         },
         error: (error: any) => {
           console.error("Error creating laboratory:", error);
-        }
+        },
       });
     } else {
       this.labsAPIService.updateLabById(formData.id, formData).subscribe({
@@ -86,7 +86,7 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
         },
         error: (error: any) => {
           console.error("Error updating laboratory:", error);
-        }
+        },
       });
     }
   }
@@ -145,21 +145,17 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
   }
 
   private subscribeToCoordinatesPicking(): void {
-    this.mapViewService.selectedCoordinates$.pipe(
-      takeUntil(this.destroy$)
-    ).subscribe(coordinates => {
+    this.mapViewService.selectedCoordinates$.pipe(takeUntil(this.destroy$)).subscribe((coordinates) => {
       if (coordinates) {
         this.detailsForm.patchValue({
           latitude: coordinates.latitude,
-          longitude: coordinates.longitude
+          longitude: coordinates.longitude,
         });
         this.isSelectingCoordinates = false;
       }
     });
 
-    this.mapViewService.selectedAddress$.pipe(
-      takeUntil(this.destroy$)
-    ).subscribe(address => {
+    this.mapViewService.selectedAddress$.pipe(takeUntil(this.destroy$)).subscribe((address) => {
       this.selectedAddress = address;
       if (address) {
         this.detailsForm.patchValue({ address: address.displayName });

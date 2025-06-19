@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, Output, HostListener, ElementRef } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { Component, EventEmitter, Input, Output, HostListener, ElementRef } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @Component({
-  selector: 'nat-pick-coordinates-button',
+  selector: "nat-pick-coordinates-button",
   standalone: true,
   imports: [MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: "./pick-coordinates-button.component.html",
@@ -21,10 +21,10 @@ export class PickCoordinatesButtonComponent {
     this.buttonClick.emit(event);
   }
 
-  @HostListener('document:click', ['$event'])
+  @HostListener("document:click", ["$event"])
   onDocumentClick(event: MouseEvent): void {
     if (this.isActive && !this.elementRef.nativeElement.contains(event.target)) {
       this.buttonClick.emit(event);
     }
   }
-} 
+}

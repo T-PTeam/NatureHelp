@@ -7,5 +7,5 @@ export interface ILaboratory {
   latitude: number;
   longitude: number;
   researchersCount: number;
-  address?: string; 
+  address?: string;
 }

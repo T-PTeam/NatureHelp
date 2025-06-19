@@ -21,7 +21,7 @@ import { PickCoordinatesButtonComponent } from "@/shared/components/custom-eleme
     SharedModule,
     MatModule,
     InfiniteScrollDirective,
-    PickCoordinatesButtonComponent
+    PickCoordinatesButtonComponent,
   ],
   declarations: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],
   exports: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],

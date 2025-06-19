@@ -59,25 +59,26 @@
 
       <nat-pick-coordinates-button
         [isActive]="isSelectingCoordinates"
-        (buttonClick)="toggleCoordinateSelection($event)"
-      ></nat-pick-coordinates-button>
+        (buttonClick)="toggleCoordinateSelection($event)"></nat-pick-coordinates-button>
     </div>
 
-    <div *ngIf="selectedAddress" class="address-container">
-      <mat-form-field appearance="outline" class="full-width">
+    <div
+      *ngIf="selectedAddress"
+      class="address-container">
+      <mat-form-field
+        appearance="outline"
+        class="full-width">
         <mat-label>Selected Address</mat-label>
         <input
           matInput
           readonly
-          [value]="selectedAddress.displayName"
-        />
+          [value]="selectedAddress.displayName" />
         <button
           *ngIf="selectedAddress"
           matSuffix
           mat-icon-button
           (click)="detailsForm.patchValue({ address: selectedAddress.displayName })"
-          matTooltip="Save address to form"
-        >
+          matTooltip="Save address to form">
           <mat-icon>save</mat-icon>
         </button>
       </mat-form-field>

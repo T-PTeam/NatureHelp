@@ -20,7 +20,7 @@ import { PickCoordinatesButtonComponent } from "@/shared/components/custom-eleme
     SharedModule,
     MatModule,
     InfiniteScrollDirective,
-    PickCoordinatesButtonComponent
+    PickCoordinatesButtonComponent,
   ],
   declarations: [SoilDeficiencyDetail, SoilDeficiencyTable],
   exports: [SoilDeficiencyTable, SoilDeficiencyDetail],
