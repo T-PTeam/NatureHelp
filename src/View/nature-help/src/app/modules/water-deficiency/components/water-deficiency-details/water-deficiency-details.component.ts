@@ -1,10 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import moment from "moment";
+import { takeUntil } from "rxjs/operators";
+import { Subject } from "rxjs";
 
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
-import { MapViewService } from "@/shared/services/map-view.service";
+import { MapViewService, IAddress } from "@/shared/services/map-view.service";
 
 import { EDangerState, EDeficiencyType } from "../../../../models/enums";
 import { IWaterDeficiency } from "../../models/IWaterDeficiency";
@@ -15,17 +17,20 @@ import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
 @Component({
   selector: "n-water-deficiency-details",
   templateUrl: "./water-deficiency-details.component.html",
-  styleUrls: ["./water-deficiency-details.component.css"],
+  styleUrls: ["../../../../shared/styles/detail-page.component.css", "./water-deficiency-details.component.css"],
   standalone: false,
 })
-export class WaterDeficiencyDetail implements OnInit {
+export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   details: IWaterDeficiency | null = null;
   detailsForm!: FormGroup;
   dangerStates = enumToSelectOptions(EDangerState);
   changedModelLogsOpened: boolean = false;
+  isSelectingCoordinates: boolean = false;
+  selectedAddress: IAddress | null = null;
 
   private isAddingDeficiency: boolean = false;
   private currentUser: IUser | null = null;
+  private destroy$ = new Subject<void>();
 
   constructor(
     private deficiencyDataService: WaterAPIService,
@@ -49,7 +54,55 @@ export class WaterDeficiencyDetail implements OnInit {
           this.changeMapView();
         });
       }
-    });
+    });    
+
+    this.subscribeToCoordinatesPicking();
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+    if (this.isSelectingCoordinates) {
+      this.mapViewService.disableCoordinateSelection();
+    }
+  }
+
+  onSubmit() {
+    if (this.detailsForm.invalid) {
+      this.detailsForm.markAllAsTouched();
+      return;
+    }
+
+    const formData: IWaterDeficiency = this.detailsForm.value;
+
+    if (this.isAddingDeficiency) {
+      this.deficiencyDataService.addNewWaterDeficiency(formData).subscribe(() => {
+        this.router.navigate(["/water"]);
+      });
+    } else {
+      this.deficiencyDataService.updateWaterDeficiencyById(formData.id, formData).subscribe(() => {
+        this.router.navigate(["/water"]);
+      });
+    }
+  }
+
+  onCancel() {
+    this.changeMapView();
+
+    this.router.navigate(["/water"]);
+  }
+
+  toggleCoordinateSelection(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.isSelectingCoordinates = !this.isSelectingCoordinates;
+    if (this.isSelectingCoordinates) {
+      this.mapViewService.enableCoordinateSelection();
+    } else {
+      this.mapViewService.disableCoordinateSelection();
+    }
   }
 
   private initializeForm(deficiency: IWaterDeficiency | null = null) {
@@ -60,6 +113,7 @@ export class WaterDeficiencyDetail implements OnInit {
       type: [deficiency?.type || EDeficiencyType.Water, Validators.required],
       latitude: [deficiency?.latitude || 0, [Validators.required, Validators.min(-90), Validators.max(90)]],
       longitude: [deficiency?.longitude || 0, [Validators.required, Validators.min(-180), Validators.max(180)]],
+      address: [deficiency?.address || ""],
       radiusAffected: [deficiency?.radiusAffected || 0, [Validators.required, Validators.min(0)]],
       eDangerState: [deficiency?.eDangerState || EDangerState.Moderate, Validators.required],
 
@@ -157,35 +211,31 @@ export class WaterDeficiencyDetail implements OnInit {
     return errors;
   }
 
-  public onSubmit() {
-    if (this.detailsForm.invalid) {
-      this.detailsForm.markAllAsTouched();
-      return;
-    }
-
-    const formData: IWaterDeficiency = this.detailsForm.value;
-
-    if (this.isAddingDeficiency) {
-      this.deficiencyDataService.addNewWaterDeficiency(formData).subscribe(() => {
-        this.router.navigate(["/water"]);
-      });
-    } else {
-      this.deficiencyDataService.updateWaterDeficiencyById(formData.id, formData).subscribe(() => {
-        this.router.navigate(["/water"]);
-      });
-    }
-  }
-
-  public onCancel() {
-    this.changeMapView();
-
-    this.router.navigate(["/water"]);
-  }
-
   private changeMapView() {
     this.mapViewService.changeFocus(
       { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
       12,
     );
+  }
+
+  private subscribeToCoordinatesPicking(): void {
+    this.mapViewService.selectedCoordinates$.subscribe(coordinates => {
+      if (coordinates) {
+        this.detailsForm.patchValue({
+          latitude: coordinates.latitude,
+          longitude: coordinates.longitude
+        });
+        this.isSelectingCoordinates = false;
+      }
+    });
+
+    this.mapViewService.selectedAddress$.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(address => {
+      this.selectedAddress = address;
+      if (address) {
+        this.detailsForm.patchValue({ address: address.displayName });
+      }
+    });
   }
 }

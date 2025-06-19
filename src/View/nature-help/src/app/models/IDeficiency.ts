@@ -15,4 +15,5 @@ export interface IDeficiency extends IBaseEntity {
   eDangerState: EDangerState;
   changedModelLogId: string;
   changedModelLog: IChangedModelLog[];
+  address?: string;
 }

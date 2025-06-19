@@ -31,7 +31,6 @@ export class WaterAPIService {
 
   public loadWaterDeficiencies(scrollCount: number, filter: IWaterDeficiencyFilter | null) {
     let params = new HttpParams();
-    console.log("EDANGERSTATE ENUM: ", filter);
 
     if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
     if (filter?.title) params = params.set("Title", filter.title);

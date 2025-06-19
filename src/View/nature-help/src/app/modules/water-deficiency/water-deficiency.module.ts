@@ -9,6 +9,7 @@ import { SharedModule } from "@/shared/shared.module";
 import { WaterDeficiencyDetail } from "./components/water-deficiency-details/water-deficiency-details.component";
 import { WaterDeficiencyTable } from "./components/water-deficiency-table/water-deficiency-table.component";
 import { InfiniteScrollDirective } from "ngx-infinite-scroll";
+import { PickCoordinatesButtonComponent } from "@/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component";
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { InfiniteScrollDirective } from "ngx-infinite-scroll";
     MatModule,
     SharedModule,
     InfiniteScrollDirective,
+    PickCoordinatesButtonComponent
   ],
   declarations: [WaterDeficiencyDetail, WaterDeficiencyTable],
   exports: [WaterDeficiencyTable, WaterDeficiencyDetail],

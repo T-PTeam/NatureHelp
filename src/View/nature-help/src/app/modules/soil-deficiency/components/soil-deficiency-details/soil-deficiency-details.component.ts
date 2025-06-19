@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import moment from "moment";
+import { takeUntil } from "rxjs/operators";
+import { Subject } from "rxjs";
 
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
@@ -15,16 +17,19 @@ import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
 @Component({
   selector: "n-soil-deficiency-details",
   templateUrl: "./soil-deficiency-details.component.html",
-  styleUrls: ["./soil-deficiency-details.component.css"],
+  styleUrls: ["../../../../shared/styles/detail-page.component.css", "./soil-deficiency-details.component.css"],
   standalone: false,
 })
 export class SoilDeficiencyDetail implements OnInit {
   details: ISoilDeficiency | null = null;
   detailsForm!: FormGroup;
   dangerStates = enumToSelectOptions(EDangerState);
+  isSelectingCoordinates: boolean = false;
+  selectedAddress: any;
 
   private isAddingDeficiency: boolean = false;
   private currentUser: IUser | null = null;
+  private destroy$ = new Subject<void>();
 
   constructor(
     private deficiencyDataService: SoilAPIService,
@@ -48,7 +53,55 @@ export class SoilDeficiencyDetail implements OnInit {
           this.changeMapView();
         });
       }
-    });
+    });    
+
+    this.subscribeToCoordinatesPicking();
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+    if (this.isSelectingCoordinates) {
+      this.mapViewService.disableCoordinateSelection();
+    }
+  }
+
+  onSubmit() {
+    if (this.detailsForm.invalid) {
+      this.detailsForm.markAllAsTouched();
+      return;
+    }
+
+    const formData: ISoilDeficiency = this.detailsForm.value;
+
+    if (this.isAddingDeficiency) {
+      this.deficiencyDataService.addNewSoilDeficiency(formData).subscribe(() => {
+        this.router.navigate(["/soil"]);
+      });
+    } else {
+      this.deficiencyDataService.updateSoilDeficiencyById(formData.id, formData).subscribe(() => {
+        this.router.navigate(["/soil"]);
+      });
+    }
+  }
+
+  onCancel() {
+    this.changeMapView();
+
+    this.router.navigate(["/soil"]);
+  }
+
+  toggleCoordinateSelection(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.isSelectingCoordinates = !this.isSelectingCoordinates;
+    if (this.isSelectingCoordinates) {
+      this.mapViewService.enableCoordinateSelection();
+    } else {
+      this.mapViewService.disableCoordinateSelection();
+    }
   }
 
   private initializeForm(deficiency: ISoilDeficiency | null = null): void {
@@ -123,35 +176,21 @@ export class SoilDeficiencyDetail implements OnInit {
     return errors;
   }
 
-  public onSubmit() {
-    if (this.detailsForm.invalid) {
-      this.detailsForm.markAllAsTouched();
-      return;
-    }
-
-    const formData: ISoilDeficiency = this.detailsForm.value;
-
-    if (this.isAddingDeficiency) {
-      this.deficiencyDataService.addNewSoilDeficiency(formData).subscribe(() => {
-        this.router.navigate(["/soil"]);
-      });
-    } else {
-      this.deficiencyDataService.updateSoilDeficiencyById(formData.id, formData).subscribe(() => {
-        this.router.navigate(["/soil"]);
-      });
-    }
-  }
-
-  public onCancel() {
-    this.changeMapView();
-
-    this.router.navigate(["/soil"]);
-  }
-
   private changeMapView() {
     this.mapViewService.changeFocus(
       { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
       12,
     );
+  }
+
+  private subscribeToCoordinatesPicking(): void {
+    this.mapViewService.selectedAddress$.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(address => {
+      this.selectedAddress = address;
+      if (address) {
+        this.detailsForm.patchValue({ address: address.displayName });
+      }
+    });
   }
 }

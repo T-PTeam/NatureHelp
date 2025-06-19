@@ -1,6 +1,6 @@
 <mat-card
   *ngIf="detailsForm"
-  class="lab-card">
+  class="detail-card">
   <mat-card-title i18n="@@labTitle">Laboratory</mat-card-title>
 
   <form
@@ -24,35 +24,60 @@
       </textarea>
     </mat-form-field>
 
-    <div class="form-row">
-      <mat-form-field class="form-field">
-        <mat-label>Latitude</mat-label>
+    <mat-form-field class="full-width">
+      <mat-label i18n="@@address">Address</mat-label>
+      <input
+        matInput
+        formControlName="address"
+        placeholder="Enter laboratory address" />
+    </mat-form-field>
+
+    <div class="coordinates-container">
+      <mat-form-field>
+        <mat-label i18n="@@latitude">Latitude</mat-label>
         <input
           matInput
-          formControlName="latitude"
           type="number"
-          step="0.000001" />
+          formControlName="latitude" />
         <mat-error *ngIf="detailsForm.get('latitude')?.invalid && detailsForm.get('latitude')?.touched">
-          <span *ngIf="detailsForm.get('latitude')?.hasError('required')">Latitude is required</span>
-          <span *ngIf="detailsForm.get('latitude')?.hasError('min') || detailsForm.get('latitude')?.hasError('max')">
-            Latitude must be between -90 and 90
-          </span>
+          Latitude must be between -90 and 90.
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Longitude</mat-label>
+      <mat-form-field>
+        <mat-label i18n="@@longitude">Longitude</mat-label>
         <input
           matInput
-          formControlName="longitude"
           type="number"
-          step="0.000001" />
+          formControlName="longitude" />
         <mat-error *ngIf="detailsForm.get('longitude')?.invalid && detailsForm.get('longitude')?.touched">
-          <span *ngIf="detailsForm.get('longitude')?.hasError('required')">Longitude is required</span>
-          <span *ngIf="detailsForm.get('longitude')?.hasError('min') || detailsForm.get('longitude')?.hasError('max')">
-            Longitude must be between -180 and 180
-          </span>
+          Longitude must be between -180 and 180.
         </mat-error>
+      </mat-form-field>
+
+      <nat-pick-coordinates-button
+        [isActive]="isSelectingCoordinates"
+        (buttonClick)="toggleCoordinateSelection($event)"
+      ></nat-pick-coordinates-button>
+    </div>
+
+    <div *ngIf="selectedAddress" class="address-container">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Selected Address</mat-label>
+        <input
+          matInput
+          readonly
+          [value]="selectedAddress.displayName"
+        />
+        <button
+          *ngIf="selectedAddress"
+          matSuffix
+          mat-icon-button
+          (click)="detailsForm.patchValue({ address: selectedAddress.displayName })"
+          matTooltip="Save address to form"
+        >
+          <mat-icon>save</mat-icon>
+        </button>
       </mat-form-field>
     </div>
 

@@ -28,5 +28,6 @@ public class Deficiency : BaseModel, ICoordinates
     public double Longitude { get; set; }
     public double Latitude { get; set; }
     public double RadiusAffected { get; set; } = 10;
+    public string? Address { get; set; }
     #endregion
 }

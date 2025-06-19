@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import * as L from "leaflet";
-import { combineLatest, map } from "rxjs";
+import { BehaviorSubject, combineLatest, map, Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
 
 import { ICoordinates } from "@/models/ICoordinates";
 import { IWaterDeficiency } from "@/modules/water-deficiency/models/IWaterDeficiency";
@@ -12,6 +13,15 @@ import { ILaboratory } from "@/modules/laboratories/models/ILaboratory";
 import { IDeficiency } from "@/models/IDeficiency";
 import { EDangerState, EDeficiencyType, EMapLayer } from "@/models/enums";
 import "leaflet.markercluster";
+
+export interface IAddress {
+  displayName: string;
+  street?: string;
+  city?: string;
+  state?: string;
+  country?: string;
+  postalCode?: string;
+}
 
 @Injectable({
   providedIn: "root",
@@ -87,6 +97,12 @@ export class MapViewService {
     popupAnchor: [0, -32],
   });
 
+  private selectedCoordinatesSubject = new BehaviorSubject<ICoordinates | null>(null);
+  public selectedCoordinates$: Observable<ICoordinates | null> = this.selectedCoordinatesSubject.asObservable();
+
+  private selectedAddressSubject = new BehaviorSubject<IAddress | null>(null);
+  public selectedAddress$: Observable<IAddress | null> = this.selectedAddressSubject.asObservable();
+
   public initMap(): void {
     this.map = L.map("map", {
       center: [48.65, 22.26],
@@ -111,6 +127,7 @@ export class MapViewService {
     private waterDataService: WaterAPIService,
     private soilDataService: SoilAPIService,
     private labsAPIService: LabsAPIService,
+    private http: HttpClient
   ) {}
 
   public changeFocus(coordinates: ICoordinates, zoom: number) {
@@ -273,5 +290,87 @@ export class MapViewService {
   private clearDeficienciesLayersFromMap() {
     this.waterDeficienciesLayer.clearLayers();
     this.soilDeficienciesLayer.clearLayers();
+  }
+
+  private async lookupAddress(coordinates: ICoordinates): Promise<IAddress | null> {
+    try {
+      const response = await this.http.get<any>(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${coordinates.latitude}&lon=${coordinates.longitude}&zoom=18&addressdetails=1`
+      ).toPromise();
+
+      if (response) {
+        const address = response.address;
+        return {
+          displayName: response.display_name,
+          street: address.road || address.pedestrian || address.path,
+          city: address.city || address.town || address.village,
+          state: address.state,
+          country: address.country,
+          postalCode: address.postcode
+        };
+      }
+      return null;
+    } catch (error) {
+      console.error('Error looking up address:', error);
+      return null;
+    }
+  }
+
+  public enableCoordinateSelection() {
+    // Change cursor style to crosshair
+    const mapContainer = this.map.getContainer();
+    mapContainer.style.cursor = 'crosshair';
+    mapContainer.classList.add('crosshair');
+    
+    this.map.on('click', async (e: L.LeafletMouseEvent) => {
+      const coordinates: ICoordinates = {
+        latitude: e.latlng.lat,
+        longitude: e.latlng.lng
+      };
+      this.selectedCoordinatesSubject.next(coordinates);
+      
+      // Look up address
+      const address = await this.lookupAddress(coordinates);
+      this.selectedAddressSubject.next(address);
+      
+      // Add a temporary marker to show the selected location
+      const marker = L.marker([coordinates.latitude, coordinates.longitude], {
+        icon: L.divIcon({
+          className: 'selected-location-marker',
+          html: '<div class="selected-location-pin"></div>',
+          iconSize: [20, 20]
+        })
+      });
+      
+      // Remove any existing temporary markers
+      this.map.eachLayer((layer: L.Layer) => {
+        if (layer instanceof L.Marker && layer.getIcon()?.options.className === 'selected-location-marker') {
+          this.map.removeLayer(layer);
+        }
+      });
+      
+      marker.addTo(this.map);
+
+      // Automatically disable coordinate selection after selection
+      this.disableCoordinateSelection();
+    });
+  }
+
+  public disableCoordinateSelection() {
+    // Reset cursor style
+    const mapContainer = this.map.getContainer();
+    mapContainer.style.cursor = '';
+    mapContainer.classList.remove('crosshair');
+    
+    this.map.off('click');
+    this.selectedCoordinatesSubject.next(null);
+    this.selectedAddressSubject.next(null);
+    
+    // Remove any temporary markers
+    this.map.eachLayer((layer: L.Layer) => {
+      if (layer instanceof L.Marker && layer.getIcon()?.options.className === 'selected-location-marker') {
+        this.map.removeLayer(layer);
+      }
+    });
   }
 }
