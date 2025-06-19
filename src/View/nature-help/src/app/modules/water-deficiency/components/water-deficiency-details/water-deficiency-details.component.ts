@@ -139,7 +139,7 @@ export class WaterDeficiencyDetail implements OnInit {
 
   private loadOrganizationUsers() {
     this.usersAPIService.$organizationUsers.subscribe((orgUsers) => {
-      const userId = localStorage.getItem("userId");
+      const userId = sessionStorage.getItem("userId");
 
       this.currentUser = orgUsers.find((u) => u.id === userId) ?? null;
 

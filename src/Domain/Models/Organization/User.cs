@@ -12,7 +12,11 @@ public class User : Person
     public string PasswordHash { get; set; } = null!;
     public Organization? Organization { get; set; }
     public Laboratory? Laboratory { get; set; }
+
+    [NotMapped]
     public string? AccessToken { get; set; }
+
+    [NotMapped]
     public DateTime? AccessTokenExpireTime { get; set; }
     public string? RefreshToken { get; set; }
     public DateTime? RefreshTokenExpireTime { get; set; }
