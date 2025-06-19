@@ -157,6 +157,13 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 
 var app = builder.Build();
 
+app.UseHttpsRedirection();
+
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHsts();
+}
+
 app.UseCors(options =>
 options.AllowAnyHeader()
 .AllowAnyOrigin()
