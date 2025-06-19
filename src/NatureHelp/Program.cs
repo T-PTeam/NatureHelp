@@ -1,4 +1,5 @@
 using Application.Providers;
+using AspNetCoreRateLimit;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,13 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+
+builder.Services.AddMemoryCache();
+
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimitPolicies"));
+builder.Services.AddInMemoryRateLimiting();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
 builder.Host.UseSerilog((context, services, configuration) =>
 {
@@ -179,6 +187,8 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowSpecificOrigins");
+
+app.UseIpRateLimiting();
 
 if (app.Environment.IsDevelopment())
 {
