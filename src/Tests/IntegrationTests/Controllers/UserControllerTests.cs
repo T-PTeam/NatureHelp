@@ -1,6 +1,6 @@
-﻿using System.Net;
+﻿using Application.Dtos;
+using System.Net;
 using System.Net.Http.Json;
-using Application.Dtos;
 
 
 namespace Tests.IntegrationTests.Controllers;

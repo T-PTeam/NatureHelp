@@ -1,6 +1,6 @@
 <mat-card
   *ngIf="detailsForm"
-  class="lab-card">
+  class="detail-card">
   <mat-card-title i18n="@@labTitle">Laboratory</mat-card-title>
 
   <form
@@ -14,7 +14,7 @@
         formControlName="title" />
     </mat-form-field>
 
-    <mat-form-field style="grid-column: 2; grid-row: 1 / 3">
+    <mat-form-field>
       <mat-label i18n="@@researchesLabel">Researches</mat-label>
       <textarea
         matInput
@@ -24,32 +24,61 @@
       </textarea>
     </mat-form-field>
 
-    <div formGroupName="location">
+    <mat-form-field class="full-width">
+      <mat-label i18n="@@address">Address</mat-label>
+      <input
+        matInput
+        formControlName="address"
+        placeholder="Enter laboratory address" />
+    </mat-form-field>
+
+    <div class="coordinates-container">
       <mat-form-field>
-        <mat-label i18n="@@latitudeLabel">Latitude</mat-label>
+        <mat-label i18n="@@latitude">Latitude</mat-label>
         <input
           matInput
           type="number"
           formControlName="latitude" />
+        <mat-error *ngIf="detailsForm.get('latitude')?.invalid && detailsForm.get('latitude')?.touched">
+          Latitude must be between -90 and 90.
+        </mat-error>
       </mat-form-field>
+
       <mat-form-field>
-        <mat-label i18n="@@longitudeLabel">Longitude</mat-label>
+        <mat-label i18n="@@longitude">Longitude</mat-label>
         <input
           matInput
           type="number"
           formControlName="longitude" />
+        <mat-error *ngIf="detailsForm.get('longitude')?.invalid && detailsForm.get('longitude')?.touched">
+          Longitude must be between -180 and 180.
+        </mat-error>
       </mat-form-field>
-      <mat-form-field>
-        <mat-label i18n="@@cityLabel">City</mat-label>
+
+      <nat-pick-coordinates-button
+        [isActive]="isSelectingCoordinates"
+        (buttonClick)="toggleCoordinateSelection($event)"></nat-pick-coordinates-button>
+    </div>
+
+    <div
+      *ngIf="selectedAddress"
+      class="address-container">
+      <mat-form-field
+        appearance="outline"
+        class="full-width">
+        <mat-label>Selected Address</mat-label>
         <input
           matInput
-          formControlName="city" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label i18n="@@countryLabel">Country</mat-label>
-        <input
-          matInput
-          formControlName="country" />
+          readonly
+          [value]="selectedAddress.displayName" />
+        <button
+          *ngIf="selectedAddress"
+          matSuffix
+          mat-icon-button
+          (click)="detailsForm.patchValue({ address: selectedAddress.displayName })"
+          matTooltip="Save address to form">
+          <mat-icon>save</mat-icon>
+        </button>
       </mat-form-field>
     </div>
 

@@ -5,11 +5,6 @@ using Domain.Models.Audit;
 using Domain.Models.Nature;
 using Infrastructure.Interfaces;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tests.UnitTests.Application;
 public class AuditTests

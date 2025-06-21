@@ -69,5 +69,5 @@ namespace Application.Providers
 
             return claims;
         }
-    }   
+    }
 }

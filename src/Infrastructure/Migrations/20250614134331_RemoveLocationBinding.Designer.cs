@@ -3,6 +3,7 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20250614134331_RemoveLocationBinding")]
+    partial class RemoveLocationBinding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,9 +131,6 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("text");
-
                     b.Property<DateTime>("AnalysisDate")
                         .HasColumnType("timestamp with time zone");
 
@@ -186,9 +186,6 @@ namespace Infrastructure.Migrations
                     b.Property<double>("PesticidesContent")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("RadiusAffected")
-                        .HasColumnType("double precision");
-
                     b.Property<Guid?>("ResponsibleUserId")
                         .HasColumnType("uuid");
 
@@ -215,9 +212,6 @@ namespace Infrastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("text");
 
                     b.Property<double>("BiologicalOxygenDemand")
                         .HasColumnType("double precision");
@@ -283,9 +277,6 @@ namespace Infrastructure.Migrations
                     b.Property<double>("RadiationLevel")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("RadiusAffected")
-                        .HasColumnType("double precision");
-
                     b.Property<Guid?>("ResponsibleUserId")
                         .HasColumnType("uuid");
 
@@ -315,9 +306,6 @@ namespace Infrastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("text");
 
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("uuid");

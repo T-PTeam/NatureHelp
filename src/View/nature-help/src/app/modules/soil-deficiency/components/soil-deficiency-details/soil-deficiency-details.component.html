@@ -1,6 +1,6 @@
 <mat-card
   *ngIf="details"
-  class="soil-deficiency-card">
+  class="detail-card">
   <mat-card-title i18n="@@soilDeficiency">Soil Deficiency</mat-card-title>
   <div
     class="form-container"
@@ -26,6 +26,64 @@
       </mat-error>
     </mat-form-field>
 
+    <mat-form-field class="full-width">
+      <mat-label i18n="@@address">Address</mat-label>
+      <input
+        matInput
+        formControlName="address"
+        placeholder="Enter deficiency address" />
+    </mat-form-field>
+
+    <div class="coordinates-container">
+      <mat-form-field>
+        <mat-label i18n="@@latitude">Latitude</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="latitude" />
+        <mat-error *ngIf="detailsForm.get('latitude')?.invalid && detailsForm.get('latitude')?.touched">
+          Latitude must be between -90 and 90.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label i18n="@@longitude">Longitude</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="longitude" />
+        <mat-error *ngIf="detailsForm.get('longitude')?.invalid && detailsForm.get('longitude')?.touched">
+          Longitude must be between -180 and 180.
+        </mat-error>
+      </mat-form-field>
+
+      <nat-pick-coordinates-button
+        [isActive]="isSelectingCoordinates"
+        (buttonClick)="toggleCoordinateSelection($event)"></nat-pick-coordinates-button>
+    </div>
+
+    <div
+      *ngIf="selectedAddress"
+      class="address-container">
+      <mat-form-field
+        appearance="outline"
+        class="full-width">
+        <mat-label>Selected Address</mat-label>
+        <input
+          matInput
+          readonly
+          [value]="selectedAddress.displayName" />
+        <button
+          *ngIf="selectedAddress"
+          matSuffix
+          mat-icon-button
+          (click)="detailsForm.patchValue({ address: selectedAddress.displayName })"
+          matTooltip="Save address to form">
+          <mat-icon>save</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
     <mat-form-field>
       <mat-label i18n="@@dangerState">Danger state</mat-label>
       <mat-select
@@ -44,51 +102,34 @@
       </mat-select>
     </mat-form-field>
 
-    <div formGroupName="location">
-      <mat-form-field>
-        <mat-label i18n="@@latitude">Latitude</mat-label>
-        <input
-          matInput
-          type="number"
-          formControlName="latitude" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label i18n="@@longitude">Longitude</mat-label>
-        <input
-          matInput
-          type="number"
-          formControlName="longitude" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label i18n="@@city">City</mat-label>
-        <input
-          matInput
-          formControlName="city" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label i18n="@@country">Country</mat-label>
-        <input
-          matInput
-          formControlName="country" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label i18n="@@radiusAffected">Radius affected</mat-label>
-        <input
-          matInput
-          type="number"
-          formControlName="radiusAffected" />
-        <mat-error
-          *ngIf="
-            detailsForm.get('location.radiusAffected')?.invalid && detailsForm.get('location.radiusAffected')?.touched
-          ">
-          <span
-            *ngIf="detailsForm.get('location.radiusAffected')?.hasError('required')"
-            i18n="@@radiusRequired">
-            Radius affected is required.
-          </span>
-        </mat-error>
-      </mat-form-field>
-    </div>
+    <mat-form-field>
+      <mat-label i18n="@@city">City</mat-label>
+      <input
+        matInput
+        formControlName="city" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label i18n="@@country">Country</mat-label>
+      <input
+        matInput
+        formControlName="country" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label i18n="@@radiusAffected">Radius affected</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="radiusAffected" />
+      <mat-error *ngIf="detailsForm.get('radiusAffected')?.invalid && detailsForm.get('radiusAffected')?.touched">
+        <span
+          *ngIf="detailsForm.get('radiusAffected')?.hasError('required')"
+          i18n="@@radiusRequired">
+          Radius affected is required.
+        </span>
+      </mat-error>
+    </mat-form-field>
 
     <mat-form-field>
       <mat-label>pH</mat-label>
@@ -96,6 +137,12 @@
         matInput
         type="number"
         formControlName="ph" />
+      <mat-error *ngIf="detailsForm.get('ph')?.invalid && detailsForm.get('ph')?.touched">
+        <span *ngIf="detailsForm.get('ph')?.hasError('required')">pH is required.</span>
+        <span *ngIf="detailsForm.get('ph')?.hasError('min') || detailsForm.get('ph')?.hasError('max')"
+          >Value must be between 0 and 14.</span
+        >
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field>

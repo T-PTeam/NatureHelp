@@ -30,39 +30,36 @@ builder.Host.UseSerilog((context, services, configuration) =>
         .Enrich.FromLogContext();
 });
 
-if (!builder.Environment.IsEnvironment("Testing"))
+builder.Services.AddDbContextFactory<ApplicationContext>(options =>
 {
-    builder.Services.AddDbContextFactory<ApplicationContext>(options =>
+    string connectionString = configuration.GetConnectionString("LocalConnection")
+        ?? configuration.GetConnectionString("DefaultConnection")
+        ?? String.Empty;
+
+    options.UseNpgsql(connectionString, npgsqlOptions =>
     {
-        string connectionString = configuration.GetConnectionString("LocalConnection")
-            ?? configuration.GetConnectionString("DefaultConnection")
-            ?? String.Empty;
+        npgsqlOptions.MigrationsAssembly("Infrastructure")
+            .MinBatchSize(100)
+            .MaxBatchSize(500);
 
-        options.UseNpgsql(connectionString, npgsqlOptions =>
-        {
-            npgsqlOptions.MigrationsAssembly("Infrastructure")
-                .MinBatchSize(100)
-                .MaxBatchSize(500);
+        /* To add migration open src folder and run the following command:
+            dotnet ef migrations add InitialCreate --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj --output-dir Migrations */
 
-            /* To add migration open src folder and run the following command:
-                dotnet ef migrations add InitialCreate --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj --output-dir Migrations */
+        /* To Update DB
+        
+        dotnet ef database update --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj */
 
-            /* To Update DB
-
-            dotnet ef database update --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj */
-
-            /* To generate SQL Script (choose previous migration ID)
-
-            dotnet ef migrations script -i 20250319083430_Rewriting_Initial_Create --project Infrastructure\Infrastructure.csproj--startup - project NatureHelp\NatureHelp.csproj--output Infrastructure\Migrations\SQL\Autogenerating_Data.sql */
-        });
-
-        if ((Environment.GetEnvironmentVariable("AspNetCore_ENVIRONMENT") ?? "Development").Equals("Development"))
-        {
-            options.EnableSensitiveDataLogging()
-                .LogTo(message => Log.Logger.Information(message), new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information);
-        }
+        /* To generate SQL Script (choose previous migration ID)
+        
+        dotnet ef migrations script -i 20250319083430_Rewriting_Initial_Create --project Infrastructure\Infrastructure.csproj--startup - project NatureHelp\NatureHelp.csproj--output Infrastructure\Migrations\SQL\Autogenerating_Data.sql */
     });
-}
+
+    if ((Environment.GetEnvironmentVariable("AspNetCore_ENVIRONMENT") ?? "Development").Equals("Development"))
+    {
+        options.EnableSensitiveDataLogging()
+            .LogTo(message => Log.Logger.Information(message), new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information);
+    }
+});
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
