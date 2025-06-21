@@ -9,6 +9,6 @@ Cypress.Commands.add("loginByApi", () => {
       password: "Test1234!",
     },
   }).then((resp) => {
-    localStorage.setItem("accessToken", resp.body.accessToken);
+    sessionStorage.setItem("accessToken", resp.body.accessToken);
   });
 });

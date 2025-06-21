@@ -46,8 +46,6 @@ export class UserAPIService {
 
     this.isSuperAdmin$ = this.$user.pipe(map((user) => user?.role === 0));
     this.isOwner$ = this.$user.pipe(map((user) => user?.role === 1));
-
-    this.refreshAccessToken();
   }
 
   auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {
@@ -56,7 +54,7 @@ export class UserAPIService {
         .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
           email,
           password,
-          organizationId: localStorage.getItem("organizationId"),
+          organizationId: sessionStorage.getItem("organizationId"),
         })
         .pipe(
           tap((authResponse) => {
@@ -69,7 +67,7 @@ export class UserAPIService {
       return this.http
         .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
           email,
-          organizationId: localStorage.getItem("organizationId"),
+          organizationId: sessionStorage.getItem("organizationId"),
         })
         .pipe(
           tap((authResponse) => {
@@ -81,8 +79,8 @@ export class UserAPIService {
     }
   }
 
-  refreshAccessToken() {
-    this.http
+  refreshAccessToken(): Observable<IAuthResponse> {
+    return this.http
       .post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {
         refreshToken: localStorage.getItem("refreshToken"),
       })
@@ -92,23 +90,22 @@ export class UserAPIService {
           this.setAuthOptions(authResponse);
         }),
         shareReplay(),
-      )
-      .subscribe();
+      );
   }
 
   logout() {
-    localStorage.removeItem("accessToken");
+    sessionStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
-    localStorage.removeItem("role");
-    localStorage.removeItem("organizationId");
-    localStorage.removeItem("email");
-    localStorage.removeItem("userId");
+    sessionStorage.removeItem("role");
+    sessionStorage.removeItem("organizationId");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("userId");
 
     this.subject.next(null);
   }
 
   loadOrganizationUsers(scrollCount: number) {
-    const organizationId = localStorage.getItem("organizationId");
+    const organizationId = sessionStorage.getItem("organizationId");
 
     if (!organizationId) {
       this.notify.open("Relogin, please", "Close", { duration: 2000 });
@@ -143,7 +140,7 @@ export class UserAPIService {
   }
 
   loadNotLoginEverOrganizationUsers() {
-    const organizationId = localStorage.getItem("organizationId");
+    const organizationId = sessionStorage.getItem("organizationId");
 
     if (!organizationId) {
       this.notify.open("Relogin, please", "Close", { duration: 2000 });
@@ -170,7 +167,7 @@ export class UserAPIService {
   }
 
   addOrganizationUsers(authType: EAuthType, users: IUser[]) {
-    const organizationId = localStorage.getItem("organizationId");
+    const organizationId = sessionStorage.getItem("organizationId");
 
     users = users.map((u) => {
       u.organizationId = organizationId;
@@ -188,7 +185,7 @@ export class UserAPIService {
   }
 
   addOrganizationUser(authType: EAuthType, user: IUser) {
-    const organizationId = localStorage.getItem("organizationId");
+    const organizationId = sessionStorage.getItem("organizationId");
 
     user.organizationId = organizationId;
 
@@ -231,15 +228,15 @@ export class UserAPIService {
       return;
     }
 
-    if (authOptions.id) localStorage.setItem("userId", authOptions.id);
-    if (authOptions.accessToken) localStorage.setItem("accessToken", authOptions.accessToken);
+    if (authOptions.id) sessionStorage.setItem("userId", authOptions.id);
+    if (authOptions.accessToken) sessionStorage.setItem("accessToken", authOptions.accessToken);
     if (authOptions.refreshToken) localStorage.setItem("refreshToken", authOptions.refreshToken);
-    if (authOptions.organizationId) localStorage.setItem("organizationId", authOptions.organizationId);
-    if (authOptions.email) localStorage.setItem("email", authOptions.email);
+    if (authOptions.organizationId) sessionStorage.setItem("organizationId", authOptions.organizationId);
+    if (authOptions.email) sessionStorage.setItem("email", authOptions.email);
 
     const decodedTokenRole = this.jwtHelper.decodeToken(authOptions.accessToken);
     if (decodedTokenRole)
-      localStorage.setItem("role", decodedTokenRole["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]);
+      sessionStorage.setItem("role", decodedTokenRole["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]);
 
     this.subject.next(authOptions);
   }

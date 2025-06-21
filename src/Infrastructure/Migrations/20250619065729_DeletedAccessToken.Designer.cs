@@ -3,6 +3,7 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20250619065729_DeletedAccessToken")]
+    partial class DeletedAccessToken
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,14 +125,45 @@ namespace Infrastructure.Migrations
                     b.ToTable("ChangedModelLogs");
                 });
 
-            modelBuilder.Entity("Domain.Models.Nature.SoilDeficiency", b =>
+            modelBuilder.Entity("Domain.Models.Nature.Location", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Address")
+                    b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<double>("Latitude")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("RadiusAffected")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NatLocations");
+                });
+
+            modelBuilder.Entity("Domain.Models.Nature.SoilDeficiency", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("AnalysisDate")
                         .HasColumnType("timestamp with time zone");
@@ -159,14 +193,11 @@ namespace Infrastructure.Migrations
                     b.Property<double>("HeavyMetalsConcentration")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("Latitude")
-                        .HasColumnType("double precision");
-
                     b.Property<double>("LeadConcentration")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("Longitude")
-                        .HasColumnType("double precision");
+                    b.Property<Guid>("LocationId")
+                        .HasColumnType("uuid");
 
                     b.Property<double>("MercuryConcentration")
                         .HasColumnType("double precision");
@@ -186,9 +217,6 @@ namespace Infrastructure.Migrations
                     b.Property<double>("PesticidesContent")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("RadiusAffected")
-                        .HasColumnType("double precision");
-
                     b.Property<Guid?>("ResponsibleUserId")
                         .HasColumnType("uuid");
 
@@ -205,6 +233,8 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("CreatedBy");
 
+                    b.HasIndex("LocationId");
+
                     b.HasIndex("ResponsibleUserId");
 
                     b.ToTable("SoilDeficiencies");
@@ -215,9 +245,6 @@ namespace Infrastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("text");
 
                     b.Property<double>("BiologicalOxygenDemand")
                         .HasColumnType("double precision");
@@ -250,14 +277,11 @@ namespace Infrastructure.Migrations
                     b.Property<double>("ElectricalConductivity")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("Latitude")
-                        .HasColumnType("double precision");
-
                     b.Property<double>("LeadConcentration")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("Longitude")
-                        .HasColumnType("double precision");
+                    b.Property<Guid>("LocationId")
+                        .HasColumnType("uuid");
 
                     b.Property<double>("MercuryConcentration")
                         .HasColumnType("double precision");
@@ -283,9 +307,6 @@ namespace Infrastructure.Migrations
                     b.Property<double>("RadiationLevel")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("RadiusAffected")
-                        .HasColumnType("double precision");
-
                     b.Property<Guid?>("ResponsibleUserId")
                         .HasColumnType("uuid");
 
@@ -305,6 +326,8 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("CreatedBy");
 
+                    b.HasIndex("LocationId");
+
                     b.HasIndex("ResponsibleUserId");
 
                     b.ToTable("WaterDeficiencies");
@@ -316,7 +339,38 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Address")
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("LocationId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
+
+                    b.ToTable("Laboratories");
+                });
+
+            modelBuilder.Entity("Domain.Models.Organization.Location", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<Guid>("CreatedBy")
@@ -325,19 +379,23 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("District")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<double>("Latitude")
                         .HasColumnType("double precision");
 
                     b.Property<double>("Longitude")
                         .HasColumnType("double precision");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("Region")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Laboratories");
+                    b.ToTable("OrgLocations");
                 });
 
             modelBuilder.Entity("Domain.Models.Organization.Organization", b =>
@@ -346,20 +404,22 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<int>("AllowedMembersCount")
-                        .HasColumnType("integer");
-
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<Guid>("LocationId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
 
                     b.ToTable("Organizations");
                 });
@@ -368,6 +428,9 @@ namespace Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("AddressId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("CreatedBy")
@@ -414,6 +477,8 @@ namespace Infrastructure.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
 
                     b.HasIndex("LaboratoryId");
 
@@ -464,6 +529,12 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Models.Nature.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Domain.Models.Organization.User", "ResponsibleUser")
                         .WithMany()
                         .HasForeignKey("ResponsibleUserId");
@@ -471,6 +542,8 @@ namespace Infrastructure.Migrations
                     b.Navigation("ChangedModelLog");
 
                     b.Navigation("Creator");
+
+                    b.Navigation("Location");
 
                     b.Navigation("ResponsibleUser");
                 });
@@ -487,6 +560,12 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Models.Nature.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Domain.Models.Organization.User", "ResponsibleUser")
                         .WithMany()
                         .HasForeignKey("ResponsibleUserId");
@@ -495,11 +574,39 @@ namespace Infrastructure.Migrations
 
                     b.Navigation("Creator");
 
+                    b.Navigation("Location");
+
                     b.Navigation("ResponsibleUser");
+                });
+
+            modelBuilder.Entity("Domain.Models.Organization.Laboratory", b =>
+                {
+                    b.HasOne("Domain.Models.Organization.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("Domain.Models.Organization.Organization", b =>
+                {
+                    b.HasOne("Domain.Models.Organization.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("Domain.Models.Organization.User", b =>
                 {
+                    b.HasOne("Domain.Models.Organization.Location", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId");
+
                     b.HasOne("Domain.Models.Organization.Laboratory", "Laboratory")
                         .WithMany("Researchers")
                         .HasForeignKey("LaboratoryId");
@@ -507,6 +614,8 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Models.Organization.Organization", "Organization")
                         .WithMany()
                         .HasForeignKey("OrganizationId");
+
+                    b.Navigation("Address");
 
                     b.Navigation("Laboratory");
 
