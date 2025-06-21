@@ -17,7 +17,6 @@ public class ResearchRepository : BaseRepository<Research>, IResearchRepository
             {
                 IQueryable<Research> fullList = context.Set<Research>()
                     .Include(r => r.Laboratory)
-                        .ThenInclude(l => l.Location)
                     .Include(r => r.Researcher);
 
                 foreach (var research in fullList)
@@ -30,7 +29,6 @@ public class ResearchRepository : BaseRepository<Research>, IResearchRepository
 
             IQueryable<Research> list = context.Set<Research>()
                     .Include(r => r.Laboratory)
-                        .ThenInclude(l => l.Location)
                     .Include(r => r.Researcher)
                     .Skip(scrollCount * 20).Take(20);
 

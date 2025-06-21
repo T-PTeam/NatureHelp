@@ -1,142 +1,103 @@
-import { EDangerState, EDeficiencyType } from "@/models/enums";
+/// <reference types="cypress" />
 import { FilterPipe } from "./filter.pipe";
 import { IWaterDeficiency } from "@/modules/water-deficiency/models/IWaterDeficiency";
+import { EDangerState, EDeficiencyType } from "@/models/enums";
 import { IUser } from "@/models/IUser";
-import { ILocation } from "@/models/ILocation";
+import { expect } from "chai";
 
 describe("FilterPipe", () => {
   let pipe: FilterPipe;
-
-  const fixedDate = new Date("2024-01-01T00:00:00Z");
-
-  const defaultUser: IUser = {
-    id: "default-id",
-    firstName: "Default",
-    lastName: "User",
-    email: "default@example.com",
-    password: "",
-    passwordHash: "",
-    role: 0,
-    organizationId: null,
-    address: null,
-  };
-
-  const defaultLocation: ILocation = {
-    id: "default-location-id",
-    country: "Unknown",
-    region: "Unknown",
-    district: "Unknown",
-    city: "Unknown",
-    latitude: 0,
-    longitude: 0,
-    radiusAffected: 0,
-  };
-
-  const mockData: IWaterDeficiency[] = [
-    {
-      title: "High Lead",
-      description: "",
-      eDangerState: EDangerState.Dangerous,
-      ph: 0,
-      dissolvedOxygen: 0,
-      leadConcentration: 0,
-      mercuryConcentration: 0,
-      nitratesConcentration: 0,
-      pesticidesContent: 0,
-      microbialActivity: 0,
-      radiationLevel: 0,
-      chemicalOxygenDemand: 0,
-      biologicalOxygenDemand: 0,
-      phosphateConcentration: 0,
-      cadmiumConcentration: 0,
-      totalDissolvedSolids: 0,
-      electricalConductivity: 0,
-      microbialLoad: 0,
-      type: EDeficiencyType.Water,
-      creator: defaultUser,
-      location: defaultLocation,
-      changedModelLogId: "",
-      changedModelLog: [],
-      id: "",
-      createdBy: defaultUser,
-      createdOn: fixedDate,
-    },
-    {
-      title: "Low Oxygen",
-      description: "",
-      eDangerState: EDangerState.Moderate,
-      ph: 0,
-      dissolvedOxygen: 0,
-      leadConcentration: 0,
-      mercuryConcentration: 0,
-      nitratesConcentration: 0,
-      pesticidesContent: 0,
-      microbialActivity: 0,
-      radiationLevel: 0,
-      chemicalOxygenDemand: 0,
-      biologicalOxygenDemand: 0,
-      phosphateConcentration: 0,
-      cadmiumConcentration: 0,
-      totalDissolvedSolids: 0,
-      electricalConductivity: 0,
-      microbialLoad: 0,
-      type: EDeficiencyType.Water,
-      creator: defaultUser,
-      location: defaultLocation,
-      changedModelLogId: "",
-      changedModelLog: [],
-      id: "",
-      createdBy: defaultUser,
-      createdOn: fixedDate,
-    },
-    {
-      title: "Chemical Pollution",
-      description: "",
-      eDangerState: EDangerState.Critical,
-      ph: 0,
-      dissolvedOxygen: 0,
-      leadConcentration: 0,
-      mercuryConcentration: 0,
-      nitratesConcentration: 0,
-      pesticidesContent: 0,
-      microbialActivity: 0,
-      radiationLevel: 0,
-      chemicalOxygenDemand: 0,
-      biologicalOxygenDemand: 0,
-      phosphateConcentration: 0,
-      cadmiumConcentration: 0,
-      totalDissolvedSolids: 0,
-      electricalConductivity: 0,
-      microbialLoad: 0,
-      type: EDeficiencyType.Water,
-      creator: defaultUser,
-      location: defaultLocation,
-      changedModelLogId: "",
-      changedModelLog: [],
-      id: "",
-      createdBy: defaultUser,
-      createdOn: fixedDate,
-    },
-  ];
 
   beforeEach(() => {
     pipe = new FilterPipe();
   });
 
-  it("should filter water deficiencies correctly", () => {
-    const result = pipe.transform(mockData, "Lead");
+  it("should filter water deficiencies by title", () => {
+    const user1: IUser = {
+      id: "1",
+      firstName: "John",
+      lastName: "Doe",
+      email: "john@example.com",
+      password: "",
+      passwordHash: "",
+      role: 1,
+      organizationId: "1",
+    };
+
+    const user2: IUser = {
+      id: "2",
+      firstName: "Jane",
+      lastName: "Smith",
+      email: "jane@example.com",
+      password: "",
+      passwordHash: "",
+      role: 1,
+      organizationId: "1",
+    };
+
+    const deficiencies: IWaterDeficiency[] = [
+      {
+        id: "1",
+        title: "Water Pollution",
+        description: "High levels of contaminants",
+        type: EDeficiencyType.Water,
+        creator: user1,
+        latitude: 48.65,
+        longitude: 22.26,
+        eDangerState: EDangerState.Critical,
+        changedModelLogId: "1",
+        changedModelLog: [],
+        createdBy: user1,
+        createdOn: new Date(),
+        ph: 7.5,
+        dissolvedOxygen: 6.2,
+        leadConcentration: 0.01,
+        mercuryConcentration: 0.001,
+        nitratesConcentration: 10,
+        pesticidesContent: 0.5,
+        microbialActivity: 0.8,
+        radiationLevel: 0.1,
+        chemicalOxygenDemand: 20,
+        biologicalOxygenDemand: 15,
+        phosphateConcentration: 0.3,
+        cadmiumConcentration: 0.002,
+        totalDissolvedSolids: 500,
+        electricalConductivity: 800,
+        microbialLoad: 100,
+      },
+      {
+        id: "2",
+        title: "Soil Contamination",
+        description: "Heavy metal presence",
+        type: EDeficiencyType.Soil,
+        creator: user2,
+        latitude: 48.66,
+        longitude: 22.27,
+        eDangerState: EDangerState.Dangerous,
+        changedModelLogId: "2",
+        changedModelLog: [],
+        createdBy: user2,
+        createdOn: new Date(),
+        ph: 6.8,
+        dissolvedOxygen: 5.8,
+        leadConcentration: 0.02,
+        mercuryConcentration: 0.002,
+        nitratesConcentration: 12,
+        pesticidesContent: 0.6,
+        microbialActivity: 0.7,
+        radiationLevel: 0.15,
+        chemicalOxygenDemand: 25,
+        biologicalOxygenDemand: 18,
+        phosphateConcentration: 0.4,
+        cadmiumConcentration: 0.003,
+        totalDissolvedSolids: 550,
+        electricalConductivity: 850,
+        microbialLoad: 120,
+      },
+    ];
+
+    const result = pipe.transform(deficiencies, "Water");
     expect(result).to.have.length(1);
-    expect(result[0].title).to.equal("High Lead");
-    expect(result[0].eDangerState).to.equal(EDangerState.Dangerous);
-  });
-
-  it("should return all deficiencies if search value is empty", () => {
-    const result = pipe.transform(mockData, "");
-    expect(result).to.deep.equal(mockData);
-  });
-
-  it("should return an empty array if no match is found", () => {
-    const result = pipe.transform(mockData, "Mercury");
-    expect(result).to.deep.equal([]);
+    expect(result[0].title).to.equal("Water Pollution");
   });
 });

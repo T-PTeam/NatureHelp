@@ -1,6 +1,5 @@
 ﻿using Domain.Interfaces;
 using Domain.Models.Analitycs;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers.Nature;

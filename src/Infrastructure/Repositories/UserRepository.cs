@@ -16,7 +16,6 @@ public class UserRepository : BaseRepository<User>, IUserRepository
             if (scrollCount == -1)
             {
                 IQueryable<User> fullList = context.Set<User>()
-                    .Include(u => u.Address)
                     .Include(u => u.Organization)
                     .Include(u => u.Laboratory);
 
@@ -29,7 +28,6 @@ public class UserRepository : BaseRepository<User>, IUserRepository
             }
 
             IQueryable<User> list = context.Set<User>()
-                    .Include(u => u.Address)
                     .Include(u => u.Organization)
                     .Include(u => u.Laboratory)
                     .Skip(scrollCount * 20).Take(20);
@@ -73,6 +71,16 @@ public class UserRepository : BaseRepository<User>, IUserRepository
                 .Where(u => string.IsNullOrEmpty(u.AccessToken)
                     && u.OrganizationId == organizationId)
                 .ToArrayAsync();
+        }
+    }
+
+    public async Task<int> GetUsersCountByOrganization(Guid organizationId)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            return await context.Set<User>()
+                .Where(u => u.OrganizationId == organizationId)
+                .CountAsync();
         }
     }
 }

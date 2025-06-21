@@ -55,9 +55,7 @@
       <div>{{ research.date | date }}</div>
       <div>{{ research.researcher.firstName }} {{ research.researcher.lastName }}</div>
       <div>
-        {{ research.laboratory.title }}, {{ research.laboratory.location.city }}({{
-          research.laboratory.location.country
-        }})
+        {{ research.laboratory.title }}, {{ research.laboratory.latitude }}, {{ research.laboratory.longitude }}
       </div>
     </div>
   </div>

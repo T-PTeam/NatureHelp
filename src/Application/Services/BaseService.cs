@@ -1,5 +1,4 @@
 ﻿using Application.Interfaces.Services.Cache;
-using Application.Services.Cache;
 using Domain.Interfaces;
 using Shared.Dtos;
 using System.Text.Json;
@@ -38,6 +37,7 @@ public class BaseService<T> : IBaseService<T> where T : class
     public virtual async Task<T> UpdateAsync(T entity) => await _repository.UpdateAsync(entity);
 
     public virtual async Task<Guid> DeleteAsync(Guid id) => await _repository.DeleteAsync(id);
+    public virtual async Task<IEnumerable<Guid>> DeleteRangeAsync(IEnumerable<Guid> ids) => await _repository.DeleteRangeAsync(ids);
 
     public async Task<ListData<T>> GetOrSetAsync(Func<Task<ListData<T>>> fetchFromDb)
     {

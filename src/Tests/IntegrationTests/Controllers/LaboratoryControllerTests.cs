@@ -1,15 +1,9 @@
-﻿using Castle.Core.Logging;
-using Domain.Models.Organization;
+﻿using Domain.Models.Organization;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tests.IntegrationTests.Controllers;
 public class LaboratoryControllerTests : IClassFixture<NatureHelpWebAppFactory>

@@ -6,7 +6,5 @@ export function enumToSelectOptions<T extends object>(enumObj: T): { value: T[ke
       return { value, label: key };
     });
 
-  console.log("ENUM TO SELECT: ", result);
-
   return result;
 }
