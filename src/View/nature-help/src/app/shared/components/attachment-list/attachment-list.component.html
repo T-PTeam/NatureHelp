@@ -1,0 +1,73 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title i18n="@@attachments">Attachments</mat-panel-title>
+    <mat-panel-description>
+      {{ attachments.length }} {{ attachments.length === 1 ? "file" : "files" }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <nat-file-upload
+    [deficiencyId]="deficiency.id"
+    (fileUploaded)="loadAttachments(deficiency.id, deficiency.type)"
+    [deficiencyType]="deficiency.type">
+  </nat-file-upload>
+
+  <div
+    class="attachments-grid"
+    *ngIf="attachments?.length">
+    <div
+      class="attachment-card"
+      *ngFor="let attachment of attachments">
+      <div class="image-wrapper">
+        <img
+          *ngIf="isImageFile(attachment.mimeType)"
+          [src]="attachment.previewUrl || attachment.storagePath"
+          [alt]="attachment.fileName"
+          class="attachment-image" />
+        <mat-icon
+          *ngIf="!isImageFile(attachment.mimeType)"
+          class="file-placeholder">
+          {{ isPdfFile(attachment.mimeType) ? "picture_as_pdf" : "insert_drive_file" }}
+        </mat-icon>
+      </div>
+
+      <div class="attachment-footer">
+        <span
+          class="file-name"
+          matTooltip="{{ attachment.fileName }}">
+          {{ attachment.fileName | slice: 0 : 20 }}{{ attachment.fileName.length > 20 ? "..." : "" }}
+        </span>
+
+        <div class="action-buttons">
+          <button
+            mat-icon-button
+            matTooltip="Preview"
+            (click)="openAttachment(attachment)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            matTooltip="Download"
+            (click)="downloadAttachment(attachment)">
+            <mat-icon>download</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="!attachments || attachments.length === 0">
+    <mat-card class="no-attachments-card">
+      <mat-card-content>
+        <div class="no-attachments-content">
+          <mat-icon class="no-attachments-icon">attach_file</mat-icon>
+          <p
+            i18n="@@noAttachments"
+            class="no-attachments-text">
+            No attachments available for this deficiency.
+          </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</mat-expansion-panel>

@@ -15,6 +15,9 @@ import { LabResearchersPipe } from "./pipes/lab-researchers.pipe";
 import { AddOrganizationUsersComponent } from "./components/dialogs/add-organization-users/add-organization-users.component";
 import { MapViewService } from "./services/map-view.service";
 import { AuditListComponent } from "./components/audit-list/audit-list.component";
+import { AttachmentListComponent } from "./components/attachment-list/attachment-list.component";
+import { FileUploadComponent } from "./components/file-upload/file-upload.component";
+import { AttachmentPreviewDialogComponent } from "./components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component";
 
 @NgModule({
   imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
@@ -23,6 +26,9 @@ import { AuditListComponent } from "./components/audit-list/audit-list.component
     AuthDialogComponent,
     AddOrganizationUsersComponent,
     AuditListComponent,
+    AttachmentListComponent,
+    FileUploadComponent,
+    AttachmentPreviewDialogComponent,
 
     FilterPipe,
     EnumToStringPipe,
@@ -34,6 +40,9 @@ import { AuditListComponent } from "./components/audit-list/audit-list.component
     AuthDialogComponent,
     AddOrganizationUsersComponent,
     AuditListComponent,
+    AttachmentListComponent,
+    FileUploadComponent,
+    AttachmentPreviewDialogComponent,
 
     FilterPipe,
     EnumToStringPipe,

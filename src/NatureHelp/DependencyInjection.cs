@@ -1,4 +1,5 @@
-﻿using Application.Interfaces.Services.Analitycs;
+﻿using Application.Interfaces.Services;
+using Application.Interfaces.Services.Analitycs;
 using Application.Interfaces.Services.Audit;
 using Application.Interfaces.Services.Cache;
 using Application.Interfaces.Services.Organization;
@@ -13,6 +14,7 @@ using Domain.Models.Analitycs;
 using Domain.Models.Nature;
 using Domain.Models.Organization;
 using Infrastructure.Interfaces;
+using Infrastructure.Providers;
 using Infrastructure.Repositories;
 
 namespace NatureHelp
@@ -40,6 +42,7 @@ namespace NatureHelp
             services.AddScoped<IBaseRepository<Laboratory>, LaboratoryRepository>();
             services.AddScoped<IBaseRepository<Research>, ResearchRepository>();
             services.AddScoped<IChangedModelLogRepository, ChangedModelLogRepository>();
+            services.AddScoped<IDeficiencyAttachmentRepository, DeficiencyAttachmentRepository>();
             services.AddSingleton<IRedisCacheService, RedisCacheService>();
 
             return services;
@@ -65,6 +68,8 @@ namespace NatureHelp
             services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
             services.AddScoped<IBaseService<Research>, BaseService<Research>>();
             services.AddScoped<IChangedModelLogService, ChangedModelLogService>();
+            services.AddScoped<IDeficiencyAttachmentService, DeficiencyAttachmentService>();
+            services.AddScoped<IBlobStorageProvider, AzureBlobStorageProvider>();
 
             return services;
         }

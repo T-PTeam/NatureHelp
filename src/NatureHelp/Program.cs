@@ -1,5 +1,6 @@
 using Application.Providers;
 using AspNetCoreRateLimit;
+using Azure.Storage.Blobs;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -172,6 +173,12 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
         throw new InvalidOperationException("Redis connection string is not configured.");
 
     return ConnectionMultiplexer.Connect(configuration);
+});
+
+builder.Services.AddSingleton(x =>
+{
+    var blobConnectionString = builder.Configuration.GetConnectionString("AzureBlobStorage");
+    return new BlobServiceClient(blobConnectionString);
 });
 
 var app = builder.Build();

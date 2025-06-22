@@ -1,4 +1,5 @@
-﻿using Domain.Models.Analitycs;
+﻿using Domain.Models;
+using Domain.Models.Analitycs;
 using Domain.Models.Audit;
 using Domain.Models.Nature;
 using Domain.Models.Organization;
@@ -15,7 +16,7 @@ public class ApplicationContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Research> Researches { get; set; }
     public DbSet<ChangedModelLog> ChangedModelLogs { get; set; }
-
+    public DbSet<DeficiencyAttachment> Attachments { get; set; }
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)
     {
@@ -24,6 +25,10 @@ public class ApplicationContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+
+        builder.Entity<Attachment>()
+            .HasDiscriminator<string>("AttachmentType")
+            .HasValue<DeficiencyAttachment>("DeficiencyAttachment");
 
         // Test DATA
         //builder.Entity<Report>()

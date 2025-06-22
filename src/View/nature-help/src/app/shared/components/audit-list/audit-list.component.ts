@@ -4,7 +4,7 @@ import { AuditService } from "@/shared/services/audit.service";
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "nt-audit-list",
+  selector: "nat-audit-list",
   templateUrl: "./audit-list.component.html",
   styleUrls: ["./audit-list.component.css"],
   standalone: false,
