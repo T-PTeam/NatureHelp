@@ -18,6 +18,7 @@ import { AuditListComponent } from "./components/audit-list/audit-list.component
 import { AttachmentListComponent } from "./components/attachment-list/attachment-list.component";
 import { FileUploadComponent } from "./components/file-upload/file-upload.component";
 import { AttachmentPreviewDialogComponent } from "./components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component";
+import { CommentMessageListComponent } from "./components/comment-message-list/comment-message-list.component";
 
 @NgModule({
   imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
@@ -29,6 +30,7 @@ import { AttachmentPreviewDialogComponent } from "./components/dialogs/attachmen
     AttachmentListComponent,
     FileUploadComponent,
     AttachmentPreviewDialogComponent,
+    CommentMessageListComponent,
 
     FilterPipe,
     EnumToStringPipe,
@@ -43,6 +45,7 @@ import { AttachmentPreviewDialogComponent } from "./components/dialogs/attachmen
     AttachmentListComponent,
     FileUploadComponent,
     AttachmentPreviewDialogComponent,
+    CommentMessageListComponent,
 
     FilterPipe,
     EnumToStringPipe,

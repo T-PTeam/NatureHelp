@@ -35,6 +35,7 @@ namespace NatureHelp
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped(typeof(IDeficiencyBindModelRepository<>), typeof(DeficiencyBindModelRepository<>));
 
             services.AddScoped<IBaseRepository<WaterDeficiency>, DeficiencyRepository<WaterDeficiency>>();
             services.AddScoped<IBaseRepository<SoilDeficiency>, DeficiencyRepository<SoilDeficiency>>();
@@ -42,7 +43,6 @@ namespace NatureHelp
             services.AddScoped<IBaseRepository<Laboratory>, LaboratoryRepository>();
             services.AddScoped<IBaseRepository<Research>, ResearchRepository>();
             services.AddScoped<IChangedModelLogRepository, ChangedModelLogRepository>();
-            services.AddScoped<IDeficiencyAttachmentRepository, DeficiencyAttachmentRepository>();
             services.AddSingleton<IRedisCacheService, RedisCacheService>();
 
             return services;
@@ -56,6 +56,7 @@ namespace NatureHelp
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddScoped(typeof(IModelByDeficiencyService<>), typeof(DeficiencyBindModelService<>));
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
@@ -68,7 +69,6 @@ namespace NatureHelp
             services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
             services.AddScoped<IBaseService<Research>, BaseService<Research>>();
             services.AddScoped<IChangedModelLogService, ChangedModelLogService>();
-            services.AddScoped<IDeficiencyAttachmentService, DeficiencyAttachmentService>();
             services.AddScoped<IBlobStorageProvider, AzureBlobStorageProvider>();
 
             return services;
