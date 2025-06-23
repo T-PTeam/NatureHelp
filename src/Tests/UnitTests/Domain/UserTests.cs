@@ -68,24 +68,15 @@ public class UserTests
     }
 
     [Theory]
-    [InlineData("1234567890", "Ukraine", "Kyiv Region", "Kyiv District", "Kyiv", 50.4501, 30.5234)]
-    [InlineData("+380501234567", "Ukraine", "Lviv Region", "Lviv District", "Lviv", 49.8397, 24.0297)]
-    public void CheckChangingContactPersonDetails(string phoneNumber, string country, string region, string district, string city, double latitude, double longitude)
+    [InlineData("1234567890")]
+    [InlineData("+380501234567")]
+    public void CheckChangingContactPersonDetails(string phoneNumber)
     {
         var user = new User();
-        var location = new Location
-        {
-            Country = country,
-            Region = region,
-            District = district,
-            City = city,
-            Latitude = latitude,
-            Longitude = longitude
-        };
 
-        user.UpdateContactDetails(phoneNumber, location);
+        user.UpdateContactDetails(phoneNumber);
 
         user.PhoneNumber.Should().Be(phoneNumber);
-        user.Address.Should().BeEquivalentTo(location);
+        user.PhoneNumber.Should().BeEquivalentTo(phoneNumber);
     }
 }

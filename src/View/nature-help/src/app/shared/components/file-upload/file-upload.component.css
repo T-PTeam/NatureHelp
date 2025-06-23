@@ -1,0 +1,22 @@
+.upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+
+.file-input-field {
+  flex: 1 1 300px;
+  background-color: #f5f6fb;
+  border-radius: 12px;
+}
+
+.upload-icon {
+  margin-right: 6px;
+}
+
+.upload-btn {
+  margin-bottom: 20px;
+}

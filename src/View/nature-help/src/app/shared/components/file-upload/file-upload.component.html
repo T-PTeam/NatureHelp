@@ -1,0 +1,34 @@
+<div class="upload-box">
+  <mat-form-field
+    appearance="fill"
+    class="file-input-field">
+    <mat-label>Select a file</mat-label>
+    <input
+      matInput
+      [value]="selectedFile?.name"
+      readonly />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="fileInput.click()"
+      matTooltip="Choose file">
+      <mat-icon>attach_file</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <input
+    type="file"
+    #fileInput
+    hidden
+    (change)="onFileSelected($event)" />
+
+  <button
+    class="upload-btn"
+    mat-raised-button
+    color="accent"
+    (click)="uploadFile()"
+    [disabled]="!selectedFile">
+    <mat-icon class="upload-icon">cloud_upload</mat-icon>
+    Upload
+  </button>
+</div>

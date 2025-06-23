@@ -338,5 +338,12 @@
     </div>
   </div>
 
-  <nt-audit-list [deficiency]="details"></nt-audit-list>
+  <mat-accordion>
+    <nat-audit-list [deficiency]="details"></nat-audit-list>
+
+    <nat-attachment-list
+      [deficiency]="details"
+      [attachments]="attachments">
+    </nat-attachment-list>
+  </mat-accordion>
 </mat-card>

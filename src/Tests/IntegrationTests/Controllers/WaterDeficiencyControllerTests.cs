@@ -91,7 +91,6 @@ public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFact
             MicrobialLoad = 1500,
             CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
             ResponsibleUserId = new Guid("11112222-3333-4444-5555-666677778888"),
-            LocationId = new Guid("b1111111-1111-1111-1111-111111111111"),
         };
 
         var postResponse = await _client.PostAsJsonAsync("/api/waterdeficiency", newDeficiency);
@@ -132,7 +131,6 @@ public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFact
             MicrobialLoad = 1500,
             CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
             ResponsibleUserId = new Guid("11112222-3333-4444-5555-666677778888"),
-            LocationId = new Guid("b1111111-1111-1111-1111-111111111111"),
         };
 
         var postResponse = await _client.PostAsJsonAsync("/api/waterdeficiency", original);
@@ -187,7 +185,6 @@ public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFact
             LeadConcentration = 0.0009,
             CreatedBy = Guid.NewGuid(),
             ResponsibleUserId = Guid.NewGuid(),
-            LocationId = Guid.NewGuid(),
         };
 
         var postResponse = await _client.PostAsJsonAsync("/api/waterdeficiency", newDeficiency);

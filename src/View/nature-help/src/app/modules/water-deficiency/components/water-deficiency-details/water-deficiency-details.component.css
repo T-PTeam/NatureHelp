@@ -1,0 +1,107 @@
+.upload-section {
+  margin: 1rem 0;
+}
+
+.upload-section mat-expansion-panel-header {
+  background-color: #f5f9ff;
+  border-radius: 4px;
+}
+
+.upload-section mat-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2196f3;
+  font-weight: 500;
+}
+
+.upload-section mat-icon {
+  color: #2196f3;
+}
+
+.upload-section mat-panel-description {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Ensure proper spacing between components */
+.upload-section + nat-attachment-list {
+  margin-top: 1rem;
+}
+
+/* Snackbar notification styles */
+::ng-deep .success-snackbar {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+::ng-deep .success-snackbar .mat-simple-snackbar-action {
+  color: white !important;
+}
+
+::ng-deep .error-snackbar {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+::ng-deep .error-snackbar .mat-simple-snackbar-action {
+  color: white !important;
+}
+
+::ng-deep .warning-snackbar {
+  background-color: #ff9800 !important;
+  color: white !important;
+}
+
+::ng-deep .warning-snackbar .mat-simple-snackbar-action {
+  color: white !important;
+}
+
+::ng-deep .info-snackbar {
+  background-color: #2196f3 !important;
+  color: white !important;
+}
+
+::ng-deep .info-snackbar .mat-simple-snackbar-action {
+  color: white !important;
+}
+
+/* Upload state indicators */
+.upload-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.upload-status.uploading {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #bbdefb;
+}
+
+.upload-status.error {
+  background-color: #ffebee;
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+}
+
+.upload-status.success {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .upload-section mat-panel-title {
+    font-size: 14px;
+  }
+
+  .upload-section mat-panel-description {
+    font-size: 12px;
+  }
+}

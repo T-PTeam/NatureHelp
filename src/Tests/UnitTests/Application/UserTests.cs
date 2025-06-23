@@ -18,7 +18,7 @@ public class UserTests
 
     public UserTests()
     {
-        _userService = new UserService(_userRepositoryMock.Object);
+        _userService = new UserService(_userRepositoryMock.Object, null, null);
     }
 
     [Fact]
@@ -73,7 +73,7 @@ public class UserTests
         _userRepositoryMock.Setup(x => x.UpdateAsync(It.IsAny<User>()))
             .Returns(Task.FromResult(user));
 
-        var result = await _userService.LoginAsync(new UserLoginDto { Email = user.Email, Password = "password123", PasswordHash = user.PasswordHash });
+        var result = await _userService.LoginAsync(new UserLoginDto { Email = user.Email, Password = "password123"});
 
         result.Should().NotBeNull();
         result.AccessToken.Should().NotBeNullOrEmpty();
@@ -95,8 +95,7 @@ public class UserTests
 
         var result = await _userService.LoginAsync(new UserLoginDto
         {
-            Email = user.Email,
-            PasswordHash = "correcthash"
+            Email = user.Email
         });
 
         result.Should().NotBeNull();
