@@ -1,7 +1,6 @@
 ﻿using Application.Interfaces.Services;
 using Application.Interfaces.Services.Audit;
 using Domain.Enums;
-using Domain.Models;
 using Domain.Models.Nature;
 using Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -9,14 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace NatureHelp.Controllers.Organization;
 
 [Route("api/[controller]")]
-public class AttachmentsController : BaseController<Attachment>
+public class AttachmentsController : BaseController<DeficiencyAttachment>
 {
-    private readonly IDeficiencyAttachmentService _deficiencyAttachmentService;
+    private readonly IModelByDeficiencyService<DeficiencyAttachment> _deficiencyAttachmentService;
     private readonly IBlobStorageProvider _blobStorageProvider;
     private readonly IChangedModelLogService _logService;
 
     public AttachmentsController(
-        IDeficiencyAttachmentService deficiencyAttachmentService,
+        IModelByDeficiencyService<DeficiencyAttachment> deficiencyAttachmentService,
         IBlobStorageProvider blobStorageProvider,
         IChangedModelLogService logService)
         : base(deficiencyAttachmentService)
@@ -29,7 +28,7 @@ public class AttachmentsController : BaseController<Attachment>
     [HttpGet("deficiency/{deficiencyId}")]
     public async Task<IActionResult> GetByDeficiencyId([FromRoute] Guid deficiencyId, [FromQuery] EDeficiencyType deficiencyType)
     {
-        return Ok(await _deficiencyAttachmentService.GetAttachmentsByDeficiencyIdAsync(deficiencyId, deficiencyType));
+        return Ok(await _deficiencyAttachmentService.GetModelsByDeficiencyIdAsync(deficiencyId, deficiencyType));
     }
 
     [HttpPost("upload/deficiency/{deficiencyId}")]

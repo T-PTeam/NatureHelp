@@ -99,6 +99,7 @@ export class UserAPIService {
     sessionStorage.removeItem("role");
     sessionStorage.removeItem("organizationId");
     sessionStorage.removeItem("email");
+    sessionStorage.removeItem("fullName");
     sessionStorage.removeItem("userId");
 
     this.subject.next(null);
@@ -233,6 +234,8 @@ export class UserAPIService {
     if (authOptions.refreshToken) localStorage.setItem("refreshToken", authOptions.refreshToken);
     if (authOptions.organizationId) sessionStorage.setItem("organizationId", authOptions.organizationId);
     if (authOptions.email) sessionStorage.setItem("email", authOptions.email);
+    if (authOptions.firstName && authOptions.lastName)
+      sessionStorage.setItem("fullName", `${authOptions.firstName} ${authOptions.lastName}`);
 
     const decodedTokenRole = this.jwtHelper.decodeToken(authOptions.accessToken);
     if (decodedTokenRole)

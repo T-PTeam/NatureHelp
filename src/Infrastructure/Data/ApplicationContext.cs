@@ -17,6 +17,7 @@ public class ApplicationContext : DbContext
     public DbSet<Research> Researches { get; set; }
     public DbSet<ChangedModelLog> ChangedModelLogs { get; set; }
     public DbSet<DeficiencyAttachment> Attachments { get; set; }
+    public DbSet<CommentMessage> Comments { get; set; }
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)
     {
