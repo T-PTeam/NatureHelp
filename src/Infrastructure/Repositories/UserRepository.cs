@@ -65,10 +65,10 @@ public class UserRepository : BaseRepository<User>, IUserRepository
         using (var context = _contextFactory.CreateDbContext())
         {
             if (organizationId == null)
-                return await context.Set<User>().Where(u => string.IsNullOrEmpty(u.AccessToken)).ToArrayAsync();
+                return await context.Set<User>().Where(u => string.IsNullOrEmpty(u.RefreshToken)).ToArrayAsync();
 
             return await context.Set<User>()
-                .Where(u => string.IsNullOrEmpty(u.AccessToken)
+                .Where(u => string.IsNullOrEmpty(u.RefreshToken)
                     && u.OrganizationId == organizationId)
                 .ToArrayAsync();
         }

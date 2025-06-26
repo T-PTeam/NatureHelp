@@ -6,7 +6,3 @@
 .grid-row {
   grid-template-columns: 1fr 1fr 0.5fr 1fr;
 }
-
-.grid-container .grid-body {
-  max-height: 58vh;
-}

@@ -10,3 +10,9 @@
 .grid-row {
   grid-template-columns: 3fr 1.5fr 3fr 3fr 3fr;
 }
+
+@media (max-height: 400px) and (orientation: landscape) {
+  .grid-body {
+    max-height: calc(100vh - 60px - 60px - 60px);
+  }
+}

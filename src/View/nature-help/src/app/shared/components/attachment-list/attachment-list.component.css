@@ -79,7 +79,6 @@
   font-size: 14px;
 }
 
-/* Table styling */
 .mat-mdc-table {
   width: 100%;
   background-color: white;
@@ -161,8 +160,7 @@
   gap: 4px;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+@media (max-height: 400px) and (orientation: landscape) {
   .file-name-cell {
     min-width: 150px;
   }

@@ -96,7 +96,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-height: 400px) and (orientation: landscape) {
   .upload-section mat-panel-title {
     font-size: 14px;
   }

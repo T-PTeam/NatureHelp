@@ -13,6 +13,9 @@ import { EAuthType } from "@/models/enums";
   standalone: false,
 })
 export class NavigationBarComponent implements OnInit {
+  public isOpenedMapOnMobile: boolean = false;
+  public isMobile: boolean = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
   constructor(
     private dialog: MatDialog,
     public userService: UserAPIService,
