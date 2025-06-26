@@ -24,12 +24,10 @@
   font-size: 14px;
 }
 
-/* Ensure proper spacing between components */
 .upload-section + nat-attachment-list {
   margin-top: 1rem;
 }
 
-/* Snackbar notification styles */
 ::ng-deep .success-snackbar {
   background-color: #4caf50 !important;
   color: white !important;
@@ -66,7 +64,6 @@
   color: white !important;
 }
 
-/* Upload state indicators */
 .upload-status {
   display: flex;
   align-items: center;
@@ -95,7 +92,6 @@
   border: 1px solid #c8e6c9;
 }
 
-/* Responsive adjustments */
 @media (max-height: 400px) and (orientation: landscape) {
   .upload-section mat-panel-title {
     font-size: 14px;

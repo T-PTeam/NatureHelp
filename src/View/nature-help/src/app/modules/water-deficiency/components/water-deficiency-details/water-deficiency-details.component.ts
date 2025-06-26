@@ -35,7 +35,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   selectedAddress: IAddress | null = null;
   attachments: IDeficiencyAttachment[] = [];
 
-  // Upload state tracking
   isUploading: boolean = false;
   uploadProgress: number = 0;
   lastUploadError: string | null = null;
@@ -286,7 +285,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     this.isUploading = false;
     this.uploadProgress = 100;
 
-    // Add new attachments to the list
     this.attachments = [...this.attachments, ...newAttachments];
 
     this.snackBar.open(`Successfully uploaded ${newAttachments.length} file(s)`, "Close", {
@@ -294,7 +292,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
       panelClass: ["success-snackbar"],
     });
 
-    // Reload attachments to get the latest list
     if (this.details?.id) {
       this.loadAttachments(this.details.id, this.details.type);
     }
@@ -370,11 +367,9 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     console.log("Current Attachments:", this.attachments);
     console.log("Upload Service Available:", !!this.uploadService);
 
-    // Test creating a simple file
     const testFile = new File(["test content"], "test.txt", { type: "text/plain" });
     console.log("Test file created:", testFile);
 
-    // Test the upload service directly
     if (this.details?.id) {
       console.log("Testing upload service with file:", testFile.name);
       this.uploadService.uploadFile(testFile, this.details.id).subscribe({
@@ -393,7 +388,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     }
   }
 
-  // Event handlers for basic file upload component
   onFilesSelected(files: File[]): void {
     console.log("Files selected:", files);
     this.lastUploadedFiles = files;
@@ -401,12 +395,10 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     this.lastUploadError = null;
     this.uploadProgress = 0;
 
-    // Subscribe to upload progress
     const progressSubscription = this.uploadService.uploadProgress$.subscribe((progress) => {
       this.uploadProgress = this.uploadService.getOverallProgress();
     });
 
-    // Upload files using the upload service
     this.uploadService.uploadFilesParallel(files, this.details!.id, 3).subscribe({
       next: (results) => {
         const successfulUploads = results.filter((result) => result.attachment).map((result) => result.attachment!);
@@ -446,14 +438,11 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
 
   onFileSelected(file: File): void {
     console.log("Single file selected:", file);
-    // This is called when a single file is selected
-    // We can handle it the same way as multiple files
     this.onFilesSelected([file]);
   }
 
   onFileRemoved(file: File): void {
     console.log("File removed:", file);
-    // Remove the file from the lastUploadedFiles array
     this.lastUploadedFiles = this.lastUploadedFiles.filter((f) => f !== file);
   }
 
