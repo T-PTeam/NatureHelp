@@ -37,14 +37,14 @@
       *ngIf="isMobile"
       data-cy="map-switch-mobile"
       mat-button
-      (click)="isOpenedMapOnMobile = !isOpenedMapOnMobile">
+      (click)="mobileMapService.toggleMobileMap()">
       <mat-icon class="icon-medium">map</mat-icon>
     </button>
 
     <nat-map
       *ngIf="isMobile"
       class="mobile-map-view"
-      [ngStyle]="{ display: isOpenedMapOnMobile ? 'block' : 'none' }">
+      [ngStyle]="{ display: (mobileMapService.isMobileMapVisible$ | async) ? 'block' : 'none' }">
     </nat-map>
 
     <button

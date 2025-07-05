@@ -76,6 +76,25 @@
   animation: pulse 1.5s infinite;
 }
 
+.map-focus-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  transition: all 0.3s ease;
+}
+
+.map-focus-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.map-focus-btn:active {
+  transform: scale(0.95);
+}
+
 .address-container {
   margin-bottom: 16px;
 }

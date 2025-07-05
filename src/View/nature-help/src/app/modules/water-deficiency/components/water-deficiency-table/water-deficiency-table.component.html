@@ -68,23 +68,28 @@
 <div class="table-wrapper">
   <div class="header">
     <h2 i18n="@@waterDeficienciesTableTitle">Deficiencies (Water)</h2>
+
     <input
       type="search"
+      class="input-like"
       placeholder="Search..."
       i18n-placeholder="@@searchPlaceholder"
       [(ngModel)]="search" />
+
     <button
       (click)="downloadExcel()"
-      class="action-btn"
+      class="btn-like"
       id="export-btn">
       <i class="material-icons">insert_drive_file</i>
     </button>
+
     <button
       (click)="navigateToDetail()"
-      class="action-btn"
+      class="btn-like"
       id="add-btn">
       <i class="material-icons">add</i>
     </button>
+
     <mat-slide-toggle
       style="transform: rotate(180deg)"
       [checked]="true"
@@ -171,14 +176,14 @@
             color="primary"
             (click)="changeMapFocus(deficiency.latitude, deficiency.longitude)"
             matTooltip="Location">
-            <mat-icon>location_on</mat-icon>
+            <mat-icon>my_location</mat-icon>
           </button>
         </div>
         <div class="btn-ceil">
           <button
             id="edit-btn"
             (click)="navigateToDetail(deficiency.id)"
-            class="action-btn">
+            class="btn-like">
             <i class="fa fa-edit"></i>
           </button>
         </div>

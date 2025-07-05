@@ -8,6 +8,7 @@ import { Subject } from "rxjs";
 
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
 import { MapViewService, IAddress } from "@/shared/services/map-view.service";
+import { MobileMapService } from "@/shared/services/mobile-map.service";
 
 import { EDangerState, EDeficiencyType } from "../../../../models/enums";
 import { IWaterDeficiency } from "../../models/IWaterDeficiency";
@@ -49,6 +50,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private mapViewService: MapViewService,
+    private mobileMapService: MobileMapService,
     private fb: FormBuilder,
     public usersAPIService: UserAPIService,
     private attachmentService: AttachmentAPIService,
@@ -103,6 +105,10 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
 
     const formData: IWaterDeficiency = this.detailsForm.value;
 
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.hideMobileMap();
+    }
+
     if (this.isAddingDeficiency) {
       this.deficiencyDataService.addNewWaterDeficiency(formData).subscribe(() => {
         this.router.navigate(["/water"]);
@@ -117,6 +123,10 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   onCancel() {
     this.changeMapView();
 
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.hideMobileMap();
+    }
+
     this.router.navigate(["/water"]);
   }
 
@@ -128,8 +138,21 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     this.isSelectingCoordinates = !this.isSelectingCoordinates;
     if (this.isSelectingCoordinates) {
       this.mapViewService.enableCoordinateSelection();
+      if (this.mobileMapService.isMobile()) {
+        this.mobileMapService.showMobileMap();
+      }
     } else {
       this.mapViewService.disableCoordinateSelection();
+    }
+  }
+
+  changeMapView() {
+    this.mapViewService.changeFocus(
+      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
+      12,
+    );
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.showMobileMap();
     }
   }
 
@@ -237,13 +260,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
       }
     });
     return errors;
-  }
-
-  private changeMapView() {
-    this.mapViewService.changeFocus(
-      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
-      12,
-    );
   }
 
   private subscribeToCoordinatesPicking(): void {

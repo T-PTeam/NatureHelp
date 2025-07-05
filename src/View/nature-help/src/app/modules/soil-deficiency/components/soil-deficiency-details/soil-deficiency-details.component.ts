@@ -7,6 +7,7 @@ import { Subject } from "rxjs";
 
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
+import { MobileMapService } from "@/shared/services/mobile-map.service";
 
 import { EDangerState, EDeficiencyType } from "../../../../models/enums";
 import { ISoilDeficiency } from "../../models/ISoilDeficiency";
@@ -36,6 +37,7 @@ export class SoilDeficiencyDetail implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private mapViewService: MapViewService,
+    private mobileMapService: MobileMapService,
     private fb: FormBuilder,
     public usersAPIService: UserAPIService,
   ) {}
@@ -74,6 +76,10 @@ export class SoilDeficiencyDetail implements OnInit {
 
     const formData: ISoilDeficiency = this.detailsForm.value;
 
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.hideMobileMap();
+    }
+
     if (this.isAddingDeficiency) {
       this.deficiencyDataService.addNewSoilDeficiency(formData).subscribe(() => {
         this.router.navigate(["/soil"]);
@@ -88,6 +94,10 @@ export class SoilDeficiencyDetail implements OnInit {
   onCancel() {
     this.changeMapView();
 
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.hideMobileMap();
+    }
+
     this.router.navigate(["/soil"]);
   }
 
@@ -99,8 +109,23 @@ export class SoilDeficiencyDetail implements OnInit {
     this.isSelectingCoordinates = !this.isSelectingCoordinates;
     if (this.isSelectingCoordinates) {
       this.mapViewService.enableCoordinateSelection();
+
+      if (this.mobileMapService.isMobile()) {
+        this.mobileMapService.showMobileMap();
+      }
     } else {
       this.mapViewService.disableCoordinateSelection();
+    }
+  }
+
+  changeMapView() {
+    this.mapViewService.changeFocus(
+      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
+      12,
+    );
+
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.showMobileMap();
     }
   }
 
@@ -174,13 +199,6 @@ export class SoilDeficiencyDetail implements OnInit {
       }
     });
     return errors;
-  }
-
-  private changeMapView() {
-    this.mapViewService.changeFocus(
-      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
-      12,
-    );
   }
 
   private subscribeToCoordinatesPicking(): void {
