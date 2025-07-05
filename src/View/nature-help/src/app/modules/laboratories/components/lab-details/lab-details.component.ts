@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ILaboratory } from "../../models/ILaboratory";
 import { MapViewService, IAddress } from "@/shared/services/map-view.service";
+import { MobileMapService } from "@/shared/services/mobile-map.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { LabsAPIService } from "../../services/labs-api.service";
-import { UserAPIService } from "@/shared/services/user-api.service";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
@@ -32,6 +32,7 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private mapViewService: MapViewService,
+    private mobileMapService: MobileMapService,
     private fb: FormBuilder,
   ) {}
 
@@ -70,6 +71,10 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
     const formData: ILaboratory = this.detailsForm.value;
     formData.researchers = [];
 
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.hideMobileMap();
+    }
+
     if (this.isAddingLaboratory) {
       this.labsAPIService.addLab(formData).subscribe({
         next: () => {
@@ -92,6 +97,10 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
   }
 
   onCancel() {
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.hideMobileMap();
+    }
+
     this.router.navigate(["/laboratories"]);
   }
 
@@ -103,8 +112,22 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
     this.isSelectingCoordinates = !this.isSelectingCoordinates;
     if (this.isSelectingCoordinates) {
       this.mapViewService.enableCoordinateSelection();
+      if (this.mobileMapService.isMobile()) {
+        this.mobileMapService.showMobileMap();
+      }
     } else {
       this.mapViewService.disableCoordinateSelection();
+    }
+  }
+
+  changeMapView() {
+    this.mapViewService.changeFocus(
+      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
+      12,
+    );
+
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.showMobileMap();
     }
   }
 
@@ -135,13 +158,6 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
       }
     });
     return errors;
-  }
-
-  private changeMapView() {
-    this.mapViewService.changeFocus(
-      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
-      12,
-    );
   }
 
   private subscribeToCoordinatesPicking(): void {

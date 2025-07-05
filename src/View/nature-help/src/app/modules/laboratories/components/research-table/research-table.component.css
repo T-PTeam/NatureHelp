@@ -1,12 +1,14 @@
-.header {
-  background-color: #ffe600;
-}
-
-.header h2 {
-  color: black;
-}
-
 .grid-header,
 .grid-row {
   grid-template-columns: 3fr 1.5fr 3fr 3fr 3fr;
+}
+
+.grid-body {
+  max-height: calc(100vh - 60px - 80px - 80px);
+}
+
+@media (max-height: 400px) and (orientation: landscape) {
+  .grid-body {
+    max-height: calc(100vh - 60px - 60px - 60px);
+  }
 }

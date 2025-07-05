@@ -103,6 +103,13 @@ export class MapViewService {
   private selectedAddressSubject = new BehaviorSubject<IAddress | null>(null);
   public selectedAddress$: Observable<IAddress | null> = this.selectedAddressSubject.asObservable();
 
+  constructor(
+    private waterDataService: WaterAPIService,
+    private soilDataService: SoilAPIService,
+    private labsAPIService: LabsAPIService,
+    private http: HttpClient,
+  ) {}
+
   public initMap(): void {
     this.map = L.map("map", {
       center: [48.65, 22.26],
@@ -112,7 +119,7 @@ export class MapViewService {
 
     L.control.layers(this.baseMaps, this.overlayMaps).addTo(this.map);
 
-    this.addAllLayersToMap(); // TODO: it makes double markers
+    this.addAllLayersToMap();
 
     const tiles = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 18,
@@ -122,13 +129,6 @@ export class MapViewService {
 
     tiles.addTo(this.map);
   }
-
-  constructor(
-    private waterDataService: WaterAPIService,
-    private soilDataService: SoilAPIService,
-    private labsAPIService: LabsAPIService,
-    private http: HttpClient,
-  ) {}
 
   public changeFocus(coordinates: ICoordinates, zoom: number) {
     this.map.setView([coordinates.latitude, coordinates.longitude], zoom);
@@ -319,7 +319,6 @@ export class MapViewService {
   }
 
   public enableCoordinateSelection() {
-    // Change cursor style to crosshair
     const mapContainer = this.map.getContainer();
     mapContainer.style.cursor = "crosshair";
     mapContainer.classList.add("crosshair");
@@ -331,11 +330,9 @@ export class MapViewService {
       };
       this.selectedCoordinatesSubject.next(coordinates);
 
-      // Look up address
       const address = await this.lookupAddress(coordinates);
       this.selectedAddressSubject.next(address);
 
-      // Add a temporary marker to show the selected location
       const marker = L.marker([coordinates.latitude, coordinates.longitude], {
         icon: L.divIcon({
           className: "selected-location-marker",
@@ -344,7 +341,6 @@ export class MapViewService {
         }),
       });
 
-      // Remove any existing temporary markers
       this.map.eachLayer((layer: L.Layer) => {
         if (layer instanceof L.Marker && layer.getIcon()?.options.className === "selected-location-marker") {
           this.map.removeLayer(layer);
@@ -353,13 +349,11 @@ export class MapViewService {
 
       marker.addTo(this.map);
 
-      // Automatically disable coordinate selection after selection
       this.disableCoordinateSelection();
     });
   }
 
   public disableCoordinateSelection() {
-    // Reset cursor style
     const mapContainer = this.map.getContainer();
     mapContainer.style.cursor = "";
     mapContainer.classList.remove("crosshair");
@@ -368,7 +362,6 @@ export class MapViewService {
     this.selectedCoordinatesSubject.next(null);
     this.selectedAddressSubject.next(null);
 
-    // Remove any temporary markers
     this.map.eachLayer((layer: L.Layer) => {
       if (layer instanceof L.Marker && layer.getIcon()?.options.className === "selected-location-marker") {
         this.map.removeLayer(layer);

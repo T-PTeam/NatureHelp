@@ -37,7 +37,6 @@ export class UploadService {
     formData.append("file", file);
     formData.append("deficiencyId", deficiencyId);
 
-    // Initialize progress
     this.updateProgress(file, 0, "uploading");
 
     const uploadUrl = `${environment.apiUrl}/attachments/upload`;
@@ -148,7 +147,6 @@ export class UploadService {
         });
       };
 
-      // Start initial uploads up to concurrency limit
       for (let i = 0; i < Math.min(concurrency, files.length); i++) {
         startUpload(currentIndex++);
       }
@@ -219,10 +217,8 @@ export class UploadService {
 
   private getErrorMessage(error: HttpErrorResponse): string {
     if (error.error instanceof ErrorEvent) {
-      // Client-side error
       return `Network error: ${error.error.message}`;
     } else {
-      // Server-side error
       switch (error.status) {
         case 400:
           return "Invalid file format or size";

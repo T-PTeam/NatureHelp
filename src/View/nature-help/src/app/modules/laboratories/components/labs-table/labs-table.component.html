@@ -57,12 +57,13 @@
   <h2 i18n="@@laboratories">Laboratories</h2>
   <input
     type="search"
+    class="input-like"
     placeholder="Search..."
     i18n-placeholder="@@searchPlaceholder"
     [(ngModel)]="search" />
   <button
     (click)="navigateToDetail()"
-    class="action-btn"
+    class="btn-like"
     id="add-btn">
     <i class="material-icons">add</i>
   </button>
@@ -117,13 +118,13 @@
           color="primary"
           (click)="changeMapFocus(lab.latitude, lab.longitude)"
           matTooltip="Location">
-          <mat-icon>location_on</mat-icon>
+          <mat-icon>my_location</mat-icon>
         </button>
       </div>
       <div class="btn-ceil">
         <button
           (click)="navigateToDetail(lab.id)"
-          class="action-btn"
+          class="btn-like"
           id="edit-btn">
           <i class="fa fa-edit"></i>
         </button>

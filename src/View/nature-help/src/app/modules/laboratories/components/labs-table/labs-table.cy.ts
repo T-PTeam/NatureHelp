@@ -12,7 +12,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
-// Services (mock or real)
+// Services
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
 import { LoadingService } from "@/shared/services/loading.service";
 import { ReportAPIService } from "@/shared/services/report-api.service";

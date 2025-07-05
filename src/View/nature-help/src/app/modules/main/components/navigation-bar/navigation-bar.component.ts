@@ -4,6 +4,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 
 import { AuthDialogComponent } from "@/shared/components/dialogs/login-dialog/auth-dialog.component";
 import { UserAPIService } from "@/shared/services/user-api.service";
+import { MobileMapService } from "@/shared/services/mobile-map.service";
 import { EAuthType } from "@/models/enums";
 
 @Component({
@@ -13,11 +14,18 @@ import { EAuthType } from "@/models/enums";
   standalone: false,
 })
 export class NavigationBarComponent implements OnInit {
+  public isOpenedMapOnMobile: boolean = false;
+
   constructor(
     private dialog: MatDialog,
     public userService: UserAPIService,
     private notify: MatSnackBar,
+    public mobileMapService: MobileMapService,
   ) {}
+
+  get isMobile(): boolean {
+    return this.mobileMapService.isMobile();
+  }
 
   ngOnInit() {}
 

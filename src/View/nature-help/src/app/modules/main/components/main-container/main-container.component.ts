@@ -16,9 +16,10 @@ export class MainContainerComponent implements OnInit {
     public loading: LoadingService,
     private router: Router,
   ) {
+    const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isLeftSideVisible = !["/owner"].includes(event.url);
+        this.isLeftSideVisible = !["/owner"].includes(event.url) && !isMobile;
       }
     });
   }

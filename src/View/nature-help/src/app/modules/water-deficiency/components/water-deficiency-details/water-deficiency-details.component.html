@@ -60,6 +60,15 @@
       <nat-pick-coordinates-button
         [isActive]="isSelectingCoordinates"
         (buttonClick)="toggleCoordinateSelection($event)"></nat-pick-coordinates-button>
+
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="changeMapView()"
+        matTooltip="Focus map on coordinates"
+        class="map-focus-btn">
+        <mat-icon>my_location</mat-icon>
+      </button>
     </div>
 
     <div

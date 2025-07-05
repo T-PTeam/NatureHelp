@@ -8,6 +8,7 @@ import { Subject } from "rxjs";
 
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
 import { MapViewService, IAddress } from "@/shared/services/map-view.service";
+import { MobileMapService } from "@/shared/services/mobile-map.service";
 
 import { EDangerState, EDeficiencyType } from "../../../../models/enums";
 import { IWaterDeficiency } from "../../models/IWaterDeficiency";
@@ -35,7 +36,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   selectedAddress: IAddress | null = null;
   attachments: IDeficiencyAttachment[] = [];
 
-  // Upload state tracking
   isUploading: boolean = false;
   uploadProgress: number = 0;
   lastUploadError: string | null = null;
@@ -50,6 +50,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private mapViewService: MapViewService,
+    private mobileMapService: MobileMapService,
     private fb: FormBuilder,
     public usersAPIService: UserAPIService,
     private attachmentService: AttachmentAPIService,
@@ -104,6 +105,10 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
 
     const formData: IWaterDeficiency = this.detailsForm.value;
 
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.hideMobileMap();
+    }
+
     if (this.isAddingDeficiency) {
       this.deficiencyDataService.addNewWaterDeficiency(formData).subscribe(() => {
         this.router.navigate(["/water"]);
@@ -118,6 +123,10 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   onCancel() {
     this.changeMapView();
 
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.hideMobileMap();
+    }
+
     this.router.navigate(["/water"]);
   }
 
@@ -129,8 +138,21 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     this.isSelectingCoordinates = !this.isSelectingCoordinates;
     if (this.isSelectingCoordinates) {
       this.mapViewService.enableCoordinateSelection();
+      if (this.mobileMapService.isMobile()) {
+        this.mobileMapService.showMobileMap();
+      }
     } else {
       this.mapViewService.disableCoordinateSelection();
+    }
+  }
+
+  changeMapView() {
+    this.mapViewService.changeFocus(
+      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
+      12,
+    );
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.showMobileMap();
     }
   }
 
@@ -240,13 +262,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     return errors;
   }
 
-  private changeMapView() {
-    this.mapViewService.changeFocus(
-      { latitude: this.details?.latitude || 0, longitude: this.details?.longitude || 0 },
-      12,
-    );
-  }
-
   private subscribeToCoordinatesPicking(): void {
     this.mapViewService.selectedCoordinates$.subscribe((coordinates) => {
       if (coordinates) {
@@ -286,7 +301,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     this.isUploading = false;
     this.uploadProgress = 100;
 
-    // Add new attachments to the list
     this.attachments = [...this.attachments, ...newAttachments];
 
     this.snackBar.open(`Successfully uploaded ${newAttachments.length} file(s)`, "Close", {
@@ -294,7 +308,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
       panelClass: ["success-snackbar"],
     });
 
-    // Reload attachments to get the latest list
     if (this.details?.id) {
       this.loadAttachments(this.details.id, this.details.type);
     }
@@ -370,11 +383,9 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     console.log("Current Attachments:", this.attachments);
     console.log("Upload Service Available:", !!this.uploadService);
 
-    // Test creating a simple file
     const testFile = new File(["test content"], "test.txt", { type: "text/plain" });
     console.log("Test file created:", testFile);
 
-    // Test the upload service directly
     if (this.details?.id) {
       console.log("Testing upload service with file:", testFile.name);
       this.uploadService.uploadFile(testFile, this.details.id).subscribe({
@@ -393,7 +404,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     }
   }
 
-  // Event handlers for basic file upload component
   onFilesSelected(files: File[]): void {
     console.log("Files selected:", files);
     this.lastUploadedFiles = files;
@@ -401,12 +411,10 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     this.lastUploadError = null;
     this.uploadProgress = 0;
 
-    // Subscribe to upload progress
     const progressSubscription = this.uploadService.uploadProgress$.subscribe((progress) => {
       this.uploadProgress = this.uploadService.getOverallProgress();
     });
 
-    // Upload files using the upload service
     this.uploadService.uploadFilesParallel(files, this.details!.id, 3).subscribe({
       next: (results) => {
         const successfulUploads = results.filter((result) => result.attachment).map((result) => result.attachment!);
@@ -446,14 +454,11 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
 
   onFileSelected(file: File): void {
     console.log("Single file selected:", file);
-    // This is called when a single file is selected
-    // We can handle it the same way as multiple files
     this.onFilesSelected([file]);
   }
 
   onFileRemoved(file: File): void {
     console.log("File removed:", file);
-    // Remove the file from the lastUploadedFiles array
     this.lastUploadedFiles = this.lastUploadedFiles.filter((f) => f !== file);
   }
 

@@ -65,11 +65,7 @@ export class WaterAPIService {
     return this.http.post<IWaterDeficiency>(this.watersUrl, JSON.stringify(value), this.httpOptions);
   }
 
-  public updateWaterDeficiencyById(
-    // TODO
-    id: string,
-    changes: Partial<IWaterDeficiency>,
-  ): Observable<any> {
+  public updateWaterDeficiencyById(id: string, changes: Partial<IWaterDeficiency>): Observable<any> {
     const deficiencies = this.listSubject.getValue();
 
     const index = deficiencies.findIndex((deficiency) => deficiency.id == id);

@@ -68,7 +68,6 @@ export class CommentMessageListComponent {
           this.submitting = false;
         },
         error: (err) => {
-          // handle error, show notification
           this.submitting = false;
         },
       });

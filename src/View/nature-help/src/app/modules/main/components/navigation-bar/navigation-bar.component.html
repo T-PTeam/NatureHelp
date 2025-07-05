@@ -34,11 +34,26 @@
 
   <div class="navbar-right">
     <button
+      *ngIf="isMobile"
+      data-cy="map-switch-mobile"
+      mat-button
+      (click)="mobileMapService.toggleMobileMap()">
+      <mat-icon class="icon-medium">map</mat-icon>
+    </button>
+
+    <nat-map
+      *ngIf="isMobile"
+      class="mobile-map-view"
+      [ngStyle]="{ display: (mobileMapService.isMobileMapVisible$ | async) ? 'block' : 'none' }">
+    </nat-map>
+
+    <button
       data-cy="auth-menu"
       mat-button
       [matMenuTriggerFor]="menu">
-      <mat-icon class="icon-large">person</mat-icon>
+      <mat-icon class="icon-medium">person</mat-icon>
     </button>
+
     <mat-menu #menu="matMenu">
       <button
         i18n="@@loginBtn"

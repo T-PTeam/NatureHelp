@@ -12,31 +12,6 @@
   position: relative;
 }
 
-.fullscreen-button {
-  position: fixed;
-  bottom: 52px;
-  left: 22px;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  z-index: 100;
-  transition:
-    transform 0.3s ease,
-    width 0.3s ease,
-    height 0.3s ease;
-}
-
-.fullscreen-button img {
-  width: 32px;
-  height: 32px;
-}
-
-.fullscreen-button.fullscreen-active img {
-  width: 32px;
-  height: 32px;
-}
-
 .selected-location-marker {
   position: relative;
 }
@@ -75,10 +50,12 @@
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.2);
     opacity: 0.8;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
