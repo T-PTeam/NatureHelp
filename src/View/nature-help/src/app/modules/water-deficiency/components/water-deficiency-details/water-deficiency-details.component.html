@@ -1,11 +1,25 @@
 <mat-card
   *ngIf="details"
   class="detail-card">
-  <mat-card-title i18n="@@waterDeficiency">Water Deficiency</mat-card-title>
+  <mat-card-title
+    i18n="@@waterDeficiency"
+    data-title="Water Deficiency"
+    ><span></span>
+    <button
+      class="monitoring-flag"
+      mat-icon-button
+      (click)="toggleMonitoring()"
+      matTooltip="Toggle Monitoring"
+      [class.monitoring-active]="details?.deficiencyMonitoring?.isMonitoring || false"
+      [class.monitoring-inactive]="!(details?.deficiencyMonitoring?.isMonitoring || false)">
+      <mat-icon>{{ details?.deficiencyMonitoring?.isMonitoring || false ? "flag" : "flag_outline" }}</mat-icon>
+    </button>
+  </mat-card-title>
+
   <div
     class="form-container"
     [formGroup]="detailsForm">
-    <mat-form-field>
+    <mat-form-field class="title-field">
       <mat-label i18n="@@title">Title</mat-label>
       <input
         matInput

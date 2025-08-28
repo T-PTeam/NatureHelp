@@ -41,6 +41,7 @@ public class DeficiencyRepository<D> : BaseRepository<D> where D : Deficiency
         var entity = await context.Set<D>()
             .Include(d => d.Creator)
             .Include(d => d.ResponsibleUser)
+            .Include(d => d.DeficiencyMonitoring)
             .FirstOrDefaultAsync(x => x.Id.Equals(id));
 
         return entity;

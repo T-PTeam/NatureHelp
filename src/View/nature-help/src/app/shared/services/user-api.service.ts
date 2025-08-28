@@ -224,6 +224,47 @@ export class UserAPIService {
     this.loading.showLoaderUntilCompleted(updateOrganizationUsersRoles$).subscribe();
   }
 
+  resetPassword(newPassword: string, token: string): Observable<boolean> {
+    return this.http
+      .post<boolean>(`${this.apiUrl}/reset-password`, {
+        token: token,
+        newPassword: newPassword,
+      })
+      .pipe(
+        tap((success) => {
+          const message = success ? "Password was successfully reset!" : "Error occurred while resetting password...";
+
+          this.notify.open(message, "Close", { duration: 2000 });
+        }),
+        shareReplay(),
+        catchError((err) => {
+          this.notify.open("Error: " + err, "Close", { duration: 2000 });
+          return of(false);
+        }),
+      );
+  }
+
+  sendPasswordResetLink(email: string): Observable<boolean> {
+    return this.http
+      .post<boolean>(`${this.apiUrl}/send-password-reset-link`, {
+        email: email,
+      })
+      .pipe(
+        tap((success) => {
+          const message = success
+            ? "Password reset link has been sent to your email!"
+            : "Error occurred while sending password reset link...";
+
+          this.notify.open(message, "Close", { duration: 2000 });
+        }),
+        shareReplay(),
+        catchError((err) => {
+          this.notify.open("Error: " + err, "Close", { duration: 2000 });
+          return of(false);
+        }),
+      );
+  }
+
   private setAuthOptions(authOptions: any) {
     if (!authOptions) {
       return;

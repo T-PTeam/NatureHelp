@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatModule } from "@/mat.module";
 
 import { AuthDialogComponent } from "./components/dialogs/login-dialog/auth-dialog.component";
+import { PasswordResetDialogComponent } from "./components/dialogs/login-dialog/password-reset-dialog.component";
+import { SendResetLinkDialogComponent } from "./components/dialogs/login-dialog/send-reset-link-dialog.component";
 import { MapComponent } from "./components/main-map/main-map.component";
 import { EnumToStringPipe } from "./pipes/enum-to-string.pipe";
 import { FilterPipe } from "./pipes/filter.pipe";
@@ -19,18 +21,24 @@ import { AttachmentListComponent } from "./components/attachment-list/attachment
 import { FileUploadComponent } from "./components/file-upload/file-upload.component";
 import { AttachmentPreviewDialogComponent } from "./components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component";
 import { CommentMessageListComponent } from "./components/comment-message-list/comment-message-list.component";
+import { EmailVerificationDialogComponent } from "./components/dialogs/email-verification-dialog/email-verification-dialog.component";
+import { EmailConfirmationComponent } from "./components/email-confirmation/email-confirmation.component";
 
 @NgModule({
   imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
   declarations: [
     MapComponent,
     AuthDialogComponent,
+    PasswordResetDialogComponent,
+    SendResetLinkDialogComponent,
     AddOrganizationUsersComponent,
     AuditListComponent,
     AttachmentListComponent,
     FileUploadComponent,
     AttachmentPreviewDialogComponent,
     CommentMessageListComponent,
+    EmailVerificationDialogComponent,
+    EmailConfirmationComponent,
 
     FilterPipe,
     EnumToStringPipe,
@@ -40,12 +48,16 @@ import { CommentMessageListComponent } from "./components/comment-message-list/c
   exports: [
     MapComponent,
     AuthDialogComponent,
+    PasswordResetDialogComponent,
+    SendResetLinkDialogComponent,
     AddOrganizationUsersComponent,
     AuditListComponent,
     AttachmentListComponent,
     FileUploadComponent,
     AttachmentPreviewDialogComponent,
     CommentMessageListComponent,
+    EmailVerificationDialogComponent,
+    EmailConfirmationComponent,
 
     FilterPipe,
     EnumToStringPipe,

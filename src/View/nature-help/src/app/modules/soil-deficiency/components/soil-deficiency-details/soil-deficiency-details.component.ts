@@ -8,6 +8,7 @@ import { Subject } from "rxjs";
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
 import { MobileMapService } from "@/shared/services/mobile-map.service";
+import { AuditService } from "@/shared/services/audit.service";
 
 import { EDangerState, EDeficiencyType } from "../../../../models/enums";
 import { ISoilDeficiency } from "../../models/ISoilDeficiency";
@@ -40,6 +41,7 @@ export class SoilDeficiencyDetail implements OnInit {
     private mobileMapService: MobileMapService,
     private fb: FormBuilder,
     public usersAPIService: UserAPIService,
+    private auditService: AuditService,
   ) {}
 
   ngOnInit(): void {
@@ -101,6 +103,27 @@ export class SoilDeficiencyDetail implements OnInit {
     this.router.navigate(["/soil"]);
   }
 
+  toggleMonitoring() {
+    this.auditService.toggleMonitoring(this.details?.id || null, EDeficiencyType.Soil).subscribe({
+      next: (success) => {
+        if (success) {
+          if (this.details) {
+            if (!this.details.deficiencyMonitoring) {
+              this.details.deficiencyMonitoring = {
+                isMonitoring: true,
+              };
+            } else {
+              this.details.deficiencyMonitoring.isMonitoring = !this.details.deficiencyMonitoring.isMonitoring;
+            }
+          }
+        }
+      },
+      error: (error) => {
+        console.error("Error toggling monitoring:", error);
+      },
+    });
+  }
+
   toggleCoordinateSelection(event?: Event): void {
     if (event) {
       event.preventDefault();
@@ -155,6 +178,7 @@ export class SoilDeficiencyDetail implements OnInit {
       createdBy: [deficiency?.creator?.id || this.currentUser?.id],
       createdOn: [deficiency?.createdOn || moment()],
       responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id, [Validators.required]],
+      isMonitoring: [deficiency?.deficiencyMonitoring?.isMonitoring || false],
     });
 
     this.details = {
@@ -171,6 +195,7 @@ export class SoilDeficiencyDetail implements OnInit {
         email: deficiency?.responsibleUser?.email || this.currentUser?.email,
         role: deficiency?.responsibleUser?.role || this.currentUser?.role,
       },
+      deficiencyMonitoring: deficiency?.deficiencyMonitoring,
     };
   }
 

@@ -24,6 +24,10 @@ public class Deficiency : BaseModel, ICoordinates
     public Guid CreatedBy { get; set; }
     public User? Creator { get; set; }
 
+    [ForeignKey(nameof(DeficiencyMonitoring))]
+    public Guid? DeficiencyMonitoringId { get; set; }
+    public DeficiencyMonitoring? DeficiencyMonitoring { get; set; }
+
     #region ICoordinates Implementation
     public double Longitude { get; set; }
     public double Latitude { get; set; }

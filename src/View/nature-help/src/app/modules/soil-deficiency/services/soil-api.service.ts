@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { BehaviorSubject, catchError, Observable, shareReplay, tap } from "rxjs";
+import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from "rxjs";
 
 import { ISoilDeficiency } from "@/modules/soil-deficiency/models/ISoilDeficiency";
 import { LoadingService } from "@/shared/services/loading.service";
@@ -52,12 +52,12 @@ export class SoilAPIService {
         const message = "Could not load soil deficiencies";
 
         this.notify.open(message, "Close", { duration: 2000 });
-        return err;
+        return of({ list: [], totalCount: 0 } as IListData<ISoilDeficiency>);
       }),
       shareReplay(),
     );
     this.loading.showLoaderUntilCompleted(loadDeficiencies$).subscribe();
-    return this.http.get<ISoilDeficiency[]>(`${this.soilsUrl}?scrollCount = ${scrollCount} `);
+    return this.deficiencies$;
   }
 
   public getSoilDeficiencyById(id: string): Observable<ISoilDeficiency> {

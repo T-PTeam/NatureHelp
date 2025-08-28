@@ -50,7 +50,7 @@ export class WaterAPIService {
 
         console.error(err);
         this.notify.open(message, "Close", { duration: 2000 });
-        return of({ list: [], totalCount: 0 });
+        return of({ list: [], totalCount: 0 } as IListData<IWaterDeficiency>);
       }),
       shareReplay(),
     );

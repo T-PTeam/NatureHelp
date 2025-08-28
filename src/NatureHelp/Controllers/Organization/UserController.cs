@@ -11,10 +11,16 @@ namespace NatureHelp.Controllers.Organization;
 public class UserController : Controller
 {
     private readonly IUserService _userService;
+    private readonly IEmailService _emailSender;
+    private readonly IConfiguration _configuration;
 
-    public UserController(IUserService userService)
+    public UserController(IUserService userService,
+        IEmailService emailSender,
+        IConfiguration configuration)
     {
         _userService = userService;
+        _emailSender = emailSender;
+        _configuration = configuration;
     }
 
     /// <summary>
@@ -65,6 +71,45 @@ public class UserController : Controller
     }
 
     /// <summary>
+    /// Send verification email to user
+    /// </summary>
+    /// <param name="email"></param>
+    /// <returns></returns>
+    [HttpPost("send-verification-email")]
+    public async Task<IActionResult> SendVerificationEmail([FromBody] UserDto userDto)
+    {
+        string? token = await _userService.UpdateEmailConfirmationTokenByEmail(userDto.Email);
+
+        var user = await _userService.GetModelByEmail(userDto.Email);
+        user.EmailConfirmationToken = token;
+
+        if (user == null) return NotFound("User not found");
+        if (user.IsEmailConfirmed) return Accepted("Email already confirmed");
+
+        var confirmationUrl = $"{_configuration["Frontend:Url"]}/confirm-email?token={user.EmailConfirmationToken}";
+
+        await _emailSender.SendEmailAsync(user.Email, "Confirm your email", $"Please confirm your email by clicking the following link: {confirmationUrl}");
+
+        return Ok("Confirmation email sent.");
+    }
+
+
+    /// <summary>
+    /// Confirm user email
+    /// </summary>
+    /// <param name="token"></param>
+    /// <returns></returns>
+    [HttpGet("confirm-email")]
+    public async Task<IActionResult> ConfirmEmail(string token)
+    {
+        var user = await _userService.ConfirmEmailByToken(token);
+
+        if (user == null || !user.IsEmailConfirmed) return BadRequest("Invalid token");
+
+        return Ok("Email confirmed");
+    }
+
+    /// <summary>
     /// Add user to organization
     /// </summary>
     /// <param name="loginDto"></param>
@@ -98,5 +143,94 @@ public class UserController : Controller
     public async Task<IActionResult> GetOrganizationUsersNotLoginEver([FromQuery] Guid organizationId)
     {
         return Ok(await _userService.GetOrganizationUsersNotLoginEver(organizationId));
+    }
+
+    /// <summary>
+    /// Send password reset link to user's email
+    /// </summary>
+    /// <param name="request">Email address to send reset link to</param>
+    /// <returns>Success status</returns>
+    [HttpPost("send-password-reset-link")]
+    public async Task<IActionResult> SendPasswordResetLink([FromBody] SendPasswordResetLinkDto request)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            var result = await _userService.SendPasswordResetLinkAsync(request);
+
+            return Ok(new { success = true, message = "If the email exists, a password reset link has been sent." });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { success = false, message = "An error occurred while processing your request." });
+        }
+    }
+
+    /// <summary>
+    /// Reset password using token from email
+    /// </summary>
+    /// <param name="request">Token and new password</param>
+    /// <returns>Success status</returns>
+    [HttpPost("reset-password")]
+    public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto request)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            var result = await _userService.ResetPasswordByEmailAsync(request);
+
+            if (result)
+            {
+                return Ok(new { success = true, message = "Password has been successfully reset." });
+            }
+            else
+            {
+                return BadRequest(new { success = false, message = "Invalid or expired reset token." });
+            }
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { success = false, message = "An error occurred while processing your request." });
+        }
+    }
+
+    /// <summary>
+    /// Reset password using user ID (for authenticated users)
+    /// </summary>
+    /// <param name="request">User ID and new password</param>
+    /// <returns>Success status</returns>
+    [HttpPut("reset-password")]
+    public async Task<IActionResult> ResetPasswordWithUserId([FromBody] ResetPasswordWithTokenDto request)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            var result = await _userService.ResetPasswordWithTokenAsync(request);
+
+            if (result)
+            {
+                return Ok(new { success = true, message = "Password has been successfully reset." });
+            }
+            else
+            {
+                return BadRequest(new { success = false, message = "User not found or password reset failed." });
+            }
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { success = false, message = "An error occurred while processing your request." });
+        }
     }
 }

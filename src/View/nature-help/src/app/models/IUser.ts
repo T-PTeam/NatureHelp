@@ -7,4 +7,8 @@ export interface IUser {
   passwordHash: string;
   role: number;
   organizationId: string | null;
+  deficiencyMonitoringScheme?: {
+    isMonitoringWaterDeficiencies: boolean;
+    isMonitoringSoilDeficiencies: boolean;
+  };
 }

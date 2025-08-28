@@ -16,6 +16,7 @@ using Domain.Models.Organization;
 using Infrastructure.Interfaces;
 using Infrastructure.Providers;
 using Infrastructure.Repositories;
+using Infrastructure.Services;
 
 namespace NatureHelp
 {
@@ -44,6 +45,8 @@ namespace NatureHelp
             services.AddScoped<IBaseRepository<Research>, ResearchRepository>();
             services.AddScoped<IChangedModelLogRepository, ChangedModelLogRepository>();
             services.AddSingleton<IRedisCacheService, RedisCacheService>();
+            services.AddScoped<IEmailSender, SmtpEmailSender>();
+            services.AddScoped<IMonitoringRepository, MonitoringRepository>();
 
             return services;
         }
@@ -70,6 +73,8 @@ namespace NatureHelp
             services.AddScoped<IBaseService<Research>, BaseService<Research>>();
             services.AddScoped<IChangedModelLogService, ChangedModelLogService>();
             services.AddScoped<IBlobStorageProvider, AzureBlobStorageProvider>();
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<MonitoringService>();
 
             return services;
         }

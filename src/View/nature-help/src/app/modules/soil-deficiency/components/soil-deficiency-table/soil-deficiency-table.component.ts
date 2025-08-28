@@ -2,14 +2,16 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
+import { UserAPIService } from "@/shared/services/user-api.service";
 import { withLatestFrom } from "rxjs";
 import { ReportAPIService } from "@/shared/services/report-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
 import { ISoilDeficiencyFilter } from "../../models/ISoilDeficiencyFilter";
 import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
-import { EDangerState } from "@/models/enums";
+import { EDangerState, EDeficiencyType } from "@/models/enums";
 import { ISelectOption } from "@/shared/models/ISelectOption";
 import { FormGroup, FormBuilder } from "@angular/forms";
+import { AuditService } from "@/shared/services/audit.service";
 
 @Component({
   selector: "n-soil-deficiencies",
@@ -21,6 +23,7 @@ export class SoilDeficiencyTable {
   search: string = "";
   scrollCheckDisabled: boolean = false;
   filterForm!: FormGroup;
+  isMonitoring: boolean = false;
   dangerStates: ISelectOption<EDangerState>[] = [];
 
   private listScrollCount = 0;
@@ -28,6 +31,8 @@ export class SoilDeficiencyTable {
 
   constructor(
     public soilAPIService: SoilAPIService,
+    public auditService: AuditService,
+    private userService: UserAPIService,
     private router: Router,
     private reportAPIService: ReportAPIService,
     private mapViewService: MapViewService,
@@ -45,6 +50,10 @@ export class SoilDeficiencyTable {
 
     this.filterForm.valueChanges.subscribe(() => {
       this.isFilterChanged = true;
+    });
+
+    this.userService.$user.subscribe((user) => {
+      this.isMonitoring = user?.deficiencyMonitoringScheme?.isMonitoringSoilDeficiencies || false;
     });
   }
 
@@ -85,5 +94,9 @@ export class SoilDeficiencyTable {
     if (this.isFilterChanged) this.listScrollCount = 0;
 
     this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, filter);
+  }
+
+  toggleMonitoring(): void {
+    this.auditService.toggleMonitoring(null, EDeficiencyType.Soil).subscribe();
   }
 }

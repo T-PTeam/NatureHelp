@@ -64,6 +64,13 @@
         Login
       </button>
       <button
+        i18n="@@emailVerificationBtn"
+        mat-menu-item
+        (click)="openEmailVerificationDialog()">
+        Email Verification
+      </button>
+
+      <button
         i18n="@@logoutBtn"
         mat-menu-item
         (click)="logout()"

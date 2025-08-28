@@ -7,4 +7,4 @@ public interface IDeficiencyBindModel
     public EDeficiencyType DeficiencyType { get; set; }
     public Guid DeficiencyId { get; set; }
     public Deficiency Deficiency { get; set; }
-}   
+}
