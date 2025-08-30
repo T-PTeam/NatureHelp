@@ -80,10 +80,10 @@
           },
           "configurations": {
             "uk": {
-              "buildTarget": "nature-help:build:production,uk"
+              "buildTarget": "nature-help:build:development,uk"
             },
             "en": {
-              "buildTarget": "nature-help:build:production"
+              "buildTarget": "nature-help:build:development"
             },
             "production": {
               "buildTarget": "nature-help:build:production"
@@ -95,11 +95,11 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nature-help:build",
-            "format": "xlf",
-            "outputPath": "src/locale"
+            "buildTarget": "nature-help:build",
+            "outputPath": "src/locale",
+            "format": "xlf2"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
             "polyfills": ["zone.js", "zone.js/testing", "@angular/localize/init"],
             "tsConfig": "tsconfig.spec.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "styles": ["src/styles.css", "src/mat-custom.css"],
             "scripts": []
           }
         },

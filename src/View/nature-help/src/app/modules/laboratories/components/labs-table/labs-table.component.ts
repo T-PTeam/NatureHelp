@@ -3,7 +3,6 @@ import { Router } from "@angular/router";
 
 import { LabsAPIService } from "../../services/labs-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
-import { ILocation } from "@/models/ILocation";
 import { withLatestFrom } from "rxjs";
 import { ILaboratorFilter } from "../../models/ILaboratoryFilter";
 import { FormGroup, FormBuilder } from "@angular/forms";
@@ -11,7 +10,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 @Component({
   selector: "nat-labs-table",
   templateUrl: "./labs-table.component.html",
-  styleUrls: ["./labs-table.component.css", "../../../../shared/styles/table-list.component.css"],
+  styleUrls: ["../../../../shared/styles/table-list.component.css", "./labs-table.component.css"],
   standalone: false,
 })
 export class LabsTableComponent implements OnInit {
@@ -29,12 +28,8 @@ export class LabsTableComponent implements OnInit {
     private fb: FormBuilder,
   ) {
     this.filterForm = this.fb.group({
-      location: this.fb.group({
-        country: [""],
-        region: [""],
-        district: [""],
-        city: [""],
-      }),
+      latitude: [""],
+      longitude: [""],
     });
 
     this.filterForm.valueChanges.subscribe(() => {
@@ -56,8 +51,8 @@ export class LabsTableComponent implements OnInit {
     this.router.navigateByUrl("researches");
   }
 
-  changeMapFocus(location: ILocation) {
-    this.mapViewService.changeFocus(location, 20);
+  changeMapFocus(latitude: number, longitude: number) {
+    this.mapViewService.changeFocus({ latitude, longitude }, 12);
   }
 
   onScroll() {

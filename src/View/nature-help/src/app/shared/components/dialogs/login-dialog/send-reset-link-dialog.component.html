@@ -1,0 +1,49 @@
+<h2
+  mat-dialog-title
+  class="dialog-title"
+  i18n="@@sendResetLinkTitle">
+  Send Password Reset Link
+</h2>
+<div mat-dialog-content>
+  <p
+    class="dialog-description"
+    i18n="@@sendResetLinkDescription">
+    Enter your email address and we'll send you a link to reset your password.
+  </p>
+  <form [formGroup]="formGroup">
+    <mat-form-field class="full-width">
+      <mat-label i18n="@@emailLabel">Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="email" />
+      <mat-error
+        i18n="@@emailError"
+        *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+        Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div
+  mat-dialog-actions
+  class="action-buttons">
+  <button
+    i18n="@@cancelBtn"
+    class="reset-button"
+    mat-raised-button
+    (click)="closeDialog()">
+    Cancel
+  </button>
+  <button
+    i18n="@@sendResetLinkBtn"
+    class="apply-button"
+    mat-flat-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="formGroup.invalid"
+    type="submit">
+    Send Reset Link
+  </button>
+</div>

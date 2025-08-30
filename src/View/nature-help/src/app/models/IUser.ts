@@ -1,5 +1,3 @@
-import { ILocation } from "./ILocation";
-
 export interface IUser {
   id: string;
   firstName: string;
@@ -9,5 +7,8 @@ export interface IUser {
   passwordHash: string;
   role: number;
   organizationId: string | null;
-  address: ILocation | null;
+  deficiencyMonitoringScheme?: {
+    isMonitoringWaterDeficiencies: boolean;
+    isMonitoringSoilDeficiencies: boolean;
+  };
 }

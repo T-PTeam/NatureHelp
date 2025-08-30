@@ -1,12 +1,10 @@
 ﻿using Application.Interfaces.Services.Audit;
 using Domain.Enums;
 using Domain.Models.Audit;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers.Audit;
 
-[AllowAnonymous]
 [Route("api/[controller]")]
 public class ChangedModelLogsController : BaseController<ChangedModelLog>
 {

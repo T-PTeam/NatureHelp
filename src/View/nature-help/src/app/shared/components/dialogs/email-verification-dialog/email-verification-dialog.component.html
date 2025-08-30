@@ -1,0 +1,58 @@
+<h2
+  mat-dialog-title
+  class="dialog-title"
+  i18n="@@emailVerificationTitle">
+  Email Verification
+</h2>
+
+<div mat-dialog-content>
+  <p
+    class="description"
+    i18n="@@emailVerificationDescription">
+    Enter your email address to receive a verification link.
+  </p>
+
+  <form [formGroup]="formGroup">
+    <mat-form-field class="full-width">
+      <mat-label i18n="@@emailLabel">Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="email"
+        placeholder="Enter your email address" />
+      <mat-error
+        i18n="@@emailError"
+        *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+        Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div
+  mat-dialog-actions
+  class="action-buttons">
+  <button
+    i18n="@@cancelBtn"
+    class="reset-button"
+    mat-raised-button
+    (click)="closeDialog()"
+    [disabled]="isLoading">
+    Cancel
+  </button>
+  <button
+    i18n="@@sendVerificationBtn"
+    class="apply-button"
+    mat-flat-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="formGroup.invalid || isLoading"
+    type="submit">
+    <mat-spinner
+      *ngIf="isLoading"
+      diameter="20"
+      class="spinner">
+    </mat-spinner>
+    <span *ngIf="!isLoading">Send Verification Email</span>
+  </button>
+</div>

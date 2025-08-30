@@ -8,6 +8,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatMenuModule } from "@angular/material/menu";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
@@ -32,6 +33,7 @@ import { MatTableModule } from "@angular/material/table";
     MatRadioModule,
     MatSelectModule,
     MatSlideToggleModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
     MatTooltipModule,
@@ -51,6 +53,7 @@ import { MatTableModule } from "@angular/material/table";
     MatRadioModule,
     MatSelectModule,
     MatSlideToggleModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
     MatTooltipModule,

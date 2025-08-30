@@ -1,7 +1,9 @@
 ﻿using Domain.Models.Organization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Application.Providers
@@ -49,7 +51,7 @@ namespace Application.Providers
 
             if (!tokenHandler.CanReadToken(token))
             {
-                return true;
+                throw new InvalidOperationException("The token can not be read...");
             }
 
             var jwtToken = tokenHandler.ReadJwtToken(token);
@@ -63,12 +65,33 @@ namespace Application.Providers
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.Role.ToString())
+                new Claim(ClaimTypes.Role, user.Role.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
-            var roleString = user.Role.ToString();
-
             return claims;
+        }
+
+        public static string GenerateEmailConfirmationToken(int length = 32)
+        {
+            var bytes = new byte[length];
+            RandomNumberGenerator.Fill(bytes);
+            return Convert.ToBase64String(bytes)
+                         .Replace("+", "-")
+                         .Replace("/", "_")
+                         .Replace("=", "");
+        }
+
+        public static string? ExtractAccessTokenFromRequest(HttpRequest request)
+        {
+            string? authorizationHeader = request.Headers["Authorization"];
+            if (string.IsNullOrEmpty(authorizationHeader)) return null;
+
+            string token = authorizationHeader.StartsWith("Bearer ")
+                ? authorizationHeader["Bearer ".Length..]
+                : authorizationHeader;
+
+            return token;
         }
     }
 }

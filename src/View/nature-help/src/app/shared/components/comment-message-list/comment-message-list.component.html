@@ -1,0 +1,58 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Comments</mat-panel-title>
+    <mat-panel-description>
+      {{ comments.length }} {{ comments.length === 1 ? "comment" : "comments" }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <!-- New Comment Form -->
+  <form
+    [formGroup]="commentForm"
+    (ngSubmit)="submitComment()"
+    class="comment-form">
+    <mat-form-field class="comment-input">
+      <mat-label>Add a comment</mat-label>
+      <textarea
+        matInput
+        formControlName="message"
+        rows="2"
+        maxlength="1000"></textarea>
+      <mat-hint align="end">{{ commentForm.get("message")?.value?.length || 0 }}/1000</mat-hint>
+    </mat-form-field>
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      [disabled]="commentForm.invalid || submitting">
+      Post
+    </button>
+  </form>
+
+  <!-- Comments List -->
+  <div
+    class="comments-list"
+    *ngIf="comments?.length">
+    <div
+      class="comment-item"
+      *ngFor="let comment of comments">
+      <div class="comment-message">
+        <b>{{ comment.creatorFullName }}</b> {{ comment.message }}
+      </div>
+      <div class="comment-meta">
+        <span class="comment-date">{{ comment.createdOn | date: "short" }}</span>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="!comments || comments.length === 0">
+    <mat-card class="no-comments-card">
+      <mat-card-content>
+        <div class="no-comments-content">
+          <mat-icon class="no-comments-icon">chat_bubble_outline</mat-icon>
+          <p class="no-comments-text">No comments yet. Be the first to comment!</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</mat-expansion-panel>

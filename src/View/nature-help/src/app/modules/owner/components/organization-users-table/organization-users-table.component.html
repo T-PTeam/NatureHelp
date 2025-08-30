@@ -7,17 +7,18 @@
   <h2>Not logined Users ever</h2>
   <input
     type="search"
+    class="input-like"
     placeholder="Search for users..."
     [(ngModel)]="search" />
   <button
     (click)="saveChangedRoles()"
-    class="action-btn"
+    class="btn-like"
     id="save-btn">
     <i class="material-icons">save</i>
   </button>
   <button
     (click)="downloadExcel()"
-    class="action-btn"
+    class="btn-like"
     id="export-btn">
     <i class="material-icons">insert_drive_file</i>
   </button>

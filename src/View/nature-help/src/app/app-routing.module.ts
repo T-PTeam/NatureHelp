@@ -12,6 +12,8 @@ import { UnauthorisedComponent } from "./shared/components/unauthorised/unauthor
 import { RoleGuard } from "./shared/guards/role.guard";
 import { OwnerPageComponent } from "./modules/owner/components/owner-page/owner-page.component";
 import { ResearchTableComponent } from "./modules/laboratories/components/research-table/research-table.component";
+import { EmailConfirmationComponent } from "./shared/components/email-confirmation/email-confirmation.component";
+import { PasswordResetDialogComponent } from "./shared/components/dialogs/login-dialog/password-reset-dialog.component";
 
 const routes: Routes = [
   { path: "", component: WaterDeficiencyTable },
@@ -73,6 +75,9 @@ const routes: Routes = [
   },
 
   { path: "about", component: AboutComponent },
+
+  { path: "confirm-email", component: EmailConfirmationComponent },
+  { path: "password-reset", component: PasswordResetDialogComponent },
 
   { path: "unauthorized", component: UnauthorisedComponent },
   { path: "**", redirectTo: "/unauthorized" },

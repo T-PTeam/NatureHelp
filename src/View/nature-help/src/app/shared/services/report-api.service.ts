@@ -7,7 +7,7 @@ import { environment } from "src/environments/environment.dev";
 
 @Injectable()
 export class ReportAPIService {
-  private reportsUrl = `${environment}apiUrl/api/report`;
+  private reportsUrl = `${environment.apiUrl}/Report/`;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),

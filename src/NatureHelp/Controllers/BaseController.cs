@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers;
 [ApiController]
-[AllowAnonymous]
+[Authorize(Roles = "SuperAdmin,Owner,Manager,Supervisor,Researcher")]
 [Route("api/[controller]")]
 public class BaseController<T> : Controller where T : class
 {
@@ -22,7 +22,7 @@ public class BaseController<T> : Controller where T : class
     public virtual async Task<IActionResult> GetById(Guid id)
     {
         var entity = await _service.GetByIdAsync(id);
-        return entity == null ? NotFound() : Ok(entity);
+        return entity == null ? NoContent() : Ok(entity);
     }
 
     [HttpPost("")]
@@ -37,6 +37,13 @@ public class BaseController<T> : Controller where T : class
     {
         var updatedEntity = await _service.UpdateAsync(entity);
         return Ok(updatedEntity);
+    }
+
+    [HttpDelete("{id}")]
+    public virtual async Task<IActionResult> Delete(Guid id)
+    {
+        var deletedEntityId = await _service.DeleteAsync(id);
+        return Ok(deletedEntityId);
     }
 }
 

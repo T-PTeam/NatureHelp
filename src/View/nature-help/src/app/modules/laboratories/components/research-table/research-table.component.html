@@ -1,18 +1,45 @@
 <div class="header">
-  <h2>Researches</h2>
+  <h2 i18n="@@researchesTitle">Researches</h2>
   <input
     type="search"
-    placeholder="Search for researches..."
+    class="input-like"
+    placeholder="Search..."
+    i18n-placeholder="@@searchPlaceholder"
     [(ngModel)]="search" />
 </div>
 
 <div class="grid-container">
   <div class="grid-header">
-    <div matTooltip="Title">Title</div>
-    <div matTooltip="Type">Type</div>
-    <div matTooltip="Date">Date</div>
-    <div matTooltip="Researcher">Researcher</div>
-    <div matTooltip="Laboratory">Laboratory</div>
+    <div
+      i18n="@@title"
+      i18n-matTooltip="@@title"
+      matTooltip="Title">
+      Title
+    </div>
+    <div
+      i18n="@@type"
+      i18n-matTooltip="@@type"
+      matTooltip="Type">
+      Type
+    </div>
+    <div
+      i18n="@@date"
+      i18n-matTooltip="@@date"
+      matTooltip="Date">
+      Date
+    </div>
+    <div
+      i18n="@@researcher"
+      i18n-matTooltip="@@researcher"
+      matTooltip="Researcher">
+      Researcher
+    </div>
+    <div
+      i18n="@@laboratory"
+      i18n-matTooltip="@@laboratory"
+      matTooltip="Laboratory">
+      Laboratory
+    </div>
   </div>
   <div
     class="grid-body"
@@ -29,9 +56,7 @@
       <div>{{ research.date | date }}</div>
       <div>{{ research.researcher.firstName }} {{ research.researcher.lastName }}</div>
       <div>
-        {{ research.laboratory.title }}, {{ research.laboratory.location.city }}({{
-          research.laboratory.location.country
-        }})
+        {{ research.laboratory.title }}, {{ research.laboratory.latitude }}, {{ research.laboratory.longitude }}
       </div>
     </div>
   </div>

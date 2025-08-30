@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces.Services.Audit;
 using Domain.Enums;
+using Domain.Exceptions;
 using Domain.Interfaces;
 using Domain.Models.Nature;
 
@@ -18,6 +19,8 @@ public class SoilDeficiencyService : BaseService<SoilDeficiency>
     public override async Task<SoilDeficiency> UpdateAsync(SoilDeficiency entity)
     {
         SoilDeficiency oldEntity = await base.GetByIdAsync(entity.Id);
+
+        if (oldEntity == null) throw new EntityNotFoundException<SoilDeficiency>();
 
         await _logService.LogDeficiencyChangesAsync(oldEntity, entity, EDeficiencyType.Water, entity.CreatedBy);
 

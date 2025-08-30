@@ -67,6 +67,24 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
         return true;
     }
 
+    public virtual async Task<Guid> DeleteAsync(Guid id)
+    {
+        var context = GetContext();
+        context.Set<T>().Remove(await context.Set<T>().FirstAsync<T>(i => i.Id == id));
+        await context.SaveChangesAsync();
+
+        return id;
+    }
+
+    public virtual async Task<IEnumerable<Guid>> DeleteRangeAsync(IEnumerable<Guid> ids)
+    {
+        var context = GetContext();
+        context.Set<T>().RemoveRange(await context.Set<T>().Where(i => ids.Contains(i.Id)).ToListAsync());
+        await context.SaveChangesAsync();
+
+        return ids;
+    }
+
     public virtual async Task<int> GetTotalCount()
     {
         var context = GetContext();

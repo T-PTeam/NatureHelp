@@ -9,6 +9,7 @@ namespace Application.Services.Audit;
 public class ChangedModelLogService : BaseService<ChangedModelLog>, IChangedModelLogService
 {
     private readonly IChangedModelLogRepository _changedModelLogRepository;
+
     public ChangedModelLogService(IChangedModelLogRepository changedModelLogReposiroty)
         : base(changedModelLogReposiroty)
     {
@@ -43,6 +44,36 @@ public class ChangedModelLogService : BaseService<ChangedModelLog>, IChangedMode
 
             await _changedModelLogRepository.AddAsync(log);
         }
+    }
+
+    public async Task LogDeficiencyAttachmentChangeAsync<T>(
+        Guid deficiencyId,
+        string fileName,
+        long fileSize,
+        string previewUrl,
+        EDeficiencyType deficiencyType
+    ) where T : Deficiency
+    {
+        var changes = new Dictionary<string, object>
+        {
+            ["Attachment"] = new
+            {
+                Action = "Added",
+                FileName = fileName,
+                FileSize = fileSize,
+                PreviewUrl = previewUrl
+            }
+        };
+
+        var log = new ChangedModelLog
+        {
+            DeficiencyType = deficiencyType,
+            DeficiencyId = deficiencyId,
+            ChangesJson = JsonSerializer.Serialize(changes),
+            CreatedOn = DateTime.UtcNow
+        };
+
+        await _changedModelLogRepository.AddAsync(log);
     }
 
     public async Task<IEnumerable<ChangedModelLog>> GetChangingHistoryByDeficiencyIdAsync(Guid deficiencyId, EDeficiencyType type)

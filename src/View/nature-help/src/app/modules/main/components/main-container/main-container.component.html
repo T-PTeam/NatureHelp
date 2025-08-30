@@ -1,24 +1,26 @@
-<n-navigation-bar class="main-container-header"></n-navigation-bar>
-
-<div
-  *ngIf="loading.loading$ | async"
-  class="blured-background"></div>
-<mat-progress-spinner
-  *ngIf="loading.loading$ | async"
-  class="spinner-overlay"
-  mode="indeterminate">
-</mat-progress-spinner>
-
-<div class="main-container-content">
-  <div
-    class="left-side"
-    *ngIf="isLeftSideVisible">
-    <nat-map> </nat-map>
-  </div>
+<div style="height: 100%">
+  <n-navigation-bar class="main-container-header"></n-navigation-bar>
 
   <div
-    class="right-side"
-    [ngStyle]="{ 'grid-column': isLeftSideVisible ? '2' : '1 / span 2' }">
-    <router-outlet></router-outlet>
+    *ngIf="loading.loading$ | async"
+    class="blured-background"></div>
+  <mat-progress-spinner
+    *ngIf="loading.loading$ | async"
+    class="spinner-overlay"
+    mode="indeterminate">
+  </mat-progress-spinner>
+
+  <div class="main-container-content">
+    <div
+      class="left-side"
+      *ngIf="isLeftSideVisible">
+      <nat-map> </nat-map>
+    </div>
+
+    <div
+      class="right-side"
+      [ngStyle]="{ 'grid-column': isLeftSideVisible ? '2' : '1 / span 2' }">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

@@ -24,7 +24,6 @@ public class DeficiencyRepository<D> : BaseRepository<D> where D : Deficiency
         var query = context.Set<D>()
             .Include(d => d.Creator)
             .Include(d => d.ResponsibleUser)
-            .Include(d => d.Location)
             .ApplyFilters(filters ?? new Dictionary<string, string?>());
 
         if (scrollCount != -1)
@@ -39,13 +38,13 @@ public class DeficiencyRepository<D> : BaseRepository<D> where D : Deficiency
     {
         var context = _contextFactory.CreateDbContext();
 
-        return await context.Set<D>()
+        var entity = await context.Set<D>()
             .Include(d => d.Creator)
-                .ThenInclude(c => c.Address)
             .Include(d => d.ResponsibleUser)
-                .ThenInclude(u => u.Address)
-            .Include(d => d.Location)
-            .FirstOrDefaultAsync(x => x.Id == id);
+            .Include(d => d.DeficiencyMonitoring)
+            .FirstOrDefaultAsync(x => x.Id.Equals(id));
+
+        return entity;
     }
 
     public override async Task<D> UpdateAsync(D entity)

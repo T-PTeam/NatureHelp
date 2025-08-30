@@ -1,4 +1,5 @@
-﻿using Domain.Models.Analitycs;
+﻿using Domain.Models;
+using Domain.Models.Analitycs;
 using Domain.Models.Audit;
 using Domain.Models.Nature;
 using Domain.Models.Organization;
@@ -10,13 +11,14 @@ public class ApplicationContext : DbContext
     public DbSet<Report> Reports { get; set; }
     public DbSet<WaterDeficiency> WaterDeficiencies { get; set; }
     public DbSet<SoilDeficiency> SoilDeficiencies { get; set; }
-    public DbSet<Domain.Models.Nature.Location> NatLocations { get; set; }
     public DbSet<Laboratory> Laboratories { get; set; }
-    public DbSet<Domain.Models.Organization.Location> OrgLocations { get; set; }
     public DbSet<Organization> Organizations { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Research> Researches { get; set; }
     public DbSet<ChangedModelLog> ChangedModelLogs { get; set; }
+    public DbSet<DeficiencyAttachment> Attachments { get; set; }
+    public DbSet<CommentMessage> Comments { get; set; }
+    public DbSet<DeficiencyMonitoring> DeficiencyMonitoring { get; set; }
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)
@@ -27,6 +29,11 @@ public class ApplicationContext : DbContext
     {
         base.OnModelCreating(builder);
 
+        builder.Entity<Attachment>()
+            .HasDiscriminator<string>("AttachmentType")
+            .HasValue<DeficiencyAttachment>("DeficiencyAttachment");
+
+        builder.Entity<User>().OwnsOne(u => u.DeficiencyMonitoringScheme);
         // Test DATA
         //builder.Entity<Report>()
         //    .HasData(GenerateTestDataToDB.Reports);
@@ -37,14 +44,8 @@ public class ApplicationContext : DbContext
         //builder.Entity<SoilDeficiency>()
         //    .HasData(GenerateTestDataToDB.SoilDeficiencies);
 
-        //builder.Entity<Domain.Models.Organization.Location>()
-        //    .HasData(GenerateTestDataToDB.Locations.Concat(GenerateTestDataToDB.PersonLocations));
-
         //builder.Entity<Laboratory>()
         //    .HasData(GenerateTestDataToDB.Laboratories);
-
-        //builder.Entity<Domain.Models.Nature.Location>()
-        //    .HasData(GenerateTestDataToDB.NatureLocations);
 
         //builder.Entity<User>()
         //    .HasData(GenerateTestDataToDB.Users);

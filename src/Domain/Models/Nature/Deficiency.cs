@@ -1,10 +1,11 @@
 ﻿using Domain.Enums;
+using Domain.Interfaces;
 using Domain.Models.Audit;
 using Domain.Models.Organization;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Models.Nature;
-public class Deficiency : BaseModel
+public class Deficiency : BaseModel, ICoordinates
 {
     public string Title { get; set; } = null!;
     public string Description { get; set; } = string.Empty;
@@ -13,10 +14,6 @@ public class Deficiency : BaseModel
     [ForeignKey(nameof(ResponsibleUser))]
     public Guid? ResponsibleUserId { get; set; }
     public User? ResponsibleUser { get; set; }
-
-    [ForeignKey(nameof(Location))]
-    public Guid LocationId { get; set; }
-    public Location? Location { get; set; }
     public EDangerState EDangerState { get; set; } = EDangerState.Moderate;
 
     [ForeignKey(nameof(ChangedModelLog))]
@@ -26,4 +23,15 @@ public class Deficiency : BaseModel
     [ForeignKey(nameof(Creator))]
     public Guid CreatedBy { get; set; }
     public User? Creator { get; set; }
+
+    [ForeignKey(nameof(DeficiencyMonitoring))]
+    public Guid? DeficiencyMonitoringId { get; set; }
+    public DeficiencyMonitoring? DeficiencyMonitoring { get; set; }
+
+    #region ICoordinates Implementation
+    public double Longitude { get; set; }
+    public double Latitude { get; set; }
+    public double RadiusAffected { get; set; } = 10;
+    public string? Address { get; set; }
+    #endregion
 }

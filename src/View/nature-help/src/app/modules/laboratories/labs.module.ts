@@ -10,6 +10,7 @@ import { LabDetailsComponent } from "./components/lab-details/lab-details.compon
 import { LabsTableComponent } from "./components/labs-table/labs-table.component";
 import { ResearchTableComponent } from "./components/research-table/research-table.component";
 import { InfiniteScrollDirective } from "ngx-infinite-scroll";
+import { PickCoordinatesButtonComponent } from "@/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component";
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { InfiniteScrollDirective } from "ngx-infinite-scroll";
     SharedModule,
     MatModule,
     InfiniteScrollDirective,
+    PickCoordinatesButtonComponent,
   ],
   declarations: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],
   exports: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],

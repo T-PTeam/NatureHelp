@@ -1,0 +1,15 @@
+<div class="preview-dialog">
+  <img
+    [src]="data.url"
+    [alt]="data.fileName"
+    class="preview-image" />
+  <div class="preview-footer">
+    <span>{{ data.fileName }}</span>
+    <button
+      mat-icon-button
+      (click)="close()"
+      matTooltip="Close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>

@@ -2,17 +2,23 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
+    viewportWidth: 1920,
+    viewportHeight: 1080,
+
     baseUrl: "http://localhost:4200",
-    supportFile: false, // Separate support file for e2e
+    supportFile: false,
     specPattern: "cypress/e2e/**/*.cy.ts",
   },
 
   component: {
+    viewportWidth: 1920,
+    viewportHeight: 1080,
+
     devServer: {
       framework: "angular",
       bundler: "webpack",
     },
-    supportFile: false, // Separate support file for component tests
-    specPattern: ["cypress/components/**/*.cy.ts", "src/app/modules/**/components/**/*.cy.ts"],
+    supportFile: false,
+    specPattern: ["cypress/components/**/*.cy.ts", "src/app/**/*.cy.ts"],
   },
 });

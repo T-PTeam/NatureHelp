@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { BehaviorSubject, catchError, Observable, shareReplay, tap } from "rxjs";
+import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from "rxjs";
 
 import { LoadingService } from "@/shared/services/loading.service";
 
@@ -38,8 +38,11 @@ export class LabsAPIService {
     let params = new HttpParams();
 
     if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
-    if (filter?.location) {
-      params = params.set("Location", JSON.stringify(filter.location));
+    if (filter?.latitude) {
+      params = params.set("Latitude", filter.latitude.toString());
+    }
+    if (filter?.longitude) {
+      params = params.set("Longitude", filter.longitude.toString());
     }
 
     const loadlabs$ = this.http.get<IListData<ILaboratory>>(`${this.labsUrl}`, { params }).pipe(
@@ -53,13 +56,13 @@ export class LabsAPIService {
         const message = "Could not load labs";
 
         this.notify.open(message, "Close", { duration: 2000 });
-        return err;
+        return of({ list: [], totalCount: 0 } as IListData<ILaboratory>);
       }),
       shareReplay(),
     );
 
     this.loading.showLoaderUntilCompleted(loadlabs$).subscribe();
-    return this.http.get<ILaboratory[]>(`${this.labsUrl}?scrollCount = ${scrollCount} `);
+    return this.labs$;
   }
 
   public getLabById(id: string): Observable<ILaboratory> {

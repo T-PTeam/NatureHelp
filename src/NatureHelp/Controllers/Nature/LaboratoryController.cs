@@ -7,7 +7,7 @@ namespace NatureHelp.Controllers.Nature;
 
 [Authorize(Roles = "SuperAdmin, Owner, Manager, Researcher")]
 [Route("api/[controller]")]
-public class LaboratoryController : BaseController<Laboratory>
+public class LaboratoryController : BaseCachedController<Laboratory>
 {
     public LaboratoryController(IBaseService<Laboratory> laboratoryService)
         : base(laboratoryService) { }

@@ -1,4 +1,6 @@
 using Application.Providers;
+using AspNetCoreRateLimit;
+using Azure.Storage.Blobs;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -8,13 +10,40 @@ using NatureHelp.Filters;
 using NatureHelp.Interfaces;
 using NatureHelp.Providers;
 using Serilog;
+using StackExchange.Redis;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
+
 var configuration = new ConfigurationBuilder()
-    .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true, reloadOnChange: true)
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{environment}.json", optional: true, reloadOnChange: true)
     .Build();
+
+var allowedOrigins = builder.Configuration
+    .GetSection("Cors:AllowedOrigins")
+    .Get<string[]>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins", policy =>
+    {
+        policy.WithOrigins(allowedOrigins ?? [])
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+builder.Services.AddMemoryCache();
+
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimitPolicies"));
+builder.Services.AddInMemoryRateLimiting();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
 builder.Host.UseSerilog((context, services, configuration) =>
 {
@@ -26,8 +55,8 @@ builder.Host.UseSerilog((context, services, configuration) =>
 
 builder.Services.AddDbContextFactory<ApplicationContext>(options =>
 {
-    string connectionString = configuration.GetConnectionString("LocalConnection") 
-        ?? configuration.GetConnectionString("DefaultConnection") 
+    string connectionString = configuration.GetConnectionString("LocalConnection")
+        ?? configuration.GetConnectionString("DefaultConnection")
         ?? String.Empty;
 
     options.UseNpgsql(connectionString, npgsqlOptions =>
@@ -78,9 +107,14 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IObjectsProvider<IExceptionHandler>, ErrorHandlersProvider>();
 
 builder.Services.AddControllers(config =>
-{
-    config.Filters.Add<AppExceptionFilterAttribute>();
-});
+    {
+        config.Filters.Add<AppExceptionFilterAttribute>();
+    })
+    .AddJsonOptions(x =>
+    {
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        x.JsonSerializerOptions.WriteIndented = true;
+    }); ;
 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -132,12 +166,33 @@ builder.Services.Configure<RouteOptions>(options =>
     options.LowercaseUrls = true;
 });
 
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    var configuration = builder.Configuration.GetSection("Redis")["ConnectionString"];
+    if (string.IsNullOrEmpty(configuration))
+        throw new InvalidOperationException("Redis connection string is not configured.");
+
+    return ConnectionMultiplexer.Connect(configuration);
+});
+
+builder.Services.AddSingleton(x =>
+{
+    var blobConnectionString = builder.Configuration.GetConnectionString("AzureBlobStorage");
+    return new BlobServiceClient(blobConnectionString);
+});
+
 var app = builder.Build();
 
-app.UseCors(options =>
-options.AllowAnyHeader()
-.AllowAnyOrigin()
-.AllowAnyMethod());
+app.UseHttpsRedirection();
+
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHsts();
+}
+
+app.UseCors("AllowSpecificOrigins");
+
+app.UseIpRateLimiting();
 
 if (app.Environment.IsDevelopment())
 {

@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NatureHelp.Controllers.Nature;
 
-[Authorize(Roles = "SuperAdmin, Owner, Manager, Researcher")]
 [Route("api/[controller]")]
+[AllowAnonymous]
 public class SoilDeficiencyController : BaseController<SoilDeficiency>
 {
     public SoilDeficiencyController(IBaseService<SoilDeficiency> soilDeficiencyService)

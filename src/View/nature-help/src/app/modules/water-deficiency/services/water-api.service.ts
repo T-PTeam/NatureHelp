@@ -35,7 +35,8 @@ export class WaterAPIService {
     if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
     if (filter?.title) params = params.set("Title", filter.title);
     if (filter?.description) params = params.set("Description", filter.description);
-    if (filter?.eDangerState) params = params.set("EDangerState", filter.eDangerState.toString());
+    if (filter?.eDangerState || filter?.eDangerState === 0)
+      params = params.set("EDangerState", filter.eDangerState.toString());
 
     const loaddeficiencies$ = this.http.get<IListData<IWaterDeficiency>>(`${this.watersUrl}`, { params }).pipe(
       tap((listData) => {
@@ -49,7 +50,7 @@ export class WaterAPIService {
 
         console.error(err);
         this.notify.open(message, "Close", { duration: 2000 });
-        return of({ list: [], totalCount: 0 });
+        return of({ list: [], totalCount: 0 } as IListData<IWaterDeficiency>);
       }),
       shareReplay(),
     );
@@ -64,11 +65,7 @@ export class WaterAPIService {
     return this.http.post<IWaterDeficiency>(this.watersUrl, JSON.stringify(value), this.httpOptions);
   }
 
-  public updateWaterDeficiencyById(
-    // TODO
-    id: string,
-    changes: Partial<IWaterDeficiency>,
-  ): Observable<any> {
+  public updateWaterDeficiencyById(id: string, changes: Partial<IWaterDeficiency>): Observable<any> {
     const deficiencies = this.listSubject.getValue();
 
     const index = deficiencies.findIndex((deficiency) => deficiency.id == id);
