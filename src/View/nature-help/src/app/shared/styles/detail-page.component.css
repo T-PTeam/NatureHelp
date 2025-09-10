@@ -15,6 +15,20 @@
   color: #002855;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.detail-card mat-card-title::before {
+  content: attr(data-title);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #002855;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 1px;
 }
 
 .form-container {
@@ -46,6 +60,12 @@
   justify-content: space-around;
   align-items: center;
   gap: 16px;
+}
+
+.title-field {
+  display: flex;
+  align-items: flex-start;
+  height: fit-content;
 }
 
 .full-width {

@@ -1,4 +1,5 @@
 ﻿using Domain.Enums;
+using Domain.Models.Audit;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Models.Organization;
@@ -9,6 +10,9 @@ public class User : Person
 
     public ERole Role { get => role; private set => role = value; }
     public string Email { get; set; } = null!;
+    public bool IsEmailConfirmed { get; set; }
+    public string? EmailConfirmationToken { get; set; }
+
     public string PasswordHash { get; set; } = null!;
     public Organization? Organization { get; set; }
     public Laboratory? Laboratory { get; set; }
@@ -29,6 +33,10 @@ public class User : Person
 
     [NotMapped]
     public string? Password { get; set; }
+    public string? PasswordResetToken { get; set; }
+    public DateTime? PasswordResetTokenExpiry { get; set; }
+    public ComplexMonitoringScheme? DeficiencyMonitoringScheme { get; set; }
+
     public bool IsEmailValid(string email)
     {
         if (string.IsNullOrWhiteSpace(email))

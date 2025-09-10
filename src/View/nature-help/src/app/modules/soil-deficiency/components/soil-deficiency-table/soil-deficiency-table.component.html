@@ -99,6 +99,15 @@
       [checked]="false"
       (change)="goToWater()">
     </mat-slide-toggle>
+
+    <button
+      mat-icon-button
+      (click)="toggleMonitoring()"
+      matTooltip="Toggle Monitoring"
+      [class.monitoring-active]="(auditService.monitoringSoilDeficiency$ | async) || false"
+      [class.monitoring-inactive]="!(auditService.monitoringSoilDeficiency$ | async) || false">
+      <mat-icon>{{ (auditService.monitoringSoilDeficiency$ | async) || false ? "flag" : "flag_outline" }}</mat-icon>
+    </button>
   </div>
 
   <div class="grid-container">

@@ -1,0 +1,57 @@
+<div class="email-confirmation-container">
+  <div class="confirmation-card">
+    <div
+      *ngIf="isLoading"
+      class="loading-state">
+      <mat-spinner diameter="60"></mat-spinner>
+      <h2 i18n="@@confirmingEmailTitle">Confirming Email</h2>
+      <p i18n="@@confirmingEmailDescription">Please wait while we verify your email address...</p>
+    </div>
+
+    <div
+      *ngIf="!isLoading && isSuccess"
+      class="success-state">
+      <div class="success-icon">
+        <mat-icon>check_circle</mat-icon>
+      </div>
+      <h2 i18n="@@emailConfirmedTitle">Email Confirmed!</h2>
+      <p i18n="@@emailConfirmedDescription">
+        Your email has been successfully confirmed. You can now log in to your account.
+      </p>
+      <div class="action-buttons">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="goToHome()"
+          i18n="@@goToHomeBtn">
+          Go to Home
+        </button>
+      </div>
+    </div>
+
+    <div
+      *ngIf="!isLoading && isError"
+      class="error-state">
+      <div class="error-icon">
+        <mat-icon>error</mat-icon>
+      </div>
+      <h2 i18n="@@emailConfirmationErrorTitle">Email Confirmation Failed</h2>
+      <p class="error-message">{{ errorMessage }}</p>
+      <div class="action-buttons">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="goToHome()"
+          i18n="@@goToHomeBtn">
+          Go to Home
+        </button>
+        <button
+          mat-button
+          (click)="resendVerification()"
+          i18n="@@resendVerificationBtn">
+          Resend Verification
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import { Subject } from "rxjs";
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
 import { MapViewService, IAddress } from "@/shared/services/map-view.service";
 import { MobileMapService } from "@/shared/services/mobile-map.service";
+import { AuditService } from "@/shared/services/audit.service";
 
 import { EDangerState, EDeficiencyType } from "../../../../models/enums";
 import { IWaterDeficiency } from "../../models/IWaterDeficiency";
@@ -57,6 +58,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     private snackBar: MatSnackBar,
     private uploadService: UploadService,
     private dialog: MatDialog,
+    private auditService: AuditService,
   ) {}
 
   ngOnInit(): void {
@@ -128,6 +130,31 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     }
 
     this.router.navigate(["/water"]);
+  }
+
+  get isMonitoringActive(): boolean {
+    return this.details?.deficiencyMonitoring?.isMonitoring ?? false;
+  }
+
+  toggleMonitoring() {
+    this.auditService.toggleMonitoring(this.details?.id || null, EDeficiencyType.Water).subscribe({
+      next: (success) => {
+        if (success) {
+          if (this.details) {
+            if (!this.details.deficiencyMonitoring) {
+              this.details.deficiencyMonitoring = {
+                isMonitoring: true,
+              };
+            } else {
+              this.details.deficiencyMonitoring.isMonitoring = !this.details.deficiencyMonitoring.isMonitoring;
+            }
+          }
+        }
+      },
+      error: (error) => {
+        console.error("Error toggling monitoring:", error);
+      },
+    });
   }
 
   toggleCoordinateSelection(event?: Event): void {
@@ -220,6 +247,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
       createdBy: [deficiency?.creator?.id || this.currentUser?.id],
       createdOn: [deficiency?.createdOn || moment()],
       responsibleUserId: [deficiency?.responsibleUser?.id || this.currentUser?.id, [Validators.required]],
+      isMonitoring: [deficiency?.deficiencyMonitoring?.isMonitoring || false],
     });
 
     this.details = {
@@ -232,6 +260,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
         firstName: deficiency?.responsibleUser?.firstName || this.currentUser?.firstName,
         lastName: deficiency?.responsibleUser?.lastName || this.currentUser?.lastName,
       },
+      deficiencyMonitoring: deficiency?.deficiencyMonitoring,
     };
   }
 
@@ -282,10 +311,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   }
 
   onUploadStarted(files: File[]) {
-    console.log(
-      "Upload started for files:",
-      files.map((f) => f.name),
-    );
     this.isUploading = true;
     this.lastUploadError = null;
     this.uploadProgress = 0;
@@ -297,7 +322,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   }
 
   onUploadCompleted(newAttachments: IDeficiencyAttachment[]) {
-    console.log("Upload completed:", newAttachments);
     this.isUploading = false;
     this.uploadProgress = 100;
 
@@ -326,16 +350,11 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   }
 
   onUploadProgress(progress: number) {
-    console.log("Upload progress:", progress);
     this.uploadProgress = progress;
   }
 
   retryUpload(): void {
     if (this.lastUploadedFiles.length > 0) {
-      console.log(
-        "Retrying upload for files:",
-        this.lastUploadedFiles.map((f) => f.name),
-      );
       this.isUploading = true;
       this.lastUploadError = null;
 
@@ -376,21 +395,11 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   }
 
   testUpload(): void {
-    console.log("=== TEST UPLOAD DEBUG ===");
-    console.log("Details:", this.details);
-    console.log("Details ID:", this.details?.id);
-    console.log("Is Adding Deficiency:", this.isAddingDeficiency);
-    console.log("Current Attachments:", this.attachments);
-    console.log("Upload Service Available:", !!this.uploadService);
-
     const testFile = new File(["test content"], "test.txt", { type: "text/plain" });
-    console.log("Test file created:", testFile);
 
     if (this.details?.id) {
-      console.log("Testing upload service with file:", testFile.name);
       this.uploadService.uploadFile(testFile, this.details.id).subscribe({
         next: (attachment) => {
-          console.log("Test upload successful:", attachment);
           this.snackBar.open("Test upload successful!", "Close", { duration: 3000 });
         },
         error: (error) => {
@@ -405,7 +414,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   }
 
   onFilesSelected(files: File[]): void {
-    console.log("Files selected:", files);
     this.lastUploadedFiles = files;
     this.isUploading = true;
     this.lastUploadError = null;

@@ -17,7 +17,7 @@ namespace Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.3")
+                .HasAnnotation("ProductVersion", "9.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -167,6 +167,37 @@ namespace Infrastructure.Migrations
                     b.ToTable("ChangedModelLogs");
                 });
 
+            modelBuilder.Entity("Domain.Models.Audit.DeficiencyMonitoring", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("DeficiencyId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("DeficiencyType")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsMonitoring")
+                        .HasColumnType("boolean");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("DeficiencyMonitoring");
+                });
+
             modelBuilder.Entity("Domain.Models.CommentMessage", b =>
                 {
                     b.Property<Guid>("Id")
@@ -221,6 +252,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid?>("DeficiencyMonitoringId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -281,6 +315,8 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("CreatedBy");
 
+                    b.HasIndex("DeficiencyMonitoringId");
+
                     b.HasIndex("ResponsibleUserId");
 
                     b.ToTable("SoilDeficiencies");
@@ -312,6 +348,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid?>("DeficiencyMonitoringId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -380,6 +419,8 @@ namespace Infrastructure.Migrations
                     b.HasIndex("ChangedModelLogEntityId");
 
                     b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeficiencyMonitoringId");
 
                     b.HasIndex("ResponsibleUserId");
 
@@ -459,9 +500,15 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("EmailConfirmationToken")
+                        .HasColumnType("text");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<bool>("IsEmailConfirmed")
+                        .HasColumnType("boolean");
 
                     b.Property<Guid?>("LaboratoryId")
                         .HasColumnType("uuid");
@@ -476,6 +523,12 @@ namespace Infrastructure.Migrations
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<string>("PasswordResetToken")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("PasswordResetTokenExpiry")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("text");
@@ -543,6 +596,17 @@ namespace Infrastructure.Migrations
                     b.Navigation("Researcher");
                 });
 
+            modelBuilder.Entity("Domain.Models.Audit.DeficiencyMonitoring", b =>
+                {
+                    b.HasOne("Domain.Models.Organization.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Domain.Models.Nature.SoilDeficiency", b =>
                 {
                     b.HasOne("Domain.Models.Audit.ChangedModelLog", "ChangedModelLog")
@@ -555,6 +619,10 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Models.Audit.DeficiencyMonitoring", "DeficiencyMonitoring")
+                        .WithMany()
+                        .HasForeignKey("DeficiencyMonitoringId");
+
                     b.HasOne("Domain.Models.Organization.User", "ResponsibleUser")
                         .WithMany()
                         .HasForeignKey("ResponsibleUserId");
@@ -562,6 +630,8 @@ namespace Infrastructure.Migrations
                     b.Navigation("ChangedModelLog");
 
                     b.Navigation("Creator");
+
+                    b.Navigation("DeficiencyMonitoring");
 
                     b.Navigation("ResponsibleUser");
                 });
@@ -578,6 +648,10 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Models.Audit.DeficiencyMonitoring", "DeficiencyMonitoring")
+                        .WithMany()
+                        .HasForeignKey("DeficiencyMonitoringId");
+
                     b.HasOne("Domain.Models.Organization.User", "ResponsibleUser")
                         .WithMany()
                         .HasForeignKey("ResponsibleUserId");
@@ -585,6 +659,8 @@ namespace Infrastructure.Migrations
                     b.Navigation("ChangedModelLog");
 
                     b.Navigation("Creator");
+
+                    b.Navigation("DeficiencyMonitoring");
 
                     b.Navigation("ResponsibleUser");
                 });
@@ -598,6 +674,27 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Models.Organization.Organization", "Organization")
                         .WithMany()
                         .HasForeignKey("OrganizationId");
+
+                    b.OwnsOne("Domain.Models.Audit.ComplexMonitoringScheme", "DeficiencyMonitoringScheme", b1 =>
+                        {
+                            b1.Property<Guid>("UserId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<bool>("isMonitoringSoilDeficiencies")
+                                .HasColumnType("boolean");
+
+                            b1.Property<bool>("isMonitoringWaterDeficiencies")
+                                .HasColumnType("boolean");
+
+                            b1.HasKey("UserId");
+
+                            b1.ToTable("Users");
+
+                            b1.WithOwner()
+                                .HasForeignKey("UserId");
+                        });
+
+                    b.Navigation("DeficiencyMonitoringScheme");
 
                     b.Navigation("Laboratory");
 

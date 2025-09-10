@@ -1,7 +1,9 @@
 ﻿using Domain.Models.Organization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Application.Providers
@@ -68,6 +70,28 @@ namespace Application.Providers
             };
 
             return claims;
+        }
+
+        public static string GenerateEmailConfirmationToken(int length = 32)
+        {
+            var bytes = new byte[length];
+            RandomNumberGenerator.Fill(bytes);
+            return Convert.ToBase64String(bytes)
+                         .Replace("+", "-")
+                         .Replace("/", "_")
+                         .Replace("=", "");
+        }
+
+        public static string? ExtractAccessTokenFromRequest(HttpRequest request)
+        {
+            string? authorizationHeader = request.Headers["Authorization"];
+            if (string.IsNullOrEmpty(authorizationHeader)) return null;
+
+            string token = authorizationHeader.StartsWith("Bearer ")
+                ? authorizationHeader["Bearer ".Length..]
+                : authorizationHeader;
+
+            return token;
         }
     }
 }

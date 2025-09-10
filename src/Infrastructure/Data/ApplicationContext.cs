@@ -18,6 +18,8 @@ public class ApplicationContext : DbContext
     public DbSet<ChangedModelLog> ChangedModelLogs { get; set; }
     public DbSet<DeficiencyAttachment> Attachments { get; set; }
     public DbSet<CommentMessage> Comments { get; set; }
+    public DbSet<DeficiencyMonitoring> DeficiencyMonitoring { get; set; }
+
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)
     {
@@ -31,6 +33,7 @@ public class ApplicationContext : DbContext
             .HasDiscriminator<string>("AttachmentType")
             .HasValue<DeficiencyAttachment>("DeficiencyAttachment");
 
+        builder.Entity<User>().OwnsOne(u => u.DeficiencyMonitoringScheme);
         // Test DATA
         //builder.Entity<Report>()
         //    .HasData(GenerateTestDataToDB.Reports);
