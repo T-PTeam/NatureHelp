@@ -5,7 +5,7 @@ export interface IWaterDeficiency extends IDeficiency {
   dissolvedOxygen: number;
   leadConcentration: number;
   mercuryConcentration: number;
-  nitratesConcentration: number;
+  nitrateConcentration: number;
   pesticidesContent: number;
   microbialActivity: number;
   radiationLevel: number;

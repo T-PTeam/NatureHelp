@@ -189,9 +189,9 @@
       <input
         matInput
         type="number"
-        formControlName="nitratesConcentration" />
+        formControlName="nitrateConcentration" />
       <mat-error
-        *ngIf="detailsForm.get('nitratesConcentration')?.invalid && detailsForm.get('nitratesConcentration')?.touched">
+        *ngIf="detailsForm.get('nitrateConcentration')?.invalid && detailsForm.get('nitrateConcentration')?.touched">
         Value must be between 0 and 50.
       </mat-error>
     </mat-form-field>
@@ -256,7 +256,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label i18n="@@phosphateConcentration">Biological Oxygen Demand</mat-label>
+      <mat-label i18n="@@phosphateConcentration">Phosphate Concentration</mat-label>
       <input
         matInput
         type="number"

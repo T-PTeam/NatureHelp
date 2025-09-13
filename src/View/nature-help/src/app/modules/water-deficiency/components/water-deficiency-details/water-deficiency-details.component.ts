@@ -205,8 +205,8 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
         deficiency?.mercuryConcentration || 0,
         [Validators.required, Validators.min(0), Validators.max(0.001)],
       ],
-      nitratesConcentration: [
-        deficiency?.nitratesConcentration || 0,
+      nitrateConcentration: [
+        deficiency?.nitrateConcentration || 0,
         [Validators.required, Validators.min(0), Validators.max(50)],
       ],
       pesticidesContent: [
@@ -391,25 +391,6 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
           this.snackBar.open(`Upload failed: ${error}`, "Close", { duration: 5000, panelClass: "error-snackbar" });
         },
       });
-    }
-  }
-
-  testUpload(): void {
-    const testFile = new File(["test content"], "test.txt", { type: "text/plain" });
-
-    if (this.details?.id) {
-      this.uploadService.uploadFile(testFile, this.details.id).subscribe({
-        next: (attachment) => {
-          this.snackBar.open("Test upload successful!", "Close", { duration: 3000 });
-        },
-        error: (error) => {
-          console.error("Test upload failed:", error);
-          this.snackBar.open(`Test upload failed: ${error}`, "Close", { duration: 5000 });
-        },
-      });
-    } else {
-      console.error("No deficiency ID available for test upload");
-      this.snackBar.open("No deficiency ID available for test upload", "Close", { duration: 3000 });
     }
   }
 

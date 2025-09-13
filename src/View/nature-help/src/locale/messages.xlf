@@ -559,7 +559,7 @@
         <source>Pesticides Content</source>
       </segment>
     </unit>
-    <unit id="nitratesConcentration">
+    <unit id="nitrateConcentration">
       <notes>
         <note category="location">src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html:90</note>
       </notes>

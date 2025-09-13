@@ -169,7 +169,7 @@ export class SoilDeficiencyDetail implements OnInit {
       cadmiumConcentration: [deficiency?.cadmiumConcentration || 0, [Validators.required, Validators.min(0)]],
       mercuryConcentration: [deficiency?.mercuryConcentration || 0, [Validators.required, Validators.min(0)]],
       pesticidesContent: [deficiency?.pesticidesContent || 0, [Validators.required, Validators.min(0)]],
-      nitratesConcentration: [deficiency?.nitratesConcentration || 0, [Validators.required, Validators.min(0)]],
+      nitrateConcentration: [deficiency?.nitrateConcentration || 0, [Validators.required, Validators.min(0)]],
       heavyMetalsConcentration: [deficiency?.heavyMetalsConcentration || 0, [Validators.required, Validators.min(0)]],
       electricalConductivity: [deficiency?.electricalConductivity || 0, [Validators.required, Validators.min(0)]],
       microbialActivity: [deficiency?.microbialActivity || 0, [Validators.required, Validators.min(0)]],

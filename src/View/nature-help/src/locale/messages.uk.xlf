@@ -406,7 +406,7 @@
     <target>Вміст пестицидів</target>
   </segment>
 </unit>
-<unit id="nitratesConcentration">
+<unit id="nitrateConcentration">
   <segment>
     <target>Концентрація нітратів</target>
   </segment>
