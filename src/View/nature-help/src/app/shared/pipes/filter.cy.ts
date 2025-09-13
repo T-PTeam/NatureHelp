@@ -64,6 +64,7 @@ describe("FilterPipe", () => {
         totalDissolvedSolids: 500,
         electricalConductivity: 800,
         microbialLoad: 100,
+        radiusAffected: 100,
       },
       {
         id: "2",
@@ -93,6 +94,7 @@ describe("FilterPipe", () => {
         totalDissolvedSolids: 550,
         electricalConductivity: 850,
         microbialLoad: 120,
+        radiusAffected: 150,
       },
     ];
 
