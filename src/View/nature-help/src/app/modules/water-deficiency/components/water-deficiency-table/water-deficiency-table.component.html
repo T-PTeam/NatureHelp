@@ -1,42 +1,25 @@
 <mat-expansion-panel class="filter-panel">
   <mat-expansion-panel-header class="filter-header">
-    <mat-panel-title
-      i18n="@@filterTitle"
-      class="filter-title"
-      >Filter</mat-panel-title
-    >
+    <mat-panel-title i18n="@@filterTitle" class="filter-title">Filter</mat-panel-title>
   </mat-expansion-panel-header>
 
-  <form
-    [formGroup]="filterForm"
-    (ngSubmit)="applyFilter()"
-    class="filter-form">
+  <form [formGroup]="filterForm" (ngSubmit)="applyFilter()" class="filter-form">
     <div class="filter-fields">
       <mat-form-field class="form-field">
         <mat-label i18n="@@title">Title</mat-label>
-        <input
-          matInput
-          formControlName="title"
-          class="form-input" />
+        <input matInput formControlName="title" class="form-input" />
       </mat-form-field>
 
       <mat-form-field class="form-field">
         <mat-label i18n="@@description">Description</mat-label>
-        <input
-          matInput
-          formControlName="description"
-          class="form-input" />
+        <input matInput formControlName="description" class="form-input" />
       </mat-form-field>
 
       <mat-form-field class="form-field">
         <mat-label i18n="@@dangerState">Danger state</mat-label>
-        <mat-select
-          formControlName="eDangerState"
-          class="form-input">
+        <mat-select formControlName="eDangerState" class="form-input">
           <mat-option [value]="null">None</mat-option>
-          <mat-option
-            *ngFor="let danger of dangerStates"
-            [value]="danger.value">
+          <mat-option *ngFor="let danger of dangerStates" [value]="danger.value">
             {{ danger.label }}
           </mat-option>
         </mat-select>
@@ -44,20 +27,10 @@
     </div>
 
     <div class="action-buttons">
-      <button
-        i18n="@@applyBtn"
-        mat-raised-button
-        color="primary"
-        type="submit"
-        class="apply-button">
+      <button i18n="@@applyBtn" mat-raised-button color="primary" type="submit" class="apply-button">
         Apply
       </button>
-      <button
-        i18n="@@clearBtn"
-        mat-raised-button
-        color="warn"
-        type="button"
-        (click)="filterForm.reset()"
+      <button i18n="@@clearBtn" mat-raised-button color="warn" type="button" (click)="filterForm.reset()"
         class="reset-button">
         Clear
       </button>
@@ -69,37 +42,18 @@
   <div class="header">
     <h2 i18n="@@waterDeficienciesTableTitle">Deficiencies (Water)</h2>
 
-    <input
-      type="search"
-      class="input-like"
-      placeholder="Search..."
-      i18n-placeholder="@@searchPlaceholder"
-      [(ngModel)]="search" />
-
-    <button
-      (click)="downloadExcel()"
-      class="btn-like"
-      id="export-btn">
+    <button (click)="downloadExcel()" class="btn-like" id="export-btn">
       <i class="material-icons">insert_drive_file</i>
     </button>
 
-    <button
-      (click)="navigateToDetail()"
-      class="btn-like"
-      id="add-btn">
+    <button (click)="navigateToDetail()" class="btn-like" id="add-btn">
       <i class="material-icons">add</i>
     </button>
 
-    <mat-slide-toggle
-      style="transform: rotate(180deg)"
-      [checked]="true"
-      (change)="goToSoil()">
+    <mat-slide-toggle style="transform: rotate(180deg)" [checked]="true" (change)="goToSoil()">
     </mat-slide-toggle>
 
-    <button
-      mat-icon-button
-      (click)="toggleMonitoring()"
-      matTooltip="Toggle Monitoring"
+    <button mat-icon-button (click)="toggleMonitoring()" matTooltip="Toggle Monitoring"
       [class.monitoring-active]="(auditService.monitoringWaterDeficiency$ | async) || false"
       [class.monitoring-inactive]="!(auditService.monitoringWaterDeficiency$ | async) || false">
       <mat-icon>{{ (auditService.monitoringWaterDeficiency$ | async) || false ? "flag" : "flag_outline" }}</mat-icon>
@@ -108,68 +62,37 @@
 
   <div class="grid-container">
     <div class="grid-header">
-      <div
-        i18n="@@title"
-        i18n-matTooltip="@@title"
-        matTooltip="Title">
+      <div i18n="@@title" i18n-matTooltip="@@title" matTooltip="Title">
         Title
       </div>
-      <div
-        matTooltip="Dissolved Oxygen"
-        i18n-matTooltip="@@dissolvedOxygen"
-        i18n="@@dissolvedOxygen">
+      <div matTooltip="Dissolved Oxygen" i18n-matTooltip="@@dissolvedOxygen" i18n="@@dissolvedOxygen">
         Dissolved Oxygen
       </div>
       <div matTooltip="pH">pH</div>
-      <div
-        matTooltip="Lead Concentration"
-        i18n-matTooltip="@@leadConcentration"
-        i18n="@@leadConcentration">
+      <div matTooltip="Lead Concentration" i18n-matTooltip="@@leadConcentration" i18n="@@leadConcentration">
         Lead Concentration
       </div>
-      <div
-        matTooltip="Nitrate Concentration"
-        i18n-matTooltip="@@nitrateConcentration"
-        i18n="@@nitrateConcentration">
+      <div matTooltip="Nitrate Concentration" i18n-matTooltip="@@nitrateConcentration" i18n="@@nitrateConcentration">
         Nitrate Concentration
       </div>
-      <div
-        matTooltip="Chemical Ox. Demand"
-        i18n-matTooltip="@@chemicalOxygenDemand"
-        i18n="@@chemicalOxygenDemand">
+      <div matTooltip="Chemical Ox. Demand" i18n-matTooltip="@@chemicalOxygenDemand" i18n="@@chemicalOxygenDemand">
         Chemical Ox. Demand
       </div>
-      <div
-        i18n="@@creator"
-        i18n-matTooltip="@@creator"
-        matTooltip="Creator">
+      <div i18n="@@creator" i18n-matTooltip="@@creator" matTooltip="Creator">
         Creator
       </div>
-      <div
-        i18n="@@responsibleUser"
-        i18n-matTooltip="@@responsibleUser"
-        matTooltip="Responsible User">
+      <div i18n="@@responsibleUser" i18n-matTooltip="@@responsibleUser" matTooltip="Responsible User">
         Responsible User
       </div>
-      <div
-        i18n="@@dangerState"
-        i18n-matTooltip="@@dangerState"
-        matTooltip="Danger State">
+      <div i18n="@@dangerState" i18n-matTooltip="@@dangerState" matTooltip="Danger State">
         Danger State
       </div>
       <div matTooltip="Map">Map</div>
       <div matTooltip="Edit">Edit</div>
     </div>
-    <div
-      class="grid-body"
-      infiniteScroll
-      [infiniteScrollDistance]="2"
-      [infiniteScrollThrottle]="500"
-      [infiniteScrollDisabled]="scrollCheckDisabled"
-      (scrolled)="onScroll()">
-      <div
-        *ngFor="let deficiency of waterAPIService.deficiencies$ | async"
-        class="grid-row">
+    <div class="grid-body" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500"
+      [infiniteScrollDisabled]="scrollCheckDisabled" (scrolled)="onScroll()">
+      <div *ngFor="let deficiency of waterAPIService.deficiencies$ | async" class="grid-row">
         <div>{{ deficiency.title }}</div>
         <div>{{ deficiency.dissolvedOxygen || 0 }}</div>
         <div>{{ deficiency.ph || 0 }}</div>
@@ -180,19 +103,13 @@
         <div>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</div>
         <div>{{ deficiency.eDangerState | enumToString: "EDangerState" }}</div>
         <div class="btn-ceil">
-          <button
-            mat-icon-button
-            color="primary"
-            (click)="changeMapFocus(deficiency.latitude, deficiency.longitude)"
+          <button mat-icon-button color="primary" (click)="changeMapFocus(deficiency.latitude, deficiency.longitude)"
             matTooltip="Location">
             <mat-icon>my_location</mat-icon>
           </button>
         </div>
         <div class="btn-ceil">
-          <button
-            id="edit-btn"
-            (click)="navigateToDetail(deficiency.id)"
-            class="btn-like">
+          <button id="edit-btn" (click)="navigateToDetail(deficiency.id)" class="btn-like">
             <i class="fa fa-edit"></i>
           </button>
         </div>
