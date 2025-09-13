@@ -6,7 +6,7 @@ import { takeUntil } from "rxjs/operators";
 import { Subject } from "rxjs";
 
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
-import { MapViewService } from "@/shared/services/map-view.service";
+import { IAddress, MapViewService } from "@/shared/services/map-view.service";
 import { MobileMapService } from "@/shared/services/mobile-map.service";
 import { AuditService } from "@/shared/services/audit.service";
 
@@ -27,7 +27,7 @@ export class SoilDeficiencyDetail implements OnInit {
   detailsForm!: FormGroup;
   dangerStates = enumToSelectOptions(EDangerState);
   isSelectingCoordinates: boolean = false;
-  selectedAddress: any;
+  selectedAddress: IAddress | null = null;
 
   private isAddingDeficiency: boolean = false;
   private currentUser: IUser | null = null;
@@ -160,6 +160,7 @@ export class SoilDeficiencyDetail implements OnInit {
       type: [deficiency?.type || EDeficiencyType.Soil, Validators.required],
       latitude: [deficiency?.latitude || 0, [Validators.required, Validators.min(-90), Validators.max(90)]],
       longitude: [deficiency?.longitude || 0, [Validators.required, Validators.min(-180), Validators.max(180)]],
+      address: [deficiency?.address || ""],
       radiusAffected: [deficiency?.radiusAffected || 0, [Validators.required, Validators.min(0)]],
       eDangerState: [deficiency?.eDangerState || EDangerState.Moderate, Validators.required],
 
@@ -227,6 +228,16 @@ export class SoilDeficiencyDetail implements OnInit {
   }
 
   private subscribeToCoordinatesPicking(): void {
+    this.mapViewService.selectedCoordinates$.subscribe((coordinates) => {
+      if (coordinates) {
+        this.detailsForm.patchValue({
+          latitude: coordinates.latitude,
+          longitude: coordinates.longitude,
+        });
+        this.isSelectingCoordinates = false;
+      }
+    });
+
     this.mapViewService.selectedAddress$.pipe(takeUntil(this.destroy$)).subscribe((address) => {
       this.selectedAddress = address;
       if (address) {

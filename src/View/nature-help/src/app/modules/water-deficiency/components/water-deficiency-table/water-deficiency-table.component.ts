@@ -30,7 +30,7 @@ export class WaterDeficiencyTable {
   private listScrollCount = 0;
   private isFilterChanged: boolean = false;
 
-  constructor (
+  constructor(
     public waterAPIService: WaterAPIService,
     public auditService: AuditService,
     private userService: UserAPIService,
@@ -58,11 +58,11 @@ export class WaterDeficiencyTable {
     });
   }
 
-  downloadExcel () {
+  downloadExcel() {
     this.reportAPIService.downloadWaterDeficiencyExcelListFile();
   }
 
-  navigateToDetail (id?: string) {
+  navigateToDetail(id?: string) {
     if (id) {
       this.router.navigate([`/water/${id}`]);
     } else {
@@ -70,7 +70,7 @@ export class WaterDeficiencyTable {
     }
   }
 
-  onScroll () {
+  onScroll() {
     this.listScrollCount++;
     this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, this.filterForm.value);
 
@@ -81,15 +81,15 @@ export class WaterDeficiencyTable {
       });
   }
 
-  goToSoil () {
+  goToSoil() {
     this.router.navigateByUrl("soil");
   }
 
-  changeMapFocus (latitude: number, longitude: number) {
+  changeMapFocus(latitude: number, longitude: number) {
     this.mapViewService.changeFocus({ latitude, longitude }, 12);
   }
 
-  applyFilter (): void {
+  applyFilter(): void {
     const filter: IWaterDeficiencyFilter = this.filterForm.value;
 
     if (this.isFilterChanged) this.listScrollCount = 0;
@@ -97,7 +97,7 @@ export class WaterDeficiencyTable {
     this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, filter);
   }
 
-  toggleMonitoring () {
+  toggleMonitoring() {
     this.auditService.toggleMonitoring(null, EDeficiencyType.Water).subscribe();
   }
 }
