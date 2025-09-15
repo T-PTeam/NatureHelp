@@ -70,7 +70,7 @@
     <h2
       i18n="@@soilDeficienciesTableTitle"
       i18n-matTooltip="@@soilDeficienciesTableTitle">
-      Deficiencies (Soil)
+      Deficiencies
     </h2>
 
     <button
@@ -87,11 +87,10 @@
       <i class="material-icons">add</i>
     </button>
 
-    <mat-slide-toggle
-      style="transform: rotate(180deg)"
-      [checked]="false"
-      (change)="goToWater()">
-    </mat-slide-toggle>
+    <app-water-soil-toggle
+      [isWaterSelected]="false"
+      (toggleChange)="goToWater($event)">
+    </app-water-soil-toggle>
 
     <button
       mat-icon-button

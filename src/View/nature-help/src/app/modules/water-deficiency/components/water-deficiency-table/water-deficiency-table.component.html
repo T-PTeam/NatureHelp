@@ -67,7 +67,7 @@
 
 <div class="table-wrapper">
   <div class="header">
-    <h2 i18n="@@waterDeficienciesTableTitle">Deficiencies (Water)</h2>
+    <h2 i18n="@@waterDeficienciesTableTitle">Deficiencies</h2>
 
     <button
       (click)="downloadExcel()"
@@ -83,11 +83,10 @@
       <i class="material-icons">add</i>
     </button>
 
-    <mat-slide-toggle
-      style="transform: rotate(180deg)"
-      [checked]="true"
-      (change)="goToSoil()">
-    </mat-slide-toggle>
+    <app-water-soil-toggle
+      [isWaterSelected]="true"
+      (toggleChange)="goToSoil($event)">
+    </app-water-soil-toggle>
 
     <button
       mat-icon-button

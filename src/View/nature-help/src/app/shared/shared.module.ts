@@ -22,9 +22,10 @@ import { FileUploadComponent } from "./components/file-upload/file-upload.compon
 import { AttachmentPreviewDialogComponent } from "./components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component";
 import { CommentMessageListComponent } from "./components/comment-message-list/comment-message-list.component";
 import { EmailConfirmationComponent } from "./components/email-confirmation/email-confirmation.component";
+import { WaterSoilToggleComponent } from "./components/buttons/water-soil-toggle/water-soil-toggle.component";
 
 @NgModule({
-  imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule, WaterSoilToggleComponent],
   declarations: [
     MapComponent,
     AuthDialogComponent,
@@ -55,6 +56,7 @@ import { EmailConfirmationComponent } from "./components/email-confirmation/emai
     AttachmentPreviewDialogComponent,
     CommentMessageListComponent,
     EmailConfirmationComponent,
+    WaterSoilToggleComponent,
 
     FilterPipe,
     EnumToStringPipe,

@@ -81,8 +81,10 @@ export class WaterDeficiencyTable {
       });
   }
 
-  goToSoil() {
-    this.router.navigateByUrl("soil");
+  goToSoil(isWaterSelected: boolean) {
+    if (!isWaterSelected) {
+      this.router.navigateByUrl("soil");
+    }
   }
 
   changeMapFocus(latitude: number, longitude: number) {
