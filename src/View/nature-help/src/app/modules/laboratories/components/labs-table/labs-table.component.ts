@@ -28,8 +28,7 @@ export class LabsTableComponent implements OnInit {
     private fb: FormBuilder,
   ) {
     this.filterForm = this.fb.group({
-      latitude: [""],
-      longitude: [""],
+      title: [""],
     });
 
     this.filterForm.valueChanges.subscribe(() => {

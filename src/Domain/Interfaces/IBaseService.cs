@@ -8,5 +8,5 @@ public interface IBaseService<T> where T : class
     Task<T> AddAsync(T entity);
     Task<T> UpdateAsync(T entity);
     Task<Guid> DeleteAsync(Guid id);
-    Task<ListData<T>> GetOrSetAsync(Func<Task<ListData<T>>> fetchFromDb);
+    Task<ListData<T>> GetOrSetAsync(Func<Task<ListData<T>>> fetchFromDb, bool isFiltering);
 }
