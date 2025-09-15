@@ -6,7 +6,7 @@ import { AuthDialogComponent } from "../login-dialog/auth-dialog.component";
 @Component({
   selector: "app-add-organization-users",
   templateUrl: "./add-organization-users.component.html",
-  styleUrls: ["./add-organization-users.component.css"],
+  styleUrls: ["./add-organization-users.component.css", "../../../styles/dialog-styles.css"],
   standalone: false,
 })
 export class AddOrganizationUsersComponent {

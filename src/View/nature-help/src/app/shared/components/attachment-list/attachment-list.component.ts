@@ -51,7 +51,10 @@ export class AttachmentListComponent {
         fileName: attachment.fileName,
       },
       panelClass: "attachment-preview-modal",
-      maxWidth: "90vw",
+      width: "fit-content",
+      height: "fit-content",
+      maxHeight: "80vh",
+      maxWidth: "80vw",
     });
   }
 

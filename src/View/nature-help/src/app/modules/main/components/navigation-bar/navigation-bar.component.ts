@@ -32,9 +32,12 @@ export class NavigationBarComponent implements OnInit {
 
   openAuthDialog(isRegister: boolean): void {
     const dialogRef = this.dialog.open(AuthDialogComponent, {
-      width: "60vw",
-      maxWidth: "60vw",
-      height: "300px",
+      width: "fit-content",
+      height: "fit-content",
+      maxHeight: "80vh",
+      maxWidth: "80vw",
+      minHeight: "300px",
+      minWidth: "400px",
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -57,9 +60,12 @@ export class NavigationBarComponent implements OnInit {
 
   openEmailVerificationDialog(): void {
     const dialogRef = this.dialog.open(EmailVerificationDialogComponent, {
-      width: "60vw",
-      maxWidth: "60vw",
-      height: "300px",
+      height: "fit-content",
+      width: "fit-content",
+      minHeight: "300px",
+      minWidth: "400px",
+      maxHeight: "80vh",
+      maxWidth: "80vw",
     });
 
     dialogRef.afterClosed().subscribe((result) => {

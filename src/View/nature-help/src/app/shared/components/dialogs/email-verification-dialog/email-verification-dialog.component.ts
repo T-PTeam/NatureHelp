@@ -7,7 +7,7 @@ import { EmailVerificationService } from "@/shared/services/email-verification.s
 @Component({
   selector: "nat-email-verification-dialog",
   templateUrl: "./email-verification-dialog.component.html",
-  styleUrls: ["./email-verification-dialog.component.css"],
+  styleUrls: ["./email-verification-dialog.component.css", "../../../styles/dialog-styles.css"],
   standalone: false,
 })
 export class EmailVerificationDialogComponent {

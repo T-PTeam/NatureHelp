@@ -247,12 +247,17 @@ export class DeficiencyDetailsService implements OnDestroy {
   // Attachment methods
   showPreview(attachment: IDeficiencyAttachment): void {
     this.dialog.open(AttachmentPreviewDialogComponent, {
+      width: "fit-content",
+      height: "fit-content",
+      maxHeight: "80vh",
+      maxWidth: "80vw",
+      minHeight: "300px",
+      minWidth: "400px",
       data: {
         url: attachment.previewUrl,
         fileName: attachment.fileName,
       },
       panelClass: "attachment-preview-modal",
-      maxWidth: "90vw",
     });
   }
 
