@@ -29,7 +29,9 @@ public class ExcelExportService : IExcelExportService
         var data = await _waterDeficiencyRepository.GetAllAsync(-1);
 
         string[] excludeColumns = {
-            "ChangedModelLog"
+            "ChangedModelLog",
+            "DeficiencyMonitoring",
+            "CreatedBy"
         };
 
         return GenerateWorkBook(data, excludeColumns);
@@ -40,7 +42,9 @@ public class ExcelExportService : IExcelExportService
         var data = await _soilDeficiencyRepository.GetAllAsync(-1);
 
         string[] excludeColumns = {
-            "ChangedModelLog"
+            "ChangedModelLog",
+            "DeficiencyMonitoring",
+            "CreatedBy"
         };
 
         return GenerateWorkBook(data, excludeColumns);
@@ -53,7 +57,15 @@ public class ExcelExportService : IExcelExportService
         string[] excludeColumns = {
             "PasswordHash",
             "AccessToken",
-            "RefreshToken"
+            "RefreshToken",
+            "EmailConfirmationToken",
+            "AccessTokenExpireTime",
+            "Password",
+            "PasswordResetToken",
+            "PasswordResetTokenExpiry",
+            "DeficiencyMonitoringScheme",
+            "RefreshTokenExpireTime",
+            "CreatedBy"
         };
 
         return GenerateWorkBook(data, excludeColumns);
