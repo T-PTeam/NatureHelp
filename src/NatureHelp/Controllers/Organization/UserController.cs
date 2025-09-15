@@ -78,13 +78,13 @@ public class UserController : Controller
     [HttpPost("send-verification-email")]
     public async Task<IActionResult> SendVerificationEmail([FromBody] UserDto userDto)
     {
-        string? token = await _userService.UpdateEmailConfirmationTokenByEmail(userDto.Email);
-
         var user = await _userService.GetModelByEmail(userDto.Email);
-        user.EmailConfirmationToken = token;
 
         if (user == null) return NotFound("User not found");
-        if (user.IsEmailConfirmed) return Accepted("Email already confirmed");
+        if (user.IsEmailConfirmed) return Accepted("Email already confirmed" as object);
+
+        string? token = await _userService.UpdateEmailConfirmationTokenByEmail(userDto.Email);
+        user.EmailConfirmationToken = token;
 
         var confirmationUrl = $"{_configuration["Frontend:Url"]}/confirm-email?token={user.EmailConfirmationToken}";
 

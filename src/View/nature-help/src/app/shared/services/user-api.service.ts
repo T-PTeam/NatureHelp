@@ -27,6 +27,8 @@ export class UserAPIService {
   isSuperAdmin$: Observable<boolean>;
   isOwner$: Observable<boolean>;
 
+  isEmailConfirmed$: Observable<boolean>;
+
   private organizationUsersSubject = new BehaviorSubject<IUser[]>([]);
   $organizationUsers: Observable<IUser[]> = this.organizationUsersSubject.asObservable();
 
@@ -46,6 +48,7 @@ export class UserAPIService {
 
     this.isSuperAdmin$ = this.$user.pipe(map((user) => user?.role === 0));
     this.isOwner$ = this.$user.pipe(map((user) => user?.role === 1));
+    this.isEmailConfirmed$ = this.$user.pipe(map((user) => user?.isEmailConfirmed ?? false));
   }
 
   auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {
