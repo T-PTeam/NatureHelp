@@ -6,7 +6,7 @@ import { UserAPIService } from "../../../services/user-api.service";
 @Component({
   selector: "nat-password-reset",
   templateUrl: "./password-reset-dialog.component.html",
-  styleUrls: ["./password-reset-dialog.component.css"],
+  styleUrls: ["./password-reset-dialog.component.css", "../../../styles/dialog-styles.css"],
   standalone: false,
 })
 export class PasswordResetDialogComponent {

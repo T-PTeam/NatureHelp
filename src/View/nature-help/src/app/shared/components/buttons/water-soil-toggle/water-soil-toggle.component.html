@@ -1,0 +1,14 @@
+<div class="deficiency-switcher">
+  <mat-button-toggle-group
+    [value]="selectedType"
+    (change)="onTypeChange($event)">
+    <mat-button-toggle value="water">
+      <mat-icon>water_drop</mat-icon>
+      <span>Water</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="soil">
+      <mat-icon>grass</mat-icon>
+      <span>Soil</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>

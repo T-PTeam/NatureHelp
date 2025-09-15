@@ -13,7 +13,6 @@ describe("LabResearchersPipe", () => {
       passwordHash: "",
       role: 0,
       organizationId: null,
-      address: null,
     },
     {
       firstName: "Bob",
@@ -24,7 +23,6 @@ describe("LabResearchersPipe", () => {
       passwordHash: "",
       role: 0,
       organizationId: null,
-      address: null,
     },
     {
       firstName: "Charlie",
@@ -35,7 +33,6 @@ describe("LabResearchersPipe", () => {
       passwordHash: "",
       role: 0,
       organizationId: null,
-      address: null,
     },
     {
       firstName: "David",
@@ -46,7 +43,6 @@ describe("LabResearchersPipe", () => {
       passwordHash: "",
       role: 0,
       organizationId: null,
-      address: null,
     },
     {
       firstName: "Eve",
@@ -57,7 +53,6 @@ describe("LabResearchersPipe", () => {
       passwordHash: "",
       role: 0,
       organizationId: null,
-      address: null,
     },
     {
       firstName: "Frank",
@@ -68,7 +63,6 @@ describe("LabResearchersPipe", () => {
       passwordHash: "",
       role: 0,
       organizationId: null,
-      address: null,
     },
   ];
 

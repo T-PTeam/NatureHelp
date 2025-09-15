@@ -38,12 +38,7 @@ export class LabsAPIService {
     let params = new HttpParams();
 
     if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
-    if (filter?.latitude) {
-      params = params.set("Latitude", filter.latitude.toString());
-    }
-    if (filter?.longitude) {
-      params = params.set("Longitude", filter.longitude.toString());
-    }
+    if (filter?.title) params = params.set("Title", filter.title);
 
     const loadlabs$ = this.http.get<IListData<ILaboratory>>(`${this.labsUrl}`, { params }).pipe(
       tap((listData) => {

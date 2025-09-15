@@ -66,8 +66,10 @@
       <button
         i18n="@@emailVerificationBtn"
         mat-menu-item
-        (click)="openEmailVerificationDialog()">
-        Email Verification
+        (click)="sendEmailVerification()"
+        [disabled]="isEmailVerificationDisabled$ | async">
+        <span *ngIf="formattedTimeRemaining; else normalText"> Email Verification ({{ formattedTimeRemaining }}) </span>
+        <ng-template #normalText> Email Verification </ng-template>
       </button>
 
       <button

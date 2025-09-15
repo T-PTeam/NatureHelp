@@ -27,6 +27,8 @@ export class UserAPIService {
   isSuperAdmin$: Observable<boolean>;
   isOwner$: Observable<boolean>;
 
+  isEmailConfirmed$: Observable<boolean>;
+
   private organizationUsersSubject = new BehaviorSubject<IUser[]>([]);
   $organizationUsers: Observable<IUser[]> = this.organizationUsersSubject.asObservable();
 
@@ -46,6 +48,51 @@ export class UserAPIService {
 
     this.isSuperAdmin$ = this.$user.pipe(map((user) => user?.role === 0));
     this.isOwner$ = this.$user.pipe(map((user) => user?.role === 1));
+    this.isEmailConfirmed$ = this.$user.pipe(map((user) => user?.isEmailConfirmed ?? false));
+  }
+
+  initializeAuth(): Observable<boolean> {
+    const accessToken = sessionStorage.getItem("accessToken");
+    const refreshToken = localStorage.getItem("refreshToken");
+
+    if (!accessToken && !refreshToken) {
+      return of(false);
+    }
+
+    if (accessToken && !this.jwtHelper.isTokenExpired(accessToken)) {
+      return this.getCurrentUser().pipe(
+        map((user) => {
+          if (user) {
+            this.subject.next(user);
+            this.refreshAccessToken().subscribe();
+            return true;
+          } else {
+            this.logout();
+            return false;
+          }
+        }),
+        catchError(() => {
+          this.logout();
+          return of(false);
+        }),
+      );
+    }
+
+    if (refreshToken) {
+      return this.refreshAccessToken().pipe(
+        map(() => {
+          this.refreshAccessToken().subscribe();
+          return true;
+        }),
+        catchError(() => {
+          this.logout();
+          return of(false);
+        }),
+      );
+    }
+
+    this.logout();
+    return of(false);
   }
 
   auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {
@@ -62,6 +109,10 @@ export class UserAPIService {
             this.setAuthOptions(authResponse);
           }),
           shareReplay(),
+          catchError((err) => {
+            this.notify.open("Error: " + err, "Close", { duration: 2000 });
+            return of(null as any);
+          }),
         );
     } else {
       return this.http
@@ -91,6 +142,15 @@ export class UserAPIService {
         }),
         shareReplay(),
       );
+  }
+
+  getCurrentUser(): Observable<IUser> {
+    const email = sessionStorage.getItem("email");
+    if (!email) {
+      return of(null as any);
+    }
+
+    return this.http.post<IUser>(`${this.apiUrl}/current-user`, { email }).pipe(shareReplay());
   }
 
   logout() {
@@ -263,6 +323,11 @@ export class UserAPIService {
           return of(false);
         }),
       );
+  }
+
+  public getCurrentUserMonitoringScheme() {
+    const user = this.subject.value;
+    return user?.deficiencyMonitoringScheme;
   }
 
   private setAuthOptions(authOptions: any) {

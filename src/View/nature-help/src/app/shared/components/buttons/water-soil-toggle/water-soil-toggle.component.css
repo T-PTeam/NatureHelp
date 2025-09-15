@@ -1,0 +1,31 @@
+.deficiency-switcher {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+
+  .mat-button-toggle-group {
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+
+      .mat-icon {
+        font-size: 20px;
+      }
+    }
+
+    .mat-button-toggle-checked {
+      background-color: #1976d2;
+      color: #fff;
+
+      &.mat-button-toggle[value="soil"] {
+        background-color: #388e3c;
+      }
+    }
+  }
+}

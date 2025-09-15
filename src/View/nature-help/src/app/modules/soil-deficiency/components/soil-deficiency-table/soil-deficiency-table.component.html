@@ -70,15 +70,8 @@
     <h2
       i18n="@@soilDeficienciesTableTitle"
       i18n-matTooltip="@@soilDeficienciesTableTitle">
-      Deficiencies (Soil)
+      Deficiencies
     </h2>
-
-    <input
-      type="search"
-      class="input-like"
-      placeholder="Search..."
-      i18n-placeholder="@@searchPlaceholder"
-      [(ngModel)]="search" />
 
     <button
       (click)="downloadExcel()"
@@ -94,11 +87,10 @@
       <i class="material-icons">add</i>
     </button>
 
-    <mat-slide-toggle
-      style="transform: rotate(180deg)"
-      [checked]="false"
-      (change)="goToWater()">
-    </mat-slide-toggle>
+    <app-water-soil-toggle
+      [isWaterSelected]="false"
+      (toggleChange)="goToWater($event)">
+    </app-water-soil-toggle>
 
     <button
       mat-icon-button
@@ -179,7 +171,7 @@
         <div>{{ deficiency.ph }}</div>
         <div>{{ deficiency.cadmiumConcentration }}</div>
         <div>{{ deficiency.pesticidesContent }}</div>
-        <div>{{ deficiency.nitratesConcentration }}</div>
+        <div>{{ deficiency.nitrateConcentration }}</div>
         <div>{{ deficiency.creator.firstName }} {{ deficiency.creator.lastName }}</div>
         <div>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</div>
         <div>{{ deficiency.eDangerState | enumToString: "EDangerState" }}</div>

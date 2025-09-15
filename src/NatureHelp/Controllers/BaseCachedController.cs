@@ -18,7 +18,7 @@ public class BaseCachedController<T> : BaseController<T> where T : class
     {
         Func<Task<ListData<T>>> fetchFromDb = () => _service.GetList(scrollCount, filters);
 
-        var listData = await _service.GetOrSetAsync(fetchFromDb);
+        var listData = await _service.GetOrSetAsync(fetchFromDb, filters != null && filters.Any());
 
         return Ok(listData);
     }

@@ -6,7 +6,7 @@ import { UserAPIService } from "../../../services/user-api.service";
 @Component({
   selector: "nat-send-reset-link-dialog",
   templateUrl: "./send-reset-link-dialog.component.html",
-  styleUrls: ["./send-reset-link-dialog.component.css"],
+  styleUrls: ["./send-reset-link-dialog.component.css", "../../../styles/dialog-styles.css"],
   standalone: false,
 })
 export class SendResetLinkDialogComponent {
