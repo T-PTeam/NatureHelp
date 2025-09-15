@@ -51,6 +51,50 @@ export class UserAPIService {
     this.isEmailConfirmed$ = this.$user.pipe(map((user) => user?.isEmailConfirmed ?? false));
   }
 
+  initializeAuth(): Observable<boolean> {
+    const accessToken = sessionStorage.getItem("accessToken");
+    const refreshToken = localStorage.getItem("refreshToken");
+
+    if (!accessToken && !refreshToken) {
+      return of(false);
+    }
+
+    if (accessToken && !this.jwtHelper.isTokenExpired(accessToken)) {
+      return this.getCurrentUser().pipe(
+        map((user) => {
+          if (user) {
+            this.subject.next(user);
+            this.refreshAccessToken().subscribe();
+            return true;
+          } else {
+            this.logout();
+            return false;
+          }
+        }),
+        catchError(() => {
+          this.logout();
+          return of(false);
+        }),
+      );
+    }
+
+    if (refreshToken) {
+      return this.refreshAccessToken().pipe(
+        map(() => {
+          this.refreshAccessToken().subscribe();
+          return true;
+        }),
+        catchError(() => {
+          this.logout();
+          return of(false);
+        }),
+      );
+    }
+
+    this.logout();
+    return of(false);
+  }
+
   auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {
     if (password) {
       return this.http
@@ -94,6 +138,15 @@ export class UserAPIService {
         }),
         shareReplay(),
       );
+  }
+
+  getCurrentUser(): Observable<IUser> {
+    const email = sessionStorage.getItem("email");
+    if (!email) {
+      return of(null as any);
+    }
+
+    return this.http.post<IUser>(`${this.apiUrl}/current-user`, { email }).pipe(shareReplay());
   }
 
   logout() {
@@ -286,5 +339,6 @@ export class UserAPIService {
       sessionStorage.setItem("role", decodedTokenRole["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]);
 
     this.subject.next(authOptions);
+    this.refreshAccessToken().subscribe();
   }
 }

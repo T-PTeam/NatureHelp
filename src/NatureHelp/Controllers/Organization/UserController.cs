@@ -58,6 +58,18 @@ public class UserController : Controller
     }
 
     /// <summary>
+    /// Used for autologin for users that were authorized previously
+    /// </summary>
+    /// <param name="user"></param>
+    /// <returns></returns>
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpPost("current-user")]
+    public async Task<IActionResult> GetCurrentUserAsync([FromBody] UserDto user)
+    {
+        return Ok(await _userService.GetModelByEmail(user.Email));
+    }
+
+    /// <summary>
     /// Check token expiration and availability
     /// </summary>
     /// <param name="tokensDto"></param>

@@ -23,19 +23,19 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   public timeRemaining: number = 0;
 
-  constructor (
+  constructor(
     private dialog: MatDialog,
     public userService: UserAPIService,
     private emailVerificationService: EmailVerificationService,
     private notify: MatSnackBar,
     public mobileMapService: MobileMapService,
-  ) { }
+  ) {}
 
-  get isMobile (): boolean {
+  get isMobile(): boolean {
     return this.mobileMapService.isMobile();
   }
 
-  get isEmailVerificationDisabled$ (): Observable<boolean> {
+  get isEmailVerificationDisabled$(): Observable<boolean> {
     return this.userService.$user.pipe(
       map((user) => {
         if (!user?.email) return true;
@@ -45,7 +45,7 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     );
   }
 
-  get formattedTimeRemaining (): string {
+  get formattedTimeRemaining(): string {
     if (this.timeRemaining <= 0) return "";
     const duration = moment.duration(this.timeRemaining);
     const minutes = Math.floor(duration.asMinutes());
@@ -53,7 +53,7 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   }
 
-  ngOnInit () {
+  ngOnInit() {
     const savedTime = localStorage.getItem("lastVerificationSent");
     if (savedTime) {
       this.lastVerificationSent = parseInt(savedTime, 10);
@@ -62,12 +62,12 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     this.startTimer();
   }
 
-  ngOnDestroy () {
+  ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
   }
 
-  private startTimer (): void {
+  private startTimer(): void {
     setInterval(() => {
       if (this.lastVerificationSent) {
         const elapsed = Date.now() - this.lastVerificationSent;
@@ -79,7 +79,7 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     }, 1000);
   }
 
-  openAuthDialog (isRegister: boolean): void {
+  openAuthDialog(isRegister: boolean): void {
     const dialogRef = this.dialog.open(AuthDialogComponent, {
       width: "fit-content",
       height: "fit-content",
@@ -120,11 +120,11 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     });
   }
 
-  logout () {
+  logout() {
     this.userService.logout();
   }
 
-  sendEmailVerification (): void {
+  sendEmailVerification(): void {
     this.userService.$user.pipe(takeUntil(this.destroy$)).subscribe((user) => {
       if (user?.email) {
         this.emailVerificationService.sendVerificationEmail(user.email).subscribe({

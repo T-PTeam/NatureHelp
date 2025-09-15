@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { UserAPIService } from "./shared/services/user-api.service";
 
 @Component({
   selector: "n-root",
@@ -6,4 +7,10 @@ import { Component } from "@angular/core";
   styleUrl: "./app.component.css",
   standalone: false,
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  constructor(private userService: UserAPIService) {}
+
+  ngOnInit() {
+    this.userService.initializeAuth().subscribe();
+  }
+}
