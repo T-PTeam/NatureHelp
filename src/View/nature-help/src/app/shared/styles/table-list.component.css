@@ -285,6 +285,29 @@
   background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
 }
 
+/* Monitoring flag styles */
+.monitoring-active {
+  color: rgba(177, 31, 31, 1) !important;
+  background-color: rgba(76, 175, 80, 0.1) !important;
+  border: 2px solid rgba(177, 31, 31, 0.8) !important;
+}
+
+.monitoring-active:hover {
+  background-color: rgba(76, 175, 80, 0.2) !important;
+  border-color: rgba(177, 31, 31, 0.8) !important;
+}
+
+.monitoring-inactive {
+  color: #757575 !important;
+  background-color: rgba(117, 117, 117, 0.1) !important;
+  border: 2px solid rgba(117, 117, 117, 0.5) !important;
+}
+
+.monitoring-inactive:hover {
+  background-color: rgba(117, 117, 117, 0.2) !important;
+  border-color: #757575 !important;
+}
+
 .grid-body {
   max-height: calc(100vh - 60px - 60px - 80px - 80px);
 }

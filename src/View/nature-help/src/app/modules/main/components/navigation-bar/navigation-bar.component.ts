@@ -95,7 +95,6 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
           .auth(isRegister ? EAuthType.Register : EAuthType.Login, result.email, result.password)
           .subscribe({
             next: (authResponse) => {
-              // Automatically send email verification on successful login/register
               if (authResponse.user && !authResponse.user.isEmailConfirmed) {
                 this.emailVerificationService.sendVerificationEmail(authResponse.user.email).subscribe({
                   next: () => {

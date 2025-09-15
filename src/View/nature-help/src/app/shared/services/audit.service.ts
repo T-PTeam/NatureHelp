@@ -8,6 +8,7 @@ import { EDeficiencyType } from "@/models/enums";
 import { environment } from "src/environments/environment.dev";
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
+import { IMonitoringScheme } from "@/models/IMonitoringScheme";
 
 @Injectable({
   providedIn: "root",
@@ -56,32 +57,42 @@ export class AuditService {
   }
 
   public toggleMonitoring(deficiencyId: string | null, type: EDeficiencyType): Observable<boolean> {
-    return this.http
-      .put<boolean>(
-        `${this.monitoringUrl}/toggle-monitoring?deficiencyId=${deficiencyId}&type=${type}`,
-        { refreshToken: localStorage.getItem("refreshToken") },
-        this.httpOptions,
-      )
-      .pipe(
-        tap((response) => {
-          if (!deficiencyId && response) {
-            if (type === EDeficiencyType.Soil) {
-              this.soilAPIService.loadSoilDeficiencies(0, null);
-            } else {
-              this.waterAPIService.loadWaterDeficiencies(0, null);
-            }
+    const deficiencyIdParam = deficiencyId ? `deficiencyId=${deficiencyId}` : "";
+    const url = `${this.monitoringUrl}/toggle-monitoring?${deficiencyIdParam}&type=${type}`
+      .replace(/&+/g, "&")
+      .replace(/\?&/, "?");
+
+    return this.http.put<boolean>(url, { refreshToken: localStorage.getItem("refreshToken") }, this.httpOptions).pipe(
+      tap((response) => {
+        if (!deficiencyId && response) {
+          if (type === EDeficiencyType.Soil) {
+            this.soilAPIService.loadSoilDeficiencies(0, null);
+          } else {
+            this.waterAPIService.loadWaterDeficiencies(0, null);
           }
-        }),
-        map((success) => {
-          if (success) {
-            this.notify.open("Monitoring toggled successfully", "Close", { duration: 2000 });
-          }
-          return success;
-        }),
-        catchError((err) => {
-          console.error("Error toggling monitoring:", err);
-          throw err;
-        }),
-      );
+        }
+
+        if (type === EDeficiencyType.Soil) {
+          this.monitoringSoilDeficiencySubject.next(response);
+        } else {
+          this.monitoringWaterDeficiencySubject.next(response);
+        }
+      }),
+      map((success) => {
+        if (success) {
+          this.notify.open("Monitoring toggled successfully", "Close", { duration: 2000 });
+        }
+        return success;
+      }),
+      catchError((err) => {
+        console.error("Error toggling monitoring:", err);
+        throw err;
+      }),
+    );
+  }
+
+  public setMonitoringScheme(scheme: IMonitoringScheme): void {
+    this.monitoringWaterDeficiencySubject.next(scheme.isMonitoringWaterDeficiencies);
+    this.monitoringSoilDeficiencySubject.next(scheme.isMonitoringSoilDeficiencies);
   }
 }

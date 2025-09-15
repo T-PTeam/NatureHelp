@@ -109,6 +109,10 @@ export class UserAPIService {
             this.setAuthOptions(authResponse);
           }),
           shareReplay(),
+          catchError((err) => {
+            this.notify.open("Error: " + err, "Close", { duration: 2000 });
+            return of(null as any);
+          }),
         );
     } else {
       return this.http
@@ -321,6 +325,11 @@ export class UserAPIService {
       );
   }
 
+  public getCurrentUserMonitoringScheme() {
+    const user = this.subject.value;
+    return user?.deficiencyMonitoringScheme;
+  }
+
   private setAuthOptions(authOptions: any) {
     if (!authOptions) {
       return;
@@ -339,6 +348,5 @@ export class UserAPIService {
       sessionStorage.setItem("role", decodedTokenRole["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]);
 
     this.subject.next(authOptions);
-    this.refreshAccessToken().subscribe();
   }
 }

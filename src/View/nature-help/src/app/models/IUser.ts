@@ -1,3 +1,5 @@
+import { IMonitoringScheme } from "./IMonitoringScheme";
+
 export interface IUser {
   id: string;
   firstName: string;
@@ -8,8 +10,5 @@ export interface IUser {
   role: number;
   organizationId: string | null;
   isEmailConfirmed?: boolean;
-  deficiencyMonitoringScheme?: {
-    isMonitoringWaterDeficiencies: boolean;
-    isMonitoringSoilDeficiencies: boolean;
-  };
+  deficiencyMonitoringScheme?: IMonitoringScheme;
 }
