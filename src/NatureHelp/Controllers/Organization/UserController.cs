@@ -27,7 +27,7 @@ public class UserController : Controller
     /// Get organization users
     /// </summary>
     /// <returns></returns>
-    [Authorize(Roles = "Owner, Manager")]
+    [AllowAnonymous]
     [HttpGet("organization-users")]
     public async Task<IActionResult> GetOrganizationUsers([FromQuery] Guid organizationId, [FromQuery] int scrollCount)
     {
@@ -58,6 +58,18 @@ public class UserController : Controller
     }
 
     /// <summary>
+    /// Used for autologin for users that were authorized previously
+    /// </summary>
+    /// <param name="user"></param>
+    /// <returns></returns>
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpPost("current-user")]
+    public async Task<IActionResult> GetCurrentUserAsync([FromBody] UserDto user)
+    {
+        return Ok(await _userService.GetModelByEmail(user.Email));
+    }
+
+    /// <summary>
     /// Check token expiration and availability
     /// </summary>
     /// <param name="tokensDto"></param>
@@ -78,13 +90,13 @@ public class UserController : Controller
     [HttpPost("send-verification-email")]
     public async Task<IActionResult> SendVerificationEmail([FromBody] UserDto userDto)
     {
-        string? token = await _userService.UpdateEmailConfirmationTokenByEmail(userDto.Email);
-
         var user = await _userService.GetModelByEmail(userDto.Email);
-        user.EmailConfirmationToken = token;
 
         if (user == null) return NotFound("User not found");
-        if (user.IsEmailConfirmed) return Accepted("Email already confirmed");
+        if (user.IsEmailConfirmed) return Accepted("Email already confirmed" as object);
+
+        string? token = await _userService.UpdateEmailConfirmationTokenByEmail(userDto.Email);
+        user.EmailConfirmationToken = token;
 
         var confirmationUrl = $"{_configuration["Frontend:Url"]}/confirm-email?token={user.EmailConfirmationToken}";
 

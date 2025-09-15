@@ -39,12 +39,12 @@ public class BaseService<T> : IBaseService<T> where T : class
     public virtual async Task<Guid> DeleteAsync(Guid id) => await _repository.DeleteAsync(id);
     public virtual async Task<IEnumerable<Guid>> DeleteRangeAsync(IEnumerable<Guid> ids) => await _repository.DeleteRangeAsync(ids);
 
-    public async Task<ListData<T>> GetOrSetAsync(Func<Task<ListData<T>>> fetchFromDb)
+    public async Task<ListData<T>> GetOrSetAsync(Func<Task<ListData<T>>> fetchFromDb, bool isFiltering)
     {
         string key = typeof(T).Name + "_listdata";
 
         var cached = await _redisCacheService.GetAsync(key);
-        if (cached != null)
+        if (cached != null && !isFiltering)
         {
             var cachedData = JsonSerializer.Deserialize<List<T>>(cached);
             if (cachedData != null)
@@ -56,7 +56,8 @@ public class BaseService<T> : IBaseService<T> where T : class
         }
 
         var data = await fetchFromDb();
-        await _redisCacheService.SetAsync(key, JsonSerializer.Serialize(data.List), TimeSpan.FromHours(2));
+
+        if (!isFiltering) await _redisCacheService.SetAsync(key, JsonSerializer.Serialize(data.List), TimeSpan.FromHours(2));
 
         return data;
     }

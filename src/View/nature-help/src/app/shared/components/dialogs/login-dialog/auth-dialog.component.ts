@@ -6,7 +6,7 @@ import { SendResetLinkDialogComponent } from "./send-reset-link-dialog.component
 @Component({
   selector: "nat-auth-dialog",
   templateUrl: "./auth-dialog.component.html",
-  styleUrls: ["./auth-dialog.component.css"],
+  styleUrls: ["./auth-dialog.component.css", "../../../styles/dialog-styles.css"],
   standalone: false,
 })
 export class AuthDialogComponent {
@@ -38,7 +38,12 @@ export class AuthDialogComponent {
     event.preventDefault();
 
     const dialogRef = this.dialog.open(SendResetLinkDialogComponent, {
-      width: "400px",
+      width: "fit-content",
+      height: "fit-content",
+      maxHeight: "80vh",
+      maxWidth: "80vw",
+      minHeight: "300px",
+      minWidth: "400px",
       disableClose: true,
     });
 

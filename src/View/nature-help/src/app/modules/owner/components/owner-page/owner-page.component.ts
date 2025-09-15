@@ -23,9 +23,12 @@ export class OwnerPageComponent {
   addUserToOrganization(isMultiple: boolean): void {
     if (isMultiple) {
       const dialogRef = this.dialog.open(AddOrganizationUsersComponent, {
-        width: "90vw",
-        maxWidth: "90vw",
-        height: "80vh",
+        width: "fit-content",
+        height: "fit-content",
+        maxHeight: "80vh",
+        maxWidth: "80vw",
+        minHeight: "300px",
+        minWidth: "400px",
         data: {
           isAddingOneUser: false,
         },

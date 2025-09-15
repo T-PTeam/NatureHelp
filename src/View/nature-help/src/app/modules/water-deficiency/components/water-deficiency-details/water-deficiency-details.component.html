@@ -1,5 +1,5 @@
 <mat-card
-  *ngIf="details"
+  *ngIf="state.details"
   class="detail-card">
   <mat-card-title
     i18n="@@waterDeficiency"
@@ -8,11 +8,11 @@
     <button
       class="monitoring-flag"
       mat-icon-button
-      (click)="toggleMonitoring()"
+      (click)="deficiencyDetailsService.toggleMonitoring(state, 0).subscribe()"
       matTooltip="Toggle Monitoring"
-      [class.monitoring-active]="details?.deficiencyMonitoring?.isMonitoring || false"
-      [class.monitoring-inactive]="!(details?.deficiencyMonitoring?.isMonitoring || false)">
-      <mat-icon>{{ details?.deficiencyMonitoring?.isMonitoring || false ? "flag" : "flag_outline" }}</mat-icon>
+      [class.monitoring-active]="state.details?.deficiencyMonitoring?.isMonitoring || false"
+      [class.monitoring-inactive]="!(state.details?.deficiencyMonitoring?.isMonitoring || false)">
+      <mat-icon>{{ state.details?.deficiencyMonitoring?.isMonitoring || false ? "flag" : "flag_outline" }}</mat-icon>
     </button>
   </mat-card-title>
 
@@ -72,13 +72,13 @@
       </mat-form-field>
 
       <nat-pick-coordinates-button
-        [isActive]="isSelectingCoordinates"
-        (buttonClick)="toggleCoordinateSelection($event)"></nat-pick-coordinates-button>
+        [isActive]="state.isSelectingCoordinates"
+        (buttonClick)="deficiencyDetailsService.toggleCoordinateSelection(state, $event)"></nat-pick-coordinates-button>
 
       <button
         mat-icon-button
         color="primary"
-        (click)="changeMapView()"
+        (click)="deficiencyDetailsService.changeMapView(state)"
         matTooltip="Focus map on coordinates"
         class="map-focus-btn">
         <mat-icon>my_location</mat-icon>
@@ -86,7 +86,7 @@
     </div>
 
     <div
-      *ngIf="selectedAddress"
+      *ngIf="state.selectedAddress"
       class="address-container">
       <mat-form-field
         appearance="outline"
@@ -95,12 +95,12 @@
         <input
           matInput
           readonly
-          [value]="selectedAddress.displayName" />
+          [value]="state.selectedAddress.displayName" />
         <button
-          *ngIf="selectedAddress"
+          *ngIf="state.selectedAddress"
           matSuffix
           mat-icon-button
-          (click)="detailsForm.patchValue({ address: selectedAddress.displayName })"
+          (click)="detailsForm.patchValue({ address: state.selectedAddress.displayName })"
           matTooltip="Save address to form">
           <mat-icon>save</mat-icon>
         </button>
@@ -114,7 +114,7 @@
         class="form-input">
         <mat-option [value]="null">None</mat-option>
         <mat-option
-          *ngFor="let danger of dangerStates"
+          *ngFor="let danger of state.dangerStates"
           [value]="danger.value">
           {{ danger.label }}
         </mat-option>
@@ -189,9 +189,9 @@
       <input
         matInput
         type="number"
-        formControlName="nitratesConcentration" />
+        formControlName="nitrateConcentration" />
       <mat-error
-        *ngIf="detailsForm.get('nitratesConcentration')?.invalid && detailsForm.get('nitratesConcentration')?.touched">
+        *ngIf="detailsForm.get('nitrateConcentration')?.invalid && detailsForm.get('nitrateConcentration')?.touched">
         Value must be between 0 and 50.
       </mat-error>
     </mat-form-field>
@@ -256,7 +256,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label i18n="@@phosphateConcentration">Biological Oxygen Demand</mat-label>
+      <mat-label i18n="@@phosphateConcentration">Phosphate Concentration</mat-label>
       <input
         matInput
         type="number"
@@ -324,7 +324,7 @@
         matInput
         type="IUser"
         readonly
-        [value]="details.creator.firstName + ' ' + details.creator.lastName"
+        [value]="(state.details?.creator?.firstName || '') + ' ' + (state.details?.creator?.lastName || '')"
         name="creator" />
     </mat-form-field>
 
@@ -346,7 +346,7 @@
           mat-flat-button
           color="primary"
           type="submit"
-          (click)="onSubmit()">
+          (click)="deficiencyDetailsService.onSubmit(state, deficiencyDataService, 0)">
           Submit
         </button>
         <button
@@ -354,7 +354,7 @@
           mat-flat-button
           color="primary"
           type="submit"
-          (click)="onCancel()">
+          (click)="deficiencyDetailsService.onCancel(state)">
           Cancel
         </button>
       </div>
@@ -362,13 +362,13 @@
   </div>
 
   <mat-accordion>
-    <nat-audit-list [deficiency]="details"></nat-audit-list>
+    <nat-audit-list [deficiency]="state.details"></nat-audit-list>
 
     <nat-attachment-list
-      [deficiency]="details"
-      [attachments]="attachments">
+      [deficiency]="state.details"
+      [attachments]="state.attachments">
     </nat-attachment-list>
 
-    <nat-comment-message-list [deficiency]="details"> </nat-comment-message-list>
+    <nat-comment-message-list [deficiency]="state.details"> </nat-comment-message-list>
   </mat-accordion>
 </mat-card>

@@ -67,14 +67,7 @@
 
 <div class="table-wrapper">
   <div class="header">
-    <h2 i18n="@@waterDeficienciesTableTitle">Deficiencies (Water)</h2>
-
-    <input
-      type="search"
-      class="input-like"
-      placeholder="Search..."
-      i18n-placeholder="@@searchPlaceholder"
-      [(ngModel)]="search" />
+    <h2 i18n="@@waterDeficienciesTableTitle">Deficiencies</h2>
 
     <button
       (click)="downloadExcel()"
@@ -90,11 +83,10 @@
       <i class="material-icons">add</i>
     </button>
 
-    <mat-slide-toggle
-      style="transform: rotate(180deg)"
-      [checked]="true"
-      (change)="goToSoil()">
-    </mat-slide-toggle>
+    <app-water-soil-toggle
+      [isWaterSelected]="true"
+      (toggleChange)="goToSoil($event)">
+    </app-water-soil-toggle>
 
     <button
       mat-icon-button
@@ -174,7 +166,7 @@
         <div>{{ deficiency.dissolvedOxygen || 0 }}</div>
         <div>{{ deficiency.ph || 0 }}</div>
         <div>{{ deficiency.leadConcentration || 0 }}</div>
-        <div>{{ deficiency.nitratesConcentration || 0 }}</div>
+        <div>{{ deficiency.nitrateConcentration || 0 }}</div>
         <div>{{ deficiency.chemicalOxygenDemand || 0 }}</div>
         <div>{{ deficiency.creator.firstName }} {{ deficiency.creator.lastName }}</div>
         <div>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</div>

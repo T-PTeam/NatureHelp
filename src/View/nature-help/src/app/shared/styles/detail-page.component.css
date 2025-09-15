@@ -137,6 +137,28 @@
   }
 }
 
+.monitoring-flag.monitoring-active {
+  color: rgba(177, 31, 31, 1) !important;
+  background-color: rgba(76, 175, 80, 0.1) !important;
+  border: 2px solid rgba(177, 31, 31, 0.8) !important;
+}
+
+.monitoring-flag.monitoring-active:hover {
+  background-color: rgba(76, 175, 80, 0.2) !important;
+  border-color: rgba(177, 31, 31, 1) !important;
+}
+
+.monitoring-flag.monitoring-inactive {
+  color: #757575 !important;
+  background-color: rgba(117, 117, 117, 0.1) !important;
+  border: 2px solid rgba(117, 117, 117, 0.5) !important;
+}
+
+.monitoring-flag.monitoring-inactive:hover {
+  background-color: rgba(117, 117, 117, 0.2) !important;
+  border-color: #757575 !important;
+}
+
 @media (max-height: 400px) and (orientation: landscape) {
   .detail-card {
     margin: 8px 4px;

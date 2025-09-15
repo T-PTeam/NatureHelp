@@ -81,15 +81,19 @@
   </form>
 </div>
 
-<div mat-dialog-actions>
+<div
+  mat-dialog-actions
+  class="action-buttons">
   <button
     mat-button
+    class="reset-button"
     (click)="closeDialog()">
     Cancel
   </button>
   <button
     mat-flat-button
     color="primary"
+    class="apply-button"
     (click)="onSubmit()"
     [disabled]="formGroup.invalid">
     {{ data.isAddingOneUser ? "Add" : "Add all" }}

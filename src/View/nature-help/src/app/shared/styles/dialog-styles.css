@@ -4,6 +4,13 @@
   margin-bottom: 16px;
 }
 
+.dialog-description {
+  margin: 0px 30px 16px 30px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 .description {
   text-align: center;
   color: #666;
@@ -15,7 +22,8 @@
   display: flex;
   justify-content: flex-end;
   gap: 16px;
-  margin: 0px 30px 16px 30px;
+  margin: auto 30px 10px 30px;
+  padding-bottom: 16px;
 }
 
 .apply-button {
@@ -41,10 +49,37 @@ mat-form-field {
   margin: 0px 30px 16px 30px;
 }
 
+.full-width {
+  width: calc(100% - 60px);
+}
+
+.form-row {
+  display: grid;
+  margin: 10px 25px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.forgot-password-link {
+  text-align: right;
+  margin: 0px 30px 16px 30px;
+}
+
+.forgot-password-link a {
+  color: #1976d2;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+}
+
 .spinner {
   margin-right: 8px;
 }
 
-.full-width {
-  width: 100%;
+.apply-button mat-spinner {
+  margin-right: 8px;
 }

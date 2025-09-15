@@ -53,7 +53,7 @@ describe("FilterPipe", () => {
         dissolvedOxygen: 6.2,
         leadConcentration: 0.01,
         mercuryConcentration: 0.001,
-        nitratesConcentration: 10,
+        nitrateConcentration: 10,
         pesticidesContent: 0.5,
         microbialActivity: 0.8,
         radiationLevel: 0.1,
@@ -64,6 +64,7 @@ describe("FilterPipe", () => {
         totalDissolvedSolids: 500,
         electricalConductivity: 800,
         microbialLoad: 100,
+        radiusAffected: 100,
       },
       {
         id: "2",
@@ -82,7 +83,7 @@ describe("FilterPipe", () => {
         dissolvedOxygen: 5.8,
         leadConcentration: 0.02,
         mercuryConcentration: 0.002,
-        nitratesConcentration: 12,
+        nitrateConcentration: 12,
         pesticidesContent: 0.6,
         microbialActivity: 0.7,
         radiationLevel: 0.15,
@@ -93,6 +94,7 @@ describe("FilterPipe", () => {
         totalDissolvedSolids: 550,
         electricalConductivity: 850,
         microbialLoad: 120,
+        radiusAffected: 150,
       },
     ];
 

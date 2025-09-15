@@ -20,7 +20,6 @@ import { AuditService } from "@/shared/services/audit.service";
   standalone: false,
 })
 export class SoilDeficiencyTable {
-  search: string = "";
   scrollCheckDisabled: boolean = false;
   filterForm!: FormGroup;
   isMonitoring: boolean = false;
@@ -80,8 +79,10 @@ export class SoilDeficiencyTable {
       });
   }
 
-  goToWater() {
-    this.router.navigateByUrl("/water");
+  goToWater(isWaterSelected: boolean) {
+    if (isWaterSelected) {
+      this.router.navigateByUrl("/water");
+    }
   }
 
   changeMapFocus(latitude: number, longitude: number) {

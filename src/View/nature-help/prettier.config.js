@@ -6,7 +6,7 @@ const config = {
   quoteProps: "as-needed",
   jsxSingleQuote: false,
   trailingComma: "all",
-  bracketSpacing: true,
+  bracketSpacing: false,
   bracketSameLine: true,
   arrowParens: "always",
   proseWrap: "preserve",
