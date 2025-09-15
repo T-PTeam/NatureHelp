@@ -23,6 +23,7 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {

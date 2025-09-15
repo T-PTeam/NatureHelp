@@ -21,7 +21,6 @@ import { AttachmentListComponent } from "./components/attachment-list/attachment
 import { FileUploadComponent } from "./components/file-upload/file-upload.component";
 import { AttachmentPreviewDialogComponent } from "./components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component";
 import { CommentMessageListComponent } from "./components/comment-message-list/comment-message-list.component";
-import { EmailVerificationDialogComponent } from "./components/dialogs/email-verification-dialog/email-verification-dialog.component";
 import { EmailConfirmationComponent } from "./components/email-confirmation/email-confirmation.component";
 
 @NgModule({
@@ -37,7 +36,6 @@ import { EmailConfirmationComponent } from "./components/email-confirmation/emai
     FileUploadComponent,
     AttachmentPreviewDialogComponent,
     CommentMessageListComponent,
-    EmailVerificationDialogComponent,
     EmailConfirmationComponent,
 
     FilterPipe,
@@ -56,7 +54,6 @@ import { EmailConfirmationComponent } from "./components/email-confirmation/emai
     FileUploadComponent,
     AttachmentPreviewDialogComponent,
     CommentMessageListComponent,
-    EmailVerificationDialogComponent,
     EmailConfirmationComponent,
 
     FilterPipe,
