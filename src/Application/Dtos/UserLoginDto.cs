@@ -6,4 +6,5 @@ public class UserLoginDto()
     public Guid? OrganizationId { get; set; }
     public string Email { get; set; } = null!;
     public string Password { get; set; } = null!;
+    public bool IsCreatingOwner { get; set; } = false;
 };

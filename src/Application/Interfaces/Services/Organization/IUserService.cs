@@ -17,7 +17,7 @@ public interface IUserService
     public Task<User?> RefreshAccessTokenAsync(string refreshToken);
     public Task<string?> UpdateEmailConfirmationTokenByEmail(string email);
 
-    public Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto);
+    public Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto, bool isCreatingOwner);
     public Task<IEnumerable<User>> AddMultipleUsersToOrganizationAsync(IEnumerable<User> users);
     public Task<ListData<User>> GetOrganizationUsersNotLoginEver(Guid organizationId);
 

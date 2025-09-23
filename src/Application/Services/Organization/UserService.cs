@@ -139,7 +139,7 @@ public class UserService : IUserService
         return user;
     }
 
-    public async Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto)
+    public async Task<User> AddUserToOrganizationAsync(UserLoginDto loginDto, bool isCreatingOwner)
     {
         if (loginDto.OrganizationId.HasValue && !(await CanAddUsersToOrganization(1, (Guid)loginDto.OrganizationId)))
         {
@@ -155,6 +155,8 @@ public class UserService : IUserService
             Password = loginDto.Password,
             OrganizationId = loginDto.OrganizationId,
         };
+
+        user.AssignRole(isCreatingOwner ? ERole.Owner : ERole.Supervisor);
 
         SetPasswordHash(user);
 
