@@ -7,8 +7,6 @@ import { DeficiencyDetailsService } from "@/shared/services/deficiency-details.s
 import { IDeficiencyDetailsState } from "@/shared/models/IDeficiencyFormConfig";
 import { SoilDeficiencyFormConfig } from "@/shared/services/deficiency-form-configs.service";
 
-import { EDeficiencyType } from "../../../../models/enums";
-import { ISoilDeficiency } from "../../models/ISoilDeficiency";
 import { UserAPIService } from "@/shared/services/user-api.service";
 
 @Component({
@@ -20,6 +18,7 @@ import { UserAPIService } from "@/shared/services/user-api.service";
 export class SoilDeficiencyDetail implements OnInit, OnDestroy {
   state: IDeficiencyDetailsState;
   detailsForm!: FormGroup;
+  disableResearchFields: boolean = false;
   private formConfig = new SoilDeficiencyFormConfig();
 
   constructor(
