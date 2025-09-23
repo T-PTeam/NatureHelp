@@ -29,6 +29,15 @@
       </mat-error>
     </mat-form-field>
 
+    <div class="checkbox-container">
+      <mat-checkbox
+        [(ngModel)]="disableResearchFields"
+        [ngModelOptions]="{ standalone: true }"
+        i18n="@@disableResearchFields">
+        Disable research fields
+      </mat-checkbox>
+    </div>
+
     <mat-form-field>
       <mat-label i18n="@@description">Description</mat-label>
       <textarea
@@ -88,9 +97,7 @@
     <div
       *ngIf="state.selectedAddress"
       class="address-container">
-      <mat-form-field
-        appearance="outline"
-        class="full-width">
+      <mat-form-field class="full-width">
         <mat-label>Selected Address</mat-label>
         <input
           matInput
@@ -136,187 +143,192 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>pH</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="ph" />
-      <mat-error *ngIf="detailsForm.get('ph')?.invalid && detailsForm.get('ph')?.touched">
-        <span *ngIf="detailsForm.get('ph')?.hasError('required')">pH is required.</span>
-        <span *ngIf="detailsForm.get('ph')?.hasError('min') || detailsForm.get('ph')?.hasError('max')"
-          >Value must be between 0 and 14.</span
-        >
-      </mat-error>
-    </mat-form-field>
+    <ng-container *ngIf="!disableResearchFields">
+      <mat-form-field>
+        <mat-label>pH</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="ph" />
+        <mat-error *ngIf="detailsForm.get('ph')?.invalid && detailsForm.get('ph')?.touched">
+          <span *ngIf="detailsForm.get('ph')?.hasError('required')">pH is required.</span>
+          <span *ngIf="detailsForm.get('ph')?.hasError('min') || detailsForm.get('ph')?.hasError('max')"
+            >Value must be between 0 and 14.</span
+          >
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@dissolvedOxygen">Dissolved Oxygen</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="dissolvedOxygen" />
-      <mat-error *ngIf="detailsForm.get('dissolvedOxygen')?.invalid && detailsForm.get('dissolvedOxygen')?.touched">
-        Value must be between 0 and 20.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@dissolvedOxygen">Dissolved Oxygen</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="dissolvedOxygen" />
+        <mat-error *ngIf="detailsForm.get('dissolvedOxygen')?.invalid && detailsForm.get('dissolvedOxygen')?.touched">
+          Value must be between 0 and 20.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@leadConcentration">Lead Concentration</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="leadConcentration" />
-      <mat-error *ngIf="detailsForm.get('leadConcentration')?.invalid && detailsForm.get('leadConcentration')?.touched">
-        Value must be between 0 and 0.01.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@leadConcentration">Lead Concentration</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="leadConcentration" />
+        <mat-error
+          *ngIf="detailsForm.get('leadConcentration')?.invalid && detailsForm.get('leadConcentration')?.touched">
+          Value must be between 0 and 0.01.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@mercuryConcentration">Mercury Concentration</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="mercuryConcentration" />
-      <mat-error
-        *ngIf="detailsForm.get('mercuryConcentration')?.invalid && detailsForm.get('mercuryConcentration')?.touched">
-        Value must be between 0 and 0.001.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@mercuryConcentration">Mercury Concentration</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="mercuryConcentration" />
+        <mat-error
+          *ngIf="detailsForm.get('mercuryConcentration')?.invalid && detailsForm.get('mercuryConcentration')?.touched">
+          Value must be between 0 and 0.001.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@nitrateConcentration">Nitrate Concentration</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="nitrateConcentration" />
-      <mat-error
-        *ngIf="detailsForm.get('nitrateConcentration')?.invalid && detailsForm.get('nitrateConcentration')?.touched">
-        Value must be between 0 and 50.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@nitrateConcentration">Nitrate Concentration</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="nitrateConcentration" />
+        <mat-error
+          *ngIf="detailsForm.get('nitrateConcentration')?.invalid && detailsForm.get('nitrateConcentration')?.touched">
+          Value must be between 0 and 50.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@pesticidesContent">Pesticides Content</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="pesticidesContent" />
-      <mat-error *ngIf="detailsForm.get('pesticidesContent')?.invalid && detailsForm.get('pesticidesContent')?.touched">
-        Value must be between 0 and 0.005.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@pesticidesContent">Pesticides Content</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="pesticidesContent" />
+        <mat-error
+          *ngIf="detailsForm.get('pesticidesContent')?.invalid && detailsForm.get('pesticidesContent')?.touched">
+          Value must be between 0 and 0.005.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@microbialActivity">Microbial Activity</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="microbialActivity" />
-      <mat-error *ngIf="detailsForm.get('microbialActivity')?.invalid && detailsForm.get('microbialActivity')?.touched">
-        Value must be between 0 and 1000.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@microbialActivity">Microbial Activity</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="microbialActivity" />
+        <mat-error
+          *ngIf="detailsForm.get('microbialActivity')?.invalid && detailsForm.get('microbialActivity')?.touched">
+          Value must be between 0 and 1000.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@radiationLevel">Radiation Level</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="radiationLevel" />
-      <mat-error *ngIf="detailsForm.get('radiationLevel')?.invalid && detailsForm.get('radiationLevel')?.touched">
-        Value must be between 0 and 10.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@radiationLevel">Radiation Level</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="radiationLevel" />
+        <mat-error *ngIf="detailsForm.get('radiationLevel')?.invalid && detailsForm.get('radiationLevel')?.touched">
+          Value must be between 0 and 10.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@chemicalOxygenDemand">Chemical Oxygen Demand</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="chemicalOxygenDemand" />
-      <mat-error
-        *ngIf="detailsForm.get('chemicalOxygenDemand')?.invalid && detailsForm.get('chemicalOxygenDemand')?.touched">
-        Value must be between 0 and 1000.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@chemicalOxygenDemand">Chemical Oxygen Demand</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="chemicalOxygenDemand" />
+        <mat-error
+          *ngIf="detailsForm.get('chemicalOxygenDemand')?.invalid && detailsForm.get('chemicalOxygenDemand')?.touched">
+          Value must be between 0 and 1000.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@biologicalOxygenDemand">Biological Oxygen Demand</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="biologicalOxygenDemand" />
-      <mat-error
-        *ngIf="
-          detailsForm.get('biologicalOxygenDemand')?.invalid && detailsForm.get('biologicalOxygenDemand')?.touched
-        ">
-        Value must be between 0 and 50.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@biologicalOxygenDemand">Biological Oxygen Demand</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="biologicalOxygenDemand" />
+        <mat-error
+          *ngIf="
+            detailsForm.get('biologicalOxygenDemand')?.invalid && detailsForm.get('biologicalOxygenDemand')?.touched
+          ">
+          Value must be between 0 and 50.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@phosphateConcentration">Phosphate Concentration</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="phosphateConcentration" />
-      <mat-error
-        *ngIf="
-          detailsForm.get('phosphateConcentration')?.invalid && detailsForm.get('phosphateConcentration')?.touched
-        ">
-        Value must be between 0 and 2.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@phosphateConcentration">Phosphate Concentration</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="phosphateConcentration" />
+        <mat-error
+          *ngIf="
+            detailsForm.get('phosphateConcentration')?.invalid && detailsForm.get('phosphateConcentration')?.touched
+          ">
+          Value must be between 0 and 2.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@cadmiumConcentration">Cadmium Concentration</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="cadmiumConcentration" />
-      <mat-error
-        *ngIf="detailsForm.get('cadmiumConcentration')?.invalid && detailsForm.get('cadmiumConcentration')?.touched">
-        Value must be between 0 and 0.005.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@cadmiumConcentration">Cadmium Concentration</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="cadmiumConcentration" />
+        <mat-error
+          *ngIf="detailsForm.get('cadmiumConcentration')?.invalid && detailsForm.get('cadmiumConcentration')?.touched">
+          Value must be between 0 and 0.005.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@totalDissolvedSolids">Total Dissolved Solids</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="totalDissolvedSolids" />
-      <mat-error
-        *ngIf="detailsForm.get('totalDissolvedSolids')?.invalid && detailsForm.get('totalDissolvedSolids')?.touched">
-        Value must be between 0 and 1500.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@totalDissolvedSolids">Total Dissolved Solids</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="totalDissolvedSolids" />
+        <mat-error
+          *ngIf="detailsForm.get('totalDissolvedSolids')?.invalid && detailsForm.get('totalDissolvedSolids')?.touched">
+          Value must be between 0 and 1500.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@electricalConductivity">Electrical Conductivity</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="electricalConductivity" />
-      <mat-error
-        *ngIf="
-          detailsForm.get('electricalConductivity')?.invalid && detailsForm.get('electricalConductivity')?.touched
-        ">
-        Value must be between 0 and 2500.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@electricalConductivity">Electrical Conductivity</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="electricalConductivity" />
+        <mat-error
+          *ngIf="
+            detailsForm.get('electricalConductivity')?.invalid && detailsForm.get('electricalConductivity')?.touched
+          ">
+          Value must be between 0 and 2500.
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label i18n="@@microbialLoad">Microbial Load</mat-label>
-      <input
-        matInput
-        type="number"
-        formControlName="microbialLoad" />
-      <mat-error *ngIf="detailsForm.get('microbialLoad')?.invalid && detailsForm.get('microbialLoad')?.touched">
-        Value must be between 0 and 2000.
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label i18n="@@microbialLoad">Microbial Load</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="microbialLoad" />
+        <mat-error *ngIf="detailsForm.get('microbialLoad')?.invalid && detailsForm.get('microbialLoad')?.touched">
+          Value must be between 0 and 2000.
+        </mat-error>
+      </mat-form-field>
+    </ng-container>
 
     <mat-form-field>
       <mat-label i18n="@@creator">Creator</mat-label>

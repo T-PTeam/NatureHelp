@@ -260,6 +260,17 @@ export class UserAPIService {
     );
   }
 
+  addUserToOrganization(userData: IUser) {
+    return this.http.post<IUser>(`${this.apiUrl}/add-new-to-org`, userData).pipe(
+      tap((user) =>
+        this.notify.open(`User with role ${userData.role} (${user.email}) was added to the organization`, "Close", {
+          duration: 6000,
+        }),
+      ),
+      shareReplay(),
+    );
+  }
+
   changeUsersRoles(changedUsersRoles: Map<string, number>) {
     const payload = Object.fromEntries(changedUsersRoles);
 

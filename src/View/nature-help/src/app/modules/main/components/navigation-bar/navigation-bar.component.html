@@ -22,6 +22,12 @@
       Organization View
     </button>
     <button
+      i18n="@@organizationsTab"
+      routerLink="organizations"
+      *ngIf="userService.isSuperAdmin$ | async">
+      Organizations
+    </button>
+    <button
       i18n="@@aboutUs"
       routerLink="about">
       About us

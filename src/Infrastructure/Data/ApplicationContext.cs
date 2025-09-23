@@ -34,6 +34,13 @@ public class ApplicationContext : DbContext
             .HasValue<DeficiencyAttachment>("DeficiencyAttachment");
 
         builder.Entity<User>().OwnsOne(u => u.DeficiencyMonitoringScheme);
+
+        builder.Entity<User>()
+            .HasOne(u => u.Organization)
+            .WithMany()
+            .HasForeignKey(u => u.OrganizationId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         // Test DATA
         //builder.Entity<Report>()
         //    .HasData(GenerateTestDataToDB.Reports);

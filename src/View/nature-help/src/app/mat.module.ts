@@ -18,6 +18,9 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatTableModule } from "@angular/material/table";
+import { MatChipsModule } from "@angular/material/chips";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 @NgModule({
   imports: [
@@ -40,6 +43,9 @@ import { MatTableModule } from "@angular/material/table";
     MatExpansionModule,
     MatDividerModule,
     MatTableModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatCheckboxModule,
   ],
   exports: [
     MatIconModule,
@@ -60,6 +66,9 @@ import { MatTableModule } from "@angular/material/table";
     MatExpansionModule,
     MatDividerModule,
     MatTableModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatCheckboxModule,
   ],
 })
 export class MatModule {}
