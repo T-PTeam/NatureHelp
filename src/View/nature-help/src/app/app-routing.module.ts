@@ -14,6 +14,8 @@ import { OwnerPageComponent } from "./modules/owner/components/owner-page/owner-
 import { ResearchTableComponent } from "./modules/laboratories/components/research-table/research-table.component";
 import { EmailConfirmationComponent } from "./shared/components/email-confirmation/email-confirmation.component";
 import { PasswordResetDialogComponent } from "./shared/components/dialogs/login-dialog/password-reset-dialog.component";
+import { OrganizationListComponent } from "./modules/organization-management/components/organization-list/organization-list.component";
+import { OrganizationDetailComponent } from "./modules/organization-management/components/organization-detail/organization-detail.component";
 
 const routes: Routes = [
   { path: "", component: WaterDeficiencyTable },
@@ -72,6 +74,25 @@ const routes: Routes = [
     component: OwnerPageComponent,
     canActivate: [RoleGuard],
     data: { includeRoles: ["owner"] },
+  },
+
+  {
+    path: "organizations",
+    component: OrganizationListComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["superadmin"] },
+  },
+  {
+    path: "organizations/add",
+    component: OrganizationDetailComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["superadmin"] },
+  },
+  {
+    path: "organizations/:id",
+    component: OrganizationDetailComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["superadmin"] },
   },
 
   { path: "about", component: AboutComponent },

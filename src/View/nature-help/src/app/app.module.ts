@@ -22,6 +22,7 @@ import { MapViewService } from "./shared/services/map-view.service";
 import { SharedModule } from "./shared/shared.module";
 import { OwneryModule } from "./modules/owner/owner.module";
 import { ResearchesAPIService } from "./modules/laboratories/services/researches-api.service";
+import { OrganizationManagementModule } from "./modules/organization-management/organization-management.module";
 
 const UKRAINIAN_DATE_FORMATS = {
   parse: {
@@ -45,6 +46,7 @@ const UKRAINIAN_DATE_FORMATS = {
     BrowserAnimationsModule,
     LabsModule,
     OwneryModule,
+    OrganizationManagementModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

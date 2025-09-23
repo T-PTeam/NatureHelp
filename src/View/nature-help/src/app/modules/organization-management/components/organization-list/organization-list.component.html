@@ -1,0 +1,92 @@
+<div class="organization-list-container">
+  <div class="list-header">
+    <h2 i18n="@@organizations">Organizations</h2>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onCreateOrganization()">
+      <mat-icon>add</mat-icon>
+      <span i18n="@@createOrganization">Create Organization</span>
+    </button>
+  </div>
+
+  <div class="search-container">
+    <mat-form-field class="search-field">
+      <mat-label i18n="@@searchOrganizations">Search organizations...</mat-label>
+      <input
+        matInput
+        [(ngModel)]="searchTerm"
+        placeholder="Search by title, email, or address" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div
+    class="organizations-content"
+    *ngIf="!isLoading; else loadingTemplate">
+    <div
+      class="organizations-grid"
+      *ngIf="filteredOrganizations.length > 0; else noResultsTemplate">
+      <mat-card
+        class="organization-card"
+        *ngFor="let organization of filteredOrganizations">
+        <mat-card-header>
+          <mat-card-title>{{ organization.title }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="organization-details">
+            <div class="detail-item">
+              <mat-icon>group</mat-icon>
+              <span>Allowed Members: {{ organization.allowedMembersCount }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button
+            mat-button
+            (click)="onViewOrganization(organization)">
+            <mat-icon>visibility</mat-icon>
+            <span i18n="@@view">View</span>
+          </button>
+          <button
+            mat-button
+            (click)="onEditOrganization(organization)">
+            <mat-icon>edit</mat-icon>
+            <span i18n="@@edit">Edit</span>
+          </button>
+          <button
+            mat-button
+            color="warn"
+            (click)="onDeleteOrganization(organization)">
+            <mat-icon>delete</mat-icon>
+            <span i18n="@@delete">Delete</span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <ng-template #noResultsTemplate>
+      <div class="no-results">
+        <mat-icon>search_off</mat-icon>
+        <h3 i18n="@@noOrganizationsFound">No organizations found</h3>
+        <p i18n="@@noOrganizationsFoundDescription">Try adjusting your search criteria or create a new organization.</p>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onCreateOrganization()">
+          <mat-icon>add</mat-icon>
+          <span i18n="@@createOrganization">Create Organization</span>
+        </button>
+      </div>
+    </ng-template>
+  </div>
+
+  <ng-template #loadingTemplate>
+    <div class="loading-container">
+      <mat-spinner diameter="50"></mat-spinner>
+      <p i18n="@@loadingOrganizations">Loading organizations...</p>
+    </div>
+  </ng-template>
+</div>

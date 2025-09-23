@@ -1,0 +1,221 @@
+<mat-card
+  *ngIf="!isLoading"
+  class="detail-card">
+  <mat-card-title
+    i18n="@@organizationDetails"
+    data-title="Organization Details"
+    ><span></span>
+    <div class="header-actions">
+      <button
+        mat-icon-button
+        (click)="onBack()"
+        matTooltip="Back">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div *ngIf="!organization">
+        <button
+          mat-icon-button
+          (click)="onEdit()"
+          *ngIf="organization"
+          matTooltip="Edit Organization">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="onDelete()"
+          *ngIf="organization"
+          matTooltip="Delete Organization">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card-title>
+
+  <div class="detail-content">
+    <mat-card
+      class="organization-detail-card"
+      *ngIf="organization">
+      <mat-card-header>
+        <mat-card-title>{{ organization.title }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="organization-info">
+          <div class="info-section">
+            <h3 i18n="@@organizationDetails">Organization Details</h3>
+            <div class="info-grid">
+              <div class="info-item">
+                <mat-icon>group</mat-icon>
+                <div class="info-content">
+                  <label i18n="@@allowedMembers">Allowed Members</label>
+                  <span>{{ organization.allowedMembersCount }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div
+      class="create-form-container"
+      *ngIf="!organization">
+      <div class="form-header">
+        <h2 i18n="@@createOrganization">Create New Organization</h2>
+        <p i18n="@@createOrganizationDescription">Create a new organization and assign an owner to manage it.</p>
+      </div>
+
+      <form
+        [formGroup]="organizationForm"
+        (ngSubmit)="onSubmit()"
+        class="form-container">
+        <mat-form-field class="title-field">
+          <mat-label i18n="@@organizationTitle">Organization Title *</mat-label>
+          <input
+            matInput
+            formControlName="title"
+            placeholder="Enter organization title" />
+          <mat-error>{{ getFieldError("title") }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label i18n="@@allowedMembers">Allowed Members *</mat-label>
+          <input
+            matInput
+            formControlName="allowedMembersCount"
+            type="number"
+            placeholder="Enter allowed members count" />
+          <mat-error>{{ getFieldError("allowedMembersCount") }}</mat-error>
+        </mat-form-field>
+
+        <div>
+          <mat-form-field>
+            <mat-label i18n="@@firstName">First Name *</mat-label>
+            <input
+              matInput
+              formControlName="firstName"
+              placeholder="Enter first name" />
+            <mat-error>{{ getFieldError("firstName") }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label i18n="@@lastName">Last Name *</mat-label>
+            <input
+              matInput
+              formControlName="lastName"
+              placeholder="Enter last name" />
+            <mat-error>{{ getFieldError("lastName") }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label i18n="@@email">Email *</mat-label>
+            <input
+              matInput
+              formControlName="email"
+              placeholder="Enter owner email" />
+            <mat-error>{{ getFieldError("email") }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label i18n="@@password">Password *</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              type="password"
+              placeholder="Enter password" />
+            <mat-error>{{ getFieldError("password") }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="button-group-wrapper">
+          <div class="button-group">
+            <button
+              mat-button
+              type="button"
+              (click)="onBack()"
+              [disabled]="isSubmitting">
+              <mat-icon>cancel</mat-icon>
+              <span i18n="@@cancel">Cancel</span>
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="isSubmitting">
+              <mat-icon *ngIf="!isSubmitting">add</mat-icon>
+              <mat-spinner
+                *ngIf="isSubmitting"
+                diameter="20"></mat-spinner>
+              <span i18n="@@createOrganization">Create Organization</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div
+      class="edit-form-container"
+      *ngIf="organization">
+      <div class="form-header">
+        <h2 i18n="@@editOrganization">Edit Organization</h2>
+        <p i18n="@@editOrganizationDescription">Update organization details.</p>
+      </div>
+
+      <form
+        [formGroup]="organizationForm"
+        (ngSubmit)="onSubmit()"
+        class="form-container">
+        <mat-form-field class="title-field">
+          <mat-label i18n="@@organizationTitle">Organization Title *</mat-label>
+          <input
+            matInput
+            formControlName="title"
+            placeholder="Enter organization title" />
+          <mat-error>{{ getFieldError("title") }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label i18n="@@allowedMembers">Allowed Members *</mat-label>
+          <input
+            matInput
+            formControlName="allowedMembersCount"
+            type="number"
+            placeholder="Enter allowed members count" />
+          <mat-error>{{ getFieldError("allowedMembersCount") }}</mat-error>
+        </mat-form-field>
+
+        <div class="button-group-wrapper">
+          <div class="button-group">
+            <button
+              mat-button
+              type="button"
+              (click)="onBack()"
+              [disabled]="isSubmitting">
+              <mat-icon>cancel</mat-icon>
+              <span i18n="@@cancel">Cancel</span>
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="isSubmitting">
+              <mat-icon *ngIf="!isSubmitting">save</mat-icon>
+              <mat-spinner
+                *ngIf="isSubmitting"
+                diameter="20"></mat-spinner>
+              <span i18n="@@updateOrganization">Update Organization</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <ng-template #loadingTemplate>
+      <div class="loading-container">
+        <mat-spinner diameter="50"></mat-spinner>
+        <p i18n="@@loadingOrganization">Loading organization details...</p>
+      </div>
+    </ng-template>
+  </div>
+</mat-card>

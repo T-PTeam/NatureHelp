@@ -18,6 +18,8 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatTableModule } from "@angular/material/table";
+import { MatChipsModule } from "@angular/material/chips";
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   imports: [
@@ -40,6 +42,8 @@ import { MatTableModule } from "@angular/material/table";
     MatExpansionModule,
     MatDividerModule,
     MatTableModule,
+    MatChipsModule,
+    MatDialogModule,
   ],
   exports: [
     MatIconModule,
@@ -60,6 +64,8 @@ import { MatTableModule } from "@angular/material/table";
     MatExpansionModule,
     MatDividerModule,
     MatTableModule,
+    MatChipsModule,
+    MatDialogModule,
   ],
 })
 export class MatModule {}
