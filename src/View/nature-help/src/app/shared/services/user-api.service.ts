@@ -260,8 +260,8 @@ export class UserAPIService {
     );
   }
 
-  addUserToOrganization(userData: IUser) {
-    return this.http.post<IUser>(`${this.apiUrl}/add-new-to-org`, userData).pipe(
+  addUserToOrganization(userData: IUser, isCreatingOwner: boolean) {
+    return this.http.post<IUser>(`${this.apiUrl}/add-new-to-org`, { ...userData, isCreatingOwner }).pipe(
       tap((user) =>
         this.notify.open(`User with role ${userData.role} (${user.email}) was added to the organization`, "Close", {
           duration: 6000,

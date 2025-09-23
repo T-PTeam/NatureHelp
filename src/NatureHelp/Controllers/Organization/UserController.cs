@@ -130,7 +130,7 @@ public class UserController : Controller
     [HttpPost("add-new-to-org")]
     public async Task<IActionResult> AddNewUserToOrganizationAsync([FromBody] UserLoginDto loginDto)
     {
-        return Ok(await _userService.AddUserToOrganizationAsync(loginDto));
+        return Ok(await _userService.AddUserToOrganizationAsync(loginDto, loginDto.IsCreatingOwner));
     }
 
     /// <summary>

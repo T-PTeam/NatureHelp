@@ -6,6 +6,7 @@ import { Subject, takeUntil } from "rxjs";
 
 import { IOrganization } from "@/models/IOrganization";
 import { IUser } from "@/models/IUser";
+import { ERole } from "@/models/enums";
 import { OrganizationAPIService } from "../../services/organization-api.service";
 import { UserAPIService } from "@/shared/services/user-api.service";
 
@@ -167,11 +168,11 @@ export class OrganizationDetailComponent implements OnInit, OnDestroy {
                 email: formData.email,
                 password: formData.password,
                 organizationId: createdOrganization.id,
-                role: 1,
+                role: ERole.Owner,
               } as IUser;
 
               this.userAPIService
-                .addUserToOrganization(userData)
+                .addUserToOrganization(userData, true)
                 .pipe(takeUntil(this.destroy$))
                 .subscribe({
                   next: () => {
