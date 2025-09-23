@@ -416,3 +416,4 @@ Thumbs.db
 !.eslintrc.js
 !.prettierrc
 /src/NatureHelp/appsettings.Production.json
+/src/NatureHelp/appsettings.Production.json

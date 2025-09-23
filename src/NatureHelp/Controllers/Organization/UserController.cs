@@ -126,7 +126,7 @@ public class UserController : Controller
     /// </summary>
     /// <param name="loginDto"></param>
     /// <returns>Assigning role to user</returns>
-    [Authorize(Roles = "Owner")]
+    [Authorize(Roles = "SuperAdmin, Owner")]
     [HttpPost("add-new-to-org")]
     public async Task<IActionResult> AddNewUserToOrganizationAsync([FromBody] UserLoginDto loginDto)
     {
@@ -138,7 +138,7 @@ public class UserController : Controller
     /// </summary>
     /// <param name="users"></param>
     /// <returns>Assigning role to user</returns>
-    [Authorize(Roles = "Owner")]
+    [Authorize(Roles = "SuperAdmin, Owner")]
     [HttpPost("add-multiple-to-org")]
     public async Task<IActionResult> AddMultipleUsersToOrganizationAsync([FromBody] IEnumerable<User> users)
     {
@@ -150,7 +150,7 @@ public class UserController : Controller
     /// </summary>
     /// <param name="organizationId"></param>
     /// <returns>Assigning role to user</returns>
-    [Authorize(Roles = "Owner")]
+    [Authorize(Roles = "SuperAdmin, Owner")]
     [HttpGet("users-not-login-ever")]
     public async Task<IActionResult> GetOrganizationUsersNotLoginEver([FromQuery] Guid organizationId)
     {
