@@ -7,10 +7,7 @@ import { DeficiencyDetailsService } from "@/shared/services/deficiency-details.s
 import { IDeficiencyDetailsState } from "@/shared/models/IDeficiencyFormConfig";
 import { WaterDeficiencyFormConfig } from "@/shared/services/deficiency-form-configs.service";
 
-import { EDeficiencyType } from "../../../../models/enums";
-import { IWaterDeficiency } from "../../models/IWaterDeficiency";
 import { UserAPIService } from "@/shared/services/user-api.service";
-import { IDeficiencyAttachment } from "@/models/IAttachment";
 
 @Component({
   selector: "n-water-deficiency-details",
@@ -22,6 +19,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   state: IDeficiencyDetailsState;
   detailsForm!: FormGroup;
   changedModelLogsOpened: boolean = false;
+  disableResearchFields: boolean = false;
   private formConfig = new WaterDeficiencyFormConfig();
 
   constructor(
