@@ -162,7 +162,8 @@
       [infiniteScrollDistance]="2"
       [infiniteScrollThrottle]="500"
       [infiniteScrollDisabled]="scrollCheckDisabled"
-      (scrolled)="onScroll()">
+      (scrolled)="onScroll()"
+      [scrollWindow]="false">
       <div
         *ngFor="let deficiency of soilAPIService.deficiencies$ | async"
         class="grid-row">
