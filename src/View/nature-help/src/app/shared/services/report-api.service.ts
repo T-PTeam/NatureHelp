@@ -34,6 +34,6 @@ export class ReportAPIService {
   public downloadOrgUsersExcelListFile(): any {
     return this.http
       .get(this.reportsUrl + "org-users", { responseType: "blob" })
-      .subscribe((fileBlob) => saveAs(fileBlob, "Organization Users"));
+      .subscribe((fileBlob) => saveAs(fileBlob, "User Management"));
   }
 }

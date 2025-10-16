@@ -3,7 +3,7 @@
   background-color: #f7fefc;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: "Segoe UI", sans-serif;
+  font-family: Oxanium, "Oxanium Fallback", Roboto, "Helvetica Neue", sans-serif;
   color: #2d3a3a;
   height: calc(100vh - 65px);
   width: 100%;

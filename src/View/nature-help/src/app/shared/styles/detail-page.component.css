@@ -13,7 +13,7 @@
 .detail-card mat-card-title {
   padding: 12px;
   color: #002855;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: Oxanium, "Oxanium Fallback", Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@
   left: 50%;
   transform: translateX(-50%);
   color: #002855;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: Oxanium, "Oxanium Fallback", Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -60,6 +60,7 @@
   justify-content: space-around;
   align-items: center;
   gap: 16px;
+  margin: 16px 0;
 }
 
 .title-field {
@@ -86,8 +87,6 @@
 
 .coordinates-container button {
   margin-top: 8px;
-  width: 40px;
-  height: 40px;
   transition: all 0.3s ease;
 }
 
@@ -97,18 +96,17 @@
 }
 
 .map-focus-btn {
-  background-color: #4caf50;
+  background-color: #3f51b5;
   color: white;
   border: none;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(63, 81, 181, 0.3);
 }
 
 .map-focus-btn:hover {
-  background-color: #45a049;
+  opacity: 0.8;
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.4);
 }
 
 .map-focus-btn:active {

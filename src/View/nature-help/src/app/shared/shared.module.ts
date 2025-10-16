@@ -9,7 +9,6 @@ import { PasswordResetDialogComponent } from "./components/dialogs/login-dialog/
 import { SendResetLinkDialogComponent } from "./components/dialogs/login-dialog/send-reset-link-dialog.component";
 import { MapComponent } from "./components/main-map/main-map.component";
 import { EnumToStringPipe } from "./pipes/enum-to-string.pipe";
-import { FilterPipe } from "./pipes/filter.pipe";
 import { LoadingService } from "./services/loading.service";
 import { ReportAPIService } from "./services/report-api.service";
 import { RoleStringPipe } from "./pipes/role-string.pipe";
@@ -39,7 +38,6 @@ import { WaterSoilToggleComponent } from "./components/buttons/water-soil-toggle
     CommentMessageListComponent,
     EmailConfirmationComponent,
 
-    FilterPipe,
     EnumToStringPipe,
     RoleStringPipe,
     LabResearchersPipe,
@@ -58,7 +56,6 @@ import { WaterSoilToggleComponent } from "./components/buttons/water-soil-toggle
     EmailConfirmationComponent,
     WaterSoilToggleComponent,
 
-    FilterPipe,
     EnumToStringPipe,
     RoleStringPipe,
     LabResearchersPipe,

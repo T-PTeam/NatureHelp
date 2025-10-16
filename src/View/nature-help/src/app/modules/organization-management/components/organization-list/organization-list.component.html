@@ -10,26 +10,15 @@
     </button>
   </div>
 
-  <div class="search-container">
-    <mat-form-field class="search-field">
-      <mat-label i18n="@@searchOrganizations">Search organizations...</mat-label>
-      <input
-        matInput
-        [(ngModel)]="searchTerm"
-        placeholder="Search by title, email, or address" />
-      <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
-  </div>
-
   <div
     class="organizations-content"
     *ngIf="!isLoading; else loadingTemplate">
     <div
       class="organizations-grid"
-      *ngIf="filteredOrganizations.length > 0; else noResultsTemplate">
+      *ngIf="organizations.length > 0; else noResultsTemplate">
       <mat-card
         class="organization-card"
-        *ngFor="let organization of filteredOrganizations">
+        *ngFor="let organization of organizations">
         <mat-card-header>
           <mat-card-title>{{ organization.title }}</mat-card-title>
         </mat-card-header>
@@ -58,7 +47,6 @@
           </button>
           <button
             mat-button
-            color="warn"
             (click)="onDeleteOrganization(organization)">
             <mat-icon>delete</mat-icon>
             <span i18n="@@delete">Delete</span>
@@ -71,7 +59,7 @@
       <div class="no-results">
         <mat-icon>search_off</mat-icon>
         <h3 i18n="@@noOrganizationsFound">No organizations found</h3>
-        <p i18n="@@noOrganizationsFoundDescription">Try adjusting your search criteria or create a new organization.</p>
+        <p i18n="@@noOrganizationsFoundDescription">No organizations found. Create a new organization.</p>
         <button
           mat-raised-button
           color="primary"

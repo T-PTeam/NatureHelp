@@ -14,6 +14,7 @@
     "cy:component": "cypress run --component",
     "cy:e2e": "cypress run",
     "build:prod:en": "ng build --configuration production --localize false",
+    "build:prod:uk": "ng build --configuration production --configuration uk",
     "build:prod": "ng build --configuration=production --localize --base-href /nature-help/",
     "e18n:extract": "ng run extract-i18n",
     "prettier:fix": "npx prettier --write .",

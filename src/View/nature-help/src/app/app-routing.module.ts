@@ -10,7 +10,7 @@ import { WaterDeficiencyDetail } from "./modules/water-deficiency/components/wat
 import { WaterDeficiencyTable } from "./modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component";
 import { UnauthorisedComponent } from "./shared/components/unauthorised/unauthorised.component";
 import { RoleGuard } from "./shared/guards/role.guard";
-import { OwnerPageComponent } from "./modules/owner/components/owner-page/owner-page.component";
+import { OrganizationUsersTableComponent } from "./modules/owner/components/organization-users-table/organization-users-table.component";
 import { ResearchTableComponent } from "./modules/laboratories/components/research-table/research-table.component";
 import { EmailConfirmationComponent } from "./shared/components/email-confirmation/email-confirmation.component";
 import { PasswordResetDialogComponent } from "./shared/components/dialogs/login-dialog/password-reset-dialog.component";
@@ -71,7 +71,7 @@ const routes: Routes = [
 
   {
     path: "owner",
-    component: OwnerPageComponent,
+    component: OrganizationUsersTableComponent,
     canActivate: [RoleGuard],
     data: { includeRoles: ["owner"] },
   },

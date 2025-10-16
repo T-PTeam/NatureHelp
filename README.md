@@ -1,3 +1,8 @@
+## License
+This project is licensed under a **Proprietary License**.  
+All rights reserved © 2025 Valentyn Riabinchak.  
+Use, modification, or distribution without explicit permission is strictly prohibited.
+
 # FuelStationsServer
 
 ## Core Angular Libraries:

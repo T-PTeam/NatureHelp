@@ -10,7 +10,6 @@ import { withLatestFrom } from "rxjs";
   standalone: false,
 })
 export class ResearchTableComponent implements OnInit {
-  public search: string = "";
   public scrollCheckDisabled: boolean = false;
 
   private listScrollCount = 0;

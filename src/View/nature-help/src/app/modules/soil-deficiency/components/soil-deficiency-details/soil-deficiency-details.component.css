@@ -1,0 +1,104 @@
+.upload-section {
+  margin: 1rem 0;
+}
+
+.upload-section mat-expansion-panel-header {
+  background-color: hsl(var(--muted));
+  border-radius: 4px;
+  border: 1px solid hsl(var(--border));
+}
+
+.upload-section mat-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: hsl(var(--primary));
+  font-weight: 500;
+}
+
+.upload-section mat-icon {
+  color: hsl(var(--primary));
+}
+
+.upload-section mat-panel-description {
+  color: hsl(var(--muted-foreground));
+  font-size: 14px;
+}
+
+.upload-section + nat-attachment-list {
+  margin-top: 1rem;
+}
+
+::ng-deep .success-snackbar {
+  background-color: hsl(var(--chart-1)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+::ng-deep .success-snackbar .mat-simple-snackbar-action {
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+::ng-deep .error-snackbar {
+  background-color: hsl(var(--destructive)) !important;
+  color: hsl(var(--destructive-foreground)) !important;
+}
+
+::ng-deep .error-snackbar .mat-simple-snackbar-action {
+  color: hsl(var(--destructive-foreground)) !important;
+}
+
+::ng-deep .warning-snackbar {
+  background-color: hsl(var(--chart-3)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+::ng-deep .warning-snackbar .mat-simple-snackbar-action {
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+::ng-deep .info-snackbar {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+::ng-deep .info-snackbar .mat-simple-snackbar-action {
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+.upload-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.upload-status.uploading {
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--primary) / 0.3);
+}
+
+.upload-status.error {
+  background-color: hsl(var(--destructive) / 0.1);
+  color: hsl(var(--destructive));
+  border: 1px solid hsl(var(--destructive) / 0.3);
+}
+
+.upload-status.success {
+  background-color: hsl(var(--chart-1) / 0.1);
+  color: hsl(var(--chart-1));
+  border: 1px solid hsl(var(--chart-1) / 0.3);
+}
+
+@media (max-height: 400px) and (orientation: landscape) {
+  .upload-section mat-panel-title {
+    font-size: 14px;
+  }
+
+  .upload-section mat-panel-description {
+    font-size: 12px;
+  }
+}

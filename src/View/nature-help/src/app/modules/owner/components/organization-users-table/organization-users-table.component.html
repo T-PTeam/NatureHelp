@@ -1,63 +1,131 @@
 <div class="header">
-  <h2>Organization Users</h2>
-  <mat-slide-toggle
-    [checked]="false"
-    (change)="switchOrganizationUsers()">
-  </mat-slide-toggle>
-  <h2>Not logined Users ever</h2>
-  <input
-    type="search"
-    class="input-like"
-    placeholder="Search for users..."
-    [(ngModel)]="search" />
-  <button
-    (click)="saveChangedRoles()"
-    class="btn-like"
-    id="save-btn">
-    <i class="material-icons">save</i>
-  </button>
-  <button
-    (click)="downloadExcel()"
-    class="btn-like"
-    id="export-btn">
-    <i class="material-icons">insert_drive_file</i>
-  </button>
+  <div class="header-text">
+    <h2>User Management</h2>
+    <p class="header-subtitle">Manage user accounts, roles, and permissions</p>
+  </div>
+
+  <div class="header-buttons">
+    <button
+      (click)="addUserToOrganization(false)"
+      class="action-btn">
+      <mat-icon>person_add</mat-icon>
+      <span>Add NEW user</span>
+    </button>
+
+    <button
+      (click)="addUserToOrganization(true)"
+      class="action-btn">
+      <mat-icon>group_add</mat-icon>
+      <span>Add MULTIPLE users</span>
+    </button>
+
+    <button
+      (click)="saveChangedRoles()"
+      class="action-btn save-btn"
+      [disabled]="changedUsersRoles.size === 0">
+      <mat-icon>save</mat-icon>
+      <span>Update Roles</span>
+    </button>
+
+    <button
+      (click)="downloadExcel()"
+      class="export-excel-btn">
+      <mat-icon>download</mat-icon>
+      <span class="xlsx-text">XLSX</span>
+    </button>
+  </div>
 </div>
 
-<div class="grid-container">
-  <div class="grid-header">
-    <div>First name</div>
-    <div>Last name</div>
-    <div>Role</div>
-    <div>Email</div>
+<div class="filters-section">
+  <div class="filters-card">
+    <div class="filters-header">
+      <h3>Filters</h3>
+      <p>Filter and search users</p>
+    </div>
+    <form
+      [formGroup]="filterForm"
+      class="filters-content">
+      <mat-form-field class="search-field">
+        <mat-label>Search by name, email...</mat-label>
+        <input
+          matInput
+          formControlName="search"
+          placeholder="Search by name, email..." />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="role-field">
+        <mat-label>All Roles</mat-label>
+        <mat-select formControlName="roleFilter">
+          <mat-option value="">All Roles</mat-option>
+          <mat-option
+            *ngFor="let role of roleOptions"
+            [value]="role.value"
+            >{{ role.label }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="status-field">
+        <mat-label>All Status</mat-label>
+        <mat-select formControlName="statusFilter">
+          <mat-option value="">All Status</mat-option>
+          <mat-option value="active">Active</mat-option>
+          <mat-option value="inactive">Inactive</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
   </div>
-  <div
-    class="grid-body"
-    infiniteScroll
-    [infiniteScrollDistance]="2"
-    [infiniteScrollThrottle]="500"
-    [infiniteScrollDisabled]="scrollCheckDisabled"
-    (scrolled)="onScroll()">
+</div>
+
+<div class="users-section">
+  <div class="users-header">
+    <div class="users-title">
+      <h3>Users</h3>
+      <span class="users-count">5 Total</span>
+    </div>
+    <p class="users-subtitle">Manage user accounts and permissions</p>
+  </div>
+
+  <div class="grid-container">
+    <div class="grid-header">
+      <div>First name</div>
+      <div>Last name</div>
+      <div>Role</div>
+      <div>Email</div>
+      <div>Status</div>
+    </div>
     <div
-      *ngFor="
-        let user of (isShowingAllOrgUsers
-          ? usersAPIService.$organizationUsers
-          : usersAPIService.$notLoginEverOrganizationUsers
-        ) | async
-      "
-      class="grid-row">
-      <div>{{ user.firstName }}</div>
-      <div>{{ user.lastName }}</div>
-      <mat-select
-        [value]="user.role"
-        (selectionChange)="userRoleChanged(user.id, $event.value)">
-        <mat-option
-          [value]="role"
-          *ngFor="let role of [1, 2, 3, 4]"
-          >{{ role | roleString }}</mat-option
-        >
-      </mat-select>
-      <div>{{ user.email }}</div>
+      class="grid-body"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="500"
+      [infiniteScrollDisabled]="scrollCheckDisabled"
+      (scrolled)="onScroll()">
+      <div
+        *ngFor="let user of combinedUsers | async"
+        class="grid-row">
+        <div>{{ user.firstName }}</div>
+        <div>{{ user.lastName }}</div>
+        <mat-select
+          [value]="user.role"
+          (selectionChange)="userRoleChanged(user.id, $event.value)">
+          <mat-option
+            *ngFor="let role of roleOptions"
+            [value]="role.value"
+            >{{ role.label }}</mat-option
+          >
+        </mat-select>
+        <div>{{ user.email }}</div>
+        <div class="status-cell">
+          <span
+            class="status-badge"
+            [class.status-active]="user.isActive"
+            [class.status-inactive]="!user.isActive">
+            {{ user.isActive ? "Active" : "Inactive" }}
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
