@@ -7,7 +7,6 @@ import { MatModule } from "@/mat.module";
 import { SharedModule } from "@/shared/shared.module";
 
 import { InfiniteScrollDirective } from "ngx-infinite-scroll";
-import { OwnerPageComponent } from "./components/owner-page/owner-page.component";
 import { OrganizationUsersTableComponent } from "./components/organization-users-table/organization-users-table.component";
 
 @NgModule({
@@ -20,7 +19,7 @@ import { OrganizationUsersTableComponent } from "./components/organization-users
     MatModule,
     InfiniteScrollDirective,
   ],
-  declarations: [OwnerPageComponent, OrganizationUsersTableComponent],
-  exports: [OwnerPageComponent, OrganizationUsersTableComponent],
+  declarations: [OrganizationUsersTableComponent],
+  exports: [OrganizationUsersTableComponent],
 })
 export class OwneryModule {}

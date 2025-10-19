@@ -29,7 +29,7 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets", "src/web.config"],
-            "styles": ["src/custom-theme.scss", "./node_modules/leaflet/dist/leaflet.css", "src/styles.css"],
+            "styles": ["./node_modules/leaflet/dist/leaflet.css", "src/custom-theme.scss", "src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -50,13 +50,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1.5mb",
-                  "maximumError": "2mb"
+                  "maximumWarning": "3.5mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "1.5mb",
-                  "maximumError": "2mb"
+                  "maximumWarning": "3.5mb",
+                  "maximumError": "5mb"
                 }
               ],
               "outputHashing": "all"
@@ -108,7 +108,7 @@
             "polyfills": ["zone.js", "zone.js/testing", "@angular/localize/init"],
             "tsConfig": "tsconfig.spec.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css", "src/mat-custom.css"],
+            "styles": ["src/styles.css", "src/custom-theme.scss"],
             "scripts": []
           }
         },

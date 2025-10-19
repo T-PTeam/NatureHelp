@@ -3,24 +3,25 @@
 }
 
 .upload-section mat-expansion-panel-header {
-  background-color: #f5f9ff;
+  background-color: hsl(var(--muted));
   border-radius: 4px;
+  border: 1px solid hsl(var(--border));
 }
 
 .upload-section mat-panel-title {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #2196f3;
+  color: hsl(var(--primary));
   font-weight: 500;
 }
 
 .upload-section mat-icon {
-  color: #2196f3;
+  color: hsl(var(--primary));
 }
 
 .upload-section mat-panel-description {
-  color: #666;
+  color: hsl(var(--muted-foreground));
   font-size: 14px;
 }
 
@@ -29,39 +30,39 @@
 }
 
 ::ng-deep .success-snackbar {
-  background-color: #4caf50 !important;
-  color: white !important;
+  background-color: hsl(var(--chart-1)) !important;
+  color: hsl(var(--primary-foreground)) !important;
 }
 
 ::ng-deep .success-snackbar .mat-simple-snackbar-action {
-  color: white !important;
+  color: hsl(var(--primary-foreground)) !important;
 }
 
 ::ng-deep .error-snackbar {
-  background-color: #f44336 !important;
-  color: white !important;
+  background-color: hsl(var(--destructive)) !important;
+  color: hsl(var(--destructive-foreground)) !important;
 }
 
 ::ng-deep .error-snackbar .mat-simple-snackbar-action {
-  color: white !important;
+  color: hsl(var(--destructive-foreground)) !important;
 }
 
 ::ng-deep .warning-snackbar {
-  background-color: #ff9800 !important;
-  color: white !important;
+  background-color: hsl(var(--chart-3)) !important;
+  color: hsl(var(--primary-foreground)) !important;
 }
 
 ::ng-deep .warning-snackbar .mat-simple-snackbar-action {
-  color: white !important;
+  color: hsl(var(--primary-foreground)) !important;
 }
 
 ::ng-deep .info-snackbar {
-  background-color: #2196f3 !important;
-  color: white !important;
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
 }
 
 ::ng-deep .info-snackbar .mat-simple-snackbar-action {
-  color: white !important;
+  color: hsl(var(--primary-foreground)) !important;
 }
 
 .upload-status {
@@ -75,21 +76,21 @@
 }
 
 .upload-status.uploading {
-  background-color: #e3f2fd;
-  color: #1976d2;
-  border: 1px solid #bbdefb;
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--primary) / 0.3);
 }
 
 .upload-status.error {
-  background-color: #ffebee;
-  color: #d32f2f;
-  border: 1px solid #ffcdd2;
+  background-color: hsl(var(--destructive) / 0.1);
+  color: hsl(var(--destructive));
+  border: 1px solid hsl(var(--destructive) / 0.3);
 }
 
 .upload-status.success {
-  background-color: #e8f5e8;
-  color: #2e7d32;
-  border: 1px solid #c8e6c9;
+  background-color: hsl(var(--chart-1) / 0.1);
+  color: hsl(var(--chart-1));
+  border: 1px solid hsl(var(--chart-1) / 0.3);
 }
 
 @media (max-height: 400px) and (orientation: landscape) {

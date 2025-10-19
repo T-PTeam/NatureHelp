@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
 html,
 body {
   height: 100%;
@@ -9,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Oxanium, "Oxanium Fallback", Roboto, "Helvetica Neue", sans-serif;
 }
 
 *,
@@ -24,8 +26,8 @@ body {
   max-width: 100%;
 }
 
-n-root,
-n-main-container {
+app-root,
+app-main-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -33,10 +35,6 @@ n-main-container {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .cluster-wrapper {
@@ -61,30 +59,32 @@ n-main-container {
 }
 
 .water-def-cluster {
-  background: #4285f4;
+  background: hsl(142.1 76.2% 36.3%);
   color: white;
 }
 
 .soil-def-cluster {
-  background: brown;
+  background: hsl(25 83% 53%);
   color: white;
 }
 
 .navbar {
   position: sticky;
   height: 56px;
-  background: #fff;
+  background: hsl(var(--background));
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   padding: 0 16px;
+  border-bottom: 1px solid hsl(var(--border));
 }
 
 .main-container {
   display: flex;
   height: 100vh;
   padding-top: 56px;
+  background: hsl(var(--background));
 }
 
 @media (max-height: 400px) and (orientation: landscape) {

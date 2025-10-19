@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { NavigationEnd, Router } from "@angular/router";
 import { Observable, Subject } from "rxjs";
-import { map, takeUntil } from "rxjs/operators";
+import { filter, map, startWith, takeUntil } from "rxjs/operators";
 import moment from "moment";
 
 import { AuthDialogComponent } from "@/shared/components/dialogs/login-dialog/auth-dialog.component";
@@ -29,10 +30,33 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     private emailVerificationService: EmailVerificationService,
     private notify: MatSnackBar,
     public mobileMapService: MobileMapService,
+    private router: Router,
   ) {}
 
   get isMobile(): boolean {
     return this.mobileMapService.isMobile();
+  }
+
+  isRouteActive(route: string): Observable<boolean> {
+    return this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map((event) => {
+        const url = event.url;
+        return url.includes(route);
+      }),
+      startWith(this.router.url.includes(route)),
+    );
+  }
+
+  isDeficienciesRouteActive(): Observable<boolean> {
+    return this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map((event) => {
+        const url = event.url;
+        return url.includes("water") || url.includes("soil") || url === "/";
+      }),
+      startWith(this.router.url.includes("water") || this.router.url.includes("soil") || this.router.url === "/"),
+    );
   }
 
   get isEmailVerificationDisabled$(): Observable<boolean> {

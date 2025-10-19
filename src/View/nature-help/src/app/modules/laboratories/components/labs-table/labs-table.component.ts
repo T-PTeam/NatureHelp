@@ -14,7 +14,6 @@ import { FormGroup, FormBuilder } from "@angular/forms";
   standalone: false,
 })
 export class LabsTableComponent implements OnInit {
-  public search: string = "";
   public scrollCheckDisabled: boolean = false;
   filterForm!: FormGroup;
 

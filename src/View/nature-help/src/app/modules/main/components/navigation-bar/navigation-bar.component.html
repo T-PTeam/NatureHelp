@@ -2,40 +2,54 @@
   <div class="navbar-left">
     <button
       i18n="@@deficienciesTab"
-      routerLink="water">
+      routerLink="water"
+      [class.active]="isDeficienciesRouteActive() | async">
       Deficiencies
     </button>
     <button
       i18n="@@laboratoriesTab"
-      routerLink="labs">
+      routerLink="labs"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }">
       Laboratories
     </button>
     <button
       i18n="@@researchesTab"
-      routerLink="researches">
+      routerLink="researches"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }">
       Researches
     </button>
     <button
       i18n="@@organizationViewTab"
       routerLink="owner"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }"
       *ngIf="userService.isOwner$ | async">
-      Organization View
+      User Management
     </button>
     <button
       i18n="@@organizationsTab"
       routerLink="organizations"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }"
       *ngIf="userService.isSuperAdmin$ | async">
       Organizations
     </button>
     <button
       i18n="@@aboutUs"
-      routerLink="about">
+      routerLink="about"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }">
       About us
     </button>
   </div>
 
   <div class="navbar-center">
-    <span>NatureHelp</span>
+    <img
+      src="assets/images/main-logo-text.png"
+      alt="NatureHelp"
+      class="main-logo" />
   </div>
 
   <div class="navbar-right">

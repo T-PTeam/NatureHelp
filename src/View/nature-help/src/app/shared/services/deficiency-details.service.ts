@@ -244,7 +244,6 @@ export class DeficiencyDetailsService implements OnDestroy {
     this.router.navigate(["/"]);
   }
 
-  // Attachment methods
   showPreview(attachment: IDeficiencyAttachment): void {
     this.dialog.open(AttachmentPreviewDialogComponent, {
       width: "fit-content",

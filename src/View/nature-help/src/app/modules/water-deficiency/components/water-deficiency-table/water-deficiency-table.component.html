@@ -54,7 +54,7 @@
       </button>
       <button
         i18n="@@clearBtn"
-        mat-raised-button
+        mat-button
         color="warn"
         type="button"
         (click)="filterForm.reset()"
@@ -71,9 +71,9 @@
 
     <button
       (click)="downloadExcel()"
-      class="btn-like"
-      id="export-btn">
-      <i class="material-icons">insert_drive_file</i>
+      class="export-excel-btn">
+      <mat-icon>download</mat-icon>
+      <span class="xlsx-text">XLSX</span>
     </button>
 
     <button

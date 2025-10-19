@@ -189,7 +189,7 @@ export class UserAPIService {
           this.totalCountSubject.next(listData.totalCount);
         }),
         catchError((err) => {
-          const message = "Could not load organization users...";
+          const message = "Could not load User Management...";
 
           console.error(err);
           this.notify.open(message, "Close", { duration: 2000 });
@@ -216,7 +216,7 @@ export class UserAPIService {
           this.notLoginEverOrganizationUsersSubject.next(listData.list);
         }),
         catchError((err) => {
-          const message = "Could not load organization users...";
+          const message = "Could not load User Management...";
 
           console.error(err);
           this.notify.open(message, "Close", { duration: 2000 });

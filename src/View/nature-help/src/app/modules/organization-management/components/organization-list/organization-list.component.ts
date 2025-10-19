@@ -15,7 +15,6 @@ import { OrganizationAPIService } from "../../services/organization-api.service"
 export class OrganizationListComponent implements OnInit, OnDestroy {
   organizations: IOrganization[] = [];
   isLoading = false;
-  searchTerm = "";
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -78,12 +77,5 @@ export class OrganizationListComponent implements OnInit, OnDestroy {
           },
         });
     }
-  }
-
-  get filteredOrganizations(): IOrganization[] {
-    if (!this.searchTerm.trim()) {
-      return this.organizations;
-    }
-    return this.organizations.filter((org) => org.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
 }

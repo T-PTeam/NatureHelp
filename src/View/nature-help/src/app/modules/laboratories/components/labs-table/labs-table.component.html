@@ -32,7 +32,7 @@
       </button>
       <button
         i18n="@@clearBtn"
-        mat-raised-button
+        mat-button
         color="warn"
         type="button"
         (click)="filterForm.reset()"
@@ -45,12 +45,6 @@
 
 <div class="header">
   <h2 i18n="@@laboratories">Laboratories</h2>
-  <input
-    type="search"
-    class="input-like"
-    placeholder="Search..."
-    i18n-placeholder="@@searchPlaceholder"
-    [(ngModel)]="search" />
   <button
     (click)="navigateToDetail()"
     class="btn-like"
