@@ -9,4 +9,5 @@ export interface ILaboratory extends IBaseEntity {
   longitude: number;
   researchersCount: number;
   address?: string;
+  isPublic: boolean;
 }

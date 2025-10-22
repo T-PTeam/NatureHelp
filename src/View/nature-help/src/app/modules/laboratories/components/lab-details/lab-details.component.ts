@@ -140,6 +140,7 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
       researchers: [laboratory?.researchers || []],
       researchersCount: [laboratory?.researchersCount ?? 0, [Validators.required, Validators.min(0)]],
       address: [laboratory?.address || ""],
+      isPublic: [laboratory?.isPublic || false],
     });
 
     this.details = {

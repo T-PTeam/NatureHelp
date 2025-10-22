@@ -38,14 +38,6 @@
       </mat-checkbox>
     </div>
 
-    <div class="checkbox-container">
-      <mat-checkbox
-        formControlName="isPublic"
-        i18n="@@isPublic">
-        Public deficiency
-      </mat-checkbox>
-    </div>
-
     <mat-form-field>
       <mat-label i18n="@@description">Description</mat-label>
       <textarea
@@ -59,10 +51,10 @@
 
     <mat-form-field class="full-width">
       <mat-label i18n="@@address">Address</mat-label>
-      <input
+      <textarea
         matInput
-        formControlName="address"
-        placeholder="Enter deficiency address" />
+        rows="5"
+        formControlName="address"></textarea>
     </mat-form-field>
 
     <div class="coordinates-container">
@@ -100,6 +92,14 @@
         class="map-focus-btn">
         <mat-icon>my_location</mat-icon>
       </button>
+    </div>
+
+    <div class="checkbox-container">
+      <mat-checkbox
+        formControlName="isPublic"
+        i18n="@@isPublic">
+        Public deficiency
+      </mat-checkbox>
     </div>
 
     <div
