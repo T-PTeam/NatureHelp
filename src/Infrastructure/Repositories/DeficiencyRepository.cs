@@ -18,7 +18,7 @@ public class DeficiencyRepository<D, MAPT> : BaseRepository<D>, IMapObjectsRepos
         _changedModelLogRepository = changedModelLogRepository;
     }
 
-    public async Task<IEnumerable<MAPT>> GetMapObjects(IDictionary<string, string?>? filters)
+    public async Task<IEnumerable<MAPT>> GetMapObjects(IDictionary<string, string?>? filters, Domain.Models.Organization.User? currentUser = null)
     {
         using var context = _contextFactory.CreateDbContext();
 
@@ -27,6 +27,7 @@ public class DeficiencyRepository<D, MAPT> : BaseRepository<D>, IMapObjectsRepos
         if (typeof(D) == typeof(WaterDeficiency))
         {
             result = context.WaterDeficiencies
+                .Where(d => d.IsPublic || (currentUser != null && d.Creator.OrganizationId == currentUser.OrganizationId))
                 .AsNoTracking()
                 .Select(d => new DeficiencyMapDto
                 {
@@ -45,6 +46,7 @@ public class DeficiencyRepository<D, MAPT> : BaseRepository<D>, IMapObjectsRepos
         else
         {
             result = context.SoilDeficiencies
+                .Where(d => d.IsPublic || (currentUser != null && d.Creator.OrganizationId == currentUser.OrganizationId))
                 .AsNoTracking()
                 .Select(d => new DeficiencyMapDto
                 {
@@ -67,11 +69,12 @@ public class DeficiencyRepository<D, MAPT> : BaseRepository<D>, IMapObjectsRepos
             .ToListAsync();
     }
 
-    public override async Task<IEnumerable<D>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters)
+    public async Task<IEnumerable<D>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters, Domain.Models.Organization.User? currentUser)
     {
         var context = _contextFactory.CreateDbContext();
 
         var query = context.Set<D>()
+            .Where(d => d.IsPublic || (currentUser != null && d.Creator.OrganizationId == currentUser.OrganizationId))
             .Include(d => d.Creator)
             .Include(d => d.ResponsibleUser)
             .ApplyFilters(filters ?? new Dictionary<string, string?>());

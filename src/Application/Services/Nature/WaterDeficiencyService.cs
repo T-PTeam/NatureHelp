@@ -1,4 +1,5 @@
-﻿using Application.Interfaces.Services.Audit;
+﻿using Application.Interfaces.Services;
+using Application.Interfaces.Services.Audit;
 using Domain.Enums;
 using Domain.Interfaces;
 using Domain.Models.Nature;
@@ -8,20 +9,24 @@ namespace Application.Services.Nature;
 public class WaterDeficiencyService : BaseService<WaterDeficiency>, IMapObjectsService<WaterDeficiency, DeficiencyMapDto>
 {
     private readonly IChangedModelLogService _logService;
+    private readonly IAuthenticationService _authService;
     private new readonly IMapObjectsRepository<WaterDeficiency, DeficiencyMapDto> _repository;
 
     public WaterDeficiencyService(
         IMapObjectsRepository<WaterDeficiency, DeficiencyMapDto> repository,
-        IChangedModelLogService logService)
+        IChangedModelLogService logService,
+        IAuthenticationService authService)
         : base(repository)
     {
         _logService = logService;
+        _authService = authService;
         _repository = repository;
     }
 
     public async Task<ListData<DeficiencyMapDto>> GetMapObjectsAsync(IDictionary<string, string?>? filters)
     {
-        var data = await _repository.GetMapObjects(filters);
+        var user = await _authService.GetCurrentUserAsync();
+        var data = await _repository.GetMapObjects(filters, user);
 
         ListData<DeficiencyMapDto> list = new ListData<DeficiencyMapDto>()
         {
@@ -31,6 +36,19 @@ public class WaterDeficiencyService : BaseService<WaterDeficiency>, IMapObjectsS
 
         return list;
     }
+
+    public override async Task<ListData<WaterDeficiency>> GetList(int scrollCount, IDictionary<string, string?>? filters)
+    {
+        var currentUser = await _authService.GetCurrentUserAsync();
+        var data = await _repository.GetAllAsync(scrollCount, filters, currentUser);
+
+        return new ListData<WaterDeficiency>
+        {
+            List = data,
+            TotalCount = data.Count()
+        };
+    }
+
 
     public override async Task<WaterDeficiency> UpdateAsync(WaterDeficiency entity)
     {

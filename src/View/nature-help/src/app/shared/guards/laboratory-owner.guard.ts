@@ -9,13 +9,13 @@ import { LabsAPIService } from "../../modules/laboratories/services/labs-api.ser
   providedIn: "root",
 })
 export class LaboratoryOwnerGuard implements CanActivate {
-  constructor (
+  constructor(
     private labsAPIService: LabsAPIService,
     private router: Router,
     private notify: MatSnackBar,
-  ) { }
+  ) {}
 
-  canActivate (route: ActivatedRouteSnapshot): Observable<boolean> | boolean {
+  canActivate(route: ActivatedRouteSnapshot): Observable<boolean> | boolean {
     const labId = route.params["id"];
 
     if (!labId) {
@@ -49,7 +49,7 @@ export class LaboratoryOwnerGuard implements CanActivate {
     );
   }
 
-  private showPermissionError (message: string): void {
+  private showPermissionError(message: string): void {
     this.notify.open(message, "Close", { duration: 3000 });
   }
 }

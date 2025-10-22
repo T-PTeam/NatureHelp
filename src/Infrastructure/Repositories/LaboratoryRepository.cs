@@ -10,11 +10,12 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
     public LaboratoryRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }
 
-    public async Task<IEnumerable<LaboratoryMapDto>> GetMapObjects(IDictionary<string, string?>? filters)
+    public async Task<IEnumerable<LaboratoryMapDto>> GetMapObjects(IDictionary<string, string?>? filters, User? currentUser = null)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
             var query = context.Laboratories
+                .Where(l => l.IsPublic || (currentUser != null && l.CreatedBy == currentUser.Id))
                 .AsNoTracking()
                 .Select(l => new LaboratoryMapDto
                 {
@@ -42,11 +43,12 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
         }
     }
 
-    public override async Task<IEnumerable<Laboratory>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters)
+    public override async Task<IEnumerable<Laboratory>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters, User? currentUser = null)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
             var query = context.Set<Laboratory>()
+                .Where(l => l.IsPublic || (currentUser != null && l.CreatedBy == currentUser.Id))
                 .Include(l => l.Researchers)
                 .Select(l => new Laboratory
                 {

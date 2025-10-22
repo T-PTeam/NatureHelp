@@ -93,6 +93,7 @@ export class DeficiencyDetailsService implements OnDestroy {
       createdOn: [deficiency?.createdOn || moment()],
       responsibleUserId: [deficiency?.responsibleUser?.id || state.currentUser?.id, [Validators.required]],
       isMonitoring: [deficiency?.deficiencyMonitoring?.isMonitoring || false],
+      isPublic: [deficiency?.isPublic || false],
     };
 
     const specificFields = config.getSpecificFormFields(deficiency, state.currentUser);

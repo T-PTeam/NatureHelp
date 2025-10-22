@@ -15,6 +15,7 @@ public class Deficiency : BaseModel, ICoordinates
     public Guid? ResponsibleUserId { get; set; }
     public User? ResponsibleUser { get; set; }
     public EDangerState EDangerState { get; set; } = EDangerState.Moderate;
+    public bool IsPublic { get; set; } = true;
 
     [ForeignKey(nameof(ChangedModelLog))]
     public Guid? ChangedModelLogEntityId { get; set; }

@@ -7,9 +7,9 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class RoleGuard implements CanActivate {
-  constructor (private notify: MatSnackBar) { }
+  constructor(private notify: MatSnackBar) {}
 
-  canActivate (route: ActivatedRouteSnapshot): Observable<boolean> | boolean {
+  canActivate(route: ActivatedRouteSnapshot): Observable<boolean> | boolean {
     const includeRoles = route.data["includeRoles"] || [];
     const excludeRoles = route.data["excludeRoles"] || [];
 
@@ -41,7 +41,7 @@ export class RoleGuard implements CanActivate {
     return true;
   }
 
-  private showPermissionAccessError (isAuthorized: boolean = false): boolean {
+  private showPermissionAccessError(isAuthorized: boolean = false): boolean {
     const message = isAuthorized ? "You do not have permission to access this page." : "Please, login to account";
     this.notify.open(message, "Close", { duration: 2000 });
     return false;

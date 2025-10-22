@@ -1,5 +1,6 @@
 ﻿using Domain.Interfaces;
 using Domain.Models;
+using Domain.Models.Organization;
 using Infrastructure.Data;
 using Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +16,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
 
     private ApplicationContext GetContext() => _contextFactory.CreateDbContext();
 
-    public virtual async Task<IEnumerable<T>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters = null)
+    public virtual async Task<IEnumerable<T>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters = null, User? currentUser = null)
     {
         var context = GetContext();
 

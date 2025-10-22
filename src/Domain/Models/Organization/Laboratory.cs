@@ -11,6 +11,7 @@ public class Laboratory : BaseModel, ICoordinates
     public int ResearchersCount { get; set; }
 
     public List<User>? Researchers { get; set; }
+    public bool IsPublic { get; set; }
 
     #region ICoordinates Implementation
     public double Longitude { get; set; }

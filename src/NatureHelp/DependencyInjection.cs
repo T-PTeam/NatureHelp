@@ -63,6 +63,7 @@ namespace NatureHelp
             services.AddScoped(typeof(IModelByDeficiencyService<>), typeof(DeficiencyBindModelService<>));
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IExcelExportService, ExcelExportService>();
