@@ -101,7 +101,7 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
       this.mobileMapService.hideMobileMap();
     }
 
-    this.router.navigate(["/laboratories"]);
+    this.router.navigate(["/labs"]);
   }
 
   toggleCoordinateSelection(event?: Event): void {

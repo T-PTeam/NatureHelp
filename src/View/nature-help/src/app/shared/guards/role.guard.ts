@@ -7,25 +7,41 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class RoleGuard implements CanActivate {
-  constructor(private notify: MatSnackBar) {}
+  constructor (private notify: MatSnackBar) { }
 
-  canActivate(route: ActivatedRouteSnapshot): Observable<boolean> | boolean {
+  canActivate (route: ActivatedRouteSnapshot): Observable<boolean> | boolean {
     const includeRoles = route.data["includeRoles"] || [];
     const excludeRoles = route.data["excludeRoles"] || [];
 
     const userRole = sessionStorage.getItem("role")?.toLowerCase();
-    if (userRole) {
-      if (userRole === "superadmin") return true;
-      else if (includeRoles.includes(userRole) || !excludeRoles.includes(userRole)) return true;
-      else {
-        return this.showPermissionAccessError(true);
-      }
-    } else {
+    if (!userRole) {
       return this.showPermissionAccessError();
     }
+
+    if (userRole === "superadmin") {
+      return true;
+    }
+
+    if (includeRoles.length > 0) {
+      if (includeRoles.includes(userRole)) {
+        return true;
+      } else {
+        return this.showPermissionAccessError(true);
+      }
+    }
+
+    if (excludeRoles.length > 0) {
+      if (!excludeRoles.includes(userRole)) {
+        return true;
+      } else {
+        return this.showPermissionAccessError(true);
+      }
+    }
+
+    return true;
   }
 
-  private showPermissionAccessError(isAuthorized: boolean = false): boolean {
+  private showPermissionAccessError (isAuthorized: boolean = false): boolean {
     const message = isAuthorized ? "You do not have permission to access this page." : "Please, login to account";
     this.notify.open(message, "Close", { duration: 2000 });
     return false;

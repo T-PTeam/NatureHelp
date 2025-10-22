@@ -10,6 +10,7 @@ import { WaterDeficiencyDetail } from "./modules/water-deficiency/components/wat
 import { WaterDeficiencyTable } from "./modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component";
 import { UnauthorisedComponent } from "./shared/components/unauthorised/unauthorised.component";
 import { RoleGuard } from "./shared/guards/role.guard";
+import { LaboratoryOwnerGuard } from "./shared/guards/laboratory-owner.guard";
 import { OrganizationUsersTableComponent } from "./modules/owner/components/organization-users-table/organization-users-table.component";
 import { ResearchTableComponent } from "./modules/laboratories/components/research-table/research-table.component";
 import { EmailConfirmationComponent } from "./shared/components/email-confirmation/email-confirmation.component";
@@ -61,13 +62,13 @@ const routes: Routes = [
   {
     path: "labs/:id",
     component: LabDetailsComponent,
-    canActivate: [RoleGuard],
+    canActivate: [RoleGuard, LaboratoryOwnerGuard],
     data: { includeRoles: ["researcher", "owner"] },
   },
-  {
-    path: "researches",
-    component: ResearchTableComponent,
-  },
+  // {
+  //   path: "researches",
+  //   component: ResearchTableComponent,
+  // },
 
   {
     path: "owner",
@@ -108,4 +109,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

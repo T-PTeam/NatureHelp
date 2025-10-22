@@ -46,6 +46,7 @@
 <div class="header">
   <h2 i18n="@@laboratories">Laboratories</h2>
   <button
+    *ngIf="userAPIService.isOwner$ | async"
     (click)="navigateToDetail()"
     class="btn-like"
     id="add-btn">
@@ -108,6 +109,7 @@
       <div class="btn-ceil">
         <button
           (click)="navigateToDetail(lab.id)"
+          [disabled]="!(userAPIService.isLoggedIn$ | async)"
           class="btn-like"
           id="edit-btn">
           <i class="fa fa-edit"></i>

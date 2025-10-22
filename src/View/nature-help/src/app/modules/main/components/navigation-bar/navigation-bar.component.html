@@ -1,102 +1,61 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <button
-      i18n="@@deficienciesTab"
-      routerLink="water"
-      [class.active]="isDeficienciesRouteActive() | async">
+    <button i18n="@@deficienciesTab" routerLink="water" [class.active]="isDeficienciesRouteActive() | async">
       Deficiencies
     </button>
-    <button
-      i18n="@@laboratoriesTab"
-      routerLink="labs"
-      routerLinkActive="active"
+    <button i18n="@@laboratoriesTab" routerLink="labs" routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: false }">
       Laboratories
     </button>
-    <button
+    <!-- <button
       i18n="@@researchesTab"
       routerLink="researches"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: false }">
       Researches
-    </button>
-    <button
-      i18n="@@organizationViewTab"
-      routerLink="owner"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: false }"
-      *ngIf="userService.isOwner$ | async">
+    </button> -->
+    <button i18n="@@organizationViewTab" routerLink="owner" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }" *ngIf="userService.isOwner$ | async">
       User Management
     </button>
-    <button
-      i18n="@@organizationsTab"
-      routerLink="organizations"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: false }"
-      *ngIf="userService.isSuperAdmin$ | async">
+    <button i18n="@@organizationsTab" routerLink="organizations" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }" *ngIf="userService.isSuperAdmin$ | async">
       Organizations
     </button>
-    <button
-      i18n="@@aboutUs"
-      routerLink="about"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: false }">
+    <button i18n="@@aboutUs" routerLink="about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
       About us
     </button>
   </div>
 
   <div class="navbar-center">
-    <img
-      src="assets/images/main-logo-text.png"
-      alt="NatureHelp"
-      class="main-logo" />
+    <img src="assets/images/main-logo-text.png" alt="NatureHelp" class="main-logo" />
   </div>
 
   <div class="navbar-right">
-    <button
-      *ngIf="isMobile"
-      data-cy="map-switch-mobile"
-      mat-button
-      (click)="mobileMapService.toggleMobileMap()">
+    <button *ngIf="isMobile" data-cy="map-switch-mobile" mat-button (click)="mobileMapService.toggleMobileMap()">
       <mat-icon class="icon-medium">map</mat-icon>
     </button>
 
-    <nat-map
-      *ngIf="isMobile"
-      class="mobile-map-view"
+    <nat-map *ngIf="isMobile" class="mobile-map-view"
       [ngStyle]="{ display: (mobileMapService.isMobileMapVisible$ | async) ? 'block' : 'none' }">
     </nat-map>
 
-    <button
-      data-cy="auth-menu"
-      mat-button
-      [matMenuTriggerFor]="menu">
+    <button data-cy="auth-menu" mat-button [matMenuTriggerFor]="menu">
       <mat-icon class="icon-medium">person</mat-icon>
     </button>
 
     <mat-menu #menu="matMenu">
-      <button
-        i18n="@@loginBtn"
-        data-cy="login-button"
-        mat-menu-item
-        (click)="openAuthDialog(false)"
+      <button i18n="@@loginBtn" data-cy="login-button" mat-menu-item (click)="openAuthDialog(false)"
         [disabled]="userService.isLoggedIn$ | async">
         Login
       </button>
-      <button
-        i18n="@@emailVerificationBtn"
-        mat-menu-item
-        (click)="sendEmailVerification()"
+      <button i18n="@@emailVerificationBtn" mat-menu-item (click)="sendEmailVerification()"
         [disabled]="isEmailVerificationDisabled$ | async">
         <span *ngIf="formattedTimeRemaining; else normalText"> Email Verification ({{ formattedTimeRemaining }}) </span>
         <ng-template #normalText> Email Verification </ng-template>
       </button>
 
-      <button
-        i18n="@@logoutBtn"
-        mat-menu-item
-        (click)="logout()"
-        [disabled]="userService.isLoggedOut$ | async">
+      <button i18n="@@logoutBtn" mat-menu-item (click)="logout()" [disabled]="userService.isLoggedOut$ | async">
         Logout
       </button>
     </mat-menu>
