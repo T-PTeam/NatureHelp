@@ -20,7 +20,7 @@ RUN npm install --legacy-peer-deps
 COPY . .
 
 # Build Angular app with українською локалізацією
-RUN npm run build -- --configuration=production --localize --base-href /nature-help/
+RUN npm run build -- --configuration=production --base-href /nature-help/
 
 FROM nginx:alpine AS frontend
 

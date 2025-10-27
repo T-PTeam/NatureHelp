@@ -1,0 +1,36 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.language-select {
+  min-width: 120px;
+}
+
+.language-select-field {
+  font-size: 14px;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag {
+  font-size: 16px;
+}
+
+.language-name {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .language-select {
+    min-width: 100px;
+  }
+
+  .language-name {
+    font-size: 12px;
+  }
+}

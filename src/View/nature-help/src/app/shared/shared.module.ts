@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { TranslateModule } from "@ngx-translate/core";
 
 import { MatModule } from "@/mat.module";
 
@@ -22,9 +23,13 @@ import { AttachmentPreviewDialogComponent } from "./components/dialogs/attachmen
 import { CommentMessageListComponent } from "./components/comment-message-list/comment-message-list.component";
 import { EmailConfirmationComponent } from "./components/email-confirmation/email-confirmation.component";
 import { WaterSoilToggleComponent } from "./components/buttons/water-soil-toggle/water-soil-toggle.component";
+import { DonationComponent } from "./components/donation/donation.component";
+import { LegalInfoComponent } from "./components/legal-info/legal-info.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { LanguageSwitcherComponent } from "./components/language-switcher/language-switcher.component";
 
 @NgModule({
-  imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule, WaterSoilToggleComponent],
+  imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule, WaterSoilToggleComponent, TranslateModule],
   declarations: [
     MapComponent,
     AuthDialogComponent,
@@ -37,6 +42,10 @@ import { WaterSoilToggleComponent } from "./components/buttons/water-soil-toggle
     AttachmentPreviewDialogComponent,
     CommentMessageListComponent,
     EmailConfirmationComponent,
+    DonationComponent,
+    LegalInfoComponent,
+    FooterComponent,
+    LanguageSwitcherComponent,
 
     EnumToStringPipe,
     RoleStringPipe,
@@ -55,6 +64,10 @@ import { WaterSoilToggleComponent } from "./components/buttons/water-soil-toggle
     CommentMessageListComponent,
     EmailConfirmationComponent,
     WaterSoilToggleComponent,
+    DonationComponent,
+    LegalInfoComponent,
+    FooterComponent,
+    LanguageSwitcherComponent,
 
     EnumToStringPipe,
     RoleStringPipe,

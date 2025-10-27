@@ -1,12 +1,12 @@
 <div class="organization-list-container">
   <div class="list-header">
-    <h2 i18n="@@organizations">Organizations</h2>
+    <h2>{{ "tables.organizations" | translate }}</h2>
     <button
       mat-raised-button
       color="primary"
       (click)="onCreateOrganization()">
       <mat-icon>add</mat-icon>
-      <span i18n="@@createOrganization">Create Organization</span>
+      <span>{{ "forms.createOrganization" | translate }}</span>
     </button>
   </div>
 
@@ -37,19 +37,19 @@
             mat-button
             (click)="onViewOrganization(organization)">
             <mat-icon>visibility</mat-icon>
-            <span i18n="@@view">View</span>
+            <span>{{ "tableHeaders.view" | translate }}</span>
           </button>
           <button
             mat-button
             (click)="onEditOrganization(organization)">
             <mat-icon>edit</mat-icon>
-            <span i18n="@@edit">Edit</span>
+            <span>{{ "tableHeaders.edit" | translate }}</span>
           </button>
           <button
             mat-button
             (click)="onDeleteOrganization(organization)">
             <mat-icon>delete</mat-icon>
-            <span i18n="@@delete">Delete</span>
+            <span>{{ "tableHeaders.delete" | translate }}</span>
           </button>
         </mat-card-actions>
       </mat-card>
@@ -58,14 +58,14 @@
     <ng-template #noResultsTemplate>
       <div class="no-results">
         <mat-icon>search_off</mat-icon>
-        <h3 i18n="@@noOrganizationsFound">No organizations found</h3>
-        <p i18n="@@noOrganizationsFoundDescription">No organizations found. Create a new organization.</p>
+        <h3>{{ "tables.noOrganizationsFound" | translate }}</h3>
+        <p>{{ "tables.noOrganizationsFoundDescription" | translate }}</p>
         <button
           mat-raised-button
           color="primary"
           (click)="onCreateOrganization()">
           <mat-icon>add</mat-icon>
-          <span i18n="@@createOrganization">Create Organization</span>
+          <span>{{ "forms.createOrganization" | translate }}</span>
         </button>
       </div>
     </ng-template>
@@ -74,7 +74,7 @@
   <ng-template #loadingTemplate>
     <div class="loading-container">
       <mat-spinner diameter="50"></mat-spinner>
-      <p i18n="@@loadingOrganizations">Loading organizations...</p>
+      <p>{{ "tables.loadingOrganizations" | translate }}</p>
     </div>
   </ng-template>
 </div>

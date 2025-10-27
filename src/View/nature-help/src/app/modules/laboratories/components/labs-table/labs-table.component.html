@@ -1,10 +1,6 @@
 <mat-expansion-panel class="filter-panel">
   <mat-expansion-panel-header class="filter-header">
-    <mat-panel-title
-      i18n="@@filterTitle"
-      class="filter-title"
-      >Filter</mat-panel-title
-    >
+    <mat-panel-title class="filter-title">{{ "filters.filterTitle" | translate }}</mat-panel-title>
   </mat-expansion-panel-header>
 
   <form
@@ -13,38 +9,36 @@
     class="filter-form">
     <div class="form-row">
       <mat-form-field class="form-field">
-        <mat-label>Title</mat-label>
+        <mat-label>{{ "forms.title" | translate }}</mat-label>
         <input
           matInput
           formControlName="title"
-          placeholder="Enter lab title" />
+          [placeholder]="'filters.filterPlaceholder' | translate" />
       </mat-form-field>
     </div>
 
     <div class="action-buttons">
       <button
-        i18n="@@applyBtn"
         mat-raised-button
         color="primary"
         type="submit"
         class="apply-button">
-        Apply
+        {{ "forms.applyBtn" | translate }}
       </button>
       <button
-        i18n="@@clearBtn"
         mat-button
         color="warn"
         type="button"
         (click)="filterForm.reset()"
         class="reset-button">
-        Clear
+        {{ "forms.clearBtn" | translate }}
       </button>
     </div>
   </form>
 </mat-expansion-panel>
 
 <div class="header">
-  <h2 i18n="@@laboratories">Laboratories</h2>
+  <h2>{{ "tables.laboratories" | translate }}</h2>
   <button
     *ngIf="userAPIService.isOwner$ | async"
     (click)="navigateToDetail()"
@@ -56,32 +50,14 @@
 
 <div class="grid-container">
   <div class="grid-header">
-    <div
-      i18n="@@title"
-      i18n-matTooltip="@@title"
-      matTooltip="Title">
-      Title
+    <div [matTooltip]="'tableHeaders.title' | translate">{{ "tableHeaders.title" | translate }}</div>
+    <div [matTooltip]="'tableHeaders.location' | translate">{{ "tableHeaders.location" | translate }}</div>
+    <div [matTooltip]="'tableHeaders.researchers' | translate">{{ "tableHeaders.researchers" | translate }}</div>
+    <div [matTooltip]="'tableHeaders.researchesCount' | translate">
+      {{ "tableHeaders.researchesCount" | translate }}
     </div>
-    <div
-      i18n="@@location"
-      i18n-matTooltip="@@location"
-      matTooltip="Location">
-      Location
-    </div>
-    <div
-      i18n="@@researchers"
-      i18n-matTooltip="@@researchers"
-      matTooltip="Researchers">
-      Researchers
-    </div>
-    <div
-      i18n="@@researchesNumber"
-      i18n-matTooltip="@@researchesNumber"
-      matTooltip="Researches number">
-      Researchers number
-    </div>
-    <div matTooltip="Map">Map</div>
-    <div matTooltip="Edit">Edit</div>
+    <div [matTooltip]="'tableHeaders.location' | translate">{{ "tableHeaders.location" | translate }}</div>
+    <div [matTooltip]="'tableHeaders.edit' | translate">{{ "tableHeaders.edit" | translate }}</div>
   </div>
   <div
     class="grid-body"
@@ -102,7 +78,7 @@
           mat-icon-button
           color="primary"
           (click)="changeMapFocus(lab.latitude, lab.longitude)"
-          matTooltip="Location">
+          [matTooltip]="'tableHeaders.location' | translate">
           <mat-icon>my_location</mat-icon>
         </button>
       </div>

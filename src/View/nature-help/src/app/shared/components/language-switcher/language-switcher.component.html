@@ -1,0 +1,13 @@
+<div class="language-switcher">
+  <select
+    [value]="currentLanguage"
+    (change)="switchLanguage($event)"
+    class="language-select">
+    <option
+      *ngFor="let lang of languages"
+      [value]="lang.code"
+      class="language-option">
+      {{ lang.flag }} {{ lang.name }}
+    </option>
+  </select>
+</div>

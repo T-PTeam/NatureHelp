@@ -1,26 +1,23 @@
 <h2
   mat-dialog-title
-  class="dialog-title"
-  i18n="@@loginTitle">
-  Login
+  class="dialog-title">
+  {{ "passwordReset.loginTitle" | translate }}
 </h2>
 <div mat-dialog-content>
   <form [formGroup]="formGroup">
     <mat-form-field class="full-width">
-      <mat-label i18n="@@emailLabel">Email</mat-label>
+      <mat-label>{{ "forms.email" | translate }}</mat-label>
       <input
         matInput
         type="email"
         formControlName="email" />
-      <mat-error
-        i18n="@@emailError"
-        *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
-        Please enter a valid email
+      <mat-error *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+        {{ "passwordReset.emailError" | translate }}
       </mat-error>
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <mat-label i18n="@@passwordLabel">Password</mat-label>
+      <mat-label>{{ "passwordReset.passwordLabel" | translate }}</mat-label>
       <input
         matInput
         [type]="hidePassword ? 'password' : 'text'"
@@ -32,19 +29,16 @@
         type="button">
         <mat-icon>{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon>
       </button>
-      <mat-error
-        i18n="@@passwordError"
-        *ngIf="formGroup.get('password')?.invalid && formGroup.get('password')?.touched">
-        Password must be at least 6 characters
+      <mat-error *ngIf="formGroup.get('password')?.invalid && formGroup.get('password')?.touched">
+        {{ "passwordReset.passwordError" | translate }}
       </mat-error>
     </mat-form-field>
 
     <div class="forgot-password-link">
       <a
         href="#"
-        (click)="onForgotPassword($event)"
-        i18n="@@forgotPasswordLink">
-        Forgot Password?
+        (click)="onForgotPassword($event)">
+        {{ "passwordReset.forgotPassword" | translate }}
       </a>
     </div>
   </form>
@@ -54,20 +48,18 @@
   mat-dialog-actions
   class="action-buttons">
   <button
-    i18n="@@cancelBtn"
     class="reset-button"
     mat-raised-button
     (click)="closeDialog()">
-    Cancel
+    {{ "common.cancel" | translate }}
   </button>
   <button
-    i18n="@@loginBtn"
     class="apply-button"
     mat-flat-button
     color="primary"
     (click)="onSubmit()"
     [disabled]="formGroup.invalid"
     type="submit">
-    Login
+    {{ "passwordReset.loginBtn" | translate }}
   </button>
 </div>

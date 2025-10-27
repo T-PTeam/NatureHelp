@@ -64,6 +64,7 @@ namespace NatureHelp
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IExcelExportService, ExcelExportService>();

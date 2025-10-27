@@ -1,47 +1,41 @@
 <nav class="navbar">
   <div class="navbar-left">
     <button
-      i18n="@@deficienciesTab"
       routerLink="water"
       [class.active]="isDeficienciesRouteActive() | async">
-      Deficiencies
+      {{ "navigation.deficiencies" | translate }}
     </button>
     <button
-      i18n="@@laboratoriesTab"
       routerLink="labs"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: false }">
-      Laboratories
+      {{ "navigation.laboratories" | translate }}
     </button>
     <!-- <button
-      i18n="@@researchesTab"
       routerLink="researches"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: false }">
       Researches
     </button> -->
     <button
-      i18n="@@organizationViewTab"
       routerLink="owner"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: false }"
       *ngIf="userService.isOwner$ | async">
-      User Management
+      {{ "navigation.userManagement" | translate }}
     </button>
     <button
-      i18n="@@organizationsTab"
       routerLink="organizations"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: false }"
       *ngIf="userService.isSuperAdmin$ | async">
-      Organizations
+      {{ "navigation.organizations" | translate }}
     </button>
     <button
-      i18n="@@aboutUs"
       routerLink="about"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: false }">
-      About us
+      {{ "navigation.aboutUs" | translate }}
     </button>
   </div>
 
@@ -67,6 +61,8 @@
       [ngStyle]="{ display: (mobileMapService.isMobileMapVisible$ | async) ? 'block' : 'none' }">
     </nat-map>
 
+    <app-language-switcher></app-language-switcher>
+
     <button
       data-cy="auth-menu"
       mat-button
@@ -76,28 +72,27 @@
 
     <mat-menu #menu="matMenu">
       <button
-        i18n="@@loginBtn"
-        data-cy="login-button"
         mat-menu-item
+        data-cy="login-button"
         (click)="openAuthDialog(false)"
         [disabled]="userService.isLoggedIn$ | async">
-        Login
+        {{ "navigation.login" | translate }}
       </button>
       <button
-        i18n="@@emailVerificationBtn"
         mat-menu-item
         (click)="sendEmailVerification()"
         [disabled]="isEmailVerificationDisabled$ | async">
-        <span *ngIf="formattedTimeRemaining; else normalText"> Email Verification ({{ formattedTimeRemaining }}) </span>
-        <ng-template #normalText> Email Verification </ng-template>
+        <span *ngIf="formattedTimeRemaining; else normalText">
+          {{ "navigation.emailVerification" | translate }} ({{ formattedTimeRemaining }})
+        </span>
+        <ng-template #normalText> {{ "navigation.emailVerification" | translate }} </ng-template>
       </button>
 
       <button
-        i18n="@@logoutBtn"
         mat-menu-item
         (click)="logout()"
         [disabled]="userService.isLoggedOut$ | async">
-        Logout
+        {{ "navigation.logout" | translate }}
       </button>
     </mat-menu>
   </div>

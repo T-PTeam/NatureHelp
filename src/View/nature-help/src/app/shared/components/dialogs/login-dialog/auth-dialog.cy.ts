@@ -1,4 +1,3 @@
-import "@angular/localize/init";
 import { mount } from "cypress/angular";
 import { AuthDialogComponent } from "./auth-dialog.component";
 import { MatDialogModule, MatDialogRef } from "@angular/material/dialog";
