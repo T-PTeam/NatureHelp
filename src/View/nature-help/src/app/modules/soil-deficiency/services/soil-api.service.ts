@@ -4,6 +4,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from "rxjs";
 
 import { ISoilDeficiency } from "@/modules/soil-deficiency/models/ISoilDeficiency";
+import { IDeficiencyMapDto } from "@/models/IDeficiencyMapDto";
 import { LoadingService } from "@/shared/services/loading.service";
 import { IListData } from "@/shared/models/IListData";
 import { ISoilDeficiencyFilter } from "../models/ISoilDeficiencyFilter";
@@ -13,8 +14,10 @@ import { environment } from "src/environments/environment.dev";
 export class SoilAPIService {
   private listSubject = new BehaviorSubject<ISoilDeficiency[]>([]);
   private totalCountSubject = new BehaviorSubject<number>(0);
+  private mapDataSubject = new BehaviorSubject<IDeficiencyMapDto[]>([]);
   public deficiencies$: Observable<ISoilDeficiency[]> = this.listSubject.asObservable();
   public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
+  public mapDeficiencies$: Observable<IDeficiencyMapDto[]> = this.mapDataSubject.asObservable();
   private soilsUrl = `${environment.apiUrl}/SoilDeficiency`;
 
   httpOptions = {
@@ -27,6 +30,7 @@ export class SoilAPIService {
     private loading: LoadingService,
   ) {
     this.loadSoilDeficiencies(0, null);
+    this.loadAllSoilDeficienciesForMap();
   }
 
   public loadSoilDeficiencies(
@@ -58,6 +62,22 @@ export class SoilAPIService {
     );
     this.loading.showLoaderUntilCompleted(loadDeficiencies$).subscribe();
     return this.deficiencies$;
+  }
+
+  public loadAllSoilDeficienciesForMap() {
+    this.http
+      .get<IListData<IDeficiencyMapDto>>(`${this.soilsUrl}/map-objects`)
+      .pipe(
+        tap((data) => {
+          this.mapDataSubject.next(data.list);
+        }),
+        catchError((err) => {
+          console.error("Could not load soil deficiencies for map", err);
+          return of({ list: [], totalCount: 0 } as IListData<IDeficiencyMapDto>);
+        }),
+        shareReplay(),
+      )
+      .subscribe();
   }
 
   public getSoilDeficiencyById(id: string): Observable<ISoilDeficiency> {

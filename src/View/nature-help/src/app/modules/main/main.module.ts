@@ -3,6 +3,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { TranslateModule } from "@ngx-translate/core";
 
 import { AppRoutingModule } from "@/app-routing.module";
 import { MatModule } from "@/mat.module";
@@ -10,6 +11,7 @@ import { MatModule } from "@/mat.module";
 import { SharedModule } from "../../shared/shared.module";
 import { MainContainerComponent } from "./components/main-container/main-container.component";
 import { NavigationBarComponent } from "./components/navigation-bar/navigation-bar.component";
+import { AboutComponent } from "./components/about/about.component";
 
 @NgModule({
   imports: [
@@ -21,8 +23,9 @@ import { NavigationBarComponent } from "./components/navigation-bar/navigation-b
     MatModule,
     ReactiveFormsModule,
     FormsModule,
+    TranslateModule,
   ],
-  declarations: [MainContainerComponent, NavigationBarComponent],
-  exports: [MainContainerComponent, NavigationBarComponent],
+  declarations: [MainContainerComponent, NavigationBarComponent, AboutComponent],
+  exports: [MainContainerComponent, NavigationBarComponent, AboutComponent],
 })
 export class MainModule {}

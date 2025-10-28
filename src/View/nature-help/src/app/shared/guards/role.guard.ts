@@ -14,15 +14,31 @@ export class RoleGuard implements CanActivate {
     const excludeRoles = route.data["excludeRoles"] || [];
 
     const userRole = sessionStorage.getItem("role")?.toLowerCase();
-    if (userRole) {
-      if (userRole === "superadmin") return true;
-      else if (includeRoles.includes(userRole) || !excludeRoles.includes(userRole)) return true;
-      else {
-        return this.showPermissionAccessError(true);
-      }
-    } else {
+    if (!userRole) {
       return this.showPermissionAccessError();
     }
+
+    if (userRole === "superadmin") {
+      return true;
+    }
+
+    if (includeRoles.length > 0) {
+      if (includeRoles.includes(userRole)) {
+        return true;
+      } else {
+        return this.showPermissionAccessError(true);
+      }
+    }
+
+    if (excludeRoles.length > 0) {
+      if (!excludeRoles.includes(userRole)) {
+        return true;
+      } else {
+        return this.showPermissionAccessError(true);
+      }
+    }
+
+    return true;
   }
 
   private showPermissionAccessError(isAuthorized: boolean = false): boolean {

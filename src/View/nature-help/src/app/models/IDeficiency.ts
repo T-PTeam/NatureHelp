@@ -18,4 +18,5 @@ export interface IDeficiency extends IBaseEntity {
   changedModelLog: IChangedModelLog[];
   address?: string;
   deficiencyMonitoring?: IDeficiencyMonitoring;
+  isPublic: boolean;
 }

@@ -1,37 +1,55 @@
 <div class="about-container">
-  <h1 i18n="@@aboutTitle">About NatureHelp</h1>
-  <p
-    class="intro"
-    i18n="@@aboutIntro">
-    NatureHelp is a platform designed to protect and preserve our environment by empowering individuals, researchers,
-    and communities with tools to monitor and understand the state of nature.
+  <h1>{{ "about.title" | translate }}</h1>
+  <p class="intro">
+    {{ "about.intro" | translate }}
   </p>
 
-  <h2 i18n="@@missionTitle">Our Mission</h2>
-  <p i18n="@@missionText">
-    To foster environmental responsibility by connecting people with the tools and knowledge to care for the natural
-    world around them.
+  <a
+    href="https://send.monobank.ua/jar/uk6W7bonecHec0TLk5_GtutRrFJdk1TBQ5_1ClpmjqjM"
+    target="_blank">
+    <button>💚 {{ "about.supportMonobank" | translate }}</button>
+  </a>
+
+  <form
+    method="POST"
+    action="https://www.liqpay.ua/api/3/checkout"
+    accept-charset="utf-8">
+    <input
+      type="hidden"
+      name="data"
+      value="{{ data }}" />
+    <input
+      type="hidden"
+      name="signature"
+      value="{{ signature }}" />
+    <button type="submit">💚 {{ "about.donateWithLiqpay" | translate }}</button>
+  </form>
+
+  <h2>{{ "about.mission" | translate }}</h2>
+  <p>
+    {{ "about.missionText" | translate }}
   </p>
 
-  <h2 i18n="@@whatWeDoTitle">What We Do</h2>
+  <h2>{{ "about.whatWeDo" | translate }}</h2>
   <ul>
-    <li i18n="@@whatWeDoSupport">🧪 Support Researchers with tools to analyze and map lab data</li>
-    <li i18n="@@whatWeDoVisualize">🗺️ Visualize Environmental Changes using interactive maps and real-time reports</li>
-    <li i18n="@@whatWeDoInvolve">🌱 Involve Communities in protecting their ecosystems</li>
-    <li i18n="@@whatWeDoMonitor">🔍 Enable Transparent Monitoring of soil and water conditions</li>
+    <li>🧪 {{ "about.supportResearchers" | translate }}</li>
+    <li>🗺️ {{ "about.visualizeChanges" | translate }}</li>
+    <li>🌱 {{ "about.involveCommunities" | translate }}</li>
+    <li>🔍 {{ "about.enableMonitoring" | translate }}</li>
   </ul>
 
-  <h2 i18n="@@whoWeAreTitle">Who We’re For</h2>
+  <h2>{{ "about.whoWeAre" | translate }}</h2>
   <ul>
-    <li i18n="@@audienceScientists">Environmental scientists</li>
-    <li i18n="@@audienceCommunities">Local communities</li>
-    <li i18n="@@audienceEducation">Educators and students</li>
-    <li i18n="@@audienceAnyone">Anyone who cares about nature</li>
+    <li>{{ "about.scientists" | translate }}</li>
+    <li>{{ "about.communities" | translate }}</li>
+    <li>{{ "about.educators" | translate }}</li>
+    <li>{{ "about.anyone" | translate }}</li>
   </ul>
 
-  <h2 i18n="@@whyItMattersTitle">Why It Matters</h2>
-  <p i18n="@@whyItMattersText">
-    NatureHelp bridges the gap between data and action — giving every user a chance to become part of the solution for a
-    greener future.
+  <h2>{{ "about.whyItMatters" | translate }}</h2>
+  <p>
+    {{ "about.whyItMattersText" | translate }}
   </p>
+
+  <app-legal-info></app-legal-info>
 </div>

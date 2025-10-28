@@ -3,6 +3,6 @@
   color="primary"
   [class.active]="isActive"
   (click)="onButtonClick($event)"
-  matTooltip="Select coordinates on map">
+  [matTooltip]="'forms.selectCoordinatesTooltip' | translate">
   <mat-icon>edit_location</mat-icon>
 </button>

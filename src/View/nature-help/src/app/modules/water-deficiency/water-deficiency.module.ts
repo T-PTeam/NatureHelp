@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { TranslateModule } from "@ngx-translate/core";
 
 import { MatModule } from "@/mat.module";
 import { SharedModule } from "@/shared/shared.module";
@@ -19,6 +20,7 @@ import { PickCoordinatesButtonComponent } from "@/shared/components/custom-eleme
     FormsModule,
     MatModule,
     SharedModule,
+    TranslateModule,
     InfiniteScrollDirective,
     PickCoordinatesButtonComponent,
   ],

@@ -1,7 +1,7 @@
 <div class="header">
   <div class="header-text">
-    <h2>User Management</h2>
-    <p class="header-subtitle">Manage user accounts, roles, and permissions</p>
+    <h2>{{ "userManagement.title" | translate }}</h2>
+    <p class="header-subtitle">{{ "userManagement.subtitle" | translate }}</p>
   </div>
 
   <div class="header-buttons">
@@ -9,14 +9,14 @@
       (click)="addUserToOrganization(false)"
       class="action-btn">
       <mat-icon>person_add</mat-icon>
-      <span>Add NEW user</span>
+      <span>{{ "userManagement.addNewUser" | translate }}</span>
     </button>
 
     <button
       (click)="addUserToOrganization(true)"
       class="action-btn">
       <mat-icon>group_add</mat-icon>
-      <span>Add MULTIPLE users</span>
+      <span>{{ "userManagement.addMultipleUsers" | translate }}</span>
     </button>
 
     <button
@@ -24,7 +24,7 @@
       class="action-btn save-btn"
       [disabled]="changedUsersRoles.size === 0">
       <mat-icon>save</mat-icon>
-      <span>Update Roles</span>
+      <span>{{ "userManagement.updateRoles" | translate }}</span>
     </button>
 
     <button
@@ -39,39 +39,39 @@
 <div class="filters-section">
   <div class="filters-card">
     <div class="filters-header">
-      <h3>Filters</h3>
-      <p>Filter and search users</p>
+      <h3>{{ "userManagement.filtersTitle" | translate }}</h3>
+      <p>{{ "userManagement.filtersSubtitle" | translate }}</p>
     </div>
     <form
       [formGroup]="filterForm"
       class="filters-content">
       <mat-form-field class="search-field">
-        <mat-label>Search by name, email...</mat-label>
+        <mat-label>{{ "userManagement.searchPlaceholder" | translate }}</mat-label>
         <input
           matInput
           formControlName="search"
-          placeholder="Search by name, email..." />
+          [placeholder]="'userManagement.searchPlaceholder' | translate" />
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
 
       <mat-form-field class="role-field">
-        <mat-label>All Roles</mat-label>
+        <mat-label>{{ "userManagement.allRoles" | translate }}</mat-label>
         <mat-select formControlName="roleFilter">
-          <mat-option value="">All Roles</mat-option>
+          <mat-option value="">{{ "userManagement.allRoles" | translate }}</mat-option>
           <mat-option
             *ngFor="let role of roleOptions"
-            [value]="role.value"
-            >{{ role.label }}</mat-option
-          >
+            [value]="role.value">
+            {{ role.label }}
+          </mat-option>
         </mat-select>
       </mat-form-field>
 
       <mat-form-field class="status-field">
-        <mat-label>All Status</mat-label>
+        <mat-label>{{ "userManagement.allStatus" | translate }}</mat-label>
         <mat-select formControlName="statusFilter">
-          <mat-option value="">All Status</mat-option>
-          <mat-option value="active">Active</mat-option>
-          <mat-option value="inactive">Inactive</mat-option>
+          <mat-option value="">{{ "userManagement.allStatus" | translate }}</mat-option>
+          <mat-option value="active">{{ "userManagement.active" | translate }}</mat-option>
+          <mat-option value="inactive">{{ "userManagement.inactive" | translate }}</mat-option>
         </mat-select>
       </mat-form-field>
     </form>
@@ -81,19 +81,21 @@
 <div class="users-section">
   <div class="users-header">
     <div class="users-title">
-      <h3>Users</h3>
-      <span class="users-count">5 Total</span>
+      <h3>{{ "userManagement.usersTitle" | translate }}</h3>
+      <span class="users-count"
+        >{{ (combinedUsers | async)?.length || 0 }} {{ "userManagement.total" | translate }}</span
+      >
     </div>
-    <p class="users-subtitle">Manage user accounts and permissions</p>
+    <p class="users-subtitle">{{ "userManagement.usersSubtitle" | translate }}</p>
   </div>
 
   <div class="grid-container">
     <div class="grid-header">
-      <div>First name</div>
-      <div>Last name</div>
-      <div>Role</div>
-      <div>Email</div>
-      <div>Status</div>
+      <div>{{ "userManagement.firstName" | translate }}</div>
+      <div>{{ "userManagement.lastName" | translate }}</div>
+      <div>{{ "userManagement.role" | translate }}</div>
+      <div>{{ "userManagement.email" | translate }}</div>
+      <div>{{ "userManagement.status" | translate }}</div>
     </div>
     <div
       class="grid-body"
@@ -112,9 +114,9 @@
           (selectionChange)="userRoleChanged(user.id, $event.value)">
           <mat-option
             *ngFor="let role of roleOptions"
-            [value]="role.value"
-            >{{ role.label }}</mat-option
-          >
+            [value]="role.value">
+            {{ role.label }}
+          </mat-option>
         </mat-select>
         <div>{{ user.email }}</div>
         <div class="status-cell">
@@ -122,7 +124,7 @@
             class="status-badge"
             [class.status-active]="user.isActive"
             [class.status-inactive]="!user.isActive">
-            {{ user.isActive ? "Active" : "Inactive" }}
+            {{ user.isActive ? ("userManagement.active" | translate) : ("userManagement.inactive" | translate) }}
           </span>
         </div>
       </div>

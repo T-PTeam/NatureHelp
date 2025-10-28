@@ -6,6 +6,7 @@ import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from "r
 import { LoadingService } from "@/shared/services/loading.service";
 
 import { ILaboratory } from "../models/ILaboratory";
+import { ILaboratoryMapDto } from "../models/ILaboratoryMapDto";
 import { IListData } from "@/shared/models/IListData";
 import { ILaboratorFilter } from "../models/ILaboratoryFilter";
 import { environment } from "src/environments/environment.dev";
@@ -18,6 +19,9 @@ export class LabsAPIService {
 
   private labsSubject = new BehaviorSubject<ILaboratory[]>([]);
   public labs$: Observable<ILaboratory[]> = this.labsSubject.asObservable();
+
+  private mapDataSubject = new BehaviorSubject<ILaboratoryMapDto[]>([]);
+  public mapLabs$: Observable<ILaboratoryMapDto[]> = this.mapDataSubject.asObservable();
 
   private totalCountSubject = new BehaviorSubject<number>(0);
   public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
@@ -32,6 +36,7 @@ export class LabsAPIService {
     private loading: LoadingService,
   ) {
     this.loadLabs(0, null);
+    this.loadAllLabsForMap();
   }
 
   public loadLabs(scrollCount: number, filter: ILaboratorFilter | null): Observable<ILaboratory[]> {
@@ -58,6 +63,22 @@ export class LabsAPIService {
 
     this.loading.showLoaderUntilCompleted(loadlabs$).subscribe();
     return this.labs$;
+  }
+
+  public loadAllLabsForMap() {
+    this.http
+      .get<IListData<ILaboratoryMapDto>>(`${this.labsUrl}/map-objects`)
+      .pipe(
+        tap((data) => {
+          this.mapDataSubject.next(data.list);
+        }),
+        catchError((err) => {
+          console.error("Could not load labs for map", err);
+          return of({ list: [], totalCount: 0 } as IListData<ILaboratoryMapDto>);
+        }),
+        shareReplay(),
+      )
+      .subscribe();
   }
 
   public getLabById(id: string): Observable<ILaboratory> {

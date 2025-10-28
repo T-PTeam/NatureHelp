@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main,
+.main-content {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+.site-footer {
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.page-container {
+  min-height: calc(100vh - 200px);
+  padding-bottom: 4rem;
+}
+
+app-privacy-policy,
+app-contacts {
+  display: block;
+  min-height: calc(100vh - 200px);
+  padding-bottom: 4rem;
+}

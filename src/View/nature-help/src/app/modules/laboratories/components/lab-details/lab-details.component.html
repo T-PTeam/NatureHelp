@@ -1,21 +1,27 @@
 <mat-card
   *ngIf="detailsForm"
   class="detail-card">
-  <mat-card-title i18n="@@labTitle">Laboratory</mat-card-title>
+  <mat-card-title>{{ "forms.labTitle" | translate }}</mat-card-title>
 
   <form
     [formGroup]="detailsForm"
     (ngSubmit)="onSubmit()"
     class="form-container">
     <mat-form-field>
-      <mat-label i18n="@@title">Title</mat-label>
+      <mat-label>{{ "forms.title" | translate }}</mat-label>
       <input
         matInput
         formControlName="title" />
     </mat-form-field>
 
+    <div class="checkbox-container">
+      <mat-checkbox formControlName="isPublic">
+        {{ "forms.isPublic" | translate }}
+      </mat-checkbox>
+    </div>
+
     <mat-form-field>
-      <mat-label i18n="@@researchesLabel">Researchers</mat-label>
+      <mat-label>{{ "forms.researchesLabel" | translate }}</mat-label>
       <textarea
         matInput
         rows="5"
@@ -25,7 +31,7 @@
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <mat-label i18n="@@address">Address</mat-label>
+      <mat-label>{{ "forms.address" | translate }}</mat-label>
       <input
         matInput
         formControlName="address"
@@ -34,7 +40,7 @@
 
     <div class="coordinates-container">
       <mat-form-field>
-        <mat-label i18n="@@latitude">Latitude</mat-label>
+        <mat-label>{{ "forms.latitude" | translate }}</mat-label>
         <input
           matInput
           type="number"
@@ -45,7 +51,7 @@
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label i18n="@@longitude">Longitude</mat-label>
+        <mat-label>{{ "forms.longitude" | translate }}</mat-label>
         <input
           matInput
           type="number"
@@ -63,7 +69,7 @@
         mat-icon-button
         color="primary"
         (click)="changeMapView()"
-        matTooltip="Focus map on coordinates"
+        [matTooltip]="'forms.focusMapTooltip' | translate"
         class="map-focus-btn">
         <mat-icon>my_location</mat-icon>
       </button>
@@ -90,7 +96,7 @@
     </div>
 
     <mat-form-field>
-      <mat-label i18n="@@researchersCountLabel">Researchers Count</mat-label>
+      <mat-label>{{ "forms.researchersCountLabel" | translate }}</mat-label>
       <input
         readonly
         matInput
@@ -103,17 +109,15 @@
         <button
           mat-flat-button
           color="primary"
-          type="submit"
-          i18n="@@submitBtn">
-          Submit
+          type="submit">
+          {{ "forms.submitBtn" | translate }}
         </button>
         <button
           mat-flat-button
           color="primary"
           type="button"
-          (click)="onCancel()"
-          i18n="@@cancelBtn">
-          Cancel
+          (click)="onCancel()">
+          {{ "forms.cancelBtn" | translate }}
         </button>
       </div>
     </div>

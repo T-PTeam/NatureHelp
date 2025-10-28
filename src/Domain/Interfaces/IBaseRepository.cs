@@ -1,8 +1,10 @@
-﻿namespace Domain.Interfaces
+﻿using Domain.Models.Organization;
+
+namespace Domain.Interfaces
 {
     public interface IBaseRepository<T>
     {
-        Task<IEnumerable<T>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters = null);
+        Task<IEnumerable<T>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters = null, User? currentUser = null);
         Task<T?> GetByIdAsync(Guid id);
         Task<T> AddAsync(T entity);
         Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entity);

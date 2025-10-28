@@ -1,4 +1,3 @@
-import "@angular/localize/init";
 import { mount } from "cypress/angular";
 import { WaterDeficiencyTable } from "./water-deficiency-table.component";
 

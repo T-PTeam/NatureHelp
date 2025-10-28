@@ -1,8 +1,8 @@
 <mat-expansion-panel>
   <mat-expansion-panel-header>
-    <mat-panel-title i18n="@@attachments">Attachments</mat-panel-title>
+    <mat-panel-title>{{ "forms.attachments" | translate }}</mat-panel-title>
     <mat-panel-description>
-      {{ attachments.length }} {{ attachments.length === 1 ? "file" : "files" }}
+      {{ attachments.length }} {{ attachments.length === 1 ? ("forms.file" | translate) : ("forms.files" | translate) }}
     </mat-panel-description>
   </mat-expansion-panel-header>
 
@@ -41,13 +41,13 @@
         <div class="action-buttons">
           <button
             mat-icon-button
-            matTooltip="Preview"
+            [matTooltip]="'forms.preview' | translate"
             (click)="openAttachment(attachment)">
             <mat-icon>visibility</mat-icon>
           </button>
           <button
             mat-icon-button
-            matTooltip="Download"
+            [matTooltip]="'forms.download' | translate"
             (click)="downloadAttachment(attachment)">
             <mat-icon>download</mat-icon>
           </button>
@@ -61,10 +61,8 @@
       <mat-card-content>
         <div class="no-attachments-content">
           <mat-icon class="no-attachments-icon">attach_file</mat-icon>
-          <p
-            i18n="@@noAttachments"
-            class="no-attachments-text">
-            No attachments available for this deficiency.
+          <p class="no-attachments-text">
+            {{ "forms.noAttachments" | translate }}
           </p>
         </div>
       </mat-card-content>

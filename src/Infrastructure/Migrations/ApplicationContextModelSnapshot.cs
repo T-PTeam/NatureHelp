@@ -269,6 +269,9 @@ namespace Infrastructure.Migrations
                     b.Property<double>("HeavyMetalsConcentration")
                         .HasColumnType("double precision");
 
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("boolean");
+
                     b.Property<double>("Latitude")
                         .HasColumnType("double precision");
 
@@ -365,6 +368,9 @@ namespace Infrastructure.Migrations
                     b.Property<double>("ElectricalConductivity")
                         .HasColumnType("double precision");
 
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("boolean");
+
                     b.Property<double>("Latitude")
                         .HasColumnType("double precision");
 
@@ -441,6 +447,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("boolean");
 
                     b.Property<double>("Latitude")
                         .HasColumnType("double precision");

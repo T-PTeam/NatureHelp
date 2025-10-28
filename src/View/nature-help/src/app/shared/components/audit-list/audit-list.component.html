@@ -3,9 +3,9 @@
   data-cy="history-expansion-panel"
   (opened)="loadChangedModelHistory(deficiency.id, deficiency.type)">
   <mat-expansion-panel-header>
-    <mat-panel-title i18n="@@historyOfChanges"> History of changes </mat-panel-title>
+    <mat-panel-title>{{ "forms.historyOfChanges" | translate }}</mat-panel-title>
     <mat-panel-description>
-      {{ logs && logs.length ? logs.length + " entries" : "" }}
+      {{ logs && logs.length ? logs.length + " " + ("forms.entries" | translate) : "" }}
     </mat-panel-description>
   </mat-expansion-panel-header>
 
@@ -25,16 +25,8 @@
       class="log-entry">
       <div class="log-header mb-2">
         <strong>ID {{ log.deficiencyId }}</strong>
-        <p
-          i18n="@@changedBy"
-          class="user">
-          Changed by {{ log.createdBy }}
-        </p>
-        <span
-          i18n="@@changedOn"
-          class="time"
-          >Changed on {{ log.createdOn | date: "short" }}</span
-        >
+        <p class="user">{{ "forms.changedBy" | translate }} {{ log.createdBy }}</p>
+        <span class="time"> {{ "forms.changedOn" | translate }} {{ log.createdOn | date: "short" }} </span>
       </div>
 
       <table
@@ -44,10 +36,9 @@
         multiTemplateDataRows>
         <ng-container matColumnDef="property">
           <th
-            i18n="@@property"
             mat-header-cell
             *matHeaderCellDef>
-            Property
+            {{ "forms.property" | translate }}
           </th>
           <td
             mat-cell
@@ -58,10 +49,9 @@
 
         <ng-container matColumnDef="old">
           <th
-            i18n="@@oldValue"
             mat-header-cell
             *matHeaderCellDef>
-            Old
+            {{ "forms.oldValue" | translate }}
           </th>
           <td
             mat-cell
@@ -72,10 +62,9 @@
 
         <ng-container matColumnDef="new">
           <th
-            i18n="@@newValue"
             mat-header-cell
             *matHeaderCellDef>
-            New
+            {{ "forms.newValue" | translate }}
           </th>
           <td
             mat-cell
@@ -97,10 +86,8 @@
   </div>
 
   <ng-template #noLogs>
-    <p
-      i18n="@@noChangeHistory"
-      class="text-muted p-3">
-      No change history available.
+    <p class="text-muted p-3">
+      {{ "forms.noChangeHistory" | translate }}
     </p>
   </ng-template>
 </mat-expansion-panel>
