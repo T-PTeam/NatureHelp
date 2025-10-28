@@ -28,13 +28,13 @@ export default [
     ],
   },
   {
-    files: [ "**/I*.ts" ],
+    files: ["**/I*.ts"],
     rules: {
       "unicorn/filename-case": "off",
     },
   },
   {
-    files: [ "**/*.{js,ts}" ],
+    files: ["**/*.{js,ts}"],
     languageOptions: {
       globals: {
         ...globals.browser, // Spread browser globals from `globals` package
@@ -61,7 +61,7 @@ export default [
       // Import Sorting
       "import/first": "error",
       "import/newline-after-import": "error",
-      "import/namespace": [ "error", { allowComputed: true } ],
+      "import/namespace": ["error", { allowComputed: true }],
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-unused-expressions": "off",
@@ -75,21 +75,21 @@ export default [
     },
   },
   {
-    files: [ "tailwind.config.js" ],
+    files: ["tailwind.config.js"],
     languageOptions: {
       parser: espree, // Use the default JavaScript parser for non-TypeScript files
     },
     rules: {}, // Tailwind config specific rules if any
   },
   {
-    files: [ "*rc.ts", "*.config.ts" ], // Override for specific TypeScript files
+    files: ["*rc.ts", "*.config.ts"], // Override for specific TypeScript files
     rules: {
       "unicorn/prefer-module": "off", // Turn off the prefer-module rule
       "unicorn/filename-case": "off", // Turn off the filename-case rule
     },
   },
   {
-    files: [ "**/*.cy.ts" ],
+    files: ["**/*.cy.ts"],
     languageOptions: {
       parser: tsParser,
       parserOptions: {

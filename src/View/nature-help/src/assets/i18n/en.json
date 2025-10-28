@@ -212,8 +212,6 @@
     "iban": "Account (IBAN)",
     "bank": "Bank",
     "registration": "Registration Date / EDR Entry Number",
-    "offer": "Offer (public offer)",
-    "downloadOffer": "Download Full Offer (PDF)",
     "contacts": "Contacts",
     "contactText": "If you have questions or want to become a partner — write or call:",
     "copyright": "NatureHelp — FOP Riabinchak Valentin Mykolaiovych",
@@ -287,7 +285,6 @@
     "bulkActions": "Bulk Actions"
   },
   "footer": {
-    "offer": "Offer",
     "privacy": "Privacy Policy",
     "contacts": "Contacts",
     "copyright": "© 2025 NatureHelp. All rights reserved.",
@@ -350,5 +347,70 @@
     "status": "Status",
     "active": "Active",
     "inactive": "Inactive"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "contacts": "About Us"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "section1": {
+      "title": "1. General Provisions",
+      "content": "This Privacy Policy describes how we collect, use and protect your personal information when using the NatureHelp platform."
+    },
+    "section2": {
+      "title": "2. Information Collection",
+      "content": "We collect information that you provide to us directly, as well as information that we receive automatically when using our service."
+    },
+    "section3": {
+      "title": "3. Use of Information",
+      "content": "Your information is used to provide services, improve service quality and ensure platform security."
+    },
+    "section4": {
+      "title": "4. Information Protection",
+      "content": "We take all necessary measures to protect your personal information from unauthorized access, modification, disclosure or destruction."
+    },
+    "section5": {
+      "title": "5. Information Sharing with Third Parties",
+      "content": "We do not share your personal information with third parties without your consent, except as required by law."
+    },
+    "section6": {
+      "title": "6. Your Rights",
+      "content": "You have the right to access, correct, delete and restrict the processing of your personal data."
+    },
+    "section7": {
+      "title": "7. Cookies",
+      "content": "Our website uses cookies to improve functionality and analyze usage."
+    },
+    "section8": {
+      "title": "8. Policy Changes",
+      "content": "We may update this Privacy Policy. We will notify you of significant changes in advance."
+    },
+    "date": "Last updated: 08.07.2025",
+    "company": "FOP Ryabinchak Valentyn Mykolayovych"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "general": {
+      "title": "General Questions"
+    },
+    "technical": {
+      "title": "Technical Support",
+      "content": "For resolving technical issues and questions related to platform operation",
+      "email": "Technical support email"
+    },
+    "business": {
+      "title": "Business Partnership",
+      "content": "For discussing collaboration opportunities and business partnerships",
+      "email": "Business inquiries email"
+    },
+    "hours": {
+      "title": "Working Hours",
+      "content": "We work Monday through Friday from 9:00 to 18:00 (Kyiv time). Email responses are sent within 24 hours."
+    },
+    "response": {
+      "title": "Response Time",
+      "content": "We strive to respond to all inquiries as quickly as possible. Usually, responses are received within 24 hours on business days."
+    }
   }
 }

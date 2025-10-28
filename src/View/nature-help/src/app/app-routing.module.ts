@@ -18,6 +18,8 @@ import { EmailConfirmationComponent } from "./shared/components/email-confirmati
 import { PasswordResetDialogComponent } from "./shared/components/dialogs/login-dialog/password-reset-dialog.component";
 import { OrganizationListComponent } from "./modules/organization-management/components/organization-list/organization-list.component";
 import { OrganizationDetailComponent } from "./modules/organization-management/components/organization-detail/organization-detail.component";
+import { PrivacyPolicyComponent } from "./shared/components/privacy-policy/privacy-policy.component";
+import { ContactsComponent } from "./shared/components/contacts/contacts.component";
 
 const routes: Routes = [
   { path: "", component: WaterDeficiencyTable },
@@ -186,6 +188,14 @@ const routes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "uk/about", component: AboutComponent },
   { path: "en/about", component: AboutComponent },
+
+  { path: "privacy", component: PrivacyPolicyComponent },
+  { path: "uk/privacy", component: PrivacyPolicyComponent },
+  { path: "en/privacy", component: PrivacyPolicyComponent },
+
+  { path: "contacts", component: ContactsComponent },
+  { path: "uk/contacts", component: ContactsComponent },
+  { path: "en/contacts", component: ContactsComponent },
 
   { path: "confirm-email", component: EmailConfirmationComponent },
   { path: "uk/confirm-email", component: EmailConfirmationComponent },

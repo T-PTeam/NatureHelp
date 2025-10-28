@@ -61,7 +61,6 @@ export class DonationComponent implements OnInit {
   }
 
   private redirectToPayment(paymentResponse: PaymentResponse): void {
-    // Create a form to submit to the payment provider
     const form = document.createElement("form");
     form.method = "POST";
     form.action = paymentResponse.paymentUrl;

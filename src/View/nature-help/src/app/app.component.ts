@@ -17,8 +17,10 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.languageService.initializeLanguage();
+
     setTimeout(() => {
-      this.languageService.initializeLanguage();
+      const currentLang = this.languageService.getCurrentLanguage();
     }, 100);
 
     this.userService.initializeAuth().subscribe((isLoggedIn) => {

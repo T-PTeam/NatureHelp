@@ -43,11 +43,7 @@ export class LanguageService {
       languageCode = this.defaultLanguage;
     }
 
-    console.log("Setting language to:", languageCode);
-
-    this.translate.use(languageCode).subscribe(() => {
-      console.log("Language set successfully to:", languageCode);
-    });
+    this.translate.use(languageCode).subscribe(() => {});
 
     localStorage.setItem("selectedLanguage", languageCode);
 

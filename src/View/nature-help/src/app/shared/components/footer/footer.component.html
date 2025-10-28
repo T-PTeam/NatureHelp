@@ -14,21 +14,14 @@
     <div class="footer-right">
       <nav aria-label="Footer menu">
         <a
-          href="/oferta.pdf"
-          target="_blank"
-          rel="noopener"
-          >{{ "footer.offer" | translate }}</a
-        >
-        |
-        <a
-          href="/privacy"
-          rel="noopener"
+          (click)="navigateToPrivacy()"
+          style="cursor: pointer"
           >{{ "footer.privacy" | translate }}</a
         >
         |
         <a
-          href="/contacts"
-          rel="noopener"
+          (click)="navigateToContacts()"
+          style="cursor: pointer"
           >{{ "footer.contacts" | translate }}</a
         >
       </nav>
