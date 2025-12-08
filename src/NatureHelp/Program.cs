@@ -13,6 +13,7 @@ using Serilog;
 using StackExchange.Redis;
 using System.Reflection;
 using System.Text.Json.Serialization;
+using Prometheus;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -194,6 +195,7 @@ if (!app.Environment.IsDevelopment())
 app.UseCors("AllowSpecificOrigins");
 
 app.UseIpRateLimiting();
+app.UseHttpMetrics();
 
 if (app.Environment.IsDevelopment())
 {
@@ -210,5 +212,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapMetrics();
 
 app.Run();
