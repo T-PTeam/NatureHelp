@@ -3,7 +3,6 @@ import { FilterPipe } from "./filter.pipe";
 import { IWaterDeficiency } from "@/modules/water-deficiency/models/IWaterDeficiency";
 import { EDangerState, EDeficiencyType } from "@/models/enums";
 import { IUser } from "@/models/IUser";
-import { expect } from "chai";
 
 describe("FilterPipe", () => {
   let pipe: FilterPipe;
@@ -65,6 +64,7 @@ describe("FilterPipe", () => {
         electricalConductivity: 800,
         microbialLoad: 100,
         radiusAffected: 100,
+        isPublic: true,
       },
       {
         id: "2",
@@ -95,11 +95,12 @@ describe("FilterPipe", () => {
         electricalConductivity: 850,
         microbialLoad: 120,
         radiusAffected: 150,
+        isPublic: true,
       },
     ];
 
     const result = pipe.transform(deficiencies, "Water");
-    expect(result).to.have.length(1);
-    expect(result[0].title).to.equal("Water Pollution");
+    cy.wrap(result).should("have.length", 1);
+    cy.wrap(result[0].title).should("equal", "Water Pollution");
   });
 });

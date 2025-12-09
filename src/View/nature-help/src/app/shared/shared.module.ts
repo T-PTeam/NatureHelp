@@ -27,6 +27,7 @@ import { DonationComponent } from "./components/donation/donation.component";
 import { LegalInfoComponent } from "./components/legal-info/legal-info.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { LanguageSwitcherComponent } from "./components/language-switcher/language-switcher.component";
+import { LoadingIndicatorComponent } from "./components/loading-indicator/loading-indicator.component";
 
 @NgModule({
   imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule, WaterSoilToggleComponent, TranslateModule],
@@ -46,6 +47,7 @@ import { LanguageSwitcherComponent } from "./components/language-switcher/langua
     LegalInfoComponent,
     FooterComponent,
     LanguageSwitcherComponent,
+    LoadingIndicatorComponent,
 
     EnumToStringPipe,
     RoleStringPipe,
@@ -68,6 +70,7 @@ import { LanguageSwitcherComponent } from "./components/language-switcher/langua
     LegalInfoComponent,
     FooterComponent,
     LanguageSwitcherComponent,
+    LoadingIndicatorComponent,
 
     EnumToStringPipe,
     RoleStringPipe,

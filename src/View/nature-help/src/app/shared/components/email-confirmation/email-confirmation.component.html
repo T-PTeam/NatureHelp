@@ -3,7 +3,10 @@
     <div
       *ngIf="isLoading"
       class="loading-state">
-      <mat-spinner diameter="60"></mat-spinner>
+      <nat-loading-indicator
+        type="overlay"
+        [diameter]="60">
+      </nat-loading-indicator>
       <h2>{{ "forms.confirmingEmailTitle" | translate }}</h2>
       <p>{{ "forms.confirmingEmailDescription" | translate }}</p>
     </div>

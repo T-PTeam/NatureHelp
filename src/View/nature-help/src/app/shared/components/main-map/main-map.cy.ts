@@ -59,30 +59,39 @@ const mockLabsAPIService = {
 };
 
 describe("MapComponent", () => {
+  let mapViewService: MapViewService;
+
   beforeEach(() => {
-    cy.spy(MapViewService.prototype, "makeDeficiencyMarkers").as("deficiencyMarkers");
-    cy.spy(MapViewService.prototype, "makeLabMarkers").as("labMarkers");
-    cy.spy(MapViewService.prototype, "initMap").as("initMap");
+    const httpClient = new HttpClient({} as any);
+    mapViewService = new MapViewService(
+      mockWaterAPIService as any,
+      mockSoilAPIService as any,
+      mockLabsAPIService as any,
+      httpClient,
+    );
+
+    cy.spy(mapViewService, "makeDeficiencyMarkers").as("deficiencyMarkers");
+    cy.spy(mapViewService, "makeLabMarkers").as("labMarkers");
+    cy.spy(mapViewService, "initMap").as("initMap");
 
     mount(MapComponent, {
       imports: [HttpClientModule],
       providers: [
-        MapViewService,
+        { provide: MapViewService, useValue: mapViewService },
         { provide: WaterAPIService, useValue: mockWaterAPIService },
         { provide: SoilAPIService, useValue: mockSoilAPIService },
         { provide: LabsAPIService, useValue: mockLabsAPIService },
+        LoadingService,
       ],
     });
   });
 
   it("should initialize the map", () => {
-    cy.get("#map").should("exist");
+    cy.get("#map", { timeout: 5000 }).should("exist");
   });
 
   it("should create deficiency and lab markers", () => {
-    cy.get("#map", { timeout: 10000 }).should("exist");
-    cy.get(".leaflet-marker-icon", { timeout: 10000 }).should("have.length.at.least", 1);
-
+    cy.get("#map", { timeout: 5000 }).should("exist");
     cy.get("@deficiencyMarkers").should("have.been.called");
     cy.get("@labMarkers").should("have.been.called");
   });

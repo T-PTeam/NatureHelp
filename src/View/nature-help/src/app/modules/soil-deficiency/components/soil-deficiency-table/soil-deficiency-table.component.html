@@ -111,9 +111,16 @@
       infiniteScroll
       [infiniteScrollDistance]="2"
       [infiniteScrollThrottle]="500"
-      [infiniteScrollDisabled]="scrollCheckDisabled"
+      [infiniteScrollDisabled]="scrollCheckDisabled || isLoading"
       (scrolled)="onScroll()"
       [scrollWindow]="false">
+      <nat-loading-indicator
+        *ngIf="isLoading"
+        type="inline"
+        [diameter]="50"
+        [message]="'loading.loadingData' | translate">
+      </nat-loading-indicator>
+
       <div
         *ngFor="let deficiency of soilAPIService.deficiencies$ | async"
         class="grid-row">
@@ -144,6 +151,13 @@
           </button>
         </div>
       </div>
+
+      <nat-loading-indicator
+        *ngIf="isLoadingMore"
+        type="more"
+        [diameter]="30"
+        [message]="'loading.loadingMore' | translate">
+      </nat-loading-indicator>
     </div>
   </div>
 </div>

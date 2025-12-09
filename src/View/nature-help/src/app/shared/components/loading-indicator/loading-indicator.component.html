@@ -1,0 +1,39 @@
+<div
+  [ngSwitch]="type"
+  [class]="'loading-' + type">
+  <div
+    *ngSwitchCase="'overlay'"
+    class="loading-overlay">
+    <mat-spinner [diameter]="diameter"></mat-spinner>
+    <p *ngIf="showMessage && message">{{ message }}</p>
+  </div>
+
+  <div
+    *ngSwitchCase="'inline'"
+    class="loading-inline">
+    <mat-spinner [diameter]="diameter"></mat-spinner>
+    <p *ngIf="showMessage && message">{{ message }}</p>
+  </div>
+
+  <div
+    *ngSwitchCase="'button'"
+    class="loading-button">
+    <mat-spinner [diameter]="diameter"></mat-spinner>
+  </div>
+
+  <div
+    *ngSwitchCase="'progress'"
+    class="loading-progress">
+    <mat-progress-bar
+      mode="determinate"
+      [value]="progress"></mat-progress-bar>
+    <span *ngIf="showMessage">{{ progress }}%</span>
+  </div>
+
+  <div
+    *ngSwitchCase="'more'"
+    class="loading-more">
+    <mat-spinner [diameter]="diameter"></mat-spinner>
+    <span *ngIf="showMessage && message">{{ message }}</span>
+  </div>
+</div>

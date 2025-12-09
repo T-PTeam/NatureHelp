@@ -284,7 +284,7 @@ export class UserAPIService {
         this.loadOrganizationUsers(-1);
       }),
       shareReplay(),
-      catchError((err) => {
+      catchError((err: any) => {
         this.notify.open("Error: " + err, "Close", { duration: 2000 });
         this.loadOrganizationUsers(-1);
 
@@ -292,7 +292,7 @@ export class UserAPIService {
       }),
     );
 
-    this.loading.showLoaderUntilCompleted(updateOrganizationUsersRoles$).subscribe();
+    return updateOrganizationUsersRoles$;
   }
 
   resetPassword(newPassword: string, token: string): Observable<boolean> {

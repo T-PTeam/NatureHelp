@@ -28,6 +28,9 @@ export class OrganizationUsersTableComponent implements OnInit {
     { value: ERole.Supervisor, label: "Supervisor" },
     { value: ERole.Researcher, label: "Researcher" },
   ];
+  public isAddingUser: boolean = false;
+  public isSavingRoles: boolean = false;
+  public isLoading: boolean = true;
 
   private listScrollCount = 0;
 
@@ -79,6 +82,11 @@ export class OrganizationUsersTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.usersAPIService.$organizationUsers.subscribe((users) => {
+      if (users.length > 0) {
+        this.isLoading = false;
+      }
+    });
     this.usersAPIService.loadOrganizationUsers(this.listScrollCount);
     this.usersAPIService.loadNotLoginEverOrganizationUsers();
   }
@@ -103,8 +111,13 @@ export class OrganizationUsersTableComponent implements OnInit {
 
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
+          this.isAddingUser = true;
           this.usersAPIService.addOrganizationUsers(EAuthType.AddMultipleToOrganization, result.users).subscribe({
+            next: () => {
+              this.isAddingUser = false;
+            },
             error: (err) => {
+              this.isAddingUser = false;
               this.notify.open("Add multiple users to Your organization failed...", "Close", {
                 duration: 2000,
               });
@@ -124,8 +137,13 @@ export class OrganizationUsersTableComponent implements OnInit {
 
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
+          this.isAddingUser = true;
           this.usersAPIService.addOrganizationUser(EAuthType.AddOneToOrganization, result.users[0]).subscribe({
+            next: () => {
+              this.isAddingUser = false;
+            },
             error: (err) => {
+              this.isAddingUser = false;
               this.notify.open("Add new user to Your organization failed...", "Close", {
                 duration: 2000,
               });
@@ -142,8 +160,21 @@ export class OrganizationUsersTableComponent implements OnInit {
   }
 
   saveChangedRoles() {
-    if (this.changedUsersRoles.size) this.usersAPIService.changeUsersRoles(this.changedUsersRoles);
-    else this.notify.open("Nothing to update...", "Close", { duration: 2000 });
+    if (this.changedUsersRoles.size) {
+      this.isSavingRoles = true;
+      this.usersAPIService.changeUsersRoles(this.changedUsersRoles).subscribe({
+        next: () => {
+          this.isSavingRoles = false;
+          this.changedUsersRoles.clear();
+        },
+        error: (err: any) => {
+          this.isSavingRoles = false;
+          this.notify.open("Failed to update roles", "Close", { duration: 2000 });
+        },
+      });
+    } else {
+      this.notify.open("Nothing to update...", "Close", { duration: 2000 });
+    }
   }
 
   onScroll() {

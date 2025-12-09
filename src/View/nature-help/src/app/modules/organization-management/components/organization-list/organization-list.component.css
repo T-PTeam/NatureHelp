@@ -140,20 +140,6 @@ mat-card-actions button mat-icon {
   color: hsl(var(--muted-foreground));
 }
 
-.loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  color: hsl(var(--muted-foreground));
-}
-
-.loading-container p {
-  margin-top: 16px;
-  color: hsl(var(--muted-foreground));
-}
-
 @media (max-width: 768px) {
   .list-header {
     flex-direction: column;

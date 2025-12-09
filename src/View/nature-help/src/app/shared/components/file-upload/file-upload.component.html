@@ -27,8 +27,26 @@
     mat-raised-button
     color="accent"
     (click)="uploadFile()"
-    [disabled]="!selectedFile">
-    <mat-icon class="upload-icon">cloud_upload</mat-icon>
-    Upload
+    [disabled]="!selectedFile || isUploading">
+    <nat-loading-indicator
+      *ngIf="isUploading"
+      type="button"
+      [diameter]="20"></nat-loading-indicator>
+    <mat-icon
+      *ngIf="!isUploading"
+      class="upload-icon"
+      >cloud_upload</mat-icon
+    >
+    <span *ngIf="!isUploading">Upload</span>
+    <span *ngIf="isUploading">Uploading...</span>
   </button>
+
+  <div
+    *ngIf="isUploading"
+    class="upload-progress-wrapper">
+    <nat-loading-indicator
+      type="progress"
+      [progress]="uploadProgress">
+    </nat-loading-indicator>
+  </div>
 </div>

@@ -7,24 +7,41 @@
   <div class="header-buttons">
     <button
       (click)="addUserToOrganization(false)"
-      class="action-btn">
-      <mat-icon>person_add</mat-icon>
-      <span>{{ "userManagement.addNewUser" | translate }}</span>
+      class="action-btn"
+      [disabled]="isAddingUser">
+      <nat-loading-indicator
+        *ngIf="isAddingUser"
+        type="button"
+        [diameter]="20"></nat-loading-indicator>
+      <mat-icon *ngIf="!isAddingUser">person_add</mat-icon>
+      <span *ngIf="!isAddingUser">{{ "userManagement.addNewUser" | translate }}</span>
+      <span *ngIf="isAddingUser">{{ "loading.adding" | translate }}</span>
     </button>
 
     <button
       (click)="addUserToOrganization(true)"
-      class="action-btn">
-      <mat-icon>group_add</mat-icon>
-      <span>{{ "userManagement.addMultipleUsers" | translate }}</span>
+      class="action-btn"
+      [disabled]="isAddingUser">
+      <nat-loading-indicator
+        *ngIf="isAddingUser"
+        type="button"
+        [diameter]="20"></nat-loading-indicator>
+      <mat-icon *ngIf="!isAddingUser">group_add</mat-icon>
+      <span *ngIf="!isAddingUser">{{ "userManagement.addMultipleUsers" | translate }}</span>
+      <span *ngIf="isAddingUser">{{ "loading.adding" | translate }}</span>
     </button>
 
     <button
       (click)="saveChangedRoles()"
       class="action-btn save-btn"
-      [disabled]="changedUsersRoles.size === 0">
-      <mat-icon>save</mat-icon>
-      <span>{{ "userManagement.updateRoles" | translate }}</span>
+      [disabled]="changedUsersRoles.size === 0 || isSavingRoles">
+      <nat-loading-indicator
+        *ngIf="isSavingRoles"
+        type="button"
+        [diameter]="20"></nat-loading-indicator>
+      <mat-icon *ngIf="!isSavingRoles">save</mat-icon>
+      <span *ngIf="!isSavingRoles">{{ "userManagement.updateRoles" | translate }}</span>
+      <span *ngIf="isSavingRoles">{{ "loading.saving" | translate }}</span>
     </button>
 
     <button
@@ -102,8 +119,15 @@
       infiniteScroll
       [infiniteScrollDistance]="2"
       [infiniteScrollThrottle]="500"
-      [infiniteScrollDisabled]="scrollCheckDisabled"
+      [infiniteScrollDisabled]="scrollCheckDisabled || isLoading"
       (scrolled)="onScroll()">
+      <nat-loading-indicator
+        *ngIf="isLoading"
+        type="inline"
+        [diameter]="50"
+        [message]="'loading.loadingData' | translate">
+      </nat-loading-indicator>
+
       <div
         *ngFor="let user of combinedUsers | async"
         class="grid-row">
