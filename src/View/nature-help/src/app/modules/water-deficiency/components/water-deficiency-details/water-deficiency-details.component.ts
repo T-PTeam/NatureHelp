@@ -40,7 +40,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
 
       this.deficiencyDetailsService.loadOrganizationUsers(this.state).subscribe(() => {
         this.isLoadingUsers = false;
-        
+
         if (!id) {
           this.state.isAddingDeficiency = true;
           this.detailsForm = this.deficiencyDetailsService.initializeForm(this.state, this.formConfig);
@@ -60,7 +60,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
             error: (err) => {
               console.error("Error loading deficiency", err);
               this.isLoading = false;
-            }
+            },
           });
         }
       });
@@ -79,7 +79,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
 
   onSubmit(): void {
     if (this.detailsForm.invalid || this.isSaving) return;
-    
+
     this.isSaving = true;
     this.deficiencyDetailsService.onSubmit(this.state, this.deficiencyDataService, 0).subscribe({
       next: () => {
@@ -88,7 +88,7 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
       error: (err) => {
         console.error("Error saving deficiency", err);
         this.isSaving = false;
-      }
+      },
     });
   }
 }

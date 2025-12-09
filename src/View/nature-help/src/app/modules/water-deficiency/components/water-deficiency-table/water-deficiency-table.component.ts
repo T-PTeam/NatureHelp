@@ -82,7 +82,7 @@ export class WaterDeficiencyTable {
 
   onScroll() {
     if (this.isLoadingMore) return;
-    
+
     this.isLoadingMore = true;
     this.listScrollCount++;
     this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, this.filterForm.value);

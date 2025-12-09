@@ -13,4 +13,3 @@ export class LoadingIndicatorComponent {
   @Input() progress: number = 0;
   @Input() showMessage: boolean = true;
 }
-

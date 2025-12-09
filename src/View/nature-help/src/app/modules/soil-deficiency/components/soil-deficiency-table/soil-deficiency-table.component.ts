@@ -72,7 +72,7 @@ export class SoilDeficiencyTable {
 
   onScroll() {
     if (this.isLoadingMore) return;
-    
+
     this.isLoadingMore = true;
     this.listScrollCount++;
     this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, this.filterForm.value);
@@ -104,7 +104,7 @@ export class SoilDeficiencyTable {
     }
 
     this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, filter);
-    
+
     this.soilAPIService.deficiencies$.subscribe((deficiencies) => {
       if (this.listScrollCount === 0 && deficiencies.length > 0) {
         this.isLoading = false;

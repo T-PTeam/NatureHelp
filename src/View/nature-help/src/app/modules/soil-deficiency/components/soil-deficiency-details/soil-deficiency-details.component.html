@@ -275,7 +275,10 @@
           color="primary"
           (click)="onSubmit()"
           [disabled]="detailsForm.invalid || isSaving">
-          <nat-loading-indicator *ngIf="isSaving" type="button" [diameter]="20"></nat-loading-indicator>
+          <nat-loading-indicator
+            *ngIf="isSaving"
+            type="button"
+            [diameter]="20"></nat-loading-indicator>
           <span *ngIf="!isSaving">{{ "forms.submitBtn" | translate }}</span>
           <span *ngIf="isSaving">{{ "loading.saving" | translate }}</span>
         </button>

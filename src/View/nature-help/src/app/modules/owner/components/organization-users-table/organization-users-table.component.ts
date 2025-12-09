@@ -170,7 +170,7 @@ export class OrganizationUsersTableComponent implements OnInit {
         error: (err: any) => {
           this.isSavingRoles = false;
           this.notify.open("Failed to update roles", "Close", { duration: 2000 });
-        }
+        },
       });
     } else {
       this.notify.open("Nothing to update...", "Close", { duration: 2000 });

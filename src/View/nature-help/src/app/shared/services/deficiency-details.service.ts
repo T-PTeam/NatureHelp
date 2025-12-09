@@ -209,7 +209,11 @@ export class DeficiencyDetailsService implements OnDestroy {
     });
   }
 
-  onSubmit(state: IDeficiencyDetailsState, deficiencyDataService: any, deficiencyType: EDeficiencyType): Observable<void> {
+  onSubmit(
+    state: IDeficiencyDetailsState,
+    deficiencyDataService: any,
+    deficiencyType: EDeficiencyType,
+  ): Observable<void> {
     if (state.detailsForm.invalid) {
       state.detailsForm.markAllAsTouched();
       return new Observable((observer) => {
@@ -236,7 +240,7 @@ export class DeficiencyDetailsService implements OnDestroy {
           error: (err: any) => {
             observer.error(err);
             observer.complete();
-          }
+          },
         });
       });
     } else {
@@ -252,7 +256,7 @@ export class DeficiencyDetailsService implements OnDestroy {
           error: (err: any) => {
             observer.error(err);
             observer.complete();
-          }
+          },
         });
       });
     }

@@ -140,7 +140,6 @@ mat-card-actions button mat-icon {
   color: hsl(var(--muted-foreground));
 }
 
-
 @media (max-width: 768px) {
   .list-header {
     flex-direction: column;

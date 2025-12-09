@@ -25,7 +25,10 @@
       color="primary"
       type="submit"
       [disabled]="commentForm.invalid || submitting">
-      <nat-loading-indicator *ngIf="submitting" type="button" [diameter]="20"></nat-loading-indicator>
+      <nat-loading-indicator
+        *ngIf="submitting"
+        type="button"
+        [diameter]="20"></nat-loading-indicator>
       <span *ngIf="!submitting">{{ "forms.post" | translate }}</span>
       <span *ngIf="submitting">{{ "loading.posting" | translate }}</span>
     </button>

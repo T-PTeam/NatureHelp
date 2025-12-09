@@ -147,7 +147,10 @@
               color="primary"
               type="submit"
               [disabled]="isSubmitting">
-              <nat-loading-indicator *ngIf="isSubmitting" type="button" [diameter]="20"></nat-loading-indicator>
+              <nat-loading-indicator
+                *ngIf="isSubmitting"
+                type="button"
+                [diameter]="20"></nat-loading-indicator>
               <mat-icon *ngIf="!isSubmitting">add</mat-icon>
               <span *ngIf="!isSubmitting">Create Organization</span>
               <span *ngIf="isSubmitting">Creating...</span>
@@ -203,7 +206,10 @@
               color="primary"
               type="submit"
               [disabled]="isSubmitting">
-              <nat-loading-indicator *ngIf="isSubmitting" type="button" [diameter]="20"></nat-loading-indicator>
+              <nat-loading-indicator
+                *ngIf="isSubmitting"
+                type="button"
+                [diameter]="20"></nat-loading-indicator>
               <mat-icon *ngIf="!isSubmitting">save</mat-icon>
               <span *ngIf="!isSubmitting">Update Organization</span>
               <span *ngIf="isSubmitting">Updating...</span>
@@ -212,6 +218,5 @@
         </div>
       </form>
     </div>
-
   </div>
 </mat-card>
