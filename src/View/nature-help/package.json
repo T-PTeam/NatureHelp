@@ -14,6 +14,7 @@
     "cy:component": "cypress run --component",
     "cy:e2e": "cypress run",
     "build:prod": "ng build --configuration=production --base-href /nature-help/",
+    "build:prod:localize": "ng build --configuration=production --base-href /nature-help/ --localize",
     "prettier:fix": "npx prettier --write .",
     "eslint:fix": "npx eslint . --fix"
   },

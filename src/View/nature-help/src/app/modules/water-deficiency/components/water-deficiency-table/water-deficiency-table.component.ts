@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
@@ -13,6 +13,7 @@ import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
 import { EDangerState, EDeficiencyType } from "@/models/enums";
 import { ISelectOption } from "@/shared/models/ISelectOption";
 import { AuditService } from "@/shared/services/audit.service";
+import { LoadingService } from "@/shared/services/loading.service";
 
 @Component({
   selector: "n-water-deficiencies",
@@ -24,6 +25,8 @@ export class WaterDeficiencyTable {
   scrollCheckDisabled: boolean = false;
   filterForm!: FormGroup;
   isMonitoring: boolean = false;
+  isLoading: boolean = true;
+  isLoadingMore: boolean = false;
 
   dangerStates: ISelectOption<EDangerState>[] = [];
 
@@ -38,6 +41,7 @@ export class WaterDeficiencyTable {
     private reportAPIService: ReportAPIService,
     private mapViewService: MapViewService,
     private fb: FormBuilder,
+    private loadingService: LoadingService,
   ) {
     this.dangerStates = enumToSelectOptions(EDangerState);
 
@@ -56,6 +60,12 @@ export class WaterDeficiencyTable {
     this.userService.$user.subscribe((user) => {
       this.isMonitoring = user?.deficiencyMonitoringScheme?.isMonitoringWaterDeficiencies || false;
     });
+
+    this.waterAPIService.deficiencies$.subscribe((deficiencies) => {
+      if (this.listScrollCount === 0 && deficiencies.length > 0) {
+        this.isLoading = false;
+      }
+    });
   }
 
   downloadExcel() {
@@ -71,6 +81,9 @@ export class WaterDeficiencyTable {
   }
 
   onScroll() {
+    if (this.isLoadingMore) return;
+    
+    this.isLoadingMore = true;
     this.listScrollCount++;
     this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, this.filterForm.value);
 
@@ -78,6 +91,7 @@ export class WaterDeficiencyTable {
       .pipe(withLatestFrom(this.waterAPIService.totalCount$))
       .subscribe(([deficiencies, totalCount]) => {
         this.scrollCheckDisabled = totalCount <= deficiencies.length;
+        this.isLoadingMore = false;
       });
   }
 
@@ -94,7 +108,10 @@ export class WaterDeficiencyTable {
   applyFilter(): void {
     const filter: IWaterDeficiencyFilter = this.filterForm.value;
 
-    if (this.isFilterChanged) this.listScrollCount = 0;
+    if (this.isFilterChanged) {
+      this.listScrollCount = 0;
+      this.isLoading = true;
+    }
 
     this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, filter);
   }

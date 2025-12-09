@@ -72,9 +72,10 @@
   </div>
 
   <ng-template #loadingTemplate>
-    <div class="loading-container">
-      <mat-spinner diameter="50"></mat-spinner>
-      <p>{{ "tables.loadingOrganizations" | translate }}</p>
-    </div>
+    <nat-loading-indicator
+      type="inline"
+      [diameter]="50"
+      [message]="'tables.loadingOrganizations' | translate">
+    </nat-loading-indicator>
   </ng-template>
 </div>

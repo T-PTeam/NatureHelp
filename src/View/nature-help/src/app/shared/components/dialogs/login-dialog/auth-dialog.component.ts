@@ -12,6 +12,7 @@ import { SendResetLinkDialogComponent } from "./send-reset-link-dialog.component
 export class AuthDialogComponent {
   formGroup: FormGroup;
   hidePassword = true;
+  isAuthenticating = false;
 
   constructor(
     private dialogRef: MatDialogRef<AuthDialogComponent>,

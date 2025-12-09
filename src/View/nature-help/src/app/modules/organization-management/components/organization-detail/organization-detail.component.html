@@ -1,3 +1,10 @@
+<nat-loading-indicator
+  *ngIf="isLoading"
+  type="overlay"
+  [diameter]="60"
+  message="Loading organization details...">
+</nat-loading-indicator>
+
 <mat-card
   *ngIf="!isLoading"
   class="detail-card">
@@ -140,11 +147,10 @@
               color="primary"
               type="submit"
               [disabled]="isSubmitting">
+              <nat-loading-indicator *ngIf="isSubmitting" type="button" [diameter]="20"></nat-loading-indicator>
               <mat-icon *ngIf="!isSubmitting">add</mat-icon>
-              <mat-spinner
-                *ngIf="isSubmitting"
-                diameter="20"></mat-spinner>
-              <span>Create Organization</span>
+              <span *ngIf="!isSubmitting">Create Organization</span>
+              <span *ngIf="isSubmitting">Creating...</span>
             </button>
           </div>
         </div>
@@ -197,22 +203,15 @@
               color="primary"
               type="submit"
               [disabled]="isSubmitting">
+              <nat-loading-indicator *ngIf="isSubmitting" type="button" [diameter]="20"></nat-loading-indicator>
               <mat-icon *ngIf="!isSubmitting">save</mat-icon>
-              <mat-spinner
-                *ngIf="isSubmitting"
-                diameter="20"></mat-spinner>
-              <span>Update Organization</span>
+              <span *ngIf="!isSubmitting">Update Organization</span>
+              <span *ngIf="isSubmitting">Updating...</span>
             </button>
           </div>
         </div>
       </form>
     </div>
 
-    <ng-template #loadingTemplate>
-      <div class="loading-container">
-        <mat-spinner diameter="50"></mat-spinner>
-        <p>Loading organization details...</p>
-      </div>
-    </ng-template>
   </div>
 </mat-card>

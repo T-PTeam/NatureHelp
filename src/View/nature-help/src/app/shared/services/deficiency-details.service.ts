@@ -209,10 +209,13 @@ export class DeficiencyDetailsService implements OnDestroy {
     });
   }
 
-  onSubmit(state: IDeficiencyDetailsState, deficiencyDataService: any, deficiencyType: EDeficiencyType): void {
+  onSubmit(state: IDeficiencyDetailsState, deficiencyDataService: any, deficiencyType: EDeficiencyType): Observable<void> {
     if (state.detailsForm.invalid) {
       state.detailsForm.markAllAsTouched();
-      return;
+      return new Observable((observer) => {
+        observer.error("Form is invalid");
+        observer.complete();
+      });
     }
 
     const formData: IDeficiency = state.detailsForm.value;
@@ -223,14 +226,34 @@ export class DeficiencyDetailsService implements OnDestroy {
 
     if (state.isAddingDeficiency) {
       const methodName = deficiencyType === EDeficiencyType.Water ? "addNewWaterDeficiency" : "addNewSoilDeficiency";
-      deficiencyDataService[methodName](formData).subscribe(() => {
-        this.router.navigate([`/${deficiencyType === EDeficiencyType.Water ? "water" : "soil"}`]);
+      return new Observable((observer) => {
+        deficiencyDataService[methodName](formData).subscribe({
+          next: () => {
+            this.router.navigate([`/${deficiencyType === EDeficiencyType.Water ? "water" : "soil"}`]);
+            observer.next();
+            observer.complete();
+          },
+          error: (err: any) => {
+            observer.error(err);
+            observer.complete();
+          }
+        });
       });
     } else {
       const methodName =
         deficiencyType === EDeficiencyType.Water ? "updateWaterDeficiencyById" : "updateSoilDeficiencyById";
-      deficiencyDataService[methodName](formData.id, formData).subscribe(() => {
-        this.router.navigate([`/${deficiencyType === EDeficiencyType.Water ? "water" : "soil"}`]);
+      return new Observable((observer) => {
+        deficiencyDataService[methodName](formData.id, formData).subscribe({
+          next: () => {
+            this.router.navigate([`/${deficiencyType === EDeficiencyType.Water ? "water" : "soil"}`]);
+            observer.next();
+            observer.complete();
+          },
+          error: (err: any) => {
+            observer.error(err);
+            observer.complete();
+          }
+        });
       });
     }
   }

@@ -19,6 +19,9 @@ export class SoilDeficiencyDetail implements OnInit, OnDestroy {
   state: IDeficiencyDetailsState;
   detailsForm!: FormGroup;
   disableResearchFields: boolean = false;
+  isLoading: boolean = true;
+  isLoadingUsers: boolean = true;
+  isSaving: boolean = false;
   private formConfig = new SoilDeficiencyFormConfig();
 
   constructor(
@@ -35,21 +38,49 @@ export class SoilDeficiencyDetail implements OnInit, OnDestroy {
       const id = params["id"];
 
       this.deficiencyDetailsService.loadOrganizationUsers(this.state).subscribe(() => {
+        this.isLoadingUsers = false;
+        
         if (!id) {
           this.state.isAddingDeficiency = true;
           this.detailsForm = this.deficiencyDetailsService.initializeForm(this.state, this.formConfig);
           this.state.detailsForm = this.detailsForm;
+          this.state.details = this.detailsForm.value as any;
+          this.isLoading = false;
         } else {
-          this.deficiencyDataService.getSoilDeficiencyById(id).subscribe((def) => {
-            this.detailsForm = this.deficiencyDetailsService.initializeForm(this.state, this.formConfig, def);
-            this.state.detailsForm = this.detailsForm;
-            this.deficiencyDetailsService.changeMapView(this.state);
+          this.isLoading = true;
+          this.deficiencyDataService.getSoilDeficiencyById(id).subscribe({
+            next: (def) => {
+              this.detailsForm = this.deficiencyDetailsService.initializeForm(this.state, this.formConfig, def);
+              this.state.detailsForm = this.detailsForm;
+              this.deficiencyDetailsService.loadAttachments(this.state, def.id, def.type);
+              this.deficiencyDetailsService.changeMapView(this.state);
+              this.isLoading = false;
+            },
+            error: (err) => {
+              console.error("Error loading deficiency", err);
+              this.isLoading = false;
+            }
           });
         }
       });
     });
 
     this.deficiencyDetailsService.subscribeToCoordinatesPicking(this.state);
+  }
+
+  onSubmit(): void {
+    if (this.detailsForm.invalid || this.isSaving) return;
+    
+    this.isSaving = true;
+    this.deficiencyDetailsService.onSubmit(this.state, this.deficiencyDataService, 1).subscribe({
+      next: () => {
+        this.isSaving = false;
+      },
+      error: (err) => {
+        console.error("Error saving deficiency", err);
+        this.isSaving = false;
+      }
+    });
   }
 
   ngOnDestroy() {
