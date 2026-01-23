@@ -1,4 +1,4 @@
-﻿using Application.Dtos;
+using Application.Dtos;
 using Application.Interfaces.Services.Organization;
 using Application.Providers;
 using Domain.Enums;
@@ -332,5 +332,64 @@ public class UserService : IUserService
             return userId.Value;
 
         throw new InvalidOperationException("Invalid or expired token.");
+    }
+
+    public async Task<User> LoginOrRegisterWithOAuth2Async(string email, string firstName, string lastName, string provider)
+    {
+        var existingUser = await _userRepository.GetUserByEmail(email);
+        
+        if (existingUser != null)
+        {
+            existingUser.AccessToken = AuthTokensProvider.GenerateAccessToken(existingUser);
+            existingUser.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromMinutes(10));
+            existingUser.RefreshToken = AuthTokensProvider.GenerateRefreshToken(existingUser);
+            existingUser.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(15));
+            
+            await _userRepository.UpdateAsync(existingUser);
+            return existingUser;
+        }
+        
+        var newUser = new User()
+        {
+            FirstName = firstName,
+            LastName = lastName,
+            Email = email,
+            IsEmailConfirmed = true, 
+            OrganizationId = null, 
+        };
+        
+        newUser.AssignRole(ERole.Supervisor);
+        
+        newUser.Password = Guid.NewGuid().ToString() + DateTime.UtcNow.Ticks.ToString() + provider;
+        SetPasswordHash(newUser);
+        
+        newUser.AccessToken = AuthTokensProvider.GenerateAccessToken(newUser);
+        newUser.AccessTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromMinutes(10));
+        newUser.RefreshToken = AuthTokensProvider.GenerateRefreshToken(newUser);
+        newUser.RefreshTokenExpireTime = DateTime.UtcNow.Add(TimeSpan.FromDays(15));
+        
+        await _userRepository.AddAsync(newUser);
+        
+        _logger.LogInformation($"New user registered via OAuth2 {provider}: {email}");
+        
+        return newUser;
+    }
+
+    public async Task<bool> DeleteUserDataAsync(string email)
+    {
+        try
+        {
+            var result = await _userRepository.DeleteUserDataAsync(email);
+            if (result)
+            {
+                _logger.LogInformation($"User data deleted for email: {email}");
+            }
+            return result;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Error deleting user data for email: {email}");
+            return false;
+        }
     }
 }

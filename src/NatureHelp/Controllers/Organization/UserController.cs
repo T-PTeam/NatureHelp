@@ -1,8 +1,12 @@
-﻿using Application.Dtos;
+using Application.Dtos;
 using Application.Interfaces.Services.Organization;
 using Domain.Models.Organization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication.Facebook;
+using System.Security.Claims;
 using Shared.Dtos;
 
 namespace NatureHelp.Controllers.Organization;
@@ -54,7 +58,49 @@ public class UserController : Controller
     [HttpPost("login")]
     public async Task<IActionResult> LoginAsync([FromBody] UserLoginDto user)
     {
-        return Ok(await _userService.LoginAsync(user));
+        try
+        {
+            var loggedInUser = await _userService.LoginAsync(user);
+            
+            var accessTokenCookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = loggedInUser.AccessTokenExpireTime ?? DateTime.UtcNow.Add(TimeSpan.FromMinutes(10))
+            };
+            
+            var refreshTokenCookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = loggedInUser.RefreshTokenExpireTime ?? DateTime.UtcNow.Add(TimeSpan.FromDays(15))
+            };
+            
+            Response.Cookies.Append("accessToken", loggedInUser.AccessToken ?? string.Empty, accessTokenCookieOptions);
+            Response.Cookies.Append("refreshToken", loggedInUser.RefreshToken ?? string.Empty, refreshTokenCookieOptions);
+            
+            return Ok(loggedInUser);
+        }
+        catch (NullReferenceException ex)
+        {
+            return Unauthorized(new ErrorResponseDto
+            {
+                Message = "Invalid email or password. Please try again.",
+                StatusCode = 401,
+                ErrorType = "AuthenticationError"
+            });
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(new ErrorResponseDto
+            {
+                Message = "Invalid email or password. Please try again.",
+                StatusCode = 401,
+                ErrorType = "AuthenticationError"
+            });
+        }
     }
 
     /// <summary>
@@ -77,9 +123,189 @@ public class UserController : Controller
     [HttpPost("refresh-access-token")]
     public async Task<IActionResult> RefreshAccessTokenAsync([FromBody] TokensDto tokensDto)
     {
-        if (string.IsNullOrEmpty(tokensDto.RefreshToken)) return BadRequest("Token was not found...");
+       var refreshToken = tokensDto.RefreshToken ?? Request.Cookies["refreshToken"];
+        
+        if (string.IsNullOrEmpty(refreshToken)) return BadRequest("Token was not found...");
 
-        return Ok(await _userService.RefreshAccessTokenAsync(tokensDto.RefreshToken!));
+        var user = await _userService.RefreshAccessTokenAsync(refreshToken);
+        
+        if (user == null) return Unauthorized("Invalid or expired refresh token");
+        
+        var accessTokenCookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.None,
+            Expires = user.AccessTokenExpireTime ?? DateTime.UtcNow.Add(TimeSpan.FromMinutes(10))
+        };
+        
+        Response.Cookies.Append("accessToken", user.AccessToken ?? string.Empty, accessTokenCookieOptions);
+        
+        return Ok(user);
+    }
+
+    /// <summary>
+    /// Logout user and clear credential cookies
+    /// </summary>
+    /// <returns></returns>
+    [HttpPost("logout")]
+    public IActionResult Logout()
+    {
+        var cookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.None,
+            Expires = DateTime.UtcNow.AddDays(-1)
+        };
+        
+        Response.Cookies.Append("accessToken", string.Empty, cookieOptions);
+        Response.Cookies.Append("refreshToken", string.Empty, cookieOptions);
+        
+        return Ok(new { message = "Logged out successfully" });
+    }
+
+    /// <summary>
+    /// Initiate Google OAuth2 login
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("login-google")]
+    [AllowAnonymous]
+    public IActionResult LoginWithGoogle()
+    {
+        var redirectUrl = Url.Action(nameof(GoogleCallback), "User", null, Request.Scheme);
+        var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
+        return Challenge(properties, GoogleDefaults.AuthenticationScheme);
+    }
+
+    /// <summary>
+    /// Google OAuth2 callback handler
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("signin-google")]
+    [AllowAnonymous]
+    public async Task<IActionResult> GoogleCallback()
+    {
+        var result = await HttpContext.AuthenticateAsync(GoogleDefaults.AuthenticationScheme);
+        if (!result.Succeeded)
+        {
+            return Redirect($"{_configuration["Frontend:Url"]}/login?error=oauth_failed");
+        }
+
+        var claims = result.Principal?.Claims.ToList();
+        var email = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value
+            ?? claims?.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value;
+        var firstName = claims?.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value ?? string.Empty;
+        var lastName = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Surname)?.Value ?? string.Empty;
+        var name = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value ?? string.Empty;
+
+        if (string.IsNullOrEmpty(email))
+        {
+            return Redirect($"{_configuration["Frontend:Url"]}/login?error=email_not_provided");
+        }
+
+        if (string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(name))
+        {
+            var nameParts = name.Split(' ', 2);
+            firstName = nameParts[0];
+            lastName = nameParts.Length > 1 ? nameParts[1] : string.Empty;
+        }
+
+        var user = await _userService.LoginOrRegisterWithOAuth2Async(email, firstName, lastName, "Google");
+
+        var accessTokenCookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.None,
+            Expires = user.AccessTokenExpireTime ?? DateTime.UtcNow.Add(TimeSpan.FromMinutes(10))
+        };
+
+        var refreshTokenCookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.None,
+            Expires = user.RefreshTokenExpireTime ?? DateTime.UtcNow.Add(TimeSpan.FromDays(15))
+        };
+
+        Response.Cookies.Append("accessToken", user.AccessToken ?? string.Empty, accessTokenCookieOptions);
+        Response.Cookies.Append("refreshToken", user.RefreshToken ?? string.Empty, refreshTokenCookieOptions);
+
+        await HttpContext.SignOutAsync(GoogleDefaults.AuthenticationScheme);
+
+        return Redirect($"{_configuration["Frontend:Url"]}/dashboard?oauth=google");
+    }
+
+    /// <summary>
+    /// Initiate Facebook OAuth2 login
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("login-facebook")]
+    [AllowAnonymous]
+    public IActionResult LoginWithFacebook()
+    {
+        var redirectUrl = Url.Action(nameof(FacebookCallback), "User", null, Request.Scheme);
+        var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
+        return Challenge(properties, FacebookDefaults.AuthenticationScheme);
+    }
+
+    /// <summary>
+    /// Facebook OAuth2 callback handler
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("signin-facebook")]
+    [AllowAnonymous]
+    public async Task<IActionResult> FacebookCallback()
+    {
+        var result = await HttpContext.AuthenticateAsync(FacebookDefaults.AuthenticationScheme);
+        if (!result.Succeeded)
+        {
+            return Redirect($"{_configuration["Frontend:Url"]}/login?error=oauth_failed");
+        }
+
+        var claims = result.Principal?.Claims.ToList();
+        var email = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+        var firstName = claims?.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value ?? string.Empty;
+        var lastName = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Surname)?.Value ?? string.Empty;
+        var name = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value ?? string.Empty;
+
+        if (string.IsNullOrEmpty(email))
+        {
+            return Redirect($"{_configuration["Frontend:Url"]}/login?error=email_not_provided");
+        }
+
+        if (string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(name))
+        {
+            var nameParts = name.Split(' ', 2);
+            firstName = nameParts[0];
+            lastName = nameParts.Length > 1 ? nameParts[1] : string.Empty;
+        }
+
+        var user = await _userService.LoginOrRegisterWithOAuth2Async(email, firstName, lastName, "Facebook");
+
+        var accessTokenCookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.None,
+            Expires = user.AccessTokenExpireTime ?? DateTime.UtcNow.Add(TimeSpan.FromMinutes(10))
+        };
+
+        var refreshTokenCookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.None,
+            Expires = user.RefreshTokenExpireTime ?? DateTime.UtcNow.Add(TimeSpan.FromDays(15))
+        };
+
+        Response.Cookies.Append("accessToken", user.AccessToken ?? string.Empty, accessTokenCookieOptions);
+        Response.Cookies.Append("refreshToken", user.RefreshToken ?? string.Empty, refreshTokenCookieOptions);
+
+        await HttpContext.SignOutAsync(FacebookDefaults.AuthenticationScheme);
+
+        return Redirect($"{_configuration["Frontend:Url"]}/dashboard?oauth=facebook");
     }
 
     /// <summary>
@@ -238,6 +464,34 @@ public class UserController : Controller
             else
             {
                 return BadRequest(new { success = false, message = "User not found or password reset failed." });
+            }
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { success = false, message = "An error occurred while processing your request." });
+        }
+    }
+
+    [HttpDelete("delete-user-data")]
+    [AllowAnonymous]
+    public async Task<IActionResult> DeleteUserData([FromBody] UserDto userDto)
+    {
+        if (string.IsNullOrEmpty(userDto.Email))
+        {
+            return BadRequest(new { success = false, message = "Email is required." });
+        }
+
+        try
+        {
+            var result = await _userService.DeleteUserDataAsync(userDto.Email);
+
+            if (result)
+            {
+                return Ok(new { success = true, message = "User data has been successfully deleted." });
+            }
+            else
+            {
+                return NotFound(new { success = false, message = "User not found." });
             }
         }
         catch (Exception ex)

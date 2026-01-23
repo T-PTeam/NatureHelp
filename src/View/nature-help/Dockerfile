@@ -4,6 +4,8 @@ COPY package.json package-lock.json ./
 RUN npm install -g @angular/cli
 RUN npm install --legacy-peer-deps
 COPY . .
+# Replace production environment with Docker environment (uses local backend)
+COPY src/environments/environment.docker.ts src/environments/environment.ts
 # Creates: /usr/src/app/dist/nature-help/
 RUN npm run build -- --configuration=production --base-href /nature-help/
 

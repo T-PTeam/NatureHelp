@@ -1,4 +1,23 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_DB: NatureHelpDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 10101010
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - logging-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   backend:
     build:
       context: .
@@ -8,23 +27,35 @@ services:
       - "5000:5000"
     extra_hosts: 
       - "host.docker.internal:host-gateway"
+    volumes:
+      - dataprotection-keys:/app/DataProtection-Keys
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
       ASPNETCORE_URLS: "http://0.0.0.0:5000"
       
       ConnectionStrings__DefaultConnection: "Host=${DO_DB_HOST};Port=25060;Database=defaultdb;Username=doadmin;Password=${DO_DB_PASSWORD};SSL Mode=Require;Trust Server Certificate=true"
       
-      ConnectionStrings__LocalConnection: "Host=host.docker.internal;Port=5432;Database=NatureHelpDB;Username=postgres;Password=10101010;Trust Server Certificate=true"
+      ConnectionStrings__LocalConnection: "Host=postgres;Port=5432;Database=NatureHelpDB;Username=postgres;Password=10101010;Trust Server Certificate=true;Timeout=30;Command Timeout=30"
 
       Serilog__WriteTo__1__Args__serverUrl: "http://seq"
       Serilog__WriteTo__1__Args__apiKey: "j51PsN894Y5YVhWWNb9n"
       Serilog__WriteTo__2__Args__nodeUris: "http://elasticsearch:9200"
       Serilog__WriteTo__3__Args__uri: "http://loki:3100"
 
+      OAuth2__Google__ClientId: "${GOOGLE_CLIENT_ID}"
+      OAuth2__Google__ClientSecret: "${GOOGLE_CLIENT_SECRET}"
+      OAuth2__Facebook__AppId: "${FACEBOOK_APP_ID}"
+      OAuth2__Facebook__AppSecret: "${FACEBOOK_APP_SECRET}"
+
     depends_on:
-      - seq
-      - elasticsearch
-      - loki
+      postgres:
+        condition: service_healthy
+      seq:
+        condition: service_started
+      elasticsearch:
+        condition: service_healthy
+      loki:
+        condition: service_started
     networks:
       - logging-network
 
@@ -131,11 +162,13 @@ services:
       - logging-network
 
 volumes:
+  postgres-data:
   seq-data:
   loki-data:
   grafana-data:
   elasticsearch-data:
   prometheus-data:
+  dataprotection-keys:
 
 networks:
   logging-network:

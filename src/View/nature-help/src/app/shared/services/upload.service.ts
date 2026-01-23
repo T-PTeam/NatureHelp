@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject, throwError } from "rxjs";
 import { map, catchError, tap } from "rxjs/operators";
 import { environment } from "../../../environments/environment.dev";
 import { IDeficiencyAttachment } from "@/models/IAttachment";
+import { getErrorMessage } from "../utils/error.utils";
 
 export interface UploadProgress {
   file: File;
@@ -65,7 +66,7 @@ export class UploadService {
         }),
         catchError((error: HttpErrorResponse) => {
           console.error("Upload error:", error);
-          const errorMessage = this.getErrorMessage(error);
+          const errorMessage = getErrorMessage(error);
           this.updateProgress(file, 0, "error", errorMessage);
           return throwError(() => errorMessage);
         }),
@@ -216,23 +217,15 @@ export class UploadService {
   }
 
   private getErrorMessage(error: HttpErrorResponse): string {
-    if (error.error instanceof ErrorEvent) {
-      return `Network error: ${error.error.message}`;
-    } else {
-      switch (error.status) {
-        case 400:
-          return "Invalid file format or size";
-        case 401:
-          return "Unauthorized. Please log in again";
-        case 403:
-          return "Access denied";
-        case 413:
-          return "File too large";
-        case 500:
-          return "Server error. Please try again later";
-        default:
-          return `Upload failed (${error.status}): ${error.message}`;
-      }
+    const message = getErrorMessage(error);
+    
+    if (error.status === 400 && !error.error?.message) {
+      return "Invalid file format or size";
     }
+    if (error.status === 413) {
+      return "File too large";
+    }
+    
+    return message;
   }
 }

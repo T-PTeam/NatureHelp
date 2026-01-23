@@ -90,6 +90,7 @@
     "searchPlaceholder": "Пошук...",
     "noDataFound": "Дані не знайдені",
     "loading": "Завантаження...",
+    "loadingData": "Завантаження даних...",
     "error": "Помилка",
     "toggleMonitoringTooltip": "Перемкнути моніторинг",
     "focusMapTooltip": "Сфокусувати карту на координатах",
@@ -121,7 +122,8 @@
     "emailConfirmedDescription": "Вашу електронну пошту успішно підтверджено. Тепер ви можете увійти в свій обліковий запис.",
     "goToHomeBtn": "Перейти на головну",
     "emailConfirmationErrorTitle": "Помилка підтвердження електронної пошти",
-    "resendVerificationBtn": "Надіслати підтвердження знову"
+    "resendVerificationBtn": "Надіслати підтвердження знову",
+    "createOrganization": "Створити організацію"
   },
   "tables": {
     "laboratories": "Лабораторії",
@@ -200,6 +202,11 @@
     "loginBtn": "Увійти",
     "cancelBtn": "Скасувати",
     "confirmPasswordError": "Пароль обов'язковий"
+  },
+  "auth": {
+    "orContinueWith": "Або продовжити з",
+    "loginWithGoogle": "Продовжити з Google",
+    "loginWithFacebook": "Продовжити з Facebook"
   },
   "legal": {
     "title": "Юридична інформація",

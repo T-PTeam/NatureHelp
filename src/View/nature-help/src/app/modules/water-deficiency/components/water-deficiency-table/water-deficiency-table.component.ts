@@ -62,7 +62,13 @@ export class WaterDeficiencyTable {
     });
 
     this.waterAPIService.deficiencies$.subscribe((deficiencies) => {
-      if (this.listScrollCount === 0 && deficiencies.length > 0) {
+      if (this.listScrollCount === 0) {
+        this.isLoading = false;
+      }
+    });
+    
+    this.waterAPIService.totalCount$.subscribe((totalCount) => {
+      if (this.listScrollCount === 0 && totalCount === 0) {
         this.isLoading = false;
       }
     });

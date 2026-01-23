@@ -1,4 +1,4 @@
-﻿using Application.Dtos;
+using Application.Dtos;
 using Domain.Models.Organization;
 using Shared.Dtos;
 
@@ -25,5 +25,8 @@ public interface IUserService
     Task<bool> ResetPasswordByEmailAsync(ResetPasswordDto request);
     Task<bool> ResetPasswordWithTokenAsync(ResetPasswordWithTokenDto request);
     public Task<Guid> ExtractUserIdFromPasswordResetToken(string token);
-
+    
+    Task<User> LoginOrRegisterWithOAuth2Async(string email, string firstName, string lastName, string provider);
+    
+    Task<bool> DeleteUserDataAsync(string email);
 }

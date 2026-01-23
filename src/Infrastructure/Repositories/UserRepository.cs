@@ -1,4 +1,4 @@
-﻿using Domain.Models.Organization;
+using Domain.Models.Organization;
 using Infrastructure.Data;
 using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -192,6 +192,17 @@ public class UserRepository : BaseRepository<User>, IUserRepository
 
             return user?.Id;
         }
+    }
+
+    public async Task<bool> DeleteUserDataAsync(string email)
+    {
+        var user = await GetUserByEmail(email);
+        
+        if (user == null)
+            return false;
+
+        await DeleteAsync(user.Id);
+        return true;
     }
 
 }

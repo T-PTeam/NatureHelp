@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using NatureHelp.Interfaces;
+using Shared.Dtos;
 using System.Net;
 
 namespace NatureHelp.Exceptions.Handlers;
@@ -28,12 +29,17 @@ public class CommonExceptionsHandler : IExceptionHandler
     {
         bool needSeeInnerException = exceptionContext.Exception.Message == "An error occurred while saving the entity changes. See the inner exception for details.";
 
-        exceptionContext.Result = new ContentResult
+        var errorMessage = needSeeInnerException && exceptionContext.Exception.InnerException != null
+            ? exceptionContext.Exception.InnerException.Message
+            : exceptionContext.Exception.Message;
+
+        exceptionContext.Result = new ObjectResult(new ErrorResponseDto
         {
-            Content = "Common error: " + (needSeeInnerException && exceptionContext.Exception.InnerException != null
-                ? exceptionContext.Exception.InnerException.Message
-                : exceptionContext.Exception.Message),
-            ContentType = "text/plain",
+            Message = errorMessage,
+            StatusCode = (int)HttpStatusCode.BadRequest,
+            ErrorType = exceptionContext.Exception.GetType().Name
+        })
+        {
             StatusCode = (int)HttpStatusCode.BadRequest
         };
 

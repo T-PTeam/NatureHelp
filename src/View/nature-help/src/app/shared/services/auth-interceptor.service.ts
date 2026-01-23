@@ -11,11 +11,16 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = sessionStorage.getItem("accessToken");
     let authReq = req;
+    
+    const requestOptions: any = {
+      withCredentials: true,
+    };
+    
     if (token) {
-      authReq = req.clone({
-        setHeaders: { Authorization: `Bearer ${token}` },
-      });
+      requestOptions.setHeaders = { Authorization: `Bearer ${token}` };
     }
+    
+    authReq = req.clone(requestOptions);
 
     return next.handle(authReq).pipe(
       catchError((error: HttpErrorResponse) => {
@@ -25,6 +30,7 @@ export class AuthInterceptor implements HttpInterceptor {
               const newToken = sessionStorage.getItem("accessToken");
               const retryReq = req.clone({
                 setHeaders: { Authorization: `Bearer ${newToken}` },
+                withCredentials: true,
               });
               return next.handle(retryReq);
             }),
