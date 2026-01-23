@@ -11,6 +11,7 @@ import { UserAPIService } from "@/shared/services/user-api.service";
 import { EmailVerificationService } from "@/shared/services/email-verification.service";
 import { MobileMapService } from "@/shared/services/mobile-map.service";
 import { EAuthType } from "@/models/enums";
+import { getErrorMessage } from "@/shared/utils/error.utils";
 
 @Component({
   selector: "n-navigation-bar",
@@ -138,10 +139,9 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
                 });
               }
             },
-            error: (err) => {
-              this.isAuthenticating = false;
-              this.notify.open("Login failed", "Close", { duration: 2000 });
-              return err;
+            error: (err: any) => {
+              const errorMessage = getErrorMessage(err);
+              this.notify.open(errorMessage, "Close", { duration: 3000 });
             },
           });
       }

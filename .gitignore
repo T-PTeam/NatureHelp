@@ -417,3 +417,4 @@ Thumbs.db
 !.prettierrc
 /src/NatureHelp/appsettings.Production.json
 /src/NatureHelp/appsettings.Production.json
+/src/Migrations/migrate_prod.sql

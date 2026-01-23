@@ -56,6 +56,18 @@ export class SoilDeficiencyTable {
     this.userService.$user.subscribe((user) => {
       this.isMonitoring = user?.deficiencyMonitoringScheme?.isMonitoringSoilDeficiencies || false;
     });
+
+    this.soilAPIService.deficiencies$.subscribe((deficiencies) => {
+      if (this.listScrollCount === 0) {
+        this.isLoading = false;
+      }
+    });
+    
+    this.soilAPIService.totalCount$.subscribe((totalCount) => {
+      if (this.listScrollCount === 0 && totalCount === 0) {
+        this.isLoading = false;
+      }
+    });
   }
 
   downloadExcel() {
@@ -104,12 +116,6 @@ export class SoilDeficiencyTable {
     }
 
     this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, filter);
-
-    this.soilAPIService.deficiencies$.subscribe((deficiencies) => {
-      if (this.listScrollCount === 0 && deficiencies.length > 0) {
-        this.isLoading = false;
-      }
-    });
   }
 
   toggleMonitoring(): void {

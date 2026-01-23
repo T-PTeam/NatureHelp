@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using NatureHelp.Interfaces;
+using Shared.Dtos;
 using System.Net;
 
 namespace NatureHelp.Exceptions.Handlers;
@@ -26,10 +27,13 @@ public class FileExceptionsHandler : IExceptionHandler
     /// <param name="exceptionContext"></param>
     public void Handle(ExceptionContext exceptionContext)
     {
-        exceptionContext.Result = new ContentResult
+        exceptionContext.Result = new ObjectResult(new ErrorResponseDto
         {
-            Content = "File error: " + exceptionContext.Exception.Message,
-            ContentType = "text/plain",
+            Message = exceptionContext.Exception.Message,
+            StatusCode = (int)HttpStatusCode.InternalServerError,
+            ErrorType = exceptionContext.Exception.GetType().Name
+        })
+        {
             StatusCode = (int)HttpStatusCode.InternalServerError
         };
 

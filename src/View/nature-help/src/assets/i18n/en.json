@@ -90,6 +90,7 @@
     "searchPlaceholder": "Search...",
     "noDataFound": "No data found",
     "loading": "Loading...",
+    "loadingData": "Loading data...",
     "error": "Error",
     "toggleMonitoringTooltip": "Toggle Monitoring",
     "focusMapTooltip": "Focus map on coordinates",
@@ -121,7 +122,8 @@
     "emailConfirmedDescription": "Your email has been successfully confirmed. You can now log in to your account.",
     "goToHomeBtn": "Go to Home",
     "emailConfirmationErrorTitle": "Email Confirmation Failed",
-    "resendVerificationBtn": "Resend Verification"
+    "resendVerificationBtn": "Resend Verification",
+    "createOrganization": "Create Organization"
   },
   "tables": {
     "laboratories": "Laboratories",
@@ -200,6 +202,11 @@
     "loginBtn": "Login",
     "cancelBtn": "Cancel",
     "confirmPasswordError": "Password is required"
+  },
+  "auth": {
+    "orContinueWith": "Or continue with",
+    "loginWithGoogle": "Continue with Google",
+    "loginWithFacebook": "Continue with Facebook"
   },
   "legal": {
     "title": "Legal Information",

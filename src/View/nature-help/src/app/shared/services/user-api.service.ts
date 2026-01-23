@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { BehaviorSubject, catchError, map, Observable, of, shareReplay, tap } from "rxjs";
@@ -9,6 +9,7 @@ import { IListData } from "../models/IListData";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { LoadingService } from "./loading.service";
 import { EAuthType } from "@/models/enums";
+import { getErrorMessage } from "../utils/error.utils";
 import { environment } from "src/environments/environment.dev";
 
 @Injectable({
@@ -95,6 +96,23 @@ export class UserAPIService {
     return of(false);
   }
 
+  handleOAuth2Callback(): Observable<boolean> {
+    return this.http
+      .post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {}, { withCredentials: true })
+      .pipe(
+        map((authResponse) => {
+          if (authResponse && authResponse.user) {
+            this.setAuthOptions(authResponse);
+            return true;
+          }
+          return false;
+        }),
+        catchError(() => {
+          return of(false);
+        }),
+      );
+  }
+
   auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {
     if (password) {
       return this.http
@@ -109,8 +127,9 @@ export class UserAPIService {
             this.setAuthOptions(authResponse);
           }),
           shareReplay(),
-          catchError((err) => {
-            this.notify.open("Error: " + err, "Close", { duration: 2000 });
+          catchError((err: HttpErrorResponse) => {
+            const errorMessage = getErrorMessage(err);
+            this.notify.open(errorMessage, "Close", { duration: 3000 });
             return of(null as any);
           }),
         );
@@ -153,7 +172,26 @@ export class UserAPIService {
     return this.http.post<IUser>(`${this.apiUrl}/current-user`, { email }).pipe(shareReplay());
   }
 
+  loginWithGoogle(): void {
+    window.location.href = `${this.apiUrl}/login-google`;
+  }
+
+  loginWithFacebook(): void {
+    window.location.href = `${this.apiUrl}/login-facebook`;
+  }
+
   logout() {
+    this.http.post(`${this.apiUrl}/logout`, {}).subscribe({
+      next: () => {
+        this.clearLocalStorage();
+      },
+      error: () => {
+        this.clearLocalStorage();
+      },
+    });
+  }
+
+  private clearLocalStorage(): void {
     sessionStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
     sessionStorage.removeItem("role");
@@ -271,10 +309,10 @@ export class UserAPIService {
     );
   }
 
-  changeUsersRoles(changedUsersRoles: Map<string, number>) {
+  changeUsersRoles(changedUsersRoles: Map<string, number>): Observable<boolean> {
     const payload = Object.fromEntries(changedUsersRoles);
 
-    const updateOrganizationUsersRoles$ = this.http.put<boolean>(`${this.apiUrl}/users-roles`, payload).pipe(
+    return this.http.put<boolean>(`${this.apiUrl}/users-roles`, payload).pipe(
       tap((updateResult) => {
         const message = updateResult
           ? "Users' roles were successfully changed!"
@@ -284,15 +322,14 @@ export class UserAPIService {
         this.loadOrganizationUsers(-1);
       }),
       shareReplay(),
-      catchError((err: any) => {
-        this.notify.open("Error: " + err, "Close", { duration: 2000 });
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 3000 });
         this.loadOrganizationUsers(-1);
 
         return of(false);
       }),
     );
-
-    return updateOrganizationUsersRoles$;
   }
 
   resetPassword(newPassword: string, token: string): Observable<boolean> {
@@ -308,8 +345,9 @@ export class UserAPIService {
           this.notify.open(message, "Close", { duration: 2000 });
         }),
         shareReplay(),
-        catchError((err) => {
-          this.notify.open("Error: " + err, "Close", { duration: 2000 });
+        catchError((err: HttpErrorResponse) => {
+          const errorMessage = getErrorMessage(err);
+          this.notify.open(errorMessage, "Close", { duration: 3000 });
           return of(false);
         }),
       );
@@ -329,8 +367,9 @@ export class UserAPIService {
           this.notify.open(message, "Close", { duration: 2000 });
         }),
         shareReplay(),
-        catchError((err) => {
-          this.notify.open("Error: " + err, "Close", { duration: 2000 });
+        catchError((err: HttpErrorResponse) => {
+          const errorMessage = getErrorMessage(err);
+          this.notify.open(errorMessage, "Close", { duration: 3000 });
           return of(false);
         }),
       );
@@ -339,6 +378,10 @@ export class UserAPIService {
   public getCurrentUserMonitoringScheme() {
     const user = this.subject.value;
     return user?.deficiencyMonitoringScheme;
+  }
+
+  getErrorMessage(error: HttpErrorResponse | any): string {
+    return getErrorMessage(error);
   }
 
   private setAuthOptions(authOptions: any) {
