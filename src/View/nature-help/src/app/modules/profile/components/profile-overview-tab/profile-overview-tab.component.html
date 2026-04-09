@@ -1,0 +1,44 @@
+<div class="overview-tab">
+  <section class="impact-section">
+    <h2 class="section-title">{{ "profile.overview.impactTitle" | translate }}</h2>
+    <div
+      class="impact-cards"
+      *ngIf="stats">
+      <mat-card class="impact-card">
+        <mat-icon class="impact-icon">water_drop</mat-icon>
+        <span class="impact-value">{{ stats.waterReportsCount }}</span>
+        <span class="impact-label">{{ "profile.overview.waterReports" | translate }}</span>
+      </mat-card>
+      <mat-card class="impact-card">
+        <mat-icon class="impact-icon">grass</mat-icon>
+        <span class="impact-value">{{ stats.soilReportsCount }}</span>
+        <span class="impact-label">{{ "profile.overview.soilReports" | translate }}</span>
+      </mat-card>
+      <mat-card class="impact-card">
+        <mat-icon class="impact-icon">assessment</mat-icon>
+        <span class="impact-value">{{ stats.reportsCount }}</span>
+        <span class="impact-label">{{ "profile.overview.totalReports" | translate }}</span>
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="level-status-section">
+    <h2 class="section-title">{{ "profile.overview.levelStatusTitle" | translate }}</h2>
+    <mat-card
+      class="level-card"
+      *ngIf="stats">
+      <div class="level-card-content">
+        <nat-dynamic-avatar
+          [stage]="stats.avatarStage"
+          size="md"></nat-dynamic-avatar>
+        <div class="level-details">
+          <p>{{ "profile.overview.levelStatusDesc" | translate }}</p>
+          <p class="level-number">{{ "profile.level" | translate }} {{ stats.level }}</p>
+          <p class="total-xp">
+            {{ "profile.overview.totalXp" | translate }}: <strong>{{ stats.totalXp }}</strong>
+          </p>
+        </div>
+      </div>
+    </mat-card>
+  </section>
+</div>

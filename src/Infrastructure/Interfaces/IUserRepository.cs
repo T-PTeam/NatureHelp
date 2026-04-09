@@ -19,4 +19,7 @@ public interface IUserRepository : IBaseRepository<User>
     public Task<Guid?> GetUserIdByPasswordResetTokenAsync(string token);
     Task<bool> DeleteUserDataAsync(string email);
 
+    Task<(int WaterCount, int SoilCount)> CountCreatedDeficienciesAsync(Guid userId);
+
 }
+

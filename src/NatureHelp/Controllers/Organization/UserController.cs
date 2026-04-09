@@ -31,7 +31,7 @@ public class UserController : Controller
     /// Get organization users
     /// </summary>
     /// <returns></returns>
-    [AllowAnonymous]
+    [Authorize(Roles = "SuperAdmin,Owner,Manager,Supervisor,Researcher")]
     [HttpGet("organization-users")]
     public async Task<IActionResult> GetOrganizationUsers([FromQuery] Guid organizationId, [FromQuery] int scrollCount)
     {
@@ -113,6 +113,61 @@ public class UserController : Controller
     public async Task<IActionResult> GetCurrentUserAsync([FromBody] UserDto user)
     {
         return Ok(await _userService.GetModelByEmail(user.Email));
+    }
+
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpGet("profile-stats")]
+    public async Task<IActionResult> GetProfileStats()
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        return Ok(await _userService.GetProfileStatsAsync(email));
+    }
+
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpGet("profile/journal")]
+    public async Task<IActionResult> GetProfileJournal([FromQuery] int take = 100)
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        return Ok(await _userService.GetProfileJournalAsync(email, take));
+    }
+
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpGet("profile/photo-history")]
+    public async Task<IActionResult> GetProfilePhotoHistory([FromQuery] int take = 100)
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        return Ok(await _userService.GetProfilePhotoHistoryAsync(email, take));
+    }
+
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpGet("profile/achievements")]
+    public async Task<IActionResult> GetProfileAchievements()
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        return Ok(await _userService.GetProfileAchievementsAsync(email));
+    }
+
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpPost("profile/visit")]
+    public async Task<IActionResult> RecordProfileVisit()
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        var awarded = await _userService.RecordProfileVisitAsync(email);
+        return Ok(new { awarded });
+    }
+
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpPut("profile-settings")]
+    public async Task<IActionResult> UpdateProfileSettings([FromBody] UserProfileSettingsDto settings)
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        return Ok(await _userService.UpdateProfileSettingsAsync(email, settings));
     }
 
     /// <summary>

@@ -1,4 +1,5 @@
 using Application.Dtos;
+using Application.Interfaces.Services;
 using Application.Interfaces.Services.Organization;
 using Application.Providers;
 using Domain.Enums;
@@ -20,18 +21,28 @@ public class UserService : IUserService
     private readonly ILogger<UserService> _logger;
     private readonly IEmailService _emailService;
     private readonly IConfiguration _configuration;
+    private readonly IProfileRepository _profileRepository;
+    private readonly IProfileService _profileService;
+    private readonly IAchievementEvaluationService _achievementEvaluation;
+
     public UserService(
         IUserRepository userRepository,
         IBaseService<Domain.Models.Organization.Organization> organizationService,
         ILogger<UserService> logger,
         IEmailService emailService,
-        IConfiguration configuration)
+        IConfiguration configuration,
+        IProfileRepository profileRepository,
+        IProfileService profileService,
+        IAchievementEvaluationService achievementEvaluation)
     {
         _userRepository = userRepository;
         _organizationService = organizationService;
         _logger = logger;
         _emailService = emailService;
         _configuration = configuration;
+        _profileRepository = profileRepository;
+        _profileService = profileService;
+        _achievementEvaluation = achievementEvaluation;
     }
 
     public async Task<User> LoginAsync(UserLoginDto userLoginDto)
@@ -391,5 +402,99 @@ public class UserService : IUserService
             _logger.LogError(ex, $"Error deleting user data for email: {email}");
             return false;
         }
+    }
+
+    public async Task<UserProfileStatsDto> GetProfileStatsAsync(string email)
+    {
+        var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
+        var (water, soil) = await _userRepository.CountCreatedDeficienciesAsync(user.Id);
+        var total = water + soil;
+        var (level, xpInto, xpToNext) = await _profileService.GetLevelProgressAsync(user.TotalXp);
+
+        var stage = level switch
+        {
+            <= 2 => "seed",
+            <= 4 => "sprout",
+            <= 6 => "sapling",
+            _ => "tree",
+        };
+
+        return new UserProfileStatsDto
+        {
+            ReportsCount = total,
+            WaterReportsCount = water,
+            SoilReportsCount = soil,
+            ReferralsCount = 0,
+            TotalXp = user.TotalXp,
+            Level = level,
+            XpCurrent = xpInto,
+            XpToNextLevel = xpToNext,
+            AvatarStage = stage,
+        };
+    }
+
+    public async Task<IReadOnlyList<ProfileJournalEntryDto>> GetProfileJournalAsync(string email, int take = 100)
+    {
+        var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
+        return await _profileRepository.GetProfileJournalAsync(user.Id, take);
+    }
+
+    public async Task<IReadOnlyList<ProfilePhotoHistoryDto>> GetProfilePhotoHistoryAsync(string email, int take = 100)
+    {
+        var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
+        var list = await _profileRepository.GetAttachmentsByCreatorAsync(user.Id, take);
+        return list.Select(a => new ProfilePhotoHistoryDto
+        {
+            Id = a.Id,
+            PreviewUrl = a.PreviewUrl ?? string.Empty,
+            DeficiencyId = a.DeficiencyId,
+            DeficiencyType = (int)a.DeficiencyType,
+            CreatedOn = a.CreatedOn,
+        }).ToList();
+    }
+
+    public async Task<IReadOnlyList<ProfileAchievementDto>> GetProfileAchievementsAsync(string email)
+    {
+        var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
+        await _achievementEvaluation.EvaluateForUserAsync(user.Id);
+        var achievements = await _profileRepository.GetActiveAchievementsAsync();
+        var result = new List<ProfileAchievementDto>();
+        foreach (var ach in achievements)
+        {
+            var ua = await _profileRepository.GetUserAchievementAsync(user.Id, ach.Id);
+            result.Add(new ProfileAchievementDto
+            {
+                Id = ach.Id,
+                Code = ach.Code,
+                Title = ach.Title,
+                Description = ach.Description,
+                Icon = ach.Icon,
+                RuleType = (int)ach.RuleType,
+                TargetInt = ach.TargetInt,
+                SortOrder = ach.SortOrder,
+                Progress = ua?.Progress ?? 0,
+                IsCompleted = ua?.IsCompleted ?? false,
+                UnlockedAt = ua?.UnlockedAt,
+            });
+        }
+
+        return result;
+    }
+
+    public async Task<bool> RecordProfileVisitAsync(string email)
+    {
+        var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
+        return await _profileService.TryAwardDailyVisitAsync(user.Id);
+    }
+
+    public async Task<User> UpdateProfileSettingsAsync(string email, UserProfileSettingsDto settings)
+    {
+        var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
+        user.ProfileIsPublic = settings.ProfileIsPublic;
+        user.EmailNotificationsEnabled = settings.EmailNotificationsEnabled;
+        user.AchievementAlertsEnabled = settings.AchievementAlertsEnabled;
+        user.NewsletterEnabled = settings.NewsletterEnabled;
+        await _userRepository.UpdateAsync(user);
+        return user;
     }
 }

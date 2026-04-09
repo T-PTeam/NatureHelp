@@ -13,16 +13,22 @@ public class AttachmentsController : BaseController<DeficiencyAttachment>
     private readonly IModelByDeficiencyService<DeficiencyAttachment> _deficiencyAttachmentService;
     private readonly IBlobStorageProvider _blobStorageProvider;
     private readonly IChangedModelLogService _logService;
+    private readonly IAuthenticationService _authenticationService;
+    private readonly IProfileService _profileService;
 
     public AttachmentsController(
         IModelByDeficiencyService<DeficiencyAttachment> deficiencyAttachmentService,
         IBlobStorageProvider blobStorageProvider,
-        IChangedModelLogService logService)
+        IChangedModelLogService logService,
+        IAuthenticationService authenticationService,
+        IProfileService profileService)
         : base(deficiencyAttachmentService)
     {
         _deficiencyAttachmentService = deficiencyAttachmentService;
         _blobStorageProvider = blobStorageProvider;
         _logService = logService;
+        _authenticationService = authenticationService;
+        _profileService = profileService;
     }
 
     [HttpGet("deficiency/{deficiencyId}")]
@@ -43,6 +49,8 @@ public class AttachmentsController : BaseController<DeficiencyAttachment>
         using var stream = file.OpenReadStream();
         var url = await _blobStorageProvider.UploadFileAsync(stream, file.FileName, file.ContentType);
 
+        var uploader = await _authenticationService.GetCurrentUserAsync();
+
         var attachment = new DeficiencyAttachment
         {
             Id = Guid.NewGuid(),
@@ -53,15 +61,19 @@ public class AttachmentsController : BaseController<DeficiencyAttachment>
             StoragePath = url,
             PreviewUrl = url,
             DeficiencyType = (EDeficiencyType)deficiencyType,
-            CreatedOn = DateTime.UtcNow
+            CreatedOn = DateTime.UtcNow,
+            CreatedBy = uploader?.Id ?? Guid.Empty
         };
 
-        if (string.IsNullOrEmpty(url))
+        if (!string.IsNullOrEmpty(url))
         {
             await _logService.LogDeficiencyAttachmentChangeAsync<Deficiency>(deficiencyId, attachment.FileName, attachment.FileSize, attachment.PreviewUrl, (EDeficiencyType)deficiencyType);
         }
 
-        await _deficiencyAttachmentService.AddAsync(attachment);
+        var saved = await _deficiencyAttachmentService.AddAsync(attachment);
+
+        if (uploader != null)
+            await _profileService.TryAwardPhotoAddedAsync(uploader.Id, saved.Id);
 
         return Ok(new { previewUrl = url });
     }

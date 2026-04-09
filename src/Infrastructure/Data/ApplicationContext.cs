@@ -1,8 +1,11 @@
-﻿using Domain.Models;
+﻿using Domain.Enums;
+using Domain.Models;
 using Domain.Models.Analitycs;
 using Domain.Models.Audit;
 using Domain.Models.Nature;
+using Domain.Models.Profile;
 using Domain.Models.Organization;
+using Infrastructure.Providers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;
@@ -19,6 +22,12 @@ public class ApplicationContext : DbContext
     public DbSet<DeficiencyAttachment> Attachments { get; set; }
     public DbSet<CommentMessage> Comments { get; set; }
     public DbSet<DeficiencyMonitoring> DeficiencyMonitoring { get; set; }
+    public DbSet<UserXpLedger> UserXpLedgers { get; set; }
+    public DbSet<UserDailyVisit> UserDailyVisits { get; set; }
+    public DbSet<DeficiencyConfirmation> DeficiencyConfirmations { get; set; }
+    public DbSet<Achievement> Achievements { get; set; }
+    public DbSet<UserAchievement> UserAchievements { get; set; }
+    public DbSet<AppDictEntry> DictEntries { get; set; }
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)
@@ -40,6 +49,19 @@ public class ApplicationContext : DbContext
             .WithMany()
             .HasForeignKey(u => u.OrganizationId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Entity<UserAchievement>(e =>
+        {
+            e.HasKey(ua => new { ua.UserId, ua.AchievementId });
+            e.HasOne(ua => ua.User)
+                .WithMany()
+                .HasForeignKey(ua => ua.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            e.HasOne(ua => ua.Achievement)
+                .WithMany()
+                .HasForeignKey(ua => ua.AchievementId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
 
     }
 }

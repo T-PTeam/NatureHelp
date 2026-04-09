@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces;
+using Domain.Interfaces;
 using Domain.Models.Nature;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +6,7 @@ using Shared.Dtos;
 
 namespace NatureHelp.Controllers.Nature;
 
-[Route("api/[controller]")]
+[Route("api/soildeficiency")]
 [AllowAnonymous]
 public class SoilDeficiencyController : BaseController<SoilDeficiency>
 {

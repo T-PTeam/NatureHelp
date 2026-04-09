@@ -1,0 +1,48 @@
+<div class="achievements-tab">
+  <section class="badges-section">
+    <h2 class="section-title">{{ "profile.achievements.badgesTitle" | translate }}</h2>
+    <p class="section-desc">{{ "profile.achievements.badgesDesc" | translate }}</p>
+    <div class="badges-grid">
+      <mat-card
+        *ngFor="let badge of badges"
+        class="badge-card"
+        [class.badge-card--unlocked]="badge.completed"
+        [class.badge-card--locked]="!badge.completed">
+        <div class="badge-card__icon-wrap">
+          <mat-icon class="badge-card__icon">{{ badge.icon }}</mat-icon>
+          <mat-icon
+            *ngIf="!badge.completed"
+            class="badge-card__lock"
+            >lock</mat-icon
+          >
+        </div>
+        <h3 class="badge-card__title">{{ badge.title }}</h3>
+        <p class="badge-card__desc">{{ badge.description }}</p>
+        <mat-progress-bar
+          *ngIf="badge.target"
+          mode="determinate"
+          [value]="((badge.progress ?? 0) / badge.target) * 100"
+          class="badge-card__progress">
+        </mat-progress-bar>
+        <span
+          *ngIf="badge.completed && badge.unlockedAt"
+          class="badge-card__date"
+          >{{ "profile.achievements.unlocked" | translate }} {{ badge.unlockedAt | date: "mediumDate" }}</span
+        >
+        <span
+          *ngIf="!badge.completed && badge.target"
+          class="badge-card__hint"
+          >{{ badge.progress ?? 0 }}/{{ badge.target }}</span
+        >
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="challenges-section">
+    <h2 class="section-title">{{ "profile.achievements.challengesTitle" | translate }}</h2>
+    <mat-card class="challenges-placeholder">
+      <mat-icon>emoji_events</mat-icon>
+      <p>{{ "profile.achievements.challengesDesc" | translate }}</p>
+    </mat-card>
+  </section>
+</div>

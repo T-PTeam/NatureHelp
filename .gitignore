@@ -411,6 +411,7 @@ Thumbs.db
 
 # Environment configuration files
 .env
+src/NatureHelp/appsettings.Local.json
 
 # Prettier, ESLint, Husky configs should be included (don't ignore them)
 !.eslintrc.js
@@ -418,3 +419,4 @@ Thumbs.db
 /src/NatureHelp/appsettings.Production.json
 /src/NatureHelp/appsettings.Production.json
 /src/Migrations/migrate_prod.sql
+src/NatureHelp/DataProtection-Keys

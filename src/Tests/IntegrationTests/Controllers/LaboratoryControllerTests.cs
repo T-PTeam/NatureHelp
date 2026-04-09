@@ -1,5 +1,6 @@
 ﻿using Domain.Models.Organization;
 using FluentAssertions;
+using Tests;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Net;
@@ -13,7 +14,7 @@ public class LaboratoryControllerTests : IClassFixture<NatureHelpWebAppFactory>
 
     public LaboratoryControllerTests(NatureHelpWebAppFactory factory)
     {
-        _client = factory.CreateClient();
+        _client = factory.WithTestAuth("Owner").CreateClient();
 
         var score = factory.Services.CreateScope();
 

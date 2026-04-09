@@ -1,0 +1,27 @@
+services:
+  postgres:
+    profiles:
+      - local-only
+  db-seed:
+    profiles:
+      - local-only
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Production"
+      ConnectionStrings__LocalConnection: "${DATABASE_URL}"
+      Cors__AllowedOrigins__0: "https://naturehelp.store"
+      Cors__AllowedOrigins__1: "https://www.naturehelp.store"
+    depends_on: !reset
+      redis:
+        condition: service_healthy
+  frontend:
+    build:
+      context: ./src/View/nature-help
+      dockerfile: Dockerfile
+      args:
+        ENV_FILE: environment.ts
+    ports:
+      - "80:80"
