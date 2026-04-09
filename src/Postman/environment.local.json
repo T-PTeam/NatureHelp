@@ -1,6 +1,6 @@
 {
-  "id": "env-id",
-  "name": "NatureHelp — Default (local)",
+  "id": "naturehelp-env-local",
+  "name": "NatureHelp — Local",
   "values": [
     { "key": "baseUrl", "value": "http://localhost:5000", "type": "default", "enabled": true },
     { "key": "accessToken", "value": "", "type": "secret", "enabled": true },

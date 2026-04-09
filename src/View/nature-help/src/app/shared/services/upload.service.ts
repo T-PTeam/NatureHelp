@@ -218,14 +218,14 @@ export class UploadService {
 
   private getErrorMessage(error: HttpErrorResponse): string {
     const message = getErrorMessage(error);
-    
+
     if (error.status === 400 && !error.error?.message) {
       return "Invalid file format or size";
     }
     if (error.status === 413) {
       return "File too large";
     }
-    
+
     return message;
   }
 }

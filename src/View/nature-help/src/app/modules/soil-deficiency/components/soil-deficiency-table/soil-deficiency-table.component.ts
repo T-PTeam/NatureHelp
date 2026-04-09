@@ -62,7 +62,7 @@ export class SoilDeficiencyTable {
         this.isLoading = false;
       }
     });
-    
+
     this.soilAPIService.totalCount$.subscribe((totalCount) => {
       if (this.listScrollCount === 0 && totalCount === 0) {
         this.isLoading = false;

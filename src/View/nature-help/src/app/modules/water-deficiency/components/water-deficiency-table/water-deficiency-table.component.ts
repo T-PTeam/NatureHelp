@@ -66,7 +66,7 @@ export class WaterDeficiencyTable {
         this.isLoading = false;
       }
     });
-    
+
     this.waterAPIService.totalCount$.subscribe((totalCount) => {
       if (this.listScrollCount === 0 && totalCount === 0) {
         this.isLoading = false;

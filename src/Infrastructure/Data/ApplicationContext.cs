@@ -41,23 +41,5 @@ public class ApplicationContext : DbContext
             .HasForeignKey(u => u.OrganizationId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        // Test DATA
-        //builder.Entity<Report>()
-        //    .HasData(GenerateTestDataToDB.Reports);
-
-        //builder.Entity<WaterDeficiency>()
-        //    .HasData(GenerateTestDataToDB.WaterDeficiencies);
-
-        //builder.Entity<SoilDeficiency>()
-        //    .HasData(GenerateTestDataToDB.SoilDeficiencies);
-
-        //builder.Entity<Laboratory>()
-        //    .HasData(GenerateTestDataToDB.Laboratories);
-
-        //builder.Entity<User>()
-        //    .HasData(GenerateTestDataToDB.Users);
-
-        //builder.Entity<Organization>()
-        //    .HasData(GenerateTestDataToDB.Organizations);
     }
 }

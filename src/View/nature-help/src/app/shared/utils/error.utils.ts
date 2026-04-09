@@ -5,11 +5,11 @@ export function getErrorMessage(error: HttpErrorResponse | any): string {
     if (error.error?.message) {
       return error.error.message;
     }
-    
+
     if (typeof error.error === "string") {
       return error.error;
     }
-    
+
     if (error.status === 0) {
       return "Network error. Please check your connection.";
     }
@@ -28,14 +28,13 @@ export function getErrorMessage(error: HttpErrorResponse | any): string {
     if (error.status >= 500) {
       return "Server error. Please try again later.";
     }
-    
+
     return error.message || `Error ${error.status}: ${error.statusText}`;
   }
-  
+
   if (error?.message) {
     return error.message;
   }
-  
+
   return "An unexpected error occurred. Please try again.";
 }
-

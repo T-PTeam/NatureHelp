@@ -97,20 +97,18 @@ export class UserAPIService {
   }
 
   handleOAuth2Callback(): Observable<boolean> {
-    return this.http
-      .post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {}, { withCredentials: true })
-      .pipe(
-        map((authResponse) => {
-          if (authResponse && authResponse.user) {
-            this.setAuthOptions(authResponse);
-            return true;
-          }
-          return false;
-        }),
-        catchError(() => {
-          return of(false);
-        }),
-      );
+    return this.http.post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {}, { withCredentials: true }).pipe(
+      map((authResponse) => {
+        if (authResponse && authResponse.user) {
+          this.setAuthOptions(authResponse);
+          return true;
+        }
+        return false;
+      }),
+      catchError(() => {
+        return of(false);
+      }),
+    );
   }
 
   auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {

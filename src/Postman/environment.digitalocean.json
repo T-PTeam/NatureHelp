@@ -1,8 +1,8 @@
 {
-  "id": "env-id",
-  "name": "NatureHelp — Default (local)",
+  "id": "naturehelp-env-do",
+  "name": "NatureHelp — DigitalOcean",
   "values": [
-    { "key": "baseUrl", "value": "http://localhost:5000", "type": "default", "enabled": true },
+    { "key": "baseUrl", "value": "http://164.92.129.51:5000", "type": "default", "enabled": true },
     { "key": "accessToken", "value": "", "type": "secret", "enabled": true },
     { "key": "refreshToken", "value": "", "type": "secret", "enabled": true },
     { "key": "supervisorId", "value": "11112222-3333-4444-5555-666677778888", "type": "default", "enabled": true },

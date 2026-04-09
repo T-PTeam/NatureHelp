@@ -241,6 +241,12 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddScoped<IDevelopmentDatabaseSeeder, DevelopmentDatabaseSeeder>();
+}
+
+builder.Services.AddScoped<IProductionSuperAdminBootstrapper, ProductionSuperAdminBootstrapper>();
 builder.Services.AddApplicationServices();
 
 builder.Services.Configure<RouteOptions>(options =>
@@ -320,11 +326,29 @@ if (app.Environment.IsDevelopment())
             Log.Information("Applying database migrations...");
             context.Database.Migrate();
             Log.Information("Database migrations applied successfully.");
+            var devSeeder = services.GetRequiredService<IDevelopmentDatabaseSeeder>();
+            await devSeeder.SeedAsync();
         }
         catch (Exception ex)
         {
             Log.Error(ex, "An error occurred while applying database migrations.");
             throw;
+        }
+    }
+}
+else
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            var bootstrapper = services.GetRequiredService<IProductionSuperAdminBootstrapper>();
+            await bootstrapper.EnsureSuperAdminAsync();
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "SuperAdmin bootstrap failed.");
         }
     }
 }
