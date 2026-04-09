@@ -2,6 +2,7 @@ using Domain.Enums;
 using Domain.Models.Analitycs;
 using Domain.Models.Nature;
 using Domain.Models.Organization;
+using Domain.Models.Profile;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;
@@ -35,6 +36,7 @@ public class DevelopmentDatabaseSeeder : IDevelopmentDatabaseSeeder
     public async Task SeedAsync(CancellationToken cancellationToken = default)
     {
         await using var context = await _contextFactory.CreateDbContextAsync(cancellationToken);
+        await EnsureLevelThresholdsDictAsync(context, cancellationToken);
         if (await context.Organizations.AnyAsync(o => o.Id == OrgGlobalResearch, cancellationToken))
         {
             return;
@@ -347,6 +349,21 @@ public class DevelopmentDatabaseSeeder : IDevelopmentDatabaseSeeder
                 RadiusAffected = 10,
             });
 
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
+    private static async Task EnsureLevelThresholdsDictAsync(ApplicationContext context, CancellationToken cancellationToken)
+    {
+        const string key = "level_thresholds";
+        if (await context.DictEntries.AnyAsync(e => e.EntryKey == key, cancellationToken))
+            return;
+
+        context.DictEntries.Add(new AppDictEntry
+        {
+            Id = Guid.NewGuid(),
+            EntryKey = key,
+            ValueJson = "[0,100,250,500,800,1200]",
+        });
         await context.SaveChangesAsync(cancellationToken);
     }
 }

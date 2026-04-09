@@ -32,7 +32,7 @@ var allowedOrigins = builder.Configuration
 
 if (allowedOrigins == null || allowedOrigins.Length == 0)
 {
-    allowedOrigins = builder.Environment.IsDevelopment()
+    allowedOrigins = builder.Environment.IsDevelopment() || builder.Environment.IsEnvironment("CI")
         ? ["http://localhost:4200", "http://localhost:5051", "http://localhost:3000"]
         : Array.Empty<string>();
 }
@@ -123,7 +123,7 @@ var authenticationBuilder = builder.Services.AddAuthentication(options =>
         options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
         options.SlidingExpiration = true;
         options.Cookie.HttpOnly = true;
-        if (builder.Environment.IsDevelopment())
+        if (builder.Environment.IsDevelopment() || builder.Environment.IsEnvironment("CI"))
         {
             options.Cookie.SecurePolicy = CookieSecurePolicy.None;
             options.Cookie.SameSite = SameSiteMode.None;
@@ -151,7 +151,7 @@ var authenticationBuilder = builder.Services.AddAuthentication(options =>
         };
     });
 
-if (!builder.Environment.IsEnvironment("Testing"))
+if (!builder.Environment.IsEnvironment("Testing") && !builder.Environment.IsEnvironment("CI"))
 {
     authenticationBuilder
         .AddGoogle(options =>
@@ -253,7 +253,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
-if (builder.Environment.IsDevelopment())
+if (builder.Environment.IsDevelopment() || builder.Environment.IsEnvironment("CI"))
 {
     builder.Services.AddScoped<IDevelopmentDatabaseSeeder, DevelopmentDatabaseSeeder>();
 }
@@ -295,12 +295,12 @@ builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
-if (!app.Environment.IsDevelopment() && !app.Environment.IsEnvironment("Testing"))
+if (!app.Environment.IsDevelopment() && !app.Environment.IsEnvironment("Testing") && !app.Environment.IsEnvironment("CI"))
 {
     app.UseHttpsRedirection();
 }
 
-if (!app.Environment.IsDevelopment() && !app.Environment.IsEnvironment("Testing"))
+if (!app.Environment.IsDevelopment() && !app.Environment.IsEnvironment("Testing") && !app.Environment.IsEnvironment("CI"))
 {
     app.UseHsts();
     app.Use(async (context, next) =>
@@ -327,7 +327,7 @@ app.UseMiddleware<SecurityHeadersMiddleware>();
 app.UseIpRateLimiting();
 app.UseHttpMetrics();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("CI"))
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
@@ -342,7 +342,7 @@ app.MapControllers();
 app.MapHealthChecks("/health");
 app.MapMetrics();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("CI"))
 {
     using (var scope = app.Services.CreateScope())
     {
