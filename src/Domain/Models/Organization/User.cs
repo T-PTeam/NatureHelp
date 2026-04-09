@@ -37,6 +37,14 @@ public class User : Person
     public DateTime? PasswordResetTokenExpiry { get; set; }
     public ComplexMonitoringScheme? DeficiencyMonitoringScheme { get; set; }
 
+    public bool ProfileIsPublic { get; set; } = true;
+    public bool EmailNotificationsEnabled { get; set; } = true;
+    public bool AchievementAlertsEnabled { get; set; } = true;
+    public bool NewsletterEnabled { get; set; }
+
+    public int TotalXp { get; set; }
+    public int CurrentLevel { get; set; } = 1;
+
     public bool IsEmailValid(string email)
     {
         if (string.IsNullOrWhiteSpace(email))

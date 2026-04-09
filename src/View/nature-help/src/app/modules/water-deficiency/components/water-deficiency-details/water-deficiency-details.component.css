@@ -102,3 +102,7 @@
     font-size: 12px;
   }
 }
+
+.confirm-deficiency-row {
+  padding: 0 1rem 0.75rem 1rem;
+}

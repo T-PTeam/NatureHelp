@@ -13,6 +13,7 @@ using NatureHelp.Filters;
 using NatureHelp.Interfaces;
 using NatureHelp.Providers;
 using NatureHelp.Security;
+using Npgsql;
 using Serilog;
 using StackExchange.Redis;
 using System.IO;
@@ -21,6 +22,7 @@ using System.Text.Json.Serialization;
 using Prometheus;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true);
 
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
 
@@ -28,11 +30,18 @@ var allowedOrigins = builder.Configuration
     .GetSection("Cors:AllowedOrigins")
     .Get<string[]>();
 
+if (allowedOrigins == null || allowedOrigins.Length == 0)
+{
+    allowedOrigins = builder.Environment.IsDevelopment()
+        ? ["http://localhost:4200", "http://localhost:5051", "http://localhost:3000"]
+        : Array.Empty<string>();
+}
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        policy.WithOrigins(allowedOrigins ?? [])
+        policy.WithOrigins(allowedOrigins!)
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -241,7 +250,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
-builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices(builder.Configuration);
 
 builder.Services.Configure<RouteOptions>(options =>
 {
@@ -263,9 +272,14 @@ builder.Services.AddSingleton(x =>
     return new BlobServiceClient(blobConnectionString);
 });
 
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 if (!app.Environment.IsDevelopment())
 {
@@ -277,14 +291,15 @@ if (!app.Environment.IsDevelopment())
         await next();
     });
 }
-else
-{
-    app.Use(async (context, next) =>
-    {
-        context.Response.Headers.Append("Strict-Transport-Security", "max-age=3600; includeSubDomains");
-        await next();
-    });
-}
+// else
+// {
+//    // In Development, do not send HSTS to avoid forcing HTTPS on local HTTP ports
+//     app.Use(async (context, next) =>
+//     {
+//         context.Response.Headers.Append("Strict-Transport-Security", "max-age=3600; includeSubDomains");
+//         await next();
+//     });
+// }
 
 app.UseCors("AllowSpecificOrigins");
 
@@ -305,6 +320,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHealthChecks("/health");
 app.MapMetrics();
 
 if (app.Environment.IsDevelopment())
@@ -316,10 +332,58 @@ if (app.Environment.IsDevelopment())
         {
             var contextFactory = services.GetRequiredService<IDbContextFactory<ApplicationContext>>();
             using var context = contextFactory.CreateDbContext();
-            
+
             Log.Information("Applying database migrations...");
             context.Database.Migrate();
             Log.Information("Database migrations applied successfully.");
+
+            var connectionString = builder.Configuration.GetConnectionString("LocalConnection")
+                ?? builder.Configuration.GetConnectionString("DefaultConnection");
+            string? sql = null;
+            var seedPath = Path.Combine(AppContext.BaseDirectory, "Autogenerating_Data.sql");
+            if (File.Exists(seedPath))
+                sql = File.ReadAllText(seedPath);
+            else
+            {
+                var asm = Assembly.GetExecutingAssembly();
+                var resourceName = asm.GetManifestResourceNames().FirstOrDefault(n => n.EndsWith("Autogenerating_Data.sql", StringComparison.OrdinalIgnoreCase));
+                if (resourceName != null)
+                {
+                    using var stream = asm.GetManifestResourceStream(resourceName);
+                    if (stream != null)
+                        using (var reader = new StreamReader(stream))
+                            sql = reader.ReadToEnd();
+                }
+            }
+            if (string.IsNullOrEmpty(connectionString))
+                Log.Warning("Mock data seed skipped: no connection string.");
+            else if (string.IsNullOrEmpty(sql))
+                Log.Warning("Mock data seed skipped: Autogenerating_Data.sql not found (path: {Path}).", seedPath);
+            else
+            {
+                try
+                {
+                    AppContext.SetSwitch("Npgsql.EnableSqlRewriting", false);
+                    using (var conn = new NpgsqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        using (var cmd = new NpgsqlCommand(sql, conn))
+                        {
+                            cmd.CommandTimeout = 120;
+                            cmd.ExecuteNonQuery();
+                            Log.Information("Mock data seed (Autogenerating_Data.sql) applied.");
+                        }
+                    }
+                }
+                catch (Exception seedEx)
+                {
+                    Log.Warning(seedEx, "In-process mock data seed failed; db-seed container may apply it via psql.");
+                }
+                finally
+                {
+                    AppContext.SetSwitch("Npgsql.EnableSqlRewriting", true);
+                }
+            }
         }
         catch (Exception ex)
         {

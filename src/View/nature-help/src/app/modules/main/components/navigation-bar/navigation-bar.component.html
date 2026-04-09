@@ -80,6 +80,14 @@
       </button>
       <button
         mat-menu-item
+        data-cy="profile-link"
+        routerLink="profile"
+        routerLinkActive="active"
+        *ngIf="userService.isLoggedIn$ | async">
+        {{ "navigation.profile" | translate }}
+      </button>
+      <button
+        mat-menu-item
         (click)="sendEmailVerification()"
         [disabled]="isEmailVerificationDisabled$ | async">
         <span *ngIf="formattedTimeRemaining; else normalText">

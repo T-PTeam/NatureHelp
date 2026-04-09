@@ -18,7 +18,7 @@ export class SoilAPIService {
   public deficiencies$: Observable<ISoilDeficiency[]> = this.listSubject.asObservable();
   public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
   public mapDeficiencies$: Observable<IDeficiencyMapDto[]> = this.mapDataSubject.asObservable();
-  private soilsUrl = `${environment.apiUrl}/SoilDeficiency`;
+  private soilsUrl = `${environment.apiUrl}/soildeficiency`;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),

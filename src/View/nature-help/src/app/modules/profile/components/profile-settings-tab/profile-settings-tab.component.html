@@ -1,0 +1,68 @@
+<div class="settings-tab">
+  <section class="privacy-section">
+    <h2 class="section-title">{{ "profile.settings.privacyTitle" | translate }}</h2>
+    <mat-card class="settings-card">
+      <div class="setting-row">
+        <span class="setting-label">{{ "profile.settings.profileVisibility" | translate }}</span>
+        <mat-slide-toggle
+          [(ngModel)]="profilePublic"
+          color="primary"></mat-slide-toggle>
+      </div>
+      <p class="setting-hint">{{ "profile.settings.profileVisibilityHint" | translate }}</p>
+    </mat-card>
+  </section>
+
+  <section class="notifications-section">
+    <h2 class="section-title">{{ "profile.settings.notificationsTitle" | translate }}</h2>
+    <mat-card class="settings-card">
+      <div class="setting-row">
+        <span class="setting-label">{{ "profile.settings.emailNotifications" | translate }}</span>
+        <mat-slide-toggle
+          [(ngModel)]="emailNotifications"
+          color="primary"></mat-slide-toggle>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="setting-row">
+        <span class="setting-label">{{ "profile.settings.achievementAlerts" | translate }}</span>
+        <mat-slide-toggle
+          [(ngModel)]="achievementAlerts"
+          color="primary"></mat-slide-toggle>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="setting-row">
+        <span class="setting-label">{{ "profile.settings.newsletter" | translate }}</span>
+        <mat-slide-toggle
+          [(ngModel)]="newsletter"
+          color="primary"></mat-slide-toggle>
+      </div>
+      <div class="settings-actions">
+        <button
+          mat-flat-button
+          color="primary"
+          type="button"
+          class="save-settings-btn"
+          [disabled]="saving"
+          (click)="saveSettings()">
+          @if (saving) {
+            <mat-spinner diameter="20"></mat-spinner>
+          } @else {
+            {{ "common.save" | translate }}
+          }
+        </button>
+      </div>
+    </mat-card>
+  </section>
+
+  <section class="account-section">
+    <h2 class="section-title">{{ "profile.settings.accountTitle" | translate }}</h2>
+    <mat-card class="settings-card">
+      <button
+        mat-stroked-button
+        color="warn"
+        class="account-action">
+        {{ "profile.settings.deleteAccount" | translate }}
+      </button>
+      <p class="setting-hint">{{ "profile.settings.deleteAccountHint" | translate }}</p>
+    </mat-card>
+  </section>
+</div>

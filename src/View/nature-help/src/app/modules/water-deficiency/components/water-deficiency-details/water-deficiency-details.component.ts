@@ -8,6 +8,10 @@ import { IDeficiencyDetailsState } from "@/shared/models/IDeficiencyFormConfig";
 import { WaterDeficiencyFormConfig } from "@/shared/services/deficiency-form-configs.service";
 
 import { UserAPIService } from "@/shared/services/user-api.service";
+import { DeficiencyConfirmationService } from "@/shared/services/deficiency-confirmation.service";
+import { EDeficiencyType } from "@/models/enums";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "n-water-deficiency-details",
@@ -23,6 +27,8 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
   isLoading: boolean = true;
   isLoadingUsers: boolean = true;
   isSaving: boolean = false;
+  confirmDeficiencyPending = false;
+  confirmDeficiencyDone = false;
   private formConfig = new WaterDeficiencyFormConfig();
 
   constructor(
@@ -30,6 +36,9 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     public usersAPIService: UserAPIService,
     public deficiencyDetailsService: DeficiencyDetailsService,
+    private deficiencyConfirmation: DeficiencyConfirmationService,
+    private snackBar: MatSnackBar,
+    private translate: TranslateService,
   ) {
     this.state = this.deficiencyDetailsService.initializeState();
   }
@@ -75,6 +84,32 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
 
   get isMonitoringActive(): boolean {
     return this.state.details?.deficiencyMonitoring?.isMonitoring ?? false;
+  }
+
+  showConfirmAction(): boolean {
+    if (this.state.isAddingDeficiency || !this.state.details?.id) return false;
+    const uid = sessionStorage.getItem("userId");
+    const creatorId = this.state.details.createdBy?.id;
+    if (!uid || !creatorId || !sessionStorage.getItem("accessToken")) return false;
+    return uid !== creatorId;
+  }
+
+  onConfirmDeficiency(): void {
+    const id = this.state.details?.id;
+    if (!id || this.confirmDeficiencyPending) return;
+    this.confirmDeficiencyPending = true;
+    this.deficiencyConfirmation.confirm(id, EDeficiencyType.Water).subscribe({
+      next: (r) => {
+        this.confirmDeficiencyPending = false;
+        this.confirmDeficiencyDone = true;
+        const key = r.alreadyConfirmed ? "deficiency.alreadyConfirmed" : "deficiency.confirmThanks";
+        this.snackBar.open(this.translate.instant(key), undefined, { duration: 4000 });
+      },
+      error: () => {
+        this.confirmDeficiencyPending = false;
+        this.snackBar.open(this.translate.instant("deficiency.confirmError"), undefined, { duration: 4000 });
+      },
+    });
   }
 
   onSubmit(): void {

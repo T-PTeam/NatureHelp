@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces;
+using Domain.Interfaces;
 using Domain.Models.Organization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace NatureHelp.Controllers.Nature;
 
 [Authorize(Roles = "SuperAdmin, Owner, Manager, Researcher")]
-[Route("api/[controller]")]
+[Route("api/laboratory")]
 public class LaboratoryController : BaseCachedController<Laboratory>
 {
     public readonly IMapObjectsService<Laboratory, LaboratoryMapDto> _mapObjectsService;

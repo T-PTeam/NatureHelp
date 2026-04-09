@@ -11,17 +11,31 @@ public class SoilDeficiencyService : BaseService<SoilDeficiency>, IMapObjectsSer
 {
     private readonly IChangedModelLogService _logService;
     private readonly IAuthenticationService _authService;
+    private readonly IProfileService _profileService;
+    private readonly IAchievementEvaluationService _achievementEvaluation;
     private new readonly IMapObjectsRepository<SoilDeficiency, DeficiencyMapDto> _repository;
     
     public SoilDeficiencyService(
         IMapObjectsRepository<SoilDeficiency, DeficiencyMapDto> repository,
         IChangedModelLogService logService,
-        IAuthenticationService authService)
+        IAuthenticationService authService,
+        IProfileService profileService,
+        IAchievementEvaluationService achievementEvaluation)
         : base(repository)
     {
         _logService = logService;
         _authService = authService;
+        _profileService = profileService;
+        _achievementEvaluation = achievementEvaluation;
         _repository = repository;
+    }
+
+    public override async Task<SoilDeficiency> AddAsync(SoilDeficiency entity)
+    {
+        var created = await base.AddAsync(entity);
+        if (entity.CreatedBy != Guid.Empty)
+            await _achievementEvaluation.EvaluateForUserAsync(entity.CreatedBy);
+        return created;
     }
 
     public async Task<ListData<DeficiencyMapDto>> GetMapObjectsAsync(IDictionary<string, string?>? filters)
@@ -57,9 +71,15 @@ public class SoilDeficiencyService : BaseService<SoilDeficiency>, IMapObjectsSer
 
         if (oldEntity == null) throw new EntityNotFoundException<SoilDeficiency>();
 
-        await _logService.LogDeficiencyChangesAsync(oldEntity, entity, EDeficiencyType.Water, entity.CreatedBy);
+        var logId = await _logService.LogDeficiencyChangesAsync(oldEntity, entity, EDeficiencyType.Soil, entity.CreatedBy);
 
-        return await base.UpdateAsync(entity);
+        var updated = await base.UpdateAsync(entity);
+
+        var editor = await _authService.GetCurrentUserAsync();
+        if (editor != null && logId.HasValue)
+            await _profileService.TryAwardDeficiencyEditedAsync(editor.Id, logId.Value);
+
+        return updated;
     }
 
 }

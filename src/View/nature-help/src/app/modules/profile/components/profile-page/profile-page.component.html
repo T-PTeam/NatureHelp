@@ -1,0 +1,64 @@
+<div class="profile-page">
+  <header class="profile-header">
+    <div class="profile-header-content">
+      <nat-dynamic-avatar
+        [stage]="getAvatarStage()"
+        size="lg"
+        [showLabel]="true">
+      </nat-dynamic-avatar>
+      <div class="profile-header-info">
+        <h1 class="profile-name">{{ (user$ | async)?.firstName }} {{ (user$ | async)?.lastName }}</h1>
+        <p class="profile-email">{{ (user$ | async)?.email }}</p>
+        <div
+          *ngIf="profileStats"
+          class="profile-level-block">
+          <span class="profile-level">{{ "profile.level" | translate }} {{ profileStats.level }}</span>
+          <mat-progress-bar
+            class="profile-xp-bar"
+            mode="determinate"
+            [value]="getLevelProgress()">
+          </mat-progress-bar>
+          <span class="profile-xp-text"
+            >{{ profileStats.xpCurrent }} / {{ profileStats.xpCurrent + profileStats.xpToNextLevel }}
+            {{ "profile.xpInLevel" | translate }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <mat-tab-group
+    class="profile-tabs"
+    [selectedIndex]="selectedTabIndex"
+    (selectedIndexChange)="onTabChange($event)"
+    animationDuration="300ms">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">dashboard</mat-icon>
+        {{ "profile.tabs.overview" | translate }}
+      </ng-template>
+      <nat-profile-overview-tab [stats]="profileStats"></nat-profile-overview-tab>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">map</mat-icon>
+        {{ "profile.tabs.journal" | translate }}
+      </ng-template>
+      <nat-profile-journal-tab></nat-profile-journal-tab>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">military_tech</mat-icon>
+        {{ "profile.tabs.achievements" | translate }}
+      </ng-template>
+      <nat-profile-achievements-tab></nat-profile-achievements-tab>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">settings</mat-icon>
+        {{ "profile.tabs.settings" | translate }}
+      </ng-template>
+      <nat-profile-settings-tab></nat-profile-settings-tab>
+    </mat-tab>
+  </mat-tab-group>
+</div>

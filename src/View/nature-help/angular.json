@@ -51,6 +51,20 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "docker-dev": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.dev.ts",
+                  "with": "src/environments/environment.docker.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "development"
@@ -72,6 +86,9 @@
             },
             "development": {
               "buildTarget": "nature-help:build:development"
+            },
+            "docker-dev": {
+              "buildTarget": "nature-help:build:docker-dev"
             }
           },
           "defaultConfiguration": "development"
