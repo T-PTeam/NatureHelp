@@ -205,4 +205,13 @@ public class UserRepository : BaseRepository<User>, IUserRepository
         return true;
     }
 
+    public async Task<(int WaterCount, int SoilCount)> CountCreatedDeficienciesAsync(Guid userId)
+    {
+        using var context = _contextFactory.CreateDbContext();
+        var water = await context.WaterDeficiencies.AsNoTracking().CountAsync(d => d.CreatedBy == userId);
+        var soil = await context.SoilDeficiencies.AsNoTracking().CountAsync(d => d.CreatedBy == userId);
+        return (water, soil);
+    }
+
 }
+

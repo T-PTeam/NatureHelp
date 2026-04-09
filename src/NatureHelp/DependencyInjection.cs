@@ -3,6 +3,7 @@ using Application.Interfaces.Services.Analitycs;
 using Application.Interfaces.Services.Audit;
 using Application.Interfaces.Services.Cache;
 using Application.Interfaces.Services.Organization;
+using Application.Options;
 using Application.Services;
 using Application.Services.Analitycs;
 using Application.Services.Audit;
@@ -42,10 +43,13 @@ namespace NatureHelp
             services.AddScoped<IMapObjectsRepository<WaterDeficiency, DeficiencyMapDto>, DeficiencyRepository<WaterDeficiency, DeficiencyMapDto>>();
             services.AddScoped<IMapObjectsRepository<SoilDeficiency, DeficiencyMapDto>, DeficiencyRepository<SoilDeficiency, DeficiencyMapDto>>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IProfileRepository, ProfileRepository>();
+            services.AddScoped<IDictEntryRepository, DictEntryRepository>();
             services.AddScoped<IMapObjectsRepository<Laboratory, LaboratoryMapDto>, LaboratoryRepository>();
             services.AddScoped<IBaseRepository<Research>, ResearchRepository>();
             services.AddScoped<IChangedModelLogRepository, ChangedModelLogRepository>();
             services.AddSingleton<IRedisCacheService, RedisCacheService>();
+            services.AddSingleton<IDictValueCacheService, DictValueCacheService>();
             services.AddScoped<IEmailSender, SmtpEmailSender>();
             services.AddScoped<IMonitoringRepository, MonitoringRepository>();
 
@@ -57,8 +61,13 @@ namespace NatureHelp
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services.Configure<ProfileOptions>(configuration.GetSection(ProfileOptions.SectionName));
+            services.AddScoped<ILevelThresholdsProvider, LevelThresholdsProvider>();
+            services.AddScoped<IAchievementEvaluationService, AchievementEvaluationService>();
+            services.AddScoped<IProfileService, ProfileService>();
+
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped(typeof(IModelByDeficiencyService<>), typeof(DeficiencyBindModelService<>));
 
@@ -66,7 +75,6 @@ namespace NatureHelp
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
-            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IExcelExportService, ExcelExportService>();
 
             services.AddScoped<IBaseService<User>, BaseService<User>>();

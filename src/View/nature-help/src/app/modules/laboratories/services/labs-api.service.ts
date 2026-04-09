@@ -15,7 +15,7 @@ import { environment } from "src/environments/environment.dev";
   providedIn: "root",
 })
 export class LabsAPIService {
-  private labsUrl = `${environment.apiUrl}/Laboratory`;
+  private labsUrl = `${environment.apiUrl}/laboratory`;
 
   private labsSubject = new BehaviorSubject<ILaboratory[]>([]);
   public labs$: Observable<ILaboratory[]> = this.labsSubject.asObservable();

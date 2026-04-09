@@ -20,6 +20,7 @@ import { OrganizationListComponent } from "./modules/organization-management/com
 import { OrganizationDetailComponent } from "./modules/organization-management/components/organization-detail/organization-detail.component";
 import { PrivacyPolicyComponent } from "./shared/components/privacy-policy/privacy-policy.component";
 import { ContactsComponent } from "./shared/components/contacts/contacts.component";
+import { ProfilePageComponent } from "./modules/profile/components/profile-page/profile-page.component";
 
 const routes: Routes = [
   { path: "", component: WaterDeficiencyTable },
@@ -196,6 +197,25 @@ const routes: Routes = [
   { path: "contacts", component: ContactsComponent },
   { path: "uk/contacts", component: ContactsComponent },
   { path: "en/contacts", component: ContactsComponent },
+
+  {
+    path: "profile",
+    component: ProfilePageComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["superadmin", "owner", "manager", "supervisor", "researcher"] },
+  },
+  {
+    path: "uk/profile",
+    component: ProfilePageComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["superadmin", "owner", "manager", "supervisor", "researcher"] },
+  },
+  {
+    path: "en/profile",
+    component: ProfilePageComponent,
+    canActivate: [RoleGuard],
+    data: { includeRoles: ["superadmin", "owner", "manager", "supervisor", "researcher"] },
+  },
 
   { path: "confirm-email", component: EmailConfirmationComponent },
   { path: "uk/confirm-email", component: EmailConfirmationComponent },

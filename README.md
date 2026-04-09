@@ -126,6 +126,21 @@ npm install
 npm start
 ```
 
+## Deployment
+
+### IIS – Fix 404 for SPA routes
+
+If you see **HTTP Error 404.0 - Not Found** when opening or refreshing routes like `/profile` or `/water`:
+
+1. **Install IIS URL Rewrite Module**  
+   Download and install: [URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite). Without it, the `<rewrite>` rules in `web.config` are ignored.
+
+2. **Use the app’s web.config**  
+   Deploy the built frontend so that the `web.config` from `src/View/nature-help/src/web.config` is in the same folder as `index.html` (e.g. inside `dist/nature-help/`). That config rewrites non-file requests to `index.html` so the Angular router can handle them.
+
+3. **App under a subpath (e.g. `/nature-help/`)**  
+   Ensure the app is published with the correct base href (e.g. `--base-href /nature-help/`) and that the virtual directory in IIS points at the folder that contains that `web.config` and `index.html`.
+
 ## Configuration
 
 ### Environment Variables

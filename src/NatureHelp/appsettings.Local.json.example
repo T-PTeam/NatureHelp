@@ -1,0 +1,43 @@
+{
+  "ConnectionStrings": {
+    "LocalConnection": "Host=localhost;Port=5432;Database=NatureHelpDB;Username=postgres;Password=YOUR_PASSWORD",
+    "DefaultConnection": "Host=localhost;Port=5432;Database=NatureHelpDB;Username=postgres;Password=YOUR_PASSWORD",
+    "AzureBlobStorage": "DefaultEndpointsProtocol=https;AccountName=;AccountKey=;EndpointSuffix=core.windows.net"
+  },
+  "Cors": {
+    "AllowedOrigins": [
+      "http://localhost:4200",
+      "http://localhost:3000",
+      "http://localhost:5051"
+    ]
+  },
+  "Frontend": {
+    "Url": "http://localhost:4200/"
+  },
+  "Payment": {
+    "PublicKey": "",
+    "PrivateKey": "",
+    "Url": "https://www.liqpay.ua/api/3/checkout",
+    "ResultUrl": "https://naturehelp.online/thanks"
+  },
+  "EmailSettings": {
+    "Host": "smtp.gmail.com",
+    "Port": "587",
+    "Username": "",
+    "Password": "",
+    "From": ""
+  },
+  "Redis": {
+    "ConnectionString": "localhost:6379,abortConnect=false"
+  },
+  "OAuth2": {
+    "Google": {
+      "ClientId": "",
+      "ClientSecret": ""
+    },
+    "Facebook": {
+      "AppId": "",
+      "AppSecret": ""
+    }
+  }
+}

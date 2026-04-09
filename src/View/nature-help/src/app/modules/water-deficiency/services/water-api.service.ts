@@ -18,7 +18,7 @@ export class WaterAPIService {
   public deficiencies$: Observable<IWaterDeficiency[]> = this.listSubject.asObservable();
   public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
   public mapDeficiencies$: Observable<IDeficiencyMapDto[]> = this.mapDataSubject.asObservable();
-  private watersUrl = `${environment.apiUrl}/WaterDeficiency`;
+  private watersUrl = `${environment.apiUrl}/waterdeficiency`;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),

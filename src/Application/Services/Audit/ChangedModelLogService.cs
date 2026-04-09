@@ -16,7 +16,7 @@ public class ChangedModelLogService : BaseService<ChangedModelLog>, IChangedMode
         _changedModelLogRepository = changedModelLogReposiroty;
     }
 
-    public async Task LogDeficiencyChangesAsync<T>(T oldEntity, T newEntity, EDeficiencyType deficiencyType, Guid changedBy) where T : Deficiency
+    public async Task<Guid?> LogDeficiencyChangesAsync<T>(T oldEntity, T newEntity, EDeficiencyType deficiencyType, Guid changedBy) where T : Deficiency
     {
         var changes = new Dictionary<string, object>();
 
@@ -31,19 +31,21 @@ public class ChangedModelLogService : BaseService<ChangedModelLog>, IChangedMode
             }
         }
 
-        if (changes.Any())
-        {
-            var log = new ChangedModelLog
-            {
-                DeficiencyType = deficiencyType,
-                DeficiencyId = newEntity.Id,
-                ChangesJson = JsonSerializer.Serialize(changes),
-                CreatedBy = changedBy,
-                CreatedOn = DateTime.UtcNow
-            };
+        if (!changes.Any())
+            return null;
 
-            await _changedModelLogRepository.AddAsync(log);
-        }
+        var log = new ChangedModelLog
+        {
+            Id = Guid.NewGuid(),
+            DeficiencyType = deficiencyType,
+            DeficiencyId = newEntity.Id,
+            ChangesJson = JsonSerializer.Serialize(changes),
+            CreatedBy = changedBy,
+            CreatedOn = DateTime.UtcNow
+        };
+
+        await _changedModelLogRepository.AddAsync(log);
+        return log.Id;
     }
 
     public async Task LogDeficiencyAttachmentChangeAsync<T>(

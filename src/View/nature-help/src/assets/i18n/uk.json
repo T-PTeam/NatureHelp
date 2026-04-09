@@ -419,5 +419,71 @@
       "title": "Час відповіді",
       "content": "Ми прагнемо відповідати на всі запити якнайшвидше. Зазвичай відповідь надходить протягом 24 годин у робочі дні."
     }
+  },
+  "deficiency": {
+    "confirm": "Підтвердити цей звіт",
+    "confirmThanks": "Дякуємо за підтвердження.",
+    "alreadyConfirmed": "Ви вже підтвердили цей звіт.",
+    "confirmError": "Не вдалося підтвердити звіт."
+  },
+  "profile": {
+    "level": "Рівень",
+    "xpInLevel": "XP на поточному рівні",
+    "avatarStage": {
+      "seed": "Насіння",
+      "sprout": "Паросток",
+      "sapling": "Сажанець",
+      "tree": "Дерево"
+    },
+    "tabs": {
+      "overview": "Огляд",
+      "journal": "Мій журнал",
+      "achievements": "Досягнення",
+      "settings": "Налаштування"
+    },
+    "overview": {
+      "impactTitle": "Ваш вплив на природу",
+      "waterReports": "Водні звіти",
+      "soilReports": "ґрунтові звіти",
+      "totalReports": "Всього звітів",
+      "friendForestTitle": "Ліс друзів",
+      "friendForestDesc": "Люди, яких ви запросили до NatureHelp. Ростіть ліс разом.",
+      "inviteFriends": "Запросити друзів",
+      "levelStatusTitle": "Поточний рівень",
+      "levelStatusDesc": "Заробляйте XP за відвідування профілю, оновлення звітів, фото та коли інші підтверджують ваші знахідки.",
+      "totalXp": "Всього XP"
+    },
+    "journal": {
+      "tableTitle": "Мої звіти",
+      "colType": "Тип",
+      "colTitle": "Назва",
+      "colDate": "Дата",
+      "colAddress": "Адреса",
+      "open": "Відкрити",
+      "empty": "Ви ще не створили жодного звіту.",
+      "photoHistoryTitle": "Історія фото",
+      "photoHistoryDesc": "Фото, які ви додали до звітів про дефіцити.",
+      "photosEmpty": "Поки немає фото."
+    },
+    "achievements": {
+      "badgesTitle": "Значки",
+      "badgesDesc": "Отримуйте значки, допомагаючи природі.",
+      "unlocked": "Розблоковано",
+      "challengesTitle": "Виклики",
+      "challengesDesc": "Виконуйте виклики, щоб отримати додаткові XP та значки."
+    },
+    "settings": {
+      "privacyTitle": "Конфіденційність",
+      "profileVisibility": "Публічний профіль",
+      "profileVisibilityHint": "Дозволити іншим бачити ваш рівень та досягнення.",
+      "notificationsTitle": "Сповіщення",
+      "emailNotifications": "Email-сповіщення",
+      "achievementAlerts": "Сповіщення про досягнення",
+      "newsletter": "Розсилка",
+      "accountTitle": "Обліковий запис",
+      "deleteAccount": "Видалити обліковий запис",
+      "deleteAccountHint": "Остаточно видалити обліковий запис та дані. Це незворотна дія.",
+      "saveSuccess": "Налаштування збережено."
+    }
   }
 }

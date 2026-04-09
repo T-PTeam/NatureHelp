@@ -21,6 +21,20 @@
       </button>
     </div>
   </mat-card-title>
+
+  <div
+    *ngIf="showConfirmAction()"
+    class="confirm-deficiency-row">
+    <button
+      mat-stroked-button
+      color="primary"
+      type="button"
+      [disabled]="confirmDeficiencyPending || confirmDeficiencyDone"
+      (click)="onConfirmDeficiency()">
+      {{ "deficiency.confirm" | translate }}
+    </button>
+  </div>
+
   <div
     class="form-container"
     [formGroup]="detailsForm">

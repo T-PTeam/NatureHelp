@@ -1,0 +1,52 @@
+.settings-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1b5e20;
+}
+
+.settings-card {
+  padding: 1rem 1.25rem;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.setting-label {
+  font-size: 0.95rem;
+}
+
+.setting-hint {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.8rem;
+  color: #757575;
+}
+
+.account-action {
+  margin-bottom: 0.5rem;
+}
+
+.settings-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-settings-btn {
+  min-width: 7rem;
+}
+
+.save-settings-btn mat-spinner {
+  display: inline-block;
+  vertical-align: middle;
+}

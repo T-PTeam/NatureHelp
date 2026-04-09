@@ -18,24 +18,47 @@ services:
       timeout: 5s
       retries: 5
 
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - logging-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
   backend:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: backend
     ports:
-      - "5000:5000"
-    extra_hosts: 
+      - "5001:5000"
+    extra_hosts:
       - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:5000/health || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 45s
     volumes:
       - dataprotection-keys:/app/DataProtection-Keys
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
       ASPNETCORE_URLS: "http://0.0.0.0:5000"
-      
-      ConnectionStrings__DefaultConnection: "Host=${DO_DB_HOST};Port=25060;Database=defaultdb;Username=doadmin;Password=${DO_DB_PASSWORD};SSL Mode=Require;Trust Server Certificate=true"
-      
+
       ConnectionStrings__LocalConnection: "Host=postgres;Port=5432;Database=NatureHelpDB;Username=postgres;Password=10101010;Trust Server Certificate=true;Timeout=30;Command Timeout=30"
+
+      Redis__ConnectionString: "redis:6379,abortConnect=false"
+
+      Cors__AllowedOrigins__0: "http://localhost:4200"
+      Cors__AllowedOrigins__1: "http://localhost:5051"
+      Cors__AllowedOrigins__2: "http://localhost:3000"
 
       Serilog__WriteTo__1__Args__serverUrl: "http://seq"
       Serilog__WriteTo__1__Args__apiKey: "j51PsN894Y5YVhWWNb9n"
@@ -50,12 +73,29 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-      seq:
-        condition: service_started
-      elasticsearch:
+      redis:
         condition: service_healthy
-      loki:
-        condition: service_started
+    networks:
+      - logging-network
+
+  db-seed:
+    image: postgres:16-alpine
+    container_name: db-seed
+    depends_on:
+      postgres:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+    environment:
+      PGHOST: postgres
+      PGPORT: 5432
+      PGDATABASE: NatureHelpDB
+      PGUSER: postgres
+      PGPASSWORD: 10101010
+    volumes:
+      - ./src/Infrastructure/Migrations/SQL/Autogenerating_Data.sql:/seed.sql:ro
+    entrypoint: ["/bin/sh", "-c", "sleep 5 && psql -v ON_ERROR_STOP=1 -f /seed.sql"]
+    restart: "no"
     networks:
       - logging-network
 
@@ -72,23 +112,25 @@ services:
        - ./src/View/nature-help/nginx.conf:/etc/nginx/conf.d/default.conf
     networks:
       - logging-network
-      
+
   seq:
     image: datalust/seq:latest
     container_name: seq
+    profiles:
+      - logging
     ports:
-      - "5341:80"     
+      - "5341:80"
     environment:
       - ACCEPT_EULA=Y
       - SEQ_FIRSTRUN_NOAUTHENTICATION=true
-    # volumes:
-      # - seq-data:/data
     networks:
       - logging-network
-      
+
   loki:
     image: grafana/loki:latest
     container_name: loki
+    profiles:
+      - logging
     ports:
       - "3100:3100"
     command: -config.file=/etc/loki/local-config.yaml
@@ -96,10 +138,12 @@ services:
       - loki-data:/loki
     networks:
       - logging-network
-      
+
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
+    profiles:
+      - logging
     ports:
       - "3000:3000"
     environment:
@@ -108,14 +152,20 @@ services:
       - GF_INSTALL_PLUGINS=
     volumes:
       - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
     depends_on:
-      - loki
+      loki:
+        condition: service_started
+      prometheus:
+        condition: service_started
     networks:
       - logging-network
-      
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
     container_name: elasticsearch
+    profiles:
+      - logging
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -132,10 +182,12 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
-      
+
   kibana:
     image: docker.elastic.co/kibana/kibana:8.11.0
     container_name: kibana
+    profiles:
+      - logging
     ports:
       - "5601:5601"
     environment:
@@ -151,6 +203,8 @@ services:
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
+    profiles:
+      - logging
     ports:
       - "9090:9090"
     volumes:

@@ -419,5 +419,71 @@
       "title": "Response Time",
       "content": "We strive to respond to all inquiries as quickly as possible. Usually, responses are received within 24 hours on business days."
     }
+  },
+  "deficiency": {
+    "confirm": "Confirm this report",
+    "confirmThanks": "Thanks for confirming.",
+    "alreadyConfirmed": "You already confirmed this report.",
+    "confirmError": "Could not confirm this report."
+  },
+  "profile": {
+    "level": "Level",
+    "xpInLevel": "XP in this level",
+    "avatarStage": {
+      "seed": "Seed",
+      "sprout": "Sprout",
+      "sapling": "Sapling",
+      "tree": "Tree"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "journal": "My Journal",
+      "achievements": "Achievements",
+      "settings": "Settings"
+    },
+    "overview": {
+      "impactTitle": "Your impact on nature",
+      "waterReports": "Water reports",
+      "soilReports": "Soil reports",
+      "totalReports": "Total reports",
+      "friendForestTitle": "Friend Forest",
+      "friendForestDesc": "People you invited to NatureHelp. Grow your forest together.",
+      "inviteFriends": "Invite friends",
+      "levelStatusTitle": "Current level",
+      "levelStatusDesc": "Earn XP by visiting your profile, improving reports, adding photos, and when others confirm your findings.",
+      "totalXp": "Total XP"
+    },
+    "journal": {
+      "tableTitle": "My reports",
+      "colType": "Type",
+      "colTitle": "Title",
+      "colDate": "Date",
+      "colAddress": "Address",
+      "open": "Open",
+      "empty": "You have not created any reports yet.",
+      "photoHistoryTitle": "Photo history",
+      "photoHistoryDesc": "Photos you added to deficiency reports.",
+      "photosEmpty": "No photos yet."
+    },
+    "achievements": {
+      "badgesTitle": "Badges",
+      "badgesDesc": "Earn badges by contributing to nature.",
+      "unlocked": "Unlocked",
+      "challengesTitle": "Challenges",
+      "challengesDesc": "Complete challenges to earn extra XP and badges."
+    },
+    "settings": {
+      "privacyTitle": "Privacy",
+      "profileVisibility": "Public profile",
+      "profileVisibilityHint": "Allow others to see your level and achievements.",
+      "notificationsTitle": "Notifications",
+      "emailNotifications": "Email notifications",
+      "achievementAlerts": "Achievement alerts",
+      "newsletter": "Newsletter",
+      "accountTitle": "Account",
+      "deleteAccount": "Delete account",
+      "deleteAccountHint": "Permanently delete your account and data. This cannot be undone.",
+      "saveSuccess": "Your settings were saved."
+    }
   }
 }

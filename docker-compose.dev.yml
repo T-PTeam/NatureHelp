@@ -1,0 +1,57 @@
+services:
+  backend:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    container_name: backend-dev
+    working_dir: /src
+    command: sh -c "apt-get update && apt-get install -y curl && dotnet watch run --project src/NatureHelp/NatureHelp.csproj --urls http://0.0.0.0:5000 --no-launch-profile"
+    volumes:
+      - .:/src
+      - dataprotection-keys:/src/DataProtection-Keys
+    ports:
+      - "5077:5000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:5000/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 300s
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://0.0.0.0:5000"
+      ConnectionStrings__LocalConnection: "Host=postgres;Port=5432;Database=NatureHelpDB;Username=postgres;Password=10101010;Trust Server Certificate=true;Timeout=30;Command Timeout=30"
+      Redis__ConnectionString: "redis:6379,abortConnect=false"
+      Cors__AllowedOrigins__0: "http://localhost:4200"
+      Cors__AllowedOrigins__1: "http://localhost:5051"
+      Cors__AllowedOrigins__2: "http://localhost:3000"
+      OAuth2__Google__ClientId: "${GOOGLE_CLIENT_ID}"
+      OAuth2__Google__ClientSecret: "${GOOGLE_CLIENT_SECRET}"
+      OAuth2__Facebook__AppId: "${FACEBOOK_APP_ID}"
+      OAuth2__Facebook__AppSecret: "${FACEBOOK_APP_SECRET}"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - logging-network
+
+  frontend-dev:
+    image: node:20
+    container_name: frontend-dev
+    working_dir: /app
+    command: sh -c "npm install --legacy-peer-deps && npx ng serve --host 0.0.0.0 --port 4200 -c development --poll 2000"
+    volumes:
+      - ./src/View/nature-help:/app
+      - frontend_node_modules:/app/node_modules
+    ports:
+      - "4200:4200"
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - logging-network
+
+volumes:
+  frontend_node_modules:
