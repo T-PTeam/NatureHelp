@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { LabsAPIService } from "../../services/labs-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
+import { UserAPIService } from "@/shared/services/user-api.service";
 import { withLatestFrom } from "rxjs";
 import { ILaboratorFilter } from "../../models/ILaboratoryFilter";
 import { FormGroup, FormBuilder } from "@angular/forms";
@@ -13,7 +14,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
   styleUrls: ["../../../../shared/styles/table-list.component.css", "./labs-table.component.css"],
   standalone: false,
 })
-export class LabsTableComponent implements OnInit {
+export class LabsTableComponent {
   public scrollCheckDisabled: boolean = false;
   filterForm!: FormGroup;
 
@@ -24,6 +25,7 @@ export class LabsTableComponent implements OnInit {
     public labsAPIService: LabsAPIService,
     private router: Router,
     private mapViewService: MapViewService,
+    public userAPIService: UserAPIService,
     private fb: FormBuilder,
   ) {
     this.filterForm = this.fb.group({
@@ -34,8 +36,6 @@ export class LabsTableComponent implements OnInit {
       this.isFilterChanged = true;
     });
   }
-
-  ngOnInit(): void {}
 
   public navigateToDetail(id?: string) {
     if (id) {

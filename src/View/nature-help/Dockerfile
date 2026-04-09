@@ -1,38 +1,28 @@
-# Stage 1: Build the Angular application
 FROM node:20 AS frontend-build
-
-# Install bash (тільки якщо потрібно)
-RUN apt-get update && apt-get install -y bash
-
-# Setup the working directory
 WORKDIR /usr/src/app
-
-# Copy package files
 COPY package.json package-lock.json ./
-
-# Install Angular CLI globally (опційно)
 RUN npm install -g @angular/cli
-
-# Install dependencies
 RUN npm install --legacy-peer-deps
-
-# Copy the rest of the app
 COPY . .
+ARG ENV_FILE=environment.docker.ts
+COPY src/environments/${ENV_FILE} src/environments/environment.ts
+RUN npm run build -- --configuration=production --base-href /nature-help/
 
-# Build Angular app with українською локалізацією
-RUN npm run build -- --configuration=production --localize --base-href /nature-help/
+FROM nginx:alpine
 
-FROM nginx:alpine AS frontend
+# 1. DELETE DEFAULT NGINX PAGE (The "Welcome" file)
+# This ensures that if something is wrong, you get a 403/404 instead of the Welcome page.
+RUN rm -rf /usr/share/nginx/html/*
 
-# Копіюємо білд із першого етапу
+# 2. DELETE DEFAULT CONFIG
+RUN rm /etc/nginx/conf.d/default.conf
+
+# 3. Copy Custom Config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# 4. Copy App
+# Result: /usr/share/nginx/html/nature-help/index.html
 COPY --from=frontend-build /usr/src/app/dist/ /usr/share/nginx/html/
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-# Відкриваємо порт 8080 (або який тобі потрібно)
-EXPOSE 8080
-
-# Запускаємо сервер
-
-CMD ["http-server", ".", "-p", "8080"]
-
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

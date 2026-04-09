@@ -9,20 +9,10 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "n",
-      "i18n": {
-        "sourceLocale": "en-US",
-        "locales": {
-          "uk": {
-            "translation": "src/locale/messages.uk.xlf"
-          }
-        }
-      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": true,
-            "i18nMissingTranslation": "warning",
             "outputPath": "dist/nature-help",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,14 +23,7 @@
             "scripts": []
           },
           "configurations": {
-            "en": {
-              "localize": ["en"]
-            },
-            "uk": {
-              "localize": ["uk"]
-            },
             "production": {
-              "localize": ["en-US"],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.dev.ts",
@@ -62,13 +45,26 @@
               "outputHashing": "all"
             },
             "development": {
-              "localize": ["en-US"],
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "docker-dev": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.dev.ts",
+                  "with": "src/environments/environment.docker.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "development"
@@ -90,22 +86,17 @@
             },
             "development": {
               "buildTarget": "nature-help:build:development"
+            },
+            "docker-dev": {
+              "buildTarget": "nature-help:build:docker-dev"
             }
           },
           "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "buildTarget": "nature-help:build",
-            "outputPath": "src/locale",
-            "format": "xlf2"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing", "@angular/localize/init"],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css", "src/custom-theme.scss"],

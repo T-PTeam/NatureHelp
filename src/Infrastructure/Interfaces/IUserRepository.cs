@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces;
+using Domain.Interfaces;
 using Domain.Models.Organization;
 
 namespace Infrastructure.Interfaces;
@@ -17,5 +17,9 @@ public interface IUserRepository : IBaseRepository<User>
     Task<bool> InvalidatePasswordResetTokenAsync(Guid userId);
     Task<bool> IsPasswordResetTokenValidAsync(Guid userId, string token);
     public Task<Guid?> GetUserIdByPasswordResetTokenAsync(string token);
+    Task<bool> DeleteUserDataAsync(string email);
+
+    Task<(int WaterCount, int SoilCount)> CountCreatedDeficienciesAsync(Guid userId);
 
 }
+

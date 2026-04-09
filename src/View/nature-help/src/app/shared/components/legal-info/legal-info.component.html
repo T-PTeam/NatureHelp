@@ -1,0 +1,80 @@
+<!-- Розділ "Реквізити / Юридична інформація" -->
+<section
+  id="rekvizyty"
+  class="requisites"
+  itemscope
+  itemtype="https://schema.org/Organization">
+  <h2>{{ "legal.title" | translate }}</h2>
+
+  <p>
+    <strong itemprop="legalName">{{ "legal.fop" | translate }}</strong>
+  </p>
+
+  <ul>
+    <li>
+      <strong>{{ "legal.taxId" | translate }}:</strong> <span itemprop="taxID">3839206436</span>
+    </li>
+    <li>
+      <strong>{{ "legal.address" | translate }}:</strong>
+      <address
+        itemprop="address"
+        itemscope
+        itemtype="https://schema.org/PostalAddress">
+        <span itemprop="addressCountry">{{ "legal.addressCountry" | translate }}</span
+        >, <span itemprop="postalCode">89111</span>,
+        <span itemprop="addressRegion">{{ "legal.addressRegion" | translate }}</span
+        >, <span itemprop="addressLocality">{{ "legal.addressLocality" | translate }}</span
+        >,
+        <span itemprop="streetAddress">{{ "legal.addressStreet" | translate }}</span>
+      </address>
+    </li>
+    <li>
+      <strong>{{ "legal.phone" | translate }}:</strong>
+      <a
+        href="tel:+380992880228"
+        itemprop="telephone"
+        >+380 (99) 288-02-28</a
+      >
+    </li>
+    <li>
+      <strong>{{ "legal.email" | translate }}:</strong>
+      <a
+        href="mailto:support@naturehelp.online"
+        itemprop="email"
+        >support&#64;naturehelp.online</a
+      >
+    </li>
+    <li>
+      <strong>{{ "legal.banking" | translate }}:</strong>
+      <div>
+        {{ "legal.iban" | translate }}: <span>UA423052990000026007003608580</span><br />
+        {{ "legal.bank" | translate }}: <span>АТ «ПриватБанк»</span>
+      </div>
+    </li>
+    <li>
+      <strong>{{ "legal.registration" | translate }}:</strong> <span>08.07.2025, запис №2010350000000823971</span>
+    </li>
+  </ul>
+</section>
+
+<!-- Контакти -->
+<section
+  id="contacts"
+  class="contacts">
+  <h3>{{ "legal.contacts" | translate }}</h3>
+  <p>{{ "legal.contactText" | translate }}</p>
+  <ul>
+    <li>
+      {{ "userManagement.email" | translate }}:
+      <a href="mailto:support@naturehelp.online">support&#64;naturehelp.online</a>
+    </li>
+    <li>
+      {{ "tableHeaders.phone" | translate }}:
+      <a href="tel:+380992880228">+380 (99) 288-02-28</a>
+    </li>
+    <li>
+      {{ "tableHeaders.address" | translate }}:
+      {{ "legal.contactAddress" | translate }}
+    </li>
+  </ul>
+</section>

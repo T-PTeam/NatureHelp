@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { IDeficiencyAttachment } from "@/models/IAttachment";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpEventType } from "@angular/common/http";
 import { environment } from "src/environments/environment.dev";
 import { EDeficiencyType } from "@/models/enums";
 import { MatSnackBar } from "@angular/material/snack-bar";
@@ -19,6 +19,8 @@ export class FileUploadComponent {
 
   selectedFile: File | null = null;
   baseUrl: string = environment.apiUrl + "/Attachments";
+  isUploading: boolean = false;
+  uploadProgress: number = 0;
 
   private allowedTypes = ["image/png", "image/jpeg", "application/pdf"];
   private maxSize = 4 * 1024 * 1024;
@@ -48,19 +50,33 @@ export class FileUploadComponent {
   }
 
   uploadFile() {
-    if (!this.selectedFile || !this.deficiencyId || this.deficiencyType === undefined) return;
+    if (!this.selectedFile || !this.deficiencyId || this.deficiencyType === undefined || this.isUploading) return;
 
     const formData = new FormData();
     formData.append("file", this.selectedFile);
 
+    this.isUploading = true;
+    this.uploadProgress = 0;
+
     this.http
-      .post(`${this.baseUrl}/upload/deficiency/${this.deficiencyId}?deficiencyType=${this.deficiencyType}`, formData)
+      .post(`${this.baseUrl}/upload/deficiency/${this.deficiencyId}?deficiencyType=${this.deficiencyType}`, formData, {
+        reportProgress: true,
+        observe: "events",
+      })
       .subscribe({
-        next: () => {
-          this.selectedFile = null;
-          this.fileUploaded.emit();
+        next: (event: any) => {
+          if (event.type === HttpEventType.UploadProgress) {
+            this.uploadProgress = Math.round((100 * event.loaded) / (event.total || this.selectedFile!.size));
+          } else if (event.type === HttpEventType.Response) {
+            this.isUploading = false;
+            this.uploadProgress = 100;
+            this.selectedFile = null;
+            this.fileUploaded.emit();
+          }
         },
         error: (err) => {
+          this.isUploading = false;
+          this.uploadProgress = 0;
           this.notify.open("Upload failed!", "Close", { duration: 2000 });
           console.error("Upload failed", err);
         },

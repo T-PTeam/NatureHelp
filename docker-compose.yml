@@ -1,19 +1,229 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_DB: NatureHelpDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 10101010
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - logging-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - logging-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
   backend:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: backend
     ports:
-      - "5000:5000"
+      - "5001:5000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:5000/health || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 45s
+    volumes:
+      - dataprotection-keys:/app/DataProtection-Keys
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://0.0.0.0:5000
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://0.0.0.0:5000"
+
+      ConnectionStrings__LocalConnection: "Host=postgres;Port=5432;Database=NatureHelpDB;Username=postgres;Password=10101010;Trust Server Certificate=true;Timeout=30;Command Timeout=30"
+
+      Redis__ConnectionString: "redis:6379,abortConnect=false"
+
+      Cors__AllowedOrigins__0: "http://localhost:4200"
+      Cors__AllowedOrigins__1: "http://localhost:5051"
+      Cors__AllowedOrigins__2: "http://localhost:3000"
+
+      Serilog__WriteTo__1__Args__serverUrl: "http://seq"
+      Serilog__WriteTo__1__Args__apiKey: "j51PsN894Y5YVhWWNb9n"
+      Serilog__WriteTo__2__Args__nodeUris: "http://elasticsearch:9200"
+      Serilog__WriteTo__3__Args__uri: "http://loki:3100"
+
+      OAuth2__Google__ClientId: "${GOOGLE_CLIENT_ID}"
+      OAuth2__Google__ClientSecret: "${GOOGLE_CLIENT_SECRET}"
+      OAuth2__Facebook__AppId: "${FACEBOOK_APP_ID}"
+      OAuth2__Facebook__AppSecret: "${FACEBOOK_APP_SECRET}"
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - logging-network
+
+  db-seed:
+    image: postgres:16-alpine
+    container_name: db-seed
+    depends_on:
+      postgres:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+    environment:
+      PGHOST: postgres
+      PGPORT: 5432
+      PGDATABASE: NatureHelpDB
+      PGUSER: postgres
+      PGPASSWORD: 10101010
+    volumes:
+      - ./src/Infrastructure/Migrations/SQL/Autogenerating_Data.sql:/seed.sql:ro
+    entrypoint: ["/bin/sh", "-c", "sleep 5 && psql -v ON_ERROR_STOP=1 -f /seed.sql"]
+    restart: "no"
+    networks:
+      - logging-network
 
   frontend:
     build:
       context: ./src/View/nature-help
       dockerfile: Dockerfile
+    container_name: frontend
     ports:
       - "5051:80"
     depends_on:
       - backend
+    volumes:
+       - ./src/View/nature-help/nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - logging-network
+
+  seq:
+    image: datalust/seq:latest
+    container_name: seq
+    profiles:
+      - logging
+    ports:
+      - "5341:80"
+    environment:
+      - ACCEPT_EULA=Y
+      - SEQ_FIRSTRUN_NOAUTHENTICATION=true
+    networks:
+      - logging-network
+
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    profiles:
+      - logging
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - loki-data:/loki
+    networks:
+      - logging-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    profiles:
+      - logging
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_INSTALL_PLUGINS=
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+    depends_on:
+      loki:
+        condition: service_started
+      prometheus:
+        condition: service_started
+    networks:
+      - logging-network
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: elasticsearch
+    profiles:
+      - logging
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    networks:
+      - logging-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=50s || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.11.0
+    container_name: kibana
+    profiles:
+      - logging
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - ELASTICSEARCH_USERNAME=
+      - ELASTICSEARCH_PASSWORD=
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - logging-network
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    profiles:
+      - logging
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    networks:
+      - logging-network
+
+volumes:
+  postgres-data:
+  seq-data:
+  loki-data:
+  grafana-data:
+  elasticsearch-data:
+  prometheus-data:
+  dataprotection-keys:
+
+networks:
+  logging-network:
+    driver: bridge

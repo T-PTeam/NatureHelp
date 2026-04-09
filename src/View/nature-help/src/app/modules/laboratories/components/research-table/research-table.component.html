@@ -1,38 +1,23 @@
 <div class="header">
-  <h2 i18n="@@researchesTitle">Researches</h2>
+  <h2>{{ "tables.researchesTitle" | translate }}</h2>
 </div>
 
 <div class="grid-container">
   <div class="grid-header">
-    <div
-      i18n="@@title"
-      i18n-matTooltip="@@title"
-      matTooltip="Title">
-      Title
+    <div [matTooltip]="'tableHeaders.title' | translate">
+      {{ "tableHeaders.title" | translate }}
     </div>
-    <div
-      i18n="@@type"
-      i18n-matTooltip="@@type"
-      matTooltip="Type">
-      Type
+    <div [matTooltip]="'tableHeaders.type' | translate">
+      {{ "tableHeaders.type" | translate }}
     </div>
-    <div
-      i18n="@@date"
-      i18n-matTooltip="@@date"
-      matTooltip="Date">
-      Date
+    <div [matTooltip]="'tableHeaders.date' | translate">
+      {{ "tableHeaders.date" | translate }}
     </div>
-    <div
-      i18n="@@researcher"
-      i18n-matTooltip="@@researcher"
-      matTooltip="Researcher">
-      Researcher
+    <div [matTooltip]="'tableHeaders.researcher' | translate">
+      {{ "tableHeaders.researcher" | translate }}
     </div>
-    <div
-      i18n="@@laboratory"
-      i18n-matTooltip="@@laboratory"
-      matTooltip="Laboratory">
-      Laboratory
+    <div [matTooltip]="'tableHeaders.laboratory' | translate">
+      {{ "tableHeaders.laboratory" | translate }}
     </div>
   </div>
   <div

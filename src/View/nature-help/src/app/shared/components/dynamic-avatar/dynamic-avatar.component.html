@@ -1,0 +1,47 @@
+<div
+  class="dynamic-avatar"
+  [attr.data-size]="size"
+  [class]="stageClass">
+  <div class="avatar-visual">
+    <ng-container [ngSwitch]="stage">
+      <div
+        *ngSwitchCase="AvatarStage.Seed"
+        class="avatar-seed">
+        <div class="seed-body"></div>
+        <div class="seed-shine"></div>
+      </div>
+      <div
+        *ngSwitchCase="AvatarStage.Sprout"
+        class="avatar-sprout">
+        <div class="sprout-leaf sprout-leaf-left"></div>
+        <div class="sprout-leaf sprout-leaf-right"></div>
+        <div class="sprout-stem"></div>
+      </div>
+      <div
+        *ngSwitchCase="AvatarStage.Sapling"
+        class="avatar-sapling">
+        <div class="sapling-leaf-cluster"></div>
+        <div class="sapling-branch sapling-branch-left"></div>
+        <div class="sapling-branch sapling-branch-right"></div>
+        <div class="sapling-trunk"></div>
+      </div>
+      <div
+        *ngSwitchCase="AvatarStage.Tree"
+        class="avatar-tree">
+        <div class="tree-canopy"></div>
+        <div class="tree-trunk"></div>
+      </div>
+      <div
+        *ngSwitchDefault
+        class="avatar-seed">
+        <div class="seed-body"></div>
+        <div class="seed-shine"></div>
+      </div>
+    </ng-container>
+  </div>
+  <span
+    *ngIf="showLabel"
+    class="avatar-label"
+    >{{ "profile.avatarStage." + stage | translate }}</span
+  >
+</div>

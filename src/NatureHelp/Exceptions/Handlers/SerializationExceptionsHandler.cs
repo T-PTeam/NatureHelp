@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using NatureHelp.Interfaces;
+using Shared.Dtos;
 using System.Net;
 
 namespace NatureHelp.Exceptions.Handlers;
@@ -19,11 +20,14 @@ public class SerializationExceptionsHandler : IExceptionHandler
     /// <inheritdoc/>
     public void Handle(ExceptionContext exceptionContext)
     {
-        exceptionContext.Result = new ContentResult
+        exceptionContext.Result = new ObjectResult(new ErrorResponseDto
         {
-            Content = "Serialization error: " + exceptionContext.Exception.Message,
-            ContentType = "text/plain",
-            StatusCode = (int)HttpStatusCode.InternalServerError
+            Message = exceptionContext.Exception.Message,
+            StatusCode = (int)HttpStatusCode.BadRequest,
+            ErrorType = exceptionContext.Exception.GetType().Name
+        })
+        {
+            StatusCode = (int)HttpStatusCode.BadRequest
         };
 
         exceptionContext.ExceptionHandled = true;

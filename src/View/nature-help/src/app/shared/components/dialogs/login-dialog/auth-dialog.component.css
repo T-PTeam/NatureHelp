@@ -1,0 +1,66 @@
+.oauth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 14px;
+}
+
+.oauth-divider::before,
+.oauth-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.oauth-divider span {
+  padding: 0 16px;
+}
+
+.oauth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.oauth-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.oauth-button:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.google-button {
+  border-color: #dadce0;
+  color: #3c4043;
+}
+
+.google-button:hover {
+  background-color: #f8f9fa;
+  border-color: #dadce0;
+}
+
+.facebook-button {
+  border-color: #1877f2;
+  color: #1877f2;
+}
+
+.facebook-button:hover {
+  background-color: #f0f2f5;
+  border-color: #1877f2;
+}
+
+.oauth-icon {
+  flex-shrink: 0;
+}

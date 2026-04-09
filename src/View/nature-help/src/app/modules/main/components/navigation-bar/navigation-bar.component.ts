@@ -11,6 +11,7 @@ import { UserAPIService } from "@/shared/services/user-api.service";
 import { EmailVerificationService } from "@/shared/services/email-verification.service";
 import { MobileMapService } from "@/shared/services/mobile-map.service";
 import { EAuthType } from "@/models/enums";
+import { getErrorMessage } from "@/shared/utils/error.utils";
 
 @Component({
   selector: "n-navigation-bar",
@@ -103,6 +104,8 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     }, 1000);
   }
 
+  isAuthenticating = false;
+
   openAuthDialog(isRegister: boolean): void {
     const dialogRef = this.dialog.open(AuthDialogComponent, {
       width: "fit-content",
@@ -115,10 +118,12 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
+        this.isAuthenticating = true;
         this.userService
           .auth(isRegister ? EAuthType.Register : EAuthType.Login, result.email, result.password)
           .subscribe({
             next: (authResponse) => {
+              this.isAuthenticating = false;
               if (authResponse.user && !authResponse.user.isEmailConfirmed) {
                 this.emailVerificationService.sendVerificationEmail(authResponse.user.email).subscribe({
                   next: () => {
@@ -134,9 +139,9 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
                 });
               }
             },
-            error: (err) => {
-              this.notify.open("Login failed", "Close", { duration: 2000 });
-              return err;
+            error: (err: any) => {
+              const errorMessage = getErrorMessage(err);
+              this.notify.open(errorMessage, "Close", { duration: 3000 });
             },
           });
       }

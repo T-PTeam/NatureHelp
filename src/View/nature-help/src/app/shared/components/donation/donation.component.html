@@ -1,0 +1,79 @@
+<div class="donation-container">
+  <mat-card class="donation-card">
+    <mat-card-header>
+      <mat-card-title>Support NatureHelp</mat-card-title>
+      <mat-card-subtitle>Help us protect nature and monitor environmental issues</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form
+        [formGroup]="donationForm"
+        (ngSubmit)="onSubmit()"
+        class="donation-form">
+        <mat-form-field
+          appearance="outline"
+          class="full-width">
+          <mat-label>Donation Amount (UAH)</mat-label>
+          <input
+            matInput
+            type="number"
+            formControlName="amount"
+            placeholder="Enter amount" />
+          <mat-error *ngIf="donationForm.get('amount')?.invalid && donationForm.get('amount')?.touched">
+            Please enter a valid amount
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field
+          appearance="outline"
+          class="full-width">
+          <mat-label>Currency</mat-label>
+          <mat-select formControlName="currency">
+            <mat-option value="UAH">UAH</mat-option>
+            <mat-option value="USD">USD</mat-option>
+            <mat-option value="EUR">EUR</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field
+          appearance="outline"
+          class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            formControlName="description"
+            rows="3"
+            placeholder="Enter donation description">
+          </textarea>
+        </mat-form-field>
+
+        <mat-form-field
+          appearance="outline"
+          class="full-width">
+          <mat-label>Email (Optional)</mat-label>
+          <input
+            matInput
+            type="email"
+            formControlName="userEmail"
+            placeholder="Enter your email for receipt" />
+          <mat-error *ngIf="donationForm.get('userEmail')?.invalid && donationForm.get('userEmail')?.touched">
+            Please enter a valid email
+          </mat-error>
+        </mat-form-field>
+
+        <div class="donation-actions">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="donationForm.invalid || isLoading"
+            class="donate-button">
+            <mat-icon *ngIf="isLoading">hourglass_empty</mat-icon>
+            <mat-icon *ngIf="!isLoading">favorite</mat-icon>
+            {{ isLoading ? "Processing..." : "Donate Now" }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

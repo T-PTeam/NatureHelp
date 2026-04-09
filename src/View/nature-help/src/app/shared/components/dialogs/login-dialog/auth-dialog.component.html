@@ -1,26 +1,23 @@
 <h2
   mat-dialog-title
-  class="dialog-title"
-  i18n="@@loginTitle">
-  Login
+  class="dialog-title">
+  {{ "passwordReset.loginTitle" | translate }}
 </h2>
 <div mat-dialog-content>
   <form [formGroup]="formGroup">
     <mat-form-field class="full-width">
-      <mat-label i18n="@@emailLabel">Email</mat-label>
+      <mat-label>{{ "forms.email" | translate }}</mat-label>
       <input
         matInput
         type="email"
         formControlName="email" />
-      <mat-error
-        i18n="@@emailError"
-        *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
-        Please enter a valid email
+      <mat-error *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+        {{ "passwordReset.emailError" | translate }}
       </mat-error>
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <mat-label i18n="@@passwordLabel">Password</mat-label>
+      <mat-label>{{ "passwordReset.passwordLabel" | translate }}</mat-label>
       <input
         matInput
         [type]="hidePassword ? 'password' : 'text'"
@@ -32,20 +29,67 @@
         type="button">
         <mat-icon>{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon>
       </button>
-      <mat-error
-        i18n="@@passwordError"
-        *ngIf="formGroup.get('password')?.invalid && formGroup.get('password')?.touched">
-        Password must be at least 6 characters
+      <mat-error *ngIf="formGroup.get('password')?.invalid && formGroup.get('password')?.touched">
+        {{ "passwordReset.passwordError" | translate }}
       </mat-error>
     </mat-form-field>
 
     <div class="forgot-password-link">
       <a
         href="#"
-        (click)="onForgotPassword($event)"
-        i18n="@@forgotPasswordLink">
-        Forgot Password?
+        (click)="onForgotPassword($event)">
+        {{ "passwordReset.forgotPassword" | translate }}
       </a>
+    </div>
+
+    <div class="oauth-divider">
+      <span>{{ "auth.orContinueWith" | translate }}</span>
+    </div>
+
+    <div class="oauth-buttons">
+      <button
+        mat-stroked-button
+        class="oauth-button google-button"
+        (click)="loginWithGoogle()"
+        type="button">
+        <svg
+          class="oauth-icon"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18">
+          <path
+            fill="#4285F4"
+            d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+          <path
+            fill="#34A853"
+            d="M9 18c2.43 0 4.467-.806 5.96-2.184l-2.908-2.258c-.806.54-1.837.86-3.052.86-2.347 0-4.33-1.585-5.036-3.717H.957v2.332C2.438 15.983 5.482 18 9 18z" />
+          <path
+            fill="#FBBC05"
+            d="M3.964 10.701c-.18-.54-.282-1.117-.282-1.701s.102-1.161.282-1.701V4.967H.957C.347 6.175 0 7.55 0 9s.348 2.825.957 4.033l3.007-2.332z" />
+          <path
+            fill="#EA4335"
+            d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.967L3.964 7.3C4.67 5.163 6.653 3.58 9 3.58z" />
+        </svg>
+        {{ "auth.loginWithGoogle" | translate }}
+      </button>
+
+      <button
+        mat-stroked-button
+        class="oauth-button facebook-button"
+        (click)="loginWithFacebook()"
+        type="button">
+        <svg
+          class="oauth-icon"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none">
+          <path
+            d="M18 9C18 4.03 13.97 0 9 0S0 4.03 0 9c0 4.42 3.21 8.1 7.41 8.79v-6.22H5.31V9h2.1V7.02c0-2.08 1.23-3.22 3.13-3.22.91 0 1.86.16 1.86.16v2.05h-1.05c-1.03 0-1.35.64-1.35 1.3V9h2.31l-.37 2.57h-1.94v6.22C14.79 17.1 18 13.42 18 9z"
+            fill="#1877F2" />
+        </svg>
+        {{ "auth.loginWithFacebook" | translate }}
+      </button>
     </div>
   </form>
 </div>
@@ -54,20 +98,18 @@
   mat-dialog-actions
   class="action-buttons">
   <button
-    i18n="@@cancelBtn"
     class="reset-button"
     mat-raised-button
     (click)="closeDialog()">
-    Cancel
+    {{ "common.cancel" | translate }}
   </button>
   <button
-    i18n="@@loginBtn"
     class="apply-button"
     mat-flat-button
     color="primary"
     (click)="onSubmit()"
     [disabled]="formGroup.invalid"
     type="submit">
-    Login
+    {{ "passwordReset.loginBtn" | translate }}
   </button>
 </div>

@@ -1,4 +1,4 @@
-﻿using Application.Dtos;
+using Application.Dtos;
 using Domain.Models.Organization;
 using Shared.Dtos;
 
@@ -25,5 +25,21 @@ public interface IUserService
     Task<bool> ResetPasswordByEmailAsync(ResetPasswordDto request);
     Task<bool> ResetPasswordWithTokenAsync(ResetPasswordWithTokenDto request);
     public Task<Guid> ExtractUserIdFromPasswordResetToken(string token);
+    
+    Task<User> LoginOrRegisterWithOAuth2Async(string email, string firstName, string lastName, string provider);
+    
+    Task<bool> DeleteUserDataAsync(string email);
 
+    Task<UserProfileStatsDto> GetProfileStatsAsync(string email);
+
+    Task<User> UpdateProfileSettingsAsync(string email, UserProfileSettingsDto settings);
+
+    Task<IReadOnlyList<ProfileJournalEntryDto>> GetProfileJournalAsync(string email, int take = 100);
+
+    Task<IReadOnlyList<ProfilePhotoHistoryDto>> GetProfilePhotoHistoryAsync(string email, int take = 100);
+
+    Task<IReadOnlyList<ProfileAchievementDto>> GetProfileAchievementsAsync(string email);
+
+    Task<bool> RecordProfileVisitAsync(string email);
 }
+

@@ -4,13 +4,12 @@ import { BehaviorSubject, combineLatest, map, Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
 import { ICoordinates } from "@/models/ICoordinates";
-import { IWaterDeficiency } from "@/modules/water-deficiency/models/IWaterDeficiency";
+import { IDeficiencyMapDto } from "@/models/IDeficiencyMapDto";
 
 import { SoilAPIService } from "../../modules/soil-deficiency/services/soil-api.service";
 import { WaterAPIService } from "../../modules/water-deficiency/services/water-api.service";
 import { LabsAPIService } from "@/modules/laboratories/services/labs-api.service";
-import { ILaboratory } from "@/modules/laboratories/models/ILaboratory";
-import { IDeficiency } from "@/models/IDeficiency";
+import { ILaboratoryMapDto } from "@/modules/laboratories/models/ILaboratoryMapDto";
 import { EDangerState, EDeficiencyType, EMapLayer } from "@/models/enums";
 import "leaflet.markercluster";
 
@@ -84,9 +83,10 @@ export class MapViewService {
     "Soil Deficiencies": this.soilDeficienciesLayer,
   };
 
-  private markerList$ = combineLatest([this.waterDataService.deficiencies$, this.soilDataService.deficiencies$]).pipe(
-    map(([waterList, soilList]) => [...waterList, ...soilList]),
-  );
+  private markerList$ = combineLatest([
+    this.waterDataService.mapDeficiencies$,
+    this.soilDataService.mapDeficiencies$,
+  ]).pipe(map(([waterList, soilList]) => [...waterList, ...soilList]));
 
   private map: any;
 
@@ -148,12 +148,14 @@ export class MapViewService {
             this.clearDeficienciesLayersFromMap();
 
             list.forEach((d) => {
+              const radius = d.radiusAffected > 0 ? d.radiusAffected : 10;
               if (this.isWaterDeficiency(d)) {
                 this.makeCircleMarker(
                   EMapLayer.WaterDeficiency,
                   { longitude: d.longitude, latitude: d.latitude },
                   "#4285f4",
                   this.getDeficiencyPopup(d),
+                  radius,
                 );
               } else {
                 this.makeCircleMarker(
@@ -161,6 +163,7 @@ export class MapViewService {
                   { longitude: d.longitude, latitude: d.latitude },
                   "brown",
                   this.getDeficiencyPopup(d),
+                  radius,
                 );
               }
             });
@@ -171,19 +174,21 @@ export class MapViewService {
   }
 
   public makeLabMarkers(): void {
-    this.labsAPIService.labs$
+    this.labsAPIService.mapLabs$
       .pipe(
         map((list) => {
           this.laboratoriesLayer.clearLayers();
 
-          list.map((lab) =>
-            this.makeIconMarker(
-              EMapLayer.Laboratories,
-              { longitude: lab.longitude, latitude: lab.latitude },
-              this.labIcon,
-              this.getLabPopup(lab),
-            ),
-          );
+          if (list && list.length > 0) {
+            list.forEach((lab) => {
+              this.makeIconMarker(
+                EMapLayer.Laboratories,
+                { longitude: lab.longitude, latitude: lab.latitude },
+                this.labIcon,
+                this.getLabPopup(lab),
+              );
+            });
+          }
         }),
       )
       .subscribe();
@@ -194,9 +199,10 @@ export class MapViewService {
     coordinates: ICoordinates,
     color: string,
     popupTags: string | null = null,
+    radius: number = 10,
   ): void {
     const circle = L.circleMarker([coordinates.latitude ?? 50.4501, coordinates.longitude ?? 30.5234], {
-      radius: 10,
+      radius: radius,
       color: color,
       opacity: 0.6,
       fillColor: color,
@@ -250,7 +256,7 @@ export class MapViewService {
     }
   }
 
-  getDeficiencyPopup(item: IDeficiency) {
+  getDeficiencyPopup(item: IDeficiencyMapDto) {
     return `
       <div>
         <h3>${item.title}</h3>
@@ -258,27 +264,27 @@ export class MapViewService {
         <p><strong>Type:</strong> ${EDeficiencyType[item.type]}</p>
         <p><strong>Danger Level:</strong> ${EDangerState[item.eDangerState]}</p>
         <p><strong>Location:</strong> ${item.latitude}, ${item.longitude}</p>
-        <p><strong>Creator:</strong> ${item.creator.firstName} ${item.creator.lastName}</p>
-        ${item.responsibleUser ? `<p><strong>Responsible User:</strong> ${item.responsibleUser.firstName} ${item.responsibleUser.lastName}</p>` : ""}
+        <p><strong>Creator:</strong> ${item.creatorFullName}</p>
+        ${item.responsibleUserFullName ? `<p><strong>Responsible User:</strong> ${item.responsibleUserFullName}</p>` : ""}
       </div>
     `;
   }
 
-  getLabPopup(item: ILaboratory) {
+  getLabPopup(item: ILaboratoryMapDto) {
     return `
       <div>
         <h3>${item.title}</h3>
         <p><strong>Location:</strong> ${item.latitude}, ${item.longitude}</p>
         <p><strong>Researchers:</strong> ${item.researchersCount}</p>
         <ul>
-          ${item.researchers.map((r) => `<li>${r.firstName} ${r.lastName}</li>`).join("")}
+          ${item.researchers.map((r) => `<li>${r.fullName}</li>`).join("")}
         </ul>
       </div>
     `;
   }
 
-  private isWaterDeficiency(obj: any): obj is IWaterDeficiency {
-    return (obj as IWaterDeficiency).microbialLoad !== undefined;
+  private isWaterDeficiency(obj: any): boolean {
+    return obj.type === EDeficiencyType.Water;
   }
 
   private addAllLayersToMap() {

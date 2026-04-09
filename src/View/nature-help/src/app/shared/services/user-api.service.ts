@@ -1,7 +1,7 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { JwtHelperService } from "@auth0/angular-jwt";
-import { BehaviorSubject, catchError, map, Observable, of, shareReplay, tap } from "rxjs";
+import { BehaviorSubject, catchError, map, Observable, of, shareReplay, switchMap, tap } from "rxjs";
 
 import { IAuthResponse } from "@/models/IAuthResponse";
 import { IUser } from "@/models/IUser";
@@ -9,7 +9,45 @@ import { IListData } from "../models/IListData";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { LoadingService } from "./loading.service";
 import { EAuthType } from "@/models/enums";
+import { getErrorMessage } from "../utils/error.utils";
 import { environment } from "src/environments/environment.dev";
+import { IProfileStats } from "@/models/profile/IProfileStats";
+import { IProfileJournalEntry } from "@/models/profile/IProfileJournalEntry";
+import { IProfilePhotoHistory } from "@/models/profile/IProfilePhotoHistory";
+import { IAchievement } from "@/models/profile/IAchievement";
+
+interface IAchievementApi {
+  id: string;
+  code: string;
+  title: string;
+  description: string;
+  icon: string;
+  targetInt: number | null;
+  progress: number;
+  isCompleted: boolean;
+  unlockedAt: string | null;
+}
+
+function mapAchievement(a: IAchievementApi): IAchievement {
+  return {
+    id: a.id,
+    key: a.code,
+    title: a.title,
+    description: a.description,
+    icon: a.icon,
+    unlockedAt: a.unlockedAt,
+    completed: a.isCompleted,
+    progress: a.progress,
+    target: a.targetInt ?? undefined,
+  };
+}
+
+export interface IUserProfileSettingsPayload {
+  profileIsPublic: boolean;
+  emailNotificationsEnabled: boolean;
+  achievementAlertsEnabled: boolean;
+  newsletterEnabled: boolean;
+}
 
 @Injectable({
   providedIn: "root",
@@ -95,6 +133,21 @@ export class UserAPIService {
     return of(false);
   }
 
+  handleOAuth2Callback(): Observable<boolean> {
+    return this.http.post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {}, { withCredentials: true }).pipe(
+      map((authResponse) => {
+        if (authResponse && authResponse.user) {
+          this.setAuthOptions(authResponse);
+          return true;
+        }
+        return false;
+      }),
+      catchError(() => {
+        return of(false);
+      }),
+    );
+  }
+
   auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {
     if (password) {
       return this.http
@@ -105,12 +158,13 @@ export class UserAPIService {
         })
         .pipe(
           tap((authResponse) => {
-            this.logout();
+            this.clearLocalStorage();
             this.setAuthOptions(authResponse);
           }),
           shareReplay(),
-          catchError((err) => {
-            this.notify.open("Error: " + err, "Close", { duration: 2000 });
+          catchError((err: HttpErrorResponse) => {
+            const errorMessage = getErrorMessage(err);
+            this.notify.open(errorMessage, "Close", { duration: 3000 });
             return of(null as any);
           }),
         );
@@ -122,7 +176,7 @@ export class UserAPIService {
         })
         .pipe(
           tap((authResponse) => {
-            this.logout();
+            this.clearLocalStorage();
             this.setAuthOptions(authResponse);
           }),
           shareReplay(),
@@ -137,7 +191,7 @@ export class UserAPIService {
       })
       .pipe(
         tap((authResponse) => {
-          this.logout();
+          this.clearLocalStorage();
           this.setAuthOptions(authResponse);
         }),
         shareReplay(),
@@ -153,7 +207,93 @@ export class UserAPIService {
     return this.http.post<IUser>(`${this.apiUrl}/current-user`, { email }).pipe(shareReplay());
   }
 
+  refreshCurrentUser(): Observable<IUser | null> {
+    const email = sessionStorage.getItem("email");
+    if (!email) return of(null);
+    return this.http.post<IUser>(`${this.apiUrl}/current-user`, { email }).pipe(
+      tap((user) => {
+        if (user) this.subject.next(user);
+      }),
+      catchError(() => of(null)),
+    );
+  }
+
+  getProfileStats(): Observable<IProfileStats | null> {
+    return this.http.get<IProfileStats>(`${this.apiUrl}/profile-stats`).pipe(
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 4000 });
+        return of(null);
+      }),
+    );
+  }
+
+  recordProfileVisit(): Observable<{ awarded: boolean } | null> {
+    return this.http.post<{ awarded: boolean }>(`${this.apiUrl}/profile/visit`, {}).pipe(catchError(() => of(null)));
+  }
+
+  getProfileJournal(take = 100): Observable<IProfileJournalEntry[]> {
+    return this.http.get<IProfileJournalEntry[]>(`${this.apiUrl}/profile/journal?take=${take}`).pipe(
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 4000 });
+        return of([]);
+      }),
+    );
+  }
+
+  getProfilePhotoHistory(take = 100): Observable<IProfilePhotoHistory[]> {
+    return this.http.get<IProfilePhotoHistory[]>(`${this.apiUrl}/profile/photo-history?take=${take}`).pipe(
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 4000 });
+        return of([]);
+      }),
+    );
+  }
+
+  getProfileAchievements(): Observable<IAchievement[]> {
+    return this.http.get<IAchievementApi[]>(`${this.apiUrl}/profile/achievements`).pipe(
+      map((list) => list.map((a) => mapAchievement(a))),
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 4000 });
+        return of([]);
+      }),
+    );
+  }
+
+  updateProfileSettings(payload: IUserProfileSettingsPayload): Observable<IUser | null> {
+    return this.http.put<IUser>(`${this.apiUrl}/profile-settings`, payload).pipe(
+      switchMap(() => this.refreshCurrentUser()),
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 4000 });
+        return of(null);
+      }),
+    );
+  }
+
+  loginWithGoogle(): void {
+    window.location.href = `${this.apiUrl}/login-google`;
+  }
+
+  loginWithFacebook(): void {
+    window.location.href = `${this.apiUrl}/login-facebook`;
+  }
+
   logout() {
+    this.http.post(`${this.apiUrl}/logout`, {}).subscribe({
+      next: () => {
+        this.clearLocalStorage();
+      },
+      error: () => {
+        this.clearLocalStorage();
+      },
+    });
+  }
+
+  private clearLocalStorage(): void {
     sessionStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
     sessionStorage.removeItem("role");
@@ -271,10 +411,10 @@ export class UserAPIService {
     );
   }
 
-  changeUsersRoles(changedUsersRoles: Map<string, number>) {
+  changeUsersRoles(changedUsersRoles: Map<string, number>): Observable<boolean> {
     const payload = Object.fromEntries(changedUsersRoles);
 
-    const updateOrganizationUsersRoles$ = this.http.put<boolean>(`${this.apiUrl}/users-roles`, payload).pipe(
+    return this.http.put<boolean>(`${this.apiUrl}/users-roles`, payload).pipe(
       tap((updateResult) => {
         const message = updateResult
           ? "Users' roles were successfully changed!"
@@ -284,15 +424,14 @@ export class UserAPIService {
         this.loadOrganizationUsers(-1);
       }),
       shareReplay(),
-      catchError((err) => {
-        this.notify.open("Error: " + err, "Close", { duration: 2000 });
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 3000 });
         this.loadOrganizationUsers(-1);
 
         return of(false);
       }),
     );
-
-    this.loading.showLoaderUntilCompleted(updateOrganizationUsersRoles$).subscribe();
   }
 
   resetPassword(newPassword: string, token: string): Observable<boolean> {
@@ -308,8 +447,9 @@ export class UserAPIService {
           this.notify.open(message, "Close", { duration: 2000 });
         }),
         shareReplay(),
-        catchError((err) => {
-          this.notify.open("Error: " + err, "Close", { duration: 2000 });
+        catchError((err: HttpErrorResponse) => {
+          const errorMessage = getErrorMessage(err);
+          this.notify.open(errorMessage, "Close", { duration: 3000 });
           return of(false);
         }),
       );
@@ -329,8 +469,9 @@ export class UserAPIService {
           this.notify.open(message, "Close", { duration: 2000 });
         }),
         shareReplay(),
-        catchError((err) => {
-          this.notify.open("Error: " + err, "Close", { duration: 2000 });
+        catchError((err: HttpErrorResponse) => {
+          const errorMessage = getErrorMessage(err);
+          this.notify.open(errorMessage, "Close", { duration: 3000 });
           return of(false);
         }),
       );
@@ -339,6 +480,10 @@ export class UserAPIService {
   public getCurrentUserMonitoringScheme() {
     const user = this.subject.value;
     return user?.deficiencyMonitoringScheme;
+  }
+
+  getErrorMessage(error: HttpErrorResponse | any): string {
+    return getErrorMessage(error);
   }
 
   private setAuthOptions(authOptions: any) {

@@ -1,4 +1,4 @@
-﻿using Domain.Models.Organization;
+using Domain.Models.Organization;
 using Infrastructure.Data;
 using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     public UserRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }
 
-    public override async Task<IEnumerable<User>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters)
+    public override async Task<IEnumerable<User>> GetAllAsync(int scrollCount, IDictionary<string, string?>? filters, User? currentUser = null)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
@@ -194,4 +194,24 @@ public class UserRepository : BaseRepository<User>, IUserRepository
         }
     }
 
+    public async Task<bool> DeleteUserDataAsync(string email)
+    {
+        var user = await GetUserByEmail(email);
+        
+        if (user == null)
+            return false;
+
+        await DeleteAsync(user.Id);
+        return true;
+    }
+
+    public async Task<(int WaterCount, int SoilCount)> CountCreatedDeficienciesAsync(Guid userId)
+    {
+        using var context = _contextFactory.CreateDbContext();
+        var water = await context.WaterDeficiencies.AsNoTracking().CountAsync(d => d.CreatedBy == userId);
+        var soil = await context.SoilDeficiencies.AsNoTracking().CountAsync(d => d.CreatedBy == userId);
+        return (water, soil);
+    }
+
 }
+

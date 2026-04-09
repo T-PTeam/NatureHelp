@@ -1,9 +1,14 @@
+<nat-loading-indicator
+  *ngIf="isLoading"
+  type="overlay"
+  [diameter]="60"
+  message="Loading organization details...">
+</nat-loading-indicator>
+
 <mat-card
   *ngIf="!isLoading"
   class="detail-card">
-  <mat-card-title
-    i18n="@@organizationDetails"
-    data-title="Organization Details"
+  <mat-card-title data-title="Organization Details"
     ><span></span>
     <div class="header-actions">
       <button
@@ -42,12 +47,12 @@
       <mat-card-content>
         <div class="organization-info">
           <div class="info-section">
-            <h3 i18n="@@organizationDetails">Organization Details</h3>
+            <h3>Organization Details</h3>
             <div class="info-grid">
               <div class="info-item">
                 <mat-icon>group</mat-icon>
                 <div class="info-content">
-                  <label i18n="@@allowedMembers">Allowed Members</label>
+                  <label>Allowed Members</label>
                   <span>{{ organization.allowedMembersCount }}</span>
                 </div>
               </div>
@@ -61,8 +66,8 @@
       class="create-form-container"
       *ngIf="!organization">
       <div class="form-header">
-        <h2 i18n="@@createOrganization">Create New Organization</h2>
-        <p i18n="@@createOrganizationDescription">Create a new organization and assign an owner to manage it.</p>
+        <h2>Create New Organization</h2>
+        <p>Create a new organization and assign an owner to manage it.</p>
       </div>
 
       <form
@@ -70,7 +75,7 @@
         (ngSubmit)="onSubmit()"
         class="form-container">
         <mat-form-field class="title-field">
-          <mat-label i18n="@@organizationTitle">Organization Title *</mat-label>
+          <mat-label>Organization Title *</mat-label>
           <input
             matInput
             formControlName="title"
@@ -79,7 +84,7 @@
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label i18n="@@allowedMembers">Allowed Members *</mat-label>
+          <mat-label>Allowed Members *</mat-label>
           <input
             matInput
             formControlName="allowedMembersCount"
@@ -90,7 +95,7 @@
 
         <div>
           <mat-form-field>
-            <mat-label i18n="@@firstName">First Name *</mat-label>
+            <mat-label>First Name *</mat-label>
             <input
               matInput
               formControlName="firstName"
@@ -99,7 +104,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <mat-label i18n="@@lastName">Last Name *</mat-label>
+            <mat-label>Last Name *</mat-label>
             <input
               matInput
               formControlName="lastName"
@@ -108,7 +113,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <mat-label i18n="@@email">Email *</mat-label>
+            <mat-label>Email *</mat-label>
             <input
               matInput
               formControlName="email"
@@ -117,7 +122,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <mat-label i18n="@@password">Password *</mat-label>
+            <mat-label>Password *</mat-label>
             <input
               matInput
               formControlName="password"
@@ -135,18 +140,20 @@
               (click)="onBack()"
               [disabled]="isSubmitting">
               <mat-icon>cancel</mat-icon>
-              <span i18n="@@cancel">Cancel</span>
+              <span>Cancel</span>
             </button>
             <button
               mat-raised-button
               color="primary"
               type="submit"
               [disabled]="isSubmitting">
-              <mat-icon *ngIf="!isSubmitting">add</mat-icon>
-              <mat-spinner
+              <nat-loading-indicator
                 *ngIf="isSubmitting"
-                diameter="20"></mat-spinner>
-              <span i18n="@@createOrganization">Create Organization</span>
+                type="button"
+                [diameter]="20"></nat-loading-indicator>
+              <mat-icon *ngIf="!isSubmitting">add</mat-icon>
+              <span *ngIf="!isSubmitting">Create Organization</span>
+              <span *ngIf="isSubmitting">Creating...</span>
             </button>
           </div>
         </div>
@@ -157,8 +164,8 @@
       class="edit-form-container"
       *ngIf="organization">
       <div class="form-header">
-        <h2 i18n="@@editOrganization">Edit Organization</h2>
-        <p i18n="@@editOrganizationDescription">Update organization details.</p>
+        <h2>Edit Organization</h2>
+        <p>Update organization details.</p>
       </div>
 
       <form
@@ -166,7 +173,7 @@
         (ngSubmit)="onSubmit()"
         class="form-container">
         <mat-form-field class="title-field">
-          <mat-label i18n="@@organizationTitle">Organization Title *</mat-label>
+          <mat-label>Organization Title *</mat-label>
           <input
             matInput
             formControlName="title"
@@ -175,7 +182,7 @@
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label i18n="@@allowedMembers">Allowed Members *</mat-label>
+          <mat-label>Allowed Members *</mat-label>
           <input
             matInput
             formControlName="allowedMembersCount"
@@ -192,29 +199,24 @@
               (click)="onBack()"
               [disabled]="isSubmitting">
               <mat-icon>cancel</mat-icon>
-              <span i18n="@@cancel">Cancel</span>
+              <span>Cancel</span>
             </button>
             <button
               mat-raised-button
               color="primary"
               type="submit"
               [disabled]="isSubmitting">
-              <mat-icon *ngIf="!isSubmitting">save</mat-icon>
-              <mat-spinner
+              <nat-loading-indicator
                 *ngIf="isSubmitting"
-                diameter="20"></mat-spinner>
-              <span i18n="@@updateOrganization">Update Organization</span>
+                type="button"
+                [diameter]="20"></nat-loading-indicator>
+              <mat-icon *ngIf="!isSubmitting">save</mat-icon>
+              <span *ngIf="!isSubmitting">Update Organization</span>
+              <span *ngIf="isSubmitting">Updating...</span>
             </button>
           </div>
         </div>
       </form>
     </div>
-
-    <ng-template #loadingTemplate>
-      <div class="loading-container">
-        <mat-spinner diameter="50"></mat-spinner>
-        <p i18n="@@loadingOrganization">Loading organization details...</p>
-      </div>
-    </ng-template>
   </div>
 </mat-card>

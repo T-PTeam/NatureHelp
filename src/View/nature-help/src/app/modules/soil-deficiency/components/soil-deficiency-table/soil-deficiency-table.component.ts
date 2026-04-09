@@ -23,6 +23,8 @@ export class SoilDeficiencyTable {
   scrollCheckDisabled: boolean = false;
   filterForm!: FormGroup;
   isMonitoring: boolean = false;
+  isLoading: boolean = true;
+  isLoadingMore: boolean = false;
   dangerStates: ISelectOption<EDangerState>[] = [];
 
   private listScrollCount = 0;
@@ -54,6 +56,18 @@ export class SoilDeficiencyTable {
     this.userService.$user.subscribe((user) => {
       this.isMonitoring = user?.deficiencyMonitoringScheme?.isMonitoringSoilDeficiencies || false;
     });
+
+    this.soilAPIService.deficiencies$.subscribe((deficiencies) => {
+      if (this.listScrollCount === 0) {
+        this.isLoading = false;
+      }
+    });
+
+    this.soilAPIService.totalCount$.subscribe((totalCount) => {
+      if (this.listScrollCount === 0 && totalCount === 0) {
+        this.isLoading = false;
+      }
+    });
   }
 
   downloadExcel() {
@@ -69,6 +83,9 @@ export class SoilDeficiencyTable {
   }
 
   onScroll() {
+    if (this.isLoadingMore) return;
+
+    this.isLoadingMore = true;
     this.listScrollCount++;
     this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, this.filterForm.value);
 
@@ -76,6 +93,7 @@ export class SoilDeficiencyTable {
       .pipe(withLatestFrom(this.soilAPIService.totalCount$))
       .subscribe(([deficiencies, totalCount]) => {
         this.scrollCheckDisabled = totalCount <= deficiencies.length;
+        this.isLoadingMore = false;
       });
   }
 
@@ -92,7 +110,10 @@ export class SoilDeficiencyTable {
   applyFilter(): void {
     const filter: ISoilDeficiencyFilter = this.filterForm.value;
 
-    if (this.isFilterChanged) this.listScrollCount = 0;
+    if (this.isFilterChanged) {
+      this.listScrollCount = 0;
+      this.isLoading = true;
+    }
 
     this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, filter);
   }

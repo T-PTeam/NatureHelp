@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef, MatDialog } from "@angular/material/dialog";
 import { SendResetLinkDialogComponent } from "./send-reset-link-dialog.component";
+import { UserAPIService } from "@/shared/services/user-api.service";
 
 @Component({
   selector: "nat-auth-dialog",
@@ -17,6 +18,7 @@ export class AuthDialogComponent {
     private dialogRef: MatDialogRef<AuthDialogComponent>,
     private fb: FormBuilder,
     private dialog: MatDialog,
+    private userService: UserAPIService,
   ) {
     this.formGroup = this.fb.group({
       email: ["", [Validators.required, Validators.email]],
@@ -48,5 +50,15 @@ export class AuthDialogComponent {
     });
 
     dialogRef.afterClosed().subscribe();
+  }
+
+  loginWithGoogle(): void {
+    this.dialogRef.close();
+    this.userService.loginWithGoogle();
+  }
+
+  loginWithFacebook(): void {
+    this.dialogRef.close();
+    this.userService.loginWithFacebook();
   }
 }

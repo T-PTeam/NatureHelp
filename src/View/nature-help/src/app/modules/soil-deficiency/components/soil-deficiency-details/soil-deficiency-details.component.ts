@@ -8,6 +8,10 @@ import { IDeficiencyDetailsState } from "@/shared/models/IDeficiencyFormConfig";
 import { SoilDeficiencyFormConfig } from "@/shared/services/deficiency-form-configs.service";
 
 import { UserAPIService } from "@/shared/services/user-api.service";
+import { DeficiencyConfirmationService } from "@/shared/services/deficiency-confirmation.service";
+import { EDeficiencyType } from "@/models/enums";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "n-soil-deficiency-details",
@@ -19,6 +23,11 @@ export class SoilDeficiencyDetail implements OnInit, OnDestroy {
   state: IDeficiencyDetailsState;
   detailsForm!: FormGroup;
   disableResearchFields: boolean = false;
+  isLoading: boolean = true;
+  isLoadingUsers: boolean = true;
+  isSaving: boolean = false;
+  confirmDeficiencyPending = false;
+  confirmDeficiencyDone = false;
   private formConfig = new SoilDeficiencyFormConfig();
 
   constructor(
@@ -26,6 +35,9 @@ export class SoilDeficiencyDetail implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     public usersAPIService: UserAPIService,
     public deficiencyDetailsService: DeficiencyDetailsService,
+    private deficiencyConfirmation: DeficiencyConfirmationService,
+    private snackBar: MatSnackBar,
+    private translate: TranslateService,
   ) {
     this.state = this.deficiencyDetailsService.initializeState();
   }
@@ -35,21 +47,75 @@ export class SoilDeficiencyDetail implements OnInit, OnDestroy {
       const id = params["id"];
 
       this.deficiencyDetailsService.loadOrganizationUsers(this.state).subscribe(() => {
+        this.isLoadingUsers = false;
+
         if (!id) {
           this.state.isAddingDeficiency = true;
           this.detailsForm = this.deficiencyDetailsService.initializeForm(this.state, this.formConfig);
           this.state.detailsForm = this.detailsForm;
+          this.state.details = this.detailsForm.value as any;
+          this.isLoading = false;
         } else {
-          this.deficiencyDataService.getSoilDeficiencyById(id).subscribe((def) => {
-            this.detailsForm = this.deficiencyDetailsService.initializeForm(this.state, this.formConfig, def);
-            this.state.detailsForm = this.detailsForm;
-            this.deficiencyDetailsService.changeMapView(this.state);
+          this.isLoading = true;
+          this.deficiencyDataService.getSoilDeficiencyById(id).subscribe({
+            next: (def) => {
+              this.detailsForm = this.deficiencyDetailsService.initializeForm(this.state, this.formConfig, def);
+              this.state.detailsForm = this.detailsForm;
+              this.deficiencyDetailsService.loadAttachments(this.state, def.id, def.type);
+              this.deficiencyDetailsService.changeMapView(this.state);
+              this.isLoading = false;
+            },
+            error: (err) => {
+              console.error("Error loading deficiency", err);
+              this.isLoading = false;
+            },
           });
         }
       });
     });
 
     this.deficiencyDetailsService.subscribeToCoordinatesPicking(this.state);
+  }
+
+  showConfirmAction(): boolean {
+    if (this.state.isAddingDeficiency || !this.state.details?.id) return false;
+    const uid = sessionStorage.getItem("userId");
+    const creatorId = this.state.details.createdBy?.id;
+    if (!uid || !creatorId || !sessionStorage.getItem("accessToken")) return false;
+    return uid !== creatorId;
+  }
+
+  onConfirmDeficiency(): void {
+    const id = this.state.details?.id;
+    if (!id || this.confirmDeficiencyPending) return;
+    this.confirmDeficiencyPending = true;
+    this.deficiencyConfirmation.confirm(id, EDeficiencyType.Soil).subscribe({
+      next: (r) => {
+        this.confirmDeficiencyPending = false;
+        this.confirmDeficiencyDone = true;
+        const key = r.alreadyConfirmed ? "deficiency.alreadyConfirmed" : "deficiency.confirmThanks";
+        this.snackBar.open(this.translate.instant(key), undefined, { duration: 4000 });
+      },
+      error: () => {
+        this.confirmDeficiencyPending = false;
+        this.snackBar.open(this.translate.instant("deficiency.confirmError"), undefined, { duration: 4000 });
+      },
+    });
+  }
+
+  onSubmit(): void {
+    if (this.detailsForm.invalid || this.isSaving) return;
+
+    this.isSaving = true;
+    this.deficiencyDetailsService.onSubmit(this.state, this.deficiencyDataService, 1).subscribe({
+      next: () => {
+        this.isSaving = false;
+      },
+      error: (err) => {
+        console.error("Error saving deficiency", err);
+        this.isSaving = false;
+      },
+    });
   }
 
   ngOnDestroy() {

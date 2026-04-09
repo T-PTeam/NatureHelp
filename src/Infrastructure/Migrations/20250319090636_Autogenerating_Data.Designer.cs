@@ -60,7 +60,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("a1111111-1111-1111-1111-111111111111"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(5064),
                             Data = "Genetic research data goes here...",
                             ReporterId = new Guid("11112222-3333-4444-5555-666677778888"),
@@ -70,7 +70,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("a2222222-2222-2222-2222-222222222222"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(6146),
                             Data = "Performance analysis data goes here...",
                             ReporterId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
@@ -80,7 +80,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("a3333333-3333-3333-3333-333333333333"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(6152),
                             Data = "Pandemic analysis data goes here...",
                             ReporterId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
@@ -128,7 +128,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("b1111111-1111-1111-1111-111111111111"),
                             City = "Addis Ababa",
                             Country = "Ethiopia",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(6502),
                             Latitude = 50.450099999999999,
                             Longitude = 30.523399999999999,
@@ -139,7 +139,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("b2222222-2222-2222-2222-222222222222"),
                             City = "Mumbai",
                             Country = "India",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(7139),
                             Latitude = 49.8429,
                             Longitude = 24.031600000000001,
@@ -150,7 +150,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("b3333333-3333-3333-3333-333333333333"),
                             City = "Phoenix",
                             Country = "USA",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(7143),
                             Latitude = 46.482500000000002,
                             Longitude = 30.732600000000001,
@@ -161,7 +161,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("b4444444-4444-4444-4444-444444444444"),
                             City = "Sydney",
                             Country = "Australia",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(7145),
                             Latitude = 50.450099999999999,
                             Longitude = 30.523399999999999,
@@ -172,7 +172,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("b5555555-5555-5555-5555-555555555555"),
                             City = "Beijing",
                             Country = "China",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(7147),
                             Latitude = 49.993499999999997,
                             Longitude = 36.229199999999999,
@@ -183,7 +183,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("b6666666-6666-6666-6666-666666666666"),
                             City = "Uzhhorod",
                             Country = "Ukraine",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(7160),
                             Latitude = 48.464700000000001,
                             Longitude = 35.0456,
@@ -275,7 +275,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("d1111111-1111-1111-1111-111111111111"),
                             AnalysisDate = new DateTime(2025, 1, 14, 22, 0, 0, 0, DateTimeKind.Utc),
                             CadmiumConcentration = 1.2,
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(599),
                             CreatorId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                             Description = "",
@@ -299,7 +299,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("d2222222-2222-2222-2222-222222222222"),
                             AnalysisDate = new DateTime(2025, 1, 17, 22, 0, 0, 0, DateTimeKind.Utc),
                             CadmiumConcentration = 2.5,
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(2791),
                             CreatorId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                             Description = "",
@@ -323,7 +323,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("d3333333-3333-3333-3333-333333333333"),
                             AnalysisDate = new DateTime(2025, 1, 19, 22, 0, 0, 0, DateTimeKind.Utc),
                             CadmiumConcentration = 0.80000000000000004,
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(2808),
                             CreatorId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                             Description = "",
@@ -441,7 +441,7 @@ namespace Infrastructure.Migrations
                             BiologicalOxygenDemand = 4.5,
                             CadmiumConcentration = 0.029999999999999999,
                             ChemicalOxygenDemand = 0.0,
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(7718),
                             CreatorId = new Guid("11112222-3333-4444-5555-666677778888"),
                             Description = "",
@@ -469,7 +469,7 @@ namespace Infrastructure.Migrations
                             BiologicalOxygenDemand = 8.0,
                             CadmiumConcentration = 0.14999999999999999,
                             ChemicalOxygenDemand = 0.0,
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(253),
                             CreatorId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
                             Description = "",
@@ -497,7 +497,7 @@ namespace Infrastructure.Migrations
                             BiologicalOxygenDemand = 2.0,
                             CadmiumConcentration = 0.01,
                             ChemicalOxygenDemand = 0.0,
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(262),
                             CreatorId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                             Description = "",
@@ -550,7 +550,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("dddddddd-dddd-dddd-dddd-dddddddddddd"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(8668),
                             LocationId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Title = "Biomedical Research Lab"
@@ -558,7 +558,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(9007),
                             LocationId = new Guid("33333333-3333-3333-3333-333333333333"),
                             Title = "AI and Machine Learning Lab"
@@ -566,7 +566,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("ffffffff-ffff-ffff-ffff-ffffffffffff"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(9011),
                             LocationId = new Guid("22222222-2222-2222-2222-222222222222"),
                             Title = "Genetics and Biotechnology Lab"
@@ -611,7 +611,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("11111111-1111-1111-1111-111111111111"),
                             City = "Kyiv",
                             Country = "Ukraine",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(6609),
                             District = "Shevchenkivsky",
                             Region = "Kyiv"
@@ -621,7 +621,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("22222222-2222-2222-2222-222222222222"),
                             City = "New York",
                             Country = "USA",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(7525),
                             District = "Manhattan",
                             Region = "New York"
@@ -631,7 +631,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("33333333-3333-3333-3333-333333333333"),
                             City = "Berlin",
                             Country = "Germany",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(7530),
                             District = "Mitte",
                             Region = "Berlin"
@@ -641,7 +641,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("44444444-4444-4444-4444-444444444444"),
                             City = "Kyiv",
                             Country = "Ukraine",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(7534),
                             District = "Kyiv City District",
                             Region = "Kyiv Oblast"
@@ -651,7 +651,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("55555555-5555-5555-5555-555555555555"),
                             City = "New York",
                             Country = "USA",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(7537),
                             District = "Manhattan District",
                             Region = "New York State"
@@ -661,7 +661,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("66666666-6666-6666-6666-666666666666"),
                             City = "Berlin",
                             Country = "Germany",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(7538),
                             District = "Mitte District",
                             Region = "Berlin"
@@ -671,7 +671,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("77777777-7777-7777-7777-777777777777"),
                             City = "Rio de Janeiro",
                             Country = "Brazil",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(7540),
                             District = "Central District",
                             Region = "Rio de Janeiro State"
@@ -681,7 +681,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("88888888-8888-8888-8888-888888888888"),
                             City = "Paris",
                             Country = "France",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(7541),
                             District = "Paris City District",
                             Region = "Île-de-France"
@@ -691,7 +691,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("99999999-9999-9999-9999-999999999999"),
                             City = "Tokyo",
                             Country = "Japan",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(7548),
                             District = "Tokyo Metropolis District",
                             Region = "Kantō"
@@ -701,7 +701,7 @@ namespace Infrastructure.Migrations
                             Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
                             City = "Rome",
                             Country = "Italy",
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(7550),
                             District = "Rome City District",
                             Region = "Lazio"
@@ -737,7 +737,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(8020),
                             LocationId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Title = "Global Research Institute"
@@ -745,7 +745,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(8414),
                             LocationId = new Guid("33333333-3333-3333-3333-333333333333"),
                             Title = "International Tech Hub"
@@ -825,7 +825,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = new Guid("11112222-3333-4444-5555-666677778888"),
                             AddressId = new Guid("44444444-4444-4444-4444-444444444444"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(9649),
                             DateOfBirth = new DateTime(1985, 5, 19, 21, 0, 0, 0, DateTimeKind.Utc),
                             Email = "valentyn@example.com",
@@ -841,7 +841,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                             AddressId = new Guid("55555555-5555-5555-5555-555555555555"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 536, DateTimeKind.Utc).AddTicks(4675),
                             DateOfBirth = new DateTime(1990, 7, 14, 21, 0, 0, 0, DateTimeKind.Utc),
                             Email = "igorzayets@example.com",
@@ -857,7 +857,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
                             AddressId = new Guid("66666666-6666-6666-6666-666666666666"),
-                            CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
                             CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 585, DateTimeKind.Utc).AddTicks(5636),
                             DateOfBirth = new DateTime(1980, 3, 9, 22, 0, 0, 0, DateTimeKind.Utc),
                             Email = "igor@example.com",

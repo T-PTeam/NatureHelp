@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { MatButtonToggleChange, MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatIconModule } from "@angular/material/icon";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: "app-water-soil-toggle",
   standalone: true,
-  imports: [MatButtonToggleModule, MatIconModule],
+  imports: [MatButtonToggleModule, MatIconModule, TranslateModule],
   templateUrl: "./water-soil-toggle.component.html",
   styleUrls: ["./water-soil-toggle.component.css"],
 })

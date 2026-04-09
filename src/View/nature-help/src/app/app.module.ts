@@ -1,11 +1,13 @@
 import "moment/locale/uk";
 
-import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClient } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from "@angular/material/core";
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from "@angular/material-moment-adapter";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import moment from "moment";
 
 import { AppComponent } from "./app.component";
@@ -23,6 +25,7 @@ import { SharedModule } from "./shared/shared.module";
 import { OwneryModule } from "./modules/owner/owner.module";
 import { ResearchesAPIService } from "./modules/laboratories/services/researches-api.service";
 import { OrganizationManagementModule } from "./modules/organization-management/organization-management.module";
+import { LanguageService } from "./shared/services/language.service";
 
 const UKRAINIAN_DATE_FORMATS = {
   parse: {
@@ -36,6 +39,10 @@ const UKRAINIAN_DATE_FORMATS = {
   },
 };
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}
+
 @NgModule({
   imports: [
     SharedModule,
@@ -47,6 +54,14 @@ const UKRAINIAN_DATE_FORMATS = {
     LabsModule,
     OwneryModule,
     OrganizationManagementModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+      defaultLanguage: "uk",
+    }),
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
@@ -55,6 +70,7 @@ const UKRAINIAN_DATE_FORMATS = {
     SoilAPIService,
     LabsAPIService,
     ResearchesAPIService,
+    LanguageService,
 
     MapViewService,
     provideAnimationsAsync(),

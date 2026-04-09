@@ -3,9 +3,12 @@
     <div
       *ngIf="isLoading"
       class="loading-state">
-      <mat-spinner diameter="60"></mat-spinner>
-      <h2 i18n="@@confirmingEmailTitle">Confirming Email</h2>
-      <p i18n="@@confirmingEmailDescription">Please wait while we verify your email address...</p>
+      <nat-loading-indicator
+        type="overlay"
+        [diameter]="60">
+      </nat-loading-indicator>
+      <h2>{{ "forms.confirmingEmailTitle" | translate }}</h2>
+      <p>{{ "forms.confirmingEmailDescription" | translate }}</p>
     </div>
 
     <div
@@ -14,17 +17,14 @@
       <div class="success-icon">
         <mat-icon>check_circle</mat-icon>
       </div>
-      <h2 i18n="@@emailConfirmedTitle">Email Confirmed!</h2>
-      <p i18n="@@emailConfirmedDescription">
-        Your email has been successfully confirmed. You can now log in to your account.
-      </p>
+      <h2>{{ "forms.emailConfirmedTitle" | translate }}</h2>
+      <p>{{ "forms.emailConfirmedDescription" | translate }}</p>
       <div class="action-buttons">
         <button
           mat-raised-button
           color="primary"
-          (click)="goToHome()"
-          i18n="@@goToHomeBtn">
-          Go to Home
+          (click)="goToHome()">
+          {{ "forms.goToHomeBtn" | translate }}
         </button>
       </div>
     </div>
@@ -35,21 +35,19 @@
       <div class="error-icon">
         <mat-icon>error</mat-icon>
       </div>
-      <h2 i18n="@@emailConfirmationErrorTitle">Email Confirmation Failed</h2>
+      <h2>{{ "forms.emailConfirmationErrorTitle" | translate }}</h2>
       <p class="error-message">{{ errorMessage }}</p>
       <div class="action-buttons">
         <button
           mat-raised-button
           color="primary"
-          (click)="goToHome()"
-          i18n="@@goToHomeBtn">
-          Go to Home
+          (click)="goToHome()">
+          {{ "forms.goToHomeBtn" | translate }}
         </button>
         <button
           mat-button
-          (click)="resendVerification()"
-          i18n="@@resendVerificationBtn">
-          Resend Verification
+          (click)="resendVerification()">
+          {{ "forms.resendVerificationBtn" | translate }}
         </button>
       </div>
     </div>

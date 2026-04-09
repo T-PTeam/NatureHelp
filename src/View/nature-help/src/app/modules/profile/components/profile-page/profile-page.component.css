@@ -1,0 +1,114 @@
+.profile-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.profile-header {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.15);
+}
+
+.profile-header-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile-header-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.profile-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1b5e20;
+}
+
+.profile-email {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: #2e7d32;
+}
+
+.profile-level-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.profile-level {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #388e3c;
+}
+
+.profile-xp-bar {
+  height: 8px;
+  border-radius: 4px;
+  max-width: 240px;
+}
+
+.profile-xp-text {
+  font-size: 0.75rem;
+  color: #558b2f;
+}
+
+.profile-tabs {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.tab-icon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+::ng-deep .profile-tabs .mat-mdc-tab-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+::ng-deep .profile-tabs .mat-mdc-tab {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+::ng-deep .profile-tabs .mat-mdc-tab .mdc-tab__content {
+  transition: opacity 0.2s ease;
+}
+
+::ng-deep .profile-tabs .mat-mdc-tab-body-content {
+  padding: 1.5rem;
+  animation: profile-tab-fade-in 0.3s ease;
+}
+
+::ng-deep .profile-tabs .mat-mdc-tab-body-active .mat-mdc-tab-body-content {
+  animation: profile-tab-fade-in 0.3s ease;
+}
+
+@keyframes profile-tab-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+::ng-deep .profile-tabs .mat-mdc-tab-header-pagination-chevron {
+  transition: transform 0.25s ease;
+}
+
+::ng-deep .profile-tabs .mdc-tab-indicator__content--underline {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

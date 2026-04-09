@@ -4,6 +4,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from "rxjs";
 
 import { IWaterDeficiency } from "@/modules/water-deficiency/models/IWaterDeficiency";
+import { IDeficiencyMapDto } from "@/models/IDeficiencyMapDto";
 import { LoadingService } from "@/shared/services/loading.service";
 import { IListData } from "@/shared/models/IListData";
 import { IWaterDeficiencyFilter } from "../models/IWaterDeficiencyFilter";
@@ -13,9 +14,11 @@ import { environment } from "src/environments/environment.dev";
 export class WaterAPIService {
   private listSubject = new BehaviorSubject<IWaterDeficiency[]>([]);
   private totalCountSubject = new BehaviorSubject<number>(0);
+  private mapDataSubject = new BehaviorSubject<IDeficiencyMapDto[]>([]);
   public deficiencies$: Observable<IWaterDeficiency[]> = this.listSubject.asObservable();
   public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
-  private watersUrl = `${environment.apiUrl}/WaterDeficiency`;
+  public mapDeficiencies$: Observable<IDeficiencyMapDto[]> = this.mapDataSubject.asObservable();
+  private watersUrl = `${environment.apiUrl}/waterdeficiency`;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -27,6 +30,7 @@ export class WaterAPIService {
     private notify: MatSnackBar,
   ) {
     this.loadWaterDeficiencies(0, null);
+    this.loadAllWaterDeficienciesForMap();
   }
 
   public loadWaterDeficiencies(scrollCount: number, filter: IWaterDeficiencyFilter | null) {
@@ -55,6 +59,22 @@ export class WaterAPIService {
       shareReplay(),
     );
     this.loading.showLoaderUntilCompleted(loaddeficiencies$).subscribe();
+  }
+
+  public loadAllWaterDeficienciesForMap() {
+    this.http
+      .get<IListData<IDeficiencyMapDto>>(`${this.watersUrl}/map-objects`)
+      .pipe(
+        tap((data) => {
+          this.mapDataSubject.next(data.list);
+        }),
+        catchError((err) => {
+          console.error("Could not load water deficiencies for map", err);
+          return of({ list: [], totalCount: 0 } as IListData<IDeficiencyMapDto>);
+        }),
+        shareReplay(),
+      )
+      .subscribe();
   }
 
   public getWaterDeficiencyById(id: string): Observable<IWaterDeficiency> {

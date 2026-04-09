@@ -11,23 +11,29 @@ import angular from "eslint-plugin-angular";
 /** @type {import('eslint').FlatConfig[]} */
 export default [
   {
-    files: ["**/I*.ts"],
-    rules: {
-      "unicorn/filename-case": "off",
-    },
-  },
-  {
     ignores: [
       ".angular/cache/**",
       "vite/deps/**",
       "node_modules/**",
       "dist/**",
       "build/**",
-
-      "src/**/*.cy.ts",
+      "cypress/**/*.js",
       "cypress/**/*.ts",
+      "src/**/*.cy.ts",
+      "**/*.cy.ts",
+      "**/*.spec.ts",
       "*.config.{js,mjs,cjs,ts}",
+      "lint-staged.config.js",
+      "postcss.config.js",
     ],
+  },
+  {
+    files: ["**/I*.ts"],
+    rules: {
+      "unicorn/filename-case": "off",
+    },
+  },
+  {
     files: ["**/*.{js,ts}"],
     languageOptions: {
       globals: {
@@ -57,11 +63,9 @@ export default [
       "import/newline-after-import": "error",
       "import/namespace": ["error", { allowComputed: true }],
       "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": ["error"],
-
+      "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-unused-expressions": "off",
       "@typescript-eslint/no-this-alias": "off",
-      "@typescript-eslint/no-unused-vars": "off",
 
       "unicorn/no-empty-file": "off", // Disable empty file rule
       "unicorn/filename-case": "off",
@@ -85,6 +89,17 @@ export default [
     },
   },
   {
-    ignores: ["lint-staged.config.js", "postcss.config.js"],
+    files: ["**/*.cy.ts"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
+    },
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+    },
   },
 ];

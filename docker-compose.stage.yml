@@ -1,0 +1,12 @@
+services:
+  backend:
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Staging"
+      Cors__AllowedOrigins__0: "https://stage.naturehelp.store"
+      Cors__AllowedOrigins__1: "http://localhost:5051"
+  frontend:
+    build:
+      context: ./src/View/nature-help
+      dockerfile: Dockerfile
+      args:
+        ENV_FILE: environment.stage.ts

@@ -1,0 +1,110 @@
+<div class="journal-tab">
+  <section class="journal-table-section">
+    <h2 class="section-title">{{ "profile.journal.tableTitle" | translate }}</h2>
+    <div
+      class="table-wrap"
+      *ngIf="journal.length; else emptyJournal">
+      <table
+        mat-table
+        [dataSource]="journal"
+        class="journal-table">
+        <ng-container matColumnDef="type">
+          <th
+            mat-header-cell
+            *matHeaderCellDef>
+            {{ "profile.journal.colType" | translate }}
+          </th>
+          <td
+            mat-cell
+            *matCellDef="let row">
+            <mat-icon class="type-icon">{{
+              row.deficiencyType === deficiencyTypeEnum.Soil ? "grass" : "water_drop"
+            }}</mat-icon>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="title">
+          <th
+            mat-header-cell
+            *matHeaderCellDef>
+            {{ "profile.journal.colTitle" | translate }}
+          </th>
+          <td
+            mat-cell
+            *matCellDef="let row">
+            {{ row.title }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="createdOn">
+          <th
+            mat-header-cell
+            *matHeaderCellDef>
+            {{ "profile.journal.colDate" | translate }}
+          </th>
+          <td
+            mat-cell
+            *matCellDef="let row">
+            {{ row.createdOn | date: "medium" }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="address">
+          <th
+            mat-header-cell
+            *matHeaderCellDef>
+            {{ "profile.journal.colAddress" | translate }}
+          </th>
+          <td
+            mat-cell
+            *matCellDef="let row">
+            {{ row.address || "—" }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="link">
+          <th
+            mat-header-cell
+            *matHeaderCellDef></th>
+          <td
+            mat-cell
+            *matCellDef="let row">
+            <a
+              mat-button
+              color="primary"
+              [routerLink]="deficiencyLinkCommands(row.deficiencyType, row.id)">
+              {{ "profile.journal.open" | translate }}
+            </a>
+          </td>
+        </ng-container>
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+    <ng-template #emptyJournal>
+      <p class="empty-hint">{{ "profile.journal.empty" | translate }}</p>
+    </ng-template>
+  </section>
+
+  <section class="photo-history-section">
+    <h2 class="section-title">{{ "profile.journal.photoHistoryTitle" | translate }}</h2>
+    <p class="section-desc">{{ "profile.journal.photoHistoryDesc" | translate }}</p>
+    <div
+      class="photo-grid"
+      *ngIf="photos.length; else emptyPhotos">
+      <mat-card
+        *ngFor="let p of photos"
+        class="photo-card">
+        <a [routerLink]="deficiencyLinkCommands(p.deficiencyType, p.deficiencyId)">
+          <img
+            [src]="p.previewUrl"
+            [alt]="'photo'"
+            class="photo-thumb" />
+        </a>
+      </mat-card>
+    </div>
+    <ng-template #emptyPhotos>
+      <p class="empty-hint">{{ "profile.journal.photosEmpty" | translate }}</p>
+    </ng-template>
+  </section>
+</div>

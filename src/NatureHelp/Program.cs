@@ -3,42 +3,62 @@ using AspNetCoreRateLimit;
 using Azure.Storage.Blobs;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.OpenApi.Models;
 using NatureHelp;
 using NatureHelp.Filters;
 using NatureHelp.Interfaces;
 using NatureHelp.Providers;
+using NatureHelp.Security;
+using Npgsql;
 using Serilog;
 using StackExchange.Redis;
+using System.IO;
 using System.Reflection;
 using System.Text.Json.Serialization;
+using Prometheus;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true);
 
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
-
-var configuration = new ConfigurationBuilder()
-    .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-    .AddJsonFile($"appsettings.{environment}.json", optional: true, reloadOnChange: true)
-    .Build();
 
 var allowedOrigins = builder.Configuration
     .GetSection("Cors:AllowedOrigins")
     .Get<string[]>();
 
+if (allowedOrigins == null || allowedOrigins.Length == 0)
+{
+    allowedOrigins = builder.Environment.IsDevelopment()
+        ? ["http://localhost:4200", "http://localhost:5051", "http://localhost:3000"]
+        : Array.Empty<string>();
+}
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        policy.WithOrigins(allowedOrigins ?? [])
+        policy.WithOrigins(allowedOrigins!)
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
 
 builder.Services.AddMemoryCache();
+
+var dataProtectionBuilder = builder.Services.AddDataProtection()
+    .SetApplicationName("NatureHelp");
+
+var keysPath = Path.Combine(builder.Environment.ContentRootPath, "DataProtection-Keys");
+if (!Directory.Exists(keysPath))
+{
+    Directory.CreateDirectory(keysPath);
+}
+dataProtectionBuilder.PersistKeysToFileSystem(new DirectoryInfo(keysPath));
 
 builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
 builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimitPolicies"));
@@ -55,15 +75,22 @@ builder.Host.UseSerilog((context, services, configuration) =>
 
 builder.Services.AddDbContextFactory<ApplicationContext>(options =>
 {
-    string connectionString = configuration.GetConnectionString("LocalConnection")
-        ?? configuration.GetConnectionString("DefaultConnection")
+    string connectionString = builder.Configuration.GetConnectionString("LocalConnection")
+        ?? builder.Configuration.GetConnectionString("DefaultConnection")
         ?? String.Empty;
+    
+    Log.Information("Database connection string: {ConnectionString}", 
+        connectionString.Replace("Password=10101010", "Password=***"));
 
     options.UseNpgsql(connectionString, npgsqlOptions =>
     {
         npgsqlOptions.MigrationsAssembly("Infrastructure")
             .MinBatchSize(100)
-            .MaxBatchSize(500);
+            .MaxBatchSize(500)
+            .EnableRetryOnFailure(
+                maxRetryCount: 3,
+                maxRetryDelay: TimeSpan.FromSeconds(10),
+                errorCodesToAdd: null);
 
         /* To add migration open src folder and run the following command:
             dotnet ef migrations add InitialCreate --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj --output-dir Migrations */
@@ -84,7 +111,31 @@ builder.Services.AddDbContextFactory<ApplicationContext>(options =>
     }
 });
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    })
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+    {
+        options.LoginPath = "/api/user/login";
+        options.LogoutPath = "/api/user/logout";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+        options.SlidingExpiration = true;
+        options.Cookie.HttpOnly = true;
+        if (builder.Environment.IsDevelopment())
+        {
+            options.Cookie.SecurePolicy = CookieSecurePolicy.None;
+            options.Cookie.SameSite = SameSiteMode.None;
+        }
+        else
+        {
+            options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+            options.Cookie.SameSite = SameSiteMode.None;
+        }
+    })
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
@@ -100,9 +151,49 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
             RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
         };
+    })
+    .AddGoogle(options =>
+    {
+        options.ClientId = builder.Configuration["OAuth2:Google:ClientId"] ?? string.Empty;
+        options.ClientSecret = builder.Configuration["OAuth2:Google:ClientSecret"] ?? string.Empty;
+        options.CallbackPath = "/api/user/signin-google";
+        options.SaveTokens = true;
+        options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        options.UsePkce = true;
+        if (builder.Environment.IsDevelopment())
+        {
+            options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.None;
+            options.CorrelationCookie.SameSite = SameSiteMode.None;
+        }
+        else
+        {
+            options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.Always;
+            options.CorrelationCookie.SameSite = SameSiteMode.None;
+        }
+    })
+    .AddFacebook(options =>
+    {
+        options.AppId = builder.Configuration["OAuth2:Facebook:AppId"] ?? string.Empty;
+        options.AppSecret = builder.Configuration["OAuth2:Facebook:AppSecret"] ?? string.Empty;
+        options.CallbackPath = "/api/user/signin-facebook";
+        options.Scope.Add("email");
+        options.Fields.Add("name");
+        options.Fields.Add("email");
+        options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        if (builder.Environment.IsDevelopment())
+        {
+            options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.None;
+            options.CorrelationCookie.SameSite = SameSiteMode.None;
+        }
+        else
+        {
+            options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.Always;
+            options.CorrelationCookie.SameSite = SameSiteMode.None;
+        }
     });
 
 builder.Services.AddAuthorization();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<IObjectsProvider<IExceptionHandler>, ErrorHandlersProvider>();
 
@@ -158,8 +249,8 @@ builder.Services.AddSwaggerGen(options =>
     options.CustomSchemaIds(type => type.FullName);
 });
 
-builder.Services.AddInfrastructureServices(configuration);
-builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddApplicationServices(builder.Configuration);
 
 builder.Services.Configure<RouteOptions>(options =>
 {
@@ -181,18 +272,41 @@ builder.Services.AddSingleton(x =>
     return new BlobServiceClient(blobConnectionString);
 });
 
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 if (!app.Environment.IsDevelopment())
 {
     app.UseHsts();
+    app.Use(async (context, next) =>
+    {
+        context.Response.Headers.Append("Strict-Transport-Security", 
+            "max-age=31536000; includeSubDomains; preload");
+        await next();
+    });
 }
+// else
+// {
+//    // In Development, do not send HSTS to avoid forcing HTTPS on local HTTP ports
+//     app.Use(async (context, next) =>
+//     {
+//         context.Response.Headers.Append("Strict-Transport-Security", "max-age=3600; includeSubDomains");
+//         await next();
+//     });
+// }
 
 app.UseCors("AllowSpecificOrigins");
 
+app.UseMiddleware<SecurityHeadersMiddleware>();
+
 app.UseIpRateLimiting();
+app.UseHttpMetrics();
 
 if (app.Environment.IsDevelopment())
 {
@@ -202,12 +316,81 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v2/swagger.json", "NatureHelp v2");
     });
 }
-
-app.UseHttpsRedirection();
-
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHealthChecks("/health");
+app.MapMetrics();
+
+if (app.Environment.IsDevelopment())
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            var contextFactory = services.GetRequiredService<IDbContextFactory<ApplicationContext>>();
+            using var context = contextFactory.CreateDbContext();
+
+            Log.Information("Applying database migrations...");
+            context.Database.Migrate();
+            Log.Information("Database migrations applied successfully.");
+
+            var connectionString = builder.Configuration.GetConnectionString("LocalConnection")
+                ?? builder.Configuration.GetConnectionString("DefaultConnection");
+            string? sql = null;
+            var seedPath = Path.Combine(AppContext.BaseDirectory, "Autogenerating_Data.sql");
+            if (File.Exists(seedPath))
+                sql = File.ReadAllText(seedPath);
+            else
+            {
+                var asm = Assembly.GetExecutingAssembly();
+                var resourceName = asm.GetManifestResourceNames().FirstOrDefault(n => n.EndsWith("Autogenerating_Data.sql", StringComparison.OrdinalIgnoreCase));
+                if (resourceName != null)
+                {
+                    using var stream = asm.GetManifestResourceStream(resourceName);
+                    if (stream != null)
+                        using (var reader = new StreamReader(stream))
+                            sql = reader.ReadToEnd();
+                }
+            }
+            if (string.IsNullOrEmpty(connectionString))
+                Log.Warning("Mock data seed skipped: no connection string.");
+            else if (string.IsNullOrEmpty(sql))
+                Log.Warning("Mock data seed skipped: Autogenerating_Data.sql not found (path: {Path}).", seedPath);
+            else
+            {
+                try
+                {
+                    AppContext.SetSwitch("Npgsql.EnableSqlRewriting", false);
+                    using (var conn = new NpgsqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        using (var cmd = new NpgsqlCommand(sql, conn))
+                        {
+                            cmd.CommandTimeout = 120;
+                            cmd.ExecuteNonQuery();
+                            Log.Information("Mock data seed (Autogenerating_Data.sql) applied.");
+                        }
+                    }
+                }
+                catch (Exception seedEx)
+                {
+                    Log.Warning(seedEx, "In-process mock data seed failed; db-seed container may apply it via psql.");
+                }
+                finally
+                {
+                    AppContext.SetSwitch("Npgsql.EnableSqlRewriting", true);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "An error occurred while applying database migrations.");
+            throw;
+        }
+    }
+}
 
 app.Run();
