@@ -1,8 +1,11 @@
 node_modules
-bin
-obj
+**/bin/
+**/obj/
+**/out/
 dist
 .git
+**/.angular/
+**/TestResults/
 
 Dockerfile
 docker-compose.yml
