@@ -56,10 +56,13 @@ jobs:
       run: dotnet build src/NatureHelp/NatureHelp.csproj -c Release
 
     - name: Start API and run Postman collection
+      env:
+        ASPNETCORE_ENVIRONMENT: CI
+        ASPNETCORE_URLS: http://127.0.0.1:5077
+        ConnectionStrings__LocalConnection: Host=127.0.0.1;Port=5432;Database=testdb;Username=postgres;Password=postgres
+        ConnectionStrings__DefaultConnection: Host=127.0.0.1;Port=5432;Database=testdb;Username=postgres;Password=postgres
       run: |
         set -e
-        export ASPNETCORE_ENVIRONMENT=CI
-        export ASPNETCORE_URLS=http://127.0.0.1:5077
         dotnet run --project src/NatureHelp/NatureHelp.csproj -c Release --no-build --no-launch-profile &
         api_pid=$!
         trap 'kill $api_pid 2>/dev/null || true' EXIT

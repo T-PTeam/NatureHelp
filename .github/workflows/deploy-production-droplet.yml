@@ -1,0 +1,49 @@
+name: Deploy to production (DigitalOcean Droplet)
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Test
+        run: dotnet test src/Tests/Tests.csproj -c Release --verbosity minimal
+
+  deploy:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH — pull and Compose
+        uses: appleboy/ssh-action@v1.2.5
+        env:
+          DROPLET_APP_DIR: ${{ vars.DROPLET_APP_DIR }}
+          DROPLET_ENV_FILE: ${{ vars.DROPLET_ENV_FILE }}
+          DROPLET_BRANCH: ${{ vars.DROPLET_BRANCH }}
+        with:
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          envs: DROPLET_APP_DIR,DROPLET_ENV_FILE,DROPLET_BRANCH
+          script_stop: true
+          script: |
+            set -e
+            APP_DIR="${DROPLET_APP_DIR:-/opt/naturehelp/app}"
+            ENV_FILE="${DROPLET_ENV_FILE:-/opt/naturehelp/.env}"
+            cd "$APP_DIR"
+            git config --global --add safe.directory "$APP_DIR" || true
+            git fetch origin
+            git checkout "${DROPLET_BRANCH:-main}"
+            git pull origin "${DROPLET_BRANCH:-main}"
+            docker compose -f docker-compose.do.yml --env-file "$ENV_FILE" up -d --build
