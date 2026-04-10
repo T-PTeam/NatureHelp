@@ -1,11 +1,14 @@
 FROM node:20 AS frontend-build
 WORKDIR /usr/src/app
+ARG ENVIRONMENT_FILE=environment.docker.ts
+ARG API_BASE_URL=
 COPY package.json package-lock.json ./
 RUN npm install -g @angular/cli
 RUN npm install --legacy-peer-deps
 COPY . .
-ARG ENV_FILE=environment.docker.ts
-COPY src/environments/${ENV_FILE} src/environments/environment.ts
+COPY src/environments/${ENVIRONMENT_FILE} src/environments/environment.ts
+RUN if [ -n "$API_BASE_URL" ]; then printf 'export const environment = {\n  apiUrl: "%s",\n};\n' "$API_BASE_URL" > src/environments/environment.ts; fi
+# Creates: /usr/src/app/dist/nature-help/
 RUN npm run build -- --configuration=production --base-href /nature-help/
 
 FROM nginx:alpine

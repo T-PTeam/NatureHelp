@@ -1,4 +1,6 @@
-﻿START TRANSACTION;
+﻿-- Obsolete: migration 20250319090636_Autogenerating_Data is a no-op; dev data is seeded by DevelopmentDatabaseSeeder (Development only).
+
+START TRANSACTION;
 
 DO $EF$
 BEGIN

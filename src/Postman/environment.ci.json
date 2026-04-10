@@ -1,8 +1,8 @@
 {
-  "id": "env-id",
-  "name": "NatureHelp — Default (local)",
+  "id": "naturehelp-env-ci",
+  "name": "NatureHelp — GitHub Actions (API on runner)",
   "values": [
-    { "key": "baseUrl", "value": "http://localhost:5077", "type": "default", "enabled": true },
+    { "key": "baseUrl", "value": "http://127.0.0.1:5077", "type": "default", "enabled": true },
     { "key": "accessToken", "value": "", "type": "secret", "enabled": true },
     { "key": "refreshToken", "value": "", "type": "secret", "enabled": true },
     { "key": "supervisorId", "value": "11112222-3333-4444-5555-666677778888", "type": "default", "enabled": true },

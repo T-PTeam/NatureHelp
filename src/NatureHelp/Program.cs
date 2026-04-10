@@ -32,7 +32,7 @@ var allowedOrigins = builder.Configuration
 
 if (allowedOrigins == null || allowedOrigins.Length == 0)
 {
-    allowedOrigins = builder.Environment.IsDevelopment()
+    allowedOrigins = builder.Environment.IsDevelopment() || builder.Environment.IsEnvironment("CI")
         ? ["http://localhost:4200", "http://localhost:5051", "http://localhost:3000"]
         : Array.Empty<string>();
 }
@@ -73,45 +73,43 @@ builder.Host.UseSerilog((context, services, configuration) =>
         .Enrich.FromLogContext();
 });
 
-builder.Services.AddDbContextFactory<ApplicationContext>(options =>
+if (builder.Environment.IsEnvironment("Testing"))
 {
-    string connectionString = builder.Configuration.GetConnectionString("LocalConnection")
-        ?? builder.Configuration.GetConnectionString("DefaultConnection")
-        ?? String.Empty;
-    
-    Log.Information("Database connection string: {ConnectionString}", 
-        connectionString.Replace("Password=10101010", "Password=***"));
-
-    options.UseNpgsql(connectionString, npgsqlOptions =>
+    builder.Services.AddDbContextFactory<ApplicationContext>(options =>
+        options.UseInMemoryDatabase("NatureHelpIntegrationTests"));
+}
+else
+{
+    builder.Services.AddDbContextFactory<ApplicationContext>(options =>
     {
-        npgsqlOptions.MigrationsAssembly("Infrastructure")
-            .MinBatchSize(100)
-            .MaxBatchSize(500)
-            .EnableRetryOnFailure(
-                maxRetryCount: 3,
-                maxRetryDelay: TimeSpan.FromSeconds(10),
-                errorCodesToAdd: null);
+        string connectionString = builder.Configuration.GetConnectionString("LocalConnection")
+            ?? builder.Configuration.GetConnectionString("DefaultConnection")
+            ?? String.Empty;
 
-        /* To add migration open src folder and run the following command:
-            dotnet ef migrations add InitialCreate --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj --output-dir Migrations */
+        Log.Information("Database connection string: {ConnectionString}",
+            connectionString.Replace("Password=10101010", "Password=***"));
 
-        /* To Update DB
-        
-        dotnet ef database update --project Infrastructure\Infrastructure.csproj --startup-project NatureHelp\NatureHelp.csproj */
+        options.UseNpgsql(connectionString, npgsqlOptions =>
+        {
+            npgsqlOptions.MigrationsAssembly("Infrastructure")
+                .MinBatchSize(100)
+                .MaxBatchSize(500)
+                .EnableRetryOnFailure(
+                    maxRetryCount: 3,
+                    maxRetryDelay: TimeSpan.FromSeconds(10),
+                    errorCodesToAdd: null);
 
-        /* To generate SQL Script (choose previous migration ID)
-        
-        dotnet ef migrations script -i 20250319083430_Rewriting_Initial_Create --project Infrastructure\Infrastructure.csproj--startup - project NatureHelp\NatureHelp.csproj--output Infrastructure\Migrations\SQL\Autogenerating_Data.sql */
+        });
+
+        if ((Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development").Equals("Development"))
+        {
+            options.EnableSensitiveDataLogging()
+                .LogTo(message => Log.Logger.Information(message), new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information);
+        }
     });
+}
 
-    if ((Environment.GetEnvironmentVariable("AspNetCore_ENVIRONMENT") ?? "Development").Equals("Development"))
-    {
-        options.EnableSensitiveDataLogging()
-            .LogTo(message => Log.Logger.Information(message), new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information);
-    }
-});
-
-builder.Services.AddAuthentication(options =>
+var authenticationBuilder = builder.Services.AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -125,7 +123,7 @@ builder.Services.AddAuthentication(options =>
         options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
         options.SlidingExpiration = true;
         options.Cookie.HttpOnly = true;
-        if (builder.Environment.IsDevelopment())
+        if (builder.Environment.IsDevelopment() || builder.Environment.IsEnvironment("CI"))
         {
             options.Cookie.SecurePolicy = CookieSecurePolicy.None;
             options.Cookie.SameSite = SameSiteMode.None;
@@ -151,46 +149,51 @@ builder.Services.AddAuthentication(options =>
 
             RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
         };
-    })
-    .AddGoogle(options =>
-    {
-        options.ClientId = builder.Configuration["OAuth2:Google:ClientId"] ?? string.Empty;
-        options.ClientSecret = builder.Configuration["OAuth2:Google:ClientSecret"] ?? string.Empty;
-        options.CallbackPath = "/api/user/signin-google";
-        options.SaveTokens = true;
-        options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        options.UsePkce = true;
-        if (builder.Environment.IsDevelopment())
-        {
-            options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.None;
-            options.CorrelationCookie.SameSite = SameSiteMode.None;
-        }
-        else
-        {
-            options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.Always;
-            options.CorrelationCookie.SameSite = SameSiteMode.None;
-        }
-    })
-    .AddFacebook(options =>
-    {
-        options.AppId = builder.Configuration["OAuth2:Facebook:AppId"] ?? string.Empty;
-        options.AppSecret = builder.Configuration["OAuth2:Facebook:AppSecret"] ?? string.Empty;
-        options.CallbackPath = "/api/user/signin-facebook";
-        options.Scope.Add("email");
-        options.Fields.Add("name");
-        options.Fields.Add("email");
-        options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        if (builder.Environment.IsDevelopment())
-        {
-            options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.None;
-            options.CorrelationCookie.SameSite = SameSiteMode.None;
-        }
-        else
-        {
-            options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.Always;
-            options.CorrelationCookie.SameSite = SameSiteMode.None;
-        }
     });
+
+if (!builder.Environment.IsEnvironment("Testing") && !builder.Environment.IsEnvironment("CI"))
+{
+    authenticationBuilder
+        .AddGoogle(options =>
+        {
+            options.ClientId = builder.Configuration["OAuth2:Google:ClientId"] ?? string.Empty;
+            options.ClientSecret = builder.Configuration["OAuth2:Google:ClientSecret"] ?? string.Empty;
+            options.CallbackPath = "/api/user/signin-google";
+            options.SaveTokens = true;
+            options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            options.UsePkce = true;
+            if (builder.Environment.IsDevelopment())
+            {
+                options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.None;
+                options.CorrelationCookie.SameSite = SameSiteMode.None;
+            }
+            else
+            {
+                options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.Always;
+                options.CorrelationCookie.SameSite = SameSiteMode.None;
+            }
+        })
+        .AddFacebook(options =>
+        {
+            options.AppId = builder.Configuration["OAuth2:Facebook:AppId"] ?? string.Empty;
+            options.AppSecret = builder.Configuration["OAuth2:Facebook:AppSecret"] ?? string.Empty;
+            options.CallbackPath = "/api/user/signin-facebook";
+            options.Scope.Add("email");
+            options.Fields.Add("name");
+            options.Fields.Add("email");
+            options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            if (builder.Environment.IsDevelopment())
+            {
+                options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.None;
+                options.CorrelationCookie.SameSite = SameSiteMode.None;
+            }
+            else
+            {
+                options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.Always;
+                options.CorrelationCookie.SameSite = SameSiteMode.None;
+            }
+        });
+}
 
 builder.Services.AddAuthorization();
 builder.Services.AddHttpContextAccessor();
@@ -250,6 +253,12 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
+if (builder.Environment.IsDevelopment() || builder.Environment.IsEnvironment("CI"))
+{
+    builder.Services.AddScoped<IDevelopmentDatabaseSeeder, DevelopmentDatabaseSeeder>();
+}
+
+builder.Services.AddScoped<IProductionSuperAdminBootstrapper, ProductionSuperAdminBootstrapper>();
 builder.Services.AddApplicationServices(builder.Configuration);
 
 builder.Services.Configure<RouteOptions>(options =>
@@ -257,31 +266,41 @@ builder.Services.Configure<RouteOptions>(options =>
     options.LowercaseUrls = true;
 });
 
-builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+if (builder.Environment.IsEnvironment("Testing"))
 {
-    var configuration = builder.Configuration.GetSection("Redis")["ConnectionString"];
-    if (string.IsNullOrEmpty(configuration))
-        throw new InvalidOperationException("Redis connection string is not configured.");
-
-    return ConnectionMultiplexer.Connect(configuration);
-});
-
-builder.Services.AddSingleton(x =>
+    builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
+        ConnectionMultiplexer.Connect("127.0.0.1:6379,abortConnect=false"));
+    builder.Services.AddSingleton(_ =>
+        new BlobServiceClient("UseDevelopmentStorage=true"));
+}
+else
 {
-    var blobConnectionString = builder.Configuration.GetConnectionString("AzureBlobStorage");
-    return new BlobServiceClient(blobConnectionString);
-});
+    builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
+    {
+        var configuration = builder.Configuration.GetSection("Redis")["ConnectionString"];
+        if (string.IsNullOrEmpty(configuration))
+            throw new InvalidOperationException("Redis connection string is not configured.");
+
+        return ConnectionMultiplexer.Connect(configuration);
+    });
+
+    builder.Services.AddSingleton(_ =>
+    {
+        var blobConnectionString = builder.Configuration.GetConnectionString("AzureBlobStorage");
+        return new BlobServiceClient(blobConnectionString);
+    });
+}
 
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
-if (!app.Environment.IsDevelopment())
+if (!app.Environment.IsDevelopment() && !app.Environment.IsEnvironment("Testing") && !app.Environment.IsEnvironment("CI"))
 {
     app.UseHttpsRedirection();
 }
 
-if (!app.Environment.IsDevelopment())
+if (!app.Environment.IsDevelopment() && !app.Environment.IsEnvironment("Testing") && !app.Environment.IsEnvironment("CI"))
 {
     app.UseHsts();
     app.Use(async (context, next) =>
@@ -308,7 +327,7 @@ app.UseMiddleware<SecurityHeadersMiddleware>();
 app.UseIpRateLimiting();
 app.UseHttpMetrics();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("CI"))
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
@@ -323,7 +342,7 @@ app.MapControllers();
 app.MapHealthChecks("/health");
 app.MapMetrics();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("CI"))
 {
     using (var scope = app.Services.CreateScope())
     {
@@ -336,59 +355,29 @@ if (app.Environment.IsDevelopment())
             Log.Information("Applying database migrations...");
             context.Database.Migrate();
             Log.Information("Database migrations applied successfully.");
-
-            var connectionString = builder.Configuration.GetConnectionString("LocalConnection")
-                ?? builder.Configuration.GetConnectionString("DefaultConnection");
-            string? sql = null;
-            var seedPath = Path.Combine(AppContext.BaseDirectory, "Autogenerating_Data.sql");
-            if (File.Exists(seedPath))
-                sql = File.ReadAllText(seedPath);
-            else
-            {
-                var asm = Assembly.GetExecutingAssembly();
-                var resourceName = asm.GetManifestResourceNames().FirstOrDefault(n => n.EndsWith("Autogenerating_Data.sql", StringComparison.OrdinalIgnoreCase));
-                if (resourceName != null)
-                {
-                    using var stream = asm.GetManifestResourceStream(resourceName);
-                    if (stream != null)
-                        using (var reader = new StreamReader(stream))
-                            sql = reader.ReadToEnd();
-                }
-            }
-            if (string.IsNullOrEmpty(connectionString))
-                Log.Warning("Mock data seed skipped: no connection string.");
-            else if (string.IsNullOrEmpty(sql))
-                Log.Warning("Mock data seed skipped: Autogenerating_Data.sql not found (path: {Path}).", seedPath);
-            else
-            {
-                try
-                {
-                    AppContext.SetSwitch("Npgsql.EnableSqlRewriting", false);
-                    using (var conn = new NpgsqlConnection(connectionString))
-                    {
-                        conn.Open();
-                        using (var cmd = new NpgsqlCommand(sql, conn))
-                        {
-                            cmd.CommandTimeout = 120;
-                            cmd.ExecuteNonQuery();
-                            Log.Information("Mock data seed (Autogenerating_Data.sql) applied.");
-                        }
-                    }
-                }
-                catch (Exception seedEx)
-                {
-                    Log.Warning(seedEx, "In-process mock data seed failed; db-seed container may apply it via psql.");
-                }
-                finally
-                {
-                    AppContext.SetSwitch("Npgsql.EnableSqlRewriting", true);
-                }
-            }
+            var devSeeder = services.GetRequiredService<IDevelopmentDatabaseSeeder>();
+            await devSeeder.SeedAsync();
         }
         catch (Exception ex)
         {
             Log.Error(ex, "An error occurred while applying database migrations.");
             throw;
+        }
+    }
+}
+else if (!app.Environment.IsEnvironment("Testing"))
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            var bootstrapper = services.GetRequiredService<IProductionSuperAdminBootstrapper>();
+            await bootstrapper.EnsureSuperAdminAsync();
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "SuperAdmin bootstrap failed.");
         }
     }
 }

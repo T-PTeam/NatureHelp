@@ -1,0 +1,60 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: naturehelp-redis-do
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-do-data:/data
+    networks:
+      - naturehelp-do
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: naturehelp-api-do
+    restart: unless-stopped
+    volumes:
+      - dataprotection-keys-do:/app/DataProtection-Keys
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://0.0.0.0:5000
+      ConnectionStrings__DefaultConnection: ${CONNECTION_STRING}
+      ConnectionStrings__AzureBlobStorage: ${AZURE_BLOB_CONNECTION_STRING}
+      Redis__ConnectionString: ${REDIS_CONNECTION_STRING:-redis:6379}
+      Cors__AllowedOrigins__0: ${CORS_ORIGIN}
+      Frontend__Url: ${FRONTEND_PUBLIC_URL}
+      OAuth2__Google__ClientId: ${GOOGLE_CLIENT_ID:-}
+      OAuth2__Google__ClientSecret: ${GOOGLE_CLIENT_SECRET:-}
+      OAuth2__Facebook__AppId: ${FACEBOOK_APP_ID:-}
+      OAuth2__Facebook__AppSecret: ${FACEBOOK_APP_SECRET:-}
+      SuperAdmin__Email: ${SUPERADMIN_EMAIL:-}
+      SuperAdmin__Password: ${SUPERADMIN_PASSWORD:-}
+    depends_on:
+      - redis
+    networks:
+      - naturehelp-do
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      context: ./src/View/nature-help
+      dockerfile: Dockerfile
+      args:
+        API_BASE_URL: ${API_BASE_URL:?Set API_BASE_URL in your env file (public API URL including /api suffix, e.g. https://api.example.com/api)}
+    container_name: naturehelp-frontend-do
+    restart: unless-stopped
+    networks:
+      - naturehelp-do
+    ports:
+      - "8080:80"
+
+volumes:
+  redis-do-data:
+  dataprotection-keys-do:
+
+networks:
+  naturehelp-do:
+    driver: bridge

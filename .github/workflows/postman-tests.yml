@@ -10,27 +10,82 @@ jobs:
   postman-tests:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 5
+
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Install Node.js
-      uses: actions/setup-node@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
 
     - name: Install Newman
       run: npm install -g newman
 
-    - name: Run Postman tests
+    - name: Build API
+      run: dotnet build src/NatureHelp/NatureHelp.csproj -c Release
+
+    - name: Start API and run Postman collection
+      env:
+        ASPNETCORE_ENVIRONMENT: CI
+        ASPNETCORE_URLS: http://127.0.0.1:5077
+        ConnectionStrings__LocalConnection: Host=127.0.0.1;Port=5432;Database=testdb;Username=postgres;Password=postgres
+        ConnectionStrings__DefaultConnection: Host=127.0.0.1;Port=5432;Database=testdb;Username=postgres;Password=postgres
       run: |
+        set -e
+        dotnet run --project src/NatureHelp/NatureHelp.csproj -c Release --no-build --no-launch-profile &
+        api_pid=$!
+        trap 'kill $api_pid 2>/dev/null || true' EXIT
+        for i in $(seq 1 90); do
+          if curl -sf http://127.0.0.1:5077/health >/dev/null; then
+            echo "API ready"
+            break
+          fi
+          if ! kill -0 $api_pid 2>/dev/null; then
+            echo "API process exited before healthy"
+            exit 1
+          fi
+          sleep 2
+        done
+        curl -sf http://127.0.0.1:5077/health >/dev/null
         newman run ./src/Postman/collection.json \
-          --environment ./src/Postman/environment.json \
+          --environment ./src/Postman/environment.ci.json \
           --reporters cli,json \
           --reporter-json-export newman-report.json
 
     - name: Upload Newman report
       uses: actions/upload-artifact@v4
+      if: always()
       with:
         name: newman-report
         path: newman-report.json

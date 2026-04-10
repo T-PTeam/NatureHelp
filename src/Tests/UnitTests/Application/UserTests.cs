@@ -1,24 +1,42 @@
 ﻿using Application.Dtos;
+using Application.Interfaces.Services;
 using Application.Interfaces.Services.Organization;
 using Application.Providers;
 using Application.Services.Organization;
 using Domain.Enums;
+using Domain.Interfaces;
 using Domain.Models.Organization;
 using FluentAssertions;
 using Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 
 namespace Tests.UnitTests.Application;
 public class UserTests
 {
     private readonly Mock<IUserRepository> _userRepositoryMock = new();
-    private readonly Mock<PasswordHasher<User>> _passwordHasherMock = new();
     private readonly IUserService _userService;
+    private static readonly PasswordHasher<User> PasswordHasher = new();
 
     public UserTests()
     {
-        _userService = new UserService(_userRepositoryMock.Object, null, null, null, null);
+        var orgService = new Mock<IBaseService<Organization>>();
+        var emailService = new Mock<IEmailService>();
+        var config = new Mock<IConfiguration>();
+        var profileRepo = new Mock<IProfileRepository>();
+        var profileService = new Mock<IProfileService>();
+        var achievement = new Mock<IAchievementEvaluationService>();
+        _userService = new UserService(
+            _userRepositoryMock.Object,
+            orgService.Object,
+            NullLogger<UserService>.Instance,
+            emailService.Object,
+            config.Object,
+            profileRepo.Object,
+            profileService.Object,
+            achievement.Object);
     }
 
     [Fact]
@@ -34,25 +52,23 @@ public class UserTests
     }
 
     [Fact]
-    public async void LoginAsync_Should_Throw_VerificationFailed()
+    public async Task LoginAsync_Should_Throw_VerificationFailed()
     {
-        UserLoginDto userLoginDto = new UserLoginDto()
-        {
-            Email = "test@example.com",
-            Password = "10101010"
-        };
-        User user = new User()
+        var user = new User
         {
             Id = Guid.NewGuid(),
             Email = "test@example.com",
-            PasswordHash = "somepasswordHash"
+            PasswordHash = PasswordHasher.HashPassword(new User(), "expected-password")
         };
 
-        _userRepositoryMock.Setup(repo => repo.GetUserByEmail(userLoginDto.Email))
+        _userRepositoryMock.Setup(repo => repo.GetUserByEmail(user.Email))
             .ReturnsAsync(user);
 
-        _passwordHasherMock.Setup(h => h.VerifyHashedPassword(user, user.PasswordHash, "wrongpasswordHash"))
-            .Returns(PasswordVerificationResult.Failed);
+        var userLoginDto = new UserLoginDto
+        {
+            Email = user.Email,
+            Password = "wrong-password"
+        };
 
         var act = () => _userService.LoginAsync(userLoginDto);
 
@@ -62,18 +78,20 @@ public class UserTests
     [Fact]
     public async Task LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect()
     {
-        var user = new User { Email = "test@example.com", PasswordHash = "hashedpassword" };
+        const string plainPassword = "password123";
+        var user = new User
+        {
+            Email = "test@example.com",
+            PasswordHash = PasswordHasher.HashPassword(new User(), plainPassword)
+        };
 
         _userRepositoryMock.Setup(x => x.GetUserByEmail(user.Email))
             .ReturnsAsync(user);
 
-        _passwordHasherMock.Setup(x => x.VerifyHashedPassword(user, user.PasswordHash, "password123"))
-            .Returns(PasswordVerificationResult.Success);
-
         _userRepositoryMock.Setup(x => x.UpdateAsync(It.IsAny<User>()))
             .Returns(Task.FromResult(user));
 
-        var result = await _userService.LoginAsync(new UserLoginDto { Email = user.Email, Password = "password123" });
+        var result = await _userService.LoginAsync(new UserLoginDto { Email = user.Email, Password = plainPassword });
 
         result.Should().NotBeNull();
         result.AccessToken.Should().NotBeNullOrEmpty();
@@ -85,7 +103,12 @@ public class UserTests
     [Fact]
     public async Task LoginAsync_ShouldSucceed_WhenPasswordHashMatches()
     {
-        var user = new User { Email = "test@example.com", PasswordHash = "correcthash" };
+        const string plainPassword = "matching-secret";
+        var user = new User
+        {
+            Email = "test@example.com",
+            PasswordHash = PasswordHasher.HashPassword(new User(), plainPassword)
+        };
 
         _userRepositoryMock.Setup(x => x.GetUserByEmail(user.Email))
             .ReturnsAsync(user);
@@ -95,7 +118,8 @@ public class UserTests
 
         var result = await _userService.LoginAsync(new UserLoginDto
         {
-            Email = user.Email
+            Email = user.Email,
+            Password = plainPassword
         });
 
         result.Should().NotBeNull();

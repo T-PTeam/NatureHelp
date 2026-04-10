@@ -1,15 +1,22 @@
 ﻿using Domain.Enums;
 using Domain.Models.Nature;
 using FluentAssertions;
+using Tests;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace Tests.IntegrationTests.Controllers;
 public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFactory>
 {
+    private static readonly JsonSerializerOptions ApiJsonReadOptions = new()
+    {
+        PropertyNameCaseInsensitive = true,
+    };
+
     private readonly HttpClient _client;
     private readonly NatureHelpWebAppFactory _factory;
     private readonly ILogger<WaterDeficiencyControllerTests> _logger;
@@ -30,6 +37,7 @@ public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFact
         var newDeficiency = new WaterDeficiency
         {
             Title = "Test data",
+            CreatedBy = NatureHelpWebAppFactory.IntegrationTestUserId,
             PH = 6.8,
             DissolvedOxygen = 8.0,
             LeadConcentration = 0.005,
@@ -95,7 +103,7 @@ public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFact
 
         var postResponse = await _client.PostAsJsonAsync("/api/waterdeficiency", newDeficiency);
         postResponse.EnsureSuccessStatusCode();
-        var created = await postResponse.Content.ReadFromJsonAsync<WaterDeficiency>();
+        var created = await postResponse.Content.ReadFromJsonAsync<WaterDeficiency>(ApiJsonReadOptions);
 
         // Act
         var all = await _client.GetAsync("/api/waterdeficiency");
@@ -104,7 +112,7 @@ public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFact
 
         // Assert
         response.StatusCode.Should().Be(HttpStatusCode.OK);
-        var fetched = await response.Content.ReadFromJsonAsync<WaterDeficiency>();
+        var fetched = await response.Content.ReadFromJsonAsync<WaterDeficiency>(ApiJsonReadOptions);
         fetched.Should().NotBeNull();
         fetched!.Title.Should().Be("Get Test");
     }
@@ -145,12 +153,12 @@ public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFact
         }
         postResponse.EnsureSuccessStatusCode();
 
-        var created = await postResponse.Content.ReadFromJsonAsync<WaterDeficiency>();
+        var created = await postResponse.Content.ReadFromJsonAsync<WaterDeficiency>(ApiJsonReadOptions);
 
         created.Should().NotBeNull();
 
         // Act: оновлюємо pH
-        created.PH = 7.2;
+        created!.PH = 7.2;
 
         var response = await _client.PutAsJsonAsync($"/api/waterdeficiency/{created.Id}", created);
         contentString = await response.Content.ReadAsStringAsync();
@@ -167,7 +175,7 @@ public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFact
 
         // Перевіримо, що pH дійсно оновлений
         var getResponse = await _client.GetAsync($"/api/waterdeficiency/{created.Id}");
-        var updated = await getResponse.Content.ReadFromJsonAsync<WaterDeficiency>();
+        var updated = await getResponse.Content.ReadFromJsonAsync<WaterDeficiency>(ApiJsonReadOptions);
         updated!.PH.Should().BeApproximately(7.2, 0.01);
     }
 
@@ -183,13 +191,13 @@ public class WaterDeficiencyControllerTests : IClassFixture<NatureHelpWebAppFact
             NitrateConcentration = 15.0,
             PhosphateConcentration = 1.5,
             LeadConcentration = 0.0009,
-            CreatedBy = Guid.NewGuid(),
-            ResponsibleUserId = Guid.NewGuid(),
+            CreatedBy = NatureHelpWebAppFactory.IntegrationTestUserId,
+            ResponsibleUserId = NatureHelpWebAppFactory.IntegrationTestUserId,
         };
 
         var postResponse = await _client.PostAsJsonAsync("/api/waterdeficiency", newDeficiency);
         postResponse.EnsureSuccessStatusCode();
-        var created = await postResponse.Content.ReadFromJsonAsync<WaterDeficiency>();
+        var created = await postResponse.Content.ReadFromJsonAsync<WaterDeficiency>(ApiJsonReadOptions);
 
         // Act: видаляємо
         var deleteResponse = await _client.DeleteAsync($"/api/waterdeficiency/{created!.Id}");

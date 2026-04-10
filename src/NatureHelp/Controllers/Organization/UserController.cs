@@ -31,7 +31,7 @@ public class UserController : Controller
     /// Get organization users
     /// </summary>
     /// <returns></returns>
-    [AllowAnonymous]
+    [Authorize(Roles = "SuperAdmin,Owner,Manager,Supervisor,Researcher")]
     [HttpGet("organization-users")]
     public async Task<IActionResult> GetOrganizationUsers([FromQuery] Guid organizationId, [FromQuery] int scrollCount)
     {
