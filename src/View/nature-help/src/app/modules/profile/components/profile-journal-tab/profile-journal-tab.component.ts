@@ -32,7 +32,16 @@ function makeMarkerIcon(color: string): L.DivIcon {
 @Component({
   selector: "nat-profile-journal-tab",
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule, MatCardModule, MatIconModule, MatTableModule, MatButtonModule, MatButtonToggleModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    TranslateModule,
+    MatCardModule,
+    MatIconModule,
+    MatTableModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+  ],
   templateUrl: "./profile-journal-tab.component.html",
   styleUrls: ["./profile-journal-tab.component.css"],
 })

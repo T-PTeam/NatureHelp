@@ -118,7 +118,11 @@ export class ProfileSettingsTabComponent implements OnInit, OnDestroy {
       )
       .subscribe((success) => {
         if (success) {
-          this.snackBar.open(this.translate.instant("profile.settings.passwordChangeSuccess"), this.translate.instant("common.close"), { duration: 3000 });
+          this.snackBar.open(
+            this.translate.instant("profile.settings.passwordChangeSuccess"),
+            this.translate.instant("common.close"),
+            { duration: 3000 },
+          );
           this.showPasswordForm = false;
           this.passwordForm.reset();
         }

@@ -105,7 +105,9 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         },
         error: () => {
           this.statsLoading = false;
-          this.snackBar.open(this.translate.instant("profile.statsLoadError"), this.translate.instant("common.close"), { duration: 4000 });
+          this.snackBar.open(this.translate.instant("profile.statsLoadError"), this.translate.instant("common.close"), {
+            duration: 4000,
+          });
         },
       });
   }

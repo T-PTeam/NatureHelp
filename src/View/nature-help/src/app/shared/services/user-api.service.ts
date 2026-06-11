@@ -153,7 +153,12 @@ export class UserAPIService {
     );
   }
 
-  auth(authType: EAuthType, email: string, password: string | null, referralCode?: string | null): Observable<IAuthResponse> {
+  auth(
+    authType: EAuthType,
+    email: string,
+    password: string | null,
+    referralCode?: string | null,
+  ): Observable<IAuthResponse> {
     if (password) {
       return this.http
         .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
@@ -293,14 +298,16 @@ export class UserAPIService {
   }
 
   changePassword(currentPassword: string, newPassword: string): Observable<boolean> {
-    return this.http.post<{ success: boolean }>(`${this.apiUrl}/profile/change-password`, { currentPassword, newPassword }).pipe(
-      map((res) => res.success),
-      catchError((err: HttpErrorResponse) => {
-        const errorMessage = getErrorMessage(err);
-        this.notify.open(errorMessage, "Close", { duration: 4000 });
-        return of(false);
-      }),
-    );
+    return this.http
+      .post<{ success: boolean }>(`${this.apiUrl}/profile/change-password`, { currentPassword, newPassword })
+      .pipe(
+        map((res) => res.success),
+        catchError((err: HttpErrorResponse) => {
+          const errorMessage = getErrorMessage(err);
+          this.notify.open(errorMessage, "Close", { duration: 4000 });
+          return of(false);
+        }),
+      );
   }
 
   deleteCurrentUser(): Observable<boolean> {

@@ -17,7 +17,15 @@ import { UserAPIService } from "@/shared/services/user-api.service";
 @Component({
   selector: "nat-profile-overview-tab",
   standalone: true,
-  imports: [CommonModule, TranslateModule, MatCardModule, MatIconModule, MatButtonModule, MatSnackBarModule, DynamicAvatarComponent],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    DynamicAvatarComponent,
+  ],
   templateUrl: "./profile-overview-tab.component.html",
   styleUrls: ["./profile-overview-tab.component.css"],
 })
@@ -72,7 +80,11 @@ export class ProfileOverviewTabComponent implements OnInit, OnDestroy {
       link.href = dataUrl;
       link.click();
     } catch {
-      this.snackBar.open(this.translate.instant("profile.overview.shareError"), this.translate.instant("common.close"), { duration: 3000 });
+      this.snackBar.open(
+        this.translate.instant("profile.overview.shareError"),
+        this.translate.instant("common.close"),
+        { duration: 3000 },
+      );
     } finally {
       this.sharingImage = false;
     }
