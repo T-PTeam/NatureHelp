@@ -19,6 +19,7 @@ import { UserAPIService } from "@/shared/services/user-api.service";
 })
 export class ProfileAchievementsTabComponent implements OnInit, OnDestroy {
   badges: IAchievement[] = [];
+  challenges: IAchievement[] = [];
   private destroy$ = new Subject<void>();
 
   constructor(private userApi: UserAPIService) {}
@@ -28,7 +29,8 @@ export class ProfileAchievementsTabComponent implements OnInit, OnDestroy {
       .getProfileAchievements()
       .pipe(takeUntil(this.destroy$))
       .subscribe((list) => {
-        this.badges = list;
+        this.badges = list.filter((a) => (a.kind ?? 0) === 0);
+        this.challenges = list.filter((a) => (a.kind ?? 0) === 1);
       });
   }
 

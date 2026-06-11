@@ -13,4 +13,5 @@ public class Achievement
     public int? TargetInt { get; set; }
     public int SortOrder { get; set; }
     public bool IsActive { get; set; } = true;
+    public AchievementKind Kind { get; set; } = AchievementKind.Badge;
 }

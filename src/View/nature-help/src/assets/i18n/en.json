@@ -512,9 +512,11 @@
     "achievements": {
       "badgesTitle": "Badges",
       "badgesDesc": "Earn badges by contributing to nature.",
+      "badgesEmpty": "No badges yet. Start by submitting your first report.",
       "unlocked": "Unlocked",
       "challengesTitle": "Challenges",
-      "challengesDesc": "Complete challenges to earn extra XP and badges."
+      "challengesDesc": "Complete challenges to earn extra XP.",
+      "challengesEmpty": "No challenges available yet."
     },
     "settings": {
       "privacyTitle": "Privacy",

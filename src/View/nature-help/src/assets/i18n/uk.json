@@ -512,9 +512,11 @@
     "achievements": {
       "badgesTitle": "Значки",
       "badgesDesc": "Отримуйте значки, допомагаючи природі.",
+      "badgesEmpty": "Поки немає значків. Почніть з першого звіту.",
       "unlocked": "Розблоковано",
       "challengesTitle": "Виклики",
-      "challengesDesc": "Виконуйте виклики, щоб отримати додаткові XP та значки."
+      "challengesDesc": "Виконуйте виклики, щоб отримати додаткові XP.",
+      "challengesEmpty": "Поки немає активних викликів."
     },
     "settings": {
       "privacyTitle": "Конфіденційність",

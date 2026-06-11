@@ -2,7 +2,9 @@
   <section class="badges-section">
     <h2 class="section-title">{{ "profile.achievements.badgesTitle" | translate }}</h2>
     <p class="section-desc">{{ "profile.achievements.badgesDesc" | translate }}</p>
-    <div class="badges-grid">
+    <div
+      class="badges-grid"
+      *ngIf="badges.length; else emptyBadges">
       <mat-card
         *ngFor="let badge of badges"
         class="badge-card"
@@ -36,13 +38,52 @@
         >
       </mat-card>
     </div>
+    <ng-template #emptyBadges>
+      <p class="empty-hint">{{ "profile.achievements.badgesEmpty" | translate }}</p>
+    </ng-template>
   </section>
 
   <section class="challenges-section">
     <h2 class="section-title">{{ "profile.achievements.challengesTitle" | translate }}</h2>
-    <mat-card class="challenges-placeholder">
-      <mat-icon>emoji_events</mat-icon>
-      <p>{{ "profile.achievements.challengesDesc" | translate }}</p>
-    </mat-card>
+    <p class="section-desc">{{ "profile.achievements.challengesDesc" | translate }}</p>
+    <div
+      class="badges-grid"
+      *ngIf="challenges.length; else emptyChallenges">
+      <mat-card
+        *ngFor="let ch of challenges"
+        class="badge-card"
+        [class.badge-card--unlocked]="ch.completed"
+        [class.badge-card--locked]="!ch.completed">
+        <div class="badge-card__icon-wrap">
+          <mat-icon class="badge-card__icon">{{ ch.icon }}</mat-icon>
+          <mat-icon
+            *ngIf="!ch.completed"
+            class="badge-card__lock"
+            >lock</mat-icon
+          >
+        </div>
+        <h3 class="badge-card__title">{{ ch.title }}</h3>
+        <p class="badge-card__desc">{{ ch.description }}</p>
+        <mat-progress-bar
+          *ngIf="ch.target"
+          mode="determinate"
+          [value]="((ch.progress ?? 0) / ch.target) * 100"
+          class="badge-card__progress">
+        </mat-progress-bar>
+        <span
+          *ngIf="ch.completed && ch.unlockedAt"
+          class="badge-card__date"
+          >{{ "profile.achievements.unlocked" | translate }} {{ ch.unlockedAt | date: "mediumDate" }}</span
+        >
+        <span
+          *ngIf="!ch.completed && ch.target"
+          class="badge-card__hint"
+          >{{ ch.progress ?? 0 }}/{{ ch.target }}</span
+        >
+      </mat-card>
+    </div>
+    <ng-template #emptyChallenges>
+      <p class="empty-hint">{{ "profile.achievements.challengesEmpty" | translate }}</p>
+    </ng-template>
   </section>
 </div>

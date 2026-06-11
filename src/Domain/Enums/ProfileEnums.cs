@@ -8,6 +8,12 @@ public enum XpReason
     PhotoAddedToDeficiency = 3,
 }
 
+public enum AchievementKind
+{
+    Badge = 0,
+    Challenge = 1,
+}
+
 public enum AchievementRuleType
 {
     TotalReportsCount = 0,

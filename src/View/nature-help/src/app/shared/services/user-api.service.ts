@@ -29,6 +29,7 @@ interface IAchievementApi {
   progress: number;
   isCompleted: boolean;
   unlockedAt: string | null;
+  kind: number;
 }
 
 function mapAchievement(a: IAchievementApi): IAchievement {
@@ -42,6 +43,7 @@ function mapAchievement(a: IAchievementApi): IAchievement {
     completed: a.isCompleted,
     progress: a.progress,
     target: a.targetInt ?? undefined,
+    kind: a.kind,
   };
 }
 

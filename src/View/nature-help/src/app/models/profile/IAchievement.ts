@@ -8,4 +8,5 @@ export interface IAchievement {
   completed?: boolean;
   progress?: number;
   target?: number;
+  kind?: number;
 }

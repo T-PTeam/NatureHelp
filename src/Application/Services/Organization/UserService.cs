@@ -589,6 +589,7 @@ public class UserService : IUserService
                 Progress = ua?.Progress ?? 0,
                 IsCompleted = ua?.IsCompleted ?? false,
                 UnlockedAt = ua?.UnlockedAt,
+                Kind = (int)ach.Kind,
             });
         }
 

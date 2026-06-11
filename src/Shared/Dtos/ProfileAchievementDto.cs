@@ -13,4 +13,5 @@ public class ProfileAchievementDto
     public int Progress { get; set; }
     public bool IsCompleted { get; set; }
     public DateTime? UnlockedAt { get; set; }
+    public int Kind { get; set; }
 }
