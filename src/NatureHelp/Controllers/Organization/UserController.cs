@@ -119,6 +119,7 @@ public class UserController : Controller
 
     [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
     [HttpGet("profile-stats")]
+    [HttpGet("profile/stats")]
     public async Task<IActionResult> GetProfileStats()
     {
         var email = User.FindFirst(ClaimTypes.Email)?.Value;

@@ -1,12 +1,14 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
-import { TranslateModule } from "@ngx-translate/core";
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatCardModule } from "@angular/material/card";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
+import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
@@ -33,6 +35,8 @@ const PROFILE_TAB_SLUGS = ["overview", "journal", "achievements", "settings"] as
     MatProgressBarModule,
     MatButtonModule,
     MatIconModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
     DynamicAvatarComponent,
     ProfileOverviewTabComponent,
     ProfileJournalTabComponent,
@@ -45,6 +49,7 @@ const PROFILE_TAB_SLUGS = ["overview", "journal", "achievements", "settings"] as
 export class ProfilePageComponent implements OnInit, OnDestroy {
   readonly user$ = this.userService.$user;
   profileStats: IProfileStats | null = null;
+  statsLoading = false;
   selectedTabIndex = 0;
   private destroy$ = new Subject<void>();
 
@@ -52,6 +57,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     private userService: UserAPIService,
     private route: ActivatedRoute,
     private router: Router,
+    private snackBar: MatSnackBar,
+    private translate: TranslateService,
   ) {}
 
   ngOnInit(): void {
@@ -87,11 +94,19 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   }
 
   loadProfileStats(): void {
+    this.statsLoading = true;
     this.userService
       .getProfileStats()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((stats) => {
-        this.profileStats = stats;
+      .subscribe({
+        next: (stats) => {
+          this.profileStats = stats;
+          this.statsLoading = false;
+        },
+        error: () => {
+          this.statsLoading = false;
+          this.snackBar.open(this.translate.instant("profile.statsLoadError"), this.translate.instant("common.close"), { duration: 4000 });
+        },
       });
   }
 

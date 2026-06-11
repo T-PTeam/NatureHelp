@@ -518,6 +518,19 @@ public class UserService : IUserService
             _ => "tree",
         };
 
+        var statusName = level switch
+        {
+            1 => "Seed Keeper",
+            2 => "Seedling",
+            3 => "Sprout",
+            4 => "Sapling",
+            5 => "Ranger",
+            6 => "Guardian",
+            7 => "Warden",
+            8 => "Elder Tree",
+            _ => "Nature Elder",
+        };
+
         return new UserProfileStatsDto
         {
             ReportsCount = total,
@@ -529,6 +542,7 @@ public class UserService : IUserService
             XpCurrent = xpInto,
             XpToNextLevel = xpToNext,
             AvatarStage = stage,
+            StatusName = statusName,
         };
     }
 

@@ -464,6 +464,7 @@
   "profile": {
     "level": "Level",
     "xpInLevel": "XP in this level",
+    "statsLoadError": "Could not load profile stats.",
     "avatarStage": {
       "seed": "Seed",
       "sprout": "Sprout",

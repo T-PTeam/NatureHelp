@@ -31,10 +31,29 @@
   color: #1b5e20;
 }
 
+.profile-status-name {
+  margin: 0 0 0.15rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #388e3c;
+  letter-spacing: 0.02em;
+}
+
 .profile-email {
   margin: 0 0 1rem 0;
   font-size: 0.9rem;
   color: #2e7d32;
+}
+
+.profile-stats-spinner {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.profile-total-xp {
+  font-size: 0.8rem;
+  color: #558b2f;
 }
 
 .profile-level-block {

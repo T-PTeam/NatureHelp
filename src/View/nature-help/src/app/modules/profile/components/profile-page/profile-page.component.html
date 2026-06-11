@@ -8,11 +8,22 @@
       </nat-dynamic-avatar>
       <div class="profile-header-info">
         <h1 class="profile-name">{{ (user$ | async)?.firstName }} {{ (user$ | async)?.lastName }}</h1>
+        <p
+          *ngIf="profileStats?.statusName"
+          class="profile-status-name">
+          {{ profileStats!.statusName }}
+        </p>
         <p class="profile-email">{{ (user$ | async)?.email }}</p>
         <div
-          *ngIf="profileStats"
+          *ngIf="statsLoading"
+          class="profile-stats-spinner">
+          <mat-spinner diameter="24"></mat-spinner>
+        </div>
+        <div
+          *ngIf="profileStats && !statsLoading"
           class="profile-level-block">
           <span class="profile-level">{{ "profile.level" | translate }} {{ profileStats.level }}</span>
+          <span class="profile-total-xp">{{ "profile.overview.totalXp" | translate }}: {{ profileStats.totalXp }}</span>
           <mat-progress-bar
             class="profile-xp-bar"
             mode="determinate"

@@ -8,4 +8,5 @@ export interface IProfileStats {
   xpCurrent: number;
   xpToNextLevel: number;
   avatarStage: string;
+  statusName: string;
 }

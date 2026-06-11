@@ -11,4 +11,5 @@ public class UserProfileStatsDto
     public int XpCurrent { get; set; }
     public int XpToNextLevel { get; set; }
     public string AvatarStage { get; set; } = "seed";
+    public string StatusName { get; set; } = string.Empty;
 }
