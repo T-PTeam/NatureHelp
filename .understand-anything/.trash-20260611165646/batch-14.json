@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "document:src/Postman/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "src/Postman/README.md",
+      "summary": "Documentation file (README.md) describing project or feature behavior.",
+      "tags": [
+        "documentation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/Postman/collection.json",
+      "type": "config",
+      "name": "collection.json",
+      "filePath": "src/Postman/collection.json",
+      "summary": "Configuration for src/Postman build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:src/Postman/environment.ci.json",
+      "type": "config",
+      "name": "environment.ci.json",
+      "filePath": "src/Postman/environment.ci.json",
+      "summary": "Configuration for src/Postman build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/Postman/environment.digitalocean.json",
+      "type": "config",
+      "name": "environment.digitalocean.json",
+      "filePath": "src/Postman/environment.digitalocean.json",
+      "summary": "Configuration for src/Postman build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/Postman/environment.json",
+      "type": "config",
+      "name": "environment.json",
+      "filePath": "src/Postman/environment.json",
+      "summary": "Configuration for src/Postman build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/Postman/environment.local.json",
+      "type": "config",
+      "name": "environment.local.json",
+      "filePath": "src/Postman/environment.local.json",
+      "summary": "Configuration for src/Postman build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

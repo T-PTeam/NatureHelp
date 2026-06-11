@@ -15,7 +15,6 @@
         [diameter]="20"></nat-loading-indicator>
       <mat-icon *ngIf="!isAddingUser">person_add</mat-icon>
       <span *ngIf="!isAddingUser">{{ "userManagement.addNewUser" | translate }}</span>
-      <span *ngIf="isAddingUser">{{ "loading.adding" | translate }}</span>
     </button>
 
     <button
@@ -28,7 +27,6 @@
         [diameter]="20"></nat-loading-indicator>
       <mat-icon *ngIf="!isAddingUser">group_add</mat-icon>
       <span *ngIf="!isAddingUser">{{ "userManagement.addMultipleUsers" | translate }}</span>
-      <span *ngIf="isAddingUser">{{ "loading.adding" | translate }}</span>
     </button>
 
     <button
@@ -41,7 +39,6 @@
         [diameter]="20"></nat-loading-indicator>
       <mat-icon *ngIf="!isSavingRoles">save</mat-icon>
       <span *ngIf="!isSavingRoles">{{ "userManagement.updateRoles" | translate }}</span>
-      <span *ngIf="isSavingRoles">{{ "loading.saving" | translate }}</span>
     </button>
 
     <button
@@ -108,10 +105,30 @@
 
   <div class="grid-container">
     <div class="grid-header">
-      <div>{{ "userManagement.firstName" | translate }}</div>
-      <div>{{ "userManagement.lastName" | translate }}</div>
-      <div>{{ "userManagement.role" | translate }}</div>
-      <div>{{ "userManagement.email" | translate }}</div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'firstName'"
+        (click)="onSort('firstName')">
+        {{ "userManagement.firstName" | translate }}{{ sortIndicator(sort, "firstName") }}
+      </div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'lastName'"
+        (click)="onSort('lastName')">
+        {{ "userManagement.lastName" | translate }}{{ sortIndicator(sort, "lastName") }}
+      </div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'role'"
+        (click)="onSort('role')">
+        {{ "userManagement.role" | translate }}{{ sortIndicator(sort, "role") }}
+      </div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'email'"
+        (click)="onSort('email')">
+        {{ "userManagement.email" | translate }}{{ sortIndicator(sort, "email") }}
+      </div>
       <div>{{ "userManagement.status" | translate }}</div>
     </div>
     <div
@@ -131,8 +148,8 @@
       <div
         *ngFor="let user of combinedUsers | async"
         class="grid-row">
-        <div>{{ user.firstName }}</div>
-        <div>{{ user.lastName }}</div>
+        <nat-truncated-cell [value]="user.firstName"></nat-truncated-cell>
+        <nat-truncated-cell [value]="user.lastName"></nat-truncated-cell>
         <mat-select
           [value]="user.role"
           (selectionChange)="userRoleChanged(user.id, $event.value)">
@@ -142,7 +159,7 @@
             {{ role.label }}
           </mat-option>
         </mat-select>
-        <div>{{ user.email }}</div>
+        <nat-truncated-cell [value]="user.email"></nat-truncated-cell>
         <div class="status-cell">
           <span
             class="status-badge"

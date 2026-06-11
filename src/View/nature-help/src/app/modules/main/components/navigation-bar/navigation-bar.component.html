@@ -83,7 +83,7 @@
         data-cy="profile-link"
         routerLink="profile"
         routerLinkActive="active"
-        *ngIf="userService.isLoggedIn$ | async">
+        [disabled]="userService.isLoggedOut$ | async">
         {{ "navigation.profile" | translate }}
       </button>
       <button

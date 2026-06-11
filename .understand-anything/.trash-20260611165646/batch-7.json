@@ -1,0 +1,53 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/cypress/support/commands.js",
+      "type": "file",
+      "name": "commands.js",
+      "filePath": "src/View/nature-help/cypress/support/commands.js",
+      "summary": "commands.js is a javascript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/cypress/support/component.js",
+      "type": "file",
+      "name": "component.js",
+      "filePath": "src/View/nature-help/cypress/support/component.js",
+      "summary": "component.js is a javascript code module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/cypress/support/e2e.js",
+      "type": "file",
+      "name": "e2e.js",
+      "filePath": "src/View/nature-help/cypress/support/e2e.js",
+      "summary": "e2e.js is a javascript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/View/nature-help/cypress/support/component.js",
+      "target": "file:src/View/nature-help/cypress/support/commands.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/cypress/support/e2e.js",
+      "target": "file:src/View/nature-help/cypress/support/commands.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

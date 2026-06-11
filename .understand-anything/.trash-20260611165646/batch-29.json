@@ -1,0 +1,1380 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "type": "file",
+      "name": "FileExceptionsHandler.cs",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "summary": "FileExceptionsHandler.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs:CanHandle",
+      "type": "function",
+      "name": "CanHandle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "summary": "Function CanHandle in FileExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "summary": "Function Handle in FileExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs:FileExceptionsHandler",
+      "type": "class",
+      "name": "FileExceptionsHandler",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "summary": "Class FileExceptionsHandler with 2 method(s) in FileExceptionsHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "type": "file",
+      "name": "NetworkExceptionsHandler.cs",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "summary": "NetworkExceptionsHandler.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs:CanHandle",
+      "type": "function",
+      "name": "CanHandle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "summary": "Function CanHandle in NetworkExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "summary": "Function Handle in NetworkExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs:NetworkExceptionsHandler",
+      "type": "class",
+      "name": "NetworkExceptionsHandler",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "summary": "Class NetworkExceptionsHandler with 2 method(s) in NetworkExceptionsHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "type": "file",
+      "name": "SecurityExceptionsHandler.cs",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "summary": "SecurityExceptionsHandler.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs:CanHandle",
+      "type": "function",
+      "name": "CanHandle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "summary": "Function CanHandle in SecurityExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "summary": "Function Handle in SecurityExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs:SecurityExceptionsHandler",
+      "type": "class",
+      "name": "SecurityExceptionsHandler",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "summary": "Class SecurityExceptionsHandler with 2 method(s) in SecurityExceptionsHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "type": "file",
+      "name": "SerializationExceptionsHandler.cs",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "summary": "SerializationExceptionsHandler.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs:CanHandle",
+      "type": "function",
+      "name": "CanHandle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "summary": "Function CanHandle in SerializationExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "summary": "Function Handle in SerializationExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs:SerializationExceptionsHandler",
+      "type": "class",
+      "name": "SerializationExceptionsHandler",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "summary": "Class SerializationExceptionsHandler with 2 method(s) in SerializationExceptionsHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "type": "file",
+      "name": "SystemExceptionsHandler.cs",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "summary": "SystemExceptionsHandler.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs:CanHandle",
+      "type": "function",
+      "name": "CanHandle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "summary": "Function CanHandle in SystemExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "summary": "Function Handle in SystemExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs:SystemExceptionsHandler",
+      "type": "class",
+      "name": "SystemExceptionsHandler",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "summary": "Class SystemExceptionsHandler with 2 method(s) in SystemExceptionsHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "type": "file",
+      "name": "ThreadingExceptionsHandler.cs",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "summary": "ThreadingExceptionsHandler.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs:CanHandle",
+      "type": "function",
+      "name": "CanHandle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "summary": "Function CanHandle in ThreadingExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "summary": "Function Handle in ThreadingExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs:ThreadingExceptionsHandler",
+      "type": "class",
+      "name": "ThreadingExceptionsHandler",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "summary": "Class ThreadingExceptionsHandler with 2 method(s) in ThreadingExceptionsHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "type": "file",
+      "name": "AppExceptionFilterAttribute.cs",
+      "filePath": "src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "summary": "AppExceptionFilterAttribute.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs:AppExceptionFilterAttribute",
+      "type": "function",
+      "name": "AppExceptionFilterAttribute",
+      "filePath": "src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "summary": "Function AppExceptionFilterAttribute in AppExceptionFilterAttribute.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs:OnException",
+      "type": "function",
+      "name": "OnException",
+      "filePath": "src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "summary": "Function OnException in AppExceptionFilterAttribute.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs:AppExceptionFilterAttribute",
+      "type": "class",
+      "name": "AppExceptionFilterAttribute",
+      "filePath": "src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "summary": "Class AppExceptionFilterAttribute with 2 method(s) in AppExceptionFilterAttribute.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Interfaces/IExceptionHandler.cs",
+      "type": "file",
+      "name": "IExceptionHandler.cs",
+      "filePath": "src/NatureHelp/Interfaces/IExceptionHandler.cs",
+      "summary": "IExceptionHandler.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Interfaces/IExceptionHandler.cs:IExceptionHandler",
+      "type": "class",
+      "name": "IExceptionHandler",
+      "filePath": "src/NatureHelp/Interfaces/IExceptionHandler.cs",
+      "summary": "Class IExceptionHandler with 2 method(s) in IExceptionHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Interfaces/IObjectsProvider.cs",
+      "type": "file",
+      "name": "IObjectsProvider.cs",
+      "filePath": "src/NatureHelp/Interfaces/IObjectsProvider.cs",
+      "summary": "IObjectsProvider.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Interfaces/IObjectsProvider.cs:IObjectsProvider",
+      "type": "class",
+      "name": "IObjectsProvider",
+      "filePath": "src/NatureHelp/Interfaces/IObjectsProvider.cs",
+      "summary": "Class IObjectsProvider with 1 method(s) in IObjectsProvider.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Program.cs",
+      "type": "file",
+      "name": "Program.cs",
+      "filePath": "src/NatureHelp/Program.cs",
+      "summary": "Program.cs is a csharp code module in NatureHelp.",
+      "tags": [
+        "entry-point"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:src/NatureHelp/Properties/launchSettings.json",
+      "type": "config",
+      "name": "launchSettings.json",
+      "filePath": "src/NatureHelp/Properties/launchSettings.json",
+      "summary": "Configuration for src/NatureHelp/Properties build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Providers/ErrorHandlersProvider.cs",
+      "type": "file",
+      "name": "ErrorHandlersProvider.cs",
+      "filePath": "src/NatureHelp/Providers/ErrorHandlersProvider.cs",
+      "summary": "ErrorHandlersProvider.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Providers/ErrorHandlersProvider.cs:GetObjects",
+      "type": "function",
+      "name": "GetObjects",
+      "filePath": "src/NatureHelp/Providers/ErrorHandlersProvider.cs",
+      "summary": "Function GetObjects in ErrorHandlersProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Providers/ErrorHandlersProvider.cs:ErrorHandlersProvider",
+      "type": "class",
+      "name": "ErrorHandlersProvider",
+      "filePath": "src/NatureHelp/Providers/ErrorHandlersProvider.cs",
+      "summary": "Class ErrorHandlersProvider with 1 method(s) in ErrorHandlersProvider.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "type": "file",
+      "name": "SecurityHeadersMiddleware.cs",
+      "filePath": "src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "summary": "SecurityHeadersMiddleware.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Security/SecurityHeadersMiddleware.cs:SecurityHeadersMiddleware",
+      "type": "function",
+      "name": "SecurityHeadersMiddleware",
+      "filePath": "src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "summary": "Function SecurityHeadersMiddleware in SecurityHeadersMiddleware.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Security/SecurityHeadersMiddleware.cs:InvokeAsync",
+      "type": "function",
+      "name": "InvokeAsync",
+      "filePath": "src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "summary": "Function InvokeAsync in SecurityHeadersMiddleware.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Security/SecurityHeadersMiddleware.cs:SecurityHeadersMiddleware",
+      "type": "class",
+      "name": "SecurityHeadersMiddleware",
+      "filePath": "src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "summary": "Class SecurityHeadersMiddleware with 2 method(s) in SecurityHeadersMiddleware.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Dtos/ErrorResponseDto.cs",
+      "type": "file",
+      "name": "ErrorResponseDto.cs",
+      "filePath": "src/Shared/Dtos/ErrorResponseDto.cs",
+      "summary": "ErrorResponseDto.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/ErrorResponseDto.cs:ErrorResponseDto",
+      "type": "class",
+      "name": "ErrorResponseDto",
+      "filePath": "src/Shared/Dtos/ErrorResponseDto.cs",
+      "summary": "Class ErrorResponseDto with 0 method(s) in ErrorResponseDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Dtos/ListData.cs",
+      "type": "file",
+      "name": "ListData.cs",
+      "filePath": "src/Shared/Dtos/ListData.cs",
+      "summary": "ListData.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/ListData.cs:ListData",
+      "type": "class",
+      "name": "ListData",
+      "filePath": "src/Shared/Dtos/ListData.cs",
+      "summary": "Class ListData with 0 method(s) in ListData.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Dtos/ProfileAchievementDto.cs",
+      "type": "file",
+      "name": "ProfileAchievementDto.cs",
+      "filePath": "src/Shared/Dtos/ProfileAchievementDto.cs",
+      "summary": "ProfileAchievementDto.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/ProfileAchievementDto.cs:ProfileAchievementDto",
+      "type": "class",
+      "name": "ProfileAchievementDto",
+      "filePath": "src/Shared/Dtos/ProfileAchievementDto.cs",
+      "summary": "Class ProfileAchievementDto with 0 method(s) in ProfileAchievementDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Dtos/ProfileJournalEntryDto.cs",
+      "type": "file",
+      "name": "ProfileJournalEntryDto.cs",
+      "filePath": "src/Shared/Dtos/ProfileJournalEntryDto.cs",
+      "summary": "ProfileJournalEntryDto.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/ProfileJournalEntryDto.cs:ProfileJournalEntryDto",
+      "type": "class",
+      "name": "ProfileJournalEntryDto",
+      "filePath": "src/Shared/Dtos/ProfileJournalEntryDto.cs",
+      "summary": "Class ProfileJournalEntryDto with 0 method(s) in ProfileJournalEntryDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Dtos/ProfilePhotoHistoryDto.cs",
+      "type": "file",
+      "name": "ProfilePhotoHistoryDto.cs",
+      "filePath": "src/Shared/Dtos/ProfilePhotoHistoryDto.cs",
+      "summary": "ProfilePhotoHistoryDto.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/ProfilePhotoHistoryDto.cs:ProfilePhotoHistoryDto",
+      "type": "class",
+      "name": "ProfilePhotoHistoryDto",
+      "filePath": "src/Shared/Dtos/ProfilePhotoHistoryDto.cs",
+      "summary": "Class ProfilePhotoHistoryDto with 0 method(s) in ProfilePhotoHistoryDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Dtos/TokensDto.cs",
+      "type": "file",
+      "name": "TokensDto.cs",
+      "filePath": "src/Shared/Dtos/TokensDto.cs",
+      "summary": "TokensDto.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/TokensDto.cs:TokensDto",
+      "type": "class",
+      "name": "TokensDto",
+      "filePath": "src/Shared/Dtos/TokensDto.cs",
+      "summary": "Class TokensDto with 0 method(s) in TokensDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Dtos/UserDto.cs",
+      "type": "file",
+      "name": "UserDto.cs",
+      "filePath": "src/Shared/Dtos/UserDto.cs",
+      "summary": "UserDto.cs defines 4 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/UserDto.cs:UserDto",
+      "type": "class",
+      "name": "UserDto",
+      "filePath": "src/Shared/Dtos/UserDto.cs",
+      "summary": "Class UserDto with 0 method(s) in UserDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/UserDto.cs:SendPasswordResetLinkDto",
+      "type": "class",
+      "name": "SendPasswordResetLinkDto",
+      "filePath": "src/Shared/Dtos/UserDto.cs",
+      "summary": "Class SendPasswordResetLinkDto with 0 method(s) in UserDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/UserDto.cs:ResetPasswordDto",
+      "type": "class",
+      "name": "ResetPasswordDto",
+      "filePath": "src/Shared/Dtos/UserDto.cs",
+      "summary": "Class ResetPasswordDto with 0 method(s) in UserDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/UserDto.cs:ResetPasswordWithTokenDto",
+      "type": "class",
+      "name": "ResetPasswordWithTokenDto",
+      "filePath": "src/Shared/Dtos/UserDto.cs",
+      "summary": "Class ResetPasswordWithTokenDto with 0 method(s) in UserDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Dtos/UserProfileSettingsDto.cs",
+      "type": "file",
+      "name": "UserProfileSettingsDto.cs",
+      "filePath": "src/Shared/Dtos/UserProfileSettingsDto.cs",
+      "summary": "UserProfileSettingsDto.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/UserProfileSettingsDto.cs:UserProfileSettingsDto",
+      "type": "class",
+      "name": "UserProfileSettingsDto",
+      "filePath": "src/Shared/Dtos/UserProfileSettingsDto.cs",
+      "summary": "Class UserProfileSettingsDto with 0 method(s) in UserProfileSettingsDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Dtos/UserProfileStatsDto.cs",
+      "type": "file",
+      "name": "UserProfileStatsDto.cs",
+      "filePath": "src/Shared/Dtos/UserProfileStatsDto.cs",
+      "summary": "UserProfileStatsDto.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Dtos/UserProfileStatsDto.cs:UserProfileStatsDto",
+      "type": "class",
+      "name": "UserProfileStatsDto",
+      "filePath": "src/Shared/Dtos/UserProfileStatsDto.cs",
+      "summary": "Class UserProfileStatsDto with 0 method(s) in UserProfileStatsDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "type": "file",
+      "name": "OperationCanNotBeCompleted.cs",
+      "filePath": "src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "summary": "OperationCanNotBeCompleted.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Shared/Exceptions/OperationCanNotBeCompleted.cs:OperationCanNotBeCompleted",
+      "type": "function",
+      "name": "OperationCanNotBeCompleted",
+      "filePath": "src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "summary": "Function OperationCanNotBeCompleted in OperationCanNotBeCompleted.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Shared/Exceptions/OperationCanNotBeCompleted.cs:OperationCanNotBeCompleted",
+      "type": "function",
+      "name": "OperationCanNotBeCompleted",
+      "filePath": "src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "summary": "Function OperationCanNotBeCompleted in OperationCanNotBeCompleted.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Shared/Exceptions/OperationCanNotBeCompleted.cs:OperationCanNotBeCompleted",
+      "type": "class",
+      "name": "OperationCanNotBeCompleted",
+      "filePath": "src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "summary": "Class OperationCanNotBeCompleted with 2 method(s) in OperationCanNotBeCompleted.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/Shared/Shared.csproj",
+      "type": "config",
+      "name": "Shared.csproj",
+      "filePath": "src/Shared/Shared.csproj",
+      "summary": "Configuration for src/Shared build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Tests/AssemblyInfo.cs",
+      "type": "file",
+      "name": "AssemblyInfo.cs",
+      "filePath": "src/Tests/AssemblyInfo.cs",
+      "summary": "AssemblyInfo.cs is a csharp code module in NatureHelp.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs:CanHandle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs:CanHandle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs:FileExceptionsHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs:FileExceptionsHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs:CanHandle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs:CanHandle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs:NetworkExceptionsHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs:NetworkExceptionsHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs:CanHandle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs:CanHandle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs:SecurityExceptionsHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs:SecurityExceptionsHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs:CanHandle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs:CanHandle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs:SerializationExceptionsHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs:SerializationExceptionsHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs:CanHandle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs:CanHandle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs:SystemExceptionsHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs:SystemExceptionsHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs:CanHandle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs:CanHandle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs:ThreadingExceptionsHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs:ThreadingExceptionsHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "target": "function:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs:AppExceptionFilterAttribute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "target": "function:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs:AppExceptionFilterAttribute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "target": "function:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs:OnException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "target": "function:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs:OnException",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "target": "class:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs:AppExceptionFilterAttribute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "target": "class:src/NatureHelp/Filters/AppExceptionFilterAttribute.cs:AppExceptionFilterAttribute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Interfaces/IExceptionHandler.cs",
+      "target": "class:src/NatureHelp/Interfaces/IExceptionHandler.cs:IExceptionHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Interfaces/IExceptionHandler.cs",
+      "target": "class:src/NatureHelp/Interfaces/IExceptionHandler.cs:IExceptionHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Interfaces/IObjectsProvider.cs",
+      "target": "class:src/NatureHelp/Interfaces/IObjectsProvider.cs:IObjectsProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Interfaces/IObjectsProvider.cs",
+      "target": "class:src/NatureHelp/Interfaces/IObjectsProvider.cs:IObjectsProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Providers/ErrorHandlersProvider.cs",
+      "target": "function:src/NatureHelp/Providers/ErrorHandlersProvider.cs:GetObjects",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Providers/ErrorHandlersProvider.cs",
+      "target": "function:src/NatureHelp/Providers/ErrorHandlersProvider.cs:GetObjects",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Providers/ErrorHandlersProvider.cs",
+      "target": "class:src/NatureHelp/Providers/ErrorHandlersProvider.cs:ErrorHandlersProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Providers/ErrorHandlersProvider.cs",
+      "target": "class:src/NatureHelp/Providers/ErrorHandlersProvider.cs:ErrorHandlersProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "target": "function:src/NatureHelp/Security/SecurityHeadersMiddleware.cs:SecurityHeadersMiddleware",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "target": "function:src/NatureHelp/Security/SecurityHeadersMiddleware.cs:SecurityHeadersMiddleware",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "target": "function:src/NatureHelp/Security/SecurityHeadersMiddleware.cs:InvokeAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "target": "function:src/NatureHelp/Security/SecurityHeadersMiddleware.cs:InvokeAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "target": "class:src/NatureHelp/Security/SecurityHeadersMiddleware.cs:SecurityHeadersMiddleware",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "target": "class:src/NatureHelp/Security/SecurityHeadersMiddleware.cs:SecurityHeadersMiddleware",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/ErrorResponseDto.cs",
+      "target": "class:src/Shared/Dtos/ErrorResponseDto.cs:ErrorResponseDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/ErrorResponseDto.cs",
+      "target": "class:src/Shared/Dtos/ErrorResponseDto.cs:ErrorResponseDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/ListData.cs",
+      "target": "class:src/Shared/Dtos/ListData.cs:ListData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/ListData.cs",
+      "target": "class:src/Shared/Dtos/ListData.cs:ListData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/ProfileAchievementDto.cs",
+      "target": "class:src/Shared/Dtos/ProfileAchievementDto.cs:ProfileAchievementDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/ProfileAchievementDto.cs",
+      "target": "class:src/Shared/Dtos/ProfileAchievementDto.cs:ProfileAchievementDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/ProfileJournalEntryDto.cs",
+      "target": "class:src/Shared/Dtos/ProfileJournalEntryDto.cs:ProfileJournalEntryDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/ProfileJournalEntryDto.cs",
+      "target": "class:src/Shared/Dtos/ProfileJournalEntryDto.cs:ProfileJournalEntryDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/ProfilePhotoHistoryDto.cs",
+      "target": "class:src/Shared/Dtos/ProfilePhotoHistoryDto.cs:ProfilePhotoHistoryDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/ProfilePhotoHistoryDto.cs",
+      "target": "class:src/Shared/Dtos/ProfilePhotoHistoryDto.cs:ProfilePhotoHistoryDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/TokensDto.cs",
+      "target": "class:src/Shared/Dtos/TokensDto.cs:TokensDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/TokensDto.cs",
+      "target": "class:src/Shared/Dtos/TokensDto.cs:TokensDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserDto.cs",
+      "target": "class:src/Shared/Dtos/UserDto.cs:UserDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserDto.cs",
+      "target": "class:src/Shared/Dtos/UserDto.cs:UserDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserDto.cs",
+      "target": "class:src/Shared/Dtos/UserDto.cs:SendPasswordResetLinkDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserDto.cs",
+      "target": "class:src/Shared/Dtos/UserDto.cs:SendPasswordResetLinkDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserDto.cs",
+      "target": "class:src/Shared/Dtos/UserDto.cs:ResetPasswordDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserDto.cs",
+      "target": "class:src/Shared/Dtos/UserDto.cs:ResetPasswordDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserDto.cs",
+      "target": "class:src/Shared/Dtos/UserDto.cs:ResetPasswordWithTokenDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserDto.cs",
+      "target": "class:src/Shared/Dtos/UserDto.cs:ResetPasswordWithTokenDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserProfileSettingsDto.cs",
+      "target": "class:src/Shared/Dtos/UserProfileSettingsDto.cs:UserProfileSettingsDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserProfileSettingsDto.cs",
+      "target": "class:src/Shared/Dtos/UserProfileSettingsDto.cs:UserProfileSettingsDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserProfileStatsDto.cs",
+      "target": "class:src/Shared/Dtos/UserProfileStatsDto.cs:UserProfileStatsDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Dtos/UserProfileStatsDto.cs",
+      "target": "class:src/Shared/Dtos/UserProfileStatsDto.cs:UserProfileStatsDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "target": "function:src/Shared/Exceptions/OperationCanNotBeCompleted.cs:OperationCanNotBeCompleted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "target": "function:src/Shared/Exceptions/OperationCanNotBeCompleted.cs:OperationCanNotBeCompleted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "target": "function:src/Shared/Exceptions/OperationCanNotBeCompleted.cs:OperationCanNotBeCompleted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "target": "function:src/Shared/Exceptions/OperationCanNotBeCompleted.cs:OperationCanNotBeCompleted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "target": "class:src/Shared/Exceptions/OperationCanNotBeCompleted.cs:OperationCanNotBeCompleted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "target": "class:src/Shared/Exceptions/OperationCanNotBeCompleted.cs:OperationCanNotBeCompleted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

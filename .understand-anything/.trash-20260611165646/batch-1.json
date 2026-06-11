@@ -1,0 +1,1385 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/models/IAttachment.ts",
+      "type": "file",
+      "name": "IAttachment.ts",
+      "filePath": "src/View/nature-help/src/app/models/IAttachment.ts",
+      "summary": "IAttachment.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/IBaseEntity.ts",
+      "type": "file",
+      "name": "IBaseEntity.ts",
+      "filePath": "src/View/nature-help/src/app/models/IBaseEntity.ts",
+      "summary": "IBaseEntity.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/IChangedModelLog.ts",
+      "type": "file",
+      "name": "IChangedModelLog.ts",
+      "filePath": "src/View/nature-help/src/app/models/IChangedModelLog.ts",
+      "summary": "IChangedModelLog.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/ICommentMessage.ts",
+      "type": "file",
+      "name": "ICommentMessage.ts",
+      "filePath": "src/View/nature-help/src/app/models/ICommentMessage.ts",
+      "summary": "ICommentMessage.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "type": "file",
+      "name": "IDeficiency.ts",
+      "filePath": "src/View/nature-help/src/app/models/IDeficiency.ts",
+      "summary": "IDeficiency.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/IDeficiencyMonitoring.ts",
+      "type": "file",
+      "name": "IDeficiencyMonitoring.ts",
+      "filePath": "src/View/nature-help/src/app/models/IDeficiencyMonitoring.ts",
+      "summary": "IDeficiencyMonitoring.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "file",
+      "name": "IUser.ts",
+      "filePath": "src/View/nature-help/src/app/models/IUser.ts",
+      "summary": "IUser.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "file",
+      "name": "enums.ts",
+      "filePath": "src/View/nature-help/src/app/models/enums.ts",
+      "summary": "enums.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratory.ts",
+      "type": "file",
+      "name": "ILaboratory.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/models/ILaboratory.ts",
+      "summary": "ILaboratory.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/models/IResearch.ts",
+      "type": "file",
+      "name": "IResearch.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/models/IResearch.ts",
+      "summary": "IResearch.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "type": "file",
+      "name": "soil-deficiency-details.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "summary": "soil-deficiency-details.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts:SoilDeficiencyDetail",
+      "type": "class",
+      "name": "SoilDeficiencyDetail",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "summary": "Class SoilDeficiencyDetail with 8 method(s) in soil-deficiency-details.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiency.ts",
+      "type": "file",
+      "name": "ISoilDeficiency.ts",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiency.ts",
+      "summary": "ISoilDeficiency.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "type": "file",
+      "name": "water-deficiency-details.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "summary": "water-deficiency-details.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts:WaterDeficiencyDetail",
+      "type": "class",
+      "name": "WaterDeficiencyDetail",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "summary": "Class WaterDeficiencyDetail with 9 method(s) in water-deficiency-details.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiency.ts",
+      "type": "file",
+      "name": "IWaterDeficiency.ts",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiency.ts",
+      "summary": "IWaterDeficiency.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "type": "file",
+      "name": "attachment-list.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "summary": "attachment-list.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts:AttachmentListComponent",
+      "type": "class",
+      "name": "AttachmentListComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "summary": "Class AttachmentListComponent with 7 method(s) in attachment-list.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "type": "file",
+      "name": "audit-list.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "summary": "audit-list.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts:AuditListComponent",
+      "type": "class",
+      "name": "AuditListComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "summary": "Class AuditListComponent with 3 method(s) in audit-list.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "type": "file",
+      "name": "comment-message-list.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "summary": "comment-message-list.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts:CommentMessageListComponent",
+      "type": "class",
+      "name": "CommentMessageListComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "summary": "Class CommentMessageListComponent with 6 method(s) in comment-message-list.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts",
+      "type": "file",
+      "name": "attachment-preview-dialog.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts",
+      "summary": "attachment-preview-dialog.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts:AttachmentPreviewDialogComponent",
+      "type": "class",
+      "name": "AttachmentPreviewDialogComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts",
+      "summary": "Class AttachmentPreviewDialogComponent with 2 method(s) in attachment-preview-dialog.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts",
+      "type": "file",
+      "name": "file-upload.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts",
+      "summary": "file-upload.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts:FileUploadComponent",
+      "type": "class",
+      "name": "FileUploadComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts",
+      "summary": "Class FileUploadComponent with 3 method(s) in file-upload.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "type": "file",
+      "name": "form-validation.helper.ts",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "summary": "form-validation.helper.ts provides 2 function(s) used by surrounding modules.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts:apiFieldToFormControlName",
+      "type": "function",
+      "name": "apiFieldToFormControlName",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "summary": "Function apiFieldToFormControlName in form-validation.helper.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts:applyServerValidationErrors",
+      "type": "function",
+      "name": "applyServerValidationErrors",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "summary": "Function applyServerValidationErrors in form-validation.helper.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "type": "file",
+      "name": "IDeficiencyFormConfig.ts",
+      "filePath": "src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "summary": "IDeficiencyFormConfig.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/pipes/filter.cy.ts",
+      "type": "file",
+      "name": "filter.cy.ts",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/filter.cy.ts",
+      "summary": "filter.cy.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/pipes/filter.pipe.ts",
+      "type": "file",
+      "name": "filter.pipe.ts",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/filter.pipe.ts",
+      "summary": "filter.pipe.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/pipes/filter.pipe.ts:FilterPipe",
+      "type": "class",
+      "name": "FilterPipe",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/filter.pipe.ts",
+      "summary": "Class FilterPipe with 1 method(s) in filter.pipe.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "type": "file",
+      "name": "attachment-api.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "summary": "attachment-api.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/attachment-api.service.ts:AttachmentAPIService",
+      "type": "class",
+      "name": "AttachmentAPIService",
+      "filePath": "src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "summary": "Class AttachmentAPIService with 7 method(s) in attachment-api.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "type": "file",
+      "name": "comment-message-api.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "summary": "comment-message-api.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts:CommentAPIService",
+      "type": "class",
+      "name": "CommentAPIService",
+      "filePath": "src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "summary": "Class CommentAPIService with 6 method(s) in comment-message-api.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts",
+      "type": "file",
+      "name": "deficiency-confirmation.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts",
+      "summary": "deficiency-confirmation.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts:DeficiencyConfirmationService",
+      "type": "class",
+      "name": "DeficiencyConfirmationService",
+      "filePath": "src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts",
+      "summary": "Class DeficiencyConfirmationService with 2 method(s) in deficiency-confirmation.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "type": "file",
+      "name": "deficiency-details.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "summary": "deficiency-details.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts:DeficiencyDetailsService",
+      "type": "class",
+      "name": "DeficiencyDetailsService",
+      "filePath": "src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "summary": "Class DeficiencyDetailsService with 23 method(s) in deficiency-details.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "type": "file",
+      "name": "deficiency-form-configs.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "summary": "deficiency-form-configs.service.ts defines 2 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts:WaterDeficiencyFormConfig",
+      "type": "class",
+      "name": "WaterDeficiencyFormConfig",
+      "filePath": "src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "summary": "Class WaterDeficiencyFormConfig with 1 method(s) in deficiency-form-configs.service.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts:SoilDeficiencyFormConfig",
+      "type": "class",
+      "name": "SoilDeficiencyFormConfig",
+      "filePath": "src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "summary": "Class SoilDeficiencyFormConfig with 1 method(s) in deficiency-form-configs.service.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "type": "file",
+      "name": "upload.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "summary": "upload.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/upload.service.ts:UploadService",
+      "type": "class",
+      "name": "UploadService",
+      "filePath": "src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "summary": "Class UploadService with 12 method(s) in upload.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/environments/environment.dev.ts",
+      "type": "file",
+      "name": "environment.dev.ts",
+      "filePath": "src/View/nature-help/src/environments/environment.dev.ts",
+      "summary": "environment.dev.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/View/nature-help/src/app/models/IAttachment.ts",
+      "target": "file:src/View/nature-help/src/app/models/IBaseEntity.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/IBaseEntity.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/IChangedModelLog.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/IChangedModelLog.ts",
+      "target": "file:src/View/nature-help/src/app/models/IBaseEntity.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/ICommentMessage.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/ICommentMessage.ts",
+      "target": "file:src/View/nature-help/src/app/models/IBaseEntity.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/ICommentMessage.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "target": "file:src/View/nature-help/src/app/models/IBaseEntity.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "target": "file:src/View/nature-help/src/app/models/IChangedModelLog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiencyMonitoring.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "target": "file:src/View/nature-help/src/app/models/IMonitoringScheme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratory.ts",
+      "target": "file:src/View/nature-help/src/app/models/IBaseEntity.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratory.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/models/IResearch.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/models/IResearch.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/models/IResearch.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratory.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts:SoilDeficiencyDetail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts:SoilDeficiencyDetail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiency.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/utils/error.utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts:WaterDeficiencyDetail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts:WaterDeficiencyDetail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiency.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/IAttachment.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts:AttachmentListComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts:AttachmentListComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts:AuditListComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts:AuditListComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/ICommentMessage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts:CommentMessageListComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts:CommentMessageListComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts:AttachmentPreviewDialogComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts:AttachmentPreviewDialogComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/IAttachment.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts:FileUploadComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts:FileUploadComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts:apiFieldToFormControlName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts:apiFieldToFormControlName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts:applyServerValidationErrors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts:applyServerValidationErrors",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "target": "file:src/View/nature-help/src/app/models/IAttachment.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/filter.cy.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/filter.cy.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/filter.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/filter.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/filter.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/filter.pipe.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/filter.pipe.ts",
+      "target": "class:src/View/nature-help/src/app/shared/pipes/filter.pipe.ts:FilterPipe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/filter.pipe.ts",
+      "target": "class:src/View/nature-help/src/app/shared/pipes/filter.pipe.ts:FilterPipe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IAttachment.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "target": "file:src/View/nature-help/src/environments/environment.dev.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/attachment-api.service.ts:AttachmentAPIService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/attachment-api.service.ts:AttachmentAPIService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/ICommentMessage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "target": "file:src/View/nature-help/src/environments/environment.dev.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts:CommentAPIService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/comment-message-api.service.ts:CommentAPIService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts:DeficiencyConfirmationService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts:DeficiencyConfirmationService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IAttachment.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/enum-helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/mobile-map.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts:DeficiencyDetailsService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/deficiency-details.service.ts:DeficiencyDetailsService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts:WaterDeficiencyFormConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts:WaterDeficiencyFormConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts:SoilDeficiencyFormConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts:SoilDeficiencyFormConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IAttachment.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/utils/error.utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "target": "file:src/View/nature-help/src/environments/environment.dev.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/upload.service.ts:UploadService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/upload.service.ts:UploadService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

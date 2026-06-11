@@ -12,7 +12,9 @@ import { Subscription } from "rxjs";
 })
 export class MainContainerComponent implements OnInit, OnDestroy {
   isLeftSideVisible = true;
+  loadingVisible = false;
   private routerSubscription?: Subscription;
+  private loadingSubscription?: Subscription;
 
   constructor(
     public loading: LoadingService,
@@ -21,16 +23,28 @@ export class MainContainerComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    this.isLeftSideVisible = !this.router.url.includes("/owner") && !isMobile;
+
+    this.loadingSubscription = this.loading.loading$.subscribe((visible) => {
+      setTimeout(() => {
+        this.loadingVisible = visible;
+      });
+    });
+
     this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isLeftSideVisible = !["/owner"].includes(event.url) && !isMobile;
+        const visible = !event.url.includes("/owner") && !isMobile;
+        if (this.isLeftSideVisible !== visible) {
+          setTimeout(() => {
+            this.isLeftSideVisible = visible;
+          });
+        }
       }
     });
   }
 
   ngOnDestroy(): void {
-    if (this.routerSubscription) {
-      this.routerSubscription.unsubscribe();
-    }
+    this.routerSubscription?.unsubscribe();
+    this.loadingSubscription?.unsubscribe();
   }
 }

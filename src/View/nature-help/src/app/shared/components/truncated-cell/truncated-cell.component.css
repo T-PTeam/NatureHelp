@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.truncated-cell__text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

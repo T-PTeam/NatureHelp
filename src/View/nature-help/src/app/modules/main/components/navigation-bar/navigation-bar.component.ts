@@ -12,6 +12,7 @@ import { EmailVerificationService } from "@/shared/services/email-verification.s
 import { MobileMapService } from "@/shared/services/mobile-map.service";
 import { EAuthType } from "@/models/enums";
 import { getErrorMessage } from "@/shared/utils/error.utils";
+import { PostAuthWelcomeDialogService } from "@/shared/services/post-auth-welcome-dialog.service";
 
 @Component({
   selector: "n-navigation-bar",
@@ -32,6 +33,7 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     private notify: MatSnackBar,
     public mobileMapService: MobileMapService,
     private router: Router,
+    private postAuthWelcomeDialog: PostAuthWelcomeDialogService,
   ) {}
 
   get isMobile(): boolean {
@@ -124,7 +126,11 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
           .subscribe({
             next: (authResponse) => {
               this.isAuthenticating = false;
-              if (authResponse.user && !authResponse.user.isEmailConfirmed) {
+              if (!authResponse?.user) {
+                return;
+              }
+              this.postAuthWelcomeDialog.open(authResponse.user);
+              if (!authResponse.user.isEmailConfirmed) {
                 this.emailVerificationService.sendVerificationEmail(authResponse.user.email).subscribe({
                   next: () => {
                     this.lastVerificationSent = Date.now();
@@ -140,6 +146,7 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
               }
             },
             error: (err: any) => {
+              this.isAuthenticating = false;
               const errorMessage = getErrorMessage(err);
               this.notify.open(errorMessage, "Close", { duration: 3000 });
             },

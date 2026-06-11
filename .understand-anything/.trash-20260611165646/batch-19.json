@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/shared/styles/detail-page.component.css",
+      "type": "file",
+      "name": "detail-page.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/styles/detail-page.component.css",
+      "summary": "detail-page.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/styles/dialog-styles.css",
+      "type": "file",
+      "name": "dialog-styles.css",
+      "filePath": "src/View/nature-help/src/app/shared/styles/dialog-styles.css",
+      "summary": "dialog-styles.css is a css markup module in NatureHelp.",
+      "tags": [
+        "markup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/styles/table-list.component.css",
+      "type": "file",
+      "name": "table-list.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/styles/table-list.component.css",
+      "summary": "table-list.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

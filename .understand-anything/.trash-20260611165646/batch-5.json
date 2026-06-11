@@ -1,0 +1,661 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/models/IAuthResponse.ts",
+      "type": "file",
+      "name": "IAuthResponse.ts",
+      "filePath": "src/View/nature-help/src/app/models/IAuthResponse.ts",
+      "summary": "IAuthResponse.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/profile/IAchievement.ts",
+      "type": "file",
+      "name": "IAchievement.ts",
+      "filePath": "src/View/nature-help/src/app/models/profile/IAchievement.ts",
+      "summary": "IAchievement.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/profile/IProfileJournalEntry.ts",
+      "type": "file",
+      "name": "IProfileJournalEntry.ts",
+      "filePath": "src/View/nature-help/src/app/models/profile/IProfileJournalEntry.ts",
+      "summary": "IProfileJournalEntry.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/profile/IProfilePhotoHistory.ts",
+      "type": "file",
+      "name": "IProfilePhotoHistory.ts",
+      "filePath": "src/View/nature-help/src/app/models/profile/IProfilePhotoHistory.ts",
+      "summary": "IProfilePhotoHistory.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/profile/IProfileStats.ts",
+      "type": "file",
+      "name": "IProfileStats.ts",
+      "filePath": "src/View/nature-help/src/app/models/profile/IProfileStats.ts",
+      "summary": "IProfileStats.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/profile/avatar-stage.enum.ts",
+      "type": "file",
+      "name": "avatar-stage.enum.ts",
+      "filePath": "src/View/nature-help/src/app/models/profile/avatar-stage.enum.ts",
+      "summary": "avatar-stage.enum.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts",
+      "type": "file",
+      "name": "profile-achievements-tab.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts",
+      "summary": "profile-achievements-tab.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts:ProfileAchievementsTabComponent",
+      "type": "class",
+      "name": "ProfileAchievementsTabComponent",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts",
+      "summary": "Class ProfileAchievementsTabComponent with 3 method(s) in profile-achievements-tab.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "type": "file",
+      "name": "profile-journal-tab.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "summary": "profile-journal-tab.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts:ProfileJournalTabComponent",
+      "type": "class",
+      "name": "ProfileJournalTabComponent",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "summary": "Class ProfileJournalTabComponent with 5 method(s) in profile-journal-tab.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts",
+      "type": "file",
+      "name": "profile-overview-tab.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts",
+      "summary": "profile-overview-tab.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts:ProfileOverviewTabComponent",
+      "type": "class",
+      "name": "ProfileOverviewTabComponent",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts",
+      "summary": "Class ProfileOverviewTabComponent with 0 method(s) in profile-overview-tab.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "type": "file",
+      "name": "profile-page.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "summary": "profile-page.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts:ProfilePageComponent",
+      "type": "class",
+      "name": "ProfilePageComponent",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "summary": "Class ProfilePageComponent with 7 method(s) in profile-page.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts",
+      "type": "file",
+      "name": "profile-settings-tab.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts",
+      "summary": "profile-settings-tab.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts:ProfileSettingsTabComponent",
+      "type": "class",
+      "name": "ProfileSettingsTabComponent",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts",
+      "summary": "Class ProfileSettingsTabComponent with 4 method(s) in profile-settings-tab.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/profile.module.ts",
+      "type": "file",
+      "name": "profile.module.ts",
+      "filePath": "src/View/nature-help/src/app/modules/profile/profile.module.ts",
+      "summary": "profile.module.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/profile/profile.module.ts:ProfileModule",
+      "type": "class",
+      "name": "ProfileModule",
+      "filePath": "src/View/nature-help/src/app/modules/profile/profile.module.ts",
+      "summary": "Class ProfileModule with 0 method(s) in profile.module.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts",
+      "type": "file",
+      "name": "dynamic-avatar.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts",
+      "summary": "dynamic-avatar.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts:DynamicAvatarComponent",
+      "type": "class",
+      "name": "DynamicAvatarComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts",
+      "summary": "Class DynamicAvatarComponent with 1 method(s) in dynamic-avatar.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts",
+      "type": "file",
+      "name": "auth-interceptor.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts",
+      "summary": "auth-interceptor.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts:AuthInterceptor",
+      "type": "class",
+      "name": "AuthInterceptor",
+      "filePath": "src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts",
+      "summary": "Class AuthInterceptor with 2 method(s) in auth-interceptor.service.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "file",
+      "name": "user-api.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "summary": "user-api.service.ts defines 1 class(es) and 1 function(s) in the typescript layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/shared/services/user-api.service.ts:mapAchievement",
+      "type": "function",
+      "name": "mapAchievement",
+      "filePath": "src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "summary": "Function mapAchievement in user-api.service.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/user-api.service.ts:UserAPIService",
+      "type": "class",
+      "name": "UserAPIService",
+      "filePath": "src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "summary": "Class UserAPIService with 29 method(s) in user-api.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/View/nature-help/src/app/models/IAuthResponse.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/IAchievement.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts:ProfileAchievementsTabComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts:ProfileAchievementsTabComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/IProfileJournalEntry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/IProfilePhotoHistory.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/language.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts:ProfileJournalTabComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts:ProfileJournalTabComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/IProfileStats.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts:ProfileOverviewTabComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts:ProfileOverviewTabComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/avatar-stage.enum.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/IProfileStats.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts:ProfilePageComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts:ProfilePageComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts:ProfileSettingsTabComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts:ProfileSettingsTabComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/profile.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/profile.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/profile.module.ts:ProfileModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/profile/profile.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/profile/profile.module.ts:ProfileModule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/avatar-stage.enum.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts:DynamicAvatarComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts:DynamicAvatarComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts:AuthInterceptor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts:AuthInterceptor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IAuthResponse.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/IAchievement.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/IProfileJournalEntry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/IProfilePhotoHistory.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/profile/IProfileStats.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/IListData.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/utils/error.utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "function:src/View/nature-help/src/app/shared/services/user-api.service.ts:mapAchievement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/user-api.service.ts:UserAPIService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/user-api.service.ts:UserAPIService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 ﻿using Domain.Models.Analitycs;
 using Domain.Models.Organization;
 using Infrastructure.Data;
+using Infrastructure.Extensions;
 using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,31 +15,26 @@ public class ResearchRepository : BaseRepository<Research>, IResearchRepository
     {
         using (var context = _contextFactory.CreateDbContext())
         {
-            if (scrollCount == -1)
+            var (sortBy, sortDirection, remainingFilters) = QueryableExtensions.ExtractSorting(filters);
+            IQueryable<Research> query = context.Set<Research>()
+                .Include(r => r.Laboratory)
+                .Include(r => r.Researcher)
+                .ApplyFilters(remainingFilters)
+                .ApplySorting(sortBy, sortDirection);
+
+            if (scrollCount != -1)
             {
-                IQueryable<Research> fullList = context.Set<Research>()
-                    .Include(r => r.Laboratory)
-                    .Include(r => r.Researcher);
-
-                foreach (var research in fullList)
-                {
-                    if (research.Laboratory != null) research.Laboratory.Researchers = null;
-                }
-
-                return await fullList.ToListAsync();
+                query = query.Skip(scrollCount * 20).Take(20);
             }
 
-            IQueryable<Research> list = context.Set<Research>()
-                    .Include(r => r.Laboratory)
-                    .Include(r => r.Researcher)
-                    .Skip(scrollCount * 20).Take(20);
+            var list = await query.ToListAsync();
 
             foreach (var research in list)
             {
                 if (research.Laboratory != null) research.Laboratory.Researchers = null;
             }
 
-            return await list.ToListAsync();
+            return list;
         }
     }
 

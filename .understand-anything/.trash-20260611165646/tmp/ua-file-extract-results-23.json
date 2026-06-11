@@ -1,0 +1,3350 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/Application/Services/Cache/RedisCacheService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "RedisCacheService",
+          "startLine": 9,
+          "endLine": 12,
+          "params": [
+            "redis"
+          ]
+        },
+        {
+          "name": "SetAsync",
+          "startLine": 14,
+          "endLine": 17,
+          "params": [
+            "key",
+            "value",
+            "expiry"
+          ]
+        },
+        {
+          "name": "GetAsync",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "RemoveAsync",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "key"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisCacheService",
+          "startLine": 5,
+          "endLine": 28,
+          "methods": [
+            "RedisCacheService",
+            "SetAsync",
+            "GetAsync",
+            "RemoveAsync"
+          ],
+          "properties": [
+            "_db"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RedisCacheService",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "SetAsync",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "GetAsync",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "RemoveAsync",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "RedisCacheService",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RedisCacheService",
+          "callee": "redis.GetDatabase",
+          "lineNumber": 11
+        },
+        {
+          "caller": "SetAsync",
+          "callee": "_db.StringSetAsync",
+          "lineNumber": 16
+        },
+        {
+          "caller": "GetAsync",
+          "callee": "_db.StringGetAsync",
+          "lineNumber": 21
+        },
+        {
+          "caller": "RemoveAsync",
+          "callee": "_db.KeyDeleteAsync",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/DeficiencyBindModelService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "DeficiencyBindModelService",
+          "startLine": 11,
+          "endLine": 17,
+          "params": [
+            "attachmentRepository",
+            "deficiencyAttachmentRepository"
+          ]
+        },
+        {
+          "name": "GetModelsByDeficiencyIdAsync",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "deficiencyId",
+            "deficiencyType"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DeficiencyBindModelService",
+          "startLine": 7,
+          "endLine": 23,
+          "methods": [
+            "DeficiencyBindModelService",
+            "GetModelsByDeficiencyIdAsync"
+          ],
+          "properties": [
+            "_deficiencyAttachmentRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeficiencyBindModelService",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "GetModelsByDeficiencyIdAsync",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyBindModelService",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetModelsByDeficiencyIdAsync",
+          "callee": "_deficiencyAttachmentRepository.GetModelsByDeficiencyIdAsync",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/LevelProgressCalculator.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "ComputeProgress",
+          "startLine": 5,
+          "endLine": 25,
+          "params": [
+            "totalXp",
+            "thresholds"
+          ]
+        },
+        {
+          "name": "ComputeLevel",
+          "startLine": 27,
+          "endLine": 39,
+          "params": [
+            "totalXp",
+            "thresholds"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LevelProgressCalculator",
+          "startLine": 3,
+          "endLine": 40,
+          "methods": [
+            "ComputeProgress",
+            "ComputeLevel"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ComputeProgress",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "ComputeLevel",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "LevelProgressCalculator",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ComputeProgress",
+          "callee": "Math.Clamp",
+          "lineNumber": 17
+        },
+        {
+          "caller": "ComputeLevel",
+          "callee": "Math.Clamp",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/LevelThresholdsProvider.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "LevelThresholdsProvider",
+          "startLine": 17,
+          "endLine": 21,
+          "params": [
+            "dictValueCache",
+            "dictEntryRepository"
+          ]
+        },
+        {
+          "name": "GetCumulativeThresholdsAsync",
+          "startLine": 23,
+          "endLine": 36,
+          "params": [
+            "ct"
+          ]
+        },
+        {
+          "name": "InvalidateCacheAsync",
+          "startLine": 38,
+          "endLine": 39,
+          "params": [
+            "ct"
+          ]
+        },
+        {
+          "name": "DeserializeOrThrow",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "json"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LevelThresholdsProvider",
+          "startLine": 8,
+          "endLine": 48,
+          "methods": [
+            "LevelThresholdsProvider",
+            "GetCumulativeThresholdsAsync",
+            "InvalidateCacheAsync",
+            "DeserializeOrThrow"
+          ],
+          "properties": [
+            "DictEntryKey",
+            "CacheTtl",
+            "_dictValueCache",
+            "_dictEntryRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictEntryKey",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "LevelThresholdsProvider",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "GetCumulativeThresholdsAsync",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "InvalidateCacheAsync",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "LevelThresholdsProvider",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetCumulativeThresholdsAsync",
+          "callee": "_dictValueCache.GetValueJsonAsync",
+          "lineNumber": 25
+        },
+        {
+          "caller": "GetCumulativeThresholdsAsync",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 26
+        },
+        {
+          "caller": "GetCumulativeThresholdsAsync",
+          "callee": "DeserializeOrThrow",
+          "lineNumber": 27
+        },
+        {
+          "caller": "GetCumulativeThresholdsAsync",
+          "callee": "_dictEntryRepository.GetValueJsonByKeyAsync",
+          "lineNumber": 29
+        },
+        {
+          "caller": "GetCumulativeThresholdsAsync",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 30
+        },
+        {
+          "caller": "GetCumulativeThresholdsAsync",
+          "callee": "new InvalidOperationException",
+          "lineNumber": 31
+        },
+        {
+          "caller": "GetCumulativeThresholdsAsync",
+          "callee": "DeserializeOrThrow",
+          "lineNumber": 33
+        },
+        {
+          "caller": "GetCumulativeThresholdsAsync",
+          "callee": "_dictValueCache.SetValueJsonAsync",
+          "lineNumber": 34
+        },
+        {
+          "caller": "InvalidateCacheAsync",
+          "callee": "_dictValueCache.RemoveAsync",
+          "lineNumber": 39
+        },
+        {
+          "caller": "DeserializeOrThrow",
+          "callee": "JsonSerializer.Deserialize<int[]>",
+          "lineNumber": 43
+        },
+        {
+          "caller": "DeserializeOrThrow",
+          "callee": "new InvalidOperationException",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "SoilDeficiencyService",
+          "startLine": 18,
+          "endLine": 31,
+          "params": [
+            "repository",
+            "logService",
+            "authService",
+            "profileService",
+            "achievementEvaluation"
+          ]
+        },
+        {
+          "name": "AddAsync",
+          "startLine": 33,
+          "endLine": 39,
+          "params": [
+            "entity"
+          ]
+        },
+        {
+          "name": "GetMapObjectsAsync",
+          "startLine": 41,
+          "endLine": 53,
+          "params": [
+            "filters"
+          ]
+        },
+        {
+          "name": "GetList",
+          "startLine": 55,
+          "endLine": 65,
+          "params": [
+            "scrollCount",
+            "filters"
+          ]
+        },
+        {
+          "name": "UpdateAsync",
+          "startLine": 68,
+          "endLine": 83,
+          "params": [
+            "entity"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SoilDeficiencyService",
+          "startLine": 10,
+          "endLine": 85,
+          "methods": [
+            "SoilDeficiencyService",
+            "AddAsync",
+            "GetMapObjectsAsync",
+            "GetList",
+            "UpdateAsync"
+          ],
+          "properties": [
+            "_logService",
+            "_authService",
+            "_profileService",
+            "_achievementEvaluation",
+            "_repository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SoilDeficiencyService",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "AddAsync",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "GetMapObjectsAsync",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "GetList",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateAsync",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "SoilDeficiencyService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AddAsync",
+          "callee": "base.AddAsync",
+          "lineNumber": 35
+        },
+        {
+          "caller": "AddAsync",
+          "callee": "_achievementEvaluation.EvaluateForUserAsync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 43
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "_repository.GetMapObjects",
+          "lineNumber": 44
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "new ListData<DeficiencyMapDto>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "data.Count",
+          "lineNumber": 49
+        },
+        {
+          "caller": "GetList",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 57
+        },
+        {
+          "caller": "GetList",
+          "callee": "_repository.GetAllAsync",
+          "lineNumber": 58
+        },
+        {
+          "caller": "GetList",
+          "callee": "new ListData<SoilDeficiency>",
+          "lineNumber": 60
+        },
+        {
+          "caller": "GetList",
+          "callee": "data.Count",
+          "lineNumber": 63
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "base.GetByIdAsync",
+          "lineNumber": 70
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "new EntityNotFoundException<SoilDeficiency>",
+          "lineNumber": 72
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "_logService.LogDeficiencyChangesAsync",
+          "lineNumber": 74
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "base.UpdateAsync",
+          "lineNumber": 76
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 78
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "_profileService.TryAwardDeficiencyEditedAsync",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "WaterDeficiencyService",
+          "startLine": 17,
+          "endLine": 30,
+          "params": [
+            "repository",
+            "logService",
+            "authService",
+            "profileService",
+            "achievementEvaluation"
+          ]
+        },
+        {
+          "name": "AddAsync",
+          "startLine": 32,
+          "endLine": 38,
+          "params": [
+            "entity"
+          ]
+        },
+        {
+          "name": "GetMapObjectsAsync",
+          "startLine": 40,
+          "endLine": 52,
+          "params": [
+            "filters"
+          ]
+        },
+        {
+          "name": "GetList",
+          "startLine": 54,
+          "endLine": 64,
+          "params": [
+            "scrollCount",
+            "filters"
+          ]
+        },
+        {
+          "name": "UpdateAsync",
+          "startLine": 67,
+          "endLine": 84,
+          "params": [
+            "entity"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WaterDeficiencyService",
+          "startLine": 9,
+          "endLine": 86,
+          "methods": [
+            "WaterDeficiencyService",
+            "AddAsync",
+            "GetMapObjectsAsync",
+            "GetList",
+            "UpdateAsync"
+          ],
+          "properties": [
+            "_logService",
+            "_authService",
+            "_profileService",
+            "_achievementEvaluation",
+            "_repository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WaterDeficiencyService",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "AddAsync",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "GetMapObjectsAsync",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "GetList",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateAsync",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "WaterDeficiencyService",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AddAsync",
+          "callee": "base.AddAsync",
+          "lineNumber": 34
+        },
+        {
+          "caller": "AddAsync",
+          "callee": "_achievementEvaluation.EvaluateForUserAsync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 42
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "_repository.GetMapObjects",
+          "lineNumber": 43
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "new ListData<DeficiencyMapDto>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "data.Count",
+          "lineNumber": 48
+        },
+        {
+          "caller": "GetList",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 56
+        },
+        {
+          "caller": "GetList",
+          "callee": "_repository.GetAllAsync",
+          "lineNumber": 57
+        },
+        {
+          "caller": "GetList",
+          "callee": "new ListData<WaterDeficiency>",
+          "lineNumber": 59
+        },
+        {
+          "caller": "GetList",
+          "callee": "data.Count",
+          "lineNumber": 62
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "GetByIdAsync",
+          "lineNumber": 69
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "new NullReferenceException",
+          "lineNumber": 73
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "_logService.LogDeficiencyChangesAsync",
+          "lineNumber": 75
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "base.UpdateAsync",
+          "lineNumber": 77
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 79
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "_profileService.TryAwardDeficiencyEditedAsync",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Organization/EmailService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "EmailService",
+          "startLine": 9,
+          "endLine": 12,
+          "params": [
+            "emailSender"
+          ]
+        },
+        {
+          "name": "SendEmailAsync",
+          "startLine": 14,
+          "endLine": 22,
+          "params": [
+            "toEmail",
+            "subject",
+            "htmlContent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "EmailService",
+          "startLine": 5,
+          "endLine": 23,
+          "methods": [
+            "EmailService",
+            "SendEmailAsync"
+          ],
+          "properties": [
+            "_emailSender"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "EmailService",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "SendEmailAsync",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "EmailService",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SendEmailAsync",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 16
+        },
+        {
+          "caller": "SendEmailAsync",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 16
+        },
+        {
+          "caller": "SendEmailAsync",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 16
+        },
+        {
+          "caller": "SendEmailAsync",
+          "callee": "new ArgumentException",
+          "lineNumber": 18
+        },
+        {
+          "caller": "SendEmailAsync",
+          "callee": "_emailSender.SendAsync",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Organization/LaboratoryService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "LaboratoryService",
+          "startLine": 17,
+          "endLine": 28,
+          "params": [
+            "repository",
+            "logService",
+            "authService",
+            "redisCacheService"
+          ]
+        },
+        {
+          "name": "GetMapObjectsAsync",
+          "startLine": 30,
+          "endLine": 42,
+          "params": [
+            "filters"
+          ]
+        },
+        {
+          "name": "GetList",
+          "startLine": 44,
+          "endLine": 54,
+          "params": [
+            "scrollCount",
+            "filters"
+          ]
+        },
+        {
+          "name": "AddAsync",
+          "startLine": 56,
+          "endLine": 72,
+          "params": [
+            "entity"
+          ]
+        },
+        {
+          "name": "UpdateAsync",
+          "startLine": 74,
+          "endLine": 90,
+          "params": [
+            "entity"
+          ]
+        },
+        {
+          "name": "CanEditLaboratory",
+          "startLine": 92,
+          "endLine": 105,
+          "params": [
+            "laboratory",
+            "currentUser"
+          ]
+        },
+        {
+          "name": "DeleteAsync",
+          "startLine": 107,
+          "endLine": 112,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "InvalidateListCacheAsync",
+          "startLine": 114,
+          "endLine": 122,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "LaboratoryService",
+          "startLine": 10,
+          "endLine": 123,
+          "methods": [
+            "LaboratoryService",
+            "GetMapObjectsAsync",
+            "GetList",
+            "AddAsync",
+            "UpdateAsync",
+            "CanEditLaboratory",
+            "DeleteAsync",
+            "InvalidateListCacheAsync"
+          ],
+          "properties": [
+            "_logService",
+            "_authService",
+            "_redisCacheService",
+            "_repository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LaboratoryService",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "GetMapObjectsAsync",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "GetList",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "AddAsync",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateAsync",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "DeleteAsync",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "LaboratoryService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "_repository.GetMapObjects",
+          "lineNumber": 33
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "new ListData<LaboratoryMapDto>",
+          "lineNumber": 35
+        },
+        {
+          "caller": "GetMapObjectsAsync",
+          "callee": "data.Count",
+          "lineNumber": 38
+        },
+        {
+          "caller": "GetList",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 46
+        },
+        {
+          "caller": "GetList",
+          "callee": "_repository.GetAllAsync",
+          "lineNumber": 47
+        },
+        {
+          "caller": "GetList",
+          "callee": "new ListData<Laboratory>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "GetList",
+          "callee": "data.Count",
+          "lineNumber": 52
+        },
+        {
+          "caller": "AddAsync",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 58
+        },
+        {
+          "caller": "AddAsync",
+          "callee": "base.AddAsync",
+          "lineNumber": 69
+        },
+        {
+          "caller": "AddAsync",
+          "callee": "InvalidateListCacheAsync",
+          "lineNumber": 70
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "_authService.GetCurrentUserAsync",
+          "lineNumber": 76
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "new UnauthorizedAccessException",
+          "lineNumber": 77
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "_repository.GetByIdAsync",
+          "lineNumber": 79
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "new KeyNotFoundException",
+          "lineNumber": 80
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "CanEditLaboratory",
+          "lineNumber": 82
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "new UnauthorizedAccessException",
+          "lineNumber": 84
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "base.UpdateAsync",
+          "lineNumber": 87
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "InvalidateListCacheAsync",
+          "lineNumber": 88
+        },
+        {
+          "caller": "DeleteAsync",
+          "callee": "base.DeleteAsync",
+          "lineNumber": 109
+        },
+        {
+          "caller": "DeleteAsync",
+          "callee": "InvalidateListCacheAsync",
+          "lineNumber": 110
+        },
+        {
+          "caller": "InvalidateListCacheAsync",
+          "callee": "_redisCacheService.RemoveAsync",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Organization/OrganizationService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "functions": [
+        {
+          "name": "OrganizationService",
+          "startLine": 7,
+          "endLine": 11,
+          "params": [
+            "userRepository"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrganizationService",
+          "startLine": 4,
+          "endLine": 12,
+          "methods": [
+            "OrganizationService"
+          ],
+          "properties": [
+            "_userRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrganizationService",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "OrganizationService",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Organization/UserService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 599,
+      "nonEmptyLines": 504,
+      "functions": [
+        {
+          "name": "UserService",
+          "startLine": 28,
+          "endLine": 46,
+          "params": [
+            "userRepository",
+            "organizationService",
+            "logger",
+            "emailService",
+            "configuration",
+            "profileRepository",
+            "profileService",
+            "achievementEvaluation"
+          ]
+        },
+        {
+          "name": "LoginAsync",
+          "startLine": 48,
+          "endLine": 64,
+          "params": [
+            "userLoginDto"
+          ]
+        },
+        {
+          "name": "GetModelByEmail",
+          "startLine": 66,
+          "endLine": 71,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "ConfirmEmailByToken",
+          "startLine": 73,
+          "endLine": 79,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "UpdateEmailConfirmationTokenByEmail",
+          "startLine": 81,
+          "endLine": 96,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "GetOrganizationUsers",
+          "startLine": 98,
+          "endLine": 111,
+          "params": [
+            "organizationId",
+            "scrollCount",
+            "filters"
+          ]
+        },
+        {
+          "name": "ChangeUsersRoles",
+          "startLine": 113,
+          "endLine": 134,
+          "params": [
+            "changedUsersRoles"
+          ]
+        },
+        {
+          "name": "IsTokenExpired",
+          "startLine": 136,
+          "endLine": 139,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "RefreshAccessTokenAsync",
+          "startLine": 141,
+          "endLine": 151,
+          "params": [
+            "refreshToken"
+          ]
+        },
+        {
+          "name": "AddUserToOrganizationAsync",
+          "startLine": 153,
+          "endLine": 178,
+          "params": [
+            "loginDto",
+            "isCreatingOwner"
+          ]
+        },
+        {
+          "name": "AddMultipleUsersToOrganizationAsync",
+          "startLine": 180,
+          "endLine": 200,
+          "params": [
+            "users"
+          ]
+        },
+        {
+          "name": "GetOrganizationUsersNotLoginEver",
+          "startLine": 202,
+          "endLine": 212,
+          "params": [
+            "organizationId"
+          ]
+        },
+        {
+          "name": "SetPasswordHash",
+          "startLine": 214,
+          "endLine": 217,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "CanAddUsersToOrganization",
+          "startLine": 219,
+          "endLine": 226,
+          "params": [
+            "count",
+            "organizationId"
+          ]
+        },
+        {
+          "name": "SendPasswordResetLinkAsync",
+          "startLine": 228,
+          "endLine": 259,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "ResetPasswordByEmailAsync",
+          "startLine": 261,
+          "endLine": 290,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "ResetPasswordWithTokenAsync",
+          "startLine": 292,
+          "endLine": 312,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "GenerateSecureToken",
+          "startLine": 314,
+          "endLine": 325,
+          "params": []
+        },
+        {
+          "name": "GeneratePasswordResetEmail",
+          "startLine": 327,
+          "endLine": 341,
+          "params": [
+            "firstName",
+            "resetLink"
+          ]
+        },
+        {
+          "name": "NotifyNewOrganizationUsersAsync",
+          "startLine": 343,
+          "endLine": 371,
+          "params": [
+            "users"
+          ]
+        },
+        {
+          "name": "TrySendOrganizationInviteEmailAsync",
+          "startLine": 373,
+          "endLine": 404,
+          "params": [
+            "user",
+            "organizationTitle",
+            "loginUrl"
+          ]
+        },
+        {
+          "name": "IsEmailConfigured",
+          "startLine": 406,
+          "endLine": 410,
+          "params": []
+        },
+        {
+          "name": "GenerateOrganizationInviteEmail",
+          "startLine": 412,
+          "endLine": 436,
+          "params": [
+            "firstName",
+            "organizationTitle",
+            "email",
+            "password",
+            "loginUrl",
+            "role"
+          ]
+        },
+        {
+          "name": "ExtractUserIdFromPasswordResetToken",
+          "startLine": 438,
+          "endLine": 445,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "LoginOrRegisterWithOAuth2Async",
+          "startLine": 447,
+          "endLine": 486,
+          "params": [
+            "email",
+            "firstName",
+            "lastName",
+            "provider"
+          ]
+        },
+        {
+          "name": "DeleteUserDataAsync",
+          "startLine": 488,
+          "endLine": 504,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "GetProfileStatsAsync",
+          "startLine": 506,
+          "endLine": 533,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "GetProfileJournalAsync",
+          "startLine": 535,
+          "endLine": 539,
+          "params": [
+            "email",
+            "take"
+          ]
+        },
+        {
+          "name": "GetProfilePhotoHistoryAsync",
+          "startLine": 541,
+          "endLine": 553,
+          "params": [
+            "email",
+            "take"
+          ]
+        },
+        {
+          "name": "GetProfileAchievementsAsync",
+          "startLine": 555,
+          "endLine": 581,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "RecordProfileVisitAsync",
+          "startLine": 583,
+          "endLine": 587,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "UpdateProfileSettingsAsync",
+          "startLine": 589,
+          "endLine": 598,
+          "params": [
+            "email",
+            "settings"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserService",
+          "startLine": 16,
+          "endLine": 599,
+          "methods": [
+            "UserService",
+            "LoginAsync",
+            "GetModelByEmail",
+            "ConfirmEmailByToken",
+            "UpdateEmailConfirmationTokenByEmail",
+            "GetOrganizationUsers",
+            "ChangeUsersRoles",
+            "IsTokenExpired",
+            "RefreshAccessTokenAsync",
+            "AddUserToOrganizationAsync",
+            "AddMultipleUsersToOrganizationAsync",
+            "GetOrganizationUsersNotLoginEver",
+            "SetPasswordHash",
+            "CanAddUsersToOrganization",
+            "SendPasswordResetLinkAsync",
+            "ResetPasswordByEmailAsync",
+            "ResetPasswordWithTokenAsync",
+            "GenerateSecureToken",
+            "GeneratePasswordResetEmail",
+            "NotifyNewOrganizationUsersAsync",
+            "TrySendOrganizationInviteEmailAsync",
+            "IsEmailConfigured",
+            "GenerateOrganizationInviteEmail",
+            "ExtractUserIdFromPasswordResetToken",
+            "LoginOrRegisterWithOAuth2Async",
+            "DeleteUserDataAsync",
+            "GetProfileStatsAsync",
+            "GetProfileJournalAsync",
+            "GetProfilePhotoHistoryAsync",
+            "GetProfileAchievementsAsync",
+            "RecordProfileVisitAsync",
+            "UpdateProfileSettingsAsync"
+          ],
+          "properties": [
+            "_userRepository",
+            "_organizationService",
+            "_passwordHasher",
+            "_logger",
+            "_emailService",
+            "_configuration",
+            "_profileRepository",
+            "_profileService",
+            "_achievementEvaluation"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserService",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "LoginAsync",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "GetModelByEmail",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "ConfirmEmailByToken",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateEmailConfirmationTokenByEmail",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "GetOrganizationUsers",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "ChangeUsersRoles",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "IsTokenExpired",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "RefreshAccessTokenAsync",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "AddUserToOrganizationAsync",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "AddMultipleUsersToOrganizationAsync",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "GetOrganizationUsersNotLoginEver",
+          "line": 202,
+          "isDefault": false
+        },
+        {
+          "name": "SendPasswordResetLinkAsync",
+          "line": 228,
+          "isDefault": false
+        },
+        {
+          "name": "ResetPasswordByEmailAsync",
+          "line": 261,
+          "isDefault": false
+        },
+        {
+          "name": "ResetPasswordWithTokenAsync",
+          "line": 292,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractUserIdFromPasswordResetToken",
+          "line": 438,
+          "isDefault": false
+        },
+        {
+          "name": "LoginOrRegisterWithOAuth2Async",
+          "line": 447,
+          "isDefault": false
+        },
+        {
+          "name": "DeleteUserDataAsync",
+          "line": 488,
+          "isDefault": false
+        },
+        {
+          "name": "GetProfileStatsAsync",
+          "line": 506,
+          "isDefault": false
+        },
+        {
+          "name": "GetProfileJournalAsync",
+          "line": 535,
+          "isDefault": false
+        },
+        {
+          "name": "GetProfilePhotoHistoryAsync",
+          "line": 541,
+          "isDefault": false
+        },
+        {
+          "name": "GetProfileAchievementsAsync",
+          "line": 555,
+          "isDefault": false
+        },
+        {
+          "name": "RecordProfileVisitAsync",
+          "line": 583,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateProfileSettingsAsync",
+          "line": 589,
+          "isDefault": false
+        },
+        {
+          "name": "UserService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LoginAsync",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 50
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "new NullReferenceException",
+          "lineNumber": 50
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "_passwordHasher.VerifyHashedPassword",
+          "lineNumber": 51
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "new UnauthorizedAccessException",
+          "lineNumber": 53
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "AuthTokensProvider.GenerateAccessToken",
+          "lineNumber": 55
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 56
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "TimeSpan.FromMinutes",
+          "lineNumber": 56
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "AuthTokensProvider.GenerateRefreshToken",
+          "lineNumber": 58
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 59
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "TimeSpan.FromDays",
+          "lineNumber": 59
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "_userRepository.UpdateAsync",
+          "lineNumber": 61
+        },
+        {
+          "caller": "GetModelByEmail",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 68
+        },
+        {
+          "caller": "GetModelByEmail",
+          "callee": "new NullReferenceException",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ConfirmEmailByToken",
+          "callee": "_userRepository\n            .ConfirmEmailByToken",
+          "lineNumber": 75
+        },
+        {
+          "caller": "UpdateEmailConfirmationTokenByEmail",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 83
+        },
+        {
+          "caller": "UpdateEmailConfirmationTokenByEmail",
+          "callee": "new NullReferenceException",
+          "lineNumber": 83
+        },
+        {
+          "caller": "UpdateEmailConfirmationTokenByEmail",
+          "callee": "new InvalidOperationException",
+          "lineNumber": 89
+        },
+        {
+          "caller": "UpdateEmailConfirmationTokenByEmail",
+          "callee": "AuthTokensProvider.GenerateEmailConfirmationToken",
+          "lineNumber": 92
+        },
+        {
+          "caller": "UpdateEmailConfirmationTokenByEmail",
+          "callee": "_userRepository.UpdateAsync",
+          "lineNumber": 93
+        },
+        {
+          "caller": "GetOrganizationUsers",
+          "callee": "_userRepository.GetByOrganizationAsync",
+          "lineNumber": 103
+        },
+        {
+          "caller": "GetOrganizationUsers",
+          "callee": "_userRepository.GetTotalCountByOrganization",
+          "lineNumber": 104
+        },
+        {
+          "caller": "GetOrganizationUsers",
+          "callee": "new ListData<User>",
+          "lineNumber": 106
+        },
+        {
+          "caller": "GetOrganizationUsers",
+          "callee": "users.ToList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "changedUsersRoles.Any",
+          "lineNumber": 115
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "changedUsersRoles.Keys.ToList",
+          "lineNumber": 118
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "_userRepository.GetAllAsync",
+          "lineNumber": 120
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "users\n            .Where",
+          "lineNumber": 122
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "userIds.Contains",
+          "lineNumber": 123
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "changedUsersRoles.TryGetValue",
+          "lineNumber": 125
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "user.AssignRole",
+          "lineNumber": 127
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "_userRepository.UpdateRangeAsync",
+          "lineNumber": 131
+        },
+        {
+          "caller": "IsTokenExpired",
+          "callee": "AuthTokensProvider.IsTokenExpired",
+          "lineNumber": 138
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "_userRepository.GetUserByRefreshTokenAsync",
+          "lineNumber": 143
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "AuthTokensProvider.GenerateAccessToken",
+          "lineNumber": 149
+        },
+        {
+          "caller": "AddUserToOrganizationAsync",
+          "callee": "CanAddUsersToOrganization",
+          "lineNumber": 155
+        },
+        {
+          "caller": "AddUserToOrganizationAsync",
+          "callee": "_logger.LogError",
+          "lineNumber": 157
+        },
+        {
+          "caller": "AddUserToOrganizationAsync",
+          "callee": "new OperationCanNotBeCompleted",
+          "lineNumber": 158
+        },
+        {
+          "caller": "AddUserToOrganizationAsync",
+          "callee": "new User",
+          "lineNumber": 161
+        },
+        {
+          "caller": "AddUserToOrganizationAsync",
+          "callee": "user.AssignRole",
+          "lineNumber": 170
+        },
+        {
+          "caller": "AddUserToOrganizationAsync",
+          "callee": "SetPasswordHash",
+          "lineNumber": 172
+        },
+        {
+          "caller": "AddUserToOrganizationAsync",
+          "callee": "_userRepository.AddAsync",
+          "lineNumber": 174
+        },
+        {
+          "caller": "AddUserToOrganizationAsync",
+          "callee": "NotifyNewOrganizationUsersAsync",
+          "lineNumber": 175
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "users.ToList",
+          "lineNumber": 182
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "CanAddUsersToOrganization",
+          "lineNumber": 184
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "usersList.First",
+          "lineNumber": 184
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "_logger.LogError",
+          "lineNumber": 186
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "usersList.First",
+          "lineNumber": 186
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "new OperationCanNotBeCompleted",
+          "lineNumber": 187
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "usersList.Select(user =>\n        {\n            SetPasswordHash(user);\n            return user;\n        }).ToList",
+          "lineNumber": 190
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "usersList.Select",
+          "lineNumber": 190
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "SetPasswordHash",
+          "lineNumber": 192
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "_userRepository.AddRangeAsync",
+          "lineNumber": 196
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "NotifyNewOrganizationUsersAsync",
+          "lineNumber": 197
+        },
+        {
+          "caller": "GetOrganizationUsersNotLoginEver",
+          "callee": "_userRepository.GetNotLoginEver",
+          "lineNumber": 204
+        },
+        {
+          "caller": "GetOrganizationUsersNotLoginEver",
+          "callee": "new ListData<User>",
+          "lineNumber": 206
+        },
+        {
+          "caller": "GetOrganizationUsersNotLoginEver",
+          "callee": "users.Where(u => u.OrganizationId == organizationId).ToList",
+          "lineNumber": 208
+        },
+        {
+          "caller": "GetOrganizationUsersNotLoginEver",
+          "callee": "users.Where",
+          "lineNumber": 208
+        },
+        {
+          "caller": "SetPasswordHash",
+          "callee": "_passwordHasher.HashPassword",
+          "lineNumber": 216
+        },
+        {
+          "caller": "CanAddUsersToOrganization",
+          "callee": "_userRepository.GetUsersCountByOrganization",
+          "lineNumber": 221
+        },
+        {
+          "caller": "CanAddUsersToOrganization",
+          "callee": "_organizationService.GetByIdAsync",
+          "lineNumber": 223
+        },
+        {
+          "caller": "SendPasswordResetLinkAsync",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 232
+        },
+        {
+          "caller": "SendPasswordResetLinkAsync",
+          "callee": "GenerateSecureToken",
+          "lineNumber": 238
+        },
+        {
+          "caller": "SendPasswordResetLinkAsync",
+          "callee": "DateTime.UtcNow.AddHours",
+          "lineNumber": 239
+        },
+        {
+          "caller": "SendPasswordResetLinkAsync",
+          "callee": "_userRepository.CreatePasswordResetTokenAsync",
+          "lineNumber": 241
+        },
+        {
+          "caller": "SendPasswordResetLinkAsync",
+          "callee": "GeneratePasswordResetEmail",
+          "lineNumber": 249
+        },
+        {
+          "caller": "SendPasswordResetLinkAsync",
+          "callee": "_emailService.SendEmailAsync",
+          "lineNumber": 251
+        },
+        {
+          "caller": "SendPasswordResetLinkAsync",
+          "callee": "Console.WriteLine",
+          "lineNumber": 256
+        },
+        {
+          "caller": "ResetPasswordByEmailAsync",
+          "callee": "ExtractUserIdFromPasswordResetToken",
+          "lineNumber": 265
+        },
+        {
+          "caller": "ResetPasswordByEmailAsync",
+          "callee": "_userRepository.IsPasswordResetTokenValidAsync",
+          "lineNumber": 267
+        },
+        {
+          "caller": "ResetPasswordByEmailAsync",
+          "callee": "_passwordHasher.HashPassword",
+          "lineNumber": 273
+        },
+        {
+          "caller": "ResetPasswordByEmailAsync",
+          "callee": "_userRepository.UpdatePasswordAsync",
+          "lineNumber": 275
+        },
+        {
+          "caller": "ResetPasswordByEmailAsync",
+          "callee": "_userRepository.InvalidatePasswordResetTokenAsync",
+          "lineNumber": 281
+        },
+        {
+          "caller": "ResetPasswordByEmailAsync",
+          "callee": "Console.WriteLine",
+          "lineNumber": 287
+        },
+        {
+          "caller": "ResetPasswordWithTokenAsync",
+          "callee": "_userRepository.GetUserIdByPasswordResetTokenAsync",
+          "lineNumber": 296
+        },
+        {
+          "caller": "ResetPasswordWithTokenAsync",
+          "callee": "_passwordHasher.HashPassword",
+          "lineNumber": 302
+        },
+        {
+          "caller": "ResetPasswordWithTokenAsync",
+          "callee": "_userRepository.UpdatePasswordAsync",
+          "lineNumber": 304
+        },
+        {
+          "caller": "ResetPasswordWithTokenAsync",
+          "callee": "Console.WriteLine",
+          "lineNumber": 309
+        },
+        {
+          "caller": "GenerateSecureToken",
+          "callee": "rng.GetBytes",
+          "lineNumber": 319
+        },
+        {
+          "caller": "GenerateSecureToken",
+          "callee": "Convert.ToBase64String(randomBytes)\n            .Replace(\"+\", \"-\")\n            .Replace(\"/\", \"_\")\n            .Replace",
+          "lineNumber": 321
+        },
+        {
+          "caller": "GenerateSecureToken",
+          "callee": "Convert.ToBase64String(randomBytes)\n            .Replace(\"+\", \"-\")\n            .Replace",
+          "lineNumber": 321
+        },
+        {
+          "caller": "GenerateSecureToken",
+          "callee": "Convert.ToBase64String(randomBytes)\n            .Replace",
+          "lineNumber": 321
+        },
+        {
+          "caller": "GenerateSecureToken",
+          "callee": "Convert.ToBase64String",
+          "lineNumber": 321
+        },
+        {
+          "caller": "NotifyNewOrganizationUsersAsync",
+          "callee": "IsEmailConfigured",
+          "lineNumber": 345
+        },
+        {
+          "caller": "NotifyNewOrganizationUsersAsync",
+          "callee": "_logger.LogWarning",
+          "lineNumber": 347
+        },
+        {
+          "caller": "NotifyNewOrganizationUsersAsync",
+          "callee": "users.ToList",
+          "lineNumber": 351
+        },
+        {
+          "caller": "NotifyNewOrganizationUsersAsync",
+          "callee": "usersList.First",
+          "lineNumber": 357
+        },
+        {
+          "caller": "NotifyNewOrganizationUsersAsync",
+          "callee": "_organizationService.GetByIdAsync",
+          "lineNumber": 363
+        },
+        {
+          "caller": "NotifyNewOrganizationUsersAsync",
+          "callee": "_configuration[\"Frontend:Url\"]?.TrimEnd",
+          "lineNumber": 365
+        },
+        {
+          "caller": "NotifyNewOrganizationUsersAsync",
+          "callee": "TrySendOrganizationInviteEmailAsync",
+          "lineNumber": 369
+        },
+        {
+          "caller": "TrySendOrganizationInviteEmailAsync",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 377
+        },
+        {
+          "caller": "TrySendOrganizationInviteEmailAsync",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 383
+        },
+        {
+          "caller": "TrySendOrganizationInviteEmailAsync",
+          "callee": "_logger.LogWarning",
+          "lineNumber": 385
+        },
+        {
+          "caller": "TrySendOrganizationInviteEmailAsync",
+          "callee": "GenerateOrganizationInviteEmail",
+          "lineNumber": 390
+        },
+        {
+          "caller": "TrySendOrganizationInviteEmailAsync",
+          "callee": "_emailService.SendEmailAsync",
+          "lineNumber": 398
+        },
+        {
+          "caller": "TrySendOrganizationInviteEmailAsync",
+          "callee": "_logger.LogWarning",
+          "lineNumber": 402
+        },
+        {
+          "caller": "IsEmailConfigured",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 408
+        },
+        {
+          "caller": "IsEmailConfigured",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 409
+        },
+        {
+          "caller": "ExtractUserIdFromPasswordResetToken",
+          "callee": "_userRepository.GetUserIdByPasswordResetTokenAsync",
+          "lineNumber": 440
+        },
+        {
+          "caller": "ExtractUserIdFromPasswordResetToken",
+          "callee": "new InvalidOperationException",
+          "lineNumber": 444
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 449
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "AuthTokensProvider.GenerateAccessToken",
+          "lineNumber": 453
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 454
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "TimeSpan.FromMinutes",
+          "lineNumber": 454
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "AuthTokensProvider.GenerateRefreshToken",
+          "lineNumber": 455
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 456
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "TimeSpan.FromDays",
+          "lineNumber": 456
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "_userRepository.UpdateAsync",
+          "lineNumber": 458
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "new User",
+          "lineNumber": 462
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "newUser.AssignRole",
+          "lineNumber": 471
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "Guid.NewGuid().ToString",
+          "lineNumber": 473
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 473
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "DateTime.UtcNow.Ticks.ToString",
+          "lineNumber": 473
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "SetPasswordHash",
+          "lineNumber": 474
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "AuthTokensProvider.GenerateAccessToken",
+          "lineNumber": 476
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 477
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "TimeSpan.FromMinutes",
+          "lineNumber": 477
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "AuthTokensProvider.GenerateRefreshToken",
+          "lineNumber": 478
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 479
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "TimeSpan.FromDays",
+          "lineNumber": 479
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "_userRepository.AddAsync",
+          "lineNumber": 481
+        },
+        {
+          "caller": "LoginOrRegisterWithOAuth2Async",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 483
+        },
+        {
+          "caller": "DeleteUserDataAsync",
+          "callee": "_userRepository.DeleteUserDataAsync",
+          "lineNumber": 492
+        },
+        {
+          "caller": "DeleteUserDataAsync",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 495
+        },
+        {
+          "caller": "DeleteUserDataAsync",
+          "callee": "_logger.LogError",
+          "lineNumber": 501
+        },
+        {
+          "caller": "GetProfileStatsAsync",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 508
+        },
+        {
+          "caller": "GetProfileStatsAsync",
+          "callee": "new NullReferenceException",
+          "lineNumber": 508
+        },
+        {
+          "caller": "GetProfileStatsAsync",
+          "callee": "_userRepository.CountCreatedDeficienciesAsync",
+          "lineNumber": 509
+        },
+        {
+          "caller": "GetProfileStatsAsync",
+          "callee": "_profileService.GetLevelProgressAsync",
+          "lineNumber": 511
+        },
+        {
+          "caller": "GetProfileStatsAsync",
+          "callee": "new UserProfileStatsDto",
+          "lineNumber": 521
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 537
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "new NullReferenceException",
+          "lineNumber": 537
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "_profileRepository.GetProfileJournalAsync",
+          "lineNumber": 538
+        },
+        {
+          "caller": "GetProfilePhotoHistoryAsync",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 543
+        },
+        {
+          "caller": "GetProfilePhotoHistoryAsync",
+          "callee": "new NullReferenceException",
+          "lineNumber": 543
+        },
+        {
+          "caller": "GetProfilePhotoHistoryAsync",
+          "callee": "_profileRepository.GetAttachmentsByCreatorAsync",
+          "lineNumber": 544
+        },
+        {
+          "caller": "GetProfilePhotoHistoryAsync",
+          "callee": "list.Select(a => new ProfilePhotoHistoryDto\n        {\n            Id = a.Id,\n            PreviewUrl = a.PreviewUrl ?? string.Empty,\n            DeficiencyId = a.DeficiencyId,\n            DeficiencyType = (int)a.DeficiencyType,\n            CreatedOn = a.CreatedOn,\n        }).ToList",
+          "lineNumber": 545
+        },
+        {
+          "caller": "GetProfilePhotoHistoryAsync",
+          "callee": "list.Select",
+          "lineNumber": 545
+        },
+        {
+          "caller": "GetProfilePhotoHistoryAsync",
+          "callee": "new ProfilePhotoHistoryDto",
+          "lineNumber": 545
+        },
+        {
+          "caller": "GetProfileAchievementsAsync",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 557
+        },
+        {
+          "caller": "GetProfileAchievementsAsync",
+          "callee": "new NullReferenceException",
+          "lineNumber": 557
+        },
+        {
+          "caller": "GetProfileAchievementsAsync",
+          "callee": "_achievementEvaluation.EvaluateForUserAsync",
+          "lineNumber": 558
+        },
+        {
+          "caller": "GetProfileAchievementsAsync",
+          "callee": "_profileRepository.GetActiveAchievementsAsync",
+          "lineNumber": 559
+        },
+        {
+          "caller": "GetProfileAchievementsAsync",
+          "callee": "new List<ProfileAchievementDto>",
+          "lineNumber": 560
+        },
+        {
+          "caller": "GetProfileAchievementsAsync",
+          "callee": "_profileRepository.GetUserAchievementAsync",
+          "lineNumber": 563
+        },
+        {
+          "caller": "GetProfileAchievementsAsync",
+          "callee": "result.Add",
+          "lineNumber": 564
+        },
+        {
+          "caller": "GetProfileAchievementsAsync",
+          "callee": "new ProfileAchievementDto",
+          "lineNumber": 564
+        },
+        {
+          "caller": "RecordProfileVisitAsync",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 585
+        },
+        {
+          "caller": "RecordProfileVisitAsync",
+          "callee": "new NullReferenceException",
+          "lineNumber": 585
+        },
+        {
+          "caller": "RecordProfileVisitAsync",
+          "callee": "_profileService.TryAwardDailyVisitAsync",
+          "lineNumber": 586
+        },
+        {
+          "caller": "UpdateProfileSettingsAsync",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 591
+        },
+        {
+          "caller": "UpdateProfileSettingsAsync",
+          "callee": "new NullReferenceException",
+          "lineNumber": 591
+        },
+        {
+          "caller": "UpdateProfileSettingsAsync",
+          "callee": "_userRepository.UpdateAsync",
+          "lineNumber": 596
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 25,
+        "functionCount": 32,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/PaymentService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "PaymentService",
+          "startLine": 17,
+          "endLine": 23,
+          "params": [
+            "configuration"
+          ]
+        },
+        {
+          "name": "CreateDonationPaymentAsync",
+          "startLine": 25,
+          "endLine": 54,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "VerifyPaymentCallbackAsync",
+          "startLine": 56,
+          "endLine": 71,
+          "params": [
+            "data",
+            "signature"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PaymentService",
+          "startLine": 10,
+          "endLine": 72,
+          "methods": [
+            "PaymentService",
+            "CreateDonationPaymentAsync",
+            "VerifyPaymentCallbackAsync"
+          ],
+          "properties": [
+            "_configuration",
+            "_publicKey",
+            "_privateKey",
+            "_paymentUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PaymentService",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "CreateDonationPaymentAsync",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "VerifyPaymentCallbackAsync",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "PaymentService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PaymentService",
+          "callee": "new InvalidOperationException",
+          "lineNumber": 20
+        },
+        {
+          "caller": "PaymentService",
+          "callee": "new InvalidOperationException",
+          "lineNumber": 21
+        },
+        {
+          "caller": "PaymentService",
+          "callee": "new InvalidOperationException",
+          "lineNumber": 22
+        },
+        {
+          "caller": "CreateDonationPaymentAsync",
+          "callee": "new PaymentParamsDto",
+          "lineNumber": 29
+        },
+        {
+          "caller": "CreateDonationPaymentAsync",
+          "callee": "JsonSerializer.Serialize",
+          "lineNumber": 40
+        },
+        {
+          "caller": "CreateDonationPaymentAsync",
+          "callee": "Convert.ToBase64String",
+          "lineNumber": 41
+        },
+        {
+          "caller": "CreateDonationPaymentAsync",
+          "callee": "Encoding.UTF8.GetBytes",
+          "lineNumber": 41
+        },
+        {
+          "caller": "CreateDonationPaymentAsync",
+          "callee": "SHA1.Create",
+          "lineNumber": 44
+        },
+        {
+          "caller": "CreateDonationPaymentAsync",
+          "callee": "sha1.ComputeHash",
+          "lineNumber": 45
+        },
+        {
+          "caller": "CreateDonationPaymentAsync",
+          "callee": "Encoding.UTF8.GetBytes",
+          "lineNumber": 45
+        },
+        {
+          "caller": "CreateDonationPaymentAsync",
+          "callee": "Convert.ToBase64String",
+          "lineNumber": 46
+        },
+        {
+          "caller": "CreateDonationPaymentAsync",
+          "callee": "new PaymentResponseDto",
+          "lineNumber": 48
+        },
+        {
+          "caller": "VerifyPaymentCallbackAsync",
+          "callee": "SHA1.Create",
+          "lineNumber": 61
+        },
+        {
+          "caller": "VerifyPaymentCallbackAsync",
+          "callee": "sha1.ComputeHash",
+          "lineNumber": 62
+        },
+        {
+          "caller": "VerifyPaymentCallbackAsync",
+          "callee": "Encoding.UTF8.GetBytes",
+          "lineNumber": 62
+        },
+        {
+          "caller": "VerifyPaymentCallbackAsync",
+          "callee": "Convert.ToBase64String",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/ProfileService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 154,
+      "nonEmptyLines": 129,
+      "functions": [
+        {
+          "name": "ProfileService",
+          "startLine": 22,
+          "endLine": 34,
+          "params": [
+            "profileRepository",
+            "userRepository",
+            "achievementEvaluation",
+            "levelThresholdsProvider",
+            "options"
+          ]
+        },
+        {
+          "name": "TryAwardDailyVisitAsync",
+          "startLine": 36,
+          "endLine": 50,
+          "params": [
+            "userId",
+            "ct"
+          ]
+        },
+        {
+          "name": "TryAwardPhotoAddedAsync",
+          "startLine": 52,
+          "endLine": 53,
+          "params": [
+            "userId",
+            "attachmentId",
+            "ct"
+          ]
+        },
+        {
+          "name": "TryAwardDeficiencyEditedAsync",
+          "startLine": 55,
+          "endLine": 56,
+          "params": [
+            "userId",
+            "changedModelLogId",
+            "ct"
+          ]
+        },
+        {
+          "name": "ConfirmDeficiencyAsync",
+          "startLine": 58,
+          "endLine": 105,
+          "params": [
+            "userId",
+            "deficiencyId",
+            "type",
+            "ct"
+          ]
+        },
+        {
+          "name": "GetLevelProgressAsync",
+          "startLine": 107,
+          "endLine": 111,
+          "params": [
+            "totalXp",
+            "ct"
+          ]
+        },
+        {
+          "name": "RecalculateLevelAsync",
+          "startLine": 113,
+          "endLine": 117,
+          "params": [
+            "totalXp",
+            "ct"
+          ]
+        },
+        {
+          "name": "TryAwardXpAsync",
+          "startLine": 119,
+          "endLine": 153,
+          "params": [
+            "userId",
+            "amount",
+            "reason",
+            "referenceType",
+            "referenceId",
+            "ct"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProfileService",
+          "startLine": 10,
+          "endLine": 154,
+          "methods": [
+            "ProfileService",
+            "TryAwardDailyVisitAsync",
+            "TryAwardPhotoAddedAsync",
+            "TryAwardDeficiencyEditedAsync",
+            "ConfirmDeficiencyAsync",
+            "GetLevelProgressAsync",
+            "RecalculateLevelAsync",
+            "TryAwardXpAsync"
+          ],
+          "properties": [
+            "RefTypeDeficiency",
+            "RefTypeAttachment",
+            "RefTypeChangeLog",
+            "_profileRepository",
+            "_userRepository",
+            "_achievementEvaluation",
+            "_levelThresholdsProvider",
+            "_options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RefTypeDeficiency",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "RefTypeAttachment",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "RefTypeChangeLog",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ProfileService",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "TryAwardDailyVisitAsync",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "TryAwardPhotoAddedAsync",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "TryAwardDeficiencyEditedAsync",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "ConfirmDeficiencyAsync",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "GetLevelProgressAsync",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "RecalculateLevelAsync",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "ProfileService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TryAwardDailyVisitAsync",
+          "callee": "DateOnly.FromDateTime",
+          "lineNumber": 38
+        },
+        {
+          "caller": "TryAwardDailyVisitAsync",
+          "callee": "_profileRepository.HasDailyVisitAsync",
+          "lineNumber": 39
+        },
+        {
+          "caller": "TryAwardDailyVisitAsync",
+          "callee": "_profileRepository.AddDailyVisitAsync",
+          "lineNumber": 42
+        },
+        {
+          "caller": "TryAwardDailyVisitAsync",
+          "callee": "new UserDailyVisit",
+          "lineNumber": 42
+        },
+        {
+          "caller": "TryAwardDailyVisitAsync",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 44
+        },
+        {
+          "caller": "TryAwardDailyVisitAsync",
+          "callee": "TryAwardXpAsync",
+          "lineNumber": 49
+        },
+        {
+          "caller": "TryAwardPhotoAddedAsync",
+          "callee": "TryAwardXpAsync",
+          "lineNumber": 53
+        },
+        {
+          "caller": "TryAwardDeficiencyEditedAsync",
+          "callee": "TryAwardXpAsync",
+          "lineNumber": 56
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "_profileRepository.GetWaterDeficiencyByIdAsync",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "new DeficiencyConfirmResult",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "_profileRepository.GetSoilDeficiencyByIdAsync",
+          "lineNumber": 69
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "new DeficiencyConfirmResult",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "new DeficiencyConfirmResult",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "_profileRepository.HasConfirmationAsync",
+          "lineNumber": 77
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "new DeficiencyConfirmResult",
+          "lineNumber": 78
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "_profileRepository.AddConfirmationAsync",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "new DeficiencyConfirmation",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 82
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "_achievementEvaluation.EvaluateForUserAsync",
+          "lineNumber": 89
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "_profileRepository.CountConfirmationsAsync",
+          "lineNumber": 91
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "TryAwardXpAsync",
+          "lineNumber": 95
+        },
+        {
+          "caller": "ConfirmDeficiencyAsync",
+          "callee": "new DeficiencyConfirmResult",
+          "lineNumber": 104
+        },
+        {
+          "caller": "GetLevelProgressAsync",
+          "callee": "_levelThresholdsProvider.GetCumulativeThresholdsAsync",
+          "lineNumber": 109
+        },
+        {
+          "caller": "GetLevelProgressAsync",
+          "callee": "LevelProgressCalculator.ComputeProgress",
+          "lineNumber": 110
+        },
+        {
+          "caller": "RecalculateLevelAsync",
+          "callee": "_levelThresholdsProvider.GetCumulativeThresholdsAsync",
+          "lineNumber": 115
+        },
+        {
+          "caller": "RecalculateLevelAsync",
+          "callee": "LevelProgressCalculator.ComputeLevel",
+          "lineNumber": 116
+        },
+        {
+          "caller": "TryAwardXpAsync",
+          "callee": "_profileRepository.HasLedgerEntryAsync",
+          "lineNumber": 129
+        },
+        {
+          "caller": "TryAwardXpAsync",
+          "callee": "_userRepository.GetByIdAsync",
+          "lineNumber": 132
+        },
+        {
+          "caller": "TryAwardXpAsync",
+          "callee": "_profileRepository.AddLedgerEntryAsync",
+          "lineNumber": 135
+        },
+        {
+          "caller": "TryAwardXpAsync",
+          "callee": "new UserXpLedger",
+          "lineNumber": 135
+        },
+        {
+          "caller": "TryAwardXpAsync",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 137
+        },
+        {
+          "caller": "TryAwardXpAsync",
+          "callee": "RecalculateLevelAsync",
+          "lineNumber": 147
+        },
+        {
+          "caller": "TryAwardXpAsync",
+          "callee": "_userRepository.UpdateAsync",
+          "lineNumber": 148
+        },
+        {
+          "caller": "TryAwardXpAsync",
+          "callee": "_achievementEvaluation.EvaluateForUserAsync",
+          "lineNumber": 150
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Domain.csproj",
+      "language": "csproj",
+      "fileCategory": "config",
+      "totalLines": 17,
+      "nonEmptyLines": 13,
+      "metrics": {}
+    },
+    {
+      "path": "src/Domain/DomainClassDiagram",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 130,
+      "nonEmptyLines": 130,
+      "metrics": {}
+    },
+    {
+      "path": "src/Domain/Enums/Analitycs.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 28,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/Domain/Enums/Nature.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/Domain/Enums/Organization.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/Domain/Enums/ProfileEnums.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/Domain/Exceptions/EntityNotFoundException.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "EntityNotFoundException",
+          "startLine": 5,
+          "endLine": 6,
+          "params": []
+        },
+        {
+          "name": "EntityNotFoundException",
+          "startLine": 8,
+          "endLine": 9,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "EntityNotFoundException",
+          "startLine": 11,
+          "endLine": 12,
+          "params": [
+            "message",
+            "innerException"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "EntityNotFoundException",
+          "startLine": 3,
+          "endLine": 13,
+          "methods": [
+            "EntityNotFoundException",
+            "EntityNotFoundException",
+            "EntityNotFoundException"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "EntityNotFoundException",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "EntityNotFoundException",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "EntityNotFoundException",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "EntityNotFoundException",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "EntityNotFoundException",
+          "callee": "nameof",
+          "lineNumber": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Interfaces/IBaseRepository.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "IBaseRepository",
+          "startLine": 5,
+          "endLine": 17,
+          "methods": [
+            "GetAllAsync",
+            "GetByIdAsync",
+            "AddAsync",
+            "AddRangeAsync",
+            "UpdateAsync",
+            "UpdateRangeAsync",
+            "DeleteAsync",
+            "DeleteRangeAsync",
+            "GetTotalCount",
+            "SaveChangesAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IBaseRepository",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Interfaces/IBaseService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "IBaseService",
+          "startLine": 4,
+          "endLine": 12,
+          "methods": [
+            "GetList",
+            "GetByIdAsync",
+            "AddAsync",
+            "UpdateAsync",
+            "DeleteAsync",
+            "GetOrSetAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IBaseService",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Interfaces/ICoordinates.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "ICoordinates",
+          "startLine": 2,
+          "endLine": 41,
+          "methods": [
+            "IsNearby",
+            "UpdateCoordinates"
+          ],
+          "properties": [
+            "Longitude",
+            "Latitude"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ICoordinates",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "IsNearby",
+          "callee": "Math.Sin",
+          "lineNumber": 23
+        },
+        {
+          "caller": "IsNearby",
+          "callee": "Math.Sin",
+          "lineNumber": 23
+        },
+        {
+          "caller": "IsNearby",
+          "callee": "Math.Cos",
+          "lineNumber": 24
+        },
+        {
+          "caller": "IsNearby",
+          "callee": "Math.Cos",
+          "lineNumber": 24
+        },
+        {
+          "caller": "IsNearby",
+          "callee": "Math.Sin",
+          "lineNumber": 25
+        },
+        {
+          "caller": "IsNearby",
+          "callee": "Math.Sin",
+          "lineNumber": 25
+        },
+        {
+          "caller": "IsNearby",
+          "callee": "Math.Atan2",
+          "lineNumber": 27
+        },
+        {
+          "caller": "IsNearby",
+          "callee": "Math.Sqrt",
+          "lineNumber": 27
+        },
+        {
+          "caller": "IsNearby",
+          "callee": "Math.Sqrt",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Interfaces/IDeficiencyBindModel.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "IDeficiencyBindModel",
+          "startLine": 5,
+          "endLine": 10,
+          "methods": [],
+          "properties": [
+            "DeficiencyType",
+            "DeficiencyId",
+            "Deficiency"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IDeficiencyBindModel",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Interfaces/IMapObjectsRepository.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "IMapObjectsRepository",
+          "startLine": 6,
+          "endLine": 9,
+          "methods": [
+            "GetMapObjects"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IMapObjectsRepository",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Interfaces/IMapObjectsService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "classes": [
+        {
+          "name": "IMapObjectsService",
+          "startLine": 4,
+          "endLine": 7,
+          "methods": [
+            "GetMapObjectsAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IMapObjectsService",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

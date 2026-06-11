@@ -1,0 +1,75 @@
+{
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/cypress-component-tests.yml",
+      "type": "pipeline",
+      "name": "cypress-component-tests.yml",
+      "filePath": ".github/workflows/cypress-component-tests.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (cypress-component-tests.yml).",
+      "tags": [
+        "test",
+        "component",
+        "ci-cd"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/deploy-production-droplet.yml",
+      "type": "pipeline",
+      "name": "deploy-production-droplet.yml",
+      "filePath": ".github/workflows/deploy-production-droplet.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (deploy-production-droplet.yml).",
+      "tags": [
+        "ci-cd"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/dotnet-tests.yml",
+      "type": "pipeline",
+      "name": "dotnet-tests.yml",
+      "filePath": ".github/workflows/dotnet-tests.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (dotnet-tests.yml).",
+      "tags": [
+        "test",
+        "ci-cd"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/firebase-hosting-merge.yml",
+      "type": "pipeline",
+      "name": "firebase-hosting-merge.yml",
+      "filePath": ".github/workflows/firebase-hosting-merge.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (firebase-hosting-merge.yml).",
+      "tags": [
+        "ci-cd"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/firebase-hosting-pull-request.yml",
+      "type": "pipeline",
+      "name": "firebase-hosting-pull-request.yml",
+      "filePath": ".github/workflows/firebase-hosting-pull-request.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (firebase-hosting-pull-request.yml).",
+      "tags": [
+        "ci-cd"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/postman-tests.yml",
+      "type": "pipeline",
+      "name": "postman-tests.yml",
+      "filePath": ".github/workflows/postman-tests.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (postman-tests.yml).",
+      "tags": [
+        "test",
+        "ci-cd"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,280 @@
+{
+  "nodes": [
+    {
+      "id": "file:.gitattributes",
+      "type": "file",
+      "name": ".gitattributes",
+      "filePath": ".gitattributes",
+      "summary": ".gitattributes is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.husky/applypatch-msg",
+      "type": "file",
+      "name": "applypatch-msg",
+      "filePath": ".husky/applypatch-msg",
+      "summary": "applypatch-msg is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/commit-msg",
+      "type": "file",
+      "name": "commit-msg",
+      "filePath": ".husky/commit-msg",
+      "summary": "commit-msg is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/h",
+      "type": "file",
+      "name": "h",
+      "filePath": ".husky/h",
+      "summary": "h is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/husky.sh",
+      "type": "file",
+      "name": "husky.sh",
+      "filePath": ".husky/husky.sh",
+      "summary": "husky.sh is a shell script module in NatureHelp.",
+      "tags": [
+        "script"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/install.mjs",
+      "type": "file",
+      "name": "install.mjs",
+      "filePath": ".husky/install.mjs",
+      "summary": "install.mjs is a javascript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/post-applypatch",
+      "type": "file",
+      "name": "post-applypatch",
+      "filePath": ".husky/post-applypatch",
+      "summary": "post-applypatch is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/post-checkout",
+      "type": "file",
+      "name": "post-checkout",
+      "filePath": ".husky/post-checkout",
+      "summary": "post-checkout is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/post-commit",
+      "type": "file",
+      "name": "post-commit",
+      "filePath": ".husky/post-commit",
+      "summary": "post-commit is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/post-merge",
+      "type": "file",
+      "name": "post-merge",
+      "filePath": ".husky/post-merge",
+      "summary": "post-merge is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/post-rewrite",
+      "type": "file",
+      "name": "post-rewrite",
+      "filePath": ".husky/post-rewrite",
+      "summary": "post-rewrite is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/pre-applypatch",
+      "type": "file",
+      "name": "pre-applypatch",
+      "filePath": ".husky/pre-applypatch",
+      "summary": "pre-applypatch is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/pre-auto-gc",
+      "type": "file",
+      "name": "pre-auto-gc",
+      "filePath": ".husky/pre-auto-gc",
+      "summary": "pre-auto-gc is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/pre-commit",
+      "type": "file",
+      "name": "pre-commit",
+      "filePath": ".husky/pre-commit",
+      "summary": "pre-commit is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/pre-merge-commit",
+      "type": "file",
+      "name": "pre-merge-commit",
+      "filePath": ".husky/pre-merge-commit",
+      "summary": "pre-merge-commit is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/pre-push",
+      "type": "file",
+      "name": "pre-push",
+      "filePath": ".husky/pre-push",
+      "summary": "pre-push is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/pre-rebase",
+      "type": "file",
+      "name": "pre-rebase",
+      "filePath": ".husky/pre-rebase",
+      "summary": "pre-rebase is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.husky/prepare-commit-msg",
+      "type": "file",
+      "name": "prepare-commit-msg",
+      "filePath": ".husky/prepare-commit-msg",
+      "summary": "prepare-commit-msg is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": ".understandignore is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:.understand-anything/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".understand-anything/config.json",
+      "summary": "Configuration for .understand-anything build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/LOGGING-STACK.md",
+      "type": "document",
+      "name": "LOGGING-STACK.md",
+      "filePath": "docs/LOGGING-STACK.md",
+      "summary": "Documentation file (LOGGING-STACK.md) describing project or feature behavior.",
+      "tags": [
+        "documentation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/SEED_DATA.md",
+      "type": "document",
+      "name": "SEED_DATA.md",
+      "filePath": "docs/SEED_DATA.md",
+      "summary": "Documentation file (SEED_DATA.md) describing project or feature behavior.",
+      "tags": [
+        "documentation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:grafana/provisioning/datasources/loki.yml",
+      "type": "config",
+      "name": "loki.yml",
+      "filePath": "grafana/provisioning/datasources/loki.yml",
+      "summary": "Configuration for grafana/provisioning/datasources build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:grafana/provisioning/datasources/prometheus.yml",
+      "type": "config",
+      "name": "prometheus.yml",
+      "filePath": "grafana/provisioning/datasources/prometheus.yml",
+      "summary": "Configuration for grafana/provisioning/datasources build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:prepros.config",
+      "type": "file",
+      "name": "prepros.config",
+      "filePath": "prepros.config",
+      "summary": "prepros.config is a config code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

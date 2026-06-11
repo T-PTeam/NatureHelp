@@ -50,7 +50,8 @@
     <div class="checkbox-container">
       <mat-checkbox
         [(ngModel)]="disableResearchFields"
-        [ngModelOptions]="{ standalone: true }">
+        [ngModelOptions]="{ standalone: true }"
+        (ngModelChange)="onResearchFieldsToggle($event)">
         {{ "forms.disableResearchFields" | translate }}
       </mat-checkbox>
     </div>
@@ -170,10 +171,7 @@
           type="number"
           formControlName="ph" />
         <mat-error *ngIf="detailsForm.get('ph')?.invalid && detailsForm.get('ph')?.touched">
-          <span *ngIf="detailsForm.get('ph')?.hasError('required')">{{ "forms.phError" | translate }}</span>
-          <span *ngIf="detailsForm.get('ph')?.hasError('min') || detailsForm.get('ph')?.hasError('max')">{{
-            "forms.phRangeError" | translate
-          }}</span>
+          {{ fieldError("ph", "forms.phRangeError", "forms.phError") }}
         </mat-error>
       </mat-form-field>
 
@@ -184,7 +182,7 @@
           type="number"
           formControlName="dissolvedOxygen" />
         <mat-error *ngIf="detailsForm.get('dissolvedOxygen')?.invalid && detailsForm.get('dissolvedOxygen')?.touched">
-          {{ "forms.dissolvedOxygenRangeError" | translate }}
+          {{ fieldError("dissolvedOxygen", "forms.dissolvedOxygenRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -196,7 +194,7 @@
           formControlName="leadConcentration" />
         <mat-error
           *ngIf="detailsForm.get('leadConcentration')?.invalid && detailsForm.get('leadConcentration')?.touched">
-          {{ "forms.leadConcentrationRangeError" | translate }}
+          {{ fieldError("leadConcentration", "forms.leadConcentrationRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -208,7 +206,7 @@
           formControlName="mercuryConcentration" />
         <mat-error
           *ngIf="detailsForm.get('mercuryConcentration')?.invalid && detailsForm.get('mercuryConcentration')?.touched">
-          {{ "forms.mercuryConcentrationRangeError" | translate }}
+          {{ fieldError("mercuryConcentration", "forms.mercuryConcentrationRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -220,7 +218,7 @@
           formControlName="nitrateConcentration" />
         <mat-error
           *ngIf="detailsForm.get('nitrateConcentration')?.invalid && detailsForm.get('nitrateConcentration')?.touched">
-          {{ "forms.nitrateConcentrationRangeError" | translate }}
+          {{ fieldError("nitrateConcentration", "forms.nitrateConcentrationRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -232,7 +230,7 @@
           formControlName="pesticidesContent" />
         <mat-error
           *ngIf="detailsForm.get('pesticidesContent')?.invalid && detailsForm.get('pesticidesContent')?.touched">
-          {{ "forms.pesticidesContentRangeError" | translate }}
+          {{ fieldError("pesticidesContent", "forms.pesticidesContentRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -244,7 +242,7 @@
           formControlName="microbialActivity" />
         <mat-error
           *ngIf="detailsForm.get('microbialActivity')?.invalid && detailsForm.get('microbialActivity')?.touched">
-          {{ "forms.microbialActivityRangeError" | translate }}
+          {{ fieldError("microbialActivity", "forms.microbialActivityRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -255,7 +253,7 @@
           type="number"
           formControlName="radiationLevel" />
         <mat-error *ngIf="detailsForm.get('radiationLevel')?.invalid && detailsForm.get('radiationLevel')?.touched">
-          {{ "forms.radiationLevelRangeError" | translate }}
+          {{ fieldError("radiationLevel", "forms.radiationLevelRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -267,7 +265,7 @@
           formControlName="chemicalOxygenDemand" />
         <mat-error
           *ngIf="detailsForm.get('chemicalOxygenDemand')?.invalid && detailsForm.get('chemicalOxygenDemand')?.touched">
-          {{ "forms.microbialActivityRangeError" | translate }}
+          {{ fieldError("chemicalOxygenDemand", "forms.chemicalOxygenDemandRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -281,7 +279,7 @@
           *ngIf="
             detailsForm.get('biologicalOxygenDemand')?.invalid && detailsForm.get('biologicalOxygenDemand')?.touched
           ">
-          {{ "forms.biologicalOxygenDemandRangeError" | translate }}
+          {{ fieldError("biologicalOxygenDemand", "forms.biologicalOxygenDemandRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -295,7 +293,7 @@
           *ngIf="
             detailsForm.get('phosphateConcentration')?.invalid && detailsForm.get('phosphateConcentration')?.touched
           ">
-          {{ "forms.phosphateConcentrationRangeError" | translate }}
+          {{ fieldError("phosphateConcentration", "forms.phosphateConcentrationRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -307,7 +305,7 @@
           formControlName="cadmiumConcentration" />
         <mat-error
           *ngIf="detailsForm.get('cadmiumConcentration')?.invalid && detailsForm.get('cadmiumConcentration')?.touched">
-          {{ "forms.pesticidesContentRangeError" | translate }}
+          {{ fieldError("cadmiumConcentration", "forms.cadmiumConcentrationRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -319,7 +317,7 @@
           formControlName="totalDissolvedSolids" />
         <mat-error
           *ngIf="detailsForm.get('totalDissolvedSolids')?.invalid && detailsForm.get('totalDissolvedSolids')?.touched">
-          {{ "forms.totalDissolvedSolidsRangeError" | translate }}
+          {{ fieldError("totalDissolvedSolids", "forms.totalDissolvedSolidsRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -333,7 +331,7 @@
           *ngIf="
             detailsForm.get('electricalConductivity')?.invalid && detailsForm.get('electricalConductivity')?.touched
           ">
-          {{ "forms.electricalConductivityRangeError" | translate }}
+          {{ fieldError("electricalConductivity", "forms.electricalConductivityRangeError") }}
         </mat-error>
       </mat-form-field>
 
@@ -344,7 +342,7 @@
           type="number"
           formControlName="microbialLoad" />
         <mat-error *ngIf="detailsForm.get('microbialLoad')?.invalid && detailsForm.get('microbialLoad')?.touched">
-          {{ "forms.microbialLoadRangeError" | translate }}
+          {{ fieldError("microbialLoad", "forms.microbialLoadRangeError") }}
         </mat-error>
       </mat-form-field>
     </ng-container>

@@ -17,8 +17,11 @@
       (click)="switchLanguage(lang.code)"
       [class.active]="currentLanguage === lang.code"
       class="language-menu-item">
-      <span class="flag">{{ lang.flag }}</span>
-      <span class="language-name">{{ lang.name }}</span>
+      <span class="language-menu-label">
+        <span class="country-code">{{ lang.countryCode }}</span>
+        <span class="language-menu-divider">|</span>
+        <span class="language-name">{{ lang.name }}</span>
+      </span>
       <mat-icon
         *ngIf="currentLanguage === lang.code"
         class="check-icon"

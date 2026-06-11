@@ -1,0 +1,212 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/models/profile/IReferral.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/lab-details/lab-details.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/lab-details/lab-details.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 125,
+      "nonEmptyLines": 114,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 109,
+      "nonEmptyLines": 105,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 56,
+      "nonEmptyLines": 55,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/components/about/about.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 39,
+      "nonEmptyLines": 34,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/components/about/about.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 55,
+      "nonEmptyLines": 48,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/components/main-container/main-container.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 169,
+      "nonEmptyLines": 148,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/components/main-container/main-container.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 26,
+      "nonEmptyLines": 23,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/components/navigation-bar/navigation-bar.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 189,
+      "nonEmptyLines": 165,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/components/navigation-bar/navigation-bar.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 107,
+      "nonEmptyLines": 100,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/organization-management/components/organization-detail/organization-detail.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/organization-management/components/organization-detail/organization-detail.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 222,
+      "nonEmptyLines": 207,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/organization-management/components/organization-list/organization-list.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 161,
+      "nonEmptyLines": 135,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/organization-management/components/organization-list/organization-list.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 81,
+      "nonEmptyLines": 76,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 195,
+      "nonEmptyLines": 166,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 174,
+      "nonEmptyLines": 164,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 192,
+      "nonEmptyLines": 161,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 48,
+      "nonEmptyLines": 47,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 59,
+      "nonEmptyLines": 49,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 110,
+      "nonEmptyLines": 109,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 79,
+      "nonEmptyLines": 67,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 44,
+      "nonEmptyLines": 43,
+      "metrics": {}
+    }
+  ]
+}

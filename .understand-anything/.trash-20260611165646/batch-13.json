@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "config:src/NatureHelp/NatureHelp.csproj",
+      "type": "config",
+      "name": "NatureHelp.csproj",
+      "filePath": "src/NatureHelp/NatureHelp.csproj",
+      "summary": "Configuration for src/NatureHelp build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:src/NatureHelp/appsettings.CI.json",
+      "type": "config",
+      "name": "appsettings.CI.json",
+      "filePath": "src/NatureHelp/appsettings.CI.json",
+      "summary": "Configuration for src/NatureHelp build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/NatureHelp/appsettings.Development.json",
+      "type": "config",
+      "name": "appsettings.Development.json",
+      "filePath": "src/NatureHelp/appsettings.Development.json",
+      "summary": "Configuration for src/NatureHelp build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:src/NatureHelp/appsettings.Local.json",
+      "type": "config",
+      "name": "appsettings.Local.json",
+      "filePath": "src/NatureHelp/appsettings.Local.json",
+      "summary": "Configuration for src/NatureHelp build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/NatureHelp/appsettings.Production.json",
+      "type": "config",
+      "name": "appsettings.Production.json",
+      "filePath": "src/NatureHelp/appsettings.Production.json",
+      "summary": "Configuration for src/NatureHelp build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:src/NatureHelp/appsettings.json",
+      "type": "config",
+      "name": "appsettings.json",
+      "filePath": "src/NatureHelp/appsettings.json",
+      "summary": "Configuration for src/NatureHelp build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

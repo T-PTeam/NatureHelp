@@ -1,0 +1,4992 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 104,
+      "functions": [
+        {
+          "name": "LaboratoryRepository",
+          "startLine": 10,
+          "endLine": 11,
+          "params": [
+            "contextFactory"
+          ]
+        },
+        {
+          "name": "ApplyVisibilityFilter",
+          "startLine": 13,
+          "endLine": 24,
+          "params": [
+            "query",
+            "currentUser"
+          ]
+        },
+        {
+          "name": "GetMapObjects",
+          "startLine": 26,
+          "endLine": 55,
+          "params": [
+            "filters",
+            "currentUser"
+          ]
+        },
+        {
+          "name": "GetAllAsync",
+          "startLine": 57,
+          "endLine": 90,
+          "params": [
+            "scrollCount",
+            "filters",
+            "currentUser"
+          ]
+        },
+        {
+          "name": "GetByIdAsync",
+          "startLine": 92,
+          "endLine": 113,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LaboratoryRepository",
+          "startLine": 8,
+          "endLine": 114,
+          "methods": [
+            "LaboratoryRepository",
+            "ApplyVisibilityFilter",
+            "GetMapObjects",
+            "GetAllAsync",
+            "GetByIdAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LaboratoryRepository",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "GetMapObjects",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "GetAllAsync",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "GetByIdAsync",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "LaboratoryRepository",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ApplyVisibilityFilter",
+          "callee": "query.Where",
+          "lineNumber": 17
+        },
+        {
+          "caller": "ApplyVisibilityFilter",
+          "callee": "query.Where",
+          "lineNumber": 20
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 28
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "ApplyVisibilityFilter(context.Laboratories.AsNoTracking(), currentUser)\n                .Select",
+          "lineNumber": 30
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "ApplyVisibilityFilter",
+          "lineNumber": 30
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "context.Laboratories.AsNoTracking",
+          "lineNumber": 30
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "new LaboratoryMapDto",
+          "lineNumber": 31
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "l.Researchers\n                            .Select(r => new ResearcherDto\n                            {\n                                Id = r.Id,\n                                FullName = $\"{r.FirstName} {r.LastName}\"\n                            }).ToList",
+          "lineNumber": 39
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "l.Researchers\n                            .Select",
+          "lineNumber": 39
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "new ResearcherDto",
+          "lineNumber": 40
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "new List<ResearcherDto>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "filters.Any",
+          "lineNumber": 48
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "query.ApplyFilters",
+          "lineNumber": 50
+        },
+        {
+          "caller": "GetMapObjects",
+          "callee": "query.ToListAsync",
+          "lineNumber": 53
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 59
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "QueryableExtensions.ExtractSorting",
+          "lineNumber": 61
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "ApplyVisibilityFilter(context.Set<Laboratory>(), currentUser)\n                .ApplyFilters(remainingFilters)\n                .ApplySorting(sortBy, sortDirection)\n                .Include(l => l.Researchers)\n                .Select",
+          "lineNumber": 62
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "ApplyVisibilityFilter(context.Set<Laboratory>(), currentUser)\n                .ApplyFilters(remainingFilters)\n                .ApplySorting(sortBy, sortDirection)\n                .Include",
+          "lineNumber": 62
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "ApplyVisibilityFilter(context.Set<Laboratory>(), currentUser)\n                .ApplyFilters(remainingFilters)\n                .ApplySorting",
+          "lineNumber": 62
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "ApplyVisibilityFilter(context.Set<Laboratory>(), currentUser)\n                .ApplyFilters",
+          "lineNumber": 62
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "ApplyVisibilityFilter",
+          "lineNumber": 62
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<Laboratory>",
+          "lineNumber": 62
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "new Laboratory",
+          "lineNumber": 66
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "l.Researchers.Select(r => new User()\n                        {\n                            FirstName = r.FirstName,\n                            LastName = r.LastName\n                        }).ToList",
+          "lineNumber": 72
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "l.Researchers.Select",
+          "lineNumber": 72
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "new User",
+          "lineNumber": 72
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "new List<User>",
+          "lineNumber": 77
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "query.Skip(scrollCount * 20).Take",
+          "lineNumber": 85
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "query.Skip",
+          "lineNumber": 85
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "query.ToListAsync",
+          "lineNumber": 88
+        },
+        {
+          "caller": "GetByIdAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 94
+        },
+        {
+          "caller": "GetByIdAsync",
+          "callee": "context.Set<Laboratory>()\n                .Include(l => l.Researchers)\n                .Select(l => new Laboratory\n                {\n                    Id = l.Id,\n                    Title = l.Title,\n                    CreatedBy = l.CreatedBy,\n                    CreatedOn = l.CreatedOn,\n                    Researchers = l.Researchers,\n                    ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,\n                    Latitude = l.Latitude,\n                    Longitude = l.Longitude,\n                    Address = l.Address,\n                    IsPublic = l.IsPublic\n                })\n                .FirstOrDefaultAsync",
+          "lineNumber": 96
+        },
+        {
+          "caller": "GetByIdAsync",
+          "callee": "context.Set<Laboratory>()\n                .Include(l => l.Researchers)\n                .Select",
+          "lineNumber": 96
+        },
+        {
+          "caller": "GetByIdAsync",
+          "callee": "context.Set<Laboratory>()\n                .Include",
+          "lineNumber": 96
+        },
+        {
+          "caller": "GetByIdAsync",
+          "callee": "context.Set<Laboratory>",
+          "lineNumber": 96
+        },
+        {
+          "caller": "GetByIdAsync",
+          "callee": "new Laboratory",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "MonitoringRepository",
+          "startLine": 10,
+          "endLine": 11,
+          "params": [
+            "contextFactory"
+          ]
+        },
+        {
+          "name": "GetUserDeficiencyMonitoringAsync",
+          "startLine": 13,
+          "endLine": 22,
+          "params": [
+            "userId",
+            "deficiencyId",
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MonitoringRepository",
+          "startLine": 8,
+          "endLine": 23,
+          "methods": [
+            "MonitoringRepository",
+            "GetUserDeficiencyMonitoringAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MonitoringRepository",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "GetUserDeficiencyMonitoringAsync",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "MonitoringRepository",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetUserDeficiencyMonitoringAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 15
+        },
+        {
+          "caller": "GetUserDeficiencyMonitoringAsync",
+          "callee": "context.Set<DeficiencyMonitoring>()\n            .FirstOrDefaultAsync",
+          "lineNumber": 17
+        },
+        {
+          "caller": "GetUserDeficiencyMonitoringAsync",
+          "callee": "context.Set<DeficiencyMonitoring>",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 206,
+      "nonEmptyLines": 182,
+      "functions": [
+        {
+          "name": "ProfileRepository",
+          "startLine": 15,
+          "endLine": 18,
+          "params": [
+            "contextFactory"
+          ]
+        },
+        {
+          "name": "HasDailyVisitAsync",
+          "startLine": 20,
+          "endLine": 25,
+          "params": [
+            "userId",
+            "visitDate",
+            "ct"
+          ]
+        },
+        {
+          "name": "AddDailyVisitAsync",
+          "startLine": 27,
+          "endLine": 32,
+          "params": [
+            "visit",
+            "ct"
+          ]
+        },
+        {
+          "name": "HasConfirmationAsync",
+          "startLine": 34,
+          "endLine": 39,
+          "params": [
+            "userId",
+            "deficiencyId",
+            "type",
+            "ct"
+          ]
+        },
+        {
+          "name": "CountConfirmationsAsync",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "deficiencyId",
+            "type",
+            "ct"
+          ]
+        },
+        {
+          "name": "AddConfirmationAsync",
+          "startLine": 48,
+          "endLine": 53,
+          "params": [
+            "confirmation",
+            "ct"
+          ]
+        },
+        {
+          "name": "HasLedgerEntryAsync",
+          "startLine": 55,
+          "endLine": 68,
+          "params": [
+            "userId",
+            "reason",
+            "referenceType",
+            "referenceId",
+            "ct"
+          ]
+        },
+        {
+          "name": "AddLedgerEntryAsync",
+          "startLine": 70,
+          "endLine": 75,
+          "params": [
+            "entry",
+            "ct"
+          ]
+        },
+        {
+          "name": "GetWaterDeficiencyByIdAsync",
+          "startLine": 77,
+          "endLine": 81,
+          "params": [
+            "id",
+            "ct"
+          ]
+        },
+        {
+          "name": "GetSoilDeficiencyByIdAsync",
+          "startLine": 83,
+          "endLine": 87,
+          "params": [
+            "id",
+            "ct"
+          ]
+        },
+        {
+          "name": "CountWaterByCreatorAsync",
+          "startLine": 89,
+          "endLine": 93,
+          "params": [
+            "userId",
+            "ct"
+          ]
+        },
+        {
+          "name": "CountSoilByCreatorAsync",
+          "startLine": 95,
+          "endLine": 99,
+          "params": [
+            "userId",
+            "ct"
+          ]
+        },
+        {
+          "name": "CountConfirmationsGivenByUserAsync",
+          "startLine": 101,
+          "endLine": 105,
+          "params": [
+            "userId",
+            "ct"
+          ]
+        },
+        {
+          "name": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "startLine": 107,
+          "endLine": 133,
+          "params": [
+            "creatorId",
+            "ct"
+          ]
+        },
+        {
+          "name": "GetActiveAchievementsAsync",
+          "startLine": 135,
+          "endLine": 142,
+          "params": [
+            "ct"
+          ]
+        },
+        {
+          "name": "GetUserAchievementAsync",
+          "startLine": 144,
+          "endLine": 149,
+          "params": [
+            "userId",
+            "achievementId",
+            "ct"
+          ]
+        },
+        {
+          "name": "UpsertUserAchievementAsync",
+          "startLine": 151,
+          "endLine": 166,
+          "params": [
+            "ua",
+            "ct"
+          ]
+        },
+        {
+          "name": "GetAttachmentsByCreatorAsync",
+          "startLine": 168,
+          "endLine": 177,
+          "params": [
+            "userId",
+            "take",
+            "ct"
+          ]
+        },
+        {
+          "name": "GetProfileJournalAsync",
+          "startLine": 179,
+          "endLine": 205,
+          "params": [
+            "userId",
+            "take",
+            "ct"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProfileRepository",
+          "startLine": 11,
+          "endLine": 206,
+          "methods": [
+            "ProfileRepository",
+            "HasDailyVisitAsync",
+            "AddDailyVisitAsync",
+            "HasConfirmationAsync",
+            "CountConfirmationsAsync",
+            "AddConfirmationAsync",
+            "HasLedgerEntryAsync",
+            "AddLedgerEntryAsync",
+            "GetWaterDeficiencyByIdAsync",
+            "GetSoilDeficiencyByIdAsync",
+            "CountWaterByCreatorAsync",
+            "CountSoilByCreatorAsync",
+            "CountConfirmationsGivenByUserAsync",
+            "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+            "GetActiveAchievementsAsync",
+            "GetUserAchievementAsync",
+            "UpsertUserAchievementAsync",
+            "GetAttachmentsByCreatorAsync",
+            "GetProfileJournalAsync"
+          ],
+          "properties": [
+            "_contextFactory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProfileRepository",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "HasDailyVisitAsync",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "AddDailyVisitAsync",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "HasConfirmationAsync",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "CountConfirmationsAsync",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "AddConfirmationAsync",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "HasLedgerEntryAsync",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "AddLedgerEntryAsync",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "GetWaterDeficiencyByIdAsync",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "GetSoilDeficiencyByIdAsync",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "CountWaterByCreatorAsync",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "CountSoilByCreatorAsync",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "CountConfirmationsGivenByUserAsync",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "GetActiveAchievementsAsync",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "GetUserAchievementAsync",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "UpsertUserAchievementAsync",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "GetAttachmentsByCreatorAsync",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "GetProfileJournalAsync",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "ProfileRepository",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HasDailyVisitAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 22
+        },
+        {
+          "caller": "HasDailyVisitAsync",
+          "callee": "ctx.UserDailyVisits.AsNoTracking()\n            .AnyAsync",
+          "lineNumber": 23
+        },
+        {
+          "caller": "HasDailyVisitAsync",
+          "callee": "ctx.UserDailyVisits.AsNoTracking",
+          "lineNumber": 23
+        },
+        {
+          "caller": "AddDailyVisitAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 29
+        },
+        {
+          "caller": "AddDailyVisitAsync",
+          "callee": "ctx.UserDailyVisits.Add",
+          "lineNumber": 30
+        },
+        {
+          "caller": "AddDailyVisitAsync",
+          "callee": "ctx.SaveChangesAsync",
+          "lineNumber": 31
+        },
+        {
+          "caller": "HasConfirmationAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "HasConfirmationAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking()\n            .AnyAsync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "HasConfirmationAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking",
+          "lineNumber": 37
+        },
+        {
+          "caller": "CountConfirmationsAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 43
+        },
+        {
+          "caller": "CountConfirmationsAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking()\n            .CountAsync",
+          "lineNumber": 44
+        },
+        {
+          "caller": "CountConfirmationsAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking",
+          "lineNumber": 44
+        },
+        {
+          "caller": "AddConfirmationAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 50
+        },
+        {
+          "caller": "AddConfirmationAsync",
+          "callee": "ctx.DeficiencyConfirmations.Add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "AddConfirmationAsync",
+          "callee": "ctx.SaveChangesAsync",
+          "lineNumber": 52
+        },
+        {
+          "caller": "HasLedgerEntryAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 57
+        },
+        {
+          "caller": "HasLedgerEntryAsync",
+          "callee": "ctx.UserXpLedgers.AsNoTracking().Where",
+          "lineNumber": 58
+        },
+        {
+          "caller": "HasLedgerEntryAsync",
+          "callee": "ctx.UserXpLedgers.AsNoTracking",
+          "lineNumber": 58
+        },
+        {
+          "caller": "HasLedgerEntryAsync",
+          "callee": "q.Where",
+          "lineNumber": 60
+        },
+        {
+          "caller": "HasLedgerEntryAsync",
+          "callee": "q.Where",
+          "lineNumber": 62
+        },
+        {
+          "caller": "HasLedgerEntryAsync",
+          "callee": "q.Where",
+          "lineNumber": 64
+        },
+        {
+          "caller": "HasLedgerEntryAsync",
+          "callee": "q.Where",
+          "lineNumber": 66
+        },
+        {
+          "caller": "HasLedgerEntryAsync",
+          "callee": "q.AnyAsync",
+          "lineNumber": 67
+        },
+        {
+          "caller": "AddLedgerEntryAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 72
+        },
+        {
+          "caller": "AddLedgerEntryAsync",
+          "callee": "ctx.UserXpLedgers.Add",
+          "lineNumber": 73
+        },
+        {
+          "caller": "AddLedgerEntryAsync",
+          "callee": "ctx.SaveChangesAsync",
+          "lineNumber": 74
+        },
+        {
+          "caller": "GetWaterDeficiencyByIdAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 79
+        },
+        {
+          "caller": "GetWaterDeficiencyByIdAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking().FirstOrDefaultAsync",
+          "lineNumber": 80
+        },
+        {
+          "caller": "GetWaterDeficiencyByIdAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking",
+          "lineNumber": 80
+        },
+        {
+          "caller": "GetSoilDeficiencyByIdAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 85
+        },
+        {
+          "caller": "GetSoilDeficiencyByIdAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking().FirstOrDefaultAsync",
+          "lineNumber": 86
+        },
+        {
+          "caller": "GetSoilDeficiencyByIdAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking",
+          "lineNumber": 86
+        },
+        {
+          "caller": "CountWaterByCreatorAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 91
+        },
+        {
+          "caller": "CountWaterByCreatorAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking().CountAsync",
+          "lineNumber": 92
+        },
+        {
+          "caller": "CountWaterByCreatorAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking",
+          "lineNumber": 92
+        },
+        {
+          "caller": "CountSoilByCreatorAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 97
+        },
+        {
+          "caller": "CountSoilByCreatorAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking().CountAsync",
+          "lineNumber": 98
+        },
+        {
+          "caller": "CountSoilByCreatorAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking",
+          "lineNumber": 98
+        },
+        {
+          "caller": "CountConfirmationsGivenByUserAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 103
+        },
+        {
+          "caller": "CountConfirmationsGivenByUserAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking().CountAsync",
+          "lineNumber": 104
+        },
+        {
+          "caller": "CountConfirmationsGivenByUserAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking",
+          "lineNumber": 104
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 109
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking()\n            .Where(d => d.CreatedBy == creatorId)\n            .Select(d => d.Id)\n            .ToListAsync",
+          "lineNumber": 110
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking()\n            .Where(d => d.CreatedBy == creatorId)\n            .Select",
+          "lineNumber": 110
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking()\n            .Where",
+          "lineNumber": 110
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking",
+          "lineNumber": 110
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking()\n                .CountAsync",
+          "lineNumber": 116
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking",
+          "lineNumber": 116
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking()\n            .Where(d => d.CreatedBy == creatorId)\n            .Select(d => d.Id)\n            .ToListAsync",
+          "lineNumber": 121
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking()\n            .Where(d => d.CreatedBy == creatorId)\n            .Select",
+          "lineNumber": 121
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking()\n            .Where",
+          "lineNumber": 121
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking",
+          "lineNumber": 121
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking()\n                .CountAsync",
+          "lineNumber": 127
+        },
+        {
+          "caller": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "callee": "ctx.DeficiencyConfirmations.AsNoTracking",
+          "lineNumber": 127
+        },
+        {
+          "caller": "GetActiveAchievementsAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 137
+        },
+        {
+          "caller": "GetActiveAchievementsAsync",
+          "callee": "ctx.Achievements.AsNoTracking()\n            .Where(a => a.IsActive)\n            .OrderBy(a => a.SortOrder)\n            .ToListAsync",
+          "lineNumber": 138
+        },
+        {
+          "caller": "GetActiveAchievementsAsync",
+          "callee": "ctx.Achievements.AsNoTracking()\n            .Where(a => a.IsActive)\n            .OrderBy",
+          "lineNumber": 138
+        },
+        {
+          "caller": "GetActiveAchievementsAsync",
+          "callee": "ctx.Achievements.AsNoTracking()\n            .Where",
+          "lineNumber": 138
+        },
+        {
+          "caller": "GetActiveAchievementsAsync",
+          "callee": "ctx.Achievements.AsNoTracking",
+          "lineNumber": 138
+        },
+        {
+          "caller": "GetUserAchievementAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 146
+        },
+        {
+          "caller": "GetUserAchievementAsync",
+          "callee": "ctx.UserAchievements.AsNoTracking()\n            .FirstOrDefaultAsync",
+          "lineNumber": 147
+        },
+        {
+          "caller": "GetUserAchievementAsync",
+          "callee": "ctx.UserAchievements.AsNoTracking",
+          "lineNumber": 147
+        },
+        {
+          "caller": "UpsertUserAchievementAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 153
+        },
+        {
+          "caller": "UpsertUserAchievementAsync",
+          "callee": "ctx.UserAchievements.FirstOrDefaultAsync",
+          "lineNumber": 154
+        },
+        {
+          "caller": "UpsertUserAchievementAsync",
+          "callee": "ctx.UserAchievements.Add",
+          "lineNumber": 157
+        },
+        {
+          "caller": "UpsertUserAchievementAsync",
+          "callee": "ctx.SaveChangesAsync",
+          "lineNumber": 165
+        },
+        {
+          "caller": "GetAttachmentsByCreatorAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 170
+        },
+        {
+          "caller": "GetAttachmentsByCreatorAsync",
+          "callee": "ctx.Attachments.AsNoTracking()\n            .OfType<DeficiencyAttachment>()\n            .Where(a => a.CreatedBy == userId)\n            .OrderByDescending(a => a.CreatedOn)\n            .Take(take)\n            .ToListAsync",
+          "lineNumber": 171
+        },
+        {
+          "caller": "GetAttachmentsByCreatorAsync",
+          "callee": "ctx.Attachments.AsNoTracking()\n            .OfType<DeficiencyAttachment>()\n            .Where(a => a.CreatedBy == userId)\n            .OrderByDescending(a => a.CreatedOn)\n            .Take",
+          "lineNumber": 171
+        },
+        {
+          "caller": "GetAttachmentsByCreatorAsync",
+          "callee": "ctx.Attachments.AsNoTracking()\n            .OfType<DeficiencyAttachment>()\n            .Where(a => a.CreatedBy == userId)\n            .OrderByDescending",
+          "lineNumber": 171
+        },
+        {
+          "caller": "GetAttachmentsByCreatorAsync",
+          "callee": "ctx.Attachments.AsNoTracking()\n            .OfType<DeficiencyAttachment>()\n            .Where",
+          "lineNumber": 171
+        },
+        {
+          "caller": "GetAttachmentsByCreatorAsync",
+          "callee": "ctx.Attachments.AsNoTracking()\n            .OfType<DeficiencyAttachment>",
+          "lineNumber": 171
+        },
+        {
+          "caller": "GetAttachmentsByCreatorAsync",
+          "callee": "ctx.Attachments.AsNoTracking",
+          "lineNumber": 171
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "_contextFactory.CreateDbContextAsync",
+          "lineNumber": 181
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking()\n            .Where(d => d.CreatedBy == userId)\n            .Select(d => new ProfileJournalEntryDto\n            {\n                Id = d.Id,\n                DeficiencyType = (int)EDeficiencyType.Water,\n                Title = d.Title,\n                CreatedOn = d.CreatedOn,\n                Address = d.Address,\n            })\n            .ToListAsync",
+          "lineNumber": 182
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking()\n            .Where(d => d.CreatedBy == userId)\n            .Select",
+          "lineNumber": 182
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking()\n            .Where",
+          "lineNumber": 182
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "ctx.WaterDeficiencies.AsNoTracking",
+          "lineNumber": 182
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "new ProfileJournalEntryDto",
+          "lineNumber": 184
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking()\n            .Where(d => d.CreatedBy == userId)\n            .Select(d => new ProfileJournalEntryDto\n            {\n                Id = d.Id,\n                DeficiencyType = (int)EDeficiencyType.Soil,\n                Title = d.Title,\n                CreatedOn = d.CreatedOn,\n                Address = d.Address,\n            })\n            .ToListAsync",
+          "lineNumber": 193
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking()\n            .Where(d => d.CreatedBy == userId)\n            .Select",
+          "lineNumber": 193
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking()\n            .Where",
+          "lineNumber": 193
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "ctx.SoilDeficiencies.AsNoTracking",
+          "lineNumber": 193
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "new ProfileJournalEntryDto",
+          "lineNumber": 195
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "water.Concat(soil).OrderByDescending(x => x.CreatedOn).Take(take).ToList",
+          "lineNumber": 204
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "water.Concat(soil).OrderByDescending(x => x.CreatedOn).Take",
+          "lineNumber": 204
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "water.Concat(soil).OrderByDescending",
+          "lineNumber": 204
+        },
+        {
+          "caller": "GetProfileJournalAsync",
+          "callee": "water.Concat",
+          "lineNumber": 204
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 20,
+        "functionCount": 19,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Infrastructure/Repositories/ResearchRepository.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "ResearchRepository",
+          "startLine": 11,
+          "endLine": 12,
+          "params": [
+            "contextFactory"
+          ]
+        },
+        {
+          "name": "GetAllAsync",
+          "startLine": 14,
+          "endLine": 39,
+          "params": [
+            "scrollCount",
+            "filters",
+            "currentUser"
+          ]
+        },
+        {
+          "name": "GetByLabId",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "labId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ResearchRepository",
+          "startLine": 9,
+          "endLine": 48,
+          "methods": [
+            "ResearchRepository",
+            "GetAllAsync",
+            "GetByLabId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ResearchRepository",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "GetAllAsync",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "GetByLabId",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ResearchRepository",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetAllAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 16
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "QueryableExtensions.ExtractSorting",
+          "lineNumber": 18
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<Research>()\n                .Include(r => r.Laboratory)\n                .Include(r => r.Researcher)\n                .ApplyFilters(remainingFilters)\n                .ApplySorting",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<Research>()\n                .Include(r => r.Laboratory)\n                .Include(r => r.Researcher)\n                .ApplyFilters",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<Research>()\n                .Include(r => r.Laboratory)\n                .Include",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<Research>()\n                .Include",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<Research>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "query.Skip(scrollCount * 20).Take",
+          "lineNumber": 27
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "query.Skip",
+          "lineNumber": 27
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "query.ToListAsync",
+          "lineNumber": 30
+        },
+        {
+          "caller": "GetByLabId",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 43
+        },
+        {
+          "caller": "GetByLabId",
+          "callee": "context.Set<Research>().Where(u => u.LaboratoryId == labId).ToArrayAsync",
+          "lineNumber": 45
+        },
+        {
+          "caller": "GetByLabId",
+          "callee": "context.Set<Research>().Where",
+          "lineNumber": 45
+        },
+        {
+          "caller": "GetByLabId",
+          "callee": "context.Set<Research>",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Infrastructure/Repositories/UserRepository.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 255,
+      "nonEmptyLines": 209,
+      "functions": [
+        {
+          "name": "UserRepository",
+          "startLine": 10,
+          "endLine": 11,
+          "params": [
+            "contextFactory"
+          ]
+        },
+        {
+          "name": "GetAllAsync",
+          "startLine": 13,
+          "endLine": 44,
+          "params": [
+            "scrollCount",
+            "filters",
+            "currentUser"
+          ]
+        },
+        {
+          "name": "GetUserByEmail",
+          "startLine": 46,
+          "endLine": 54,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "ConfirmEmailByToken",
+          "startLine": 56,
+          "endLine": 74,
+          "params": [
+            "emailConfirmationToken"
+          ]
+        },
+        {
+          "name": "GetUserByRefreshTokenAsync",
+          "startLine": 76,
+          "endLine": 82,
+          "params": [
+            "refreshToken"
+          ]
+        },
+        {
+          "name": "GetNotLoginEver",
+          "startLine": 84,
+          "endLine": 96,
+          "params": [
+            "organizationId"
+          ]
+        },
+        {
+          "name": "GetUsersCountByOrganization",
+          "startLine": 98,
+          "endLine": 106,
+          "params": [
+            "organizationId"
+          ]
+        },
+        {
+          "name": "UpdatePasswordAsync",
+          "startLine": 108,
+          "endLine": 122,
+          "params": [
+            "userId",
+            "hashedPassword"
+          ]
+        },
+        {
+          "name": "CreatePasswordResetTokenAsync",
+          "startLine": 124,
+          "endLine": 138,
+          "params": [
+            "userId",
+            "token",
+            "expiry"
+          ]
+        },
+        {
+          "name": "GetPasswordResetTokenAsync",
+          "startLine": 140,
+          "endLine": 151,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "InvalidatePasswordResetTokenAsync",
+          "startLine": 153,
+          "endLine": 167,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "IsPasswordResetTokenValidAsync",
+          "startLine": 169,
+          "endLine": 185,
+          "params": [
+            "userId",
+            "token"
+          ]
+        },
+        {
+          "name": "GetUserIdByPasswordResetTokenAsync",
+          "startLine": 187,
+          "endLine": 196,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "DeleteUserDataAsync",
+          "startLine": 198,
+          "endLine": 207,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "CountCreatedDeficienciesAsync",
+          "startLine": 209,
+          "endLine": 215,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "GetByOrganizationAsync",
+          "startLine": 217,
+          "endLine": 246,
+          "params": [
+            "organizationId",
+            "scrollCount",
+            "filters"
+          ]
+        },
+        {
+          "name": "GetTotalCountByOrganization",
+          "startLine": 248,
+          "endLine": 252,
+          "params": [
+            "organizationId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserRepository",
+          "startLine": 8,
+          "endLine": 254,
+          "methods": [
+            "UserRepository",
+            "GetAllAsync",
+            "GetUserByEmail",
+            "ConfirmEmailByToken",
+            "GetUserByRefreshTokenAsync",
+            "GetNotLoginEver",
+            "GetUsersCountByOrganization",
+            "UpdatePasswordAsync",
+            "CreatePasswordResetTokenAsync",
+            "GetPasswordResetTokenAsync",
+            "InvalidatePasswordResetTokenAsync",
+            "IsPasswordResetTokenValidAsync",
+            "GetUserIdByPasswordResetTokenAsync",
+            "DeleteUserDataAsync",
+            "CountCreatedDeficienciesAsync",
+            "GetByOrganizationAsync",
+            "GetTotalCountByOrganization"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserRepository",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "GetAllAsync",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "GetUserByEmail",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "ConfirmEmailByToken",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "GetUserByRefreshTokenAsync",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "GetNotLoginEver",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "GetUsersCountByOrganization",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "UpdatePasswordAsync",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "CreatePasswordResetTokenAsync",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "GetPasswordResetTokenAsync",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "InvalidatePasswordResetTokenAsync",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "IsPasswordResetTokenValidAsync",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "GetUserIdByPasswordResetTokenAsync",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "DeleteUserDataAsync",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "CountCreatedDeficienciesAsync",
+          "line": 209,
+          "isDefault": false
+        },
+        {
+          "name": "GetByOrganizationAsync",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "GetTotalCountByOrganization",
+          "line": 248,
+          "isDefault": false
+        },
+        {
+          "name": "UserRepository",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetAllAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 15
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<User>()\n                    .Include(u => u.Organization)\n                    .Include",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<User>()\n                    .Include",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<User>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "fullList.ToListAsync",
+          "lineNumber": 28
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<User>()\n                    .Include(u => u.Organization)\n                    .Include(u => u.Laboratory)\n                    .Skip(scrollCount * 20).Take",
+          "lineNumber": 31
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<User>()\n                    .Include(u => u.Organization)\n                    .Include(u => u.Laboratory)\n                    .Skip",
+          "lineNumber": 31
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<User>()\n                    .Include(u => u.Organization)\n                    .Include",
+          "lineNumber": 31
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<User>()\n                    .Include",
+          "lineNumber": 31
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "context.Set<User>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "GetAllAsync",
+          "callee": "list\n                .ToListAsync",
+          "lineNumber": 41
+        },
+        {
+          "caller": "GetUserByEmail",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 48
+        },
+        {
+          "caller": "GetUserByEmail",
+          "callee": "context.Set<User>()\n                .Include(u => u.Organization)\n                .FirstOrDefaultAsync",
+          "lineNumber": 50
+        },
+        {
+          "caller": "GetUserByEmail",
+          "callee": "context.Set<User>()\n                .Include",
+          "lineNumber": 50
+        },
+        {
+          "caller": "GetUserByEmail",
+          "callee": "context.Set<User>",
+          "lineNumber": 50
+        },
+        {
+          "caller": "ConfirmEmailByToken",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ConfirmEmailByToken",
+          "callee": "context.Set<User>()\n                .Include(u => u.Organization)\n                .FirstOrDefaultAsync",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ConfirmEmailByToken",
+          "callee": "context.Set<User>()\n                .Include",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ConfirmEmailByToken",
+          "callee": "context.Set<User>",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ConfirmEmailByToken",
+          "callee": "context.SaveChangesAsync",
+          "lineNumber": 69
+        },
+        {
+          "caller": "GetUserByRefreshTokenAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 78
+        },
+        {
+          "caller": "GetUserByRefreshTokenAsync",
+          "callee": "context.Set<User>().FirstOrDefaultAsync",
+          "lineNumber": 80
+        },
+        {
+          "caller": "GetUserByRefreshTokenAsync",
+          "callee": "context.Set<User>",
+          "lineNumber": 80
+        },
+        {
+          "caller": "GetNotLoginEver",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 86
+        },
+        {
+          "caller": "GetNotLoginEver",
+          "callee": "context.Set<User>().Where(u => string.IsNullOrEmpty(u.RefreshToken)).ToArrayAsync",
+          "lineNumber": 89
+        },
+        {
+          "caller": "GetNotLoginEver",
+          "callee": "context.Set<User>().Where",
+          "lineNumber": 89
+        },
+        {
+          "caller": "GetNotLoginEver",
+          "callee": "context.Set<User>",
+          "lineNumber": 89
+        },
+        {
+          "caller": "GetNotLoginEver",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 89
+        },
+        {
+          "caller": "GetNotLoginEver",
+          "callee": "context.Set<User>()\n                .Where(u => string.IsNullOrEmpty(u.RefreshToken)\n                    && u.OrganizationId == organizationId)\n                .ToArrayAsync",
+          "lineNumber": 91
+        },
+        {
+          "caller": "GetNotLoginEver",
+          "callee": "context.Set<User>()\n                .Where",
+          "lineNumber": 91
+        },
+        {
+          "caller": "GetNotLoginEver",
+          "callee": "context.Set<User>",
+          "lineNumber": 91
+        },
+        {
+          "caller": "GetNotLoginEver",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 92
+        },
+        {
+          "caller": "GetUsersCountByOrganization",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 100
+        },
+        {
+          "caller": "GetUsersCountByOrganization",
+          "callee": "context.Set<User>()\n                .Where(u => u.OrganizationId == organizationId)\n                .CountAsync",
+          "lineNumber": 102
+        },
+        {
+          "caller": "GetUsersCountByOrganization",
+          "callee": "context.Set<User>()\n                .Where",
+          "lineNumber": 102
+        },
+        {
+          "caller": "GetUsersCountByOrganization",
+          "callee": "context.Set<User>",
+          "lineNumber": 102
+        },
+        {
+          "caller": "UpdatePasswordAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 110
+        },
+        {
+          "caller": "UpdatePasswordAsync",
+          "callee": "context.Users.FindAsync",
+          "lineNumber": 112
+        },
+        {
+          "caller": "UpdatePasswordAsync",
+          "callee": "context.SaveChangesAsync",
+          "lineNumber": 118
+        },
+        {
+          "caller": "CreatePasswordResetTokenAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 126
+        },
+        {
+          "caller": "CreatePasswordResetTokenAsync",
+          "callee": "context.Users.FindAsync",
+          "lineNumber": 128
+        },
+        {
+          "caller": "CreatePasswordResetTokenAsync",
+          "callee": "context.SaveChangesAsync",
+          "lineNumber": 135
+        },
+        {
+          "caller": "GetPasswordResetTokenAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 142
+        },
+        {
+          "caller": "GetPasswordResetTokenAsync",
+          "callee": "context.Users\n        .Where(u => u.Id == userId)\n        .Select(u => u.PasswordResetToken)\n        .FirstOrDefaultAsync",
+          "lineNumber": 144
+        },
+        {
+          "caller": "GetPasswordResetTokenAsync",
+          "callee": "context.Users\n        .Where(u => u.Id == userId)\n        .Select",
+          "lineNumber": 144
+        },
+        {
+          "caller": "GetPasswordResetTokenAsync",
+          "callee": "context.Users\n        .Where",
+          "lineNumber": 144
+        },
+        {
+          "caller": "InvalidatePasswordResetTokenAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 155
+        },
+        {
+          "caller": "InvalidatePasswordResetTokenAsync",
+          "callee": "context.Users.FindAsync",
+          "lineNumber": 157
+        },
+        {
+          "caller": "InvalidatePasswordResetTokenAsync",
+          "callee": "context.SaveChangesAsync",
+          "lineNumber": 164
+        },
+        {
+          "caller": "IsPasswordResetTokenValidAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 171
+        },
+        {
+          "caller": "IsPasswordResetTokenValidAsync",
+          "callee": "context.Users\n                .Where(u => u.Id == userId)\n                .Select(u => new { u.PasswordResetToken, u.PasswordResetTokenExpiry })\n                .FirstOrDefaultAsync",
+          "lineNumber": 173
+        },
+        {
+          "caller": "IsPasswordResetTokenValidAsync",
+          "callee": "context.Users\n                .Where(u => u.Id == userId)\n                .Select",
+          "lineNumber": 173
+        },
+        {
+          "caller": "IsPasswordResetTokenValidAsync",
+          "callee": "context.Users\n                .Where",
+          "lineNumber": 173
+        },
+        {
+          "caller": "GetUserIdByPasswordResetTokenAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 189
+        },
+        {
+          "caller": "GetUserIdByPasswordResetTokenAsync",
+          "callee": "context.Users\n                .FirstOrDefaultAsync",
+          "lineNumber": 191
+        },
+        {
+          "caller": "DeleteUserDataAsync",
+          "callee": "GetUserByEmail",
+          "lineNumber": 200
+        },
+        {
+          "caller": "DeleteUserDataAsync",
+          "callee": "DeleteAsync",
+          "lineNumber": 205
+        },
+        {
+          "caller": "CountCreatedDeficienciesAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 211
+        },
+        {
+          "caller": "CountCreatedDeficienciesAsync",
+          "callee": "context.WaterDeficiencies.AsNoTracking().CountAsync",
+          "lineNumber": 212
+        },
+        {
+          "caller": "CountCreatedDeficienciesAsync",
+          "callee": "context.WaterDeficiencies.AsNoTracking",
+          "lineNumber": 212
+        },
+        {
+          "caller": "CountCreatedDeficienciesAsync",
+          "callee": "context.SoilDeficiencies.AsNoTracking().CountAsync",
+          "lineNumber": 213
+        },
+        {
+          "caller": "CountCreatedDeficienciesAsync",
+          "callee": "context.SoilDeficiencies.AsNoTracking",
+          "lineNumber": 213
+        },
+        {
+          "caller": "GetByOrganizationAsync",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 222
+        },
+        {
+          "caller": "GetByOrganizationAsync",
+          "callee": "QueryableExtensions.ExtractSorting",
+          "lineNumber": 224
+        },
+        {
+          "caller": "GetByOrganizationAsync",
+          "callee": "context.Set<User>()\n            .Where(u => u.OrganizationId == organizationId)\n            .ApplyFilters(remainingFilters)\n            .ApplySorting",
+          "lineNumber": 225
+        },
+        {
+          "caller": "GetByOrganizationAsync",
+          "callee": "context.Set<User>()\n            .Where(u => u.OrganizationId == organizationId)\n            .ApplyFilters",
+          "lineNumber": 225
+        },
+        {
+          "caller": "GetByOrganizationAsync",
+          "callee": "context.Set<User>()\n            .Where",
+          "lineNumber": 225
+        },
+        {
+          "caller": "GetByOrganizationAsync",
+          "callee": "context.Set<User>",
+          "lineNumber": 225
+        },
+        {
+          "caller": "GetByOrganizationAsync",
+          "callee": "query.Skip(scrollCount * 20).Take",
+          "lineNumber": 232
+        },
+        {
+          "caller": "GetByOrganizationAsync",
+          "callee": "query.Skip",
+          "lineNumber": 232
+        },
+        {
+          "caller": "GetByOrganizationAsync",
+          "callee": "query.ToListAsync",
+          "lineNumber": 235
+        },
+        {
+          "caller": "GetTotalCountByOrganization",
+          "callee": "_contextFactory.CreateDbContext",
+          "lineNumber": 250
+        },
+        {
+          "caller": "GetTotalCountByOrganization",
+          "callee": "context.Set<User>().CountAsync",
+          "lineNumber": 251
+        },
+        {
+          "caller": "GetTotalCountByOrganization",
+          "callee": "context.Set<User>",
+          "lineNumber": 251
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 18,
+        "functionCount": 17,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/appsettings.Local.json.example",
+      "language": "example",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 50,
+      "metrics": {}
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "ReportController",
+          "startLine": 21,
+          "endLine": 24,
+          "params": [
+            "excelExportService"
+          ]
+        },
+        {
+          "name": "GetWaterDeficienciesExcelFile",
+          "startLine": 30,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "GetSoilDeficienciesExcelFile",
+          "startLine": 41,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "GetOrgUsersExcelFile",
+          "startLine": 52,
+          "endLine": 57,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ReportController",
+          "startLine": 10,
+          "endLine": 58,
+          "methods": [
+            "ReportController",
+            "GetWaterDeficienciesExcelFile",
+            "GetSoilDeficienciesExcelFile",
+            "GetOrgUsersExcelFile"
+          ],
+          "properties": [
+            "_excelExportService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ReportController",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "GetWaterDeficienciesExcelFile",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "GetSoilDeficienciesExcelFile",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "GetOrgUsersExcelFile",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "ReportController",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetWaterDeficienciesExcelFile",
+          "callee": "File",
+          "lineNumber": 34
+        },
+        {
+          "caller": "GetWaterDeficienciesExcelFile",
+          "callee": "_excelExportService.GenerateWaterDeficienciesTableAsync",
+          "lineNumber": 34
+        },
+        {
+          "caller": "GetSoilDeficienciesExcelFile",
+          "callee": "File",
+          "lineNumber": 45
+        },
+        {
+          "caller": "GetSoilDeficienciesExcelFile",
+          "callee": "_excelExportService.GenerateSoilDeficienciesTableAsync",
+          "lineNumber": 45
+        },
+        {
+          "caller": "GetOrgUsersExcelFile",
+          "callee": "File",
+          "lineNumber": 56
+        },
+        {
+          "caller": "GetOrgUsersExcelFile",
+          "callee": "_excelExportService.GenerateOrgUsersTableAsync",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/AttachmentsController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "AttachmentsController",
+          "startLine": 19,
+          "endLine": 32,
+          "params": [
+            "deficiencyAttachmentService",
+            "blobStorageProvider",
+            "logService",
+            "authenticationService",
+            "profileService"
+          ]
+        },
+        {
+          "name": "GetByDeficiencyId",
+          "startLine": 34,
+          "endLine": 38,
+          "params": [
+            "deficiencyId",
+            "deficiencyType"
+          ]
+        },
+        {
+          "name": "UploadAttachment",
+          "startLine": 40,
+          "endLine": 79,
+          "params": [
+            "file",
+            "deficiencyId",
+            "deficiencyType"
+          ]
+        },
+        {
+          "name": "DownloadAttachment",
+          "startLine": 81,
+          "endLine": 89,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AttachmentsController",
+          "startLine": 10,
+          "endLine": 91,
+          "methods": [
+            "AttachmentsController",
+            "GetByDeficiencyId",
+            "UploadAttachment",
+            "DownloadAttachment"
+          ],
+          "properties": [
+            "_deficiencyAttachmentService",
+            "_blobStorageProvider",
+            "_logService",
+            "_authenticationService",
+            "_profileService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AttachmentsController",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "GetByDeficiencyId",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "UploadAttachment",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "DownloadAttachment",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "AttachmentsController",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetByDeficiencyId",
+          "callee": "Ok",
+          "lineNumber": 37
+        },
+        {
+          "caller": "GetByDeficiencyId",
+          "callee": "_deficiencyAttachmentService.GetModelsByDeficiencyIdAsync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "BadRequest",
+          "lineNumber": 47
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "file.OpenReadStream",
+          "lineNumber": 49
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "_blobStorageProvider.UploadFileAsync",
+          "lineNumber": 50
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "_authenticationService.GetCurrentUserAsync",
+          "lineNumber": 52
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "new DeficiencyAttachment",
+          "lineNumber": 54
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 56
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 68
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "_logService.LogDeficiencyAttachmentChangeAsync<Deficiency>",
+          "lineNumber": 70
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "_deficiencyAttachmentService.AddAsync",
+          "lineNumber": 73
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "_profileService.TryAwardPhotoAddedAsync",
+          "lineNumber": 76
+        },
+        {
+          "caller": "UploadAttachment",
+          "callee": "Ok",
+          "lineNumber": 78
+        },
+        {
+          "caller": "DownloadAttachment",
+          "callee": "_deficiencyAttachmentService.GetByIdAsync",
+          "lineNumber": 84
+        },
+        {
+          "caller": "DownloadAttachment",
+          "callee": "NotFound",
+          "lineNumber": 85
+        },
+        {
+          "caller": "DownloadAttachment",
+          "callee": "_blobStorageProvider.GetFileStreamAsync",
+          "lineNumber": 87
+        },
+        {
+          "caller": "DownloadAttachment",
+          "callee": "File",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "ChangedModelLogsController",
+          "startLine": 12,
+          "endLine": 16,
+          "params": [
+            "changedModelLogService"
+          ]
+        },
+        {
+          "name": "GetDeficiencyHistoryById",
+          "startLine": 18,
+          "endLine": 22,
+          "params": [
+            "deficiencyId",
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ChangedModelLogsController",
+          "startLine": 8,
+          "endLine": 23,
+          "methods": [
+            "ChangedModelLogsController",
+            "GetDeficiencyHistoryById"
+          ],
+          "properties": [
+            "_changedModelLogService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChangedModelLogsController",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "GetDeficiencyHistoryById",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "ChangedModelLogsController",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetDeficiencyHistoryById",
+          "callee": "Ok",
+          "lineNumber": 21
+        },
+        {
+          "caller": "GetDeficiencyHistoryById",
+          "callee": "_changedModelLogService.GetChangingHistoryByDeficiencyIdAsync",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "MonitoringController",
+          "startLine": 15,
+          "endLine": 21,
+          "params": [
+            "monitoringService",
+            "userService"
+          ]
+        },
+        {
+          "name": "ToggleMonitoring",
+          "startLine": 23,
+          "endLine": 27,
+          "params": [
+            "deficiencyId",
+            "type",
+            "tokensDto"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MonitoringController",
+          "startLine": 10,
+          "endLine": 28,
+          "methods": [
+            "MonitoringController",
+            "ToggleMonitoring"
+          ],
+          "properties": [
+            "_monitoringService",
+            "_userService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MonitoringController",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ToggleMonitoring",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "MonitoringController",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ToggleMonitoring",
+          "callee": "Ok",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ToggleMonitoring",
+          "callee": "_monitoringService.ToggleMonitoringAsync",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/BaseCachedController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "BaseCachedController",
+          "startLine": 13,
+          "endLine": 14,
+          "params": [
+            "service"
+          ]
+        },
+        {
+          "name": "GetList",
+          "startLine": 16,
+          "endLine": 24,
+          "params": [
+            "scrollCount",
+            "filters"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BaseCachedController",
+          "startLine": 8,
+          "endLine": 25,
+          "methods": [
+            "BaseCachedController",
+            "GetList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BaseCachedController",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "GetList",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "BaseCachedController",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetList",
+          "callee": "_service.GetList",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetList",
+          "callee": "_service.GetOrSetAsync",
+          "lineNumber": 21
+        },
+        {
+          "caller": "GetList",
+          "callee": "filters.Any",
+          "lineNumber": 21
+        },
+        {
+          "caller": "GetList",
+          "callee": "Ok",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/BaseController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "BaseController",
+          "startLine": 13,
+          "endLine": 16,
+          "params": [
+            "service"
+          ]
+        },
+        {
+          "name": "GetList",
+          "startLine": 18,
+          "endLine": 19,
+          "params": [
+            "scrollCount",
+            "filters"
+          ]
+        },
+        {
+          "name": "GetById",
+          "startLine": 21,
+          "endLine": 26,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "Create",
+          "startLine": 28,
+          "endLine": 33,
+          "params": [
+            "entity"
+          ]
+        },
+        {
+          "name": "Update",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "id",
+            "entity"
+          ]
+        },
+        {
+          "name": "Delete",
+          "startLine": 42,
+          "endLine": 47,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BaseController",
+          "startLine": 6,
+          "endLine": 48,
+          "methods": [
+            "BaseController",
+            "GetList",
+            "GetById",
+            "Create",
+            "Update",
+            "Delete"
+          ],
+          "properties": [
+            "_service"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BaseController",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "GetList",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "GetById",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "Create",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "Update",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "Delete",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "BaseController",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetList",
+          "callee": "Ok",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetList",
+          "callee": "_service.GetList",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetById",
+          "callee": "_service.GetByIdAsync",
+          "lineNumber": 24
+        },
+        {
+          "caller": "GetById",
+          "callee": "NoContent",
+          "lineNumber": 25
+        },
+        {
+          "caller": "GetById",
+          "callee": "Ok",
+          "lineNumber": 25
+        },
+        {
+          "caller": "Create",
+          "callee": "_service.AddAsync",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Create",
+          "callee": "CreatedAtAction",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Create",
+          "callee": "nameof",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Update",
+          "callee": "_service.UpdateAsync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "Update",
+          "callee": "Ok",
+          "lineNumber": 39
+        },
+        {
+          "caller": "Delete",
+          "callee": "_service.DeleteAsync",
+          "lineNumber": 45
+        },
+        {
+          "caller": "Delete",
+          "callee": "Ok",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "CommentMessagesController",
+          "startLine": 13,
+          "endLine": 17,
+          "params": [
+            "deficiencyCommentsService"
+          ]
+        },
+        {
+          "name": "GetByDeficiencyId",
+          "startLine": 19,
+          "endLine": 23,
+          "params": [
+            "deficiencyId",
+            "deficiencyType"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CommentMessagesController",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [
+            "CommentMessagesController",
+            "GetByDeficiencyId"
+          ],
+          "properties": [
+            "_deficiencyCommentsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CommentMessagesController",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "GetByDeficiencyId",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "CommentMessagesController",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetByDeficiencyId",
+          "callee": "Ok",
+          "lineNumber": 22
+        },
+        {
+          "caller": "GetByDeficiencyId",
+          "callee": "_deficiencyCommentsService.GetModelsByDeficiencyIdAsync",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "DeficiencyConfirmationController",
+          "startLine": 16,
+          "endLine": 22,
+          "params": [
+            "profileService",
+            "authenticationService"
+          ]
+        },
+        {
+          "name": "Confirm",
+          "startLine": 24,
+          "endLine": 43,
+          "params": [
+            "id",
+            "deficiencyType",
+            "ct"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DeficiencyConfirmationController",
+          "startLine": 8,
+          "endLine": 44,
+          "methods": [
+            "DeficiencyConfirmationController",
+            "Confirm"
+          ],
+          "properties": [
+            "_profileService",
+            "_authenticationService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeficiencyConfirmationController",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "Confirm",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyConfirmationController",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Confirm",
+          "callee": "_authenticationService.GetCurrentUserAsync",
+          "lineNumber": 27
+        },
+        {
+          "caller": "Confirm",
+          "callee": "Unauthorized",
+          "lineNumber": 29
+        },
+        {
+          "caller": "Confirm",
+          "callee": "Enum.IsDefined",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Confirm",
+          "callee": "BadRequest",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Confirm",
+          "callee": "_profileService.ConfirmDeficiencyAsync",
+          "lineNumber": 34
+        },
+        {
+          "caller": "Confirm",
+          "callee": "BadRequest",
+          "lineNumber": 36
+        },
+        {
+          "caller": "Confirm",
+          "callee": "Ok",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "LaboratoryController",
+          "startLine": 13,
+          "endLine": 17,
+          "params": [
+            "laboratoryService",
+            "soilMapObjectsDeficiencyService"
+          ]
+        },
+        {
+          "name": "GetDeficienciesForMapAsync",
+          "startLine": 19,
+          "endLine": 20,
+          "params": [
+            "filters"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LaboratoryController",
+          "startLine": 8,
+          "endLine": 21,
+          "methods": [
+            "LaboratoryController",
+            "GetDeficienciesForMapAsync"
+          ],
+          "properties": [
+            "_mapObjectsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_mapObjectsService",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "LaboratoryController",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "GetDeficienciesForMapAsync",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "LaboratoryController",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetDeficienciesForMapAsync",
+          "callee": "Ok",
+          "lineNumber": 20
+        },
+        {
+          "caller": "GetDeficienciesForMapAsync",
+          "callee": "_mapObjectsService.GetMapObjectsAsync",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Nature/ResearchController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "ResearchController",
+          "startLine": 10,
+          "endLine": 11,
+          "params": [
+            "researchService"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ResearchController",
+          "startLine": 7,
+          "endLine": 12,
+          "methods": [
+            "ResearchController"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ResearchController",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ResearchController",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "SoilDeficiencyController",
+          "startLine": 14,
+          "endLine": 17,
+          "params": [
+            "soilDeficiencyService",
+            "soilMapObjectsDeficiencyService"
+          ]
+        },
+        {
+          "name": "GetDeficienciesForMapAsync",
+          "startLine": 19,
+          "endLine": 20,
+          "params": [
+            "filters"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SoilDeficiencyController",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [
+            "SoilDeficiencyController",
+            "GetDeficienciesForMapAsync"
+          ],
+          "properties": [
+            "_mapObjectsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_mapObjectsService",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "SoilDeficiencyController",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "GetDeficienciesForMapAsync",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "SoilDeficiencyController",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetDeficienciesForMapAsync",
+          "callee": "Ok",
+          "lineNumber": 20
+        },
+        {
+          "caller": "GetDeficienciesForMapAsync",
+          "callee": "_mapObjectsService.GetMapObjectsAsync",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "WaterDeficiencyController",
+          "startLine": 14,
+          "endLine": 17,
+          "params": [
+            "waterDeficiencyService",
+            "waterMapObjectsDeficiencyService"
+          ]
+        },
+        {
+          "name": "GetDeficienciesForMapAsync",
+          "startLine": 19,
+          "endLine": 20,
+          "params": [
+            "filters"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WaterDeficiencyController",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [
+            "WaterDeficiencyController",
+            "GetDeficienciesForMapAsync"
+          ],
+          "properties": [
+            "_mapObjectsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_mapObjectsService",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "WaterDeficiencyController",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "GetDeficienciesForMapAsync",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "WaterDeficiencyController",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetDeficienciesForMapAsync",
+          "callee": "Ok",
+          "lineNumber": 20
+        },
+        {
+          "caller": "GetDeficienciesForMapAsync",
+          "callee": "_mapObjectsService.GetMapObjectsAsync",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Organization/OrganizationController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "OrganizationController",
+          "startLine": 12,
+          "endLine": 13,
+          "params": [
+            "soilDeficiencyService"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrganizationController",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [
+            "OrganizationController"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrganizationController",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "OrganizationController",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 559,
+      "nonEmptyLines": 485,
+      "functions": [
+        {
+          "name": "UserController",
+          "startLine": 21,
+          "endLine": 28,
+          "params": [
+            "userService",
+            "emailSender",
+            "configuration"
+          ]
+        },
+        {
+          "name": "GetOrganizationUsers",
+          "startLine": 34,
+          "endLine": 42,
+          "params": [
+            "organizationId",
+            "scrollCount",
+            "filters"
+          ]
+        },
+        {
+          "name": "ChangeUsersRoles",
+          "startLine": 48,
+          "endLine": 53,
+          "params": [
+            "changedUsersRoles"
+          ]
+        },
+        {
+          "name": "LoginAsync",
+          "startLine": 60,
+          "endLine": 106,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "GetCurrentUserAsync",
+          "startLine": 113,
+          "endLine": 118,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "GetProfileStats",
+          "startLine": 120,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "GetProfileJournal",
+          "startLine": 129,
+          "endLine": 136,
+          "params": [
+            "take"
+          ]
+        },
+        {
+          "name": "GetProfilePhotoHistory",
+          "startLine": 138,
+          "endLine": 145,
+          "params": [
+            "take"
+          ]
+        },
+        {
+          "name": "GetProfileAchievements",
+          "startLine": 147,
+          "endLine": 154,
+          "params": []
+        },
+        {
+          "name": "RecordProfileVisit",
+          "startLine": 156,
+          "endLine": 164,
+          "params": []
+        },
+        {
+          "name": "UpdateProfileSettings",
+          "startLine": 166,
+          "endLine": 173,
+          "params": [
+            "settings"
+          ]
+        },
+        {
+          "name": "RefreshAccessTokenAsync",
+          "startLine": 180,
+          "endLine": 202,
+          "params": [
+            "tokensDto"
+          ]
+        },
+        {
+          "name": "Logout",
+          "startLine": 208,
+          "endLine": 223,
+          "params": []
+        },
+        {
+          "name": "LoginWithGoogle",
+          "startLine": 229,
+          "endLine": 236,
+          "params": []
+        },
+        {
+          "name": "GoogleCallback",
+          "startLine": 242,
+          "endLine": 295,
+          "params": []
+        },
+        {
+          "name": "LoginWithFacebook",
+          "startLine": 301,
+          "endLine": 308,
+          "params": []
+        },
+        {
+          "name": "FacebookCallback",
+          "startLine": 314,
+          "endLine": 366,
+          "params": []
+        },
+        {
+          "name": "SendVerificationEmail",
+          "startLine": 373,
+          "endLine": 389,
+          "params": [
+            "userDto"
+          ]
+        },
+        {
+          "name": "ConfirmEmail",
+          "startLine": 397,
+          "endLine": 405,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "AddNewUserToOrganizationAsync",
+          "startLine": 412,
+          "endLine": 417,
+          "params": [
+            "loginDto"
+          ]
+        },
+        {
+          "name": "AddMultipleUsersToOrganizationAsync",
+          "startLine": 424,
+          "endLine": 429,
+          "params": [
+            "users"
+          ]
+        },
+        {
+          "name": "GetOrganizationUsersNotLoginEver",
+          "startLine": 436,
+          "endLine": 441,
+          "params": [
+            "organizationId"
+          ]
+        },
+        {
+          "name": "SendPasswordResetLink",
+          "startLine": 448,
+          "endLine": 466,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "ResetPassword",
+          "startLine": 473,
+          "endLine": 498,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "ResetPasswordWithUserId",
+          "startLine": 505,
+          "endLine": 530,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "DeleteUserData",
+          "startLine": 532,
+          "endLine": 558,
+          "params": [
+            "userDto"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserController",
+          "startLine": 14,
+          "endLine": 559,
+          "methods": [
+            "UserController",
+            "GetOrganizationUsers",
+            "ChangeUsersRoles",
+            "LoginAsync",
+            "GetCurrentUserAsync",
+            "GetProfileStats",
+            "GetProfileJournal",
+            "GetProfilePhotoHistory",
+            "GetProfileAchievements",
+            "RecordProfileVisit",
+            "UpdateProfileSettings",
+            "RefreshAccessTokenAsync",
+            "Logout",
+            "LoginWithGoogle",
+            "GoogleCallback",
+            "LoginWithFacebook",
+            "FacebookCallback",
+            "SendVerificationEmail",
+            "ConfirmEmail",
+            "AddNewUserToOrganizationAsync",
+            "AddMultipleUsersToOrganizationAsync",
+            "GetOrganizationUsersNotLoginEver",
+            "SendPasswordResetLink",
+            "ResetPassword",
+            "ResetPasswordWithUserId",
+            "DeleteUserData"
+          ],
+          "properties": [
+            "_userService",
+            "_emailSender",
+            "_configuration"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserController",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "GetOrganizationUsers",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "ChangeUsersRoles",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "LoginAsync",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "GetCurrentUserAsync",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "GetProfileStats",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "GetProfileJournal",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "GetProfilePhotoHistory",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "GetProfileAchievements",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "RecordProfileVisit",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateProfileSettings",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "RefreshAccessTokenAsync",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "Logout",
+          "line": 208,
+          "isDefault": false
+        },
+        {
+          "name": "LoginWithGoogle",
+          "line": 229,
+          "isDefault": false
+        },
+        {
+          "name": "GoogleCallback",
+          "line": 242,
+          "isDefault": false
+        },
+        {
+          "name": "LoginWithFacebook",
+          "line": 301,
+          "isDefault": false
+        },
+        {
+          "name": "FacebookCallback",
+          "line": 314,
+          "isDefault": false
+        },
+        {
+          "name": "SendVerificationEmail",
+          "line": 373,
+          "isDefault": false
+        },
+        {
+          "name": "ConfirmEmail",
+          "line": 397,
+          "isDefault": false
+        },
+        {
+          "name": "AddNewUserToOrganizationAsync",
+          "line": 412,
+          "isDefault": false
+        },
+        {
+          "name": "AddMultipleUsersToOrganizationAsync",
+          "line": 424,
+          "isDefault": false
+        },
+        {
+          "name": "GetOrganizationUsersNotLoginEver",
+          "line": 436,
+          "isDefault": false
+        },
+        {
+          "name": "SendPasswordResetLink",
+          "line": 448,
+          "isDefault": false
+        },
+        {
+          "name": "ResetPassword",
+          "line": 473,
+          "isDefault": false
+        },
+        {
+          "name": "ResetPasswordWithUserId",
+          "line": 505,
+          "isDefault": false
+        },
+        {
+          "name": "DeleteUserData",
+          "line": 532,
+          "isDefault": false
+        },
+        {
+          "name": "UserController",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetOrganizationUsers",
+          "callee": "Ok",
+          "lineNumber": 41
+        },
+        {
+          "caller": "GetOrganizationUsers",
+          "callee": "_userService.GetOrganizationUsers",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "Ok",
+          "lineNumber": 52
+        },
+        {
+          "caller": "ChangeUsersRoles",
+          "callee": "_userService.ChangeUsersRoles",
+          "lineNumber": 52
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "_userService.LoginAsync",
+          "lineNumber": 65
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "new CookieOptions",
+          "lineNumber": 67
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 72
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "TimeSpan.FromMinutes",
+          "lineNumber": 72
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "new CookieOptions",
+          "lineNumber": 75
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 80
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "TimeSpan.FromDays",
+          "lineNumber": 80
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "Response.Cookies.Append",
+          "lineNumber": 83
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "Response.Cookies.Append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "Ok",
+          "lineNumber": 86
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "Unauthorized",
+          "lineNumber": 90
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 90
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "Unauthorized",
+          "lineNumber": 99
+        },
+        {
+          "caller": "LoginAsync",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 99
+        },
+        {
+          "caller": "GetCurrentUserAsync",
+          "callee": "Ok",
+          "lineNumber": 117
+        },
+        {
+          "caller": "GetCurrentUserAsync",
+          "callee": "_userService.GetModelByEmail",
+          "lineNumber": 117
+        },
+        {
+          "caller": "GetProfileStats",
+          "callee": "User.FindFirst",
+          "lineNumber": 124
+        },
+        {
+          "caller": "GetProfileStats",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 125
+        },
+        {
+          "caller": "GetProfileStats",
+          "callee": "Unauthorized",
+          "lineNumber": 125
+        },
+        {
+          "caller": "GetProfileStats",
+          "callee": "Ok",
+          "lineNumber": 126
+        },
+        {
+          "caller": "GetProfileStats",
+          "callee": "_userService.GetProfileStatsAsync",
+          "lineNumber": 126
+        },
+        {
+          "caller": "GetProfileJournal",
+          "callee": "User.FindFirst",
+          "lineNumber": 133
+        },
+        {
+          "caller": "GetProfileJournal",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 134
+        },
+        {
+          "caller": "GetProfileJournal",
+          "callee": "Unauthorized",
+          "lineNumber": 134
+        },
+        {
+          "caller": "GetProfileJournal",
+          "callee": "Ok",
+          "lineNumber": 135
+        },
+        {
+          "caller": "GetProfileJournal",
+          "callee": "_userService.GetProfileJournalAsync",
+          "lineNumber": 135
+        },
+        {
+          "caller": "GetProfilePhotoHistory",
+          "callee": "User.FindFirst",
+          "lineNumber": 142
+        },
+        {
+          "caller": "GetProfilePhotoHistory",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 143
+        },
+        {
+          "caller": "GetProfilePhotoHistory",
+          "callee": "Unauthorized",
+          "lineNumber": 143
+        },
+        {
+          "caller": "GetProfilePhotoHistory",
+          "callee": "Ok",
+          "lineNumber": 144
+        },
+        {
+          "caller": "GetProfilePhotoHistory",
+          "callee": "_userService.GetProfilePhotoHistoryAsync",
+          "lineNumber": 144
+        },
+        {
+          "caller": "GetProfileAchievements",
+          "callee": "User.FindFirst",
+          "lineNumber": 151
+        },
+        {
+          "caller": "GetProfileAchievements",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 152
+        },
+        {
+          "caller": "GetProfileAchievements",
+          "callee": "Unauthorized",
+          "lineNumber": 152
+        },
+        {
+          "caller": "GetProfileAchievements",
+          "callee": "Ok",
+          "lineNumber": 153
+        },
+        {
+          "caller": "GetProfileAchievements",
+          "callee": "_userService.GetProfileAchievementsAsync",
+          "lineNumber": 153
+        },
+        {
+          "caller": "RecordProfileVisit",
+          "callee": "User.FindFirst",
+          "lineNumber": 160
+        },
+        {
+          "caller": "RecordProfileVisit",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 161
+        },
+        {
+          "caller": "RecordProfileVisit",
+          "callee": "Unauthorized",
+          "lineNumber": 161
+        },
+        {
+          "caller": "RecordProfileVisit",
+          "callee": "_userService.RecordProfileVisitAsync",
+          "lineNumber": 162
+        },
+        {
+          "caller": "RecordProfileVisit",
+          "callee": "Ok",
+          "lineNumber": 163
+        },
+        {
+          "caller": "UpdateProfileSettings",
+          "callee": "User.FindFirst",
+          "lineNumber": 170
+        },
+        {
+          "caller": "UpdateProfileSettings",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 171
+        },
+        {
+          "caller": "UpdateProfileSettings",
+          "callee": "Unauthorized",
+          "lineNumber": 171
+        },
+        {
+          "caller": "UpdateProfileSettings",
+          "callee": "Ok",
+          "lineNumber": 172
+        },
+        {
+          "caller": "UpdateProfileSettings",
+          "callee": "_userService.UpdateProfileSettingsAsync",
+          "lineNumber": 172
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 185
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "BadRequest",
+          "lineNumber": 185
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "_userService.RefreshAccessTokenAsync",
+          "lineNumber": 187
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "Unauthorized",
+          "lineNumber": 189
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "new CookieOptions",
+          "lineNumber": 191
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 196
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "TimeSpan.FromMinutes",
+          "lineNumber": 196
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "Response.Cookies.Append",
+          "lineNumber": 199
+        },
+        {
+          "caller": "RefreshAccessTokenAsync",
+          "callee": "Ok",
+          "lineNumber": 201
+        },
+        {
+          "caller": "Logout",
+          "callee": "new CookieOptions",
+          "lineNumber": 211
+        },
+        {
+          "caller": "Logout",
+          "callee": "DateTime.UtcNow.AddDays",
+          "lineNumber": 216
+        },
+        {
+          "caller": "Logout",
+          "callee": "Response.Cookies.Append",
+          "lineNumber": 219
+        },
+        {
+          "caller": "Logout",
+          "callee": "Response.Cookies.Append",
+          "lineNumber": 220
+        },
+        {
+          "caller": "Logout",
+          "callee": "Ok",
+          "lineNumber": 222
+        },
+        {
+          "caller": "LoginWithGoogle",
+          "callee": "Url.Action",
+          "lineNumber": 233
+        },
+        {
+          "caller": "LoginWithGoogle",
+          "callee": "nameof",
+          "lineNumber": 233
+        },
+        {
+          "caller": "LoginWithGoogle",
+          "callee": "new AuthenticationProperties",
+          "lineNumber": 234
+        },
+        {
+          "caller": "LoginWithGoogle",
+          "callee": "Challenge",
+          "lineNumber": 235
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "HttpContext.AuthenticateAsync",
+          "lineNumber": 246
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "Redirect",
+          "lineNumber": 249
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "result.Principal?.Claims.ToList",
+          "lineNumber": 252
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value\n            ?? claims?.FirstOrDefault",
+          "lineNumber": 253
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "claims?.FirstOrDefault",
+          "lineNumber": 253
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "claims?.FirstOrDefault",
+          "lineNumber": 255
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "claims?.FirstOrDefault",
+          "lineNumber": 256
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "claims?.FirstOrDefault",
+          "lineNumber": 257
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 259
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "Redirect",
+          "lineNumber": 261
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 264
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 264
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "name.Split",
+          "lineNumber": 266
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "_userService.LoginOrRegisterWithOAuth2Async",
+          "lineNumber": 271
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "new CookieOptions",
+          "lineNumber": 273
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 278
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "TimeSpan.FromMinutes",
+          "lineNumber": 278
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "new CookieOptions",
+          "lineNumber": 281
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 286
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "TimeSpan.FromDays",
+          "lineNumber": 286
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "Response.Cookies.Append",
+          "lineNumber": 289
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "Response.Cookies.Append",
+          "lineNumber": 290
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "HttpContext.SignOutAsync",
+          "lineNumber": 292
+        },
+        {
+          "caller": "GoogleCallback",
+          "callee": "Redirect",
+          "lineNumber": 294
+        },
+        {
+          "caller": "LoginWithFacebook",
+          "callee": "Url.Action",
+          "lineNumber": 305
+        },
+        {
+          "caller": "LoginWithFacebook",
+          "callee": "nameof",
+          "lineNumber": 305
+        },
+        {
+          "caller": "LoginWithFacebook",
+          "callee": "new AuthenticationProperties",
+          "lineNumber": 306
+        },
+        {
+          "caller": "LoginWithFacebook",
+          "callee": "Challenge",
+          "lineNumber": 307
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "HttpContext.AuthenticateAsync",
+          "lineNumber": 318
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "Redirect",
+          "lineNumber": 321
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "result.Principal?.Claims.ToList",
+          "lineNumber": 324
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "claims?.FirstOrDefault",
+          "lineNumber": 325
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "claims?.FirstOrDefault",
+          "lineNumber": 326
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "claims?.FirstOrDefault",
+          "lineNumber": 327
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "claims?.FirstOrDefault",
+          "lineNumber": 328
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 330
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "Redirect",
+          "lineNumber": 332
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 335
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 335
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "name.Split",
+          "lineNumber": 337
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "_userService.LoginOrRegisterWithOAuth2Async",
+          "lineNumber": 342
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "new CookieOptions",
+          "lineNumber": 344
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 349
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "TimeSpan.FromMinutes",
+          "lineNumber": 349
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "new CookieOptions",
+          "lineNumber": 352
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 357
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "TimeSpan.FromDays",
+          "lineNumber": 357
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "Response.Cookies.Append",
+          "lineNumber": 360
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "Response.Cookies.Append",
+          "lineNumber": 361
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "HttpContext.SignOutAsync",
+          "lineNumber": 363
+        },
+        {
+          "caller": "FacebookCallback",
+          "callee": "Redirect",
+          "lineNumber": 365
+        },
+        {
+          "caller": "SendVerificationEmail",
+          "callee": "_userService.GetModelByEmail",
+          "lineNumber": 376
+        },
+        {
+          "caller": "SendVerificationEmail",
+          "callee": "NotFound",
+          "lineNumber": 378
+        },
+        {
+          "caller": "SendVerificationEmail",
+          "callee": "Accepted",
+          "lineNumber": 379
+        },
+        {
+          "caller": "SendVerificationEmail",
+          "callee": "_userService.UpdateEmailConfirmationTokenByEmail",
+          "lineNumber": 381
+        },
+        {
+          "caller": "SendVerificationEmail",
+          "callee": "_emailSender.SendEmailAsync",
+          "lineNumber": 386
+        },
+        {
+          "caller": "SendVerificationEmail",
+          "callee": "Ok",
+          "lineNumber": 388
+        },
+        {
+          "caller": "ConfirmEmail",
+          "callee": "_userService.ConfirmEmailByToken",
+          "lineNumber": 400
+        },
+        {
+          "caller": "ConfirmEmail",
+          "callee": "BadRequest",
+          "lineNumber": 402
+        },
+        {
+          "caller": "ConfirmEmail",
+          "callee": "Ok",
+          "lineNumber": 404
+        },
+        {
+          "caller": "AddNewUserToOrganizationAsync",
+          "callee": "Ok",
+          "lineNumber": 416
+        },
+        {
+          "caller": "AddNewUserToOrganizationAsync",
+          "callee": "_userService.AddUserToOrganizationAsync",
+          "lineNumber": 416
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "Ok",
+          "lineNumber": 428
+        },
+        {
+          "caller": "AddMultipleUsersToOrganizationAsync",
+          "callee": "_userService.AddMultipleUsersToOrganizationAsync",
+          "lineNumber": 428
+        },
+        {
+          "caller": "GetOrganizationUsersNotLoginEver",
+          "callee": "Ok",
+          "lineNumber": 440
+        },
+        {
+          "caller": "GetOrganizationUsersNotLoginEver",
+          "callee": "_userService.GetOrganizationUsersNotLoginEver",
+          "lineNumber": 440
+        },
+        {
+          "caller": "SendPasswordResetLink",
+          "callee": "BadRequest",
+          "lineNumber": 453
+        },
+        {
+          "caller": "SendPasswordResetLink",
+          "callee": "_userService.SendPasswordResetLinkAsync",
+          "lineNumber": 458
+        },
+        {
+          "caller": "SendPasswordResetLink",
+          "callee": "Ok",
+          "lineNumber": 460
+        },
+        {
+          "caller": "SendPasswordResetLink",
+          "callee": "StatusCode",
+          "lineNumber": 464
+        },
+        {
+          "caller": "ResetPassword",
+          "callee": "BadRequest",
+          "lineNumber": 478
+        },
+        {
+          "caller": "ResetPassword",
+          "callee": "_userService.ResetPasswordByEmailAsync",
+          "lineNumber": 483
+        },
+        {
+          "caller": "ResetPassword",
+          "callee": "Ok",
+          "lineNumber": 487
+        },
+        {
+          "caller": "ResetPassword",
+          "callee": "BadRequest",
+          "lineNumber": 491
+        },
+        {
+          "caller": "ResetPassword",
+          "callee": "StatusCode",
+          "lineNumber": 496
+        },
+        {
+          "caller": "ResetPasswordWithUserId",
+          "callee": "BadRequest",
+          "lineNumber": 510
+        },
+        {
+          "caller": "ResetPasswordWithUserId",
+          "callee": "_userService.ResetPasswordWithTokenAsync",
+          "lineNumber": 515
+        },
+        {
+          "caller": "ResetPasswordWithUserId",
+          "callee": "Ok",
+          "lineNumber": 519
+        },
+        {
+          "caller": "ResetPasswordWithUserId",
+          "callee": "BadRequest",
+          "lineNumber": 523
+        },
+        {
+          "caller": "ResetPasswordWithUserId",
+          "callee": "StatusCode",
+          "lineNumber": 528
+        },
+        {
+          "caller": "DeleteUserData",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 536
+        },
+        {
+          "caller": "DeleteUserData",
+          "callee": "BadRequest",
+          "lineNumber": 538
+        },
+        {
+          "caller": "DeleteUserData",
+          "callee": "_userService.DeleteUserDataAsync",
+          "lineNumber": 543
+        },
+        {
+          "caller": "DeleteUserData",
+          "callee": "Ok",
+          "lineNumber": 547
+        },
+        {
+          "caller": "DeleteUserData",
+          "callee": "NotFound",
+          "lineNumber": 551
+        },
+        {
+          "caller": "DeleteUserData",
+          "callee": "StatusCode",
+          "lineNumber": 556
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 27,
+        "functionCount": 26,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Controllers/PaymentController.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "PaymentController",
+          "startLine": 15,
+          "endLine": 19,
+          "params": [
+            "paymentService",
+            "logger"
+          ]
+        },
+        {
+          "name": "CreateDonationPayment",
+          "startLine": 26,
+          "endLine": 48,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "HandlePaymentCallback",
+          "startLine": 56,
+          "endLine": 89,
+          "params": [
+            "data",
+            "signature"
+          ]
+        },
+        {
+          "name": "GetPaymentConfig",
+          "startLine": 95,
+          "endLine": 116,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PaymentController",
+          "startLine": 8,
+          "endLine": 117,
+          "methods": [
+            "PaymentController",
+            "CreateDonationPayment",
+            "HandlePaymentCallback",
+            "GetPaymentConfig"
+          ],
+          "properties": [
+            "_paymentService",
+            "_logger"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PaymentController",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "CreateDonationPayment",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "HandlePaymentCallback",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "GetPaymentConfig",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "PaymentController",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CreateDonationPayment",
+          "callee": "BadRequest",
+          "lineNumber": 34
+        },
+        {
+          "caller": "CreateDonationPayment",
+          "callee": "_paymentService.CreateDonationPaymentAsync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "CreateDonationPayment",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 39
+        },
+        {
+          "caller": "CreateDonationPayment",
+          "callee": "Ok",
+          "lineNumber": 41
+        },
+        {
+          "caller": "CreateDonationPayment",
+          "callee": "_logger.LogError",
+          "lineNumber": 45
+        },
+        {
+          "caller": "CreateDonationPayment",
+          "callee": "StatusCode",
+          "lineNumber": 46
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 62
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 62
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "BadRequest",
+          "lineNumber": 64
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "_paymentService.VerifyPaymentCallbackAsync",
+          "lineNumber": 67
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 71
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "Ok",
+          "lineNumber": 76
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "_logger.LogWarning",
+          "lineNumber": 80
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "BadRequest",
+          "lineNumber": 81
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "_logger.LogError",
+          "lineNumber": 86
+        },
+        {
+          "caller": "HandlePaymentCallback",
+          "callee": "StatusCode",
+          "lineNumber": 87
+        },
+        {
+          "caller": "GetPaymentConfig",
+          "callee": "_paymentService.GetType().GetProperty(\"_publicKey\")?.GetValue(_paymentService)?.ToString",
+          "lineNumber": 103
+        },
+        {
+          "caller": "GetPaymentConfig",
+          "callee": "_paymentService.GetType().GetProperty(\"_publicKey\")?.GetValue",
+          "lineNumber": 103
+        },
+        {
+          "caller": "GetPaymentConfig",
+          "callee": "_paymentService.GetType().GetProperty",
+          "lineNumber": 103
+        },
+        {
+          "caller": "GetPaymentConfig",
+          "callee": "_paymentService.GetType",
+          "lineNumber": 103
+        },
+        {
+          "caller": "GetPaymentConfig",
+          "callee": "Ok",
+          "lineNumber": 109
+        },
+        {
+          "caller": "GetPaymentConfig",
+          "callee": "_logger.LogError",
+          "lineNumber": 113
+        },
+        {
+          "caller": "GetPaymentConfig",
+          "callee": "StatusCode",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/DataProtection-Keys/key-c330fc09-0fa2-43fe-b8e9-3017c97050ec.xml",
+      "language": "xml",
+      "fileCategory": "config",
+      "totalLines": 16,
+      "nonEmptyLines": 16,
+      "metrics": {}
+    },
+    {
+      "path": "src/NatureHelp/DependencyInjection.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 94,
+      "functions": [
+        {
+          "name": "AddInfrastructureServices",
+          "startLine": 38,
+          "endLine": 57,
+          "params": [
+            "services",
+            "configuration"
+          ]
+        },
+        {
+          "name": "AddApplicationServices",
+          "startLine": 64,
+          "endLine": 101,
+          "params": [
+            "services",
+            "configuration"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Program",
+          "startLine": 25,
+          "endLine": 25,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "DependencyInjection",
+          "startLine": 30,
+          "endLine": 102,
+          "methods": [
+            "AddInfrastructureServices",
+            "AddApplicationServices"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Program",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "AddInfrastructureServices",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "AddApplicationServices",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "DependencyInjection",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped",
+          "lineNumber": 40
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped",
+          "lineNumber": 41
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IMapObjectsRepository<WaterDeficiency, DeficiencyMapDto>, DeficiencyRepository<WaterDeficiency, DeficiencyMapDto>>",
+          "lineNumber": 43
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IMapObjectsRepository<SoilDeficiency, DeficiencyMapDto>, DeficiencyRepository<SoilDeficiency, DeficiencyMapDto>>",
+          "lineNumber": 44
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IUserRepository, UserRepository>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IProfileRepository, ProfileRepository>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IDictEntryRepository, DictEntryRepository>",
+          "lineNumber": 47
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IMapObjectsRepository<Laboratory, LaboratoryMapDto>, LaboratoryRepository>",
+          "lineNumber": 48
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IBaseRepository<Research>, ResearchRepository>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IChangedModelLogRepository, ChangedModelLogRepository>",
+          "lineNumber": 50
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddSingleton<IRedisCacheService, RedisCacheService>",
+          "lineNumber": 51
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddSingleton<IDictValueCacheService, DictValueCacheService>",
+          "lineNumber": 52
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IEmailSender, SmtpEmailSender>",
+          "lineNumber": 53
+        },
+        {
+          "caller": "AddInfrastructureServices",
+          "callee": "services.AddScoped<IMonitoringRepository, MonitoringRepository>",
+          "lineNumber": 54
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.Configure<ProfileOptions>",
+          "lineNumber": 66
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "configuration.GetSection",
+          "lineNumber": 66
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<ILevelThresholdsProvider, LevelThresholdsProvider>",
+          "lineNumber": 67
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IAchievementEvaluationService, AchievementEvaluationService>",
+          "lineNumber": 68
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IProfileService, ProfileService>",
+          "lineNumber": 69
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped",
+          "lineNumber": 71
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped",
+          "lineNumber": 72
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IUserService, UserService>",
+          "lineNumber": 74
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IAuthenticationService, AuthenticationService>",
+          "lineNumber": 75
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IPaymentService, PaymentService>",
+          "lineNumber": 76
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IExcelExportService, ExcelExportService>",
+          "lineNumber": 77
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IBaseService<User>, BaseService<User>>",
+          "lineNumber": 79
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IBaseService<WaterDeficiency>, WaterDeficiencyService>",
+          "lineNumber": 80
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IBaseService<SoilDeficiency>, SoilDeficiencyService>",
+          "lineNumber": 81
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<LaboratoryService>",
+          "lineNumber": 82
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IBaseService<Laboratory>>",
+          "lineNumber": 83
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "sp.GetRequiredService<LaboratoryService>",
+          "lineNumber": 83
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IBaseService<Research>, BaseService<Research>>",
+          "lineNumber": 84
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IChangedModelLogService, ChangedModelLogService>",
+          "lineNumber": 85
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "configuration.GetValue",
+          "lineNumber": 86
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IBlobStorageProvider, LocalFileBlobStorageProvider>",
+          "lineNumber": 88
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IBlobStorageProvider, AzureBlobStorageProvider>",
+          "lineNumber": 92
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IEmailService, EmailService>",
+          "lineNumber": 94
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IMapObjectsService<WaterDeficiency, DeficiencyMapDto>, WaterDeficiencyService>",
+          "lineNumber": 95
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IMapObjectsService<SoilDeficiency, DeficiencyMapDto>, SoilDeficiencyService>",
+          "lineNumber": 96
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<IMapObjectsService<Laboratory, LaboratoryMapDto>>",
+          "lineNumber": 97
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "sp.GetRequiredService<LaboratoryService>",
+          "lineNumber": 97
+        },
+        {
+          "caller": "AddApplicationServices",
+          "callee": "services.AddScoped<MonitoringService>",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "CanHandle",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "exceptionContext"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 28,
+          "endLine": 47,
+          "params": [
+            "exceptionContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CommonExceptionsHandler",
+          "startLine": 12,
+          "endLine": 48,
+          "methods": [
+            "CanHandle",
+            "Handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CanHandle",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "CommonExceptionsHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handle",
+          "callee": "new ObjectResult",
+          "lineNumber": 36
+        },
+        {
+          "caller": "Handle",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 36
+        },
+        {
+          "caller": "Handle",
+          "callee": "exceptionContext.Exception.GetType",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "CanHandle",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "exceptionContext"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 28,
+          "endLine": 41,
+          "params": [
+            "exceptionContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DataAccessExceptionsHandler",
+          "startLine": 12,
+          "endLine": 42,
+          "methods": [
+            "CanHandle",
+            "Handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CanHandle",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "DataAccessExceptionsHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handle",
+          "callee": "new ObjectResult",
+          "lineNumber": 30
+        },
+        {
+          "caller": "Handle",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 30
+        },
+        {
+          "caller": "Handle",
+          "callee": "exceptionContext.Exception.GetType",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

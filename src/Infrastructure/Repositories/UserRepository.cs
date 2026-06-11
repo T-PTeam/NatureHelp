@@ -1,5 +1,6 @@
 using Domain.Models.Organization;
 using Infrastructure.Data;
+using Infrastructure.Extensions;
 using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -211,6 +212,43 @@ public class UserRepository : BaseRepository<User>, IUserRepository
         var water = await context.WaterDeficiencies.AsNoTracking().CountAsync(d => d.CreatedBy == userId);
         var soil = await context.SoilDeficiencies.AsNoTracking().CountAsync(d => d.CreatedBy == userId);
         return (water, soil);
+    }
+
+    public async Task<IEnumerable<User>> GetByOrganizationAsync(
+        Guid organizationId,
+        int scrollCount,
+        IDictionary<string, string?>? filters = null)
+    {
+        using var context = _contextFactory.CreateDbContext();
+
+        var (sortBy, sortDirection, remainingFilters) = QueryableExtensions.ExtractSorting(filters);
+        var query = context.Set<User>()
+            .Where(u => u.OrganizationId == organizationId)
+            .ApplyFilters(remainingFilters)
+            .ApplySorting(sortBy, sortDirection);
+
+        if (scrollCount != -1)
+        {
+            query = query.Skip(scrollCount * 20).Take(20);
+        }
+
+        var list = await query.ToListAsync();
+
+        foreach (var user in list)
+        {
+            if (user.Laboratory != null)
+            {
+                user.Laboratory.Researchers = null;
+            }
+        }
+
+        return list;
+    }
+
+    public async Task<int> GetTotalCountByOrganization(Guid organizationId)
+    {
+        using var context = _contextFactory.CreateDbContext();
+        return await context.Set<User>().CountAsync(u => u.OrganizationId == organizationId);
     }
 
 }

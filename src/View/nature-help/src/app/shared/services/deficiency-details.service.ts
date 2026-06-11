@@ -1,11 +1,11 @@
-import { Injectable, OnDestroy } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Router } from "@angular/router";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatDialog } from "@angular/material/dialog";
 import moment from "moment";
-import { takeUntil } from "rxjs/operators";
-import { Subject, Observable } from "rxjs";
+import { map, takeUntil, tap, debounceTime } from "rxjs/operators";
+import { Subject, Observable, combineLatest } from "rxjs";
 
 import { MapViewService, IAddress } from "./map-view.service";
 import { MobileMapService } from "./mobile-map.service";
@@ -14,7 +14,7 @@ import { UserAPIService } from "./user-api.service";
 import { AttachmentAPIService } from "./attachment-api.service";
 import { UploadService } from "./upload.service";
 
-import { EDangerState, EDeficiencyType } from "@/models/enums";
+import { EDangerState, EDeficiencyType, EMapLayer } from "@/models/enums";
 import { IDeficiency } from "@/models/IDeficiency";
 import { IUser } from "@/models/IUser";
 import { IDeficiencyAttachment } from "@/models/IAttachment";
@@ -36,9 +36,7 @@ const defaultUser: IUser = {
 @Injectable({
   providedIn: "root",
 })
-export class DeficiencyDetailsService implements OnDestroy {
-  private destroy$ = new Subject<void>();
-
+export class DeficiencyDetailsService {
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -51,11 +49,6 @@ export class DeficiencyDetailsService implements OnDestroy {
     private dialog: MatDialog,
     private auditService: AuditService,
   ) {}
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
 
   initializeState(): IDeficiencyDetailsState {
     return {
@@ -113,12 +106,12 @@ export class DeficiencyDetailsService implements OnDestroy {
   }
 
   loadOrganizationUsers(state: IDeficiencyDetailsState): Observable<void> {
-    return new Observable((observer) => {
-      this.usersAPIService.$organizationUsers.pipe(takeUntil(this.destroy$)).subscribe((orgUsers) => {
+    return this.usersAPIService.fetchOrganizationUsers(-1, null, { silent: true }).pipe(
+      tap((orgUsers) => {
         const userId = sessionStorage.getItem("userId");
         state.currentUser = orgUsers.find((u) => u.id === userId) ?? null;
 
-        if (state.detailsForm && state.currentUser) {
+        if (state.detailsForm && state.currentUser && state.isAddingDeficiency) {
           state.detailsForm.patchValue({
             createdBy: state.currentUser.id,
             responsibleUserId: state.currentUser.id,
@@ -129,34 +122,95 @@ export class DeficiencyDetailsService implements OnDestroy {
             state.details.responsibleUser = state.currentUser;
           }
         }
+      }),
+      map(() => undefined),
+    );
+  }
 
-        if (orgUsers.length > 0 && !observer.closed) {
-          observer.next();
-          observer.complete();
-        }
+  subscribeToCoordinatesPicking(state: IDeficiencyDetailsState, destroy$: Subject<void>): void {
+    this.mapViewService.selectedCoordinates$.pipe(takeUntil(destroy$)).subscribe((coordinates) => {
+      if (!coordinates || !state.detailsForm) {
+        return;
+      }
+
+      state.detailsForm.patchValue({
+        latitude: coordinates.latitude,
+        longitude: coordinates.longitude,
       });
+      this.syncDetailsCoordinates(state, coordinates.latitude, coordinates.longitude);
+      this.mapViewService.highlightSelectedCoordinates(coordinates, state.detailsForm.get("title")?.value || undefined);
+      state.isSelectingCoordinates = false;
+    });
 
-      this.usersAPIService.loadOrganizationUsers(-1);
+    this.mapViewService.selectedAddress$.pipe(takeUntil(destroy$)).subscribe((address) => {
+      state.selectedAddress = address;
+      if (address && state.detailsForm) {
+        state.detailsForm.patchValue({ address: address.displayName });
+        if (state.details) {
+          state.details.address = address.displayName;
+        }
+      }
     });
   }
 
-  subscribeToCoordinatesPicking(state: IDeficiencyDetailsState): void {
-    this.mapViewService.selectedCoordinates$.subscribe((coordinates) => {
-      if (coordinates) {
-        state.detailsForm.patchValue({
-          latitude: coordinates.latitude,
-          longitude: coordinates.longitude,
-        });
-        state.isSelectingCoordinates = false;
+  subscribeToCoordinateFormChanges(state: IDeficiencyDetailsState, destroy$: Subject<void>): void {
+    if (!state.detailsForm) {
+      return;
+    }
+
+    const latitudeControl = state.detailsForm.get("latitude");
+    const longitudeControl = state.detailsForm.get("longitude");
+
+    if (!latitudeControl || !longitudeControl) {
+      return;
+    }
+
+    combineLatest([latitudeControl.valueChanges, longitudeControl.valueChanges])
+      .pipe(debounceTime(300), takeUntil(destroy$))
+      .subscribe(([latitude, longitude]) => {
+        if (state.isSelectingCoordinates) {
+          return;
+        }
+
+        const parsedLatitude = Number(latitude);
+        const parsedLongitude = Number(longitude);
+
+        if (Number.isNaN(parsedLatitude) || Number.isNaN(parsedLongitude)) {
+          return;
+        }
+
+        this.syncDetailsCoordinates(state, parsedLatitude, parsedLongitude);
+        this.mapViewService.highlightSelectedCoordinates(
+          { latitude: parsedLatitude, longitude: parsedLongitude },
+          state.detailsForm.get("title")?.value || undefined,
+        );
+      });
+  }
+
+  setResearchFieldsDisabled(form: FormGroup, fieldNames: string[], disabled: boolean): void {
+    fieldNames.forEach((name) => {
+      const control = form.get(name);
+      if (!control) {
+        return;
+      }
+
+      if (disabled) {
+        control.disable({ emitEvent: false });
+      } else {
+        control.enable({ emitEvent: false });
       }
     });
 
-    this.mapViewService.selectedAddress$.pipe(takeUntil(this.destroy$)).subscribe((address) => {
-      state.selectedAddress = address;
-      if (address) {
-        state.detailsForm.patchValue({ address: address.displayName });
-      }
-    });
+    form.updateValueAndValidity();
+  }
+
+  private syncDetailsCoordinates(state: IDeficiencyDetailsState, latitude: number, longitude: number): void {
+    if (!state.details) {
+      return;
+    }
+
+    state.details.latitude = latitude;
+    state.details.longitude = longitude;
   }
 
   toggleCoordinateSelection(state: IDeficiencyDetailsState, event?: Event): void {
@@ -176,13 +230,33 @@ export class DeficiencyDetailsService implements OnDestroy {
   }
 
   changeMapView(state: IDeficiencyDetailsState): void {
-    this.mapViewService.changeFocus(
-      { latitude: state.details?.latitude || 0, longitude: state.details?.longitude || 0 },
-      12,
-    );
+    const focus = () => {
+      const latitude = Number(state.detailsForm?.get("latitude")?.value ?? state.details?.latitude ?? 0);
+      const longitude = Number(state.detailsForm?.get("longitude")?.value ?? state.details?.longitude ?? 0);
+      const title = state.detailsForm?.get("title")?.value ?? state.details?.title ?? "";
+
+      if (Number.isNaN(latitude) || Number.isNaN(longitude)) {
+        return;
+      }
+
+      const layer =
+        (state.details?.type ?? state.detailsForm?.get("type")?.value) === EDeficiencyType.Water
+          ? EMapLayer.WaterDeficiency
+          : EMapLayer.SoilDeficiency;
+
+      this.mapViewService.changeFocus({ latitude, longitude }, 12, {
+        layer,
+        popupHtml: `<strong>${title}</strong>`,
+      });
+    };
+
     if (this.mobileMapService.isMobile()) {
       this.mobileMapService.showMobileMap();
+      setTimeout(focus, 150);
+      return;
     }
+
+    setTimeout(focus, 100);
   }
 
   toggleMonitoring(state: IDeficiencyDetailsState, deficiencyType: EDeficiencyType): Observable<boolean> {
@@ -222,7 +296,7 @@ export class DeficiencyDetailsService implements OnDestroy {
       });
     }
 
-    const formData: IDeficiency = state.detailsForm.value;
+    const formData: IDeficiency = state.detailsForm.getRawValue();
 
     if (this.mobileMapService.isMobile()) {
       this.mobileMapService.hideMobileMap();

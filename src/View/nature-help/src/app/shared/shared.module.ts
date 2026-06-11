@@ -6,6 +6,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import { MatModule } from "@/mat.module";
 
 import { AuthDialogComponent } from "./components/dialogs/login-dialog/auth-dialog.component";
+import { PostAuthWelcomeDialogComponent } from "./components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component";
 import { PasswordResetDialogComponent } from "./components/dialogs/login-dialog/password-reset-dialog.component";
 import { SendResetLinkDialogComponent } from "./components/dialogs/login-dialog/send-reset-link-dialog.component";
 import { MapComponent } from "./components/main-map/main-map.component";
@@ -28,12 +29,14 @@ import { LegalInfoComponent } from "./components/legal-info/legal-info.component
 import { FooterComponent } from "./components/footer/footer.component";
 import { LanguageSwitcherComponent } from "./components/language-switcher/language-switcher.component";
 import { LoadingIndicatorComponent } from "./components/loading-indicator/loading-indicator.component";
+import { TruncatedCellComponent } from "./components/truncated-cell/truncated-cell.component";
 
 @NgModule({
   imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule, WaterSoilToggleComponent, TranslateModule],
   declarations: [
     MapComponent,
     AuthDialogComponent,
+    PostAuthWelcomeDialogComponent,
     PasswordResetDialogComponent,
     SendResetLinkDialogComponent,
     AddOrganizationUsersComponent,
@@ -48,6 +51,7 @@ import { LoadingIndicatorComponent } from "./components/loading-indicator/loadin
     FooterComponent,
     LanguageSwitcherComponent,
     LoadingIndicatorComponent,
+    TruncatedCellComponent,
 
     EnumToStringPipe,
     RoleStringPipe,
@@ -56,6 +60,7 @@ import { LoadingIndicatorComponent } from "./components/loading-indicator/loadin
   exports: [
     MapComponent,
     AuthDialogComponent,
+    PostAuthWelcomeDialogComponent,
     PasswordResetDialogComponent,
     SendResetLinkDialogComponent,
     AddOrganizationUsersComponent,
@@ -71,6 +76,7 @@ import { LoadingIndicatorComponent } from "./components/loading-indicator/loadin
     FooterComponent,
     LanguageSwitcherComponent,
     LoadingIndicatorComponent,
+    TruncatedCellComponent,
 
     EnumToStringPipe,
     RoleStringPipe,

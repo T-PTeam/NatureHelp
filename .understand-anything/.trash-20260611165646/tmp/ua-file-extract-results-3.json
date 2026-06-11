@@ -1,0 +1,1656 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/app.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 63,
+      "classes": [
+        {
+          "name": "AppComponent",
+          "startLine": 14,
+          "endLine": 70,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "handleOAuth2Redirect"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppComponent",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.languageService.initializeLanguage",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "setTimeout",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.languageService.getCurrentLanguage",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.handleOAuth2Redirect",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService.initializeAuth().subscribe",
+          "lineNumber": 33
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService.initializeAuth",
+          "lineNumber": 33
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService.getCurrentUserMonitoringScheme",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.auditService.setMonitoringScheme",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService.$user.subscribe",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.auditService.setMonitoringScheme",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "this.route.queryParams.subscribe",
+          "lineNumber": 50
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "setTimeout",
+          "lineNumber": 52
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "this.userService.handleOAuth2Callback().subscribe",
+          "lineNumber": 53
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "this.userService.handleOAuth2Callback",
+          "lineNumber": 53
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "this.router.navigate([\"/\"], { replaceUrl: true, queryParams: {} }).then",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "this.router.navigate",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "this.postAuthWelcomeDialog.open",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "this.router.navigate",
+          "lineNumber": 59
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "console.error",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleOAuth2Redirect",
+          "callee": "this.router.navigate",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/app.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "HttpLoaderFactory",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "http"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppModule",
+          "startLine": 84,
+          "endLine": 88,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HttpLoaderFactory",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "AppModule",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "moment.locale",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/mat.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 76,
+      "classes": [
+        {
+          "name": "MatModule",
+          "startLine": 77,
+          "endLine": 77,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MatModule",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "LabsModule",
+          "startLine": 31,
+          "endLine": 31,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LabsModule",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "OwneryModule",
+          "startLine": 27,
+          "endLine": 27,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OwneryModule",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "SoilDeficiencyModule",
+          "startLine": 30,
+          "endLine": 30,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SoilDeficiencyModule",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "WaterDeficiencyModule",
+          "startLine": 30,
+          "endLine": 30,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "WaterDeficiencyModule",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "WaterSoilToggleComponent",
+          "startLine": 13,
+          "endLine": 27,
+          "methods": [
+            "selectedType",
+            "onTypeChange"
+          ],
+          "properties": [
+            "isWaterSelected",
+            "toggleChange"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WaterSoilToggleComponent",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onTypeChange",
+          "callee": "this.toggleChange.emit",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "PickCoordinatesButtonComponent",
+          "startLine": 14,
+          "endLine": 31,
+          "methods": [
+            "constructor",
+            "onButtonClick",
+            "onDocumentClick"
+          ],
+          "properties": [
+            "isActive",
+            "buttonClick"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PickCoordinatesButtonComponent",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onButtonClick",
+          "callee": "event.stopPropagation",
+          "lineNumber": 21
+        },
+        {
+          "caller": "onButtonClick",
+          "callee": "this.buttonClick.emit",
+          "lineNumber": 22
+        },
+        {
+          "caller": "onDocumentClick",
+          "callee": "this.elementRef.nativeElement.contains",
+          "lineNumber": 27
+        },
+        {
+          "caller": "onDocumentClick",
+          "callee": "this.buttonClick.emit",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 78,
+      "classes": [
+        {
+          "name": "AddOrganizationUsersComponent",
+          "startLine": 12,
+          "endLine": 92,
+          "methods": [
+            "formUsers",
+            "usersCount",
+            "constructor",
+            "onSubmit",
+            "closeDialog",
+            "updateUsersArray",
+            "generateRandomText",
+            "generateRandomEmail",
+            "generateRandomPassword"
+          ],
+          "properties": [
+            "formGroup",
+            "hidePassword"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AddOrganizationUsersComponent",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "formUsers",
+          "callee": "this.formGroup.get",
+          "lineNumber": 17
+        },
+        {
+          "caller": "usersCount",
+          "callee": "this.formGroup.get",
+          "lineNumber": 21
+        },
+        {
+          "caller": "constructor",
+          "callee": "Inject",
+          "lineNumber": 27
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 29
+        },
+        {
+          "caller": "constructor",
+          "callee": "Validators.min",
+          "lineNumber": 30
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.fb.array",
+          "lineNumber": 31
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.formUsers.clear",
+          "lineNumber": 34
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.updateUsersArray",
+          "lineNumber": 36
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.usersCount.valueChanges.subscribe",
+          "lineNumber": 38
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.updateUsersArray",
+          "lineNumber": 38
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 43
+        },
+        {
+          "caller": "closeDialog",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateUsersArray",
+          "callee": "this.formUsers.clear",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateUsersArray",
+          "callee": "this.formUsers.push",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateUsersArray",
+          "callee": "this.fb.group",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateUsersArray",
+          "callee": "this.generateRandomText",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateUsersArray",
+          "callee": "this.generateRandomText",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateUsersArray",
+          "callee": "this.generateRandomEmail",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateUsersArray",
+          "callee": "this.generateRandomPassword",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateUsersArray",
+          "callee": "Validators.minLength",
+          "lineNumber": 60
+        },
+        {
+          "caller": "generateRandomText",
+          "callee": "Math.floor",
+          "lineNumber": 70
+        },
+        {
+          "caller": "generateRandomText",
+          "callee": "Math.random",
+          "lineNumber": 70
+        },
+        {
+          "caller": "generateRandomEmail",
+          "callee": "Math.floor",
+          "lineNumber": 79
+        },
+        {
+          "caller": "generateRandomEmail",
+          "callee": "Math.random",
+          "lineNumber": 79
+        },
+        {
+          "caller": "generateRandomPassword",
+          "callee": "Math.floor",
+          "lineNumber": 88
+        },
+        {
+          "caller": "generateRandomPassword",
+          "callee": "Math.random",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "AuthDialogComponent",
+          "startLine": 13,
+          "endLine": 64,
+          "methods": [
+            "constructor",
+            "onSubmit",
+            "closeDialog",
+            "onForgotPassword",
+            "loginWithGoogle",
+            "loginWithFacebook"
+          ],
+          "properties": [
+            "formGroup",
+            "hidePassword"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuthDialogComponent",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 23
+        },
+        {
+          "caller": "constructor",
+          "callee": "Validators.minLength",
+          "lineNumber": 25
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 31
+        },
+        {
+          "caller": "closeDialog",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 36
+        },
+        {
+          "caller": "onForgotPassword",
+          "callee": "event.preventDefault",
+          "lineNumber": 40
+        },
+        {
+          "caller": "onForgotPassword",
+          "callee": "this.dialog.open",
+          "lineNumber": 42
+        },
+        {
+          "caller": "onForgotPassword",
+          "callee": "dialogRef.afterClosed().subscribe",
+          "lineNumber": 52
+        },
+        {
+          "caller": "onForgotPassword",
+          "callee": "dialogRef.afterClosed",
+          "lineNumber": 52
+        },
+        {
+          "caller": "loginWithGoogle",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 56
+        },
+        {
+          "caller": "loginWithGoogle",
+          "callee": "this.userService.loginWithGoogle",
+          "lineNumber": 57
+        },
+        {
+          "caller": "loginWithFacebook",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 61
+        },
+        {
+          "caller": "loginWithFacebook",
+          "callee": "this.userService.loginWithFacebook",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "HttpLoaderFactory",
+          "startLine": 15,
+          "endLine": 17,
+          "params": [
+            "http"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HttpLoaderFactory",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMountOptions",
+          "callee": "TranslateModule.forRoot",
+          "lineNumber": 35
+        },
+        {
+          "caller": "createMountOptions",
+          "callee": "cy.stub",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "SendResetLinkDialogComponent",
+          "startLine": 12,
+          "endLine": 39,
+          "methods": [
+            "constructor",
+            "onSubmit",
+            "closeDialog"
+          ],
+          "properties": [
+            "formGroup"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SendResetLinkDialogComponent",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 20
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.formGroup.get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.userApiService.sendPasswordResetLink(email).subscribe",
+          "lineNumber": 28
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.userApiService.sendPasswordResetLink",
+          "lineNumber": 28
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 30
+        },
+        {
+          "caller": "closeDialog",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "PostAuthWelcomeDialogComponent",
+          "startLine": 17,
+          "endLine": 61,
+          "methods": [
+            "constructor",
+            "displayName",
+            "faceIcon",
+            "setRating",
+            "goToProfile"
+          ],
+          "properties": [
+            "selectedRating",
+            "stars"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PostAuthWelcomeDialogComponent",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "Inject",
+          "lineNumber": 22
+        },
+        {
+          "caller": "displayName",
+          "callee": "u.firstName?.trim",
+          "lineNumber": 29
+        },
+        {
+          "caller": "displayName",
+          "callee": "u.lastName?.trim",
+          "lineNumber": 31
+        },
+        {
+          "caller": "displayName",
+          "callee": "u.email.split",
+          "lineNumber": 33
+        },
+        {
+          "caller": "goToProfile",
+          "callee": "this.router.url.split(\"/\").filter",
+          "lineNumber": 53
+        },
+        {
+          "caller": "goToProfile",
+          "callee": "this.router.url.split",
+          "lineNumber": 53
+        },
+        {
+          "caller": "goToProfile",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 58
+        },
+        {
+          "caller": "goToProfile",
+          "callee": "this.router.navigateByUrl",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/donation/donation.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 74,
+      "classes": [
+        {
+          "name": "DonationComponent",
+          "startLine": 26,
+          "endLine": 85,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "onSubmit",
+            "redirectToPayment"
+          ],
+          "properties": [
+            "donationForm",
+            "isLoading",
+            "paymentResponse"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DonationComponent",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.fb.group",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "Validators.min",
+          "lineNumber": 38
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.http.post<PaymentResponse>(`${environment.apiUrl}/payment/create-donation`, paymentRequest).subscribe",
+          "lineNumber": 50
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.http.post",
+          "lineNumber": 50
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.redirectToPayment",
+          "lineNumber": 53
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "console.error",
+          "lineNumber": 56
+        },
+        {
+          "caller": "redirectToPayment",
+          "callee": "document.createElement",
+          "lineNumber": 64
+        },
+        {
+          "caller": "redirectToPayment",
+          "callee": "document.createElement",
+          "lineNumber": 69
+        },
+        {
+          "caller": "redirectToPayment",
+          "callee": "form.appendChild",
+          "lineNumber": 73
+        },
+        {
+          "caller": "redirectToPayment",
+          "callee": "document.createElement",
+          "lineNumber": 75
+        },
+        {
+          "caller": "redirectToPayment",
+          "callee": "form.appendChild",
+          "lineNumber": 79
+        },
+        {
+          "caller": "redirectToPayment",
+          "callee": "document.body.appendChild",
+          "lineNumber": 81
+        },
+        {
+          "caller": "redirectToPayment",
+          "callee": "form.submit",
+          "lineNumber": 82
+        },
+        {
+          "caller": "redirectToPayment",
+          "callee": "document.body.removeChild",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/footer/footer.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "FooterComponent",
+          "startLine": 11,
+          "endLine": 32,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "navigateToPrivacy",
+            "navigateToContacts"
+          ],
+          "properties": [
+            "currentYear"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FooterComponent",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "new Date().getFullYear",
+          "lineNumber": 18
+        },
+        {
+          "caller": "navigateToPrivacy",
+          "callee": "this.languageService.getCurrentLanguage",
+          "lineNumber": 24
+        },
+        {
+          "caller": "navigateToPrivacy",
+          "callee": "this.router.navigate",
+          "lineNumber": 25
+        },
+        {
+          "caller": "navigateToContacts",
+          "callee": "this.languageService.getCurrentLanguage",
+          "lineNumber": 29
+        },
+        {
+          "caller": "navigateToContacts",
+          "callee": "this.router.navigate",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "LanguageSwitcherComponent",
+          "startLine": 14,
+          "endLine": 63,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy",
+            "updateCurrentLanguage",
+            "switchLanguage",
+            "getCurrentFlag"
+          ],
+          "properties": [
+            "currentLanguage",
+            "languages",
+            "routerSubscription",
+            "translateSubscription"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LanguageSwitcherComponent",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.updateCurrentLanguage",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.router.events\n      .pipe(filter((event) => event instanceof NavigationEnd))\n      .subscribe",
+          "lineNumber": 32
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.router.events\n      .pipe",
+          "lineNumber": 32
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "filter",
+          "lineNumber": 33
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.updateCurrentLanguage",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.translate.onLangChange.subscribe",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.routerSubscription.unsubscribe",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.translateSubscription.unsubscribe",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateCurrentLanguage",
+          "callee": "this.languageService.getLanguageFromUrl",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateCurrentLanguage",
+          "callee": "this.languageService.getCurrentLanguage",
+          "lineNumber": 51
+        },
+        {
+          "caller": "switchLanguage",
+          "callee": "this.languageService.setLanguage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getCurrentFlag",
+          "callee": "this.languages.find",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "LegalInfoComponent",
+          "startLine": 9,
+          "endLine": 17,
+          "methods": [
+            "constructor",
+            "ngOnInit"
+          ],
+          "properties": [
+            "currentYear"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LegalInfoComponent",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "new Date().getFullYear",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 65,
+      "classes": [
+        {
+          "name": "TruncatedCellComponent",
+          "startLine": 18,
+          "endLine": 80,
+          "methods": [
+            "constructor",
+            "text",
+            "ngAfterViewInit",
+            "ngOnChanges",
+            "ngOnDestroy",
+            "scheduleOverflowUpdate",
+            "updateOverflow"
+          ],
+          "properties": [
+            "value",
+            "fallback",
+            "contentRef",
+            "isOverflowing",
+            "resizeObserver",
+            "overflowUpdateScheduled"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TruncatedCellComponent",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "text",
+          "callee": "String",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ngAfterViewInit",
+          "callee": "this.scheduleOverflowUpdate",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ngAfterViewInit",
+          "callee": "this.resizeObserver.observe",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ngAfterViewInit",
+          "callee": "this.scheduleOverflowUpdate",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ngOnChanges",
+          "callee": "this.scheduleOverflowUpdate",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.resizeObserver?.disconnect",
+          "lineNumber": 51
+        },
+        {
+          "caller": "scheduleOverflowUpdate",
+          "callee": "setTimeout",
+          "lineNumber": 60
+        },
+        {
+          "caller": "scheduleOverflowUpdate",
+          "callee": "this.updateOverflow",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateOverflow",
+          "callee": "this.cdr.markForCheck",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/guards/language.guard.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "LanguageGuard",
+          "startLine": 8,
+          "endLine": 38,
+          "methods": [
+            "constructor",
+            "canActivate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LanguageGuard",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "canActivate",
+          "callee": "url.split(\"/\").filter",
+          "lineNumber": 16
+        },
+        {
+          "caller": "canActivate",
+          "callee": "url.split",
+          "lineNumber": 16
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.languageService.getSupportedLanguages().includes",
+          "lineNumber": 18
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.languageService.getSupportedLanguages",
+          "lineNumber": 18
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.languageService.setLanguage",
+          "lineNumber": 20
+        },
+        {
+          "caller": "canActivate",
+          "callee": "localStorage.getItem",
+          "lineNumber": 24
+        },
+        {
+          "caller": "canActivate",
+          "callee": "navigator.language.split",
+          "lineNumber": 25
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.languageService.getSupportedLanguages().includes",
+          "lineNumber": 29
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.languageService.getSupportedLanguages",
+          "lineNumber": 29
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.router.navigateByUrl",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/language.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 72,
+      "classes": [
+        {
+          "name": "LanguageService",
+          "startLine": 9,
+          "endLine": 95,
+          "methods": [
+            "constructor",
+            "initializeLanguageFromUrl",
+            "initializeLanguage",
+            "setLanguage",
+            "getCurrentLanguage",
+            "getSupportedLanguages",
+            "updateUrl",
+            "getLanguageFromUrl",
+            "isLanguageInUrl"
+          ],
+          "properties": [
+            "defaultLanguage",
+            "supportedLanguages"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LanguageService",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.translate.setDefaultLang",
+          "lineNumber": 17
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.initializeLanguageFromUrl",
+          "lineNumber": 19
+        },
+        {
+          "caller": "initializeLanguageFromUrl",
+          "callee": "currentUrl.split(\"/\").filter",
+          "lineNumber": 24
+        },
+        {
+          "caller": "initializeLanguageFromUrl",
+          "callee": "currentUrl.split",
+          "lineNumber": 24
+        },
+        {
+          "caller": "initializeLanguageFromUrl",
+          "callee": "this.supportedLanguages.includes",
+          "lineNumber": 27
+        },
+        {
+          "caller": "initializeLanguageFromUrl",
+          "callee": "localStorage.getItem",
+          "lineNumber": 30
+        },
+        {
+          "caller": "initializeLanguageFromUrl",
+          "callee": "this.setLanguage",
+          "lineNumber": 33
+        },
+        {
+          "caller": "initializeLanguage",
+          "callee": "localStorage.getItem",
+          "lineNumber": 37
+        },
+        {
+          "caller": "initializeLanguage",
+          "callee": "this.setLanguage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "setLanguage",
+          "callee": "this.supportedLanguages.includes",
+          "lineNumber": 42
+        },
+        {
+          "caller": "setLanguage",
+          "callee": "this.translate.use(languageCode).subscribe",
+          "lineNumber": 46
+        },
+        {
+          "caller": "setLanguage",
+          "callee": "this.translate.use",
+          "lineNumber": 46
+        },
+        {
+          "caller": "setLanguage",
+          "callee": "localStorage.setItem",
+          "lineNumber": 48
+        },
+        {
+          "caller": "setLanguage",
+          "callee": "moment.locale",
+          "lineNumber": 50
+        },
+        {
+          "caller": "setLanguage",
+          "callee": "this.updateUrl",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateUrl",
+          "callee": "currentUrl.split(\"/\").filter",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateUrl",
+          "callee": "currentUrl.split",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateUrl",
+          "callee": "this.supportedLanguages.includes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateUrl",
+          "callee": "urlSegments.splice",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateUrl",
+          "callee": "urlSegments.unshift",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateUrl",
+          "callee": "urlSegments.join",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateUrl",
+          "callee": "this.router.navigateByUrl",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getLanguageFromUrl",
+          "callee": "this.router.url.split",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getLanguageFromUrl",
+          "callee": "this.supportedLanguages.includes",
+          "lineNumber": 84
+        },
+        {
+          "caller": "isLanguageInUrl",
+          "callee": "this.router.url.split",
+          "lineNumber": 92
+        },
+        {
+          "caller": "isLanguageInUrl",
+          "callee": "this.supportedLanguages.includes",
+          "lineNumber": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "PostAuthWelcomeDialogService",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [
+            "constructor",
+            "open"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PostAuthWelcomeDialogService",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "open",
+          "callee": "queueMicrotask",
+          "lineNumber": 14
+        },
+        {
+          "caller": "open",
+          "callee": "this.dialog.open",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/shared.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 82,
+      "classes": [
+        {
+          "name": "SharedModule",
+          "startLine": 87,
+          "endLine": 87,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SharedModule",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 26,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/main.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

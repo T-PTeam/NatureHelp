@@ -1,0 +1,41 @@
+<div
+  class="post-auth-welcome-root"
+  data-cy="post-auth-welcome-dialog">
+  <h2 mat-dialog-title>{{ "postAuthWelcome.hello" | translate: { name: displayName } }}</h2>
+  <div mat-dialog-content>
+    <p class="how-question">{{ "postAuthWelcome.howAreYou" | translate }}</p>
+    <div class="stars-row">
+      <button
+        *ngFor="let s of stars"
+        type="button"
+        mat-icon-button
+        class="star-btn"
+        [class.star-btn-active]="s <= selectedRating"
+        (click)="setRating(s)">
+        <mat-icon>{{ s <= selectedRating ? "star" : "star_border" }}</mat-icon>
+      </button>
+    </div>
+    <div class="face-wrap">
+      <mat-icon
+        class="face-icon"
+        [class.face-rating-1]="selectedRating === 1"
+        [class.face-rating-2]="selectedRating === 2"
+        [class.face-rating-3]="selectedRating === 3"
+        [class.face-rating-4]="selectedRating === 4"
+        [class.face-rating-5]="selectedRating === 5">
+        {{ faceIcon }}
+      </mat-icon>
+    </div>
+  </div>
+  <div
+    mat-dialog-actions
+    align="end">
+    <button
+      mat-flat-button
+      color="primary"
+      type="button"
+      (click)="goToProfile()">
+      {{ "navigation.profile" | translate }}
+    </button>
+  </div>
+</div>

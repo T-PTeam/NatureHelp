@@ -70,7 +70,7 @@ public class User : Person
 
     public void AssignRole(ERole role)
     {
-        this.role = role;
+        Role = role;
     }
 
     public bool HasRole(ERole role)

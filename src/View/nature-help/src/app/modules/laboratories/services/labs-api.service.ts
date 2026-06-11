@@ -3,6 +3,8 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from "rxjs";
 
+import { appendSortParams } from "@/shared/helpers/table-sort.helper";
+import { ITableSort } from "@/shared/models/ITableSort";
 import { LoadingService } from "@/shared/services/loading.service";
 
 import { ILaboratory } from "../models/ILaboratory";
@@ -39,11 +41,16 @@ export class LabsAPIService {
     this.loadAllLabsForMap();
   }
 
-  public loadLabs(scrollCount: number, filter: ILaboratorFilter | null): Observable<ILaboratory[]> {
+  public loadLabs(
+    scrollCount: number,
+    filter: ILaboratorFilter | null,
+    sort: ITableSort | null = null,
+  ): Observable<ILaboratory[]> {
     let params = new HttpParams();
 
     if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
     if (filter?.title) params = params.set("Title", filter.title);
+    params = appendSortParams(params, sort);
 
     const loadlabs$ = this.http.get<IListData<ILaboratory>>(`${this.labsUrl}`, { params }).pipe(
       tap((listData) => {
@@ -90,11 +97,21 @@ export class LabsAPIService {
   }
 
   public addLab(value: ILaboratory): Observable<ILaboratory> {
-    return this.http.post<ILaboratory>(`${this.labsUrl}`, JSON.stringify(value), this.httpOptions);
+    return this.http.post<ILaboratory>(`${this.labsUrl}`, JSON.stringify(value), this.httpOptions).pipe(
+      tap(() => {
+        this.loadLabs(0, null);
+        this.loadAllLabsForMap();
+      }),
+    );
   }
 
   public updateLabById(id: string, value: ILaboratory): Observable<ILaboratory> {
-    return this.http.put<ILaboratory>(`${this.labsUrl}/${id}`, JSON.stringify(value), this.httpOptions);
+    return this.http.put<ILaboratory>(`${this.labsUrl}/${id}`, JSON.stringify(value), this.httpOptions).pipe(
+      tap(() => {
+        this.loadLabs(0, null);
+        this.loadAllLabsForMap();
+      }),
+    );
   }
 
   public deleteLabById(id: string): Observable<any> {

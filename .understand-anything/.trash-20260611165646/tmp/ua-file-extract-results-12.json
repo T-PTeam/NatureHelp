@@ -1,0 +1,1082 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 13,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".env.example",
+      "language": "config",
+      "fileCategory": "config",
+      "totalLines": 34,
+      "nonEmptyLines": 30,
+      "definitions": [
+        {
+          "name": "DATABASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 5,
+          "endLine": 5
+        },
+        {
+          "name": "GOOGLE_CLIENT_ID",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 8,
+          "endLine": 8
+        },
+        {
+          "name": "GOOGLE_CLIENT_SECRET",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 9,
+          "endLine": 9
+        },
+        {
+          "name": "FACEBOOK_APP_ID",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 10,
+          "endLine": 10
+        },
+        {
+          "name": "FACEBOOK_APP_SECRET",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 11,
+          "endLine": 11
+        },
+        {
+          "name": "SUPERADMIN_EMAIL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 14,
+          "endLine": 14
+        },
+        {
+          "name": "SUPERADMIN_PASSWORD",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 15,
+          "endLine": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 7
+      }
+    },
+    {
+      "path": "DOCKER.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 219,
+      "nonEmptyLines": 144,
+      "sections": [
+        {
+          "heading": "Run NatureHelp with Docker only",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Env configuration",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Hosting: DigitalOcean vs AWS",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "DigitalOcean droplet: prod vs stage",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Updating prod and stage correctly",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "One-time setup on the droplet",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Deploy / update production",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Deploy / update staging",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "Checklist",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "Prod and stage on the same droplet",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "Start the app (minimal stack)",
+          "level": 2,
+          "line": 105
+        },
+        {
+          "heading": "Development with watchers (no rebuild)",
+          "level": 2,
+          "line": 127
+        },
+        {
+          "heading": "Start with postgres container (optional)",
+          "level": 2,
+          "line": 153
+        },
+        {
+          "heading": "Start with logging stack",
+          "level": 2,
+          "line": 161
+        },
+        {
+          "heading": "Rebuild after code changes",
+          "level": 2,
+          "line": 176
+        },
+        {
+          "heading": "Stop",
+          "level": 2,
+          "line": 205
+        },
+        {
+          "heading": "Volumes",
+          "level": 2,
+          "line": 217
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "Jenkinsfile",
+      "language": "jenkinsfile",
+      "fileCategory": "infra",
+      "totalLines": 70,
+      "nonEmptyLines": 55,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "LICENSE.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 9,
+      "nonEmptyLines": 5,
+      "metrics": {}
+    },
+    {
+      "path": "LOGGING-TESTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 151,
+      "nonEmptyLines": 101,
+      "sections": [
+        {
+          "heading": "Kibana, Grafana & Elasticsearch – What They Are & How to Test",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What Each Service Is",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "1. Start the Stack Including Elasticsearch, Kibana & Grafana",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "2. Test Elasticsearch",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "3. Test Kibana",
+          "level": 2,
+          "line": 78
+        },
+        {
+          "heading": "4. Test Grafana",
+          "level": 2,
+          "line": 94
+        },
+        {
+          "heading": "5. End-to-End Log Test",
+          "level": 2,
+          "line": 110
+        },
+        {
+          "heading": "6. URLs Summary",
+          "level": 2,
+          "line": 120
+        },
+        {
+          "heading": "7. Stop Logging Stack",
+          "level": 2,
+          "line": 132
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 146
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "NatureHelp.sln",
+      "language": "sln",
+      "fileCategory": "config",
+      "totalLines": 55,
+      "nonEmptyLines": 54,
+      "metrics": {}
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 344,
+      "nonEmptyLines": 259,
+      "sections": [
+        {
+          "heading": "NatureHelp",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Features",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Technology Stack",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Backend",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Frontend",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "Observability & Monitoring",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "DevOps",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Architecture",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Quick Start",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "1. Clone and Setup",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "2. Start with Docker (Recommended)",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "3. Access the Application",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "4. Local Development Setup",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "Backend",
+          "level": 4,
+          "line": 115
+        },
+        {
+          "heading": "Frontend",
+          "level": 4,
+          "line": 122
+        },
+        {
+          "heading": "Deployment",
+          "level": 2,
+          "line": 129
+        },
+        {
+          "heading": "IIS – Fix 404 for SPA routes",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "Configuration",
+          "level": 2,
+          "line": 144
+        },
+        {
+          "heading": "Environment Variables",
+          "level": 3,
+          "line": 146
+        },
+        {
+          "heading": "Database Setup",
+          "level": 3,
+          "line": 154
+        },
+        {
+          "heading": "Azure Blob Storage",
+          "level": 3,
+          "line": 163
+        },
+        {
+          "heading": "Development",
+          "level": 2,
+          "line": 178
+        },
+        {
+          "heading": "Running Tests",
+          "level": 3,
+          "line": 180
+        },
+        {
+          "heading": "Code Quality",
+          "level": 3,
+          "line": 187
+        },
+        {
+          "heading": "API Documentation",
+          "level": 3,
+          "line": 200
+        },
+        {
+          "heading": "Logging & Monitoring",
+          "level": 2,
+          "line": 206
+        },
+        {
+          "heading": "Log Platforms",
+          "level": 3,
+          "line": 213
+        },
+        {
+          "heading": "Metrics",
+          "level": 3,
+          "line": 219
+        },
+        {
+          "heading": "Deployment",
+          "level": 2,
+          "line": 225
+        },
+        {
+          "heading": "Production Checklist",
+          "level": 3,
+          "line": 227
+        },
+        {
+          "heading": "Jenkins Pipeline",
+          "level": 3,
+          "line": 240
+        },
+        {
+          "heading": "Security",
+          "level": 2,
+          "line": 247
+        },
+        {
+          "heading": "Live Demo",
+          "level": 2,
+          "line": 258
+        },
+        {
+          "heading": "Project Structure",
+          "level": 2,
+          "line": 262
+        },
+        {
+          "heading": "Domain Layer",
+          "level": 3,
+          "line": 264
+        },
+        {
+          "heading": "Application Layer",
+          "level": 3,
+          "line": 271
+        },
+        {
+          "heading": "Infrastructure Layer",
+          "level": 3,
+          "line": 279
+        },
+        {
+          "heading": "API Layer",
+          "level": 3,
+          "line": 286
+        },
+        {
+          "heading": "Contributing",
+          "level": 2,
+          "line": 295
+        },
+        {
+          "heading": "License",
+          "level": 2,
+          "line": 302
+        },
+        {
+          "heading": "Support",
+          "level": 2,
+          "line": 308
+        },
+        {
+          "heading": "Useful Commands",
+          "level": 2,
+          "line": 312
+        },
+        {
+          "heading": "Backend",
+          "level": 3,
+          "line": 314
+        },
+        {
+          "heading": "Frontend",
+          "level": 3,
+          "line": 323
+        },
+        {
+          "heading": "Docker",
+          "level": 3,
+          "line": 333
+        },
+        {
+          "heading": "Cleanup",
+          "level": 3,
+          "line": 341
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 48
+      }
+    },
+    {
+      "path": "SECURITY.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "sections": [
+        {
+          "heading": "Security Policy",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Supported Versions",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Reporting a Vulnerability",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Responsible Disclosure",
+          "level": 2,
+          "line": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "USER_GUIDE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 950,
+      "nonEmptyLines": 716,
+      "sections": [
+        {
+          "heading": "NatureHelp User Guide",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "About NatureHelp",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Getting Started",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Accessing the Application",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "System Requirements",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "User Roles & Permissions",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "Role Hierarchy",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "1. Super Admin (Level 0)",
+          "level": 4,
+          "line": 44
+        },
+        {
+          "heading": "2. Owner (Level 1)",
+          "level": 4,
+          "line": 55
+        },
+        {
+          "heading": "3. Manager (Level 2)",
+          "level": 4,
+          "line": 70
+        },
+        {
+          "heading": "4. Supervisor (Level 3)",
+          "level": 4,
+          "line": 83
+        },
+        {
+          "heading": "5. Researcher (Level 4)",
+          "level": 4,
+          "line": 96
+        },
+        {
+          "heading": "Role Assignment",
+          "level": 3,
+          "line": 108
+        },
+        {
+          "heading": "Authentication & Email Confirmation",
+          "level": 2,
+          "line": 117
+        },
+        {
+          "heading": "Registration Process",
+          "level": 3,
+          "line": 119
+        },
+        {
+          "heading": "Step 1: User Creation",
+          "level": 4,
+          "line": 121
+        },
+        {
+          "heading": "Step 2: Email Confirmation",
+          "level": 4,
+          "line": 133
+        },
+        {
+          "heading": "Step 3: First Login",
+          "level": 4,
+          "line": 144
+        },
+        {
+          "heading": "Password Requirements",
+          "level": 3,
+          "line": 155
+        },
+        {
+          "heading": "Password Reset",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "Email Confirmation Issues",
+          "level": 3,
+          "line": 181
+        },
+        {
+          "heading": "Session Management",
+          "level": 3,
+          "line": 193
+        },
+        {
+          "heading": "Navigating the Application",
+          "level": 2,
+          "line": 210
+        },
+        {
+          "heading": "Main Navigation Menu",
+          "level": 3,
+          "line": 212
+        },
+        {
+          "heading": "1. **Water Deficiencies** (Default Home)",
+          "level": 4,
+          "line": 216
+        },
+        {
+          "heading": "2. **Soil Deficiencies**",
+          "level": 4,
+          "line": 221
+        },
+        {
+          "heading": "3. **Laboratories**",
+          "level": 4,
+          "line": 226
+        },
+        {
+          "heading": "4. **Research**",
+          "level": 4,
+          "line": 231
+        },
+        {
+          "heading": "5. **Organizations**",
+          "level": 4,
+          "line": 236
+        },
+        {
+          "heading": "6. **My Organization**",
+          "level": 4,
+          "line": 241
+        },
+        {
+          "heading": "7. **Analytics**",
+          "level": 4,
+          "line": 246
+        },
+        {
+          "heading": "8. **Profile**",
+          "level": 4,
+          "line": 251
+        },
+        {
+          "heading": "Language Support",
+          "level": 3,
+          "line": 254
+        },
+        {
+          "heading": "Environmental Monitoring",
+          "level": 2,
+          "line": 263
+        },
+        {
+          "heading": "Water Deficiency Monitoring",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "Viewing Water Deficiencies",
+          "level": 4,
+          "line": 269
+        },
+        {
+          "heading": "Creating Water Deficiency Report",
+          "level": 4,
+          "line": 293
+        },
+        {
+          "heading": "Editing Water Deficiency",
+          "level": 4,
+          "line": 342
+        },
+        {
+          "heading": "Deleting Water Deficiency",
+          "level": 4,
+          "line": 358
+        },
+        {
+          "heading": "Soil Deficiency Monitoring",
+          "level": 3,
+          "line": 367
+        },
+        {
+          "heading": "Viewing Soil Deficiencies",
+          "level": 4,
+          "line": 371
+        },
+        {
+          "heading": "Creating Soil Deficiency Report",
+          "level": 4,
+          "line": 378
+        },
+        {
+          "heading": "Danger State Assessment",
+          "level": 4,
+          "line": 412
+        },
+        {
+          "heading": "Monitoring Schemes",
+          "level": 3,
+          "line": 431
+        },
+        {
+          "heading": "Laboratory Management",
+          "level": 2,
+          "line": 459
+        },
+        {
+          "heading": "Viewing Laboratories",
+          "level": 3,
+          "line": 461
+        },
+        {
+          "heading": "Research Records",
+          "level": 3,
+          "line": 479
+        },
+        {
+          "heading": "Viewing Research",
+          "level": 3,
+          "line": 497
+        },
+        {
+          "heading": "Creating Research Records",
+          "level": 3,
+          "line": 512
+        },
+        {
+          "heading": "Organization Management",
+          "level": 2,
+          "line": 528
+        },
+        {
+          "heading": "Viewing Organizations",
+          "level": 3,
+          "line": 530
+        },
+        {
+          "heading": "Managing Your Organization",
+          "level": 3,
+          "line": 543
+        },
+        {
+          "heading": "Organization Settings",
+          "level": 4,
+          "line": 549
+        },
+        {
+          "heading": "User Management",
+          "level": 4,
+          "line": 561
+        },
+        {
+          "heading": "Bulk User Operations",
+          "level": 4,
+          "line": 603
+        },
+        {
+          "heading": "Reports & Analytics",
+          "level": 2,
+          "line": 612
+        },
+        {
+          "heading": "Available Reports",
+          "level": 3,
+          "line": 618
+        },
+        {
+          "heading": "1. Water Deficiencies Report",
+          "level": 4,
+          "line": 620
+        },
+        {
+          "heading": "2. Soil Deficiencies Report",
+          "level": 4,
+          "line": 634
+        },
+        {
+          "heading": "3. Organization Users Report",
+          "level": 4,
+          "line": 647
+        },
+        {
+          "heading": "Generating Reports",
+          "level": 3,
+          "line": 661
+        },
+        {
+          "heading": "Data Filters",
+          "level": 3,
+          "line": 676
+        },
+        {
+          "heading": "Data Privacy & Public Access",
+          "level": 2,
+          "line": 686
+        },
+        {
+          "heading": "Public vs Private Deficiencies",
+          "level": 3,
+          "line": 688
+        },
+        {
+          "heading": "Public Deficiencies",
+          "level": 4,
+          "line": 692
+        },
+        {
+          "heading": "Private Deficiencies",
+          "level": 4,
+          "line": 707
+        },
+        {
+          "heading": "Setting Privacy",
+          "level": 3,
+          "line": 722
+        },
+        {
+          "heading": "Anonymous Access",
+          "level": 3,
+          "line": 734
+        },
+        {
+          "heading": "Domain Logic & Business Rules",
+          "level": 2,
+          "line": 752
+        },
+        {
+          "heading": "Data Validation",
+          "level": 3,
+          "line": 754
+        },
+        {
+          "heading": "Location Data",
+          "level": 4,
+          "line": 756
+        },
+        {
+          "heading": "Chemical Parameters",
+          "level": 4,
+          "line": 763
+        },
+        {
+          "heading": "Dates",
+          "level": 4,
+          "line": 768
+        },
+        {
+          "heading": "Audit Trail",
+          "level": 3,
+          "line": 773
+        },
+        {
+          "heading": "Attachments",
+          "level": 3,
+          "line": 790
+        },
+        {
+          "heading": "Notifications",
+          "level": 3,
+          "line": 810
+        },
+        {
+          "heading": "Data Retention",
+          "level": 3,
+          "line": 826
+        },
+        {
+          "heading": "Rate Limiting",
+          "level": 3,
+          "line": 844
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 857
+        },
+        {
+          "heading": "Common Issues",
+          "level": 3,
+          "line": 859
+        },
+        {
+          "heading": "Getting Help",
+          "level": 3,
+          "line": 889
+        },
+        {
+          "heading": "Appendix",
+          "level": 2,
+          "line": 902
+        },
+        {
+          "heading": "Keyboard Shortcuts",
+          "level": 3,
+          "line": 904
+        },
+        {
+          "heading": "API Documentation",
+          "level": 3,
+          "line": 911
+        },
+        {
+          "heading": "Compliance",
+          "level": 3,
+          "line": 917
+        },
+        {
+          "heading": "Browser Compatibility",
+          "level": 3,
+          "line": 926
+        },
+        {
+          "heading": "Updates & Changelog",
+          "level": 3,
+          "line": 938
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 88
+      }
+    },
+    {
+      "path": "clean_project.ps1",
+      "language": "powershell",
+      "fileCategory": "script",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "metrics": {}
+    },
+    {
+      "path": "prometheus.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "sections": [
+        {
+          "heading": "global",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "scrape_configs",
+          "level": 1,
+          "line": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "test-upload.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": "tmp-login.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    }
+  ]
+}

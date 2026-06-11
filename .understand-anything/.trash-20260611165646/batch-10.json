@@ -1,0 +1,408 @@
+{
+  "nodes": [
+    {
+      "id": "service:src/View/nature-help/.dockerignore",
+      "type": "service",
+      "name": ".dockerignore",
+      "filePath": "src/View/nature-help/.dockerignore",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (.dockerignore).",
+      "tags": [
+        "infra"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:src/View/nature-help/Dockerfile",
+      "type": "service",
+      "name": "Dockerfile",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (Dockerfile).",
+      "tags": [
+        "infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:FROM --platform=linux/amd64 node:20 AS frontend-build",
+      "type": "pipeline",
+      "name": "FROM --platform=linux/amd64 node:20 AS frontend-build",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step FROM --platform=linux/amd64 node:20 AS frontend-build in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:WORKDIR /usr/src/app",
+      "type": "pipeline",
+      "name": "WORKDIR /usr/src/app",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step WORKDIR /usr/src/app in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:ARG ENVIRONMENT_FILE=environment.docker.ts",
+      "type": "pipeline",
+      "name": "ARG ENVIRONMENT_FILE=environment.docker.ts",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step ARG ENVIRONMENT_FILE=environment.docker.ts in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:ARG API_BASE_URL=",
+      "type": "pipeline",
+      "name": "ARG API_BASE_URL=",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step ARG API_BASE_URL= in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:COPY package.json package-lock.json ./",
+      "type": "pipeline",
+      "name": "COPY package.json package-lock.json ./",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step COPY package.json package-lock.json ./ in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:RUN npm install -g @angular/cli",
+      "type": "pipeline",
+      "name": "RUN npm install -g @angular/cli",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step RUN npm install -g @angular/cli in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:RUN npm install --legacy-peer-deps",
+      "type": "pipeline",
+      "name": "RUN npm install --legacy-peer-deps",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step RUN npm install --legacy-peer-deps in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:COPY . .",
+      "type": "pipeline",
+      "name": "COPY . .",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step COPY . . in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:COPY src/environments/${ENVIRONMENT_FILE} src/environments/enviro",
+      "type": "pipeline",
+      "name": "COPY src/environments/${ENVIRONMENT_FILE} src/environments/enviro",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step COPY src/environments/${ENVIRONMENT_FILE} src/environments/enviro in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:RUN if [ -n \"$API_BASE_URL\" ]; then printf 'export const environ",
+      "type": "pipeline",
+      "name": "RUN if [ -n \"$API_BASE_URL\" ]; then printf 'export const environ",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step RUN if [ -n \"$API_BASE_URL\" ]; then printf 'export const environ in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:RUN npm run build -- --configuration=production --base-href /nat",
+      "type": "pipeline",
+      "name": "RUN npm run build -- --configuration=production --base-href /nat",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step RUN npm run build -- --configuration=production --base-href /nat in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:FROM --platform=linux/amd64 nginx:alpine",
+      "type": "pipeline",
+      "name": "FROM --platform=linux/amd64 nginx:alpine",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step FROM --platform=linux/amd64 nginx:alpine in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:RUN rm -rf /usr/share/nginx/html/*",
+      "type": "pipeline",
+      "name": "RUN rm -rf /usr/share/nginx/html/*",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step RUN rm -rf /usr/share/nginx/html/* in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:RUN rm /etc/nginx/conf.d/default.conf",
+      "type": "pipeline",
+      "name": "RUN rm /etc/nginx/conf.d/default.conf",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step RUN rm /etc/nginx/conf.d/default.conf in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:COPY nginx.conf /etc/nginx/conf.d/default.conf",
+      "type": "pipeline",
+      "name": "COPY nginx.conf /etc/nginx/conf.d/default.conf",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step COPY nginx.conf /etc/nginx/conf.d/default.conf in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:COPY --from=frontend-build /usr/src/app/dist/ /usr/share/nginx/ht",
+      "type": "pipeline",
+      "name": "COPY --from=frontend-build /usr/src/app/dist/ /usr/share/nginx/ht",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step COPY --from=frontend-build /usr/src/app/dist/ /usr/share/nginx/ht in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:EXPOSE 80",
+      "type": "pipeline",
+      "name": "EXPOSE 80",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step EXPOSE 80 in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:src/View/nature-help/Dockerfile:CMD [\"nginx\", \"-g\", \"daemon off;\"]",
+      "type": "pipeline",
+      "name": "CMD [\"nginx\", \"-g\", \"daemon off;\"]",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "CI/CD step CMD [\"nginx\", \"-g\", \"daemon off;\"] in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:src/View/nature-help/Dockerfile:amd64",
+      "type": "service",
+      "name": "amd64",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "Service amd64 defined in Dockerfile.",
+      "tags": [
+        "infrastructure",
+        "containerization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:src/View/nature-help/Dockerfile:amd64",
+      "type": "service",
+      "name": "amd64",
+      "filePath": "src/View/nature-help/Dockerfile",
+      "summary": "Service amd64 defined in Dockerfile.",
+      "tags": [
+        "infrastructure",
+        "containerization"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:FROM --platform=linux/amd64 node:20 AS frontend-build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:WORKDIR /usr/src/app",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:ARG ENVIRONMENT_FILE=environment.docker.ts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:ARG API_BASE_URL=",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:COPY package.json package-lock.json ./",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:RUN npm install -g @angular/cli",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:RUN npm install --legacy-peer-deps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:COPY . .",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:COPY src/environments/${ENVIRONMENT_FILE} src/environments/enviro",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:RUN if [ -n \"$API_BASE_URL\" ]; then printf 'export const environ",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:RUN npm run build -- --configuration=production --base-href /nat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:FROM --platform=linux/amd64 nginx:alpine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:RUN rm -rf /usr/share/nginx/html/*",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:RUN rm /etc/nginx/conf.d/default.conf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:COPY nginx.conf /etc/nginx/conf.d/default.conf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:COPY --from=frontend-build /usr/src/app/dist/ /usr/share/nginx/ht",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:EXPOSE 80",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "step:src/View/nature-help/Dockerfile:CMD [\"nginx\", \"-g\", \"daemon off;\"]",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "service:src/View/nature-help/Dockerfile:amd64",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:src/View/nature-help/Dockerfile",
+      "target": "service:src/View/nature-help/Dockerfile:amd64",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

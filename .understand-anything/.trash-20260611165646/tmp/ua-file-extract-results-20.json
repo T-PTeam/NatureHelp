@@ -1,0 +1,39 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/custom-theme.scss",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 17,
+      "nonEmptyLines": 16,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/index.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 72,
+      "nonEmptyLines": 70,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/mat-custom.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/styles.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 117,
+      "nonEmptyLines": 101,
+      "metrics": {}
+    }
+  ]
+}

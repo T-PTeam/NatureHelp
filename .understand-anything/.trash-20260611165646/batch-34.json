@@ -1,0 +1,159 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.css",
+      "type": "file",
+      "name": "truncated-cell.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.css",
+      "summary": "truncated-cell.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.html",
+      "type": "file",
+      "name": "truncated-cell.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.html",
+      "summary": "truncated-cell.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/unauthorised/unauthorised.component.css",
+      "type": "file",
+      "name": "unauthorised.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/unauthorised/unauthorised.component.css",
+      "summary": "unauthorised.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/unauthorised/unauthorised.component.html",
+      "type": "file",
+      "name": "unauthorised.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/unauthorised/unauthorised.component.html",
+      "summary": "unauthorised.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/assets/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep",
+      "filePath": "src/View/nature-help/src/assets/.gitkeep",
+      "summary": ".gitkeep is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/View/nature-help/src/assets/i18n/en.json",
+      "type": "config",
+      "name": "en.json",
+      "filePath": "src/View/nature-help/src/assets/i18n/en.json",
+      "summary": "Configuration for src/View/nature-help/src/assets/i18n build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:src/View/nature-help/src/assets/i18n/uk.json",
+      "type": "config",
+      "name": "uk.json",
+      "filePath": "src/View/nature-help/src/assets/i18n/uk.json",
+      "summary": "Configuration for src/View/nature-help/src/assets/i18n build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/environments/environment.docker.ts",
+      "type": "file",
+      "name": "environment.docker.ts",
+      "filePath": "src/View/nature-help/src/environments/environment.docker.ts",
+      "summary": "environment.docker.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/environments/environment.stage.ts",
+      "type": "file",
+      "name": "environment.stage.ts",
+      "filePath": "src/View/nature-help/src/environments/environment.stage.ts",
+      "summary": "environment.stage.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/environments/environment.ts",
+      "type": "file",
+      "name": "environment.ts",
+      "filePath": "src/View/nature-help/src/environments/environment.ts",
+      "summary": "environment.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/web.config",
+      "type": "file",
+      "name": "web.config",
+      "filePath": "src/View/nature-help/src/web.config",
+      "summary": "web.config is a config code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/tailwind.config.js",
+      "type": "file",
+      "name": "tailwind.config.js",
+      "filePath": "src/View/nature-help/tailwind.config.js",
+      "summary": "tailwind.config.js is a javascript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/web.config",
+      "type": "file",
+      "name": "web.config",
+      "filePath": "src/View/nature-help/web.config",
+      "summary": "web.config is a config code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/webpack.config.js",
+      "type": "file",
+      "name": "webpack.config.js",
+      "filePath": "src/View/nature-help/webpack.config.js",
+      "summary": "webpack.config.js is a javascript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

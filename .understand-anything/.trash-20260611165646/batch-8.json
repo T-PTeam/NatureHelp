@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/shared/constants/user-constants.ts",
+      "type": "file",
+      "name": "user-constants.ts",
+      "filePath": "src/View/nature-help/src/app/shared/constants/user-constants.ts",
+      "summary": "user-constants.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/pipes/role-string.cy.ts",
+      "type": "file",
+      "name": "role-string.cy.ts",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/role-string.cy.ts",
+      "summary": "role-string.cy.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts",
+      "type": "file",
+      "name": "role-string.pipe.ts",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts",
+      "summary": "role-string.pipe.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts:RoleStringPipe",
+      "type": "class",
+      "name": "RoleStringPipe",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts",
+      "summary": "Class RoleStringPipe with 1 method(s) in role-string.pipe.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/role-string.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/constants/user-constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/role-string.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts",
+      "target": "file:src/View/nature-help/src/app/shared/constants/user-constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts",
+      "target": "class:src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts:RoleStringPipe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts",
+      "target": "class:src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts:RoleStringPipe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

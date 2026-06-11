@@ -95,19 +95,19 @@ public class UserService : IUserService
         return user.EmailConfirmationToken;
     }
 
-    public async Task<ListData<User>> GetOrganizationUsers(Guid organizationId, int scrollCount)
+    public async Task<ListData<User>> GetOrganizationUsers(
+        Guid organizationId,
+        int scrollCount,
+        IDictionary<string, string?>? filters = null)
     {
-        var users = await _userRepository.GetAllAsync(scrollCount);
+        var users = await _userRepository.GetByOrganizationAsync(organizationId, scrollCount, filters);
+        var totalCount = await _userRepository.GetTotalCountByOrganization(organizationId);
 
-        var totalCount = await _userRepository.GetTotalCount();
-
-        var result = new ListData<User>()
+        return new ListData<User>()
         {
-            List = users.Where(u => u.OrganizationId == organizationId).ToList(),
+            List = users.ToList(),
             TotalCount = totalCount,
         };
-
-        return result;
     }
 
     public async Task<bool> ChangeUsersRoles(Dictionary<Guid, int> changedUsersRoles)
@@ -172,27 +172,31 @@ public class UserService : IUserService
         SetPasswordHash(user);
 
         await _userRepository.AddAsync(user);
+        await NotifyNewOrganizationUsersAsync([user]);
 
         return user;
     }
 
     public async Task<IEnumerable<User>> AddMultipleUsersToOrganizationAsync(IEnumerable<User> users)
     {
-        if (!(await CanAddUsersToOrganization(users.Count(), (Guid)users.First().OrganizationId!)))
+        var usersList = users.ToList();
+
+        if (!(await CanAddUsersToOrganization(usersList.Count, (Guid)usersList.First().OrganizationId!)))
         {
-            _logger.LogError($"Organization ({users.First().OrganizationId}) has reached the limit of users");
+            _logger.LogError($"Organization ({usersList.First().OrganizationId}) has reached the limit of users");
             throw new OperationCanNotBeCompleted("organizationId is not valid or organization has reached its member limit.");
         }
 
-        users = users.Select(user =>
+        usersList = usersList.Select(user =>
         {
             SetPasswordHash(user);
             return user;
-        });
+        }).ToList();
 
-        await _userRepository.AddRangeAsync(users);
+        await _userRepository.AddRangeAsync(usersList);
+        await NotifyNewOrganizationUsersAsync(usersList);
 
-        return users;
+        return usersList;
     }
 
     public async Task<ListData<User>> GetOrganizationUsersNotLoginEver(Guid organizationId)
@@ -331,6 +335,101 @@ public class UserService : IUserService
             <p><a href='{resetLink}'>Reset Password</a></p>
             <p>This link will expire in 24 hours.</p>
             <p>If you didn't request this password reset, please ignore this email.</p>
+            <p>Best regards,<br>NatureHelp Team</p>
+        </body>
+        </html>";
+    }
+
+    private async Task NotifyNewOrganizationUsersAsync(IEnumerable<User> users)
+    {
+        if (!IsEmailConfigured())
+        {
+            _logger.LogWarning("Email settings are not configured. Skipping organization invite notifications.");
+            return;
+        }
+
+        var usersList = users.ToList();
+        if (usersList.Count == 0)
+        {
+            return;
+        }
+
+        var organizationId = usersList.First().OrganizationId;
+        if (!organizationId.HasValue)
+        {
+            return;
+        }
+
+        var organization = await _organizationService.GetByIdAsync(organizationId.Value);
+        var organizationTitle = organization?.Title ?? "your organization";
+        var loginUrl = $"{_configuration["Frontend:Url"]?.TrimEnd('/')}/login";
+
+        foreach (var user in usersList)
+        {
+            await TrySendOrganizationInviteEmailAsync(user, organizationTitle, loginUrl);
+        }
+    }
+
+    private async Task TrySendOrganizationInviteEmailAsync(User user, string organizationTitle, string loginUrl)
+    {
+        try
+        {
+            if (string.IsNullOrWhiteSpace(user.Email))
+            {
+                return;
+            }
+
+            var plainPassword = user.Password;
+            if (string.IsNullOrWhiteSpace(plainPassword))
+            {
+                _logger.LogWarning("Skipping invite email for {Email} because no initial password was provided.", user.Email);
+                return;
+            }
+
+            var subject = $"You've been invited to {organizationTitle} on NatureHelp";
+            var body = GenerateOrganizationInviteEmail(
+                user.FirstName,
+                organizationTitle,
+                user.Email,
+                plainPassword,
+                loginUrl,
+                user.Role);
+
+            await _emailService.SendEmailAsync(user.Email, subject, body);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Failed to send organization invite email to {Email}", user.Email);
+        }
+    }
+
+    private bool IsEmailConfigured()
+    {
+        return !string.IsNullOrWhiteSpace(_configuration["EmailSettings:Username"])
+            && !string.IsNullOrWhiteSpace(_configuration["EmailSettings:From"]);
+    }
+
+    private static string GenerateOrganizationInviteEmail(
+        string firstName,
+        string organizationTitle,
+        string email,
+        string password,
+        string loginUrl,
+        ERole role)
+    {
+        return $@"
+        <html>
+        <body>
+            <h2>Welcome to NatureHelp</h2>
+            <p>Hello {firstName},</p>
+            <p>You have been added to <strong>{organizationTitle}</strong> as a <strong>{role}</strong>.</p>
+            <p>Use the credentials below to sign in:</p>
+            <ul>
+                <li><strong>Email:</strong> {email}</li>
+                <li><strong>Password:</strong> {password}</li>
+            </ul>
+            <p><a href='{loginUrl}'>Open NatureHelp login</a></p>
+            <p>Please change your password after your first login.</p>
             <p>Best regards,<br>NatureHelp Team</p>
         </body>
         </html>";

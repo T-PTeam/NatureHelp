@@ -24,7 +24,7 @@ export class CommentMessageListComponent {
     private fb: FormBuilder,
   ) {
     this.commentForm = this.fb.group({
-      message: ["", [Validators.required, Validators.maxLength(1000)]],
+      message: ["", [Validators.maxLength(1000)]],
     });
   }
 

@@ -1,4 +1,4 @@
-FROM node:20 AS frontend-build
+FROM --platform=linux/amd64 node:20 AS frontend-build
 WORKDIR /usr/src/app
 ARG ENVIRONMENT_FILE=environment.docker.ts
 ARG API_BASE_URL=
@@ -11,7 +11,7 @@ RUN if [ -n "$API_BASE_URL" ]; then printf 'export const environment = {\n  apiU
 # Creates: /usr/src/app/dist/nature-help/
 RUN npm run build -- --configuration=production --base-href /nature-help/
 
-FROM nginx:alpine
+FROM --platform=linux/amd64 nginx:alpine
 
 # 1. DELETE DEFAULT NGINX PAGE (The "Welcome" file)
 # This ensures that if something is wrong, you get a 403/404 instead of the Welcome page.

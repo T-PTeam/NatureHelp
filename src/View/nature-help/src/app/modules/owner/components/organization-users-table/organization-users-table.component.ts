@@ -9,6 +9,8 @@ import { IUser } from "@/models/IUser";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { AddOrganizationUsersComponent } from "@/shared/components/dialogs/add-organization-users/add-organization-users.component";
 import { EAuthType, ERole } from "@/models/enums";
+import { sortIndicator, toggleSort } from "@/shared/helpers/table-sort.helper";
+import { ITableSort } from "@/shared/models/ITableSort";
 
 @Component({
   selector: "nat-organization-users-table",
@@ -31,6 +33,8 @@ export class OrganizationUsersTableComponent implements OnInit {
   public isAddingUser: boolean = false;
   public isSavingRoles: boolean = false;
   public isLoading: boolean = true;
+  public sort: ITableSort | null = null;
+  public sortIndicator = sortIndicator;
 
   private listScrollCount = 0;
 
@@ -87,8 +91,15 @@ export class OrganizationUsersTableComponent implements OnInit {
         this.isLoading = false;
       }
     });
-    this.usersAPIService.loadOrganizationUsers(this.listScrollCount);
+    this.usersAPIService.loadOrganizationUsers(this.listScrollCount, this.sort);
     this.usersAPIService.loadNotLoginEverOrganizationUsers();
+  }
+
+  onSort(field: string) {
+    this.sort = toggleSort(this.sort, field);
+    this.listScrollCount = 0;
+    this.isLoading = true;
+    this.usersAPIService.loadOrganizationUsers(0, this.sort);
   }
 
   downloadExcel() {
@@ -179,7 +190,7 @@ export class OrganizationUsersTableComponent implements OnInit {
 
   onScroll() {
     this.listScrollCount++;
-    this.usersAPIService.loadOrganizationUsers(this.listScrollCount);
+    this.usersAPIService.loadOrganizationUsers(this.listScrollCount, this.sort);
 
     this.usersAPIService.$organizationUsers
       .pipe(withLatestFrom(this.usersAPIService.$totalCount))

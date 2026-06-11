@@ -1,0 +1,64 @@
+.post-auth-welcome-root {
+  display: block;
+}
+
+.how-question {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.stars-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  margin-bottom: 1rem;
+}
+
+.star-btn mat-icon {
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  color: var(--mat-sys-outline, rgba(0, 0, 0, 0.38));
+}
+
+.star-btn-active mat-icon {
+  color: var(--mat-sys-primary, #3f51b5);
+}
+
+.face-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0 0.25rem;
+}
+
+.face-icon {
+  font-size: 4.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  transition: color 0.2s ease;
+}
+
+.face-rating-1 {
+  color: #c62828;
+}
+
+.face-rating-2 {
+  color: #e65100;
+}
+
+.face-rating-3 {
+  color: #757575;
+}
+
+.face-rating-4 {
+  color: #2e7d32;
+}
+
+.face-rating-5 {
+  color: #1565c0;
+}

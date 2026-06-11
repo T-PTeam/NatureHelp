@@ -1,0 +1,1937 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs",
+      "type": "file",
+      "name": "20250923073124_CascadeDeleteOrganization.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs",
+      "summary": "20250923073124_CascadeDeleteOrganization.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250923073124_CascadeDeleteOrganization.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs:CascadeDeleteOrganization",
+      "type": "class",
+      "name": "CascadeDeleteOrganization",
+      "filePath": "src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs",
+      "summary": "Class CascadeDeleteOrganization with 1 method(s) in 20250923073124_CascadeDeleteOrganization.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs",
+      "type": "file",
+      "name": "20251022083204_AddedIsPublicBool.cs",
+      "filePath": "src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs",
+      "summary": "20251022083204_AddedIsPublicBool.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs",
+      "summary": "Function Up in 20251022083204_AddedIsPublicBool.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs",
+      "summary": "Function Down in 20251022083204_AddedIsPublicBool.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs:AddedIsPublicBool",
+      "type": "class",
+      "name": "AddedIsPublicBool",
+      "filePath": "src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs",
+      "summary": "Class AddedIsPublicBool with 2 method(s) in 20251022083204_AddedIsPublicBool.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs",
+      "type": "file",
+      "name": "20251022083204_AddedIsPublicBool.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs",
+      "summary": "20251022083204_AddedIsPublicBool.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs",
+      "summary": "Function BuildTargetModel in 20251022083204_AddedIsPublicBool.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs:AddedIsPublicBool",
+      "type": "class",
+      "name": "AddedIsPublicBool",
+      "filePath": "src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs",
+      "summary": "Class AddedIsPublicBool with 1 method(s) in 20251022083204_AddedIsPublicBool.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.cs",
+      "type": "file",
+      "name": "20251022092359_AddedIsPublicBoolToLabs.cs",
+      "filePath": "src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.cs",
+      "summary": "20251022092359_AddedIsPublicBoolToLabs.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.cs:AddedIsPublicBoolToLabs",
+      "type": "class",
+      "name": "AddedIsPublicBoolToLabs",
+      "filePath": "src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.cs",
+      "summary": "Class AddedIsPublicBoolToLabs with 2 method(s) in 20251022092359_AddedIsPublicBoolToLabs.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs",
+      "type": "file",
+      "name": "20251022092359_AddedIsPublicBoolToLabs.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs",
+      "summary": "20251022092359_AddedIsPublicBoolToLabs.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs",
+      "summary": "Function BuildTargetModel in 20251022092359_AddedIsPublicBoolToLabs.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs:AddedIsPublicBoolToLabs",
+      "type": "class",
+      "name": "AddedIsPublicBoolToLabs",
+      "filePath": "src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs",
+      "summary": "Class AddedIsPublicBoolToLabs with 1 method(s) in 20251022092359_AddedIsPublicBoolToLabs.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs",
+      "type": "file",
+      "name": "20260409151336_UserProfilePreferences.cs",
+      "filePath": "src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs",
+      "summary": "20260409151336_UserProfilePreferences.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs",
+      "summary": "Function Up in 20260409151336_UserProfilePreferences.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs",
+      "summary": "Function Down in 20260409151336_UserProfilePreferences.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs:UserProfilePreferences",
+      "type": "class",
+      "name": "UserProfilePreferences",
+      "filePath": "src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs",
+      "summary": "Class UserProfilePreferences with 2 method(s) in 20260409151336_UserProfilePreferences.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs",
+      "type": "file",
+      "name": "20260409151336_UserProfilePreferences.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs",
+      "summary": "20260409151336_UserProfilePreferences.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs",
+      "summary": "Function BuildTargetModel in 20260409151336_UserProfilePreferences.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs:UserProfilePreferences",
+      "type": "class",
+      "name": "UserProfilePreferences",
+      "filePath": "src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs",
+      "summary": "Class UserProfilePreferences with 1 method(s) in 20260409151336_UserProfilePreferences.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs",
+      "type": "file",
+      "name": "20260409155537_ProfileGamification.cs",
+      "filePath": "src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs",
+      "summary": "20260409155537_ProfileGamification.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs",
+      "summary": "Function Up in 20260409155537_ProfileGamification.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs",
+      "summary": "Function Down in 20260409155537_ProfileGamification.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs:ProfileGamification",
+      "type": "class",
+      "name": "ProfileGamification",
+      "filePath": "src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs",
+      "summary": "Class ProfileGamification with 2 method(s) in 20260409155537_ProfileGamification.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs",
+      "type": "file",
+      "name": "20260409155537_ProfileGamification.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs",
+      "summary": "20260409155537_ProfileGamification.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs",
+      "summary": "Function BuildTargetModel in 20260409155537_ProfileGamification.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs:ProfileGamification",
+      "type": "class",
+      "name": "ProfileGamification",
+      "filePath": "src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs",
+      "summary": "Class ProfileGamification with 1 method(s) in 20260409155537_ProfileGamification.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs",
+      "type": "file",
+      "name": "20260409163558_DictLevelThresholds.cs",
+      "filePath": "src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs",
+      "summary": "20260409163558_DictLevelThresholds.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs",
+      "summary": "Function Up in 20260409163558_DictLevelThresholds.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs:DictLevelThresholds",
+      "type": "class",
+      "name": "DictLevelThresholds",
+      "filePath": "src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs",
+      "summary": "Class DictLevelThresholds with 2 method(s) in 20260409163558_DictLevelThresholds.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs",
+      "type": "file",
+      "name": "20260409163558_DictLevelThresholds.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs",
+      "summary": "20260409163558_DictLevelThresholds.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs",
+      "summary": "Function BuildTargetModel in 20260409163558_DictLevelThresholds.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs:DictLevelThresholds",
+      "type": "class",
+      "name": "DictLevelThresholds",
+      "filePath": "src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs",
+      "summary": "Class DictLevelThresholds with 1 method(s) in 20260409163558_DictLevelThresholds.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.cs",
+      "type": "file",
+      "name": "20260409172248_SyncHasDataFromGenerateTestData.cs",
+      "filePath": "src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.cs",
+      "summary": "20260409172248_SyncHasDataFromGenerateTestData.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "test",
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.cs:SyncHasDataFromGenerateTestData",
+      "type": "class",
+      "name": "SyncHasDataFromGenerateTestData",
+      "filePath": "src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.cs",
+      "summary": "Class SyncHasDataFromGenerateTestData with 2 method(s) in 20260409172248_SyncHasDataFromGenerateTestData.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs",
+      "type": "file",
+      "name": "20260409172248_SyncHasDataFromGenerateTestData.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs",
+      "summary": "20260409172248_SyncHasDataFromGenerateTestData.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "test",
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs",
+      "summary": "Function BuildTargetModel in 20260409172248_SyncHasDataFromGenerateTestData.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs:SyncHasDataFromGenerateTestData",
+      "type": "class",
+      "name": "SyncHasDataFromGenerateTestData",
+      "filePath": "src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs",
+      "summary": "Class SyncHasDataFromGenerateTestData with 1 method(s) in 20260409172248_SyncHasDataFromGenerateTestData.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs",
+      "type": "file",
+      "name": "20260529142756_SyncPendingModelChanges.cs",
+      "filePath": "src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs",
+      "summary": "20260529142756_SyncPendingModelChanges.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs",
+      "summary": "Function Up in 20260529142756_SyncPendingModelChanges.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs",
+      "summary": "Function Down in 20260529142756_SyncPendingModelChanges.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs:SyncPendingModelChanges",
+      "type": "class",
+      "name": "SyncPendingModelChanges",
+      "filePath": "src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs",
+      "summary": "Class SyncPendingModelChanges with 2 method(s) in 20260529142756_SyncPendingModelChanges.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs",
+      "type": "file",
+      "name": "20260529142756_SyncPendingModelChanges.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs",
+      "summary": "20260529142756_SyncPendingModelChanges.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs",
+      "summary": "Function BuildTargetModel in 20260529142756_SyncPendingModelChanges.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs:SyncPendingModelChanges",
+      "type": "class",
+      "name": "SyncPendingModelChanges",
+      "filePath": "src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs",
+      "summary": "Class SyncPendingModelChanges with 1 method(s) in 20260529142756_SyncPendingModelChanges.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs",
+      "type": "file",
+      "name": "ApplicationContextModelSnapshot.cs",
+      "filePath": "src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs",
+      "summary": "ApplicationContextModelSnapshot.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs:BuildModel",
+      "type": "function",
+      "name": "BuildModel",
+      "filePath": "src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs",
+      "summary": "Function BuildModel in ApplicationContextModelSnapshot.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs:ApplicationContextModelSnapshot",
+      "type": "class",
+      "name": "ApplicationContextModelSnapshot",
+      "filePath": "src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs",
+      "summary": "Class ApplicationContextModelSnapshot with 1 method(s) in ApplicationContextModelSnapshot.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "table:src/Infrastructure/Migrations/SQL/Autogenerating_Data.sql",
+      "type": "table",
+      "name": "Autogenerating_Data.sql",
+      "filePath": "src/Infrastructure/Migrations/SQL/Autogenerating_Data.sql",
+      "summary": "Autogenerating_Data.sql is a sql data module in NatureHelp.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "type": "file",
+      "name": "AzureBlobStorageProvider.cs",
+      "filePath": "src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "summary": "AzureBlobStorageProvider.cs defines 1 class(es) and 6 function(s) in the csharp layer.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:AzureBlobStorageProvider",
+      "type": "function",
+      "name": "AzureBlobStorageProvider",
+      "filePath": "src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "summary": "Function AzureBlobStorageProvider in AzureBlobStorageProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:UploadFileAsync",
+      "type": "function",
+      "name": "UploadFileAsync",
+      "filePath": "src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "summary": "Function UploadFileAsync in AzureBlobStorageProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:GetFileStreamAsync",
+      "type": "function",
+      "name": "GetFileStreamAsync",
+      "filePath": "src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "summary": "Function GetFileStreamAsync in AzureBlobStorageProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:GetBlobNameFromUrl",
+      "type": "function",
+      "name": "GetBlobNameFromUrl",
+      "filePath": "src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "summary": "Function GetBlobNameFromUrl in AzureBlobStorageProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:AzureBlobStorageProvider",
+      "type": "class",
+      "name": "AzureBlobStorageProvider",
+      "filePath": "src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "summary": "Class AzureBlobStorageProvider with 6 method(s) in AzureBlobStorageProvider.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "type": "file",
+      "name": "LocalFileBlobStorageProvider.cs",
+      "filePath": "src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "summary": "LocalFileBlobStorageProvider.cs defines 1 class(es) and 3 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:LocalFileBlobStorageProvider",
+      "type": "function",
+      "name": "LocalFileBlobStorageProvider",
+      "filePath": "src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "summary": "Function LocalFileBlobStorageProvider in LocalFileBlobStorageProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:UploadFileAsync",
+      "type": "function",
+      "name": "UploadFileAsync",
+      "filePath": "src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "summary": "Function UploadFileAsync in LocalFileBlobStorageProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:GetFileStreamAsync",
+      "type": "function",
+      "name": "GetFileStreamAsync",
+      "filePath": "src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "summary": "Function GetFileStreamAsync in LocalFileBlobStorageProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:LocalFileBlobStorageProvider",
+      "type": "class",
+      "name": "LocalFileBlobStorageProvider",
+      "filePath": "src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "summary": "Class LocalFileBlobStorageProvider with 3 method(s) in LocalFileBlobStorageProvider.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "type": "file",
+      "name": "SmtpEmailSender.cs",
+      "filePath": "src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "summary": "SmtpEmailSender.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Providers/SmtpEmailSender.cs:SmtpEmailSender",
+      "type": "function",
+      "name": "SmtpEmailSender",
+      "filePath": "src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "summary": "Function SmtpEmailSender in SmtpEmailSender.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Providers/SmtpEmailSender.cs:SendAsync",
+      "type": "function",
+      "name": "SendAsync",
+      "filePath": "src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "summary": "Function SendAsync in SmtpEmailSender.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Providers/SmtpEmailSender.cs:SmtpEmailSender",
+      "type": "class",
+      "name": "SmtpEmailSender",
+      "filePath": "src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "summary": "Class SmtpEmailSender with 2 method(s) in SmtpEmailSender.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "type": "file",
+      "name": "BaseRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "BaseRepository.cs defines 1 class(es) and 12 function(s) in the csharp layer.",
+      "tags": [
+        "data-model",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:BaseRepository",
+      "type": "function",
+      "name": "BaseRepository",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function BaseRepository in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:GetAllAsync",
+      "type": "function",
+      "name": "GetAllAsync",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function GetAllAsync in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:GetByIdAsync",
+      "type": "function",
+      "name": "GetByIdAsync",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function GetByIdAsync in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:AddAsync",
+      "type": "function",
+      "name": "AddAsync",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function AddAsync in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:AddRangeAsync",
+      "type": "function",
+      "name": "AddRangeAsync",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function AddRangeAsync in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:UpdateAsync",
+      "type": "function",
+      "name": "UpdateAsync",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function UpdateAsync in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:UpdateRangeAsync",
+      "type": "function",
+      "name": "UpdateRangeAsync",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function UpdateRangeAsync in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:DeleteAsync",
+      "type": "function",
+      "name": "DeleteAsync",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function DeleteAsync in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:DeleteRangeAsync",
+      "type": "function",
+      "name": "DeleteRangeAsync",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function DeleteRangeAsync in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:GetTotalCount",
+      "type": "function",
+      "name": "GetTotalCount",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function GetTotalCount in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/BaseRepository.cs:SaveChangesAsync",
+      "type": "function",
+      "name": "SaveChangesAsync",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Function SaveChangesAsync in BaseRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/BaseRepository.cs:BaseRepository",
+      "type": "class",
+      "name": "BaseRepository",
+      "filePath": "src/Infrastructure/Repositories/BaseRepository.cs",
+      "summary": "Class BaseRepository with 12 method(s) in BaseRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "type": "file",
+      "name": "ChangedModelLogRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "summary": "ChangedModelLogRepository.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ChangedModelLogRepository.cs:ChangedModelLogRepository",
+      "type": "function",
+      "name": "ChangedModelLogRepository",
+      "filePath": "src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "summary": "Function ChangedModelLogRepository in ChangedModelLogRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ChangedModelLogRepository.cs:GetListByDeficiencyIdAsync",
+      "type": "function",
+      "name": "GetListByDeficiencyIdAsync",
+      "filePath": "src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "summary": "Function GetListByDeficiencyIdAsync in ChangedModelLogRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/ChangedModelLogRepository.cs:ChangedModelLogRepository",
+      "type": "class",
+      "name": "ChangedModelLogRepository",
+      "filePath": "src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "summary": "Class ChangedModelLogRepository with 2 method(s) in ChangedModelLogRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "type": "file",
+      "name": "DeficiencyBindModelRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "summary": "DeficiencyBindModelRepository.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs:DeficiencyBindModelRepository",
+      "type": "function",
+      "name": "DeficiencyBindModelRepository",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "summary": "Function DeficiencyBindModelRepository in DeficiencyBindModelRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs:GetModelsByDeficiencyIdAsync",
+      "type": "function",
+      "name": "GetModelsByDeficiencyIdAsync",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "summary": "Function GetModelsByDeficiencyIdAsync in DeficiencyBindModelRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs:DeficiencyBindModelRepository",
+      "type": "class",
+      "name": "DeficiencyBindModelRepository",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "summary": "Class DeficiencyBindModelRepository with 2 method(s) in DeficiencyBindModelRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "type": "file",
+      "name": "DeficiencyRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "summary": "DeficiencyRepository.cs defines 1 class(es) and 5 function(s) in the csharp layer.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:DeficiencyRepository",
+      "type": "function",
+      "name": "DeficiencyRepository",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "summary": "Function DeficiencyRepository in DeficiencyRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:GetMapObjects",
+      "type": "function",
+      "name": "GetMapObjects",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "summary": "Function GetMapObjects in DeficiencyRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:GetAllAsync",
+      "type": "function",
+      "name": "GetAllAsync",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "summary": "Function GetAllAsync in DeficiencyRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:GetByIdAsync",
+      "type": "function",
+      "name": "GetByIdAsync",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "summary": "Function GetByIdAsync in DeficiencyRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:UpdateAsync",
+      "type": "function",
+      "name": "UpdateAsync",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "summary": "Function UpdateAsync in DeficiencyRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/DeficiencyRepository.cs:DeficiencyRepository",
+      "type": "class",
+      "name": "DeficiencyRepository",
+      "filePath": "src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "summary": "Class DeficiencyRepository with 5 method(s) in DeficiencyRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "type": "file",
+      "name": "DictEntryRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "summary": "DictEntryRepository.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/DictEntryRepository.cs:DictEntryRepository",
+      "type": "function",
+      "name": "DictEntryRepository",
+      "filePath": "src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "summary": "Function DictEntryRepository in DictEntryRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/DictEntryRepository.cs:GetValueJsonByKeyAsync",
+      "type": "function",
+      "name": "GetValueJsonByKeyAsync",
+      "filePath": "src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "summary": "Function GetValueJsonByKeyAsync in DictEntryRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/DictEntryRepository.cs:DictEntryRepository",
+      "type": "class",
+      "name": "DictEntryRepository",
+      "filePath": "src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "summary": "Class DictEntryRepository with 2 method(s) in DictEntryRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.Designer.cs:CascadeDeleteOrganization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs",
+      "target": "function:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs",
+      "target": "function:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs",
+      "target": "class:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs:AddedIsPublicBool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs",
+      "target": "class:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.cs:AddedIsPublicBool",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20251022083204_AddedIsPublicBool.Designer.cs:AddedIsPublicBool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.cs",
+      "target": "class:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.cs:AddedIsPublicBoolToLabs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.cs",
+      "target": "class:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.cs:AddedIsPublicBoolToLabs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20251022092359_AddedIsPublicBoolToLabs.Designer.cs:AddedIsPublicBoolToLabs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs",
+      "target": "function:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs",
+      "target": "function:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs:UserProfilePreferences",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.cs:UserProfilePreferences",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409151336_UserProfilePreferences.Designer.cs:UserProfilePreferences",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs",
+      "target": "function:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs",
+      "target": "function:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs:ProfileGamification",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409155537_ProfileGamification.cs:ProfileGamification",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409155537_ProfileGamification.Designer.cs:ProfileGamification",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs",
+      "target": "function:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs:DictLevelThresholds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.cs:DictLevelThresholds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409163558_DictLevelThresholds.Designer.cs:DictLevelThresholds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.cs:SyncHasDataFromGenerateTestData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.cs:SyncHasDataFromGenerateTestData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20260409172248_SyncHasDataFromGenerateTestData.Designer.cs:SyncHasDataFromGenerateTestData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs",
+      "target": "function:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs",
+      "target": "function:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs",
+      "target": "class:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs:SyncPendingModelChanges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs",
+      "target": "class:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.cs:SyncPendingModelChanges",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20260529142756_SyncPendingModelChanges.Designer.cs:SyncPendingModelChanges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs",
+      "target": "function:src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs:BuildModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs",
+      "target": "class:src/Infrastructure/Migrations/ApplicationContextModelSnapshot.cs:ApplicationContextModelSnapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:AzureBlobStorageProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:AzureBlobStorageProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:UploadFileAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:UploadFileAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:GetFileStreamAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:GetFileStreamAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:GetBlobNameFromUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "target": "class:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:AzureBlobStorageProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/AzureBlobStorageProvider.cs",
+      "target": "class:src/Infrastructure/Providers/AzureBlobStorageProvider.cs:AzureBlobStorageProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:LocalFileBlobStorageProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:LocalFileBlobStorageProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:UploadFileAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:UploadFileAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:GetFileStreamAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "target": "function:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:GetFileStreamAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "target": "class:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:LocalFileBlobStorageProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs",
+      "target": "class:src/Infrastructure/Providers/LocalFileBlobStorageProvider.cs:LocalFileBlobStorageProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "target": "function:src/Infrastructure/Providers/SmtpEmailSender.cs:SmtpEmailSender",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "target": "function:src/Infrastructure/Providers/SmtpEmailSender.cs:SmtpEmailSender",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "target": "function:src/Infrastructure/Providers/SmtpEmailSender.cs:SendAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "target": "function:src/Infrastructure/Providers/SmtpEmailSender.cs:SendAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "target": "class:src/Infrastructure/Providers/SmtpEmailSender.cs:SmtpEmailSender",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Providers/SmtpEmailSender.cs",
+      "target": "class:src/Infrastructure/Providers/SmtpEmailSender.cs:SmtpEmailSender",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:BaseRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:BaseRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:GetAllAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:GetAllAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:GetByIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:GetByIdAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:AddAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:AddAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:AddRangeAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:AddRangeAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:UpdateAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:UpdateAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:UpdateRangeAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:UpdateRangeAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:DeleteAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:DeleteAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:DeleteRangeAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:DeleteRangeAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:GetTotalCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:GetTotalCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:SaveChangesAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/BaseRepository.cs:SaveChangesAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/BaseRepository.cs:BaseRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/BaseRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/BaseRepository.cs:BaseRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ChangedModelLogRepository.cs:ChangedModelLogRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ChangedModelLogRepository.cs:ChangedModelLogRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ChangedModelLogRepository.cs:GetListByDeficiencyIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ChangedModelLogRepository.cs:GetListByDeficiencyIdAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/ChangedModelLogRepository.cs:ChangedModelLogRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ChangedModelLogRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/ChangedModelLogRepository.cs:ChangedModelLogRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs:DeficiencyBindModelRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs:DeficiencyBindModelRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs:GetModelsByDeficiencyIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs:GetModelsByDeficiencyIdAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs:DeficiencyBindModelRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/DeficiencyBindModelRepository.cs:DeficiencyBindModelRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:DeficiencyRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:DeficiencyRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:GetMapObjects",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:GetMapObjects",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:GetAllAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:GetAllAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:GetByIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:GetByIdAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:UpdateAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DeficiencyRepository.cs:UpdateAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/DeficiencyRepository.cs:DeficiencyRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DeficiencyRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/DeficiencyRepository.cs:DeficiencyRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DictEntryRepository.cs:DictEntryRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DictEntryRepository.cs:DictEntryRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DictEntryRepository.cs:GetValueJsonByKeyAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/DictEntryRepository.cs:GetValueJsonByKeyAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/DictEntryRepository.cs:DictEntryRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/DictEntryRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/DictEntryRepository.cs:DictEntryRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

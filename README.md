@@ -162,15 +162,18 @@ dotnet ef database update
 
 ### Azure Blob Storage
 
-Configure in `appsettings.json`:
-```json
-{
-  "AzureStorage": {
-    "ConnectionString": "your-connection-string",
-    "ContainerName": "attachments"
-  }
-}
+Attachment uploads use Azure Blob Storage. For local development, run **Azurite** (included in `docker compose`):
+
+```bash
+docker compose up -d azurite
 ```
+
+| Run mode | Blob connection | Public preview URL |
+|----------|-----------------|-------------------|
+| `docker compose up` (backend in Docker) | Wired to `azurite:10000` automatically | `http://localhost:10000/devstoreaccount1` |
+| `dotnet run` on host | `UseDevelopmentStorage=true` in `appsettings.Development.json` | `http://127.0.0.1:10000/devstoreaccount1` |
+
+Production: set `ConnectionStrings__AzureBlobStorage` to your Azure Storage account connection string.
 
 ## Development
 

@@ -7,11 +7,14 @@ import { withLatestFrom } from "rxjs";
 import { ReportAPIService } from "@/shared/services/report-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
 import { ISoilDeficiencyFilter } from "../../models/ISoilDeficiencyFilter";
+import { ISoilDeficiency } from "../../models/ISoilDeficiency";
 import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
-import { EDangerState, EDeficiencyType } from "@/models/enums";
+import { EDangerState, EDeficiencyType, EMapLayer } from "@/models/enums";
 import { ISelectOption } from "@/shared/models/ISelectOption";
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { AuditService } from "@/shared/services/audit.service";
+import { sortIndicator, toggleSort } from "@/shared/helpers/table-sort.helper";
+import { ITableSort } from "@/shared/models/ITableSort";
 
 @Component({
   selector: "n-soil-deficiencies",
@@ -25,6 +28,8 @@ export class SoilDeficiencyTable {
   isMonitoring: boolean = false;
   isLoading: boolean = true;
   isLoadingMore: boolean = false;
+  sort: ITableSort | null = null;
+  sortIndicator = sortIndicator;
   dangerStates: ISelectOption<EDangerState>[] = [];
 
   private listScrollCount = 0;
@@ -82,12 +87,19 @@ export class SoilDeficiencyTable {
     }
   }
 
+  onSort(field: string) {
+    this.sort = toggleSort(this.sort, field);
+    this.listScrollCount = 0;
+    this.isLoading = true;
+    this.soilAPIService.loadSoilDeficiencies(0, this.filterForm.value, this.sort);
+  }
+
   onScroll() {
     if (this.isLoadingMore) return;
 
     this.isLoadingMore = true;
     this.listScrollCount++;
-    this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, this.filterForm.value);
+    this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, this.filterForm.value, this.sort);
 
     this.soilAPIService.deficiencies$
       .pipe(withLatestFrom(this.soilAPIService.totalCount$))
@@ -103,8 +115,11 @@ export class SoilDeficiencyTable {
     }
   }
 
-  changeMapFocus(latitude: number, longitude: number) {
-    this.mapViewService.changeFocus({ latitude, longitude }, 12);
+  changeMapFocus(deficiency: ISoilDeficiency) {
+    this.mapViewService.changeFocus({ latitude: deficiency.latitude, longitude: deficiency.longitude }, 12, {
+      layer: EMapLayer.SoilDeficiency,
+      popupHtml: `<strong>${deficiency.title}</strong>`,
+    });
   }
 
   applyFilter(): void {
@@ -115,7 +130,7 @@ export class SoilDeficiencyTable {
       this.isLoading = true;
     }
 
-    this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, filter);
+    this.soilAPIService.loadSoilDeficiencies(this.listScrollCount, filter, this.sort);
   }
 
   toggleMonitoring(): void {

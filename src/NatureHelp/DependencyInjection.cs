@@ -74,20 +74,27 @@ namespace NatureHelp
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IPaymentService, PaymentService>();
-            services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
             services.AddScoped<IExcelExportService, ExcelExportService>();
 
             services.AddScoped<IBaseService<User>, BaseService<User>>();
             services.AddScoped<IBaseService<WaterDeficiency>, WaterDeficiencyService>();
             services.AddScoped<IBaseService<SoilDeficiency>, SoilDeficiencyService>();
-            services.AddScoped<IBaseService<Laboratory>, BaseService<Laboratory>>();
+            services.AddScoped<LaboratoryService>();
+            services.AddScoped<IBaseService<Laboratory>>(sp => sp.GetRequiredService<LaboratoryService>());
             services.AddScoped<IBaseService<Research>, BaseService<Research>>();
             services.AddScoped<IChangedModelLogService, ChangedModelLogService>();
-            services.AddScoped<IBlobStorageProvider, AzureBlobStorageProvider>();
+            if (configuration.GetValue("BlobStorage:UseLocalFiles", false))
+            {
+                services.AddScoped<IBlobStorageProvider, LocalFileBlobStorageProvider>();
+            }
+            else
+            {
+                services.AddScoped<IBlobStorageProvider, AzureBlobStorageProvider>();
+            }
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IMapObjectsService<WaterDeficiency, DeficiencyMapDto>, WaterDeficiencyService>();
             services.AddScoped<IMapObjectsService<SoilDeficiency, DeficiencyMapDto>, SoilDeficiencyService>();
-            services.AddScoped<IMapObjectsService<Laboratory, LaboratoryMapDto>, LaboratoryService>();
+            services.AddScoped<IMapObjectsService<Laboratory, LaboratoryMapDto>>(sp => sp.GetRequiredService<LaboratoryService>());
             services.AddScoped<MonitoringService>();
 
             return services;

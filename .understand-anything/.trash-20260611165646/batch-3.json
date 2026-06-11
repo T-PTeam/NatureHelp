@@ -1,0 +1,1433 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/app.component.ts",
+      "type": "file",
+      "name": "app.component.ts",
+      "filePath": "src/View/nature-help/src/app/app.component.ts",
+      "summary": "app.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/app.component.ts:AppComponent",
+      "type": "class",
+      "name": "AppComponent",
+      "filePath": "src/View/nature-help/src/app/app.component.ts",
+      "summary": "Class AppComponent with 3 method(s) in app.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/app.module.ts",
+      "type": "file",
+      "name": "app.module.ts",
+      "filePath": "src/View/nature-help/src/app/app.module.ts",
+      "summary": "app.module.ts defines 1 class(es) and 1 function(s) in the typescript layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/app.module.ts:HttpLoaderFactory",
+      "type": "function",
+      "name": "HttpLoaderFactory",
+      "filePath": "src/View/nature-help/src/app/app.module.ts",
+      "summary": "Function HttpLoaderFactory in app.module.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/app.module.ts:AppModule",
+      "type": "class",
+      "name": "AppModule",
+      "filePath": "src/View/nature-help/src/app/app.module.ts",
+      "summary": "Class AppModule with 1 method(s) in app.module.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/mat.module.ts",
+      "type": "file",
+      "name": "mat.module.ts",
+      "filePath": "src/View/nature-help/src/app/mat.module.ts",
+      "summary": "mat.module.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/mat.module.ts:MatModule",
+      "type": "class",
+      "name": "MatModule",
+      "filePath": "src/View/nature-help/src/app/mat.module.ts",
+      "summary": "Class MatModule with 0 method(s) in mat.module.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "type": "file",
+      "name": "labs.module.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "summary": "labs.module.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/laboratories/labs.module.ts:LabsModule",
+      "type": "class",
+      "name": "LabsModule",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "summary": "Class LabsModule with 0 method(s) in labs.module.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "type": "file",
+      "name": "owner.module.ts",
+      "filePath": "src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "summary": "owner.module.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/owner/owner.module.ts:OwneryModule",
+      "type": "class",
+      "name": "OwneryModule",
+      "filePath": "src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "summary": "Class OwneryModule with 0 method(s) in owner.module.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "type": "file",
+      "name": "soil-deficiency.module.ts",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "summary": "soil-deficiency.module.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts:SoilDeficiencyModule",
+      "type": "class",
+      "name": "SoilDeficiencyModule",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "summary": "Class SoilDeficiencyModule with 0 method(s) in soil-deficiency.module.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "type": "file",
+      "name": "water-deficiency.module.ts",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "summary": "water-deficiency.module.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts:WaterDeficiencyModule",
+      "type": "class",
+      "name": "WaterDeficiencyModule",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "summary": "Class WaterDeficiencyModule with 0 method(s) in water-deficiency.module.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts",
+      "type": "file",
+      "name": "water-soil-toggle.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts",
+      "summary": "water-soil-toggle.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts:WaterSoilToggleComponent",
+      "type": "class",
+      "name": "WaterSoilToggleComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts",
+      "summary": "Class WaterSoilToggleComponent with 2 method(s) in water-soil-toggle.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts",
+      "type": "file",
+      "name": "pick-coordinates-button.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts",
+      "summary": "pick-coordinates-button.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts:PickCoordinatesButtonComponent",
+      "type": "class",
+      "name": "PickCoordinatesButtonComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts",
+      "summary": "Class PickCoordinatesButtonComponent with 3 method(s) in pick-coordinates-button.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts",
+      "type": "file",
+      "name": "add-organization-users.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts",
+      "summary": "add-organization-users.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts:AddOrganizationUsersComponent",
+      "type": "class",
+      "name": "AddOrganizationUsersComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts",
+      "summary": "Class AddOrganizationUsersComponent with 9 method(s) in add-organization-users.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "type": "file",
+      "name": "auth-dialog.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "summary": "auth-dialog.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts:AuthDialogComponent",
+      "type": "class",
+      "name": "AuthDialogComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "summary": "Class AuthDialogComponent with 6 method(s) in auth-dialog.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts",
+      "type": "file",
+      "name": "auth-dialog.cy.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts",
+      "summary": "auth-dialog.cy.ts provides 1 function(s) used by surrounding modules.",
+      "tags": [
+        "test",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts:HttpLoaderFactory",
+      "type": "function",
+      "name": "HttpLoaderFactory",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts",
+      "summary": "Function HttpLoaderFactory in auth-dialog.cy.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts",
+      "type": "file",
+      "name": "send-reset-link-dialog.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts",
+      "summary": "send-reset-link-dialog.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts:SendResetLinkDialogComponent",
+      "type": "class",
+      "name": "SendResetLinkDialogComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts",
+      "summary": "Class SendResetLinkDialogComponent with 3 method(s) in send-reset-link-dialog.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts",
+      "type": "file",
+      "name": "post-auth-welcome-dialog.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts",
+      "summary": "post-auth-welcome-dialog.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts:PostAuthWelcomeDialogComponent",
+      "type": "class",
+      "name": "PostAuthWelcomeDialogComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts",
+      "summary": "Class PostAuthWelcomeDialogComponent with 5 method(s) in post-auth-welcome-dialog.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/donation/donation.component.ts",
+      "type": "file",
+      "name": "donation.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/donation/donation.component.ts",
+      "summary": "donation.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/donation/donation.component.ts:DonationComponent",
+      "type": "class",
+      "name": "DonationComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/donation/donation.component.ts",
+      "summary": "Class DonationComponent with 4 method(s) in donation.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/footer/footer.component.ts",
+      "type": "file",
+      "name": "footer.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/footer/footer.component.ts",
+      "summary": "footer.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/footer/footer.component.ts:FooterComponent",
+      "type": "class",
+      "name": "FooterComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/footer/footer.component.ts",
+      "summary": "Class FooterComponent with 4 method(s) in footer.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts",
+      "type": "file",
+      "name": "language-switcher.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts",
+      "summary": "language-switcher.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts:LanguageSwitcherComponent",
+      "type": "class",
+      "name": "LanguageSwitcherComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts",
+      "summary": "Class LanguageSwitcherComponent with 6 method(s) in language-switcher.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts",
+      "type": "file",
+      "name": "legal-info.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts",
+      "summary": "legal-info.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts:LegalInfoComponent",
+      "type": "class",
+      "name": "LegalInfoComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts",
+      "summary": "Class LegalInfoComponent with 2 method(s) in legal-info.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts",
+      "type": "file",
+      "name": "truncated-cell.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts",
+      "summary": "truncated-cell.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts:TruncatedCellComponent",
+      "type": "class",
+      "name": "TruncatedCellComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts",
+      "summary": "Class TruncatedCellComponent with 7 method(s) in truncated-cell.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/guards/language.guard.ts",
+      "type": "file",
+      "name": "language.guard.ts",
+      "filePath": "src/View/nature-help/src/app/shared/guards/language.guard.ts",
+      "summary": "language.guard.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/guards/language.guard.ts:LanguageGuard",
+      "type": "class",
+      "name": "LanguageGuard",
+      "filePath": "src/View/nature-help/src/app/shared/guards/language.guard.ts",
+      "summary": "Class LanguageGuard with 2 method(s) in language.guard.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/language.service.ts",
+      "type": "file",
+      "name": "language.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/language.service.ts",
+      "summary": "language.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/language.service.ts:LanguageService",
+      "type": "class",
+      "name": "LanguageService",
+      "filePath": "src/View/nature-help/src/app/shared/services/language.service.ts",
+      "summary": "Class LanguageService with 9 method(s) in language.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts",
+      "type": "file",
+      "name": "post-auth-welcome-dialog.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts",
+      "summary": "post-auth-welcome-dialog.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts:PostAuthWelcomeDialogService",
+      "type": "class",
+      "name": "PostAuthWelcomeDialogService",
+      "filePath": "src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts",
+      "summary": "Class PostAuthWelcomeDialogService with 2 method(s) in post-auth-welcome-dialog.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "type": "file",
+      "name": "shared.module.ts",
+      "filePath": "src/View/nature-help/src/app/shared/shared.module.ts",
+      "summary": "shared.module.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/shared.module.ts:SharedModule",
+      "type": "class",
+      "name": "SharedModule",
+      "filePath": "src/View/nature-help/src/app/shared/shared.module.ts",
+      "summary": "Class SharedModule with 0 method(s) in shared.module.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/main.ts",
+      "type": "file",
+      "name": "main.ts",
+      "filePath": "src/View/nature-help/src/main.ts",
+      "summary": "main.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "entry-point"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/View/nature-help/src/app/app.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/language.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.component.ts",
+      "target": "class:src/View/nature-help/src/app/app.component.ts:AppComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.component.ts",
+      "target": "class:src/View/nature-help/src/app/app.component.ts:AppComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/app.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/mat.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/main/main.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/organization-management/organization-management.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/language.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "function:src/View/nature-help/src/app/app.module.ts:HttpLoaderFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "function:src/View/nature-help/src/app/app.module.ts:HttpLoaderFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "class:src/View/nature-help/src/app/app.module.ts:AppModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/app.module.ts",
+      "target": "class:src/View/nature-help/src/app/app.module.ts:AppModule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/mat.module.ts",
+      "target": "class:src/View/nature-help/src/app/mat.module.ts:MatModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/mat.module.ts",
+      "target": "class:src/View/nature-help/src/app/mat.module.ts:MatModule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "target": "file:src/View/nature-help/src/app/mat.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/components/lab-details/lab-details.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/labs.module.ts:LabsModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/labs.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/labs.module.ts:LabsModule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "target": "file:src/View/nature-help/src/app/mat.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/owner/owner.module.ts:OwneryModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/owner.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/owner/owner.module.ts:OwneryModule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/mat.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts:SoilDeficiencyModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/soil-deficiency/soil-deficiency.module.ts:SoilDeficiencyModule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/mat.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts:WaterDeficiencyModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts",
+      "target": "class:src/View/nature-help/src/app/modules/water-deficiency/water-deficiency.module.ts:WaterDeficiencyModule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts:WaterSoilToggleComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts:WaterSoilToggleComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts:PickCoordinatesButtonComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.ts:PickCoordinatesButtonComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts:AddOrganizationUsersComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts:AddOrganizationUsersComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts:AuthDialogComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts:AuthDialogComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts",
+      "target": "function:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts:HttpLoaderFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts",
+      "target": "function:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.cy.ts:HttpLoaderFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts:SendResetLinkDialogComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts:SendResetLinkDialogComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts:PostAuthWelcomeDialogComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts:PostAuthWelcomeDialogComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/donation/donation.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/donation/donation.component.ts:DonationComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/donation/donation.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/donation/donation.component.ts:DonationComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/footer/footer.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/language.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/footer/footer.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/footer/footer.component.ts:FooterComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/footer/footer.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/footer/footer.component.ts:FooterComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/language.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts:LanguageSwitcherComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts:LanguageSwitcherComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts:LegalInfoComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts:LegalInfoComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts:TruncatedCellComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts:TruncatedCellComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/guards/language.guard.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/language.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/guards/language.guard.ts",
+      "target": "class:src/View/nature-help/src/app/shared/guards/language.guard.ts:LanguageGuard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/guards/language.guard.ts",
+      "target": "class:src/View/nature-help/src/app/shared/guards/language.guard.ts:LanguageGuard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/language.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/language.service.ts:LanguageService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/language.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/language.service.ts:LanguageService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts:PostAuthWelcomeDialogService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/post-auth-welcome-dialog.service.ts:PostAuthWelcomeDialogService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/mat.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/password-reset-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/donation/donation.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/email-confirmation/email-confirmation.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/footer/footer.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/role-string.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "class:src/View/nature-help/src/app/shared/shared.module.ts:SharedModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/shared.module.ts",
+      "target": "class:src/View/nature-help/src/app/shared/shared.module.ts:SharedModule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/main.ts",
+      "target": "file:src/View/nature-help/src/app/app.module.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

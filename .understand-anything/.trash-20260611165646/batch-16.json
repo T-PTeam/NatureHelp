@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "config:src/View/nature-help/cypress/fixtures/example.json",
+      "type": "config",
+      "name": "example.json",
+      "filePath": "src/View/nature-help/cypress/fixtures/example.json",
+      "summary": "Configuration for src/View/nature-help/cypress/fixtures build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/View/nature-help/cypress/fixtures/profile.json",
+      "type": "config",
+      "name": "profile.json",
+      "filePath": "src/View/nature-help/cypress/fixtures/profile.json",
+      "summary": "Configuration for src/View/nature-help/cypress/fixtures build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/View/nature-help/cypress/fixtures/users.json",
+      "type": "config",
+      "name": "users.json",
+      "filePath": "src/View/nature-help/cypress/fixtures/users.json",
+      "summary": "Configuration for src/View/nature-help/cypress/fixtures build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

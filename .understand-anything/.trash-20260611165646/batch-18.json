@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.css",
+      "type": "file",
+      "name": "auth-dialog.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.css",
+      "summary": "auth-dialog.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html",
+      "type": "file",
+      "name": "auth-dialog.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html",
+      "summary": "auth-dialog.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/password-reset-dialog.component.css",
+      "type": "file",
+      "name": "password-reset-dialog.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/password-reset-dialog.component.css",
+      "summary": "password-reset-dialog.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/password-reset-dialog.component.html",
+      "type": "file",
+      "name": "password-reset-dialog.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/password-reset-dialog.component.html",
+      "summary": "password-reset-dialog.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.css",
+      "type": "file",
+      "name": "send-reset-link-dialog.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.css",
+      "summary": "send-reset-link-dialog.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.html",
+      "type": "file",
+      "name": "send-reset-link-dialog.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.html",
+      "summary": "send-reset-link-dialog.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

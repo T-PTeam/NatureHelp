@@ -15,6 +15,10 @@
     "research": "Дослідження",
     "profile": "Профіль"
   },
+  "postAuthWelcome": {
+    "hello": "Привіт, {{name}}!",
+    "howAreYou": "Як справи?"
+  },
   "about": {
     "title": "Про нас",
     "intro": "NatureHelp - це платформа для моніторингу екологічних проблем та дефіцитів ґрунту/води.",
@@ -81,6 +85,28 @@
     "applyBtn": "Застосувати",
     "clearBtn": "Очистити",
     "submitBtn": "Відправити",
+    "formInvalid": "Виправте помилки валідації перед збереженням. Можете вимкнути поля дослідження, якщо змінюєте лише основні дані.",
+    "titleError": "Назва обов'язкова",
+    "descriptionError": "Опис обов'язковий",
+    "latitudeError": "Широта має бути від -90 до 90",
+    "longitudeError": "Довгота має бути від -180 до 180",
+    "radiusError": "Радіус обов'язковий і має бути нулем або більше",
+    "phError": "pH обов'язковий",
+    "phRangeError": "pH має бути від 0 до 14",
+    "dissolvedOxygenRangeError": "Розчинений кисень має бути від 0 до 20 мг/л",
+    "leadConcentrationRangeError": "Концентрація свинцю має бути від 0 до 0.02 мг/л",
+    "mercuryConcentrationRangeError": "Концентрація ртуті має бути від 0 до 0.01 мг/л",
+    "nitrateConcentrationRangeError": "Концентрація нітратів має бути від 0 до 50 мг/л",
+    "pesticidesContentRangeError": "Вміст пестицидів має бути від 0 до 0.1 мг/л",
+    "microbialActivityRangeError": "Мікробна активність має бути від 0 до 1000",
+    "radiationLevelRangeError": "Рівень радіації має бути від 0 до 50",
+    "chemicalOxygenDemandRangeError": "Хімічна потреба в кисні має бути від 0 до 1000",
+    "biologicalOxygenDemandRangeError": "Біологічна потреба в кисні має бути від 0 до 50 мг/л",
+    "phosphateConcentrationRangeError": "Концентрація фосфатів має бути від 0 до 10 мг/л",
+    "cadmiumConcentrationRangeError": "Концентрація кадмію має бути від 0 до 0.01 мг/л",
+    "totalDissolvedSolidsRangeError": "Загальна кількість розчинених твердих речовин має бути від 0 до 1500 мг/л",
+    "electricalConductivityRangeError": "Електропровідність має бути від 0 до 2500 мкСм/см",
+    "microbialLoadRangeError": "Мікробне навантаження має бути від 0 до 5000",
     "cancelBtn": "Скасувати",
     "canceltBtn": "Скасувати",
     "pH": "pH",
@@ -298,6 +324,14 @@
     "followUs": "Слідкуйте за нами",
     "quickLinks": "Швидкі посилання"
   },
+  "loading": {
+    "loadingData": "Завантаження даних...",
+    "loadingMore": "Завантаження ще...",
+    "loadingDeficiency": "Завантаження дефіциту...",
+    "saving": "Збереження...",
+    "adding": "Додавання...",
+    "posting": "Публікація..."
+  },
   "common": {
     "submit": "Відправити",
     "cancel": "Скасувати",
@@ -424,7 +458,8 @@
     "confirm": "Підтвердити цей звіт",
     "confirmThanks": "Дякуємо за підтвердження.",
     "alreadyConfirmed": "Ви вже підтвердили цей звіт.",
-    "confirmError": "Не вдалося підтвердити звіт."
+    "confirmError": "Не вдалося підтвердити звіт.",
+    "loadError": "Не вдалося завантажити деталі дефіциту."
   },
   "profile": {
     "level": "Рівень",

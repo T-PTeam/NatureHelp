@@ -1,0 +1,2350 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/Application/Application - Backup.csproj",
+      "language": "csproj",
+      "fileCategory": "config",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "metrics": {}
+    },
+    {
+      "path": "src/Application/Application.csproj",
+      "language": "csproj",
+      "fileCategory": "config",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "metrics": {}
+    },
+    {
+      "path": "src/Application/Dtos/PaymentDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "PaymentRequestDto",
+          "startLine": 5,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "Amount",
+            "Currency",
+            "Description",
+            "ResultUrl",
+            "UserEmail"
+          ]
+        },
+        {
+          "name": "PaymentResponseDto",
+          "startLine": 21,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "Data",
+            "Signature",
+            "PaymentUrl"
+          ]
+        },
+        {
+          "name": "PaymentParamsDto",
+          "startLine": 28,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "PublicKey",
+            "Version",
+            "Action",
+            "Amount",
+            "Currency",
+            "Description",
+            "ResultUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Amount",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "Currency",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Description",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "ResultUrl",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "UserEmail",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "PaymentRequestDto",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "Data",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Signature",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "PaymentUrl",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "PaymentResponseDto",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "PublicKey",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "Version",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "Action",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "Amount",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "Currency",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "Description",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "ResultUrl",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "PaymentParamsDto",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 18,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "src/Application/Dtos/UserLoginDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "UserLoginDto",
+          "startLine": 2,
+          "endLine": 10,
+          "methods": [],
+          "properties": [
+            "FirstName",
+            "LastName",
+            "OrganizationId",
+            "Email",
+            "Password",
+            "IsCreatingOwner"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FirstName",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "LastName",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "OrganizationId",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "Email",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "Password",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "IsCreatingOwner",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "UserLoginDto",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/Analitycs/IExcelExportService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "IExcelExportService",
+          "startLine": 2,
+          "endLine": 7,
+          "methods": [
+            "GenerateWaterDeficienciesTableAsync",
+            "GenerateSoilDeficienciesTableAsync",
+            "GenerateOrgUsersTableAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IExcelExportService",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/Audit/IChangedModelLogService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "IChangedModelLogService",
+          "startLine": 7,
+          "endLine": 12,
+          "methods": [
+            "LogDeficiencyChangesAsync",
+            "LogDeficiencyAttachmentChangeAsync",
+            "GetChangingHistoryByDeficiencyIdAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IChangedModelLogService",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/Cache/IDictValueCacheService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "IDictValueCacheService",
+          "startLine": 3,
+          "endLine": 10,
+          "methods": [
+            "GetValueJsonAsync",
+            "SetValueJsonAsync",
+            "RemoveAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IDictValueCacheService",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/Cache/IRedisCacheService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "IRedisCacheService",
+          "startLine": 2,
+          "endLine": 9,
+          "methods": [
+            "SetAsync",
+            "GetAsync",
+            "RemoveAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IRedisCacheService",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/IAchievementEvaluationService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "classes": [
+        {
+          "name": "IAchievementEvaluationService",
+          "startLine": 3,
+          "endLine": 6,
+          "methods": [
+            "EvaluateForUserAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IAchievementEvaluationService",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/IAuthenticationService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "IAuthenticationService",
+          "startLine": 5,
+          "endLine": 10,
+          "methods": [
+            "GetCurrentUserAsync",
+            "GetCurrentUserId",
+            "GetCurrentUserOrganizationId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IAuthenticationService",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/ILevelThresholdsProvider.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "classes": [
+        {
+          "name": "ILevelThresholdsProvider",
+          "startLine": 3,
+          "endLine": 8,
+          "methods": [
+            "GetCumulativeThresholdsAsync",
+            "InvalidateCacheAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ILevelThresholdsProvider",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/IModelByDeficiencyService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "IModelByDeficiencyService",
+          "startLine": 5,
+          "endLine": 8,
+          "methods": [
+            "GetModelsByDeficiencyIdAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IModelByDeficiencyService",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/IPaymentService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "IPaymentService",
+          "startLine": 5,
+          "endLine": 9,
+          "methods": [
+            "CreateDonationPaymentAsync",
+            "VerifyPaymentCallbackAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IPaymentService",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/IProfileService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "IProfileService",
+          "startLine": 5,
+          "endLine": 13,
+          "methods": [
+            "TryAwardDailyVisitAsync",
+            "TryAwardPhotoAddedAsync",
+            "TryAwardDeficiencyEditedAsync",
+            "ConfirmDeficiencyAsync",
+            "GetLevelProgressAsync",
+            "RecalculateLevelAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IProfileService",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/Organization/IEmailService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "IEmailService",
+          "startLine": 2,
+          "endLine": 12,
+          "methods": [
+            "SendEmailAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IEmailService",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Interfaces/Services/Organization/IUserService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "IUserService",
+          "startLine": 6,
+          "endLine": 47,
+          "methods": [
+            "LoginAsync",
+            "GetModelByEmail",
+            "ConfirmEmailByToken",
+            "GetOrganizationUsers",
+            "ChangeUsersRoles",
+            "IsTokenExpired",
+            "RefreshAccessTokenAsync",
+            "UpdateEmailConfirmationTokenByEmail",
+            "AddUserToOrganizationAsync",
+            "AddMultipleUsersToOrganizationAsync",
+            "GetOrganizationUsersNotLoginEver",
+            "SendPasswordResetLinkAsync",
+            "ResetPasswordByEmailAsync",
+            "ResetPasswordWithTokenAsync",
+            "ExtractUserIdFromPasswordResetToken",
+            "LoginOrRegisterWithOAuth2Async",
+            "DeleteUserDataAsync",
+            "GetProfileStatsAsync",
+            "UpdateProfileSettingsAsync",
+            "GetProfileJournalAsync",
+            "GetProfilePhotoHistoryAsync",
+            "GetProfileAchievementsAsync",
+            "RecordProfileVisitAsync"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IUserService",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Options/ProfileOptions.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "ProfileOptions",
+          "startLine": 3,
+          "endLine": 12,
+          "methods": [],
+          "properties": [
+            "SectionName",
+            "DailyVisitXp",
+            "DeficiencyApproved",
+            "DeficiencyApprovedDescription",
+            "DeficiencyEditedXp",
+            "PhotoAddedXp"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SectionName",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "DailyVisitXp",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyApproved",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyApprovedDescription",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyEditedXp",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "PhotoAddedXp",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "ProfileOptions",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Providers/AuthTokensProvider.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "GetSecurityKey",
+          "startLine": 16,
+          "endLine": 16,
+          "params": []
+        },
+        {
+          "name": "GenerateAccessToken",
+          "startLine": 18,
+          "endLine": 31,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "GenerateRefreshToken",
+          "startLine": 33,
+          "endLine": 46,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "IsTokenExpired",
+          "startLine": 48,
+          "endLine": 61,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "GetClaimsFromUser",
+          "startLine": 63,
+          "endLine": 74,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "GenerateEmailConfirmationToken",
+          "startLine": 76,
+          "endLine": 84,
+          "params": [
+            "length"
+          ]
+        },
+        {
+          "name": "ExtractAccessTokenFromRequest",
+          "startLine": 86,
+          "endLine": 96,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuthTokensProvider",
+          "startLine": 11,
+          "endLine": 97,
+          "methods": [
+            "GetSecurityKey",
+            "GenerateAccessToken",
+            "GenerateRefreshToken",
+            "IsTokenExpired",
+            "GetClaimsFromUser",
+            "GenerateEmailConfirmationToken",
+            "ExtractAccessTokenFromRequest"
+          ],
+          "properties": [
+            "ISSUER",
+            "AUDIENCE",
+            "KEY"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ISSUER",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "AUDIENCE",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "GetSecurityKey",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "GenerateAccessToken",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "GenerateRefreshToken",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "IsTokenExpired",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "GenerateEmailConfirmationToken",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "ExtractAccessTokenFromRequest",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "AuthTokensProvider",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetSecurityKey",
+          "callee": "new SymmetricSecurityKey",
+          "lineNumber": 16
+        },
+        {
+          "caller": "GetSecurityKey",
+          "callee": "Encoding.UTF8.GetBytes",
+          "lineNumber": 16
+        },
+        {
+          "caller": "GenerateAccessToken",
+          "callee": "GetClaimsFromUser",
+          "lineNumber": 20
+        },
+        {
+          "caller": "GenerateAccessToken",
+          "callee": "new JwtSecurityToken",
+          "lineNumber": 22
+        },
+        {
+          "caller": "GenerateAccessToken",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 26
+        },
+        {
+          "caller": "GenerateAccessToken",
+          "callee": "TimeSpan.FromDays",
+          "lineNumber": 26
+        },
+        {
+          "caller": "GenerateAccessToken",
+          "callee": "new SigningCredentials",
+          "lineNumber": 27
+        },
+        {
+          "caller": "GenerateAccessToken",
+          "callee": "GetSecurityKey",
+          "lineNumber": 27
+        },
+        {
+          "caller": "GenerateAccessToken",
+          "callee": "new JwtSecurityTokenHandler().WriteToken",
+          "lineNumber": 28
+        },
+        {
+          "caller": "GenerateAccessToken",
+          "callee": "new JwtSecurityTokenHandler",
+          "lineNumber": 28
+        },
+        {
+          "caller": "GenerateRefreshToken",
+          "callee": "GetClaimsFromUser",
+          "lineNumber": 35
+        },
+        {
+          "caller": "GenerateRefreshToken",
+          "callee": "new JwtSecurityToken",
+          "lineNumber": 37
+        },
+        {
+          "caller": "GenerateRefreshToken",
+          "callee": "DateTime.UtcNow.Add",
+          "lineNumber": 41
+        },
+        {
+          "caller": "GenerateRefreshToken",
+          "callee": "TimeSpan.FromDays",
+          "lineNumber": 41
+        },
+        {
+          "caller": "GenerateRefreshToken",
+          "callee": "new SigningCredentials",
+          "lineNumber": 42
+        },
+        {
+          "caller": "GenerateRefreshToken",
+          "callee": "GetSecurityKey",
+          "lineNumber": 42
+        },
+        {
+          "caller": "GenerateRefreshToken",
+          "callee": "new JwtSecurityTokenHandler().WriteToken",
+          "lineNumber": 43
+        },
+        {
+          "caller": "GenerateRefreshToken",
+          "callee": "new JwtSecurityTokenHandler",
+          "lineNumber": 43
+        },
+        {
+          "caller": "IsTokenExpired",
+          "callee": "new JwtSecurityTokenHandler",
+          "lineNumber": 50
+        },
+        {
+          "caller": "IsTokenExpired",
+          "callee": "tokenHandler.CanReadToken",
+          "lineNumber": 52
+        },
+        {
+          "caller": "IsTokenExpired",
+          "callee": "new InvalidOperationException",
+          "lineNumber": 54
+        },
+        {
+          "caller": "IsTokenExpired",
+          "callee": "tokenHandler.ReadJwtToken",
+          "lineNumber": 57
+        },
+        {
+          "caller": "GetClaimsFromUser",
+          "callee": "new List<Claim>",
+          "lineNumber": 65
+        },
+        {
+          "caller": "GetClaimsFromUser",
+          "callee": "new Claim",
+          "lineNumber": 67
+        },
+        {
+          "caller": "GetClaimsFromUser",
+          "callee": "new Claim",
+          "lineNumber": 68
+        },
+        {
+          "caller": "GetClaimsFromUser",
+          "callee": "user.Id.ToString",
+          "lineNumber": 68
+        },
+        {
+          "caller": "GetClaimsFromUser",
+          "callee": "new Claim",
+          "lineNumber": 69
+        },
+        {
+          "caller": "GetClaimsFromUser",
+          "callee": "user.Role.ToString",
+          "lineNumber": 69
+        },
+        {
+          "caller": "GetClaimsFromUser",
+          "callee": "new Claim",
+          "lineNumber": 70
+        },
+        {
+          "caller": "GetClaimsFromUser",
+          "callee": "Guid.NewGuid().ToString",
+          "lineNumber": 70
+        },
+        {
+          "caller": "GetClaimsFromUser",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 70
+        },
+        {
+          "caller": "GenerateEmailConfirmationToken",
+          "callee": "RandomNumberGenerator.Fill",
+          "lineNumber": 79
+        },
+        {
+          "caller": "GenerateEmailConfirmationToken",
+          "callee": "Convert.ToBase64String(bytes)\n                         .Replace(\"+\", \"-\")\n                         .Replace(\"/\", \"_\")\n                         .Replace",
+          "lineNumber": 80
+        },
+        {
+          "caller": "GenerateEmailConfirmationToken",
+          "callee": "Convert.ToBase64String(bytes)\n                         .Replace(\"+\", \"-\")\n                         .Replace",
+          "lineNumber": 80
+        },
+        {
+          "caller": "GenerateEmailConfirmationToken",
+          "callee": "Convert.ToBase64String(bytes)\n                         .Replace",
+          "lineNumber": 80
+        },
+        {
+          "caller": "GenerateEmailConfirmationToken",
+          "callee": "Convert.ToBase64String",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ExtractAccessTokenFromRequest",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 89
+        },
+        {
+          "caller": "ExtractAccessTokenFromRequest",
+          "callee": "authorizationHeader.StartsWith",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/AchievementEvaluationService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "AchievementEvaluationService",
+          "startLine": 14,
+          "endLine": 22,
+          "params": [
+            "profileRepository",
+            "userRepository",
+            "levelThresholdsProvider"
+          ]
+        },
+        {
+          "name": "EvaluateForUserAsync",
+          "startLine": 24,
+          "endLine": 73,
+          "params": [
+            "userId",
+            "ct"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AchievementEvaluationService",
+          "startLine": 8,
+          "endLine": 74,
+          "methods": [
+            "AchievementEvaluationService",
+            "EvaluateForUserAsync"
+          ],
+          "properties": [
+            "_profileRepository",
+            "_userRepository",
+            "_levelThresholdsProvider"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AchievementEvaluationService",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "EvaluateForUserAsync",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "AchievementEvaluationService",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "_userRepository.GetByIdAsync",
+          "lineNumber": 26
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "_profileRepository.CountWaterByCreatorAsync",
+          "lineNumber": 29
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "_profileRepository.CountSoilByCreatorAsync",
+          "lineNumber": 30
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "_profileRepository.CountConfirmationsGivenByUserAsync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "_profileRepository.CreatorHasDeficiencyWithFiveConfirmationsAsync",
+          "lineNumber": 33
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "_profileRepository.GetActiveAchievementsAsync",
+          "lineNumber": 35
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "_levelThresholdsProvider.GetCumulativeThresholdsAsync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "LevelProgressCalculator.ComputeLevel",
+          "lineNumber": 37
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "Math.Min",
+          "lineNumber": 55
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "_profileRepository.GetUserAchievementAsync",
+          "lineNumber": 57
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "_profileRepository.UpsertUserAchievementAsync",
+          "lineNumber": 64
+        },
+        {
+          "caller": "EvaluateForUserAsync",
+          "callee": "new UserAchievement",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Analitycs/ExcelExportService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 141,
+      "nonEmptyLines": 120,
+      "functions": [
+        {
+          "name": "ExcelExportService",
+          "startLine": 16,
+          "endLine": 25,
+          "params": [
+            "waterDeficiencyRepository",
+            "soilDeficiencyRepository",
+            "userRepository"
+          ]
+        },
+        {
+          "name": "GenerateWaterDeficienciesTableAsync",
+          "startLine": 27,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "GenerateSoilDeficienciesTableAsync",
+          "startLine": 40,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "GenerateOrgUsersTableAsync",
+          "startLine": 53,
+          "endLine": 72,
+          "params": []
+        },
+        {
+          "name": "GenerateWorkBook",
+          "startLine": 74,
+          "endLine": 140,
+          "params": [
+            "data",
+            "excludeColumns"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ExcelExportService",
+          "startLine": 10,
+          "endLine": 141,
+          "methods": [
+            "ExcelExportService",
+            "GenerateWaterDeficienciesTableAsync",
+            "GenerateSoilDeficienciesTableAsync",
+            "GenerateOrgUsersTableAsync",
+            "GenerateWorkBook"
+          ],
+          "properties": [
+            "_waterDeficiencyRepository",
+            "_soilDeficiencyRepository",
+            "_userRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ExcelExportService",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "GenerateWaterDeficienciesTableAsync",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "GenerateSoilDeficienciesTableAsync",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "GenerateOrgUsersTableAsync",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExcelExportService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GenerateWaterDeficienciesTableAsync",
+          "callee": "_waterDeficiencyRepository.GetAllAsync",
+          "lineNumber": 29
+        },
+        {
+          "caller": "GenerateWaterDeficienciesTableAsync",
+          "callee": "GenerateWorkBook",
+          "lineNumber": 37
+        },
+        {
+          "caller": "GenerateSoilDeficienciesTableAsync",
+          "callee": "_soilDeficiencyRepository.GetAllAsync",
+          "lineNumber": 42
+        },
+        {
+          "caller": "GenerateSoilDeficienciesTableAsync",
+          "callee": "GenerateWorkBook",
+          "lineNumber": 50
+        },
+        {
+          "caller": "GenerateOrgUsersTableAsync",
+          "callee": "_userRepository.GetAllAsync",
+          "lineNumber": 55
+        },
+        {
+          "caller": "GenerateOrgUsersTableAsync",
+          "callee": "GenerateWorkBook",
+          "lineNumber": 71
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "new XLWorkbook",
+          "lineNumber": 76
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "new DataTable",
+          "lineNumber": 78
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "nameof",
+          "lineNumber": 78
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "type.GetProperties()\n            .Where(p => !p.Name.Contains(\"Id\")\n                && !excludeColumns.Contains(p.Name))\n            .Select(p => new DataColumn(p.Name))\n            .ToArray",
+          "lineNumber": 81
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "type.GetProperties()\n            .Where(p => !p.Name.Contains(\"Id\")\n                && !excludeColumns.Contains(p.Name))\n            .Select",
+          "lineNumber": 81
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "type.GetProperties()\n            .Where",
+          "lineNumber": 81
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "type.GetProperties",
+          "lineNumber": 81
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "p.Name.Contains",
+          "lineNumber": 82
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "excludeColumns.Contains",
+          "lineNumber": 83
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "new DataColumn",
+          "lineNumber": 84
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "dt.Columns.Add",
+          "lineNumber": 89
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "dt.NewRow",
+          "lineNumber": 94
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "type.GetProperties",
+          "lineNumber": 95
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "property.GetValue",
+          "lineNumber": 97
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "property.Name.Contains",
+          "lineNumber": 98
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "excludeColumns.Contains",
+          "lineNumber": 99
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "property.GetValue",
+          "lineNumber": 106
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "property.GetValue",
+          "lineNumber": 111
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "property.GetValue",
+          "lineNumber": 116
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "property.GetValue",
+          "lineNumber": 121
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "property.GetValue",
+          "lineNumber": 124
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "dt.Rows.Add",
+          "lineNumber": 126
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "wb.AddWorksheet",
+          "lineNumber": 129
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "worksheet.Columns().AdjustToContents",
+          "lineNumber": 131
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "worksheet.Columns",
+          "lineNumber": 131
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "new MemoryStream",
+          "lineNumber": 133
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "wb.SaveAs",
+          "lineNumber": 135
+        },
+        {
+          "caller": "GenerateWorkBook",
+          "callee": "stream.ToArray",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Audit/ChangedModelLogService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "ChangedModelLogService",
+          "startLine": 13,
+          "endLine": 17,
+          "params": [
+            "changedModelLogReposiroty"
+          ]
+        },
+        {
+          "name": "LogDeficiencyChangesAsync",
+          "startLine": 19,
+          "endLine": 49,
+          "params": [
+            "oldEntity",
+            "newEntity",
+            "deficiencyType",
+            "changedBy"
+          ]
+        },
+        {
+          "name": "LogDeficiencyAttachmentChangeAsync",
+          "startLine": 51,
+          "endLine": 79,
+          "params": [
+            "deficiencyId",
+            "fileName",
+            "fileSize",
+            "previewUrl",
+            "deficiencyType"
+          ]
+        },
+        {
+          "name": "GetChangingHistoryByDeficiencyIdAsync",
+          "startLine": 81,
+          "endLine": 84,
+          "params": [
+            "deficiencyId",
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ChangedModelLogService",
+          "startLine": 9,
+          "endLine": 86,
+          "methods": [
+            "ChangedModelLogService",
+            "LogDeficiencyChangesAsync",
+            "LogDeficiencyAttachmentChangeAsync",
+            "GetChangingHistoryByDeficiencyIdAsync"
+          ],
+          "properties": [
+            "_changedModelLogRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChangedModelLogService",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "LogDeficiencyChangesAsync",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "LogDeficiencyAttachmentChangeAsync",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "GetChangingHistoryByDeficiencyIdAsync",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "ChangedModelLogService",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "new Dictionary<string, object>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "typeof(T).GetProperties",
+          "lineNumber": 23
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "prop.GetValue(oldEntity)?.ToString",
+          "lineNumber": 25
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "prop.GetValue",
+          "lineNumber": 25
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "prop.GetValue(newEntity)?.ToString",
+          "lineNumber": 26
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "prop.GetValue",
+          "lineNumber": 26
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "changes.Any",
+          "lineNumber": 34
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "new ChangedModelLog",
+          "lineNumber": 37
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 39
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "JsonSerializer.Serialize",
+          "lineNumber": 42
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync",
+          "callee": "_changedModelLogRepository.AddAsync",
+          "lineNumber": 47
+        },
+        {
+          "caller": "LogDeficiencyAttachmentChangeAsync",
+          "callee": "new Dictionary<string, object>",
+          "lineNumber": 59
+        },
+        {
+          "caller": "LogDeficiencyAttachmentChangeAsync",
+          "callee": "new ChangedModelLog",
+          "lineNumber": 70
+        },
+        {
+          "caller": "LogDeficiencyAttachmentChangeAsync",
+          "callee": "JsonSerializer.Serialize",
+          "lineNumber": 74
+        },
+        {
+          "caller": "LogDeficiencyAttachmentChangeAsync",
+          "callee": "_changedModelLogRepository.AddAsync",
+          "lineNumber": 78
+        },
+        {
+          "caller": "GetChangingHistoryByDeficiencyIdAsync",
+          "callee": "_changedModelLogRepository.GetListByDeficiencyIdAsync",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Audit/MonitoringService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "MonitoringService",
+          "startLine": 17,
+          "endLine": 28,
+          "params": [
+            "monitoringRepo",
+            "userRepo",
+            "soilDeficiencyService",
+            "waterDeficiencyService"
+          ]
+        },
+        {
+          "name": "ToggleMonitoringAsync",
+          "startLine": 33,
+          "endLine": 98,
+          "params": [
+            "refreshToken",
+            "deficiencyId",
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MonitoringService",
+          "startLine": 10,
+          "endLine": 99,
+          "methods": [
+            "MonitoringService",
+            "ToggleMonitoringAsync"
+          ],
+          "properties": [
+            "_monitoringRepo",
+            "_userRepo",
+            "_soilDeficiencyService",
+            "_waterDeficiencyService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MonitoringService",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "ToggleMonitoringAsync",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "MonitoringService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_userRepo.GetUserByRefreshTokenAsync",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "new ArgumentNullException",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "nameof",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "type.Equals",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_soilDeficiencyService.GetByIdAsync",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_waterDeficiencyService.GetByIdAsync",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "new ArgumentNullException",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_monitoringRepo\n                .GetUserDeficiencyMonitoringAsync",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "new DeficiencyMonitoring",
+          "lineNumber": 50
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 52
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_monitoringRepo.AddAsync",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "type.Equals",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_soilDeficiencyService.UpdateAsync",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_waterDeficiencyService.UpdateAsync",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_monitoringRepo.SaveChangesAsync",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "type.Equals",
+          "lineNumber": 72
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_soilDeficiencyService.UpdateAsync",
+          "lineNumber": 72
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_waterDeficiencyService.UpdateAsync",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_monitoringRepo.UpdateAsync",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_monitoringRepo.SaveChangesAsync",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "new ComplexMonitoringScheme",
+          "lineNumber": 81
+        },
+        {
+          "caller": "ToggleMonitoringAsync",
+          "callee": "_userRepo.UpdateAsync",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/AuthenticationService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "AuthenticationService",
+          "startLine": 15,
+          "endLine": 19,
+          "params": [
+            "httpContextAccessor",
+            "userRepository"
+          ]
+        },
+        {
+          "name": "GetCurrentUserAsync",
+          "startLine": 21,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "GetCurrentUserId",
+          "startLine": 45,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "GetCurrentUserOrganizationId",
+          "startLine": 54,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "ExtractTokenFromRequest",
+          "startLine": 63,
+          "endLine": 71,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuthenticationService",
+          "startLine": 10,
+          "endLine": 72,
+          "methods": [
+            "AuthenticationService",
+            "GetCurrentUserAsync",
+            "GetCurrentUserId",
+            "GetCurrentUserOrganizationId",
+            "ExtractTokenFromRequest"
+          ],
+          "properties": [
+            "_httpContextAccessor",
+            "_userRepository"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuthenticationService",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "GetCurrentUserAsync",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "GetCurrentUserId",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "GetCurrentUserOrganizationId",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "AuthenticationService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetCurrentUserAsync",
+          "callee": "ExtractTokenFromRequest",
+          "lineNumber": 26
+        },
+        {
+          "caller": "GetCurrentUserAsync",
+          "callee": "string.IsNullOrEmpty",
+          "lineNumber": 27
+        },
+        {
+          "caller": "GetCurrentUserAsync",
+          "callee": "new JwtSecurityTokenHandler",
+          "lineNumber": 31
+        },
+        {
+          "caller": "GetCurrentUserAsync",
+          "callee": "handler.ReadJwtToken",
+          "lineNumber": 32
+        },
+        {
+          "caller": "GetCurrentUserAsync",
+          "callee": "jsonToken.Claims.FirstOrDefault",
+          "lineNumber": 34
+        },
+        {
+          "caller": "GetCurrentUserAsync",
+          "callee": "_userRepository.GetUserByEmail",
+          "lineNumber": 37
+        },
+        {
+          "caller": "GetCurrentUserId",
+          "callee": "httpContext.User.FindFirst",
+          "lineNumber": 50
+        },
+        {
+          "caller": "GetCurrentUserId",
+          "callee": "Guid.TryParse",
+          "lineNumber": 51
+        },
+        {
+          "caller": "GetCurrentUserOrganizationId",
+          "callee": "httpContext.User.FindFirst",
+          "lineNumber": 59
+        },
+        {
+          "caller": "GetCurrentUserOrganizationId",
+          "callee": "Guid.TryParse",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ExtractTokenFromRequest",
+          "callee": "context.Request.Headers[\"Authorization\"].FirstOrDefault",
+          "lineNumber": 65
+        },
+        {
+          "caller": "ExtractTokenFromRequest",
+          "callee": "authHeader.StartsWith",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ExtractTokenFromRequest",
+          "callee": "authHeader.Substring(\"Bearer \".Length).Trim",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ExtractTokenFromRequest",
+          "callee": "authHeader.Substring",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/BaseService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "BaseService",
+          "startLine": 12,
+          "endLine": 16,
+          "params": [
+            "repository",
+            "redisCacheService"
+          ]
+        },
+        {
+          "name": "GetList",
+          "startLine": 18,
+          "endLine": 31,
+          "params": [
+            "scrollCount",
+            "filters"
+          ]
+        },
+        {
+          "name": "GetByIdAsync",
+          "startLine": 33,
+          "endLine": 33,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "AddAsync",
+          "startLine": 35,
+          "endLine": 35,
+          "params": [
+            "entity"
+          ]
+        },
+        {
+          "name": "UpdateAsync",
+          "startLine": 37,
+          "endLine": 37,
+          "params": [
+            "entity"
+          ]
+        },
+        {
+          "name": "DeleteAsync",
+          "startLine": 39,
+          "endLine": 39,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "DeleteRangeAsync",
+          "startLine": 40,
+          "endLine": 40,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "GetOrSetAsync",
+          "startLine": 42,
+          "endLine": 63,
+          "params": [
+            "fetchFromDb",
+            "isFiltering"
+          ]
+        },
+        {
+          "name": "ApplyScroll",
+          "startLine": 65,
+          "endLine": 66,
+          "params": [
+            "list",
+            "scrollCount"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BaseService",
+          "startLine": 7,
+          "endLine": 67,
+          "methods": [
+            "BaseService",
+            "GetList",
+            "GetByIdAsync",
+            "AddAsync",
+            "UpdateAsync",
+            "DeleteAsync",
+            "DeleteRangeAsync",
+            "GetOrSetAsync",
+            "ApplyScroll"
+          ],
+          "properties": [
+            "_repository",
+            "_redisCacheService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BaseService",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "GetList",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "GetByIdAsync",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "AddAsync",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateAsync",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "DeleteAsync",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "DeleteRangeAsync",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "GetOrSetAsync",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "BaseService",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetList",
+          "callee": "_repository.GetAllAsync",
+          "lineNumber": 20
+        },
+        {
+          "caller": "GetList",
+          "callee": "_repository.GetTotalCount",
+          "lineNumber": 22
+        },
+        {
+          "caller": "GetList",
+          "callee": "new ListData<T>",
+          "lineNumber": 24
+        },
+        {
+          "caller": "GetByIdAsync",
+          "callee": "_repository.GetByIdAsync",
+          "lineNumber": 33
+        },
+        {
+          "caller": "AddAsync",
+          "callee": "_repository.AddAsync",
+          "lineNumber": 35
+        },
+        {
+          "caller": "UpdateAsync",
+          "callee": "_repository.UpdateAsync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "DeleteAsync",
+          "callee": "_repository.DeleteAsync",
+          "lineNumber": 39
+        },
+        {
+          "caller": "DeleteRangeAsync",
+          "callee": "_repository.DeleteRangeAsync",
+          "lineNumber": 40
+        },
+        {
+          "caller": "GetOrSetAsync",
+          "callee": "_redisCacheService.GetAsync",
+          "lineNumber": 46
+        },
+        {
+          "caller": "GetOrSetAsync",
+          "callee": "JsonSerializer.Deserialize<List<T>>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "GetOrSetAsync",
+          "callee": "new ListData<T>",
+          "lineNumber": 51
+        },
+        {
+          "caller": "GetOrSetAsync",
+          "callee": "fetchFromDb",
+          "lineNumber": 58
+        },
+        {
+          "caller": "GetOrSetAsync",
+          "callee": "_redisCacheService.SetAsync",
+          "lineNumber": 60
+        },
+        {
+          "caller": "GetOrSetAsync",
+          "callee": "JsonSerializer.Serialize",
+          "lineNumber": 60
+        },
+        {
+          "caller": "GetOrSetAsync",
+          "callee": "TimeSpan.FromHours",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ApplyScroll",
+          "callee": "list.Take(scrollCount).ToList",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ApplyScroll",
+          "callee": "list.Take",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Application/Services/Cache/DictValueCacheService.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "DictValueCacheService",
+          "startLine": 11,
+          "endLine": 14,
+          "params": [
+            "redis"
+          ]
+        },
+        {
+          "name": "CacheKey",
+          "startLine": 16,
+          "endLine": 16,
+          "params": [
+            "entryKey"
+          ]
+        },
+        {
+          "name": "GetValueJsonAsync",
+          "startLine": 18,
+          "endLine": 19,
+          "params": [
+            "entryKey"
+          ]
+        },
+        {
+          "name": "SetValueJsonAsync",
+          "startLine": 21,
+          "endLine": 22,
+          "params": [
+            "entryKey",
+            "valueJson",
+            "expiry"
+          ]
+        },
+        {
+          "name": "RemoveAsync",
+          "startLine": 24,
+          "endLine": 25,
+          "params": [
+            "entryKey"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DictValueCacheService",
+          "startLine": 5,
+          "endLine": 26,
+          "methods": [
+            "DictValueCacheService",
+            "CacheKey",
+            "GetValueJsonAsync",
+            "SetValueJsonAsync",
+            "RemoveAsync"
+          ],
+          "properties": [
+            "KeyPrefix",
+            "_redis"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictValueCacheService",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "GetValueJsonAsync",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "SetValueJsonAsync",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "RemoveAsync",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "DictValueCacheService",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetValueJsonAsync",
+          "callee": "_redis.GetAsync",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetValueJsonAsync",
+          "callee": "CacheKey",
+          "lineNumber": 19
+        },
+        {
+          "caller": "SetValueJsonAsync",
+          "callee": "_redis.SetAsync",
+          "lineNumber": 22
+        },
+        {
+          "caller": "SetValueJsonAsync",
+          "callee": "CacheKey",
+          "lineNumber": 22
+        },
+        {
+          "caller": "RemoveAsync",
+          "callee": "_redis.RemoveAsync",
+          "lineNumber": 25
+        },
+        {
+          "caller": "RemoveAsync",
+          "callee": "CacheKey",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs",
+      "type": "file",
+      "name": "20250331101907_DeficiencyRelationshipsCreator.cs",
+      "filePath": "src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs",
+      "summary": "20250331101907_DeficiencyRelationshipsCreator.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs",
+      "summary": "Function Up in 20250331101907_DeficiencyRelationshipsCreator.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs",
+      "summary": "Function Down in 20250331101907_DeficiencyRelationshipsCreator.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs:DeficiencyRelationshipsCreator",
+      "type": "class",
+      "name": "DeficiencyRelationshipsCreator",
+      "filePath": "src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs",
+      "summary": "Class DeficiencyRelationshipsCreator with 2 method(s) in 20250331101907_DeficiencyRelationshipsCreator.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs",
+      "type": "file",
+      "name": "20250331101907_DeficiencyRelationshipsCreator.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs",
+      "summary": "20250331101907_DeficiencyRelationshipsCreator.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250331101907_DeficiencyRelationshipsCreator.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs:DeficiencyRelationshipsCreator",
+      "type": "class",
+      "name": "DeficiencyRelationshipsCreator",
+      "filePath": "src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs",
+      "summary": "Class DeficiencyRelationshipsCreator with 1 method(s) in 20250331101907_DeficiencyRelationshipsCreator.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs",
+      "type": "file",
+      "name": "20250331155954_OrgLocationScheme.cs",
+      "filePath": "src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs",
+      "summary": "20250331155954_OrgLocationScheme.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs",
+      "summary": "Function Up in 20250331155954_OrgLocationScheme.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs",
+      "summary": "Function Down in 20250331155954_OrgLocationScheme.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs:OrgLocationScheme",
+      "type": "class",
+      "name": "OrgLocationScheme",
+      "filePath": "src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs",
+      "summary": "Class OrgLocationScheme with 2 method(s) in 20250331155954_OrgLocationScheme.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs",
+      "type": "file",
+      "name": "20250331155954_OrgLocationScheme.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs",
+      "summary": "20250331155954_OrgLocationScheme.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250331155954_OrgLocationScheme.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs:OrgLocationScheme",
+      "type": "class",
+      "name": "OrgLocationScheme",
+      "filePath": "src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs",
+      "summary": "Class OrgLocationScheme with 1 method(s) in 20250331155954_OrgLocationScheme.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs",
+      "type": "file",
+      "name": "20250411131842_ChangedModelLog.cs",
+      "filePath": "src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs",
+      "summary": "20250411131842_ChangedModelLog.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs",
+      "summary": "Function Up in 20250411131842_ChangedModelLog.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs",
+      "summary": "Function Down in 20250411131842_ChangedModelLog.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs:ChangedModelLog",
+      "type": "class",
+      "name": "ChangedModelLog",
+      "filePath": "src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs",
+      "summary": "Class ChangedModelLog with 2 method(s) in 20250411131842_ChangedModelLog.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs",
+      "type": "file",
+      "name": "20250411131842_ChangedModelLog.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs",
+      "summary": "20250411131842_ChangedModelLog.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250411131842_ChangedModelLog.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs:ChangedModelLog",
+      "type": "class",
+      "name": "ChangedModelLog",
+      "filePath": "src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs",
+      "summary": "Class ChangedModelLog with 1 method(s) in 20250411131842_ChangedModelLog.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs",
+      "type": "file",
+      "name": "20250614134331_RemoveLocationBinding.cs",
+      "filePath": "src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs",
+      "summary": "20250614134331_RemoveLocationBinding.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs",
+      "summary": "Function Up in 20250614134331_RemoveLocationBinding.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs",
+      "summary": "Function Down in 20250614134331_RemoveLocationBinding.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs:RemoveLocationBinding",
+      "type": "class",
+      "name": "RemoveLocationBinding",
+      "filePath": "src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs",
+      "summary": "Class RemoveLocationBinding with 2 method(s) in 20250614134331_RemoveLocationBinding.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs",
+      "type": "file",
+      "name": "20250614134331_RemoveLocationBinding.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs",
+      "summary": "20250614134331_RemoveLocationBinding.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250614134331_RemoveLocationBinding.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs:RemoveLocationBinding",
+      "type": "class",
+      "name": "RemoveLocationBinding",
+      "filePath": "src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs",
+      "summary": "Class RemoveLocationBinding with 1 method(s) in 20250614134331_RemoveLocationBinding.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs",
+      "type": "file",
+      "name": "20250615075435_AddedRaduisAffectedColumn.cs",
+      "filePath": "src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs",
+      "summary": "20250615075435_AddedRaduisAffectedColumn.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs",
+      "summary": "Function Up in 20250615075435_AddedRaduisAffectedColumn.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs",
+      "summary": "Function Down in 20250615075435_AddedRaduisAffectedColumn.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs:AddedRaduisAffectedColumn",
+      "type": "class",
+      "name": "AddedRaduisAffectedColumn",
+      "filePath": "src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs",
+      "summary": "Class AddedRaduisAffectedColumn with 2 method(s) in 20250615075435_AddedRaduisAffectedColumn.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs",
+      "type": "file",
+      "name": "20250615075435_AddedRaduisAffectedColumn.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs",
+      "summary": "20250615075435_AddedRaduisAffectedColumn.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250615075435_AddedRaduisAffectedColumn.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs:AddedRaduisAffectedColumn",
+      "type": "class",
+      "name": "AddedRaduisAffectedColumn",
+      "filePath": "src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs",
+      "summary": "Class AddedRaduisAffectedColumn with 1 method(s) in 20250615075435_AddedRaduisAffectedColumn.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs",
+      "type": "file",
+      "name": "20250617180830_AddedAddressProperty.cs",
+      "filePath": "src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs",
+      "summary": "20250617180830_AddedAddressProperty.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs",
+      "summary": "Function Up in 20250617180830_AddedAddressProperty.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs",
+      "summary": "Function Down in 20250617180830_AddedAddressProperty.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs:AddedAddressProperty",
+      "type": "class",
+      "name": "AddedAddressProperty",
+      "filePath": "src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs",
+      "summary": "Class AddedAddressProperty with 2 method(s) in 20250617180830_AddedAddressProperty.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs",
+      "type": "file",
+      "name": "20250617180830_AddedAddressProperty.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs",
+      "summary": "20250617180830_AddedAddressProperty.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250617180830_AddedAddressProperty.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs:AddedAddressProperty",
+      "type": "class",
+      "name": "AddedAddressProperty",
+      "filePath": "src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs",
+      "summary": "Class AddedAddressProperty with 1 method(s) in 20250617180830_AddedAddressProperty.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs",
+      "type": "file",
+      "name": "20250619065729_DeletedAccessToken.cs",
+      "filePath": "src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs",
+      "summary": "20250619065729_DeletedAccessToken.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs",
+      "summary": "Function Up in 20250619065729_DeletedAccessToken.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs",
+      "summary": "Function Down in 20250619065729_DeletedAccessToken.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs:DeletedAccessToken",
+      "type": "class",
+      "name": "DeletedAccessToken",
+      "filePath": "src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs",
+      "summary": "Class DeletedAccessToken with 2 method(s) in 20250619065729_DeletedAccessToken.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs",
+      "type": "file",
+      "name": "20250619065729_DeletedAccessToken.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs",
+      "summary": "20250619065729_DeletedAccessToken.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250619065729_DeletedAccessToken.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs:DeletedAccessToken",
+      "type": "class",
+      "name": "DeletedAccessToken",
+      "filePath": "src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs",
+      "summary": "Class DeletedAccessToken with 1 method(s) in 20250619065729_DeletedAccessToken.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs",
+      "type": "file",
+      "name": "20250621211403_AddedAttachmentsTable.cs",
+      "filePath": "src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs",
+      "summary": "20250621211403_AddedAttachmentsTable.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs",
+      "summary": "Function Up in 20250621211403_AddedAttachmentsTable.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs:AddedAttachmentsTable",
+      "type": "class",
+      "name": "AddedAttachmentsTable",
+      "filePath": "src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs",
+      "summary": "Class AddedAttachmentsTable with 2 method(s) in 20250621211403_AddedAttachmentsTable.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs",
+      "type": "file",
+      "name": "20250621211403_AddedAttachmentsTable.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs",
+      "summary": "20250621211403_AddedAttachmentsTable.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250621211403_AddedAttachmentsTable.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs:AddedAttachmentsTable",
+      "type": "class",
+      "name": "AddedAttachmentsTable",
+      "filePath": "src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs",
+      "summary": "Class AddedAttachmentsTable with 1 method(s) in 20250621211403_AddedAttachmentsTable.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.cs",
+      "type": "file",
+      "name": "20250622104728_AddedTypeToAttachmentDeficiency.cs",
+      "filePath": "src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.cs",
+      "summary": "20250622104728_AddedTypeToAttachmentDeficiency.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.cs:AddedTypeToAttachmentDeficiency",
+      "type": "class",
+      "name": "AddedTypeToAttachmentDeficiency",
+      "filePath": "src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.cs",
+      "summary": "Class AddedTypeToAttachmentDeficiency with 2 method(s) in 20250622104728_AddedTypeToAttachmentDeficiency.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs",
+      "type": "file",
+      "name": "20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs",
+      "summary": "20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs:AddedTypeToAttachmentDeficiency",
+      "type": "class",
+      "name": "AddedTypeToAttachmentDeficiency",
+      "filePath": "src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs",
+      "summary": "Class AddedTypeToAttachmentDeficiency with 1 method(s) in 20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs",
+      "type": "file",
+      "name": "20250623055333_AddedCommentMessages.cs",
+      "filePath": "src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs",
+      "summary": "20250623055333_AddedCommentMessages.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs",
+      "summary": "Function Up in 20250623055333_AddedCommentMessages.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs:AddedCommentMessages",
+      "type": "class",
+      "name": "AddedCommentMessages",
+      "filePath": "src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs",
+      "summary": "Class AddedCommentMessages with 2 method(s) in 20250623055333_AddedCommentMessages.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs",
+      "type": "file",
+      "name": "20250623055333_AddedCommentMessages.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs",
+      "summary": "20250623055333_AddedCommentMessages.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250623055333_AddedCommentMessages.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs:AddedCommentMessages",
+      "type": "class",
+      "name": "AddedCommentMessages",
+      "filePath": "src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs",
+      "summary": "Class AddedCommentMessages with 1 method(s) in 20250623055333_AddedCommentMessages.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.cs",
+      "type": "file",
+      "name": "20250623065344_AddedCommentMessagesCreatorFullName.cs",
+      "filePath": "src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.cs",
+      "summary": "20250623065344_AddedCommentMessagesCreatorFullName.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.cs:AddedCommentMessagesCreatorFullName",
+      "type": "class",
+      "name": "AddedCommentMessagesCreatorFullName",
+      "filePath": "src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.cs",
+      "summary": "Class AddedCommentMessagesCreatorFullName with 2 method(s) in 20250623065344_AddedCommentMessagesCreatorFullName.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs",
+      "type": "file",
+      "name": "20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs",
+      "summary": "20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs:AddedCommentMessagesCreatorFullName",
+      "type": "class",
+      "name": "AddedCommentMessagesCreatorFullName",
+      "filePath": "src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs",
+      "summary": "Class AddedCommentMessagesCreatorFullName with 1 method(s) in 20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs",
+      "type": "file",
+      "name": "20250827120925_MonitoringAndEmailConfirmation.cs",
+      "filePath": "src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs",
+      "summary": "20250827120925_MonitoringAndEmailConfirmation.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs",
+      "summary": "Function Up in 20250827120925_MonitoringAndEmailConfirmation.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs",
+      "summary": "Function Down in 20250827120925_MonitoringAndEmailConfirmation.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs:MonitoringAndEmailConfirmation",
+      "type": "class",
+      "name": "MonitoringAndEmailConfirmation",
+      "filePath": "src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs",
+      "summary": "Class MonitoringAndEmailConfirmation with 2 method(s) in 20250827120925_MonitoringAndEmailConfirmation.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs",
+      "type": "file",
+      "name": "20250827120925_MonitoringAndEmailConfirmation.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs",
+      "summary": "20250827120925_MonitoringAndEmailConfirmation.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250827120925_MonitoringAndEmailConfirmation.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs:MonitoringAndEmailConfirmation",
+      "type": "class",
+      "name": "MonitoringAndEmailConfirmation",
+      "filePath": "src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs",
+      "summary": "Class MonitoringAndEmailConfirmation with 1 method(s) in 20250827120925_MonitoringAndEmailConfirmation.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs",
+      "type": "file",
+      "name": "20250923073124_CascadeDeleteOrganization.cs",
+      "filePath": "src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs",
+      "summary": "20250923073124_CascadeDeleteOrganization.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs",
+      "summary": "Function Up in 20250923073124_CascadeDeleteOrganization.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs",
+      "summary": "Function Down in 20250923073124_CascadeDeleteOrganization.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs:CascadeDeleteOrganization",
+      "type": "class",
+      "name": "CascadeDeleteOrganization",
+      "filePath": "src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs",
+      "summary": "Class CascadeDeleteOrganization with 2 method(s) in 20250923073124_CascadeDeleteOrganization.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs",
+      "target": "function:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs",
+      "target": "function:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs",
+      "target": "class:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs:DeficiencyRelationshipsCreator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs",
+      "target": "class:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.cs:DeficiencyRelationshipsCreator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250331101907_DeficiencyRelationshipsCreator.Designer.cs:DeficiencyRelationshipsCreator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs",
+      "target": "function:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs",
+      "target": "function:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs",
+      "target": "class:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs:OrgLocationScheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs",
+      "target": "class:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.cs:OrgLocationScheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250331155954_OrgLocationScheme.Designer.cs:OrgLocationScheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs",
+      "target": "function:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs",
+      "target": "function:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs",
+      "target": "class:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs:ChangedModelLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs",
+      "target": "class:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.cs:ChangedModelLog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250411131842_ChangedModelLog.Designer.cs:ChangedModelLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs",
+      "target": "function:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs",
+      "target": "function:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs",
+      "target": "class:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs:RemoveLocationBinding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs",
+      "target": "class:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.cs:RemoveLocationBinding",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250614134331_RemoveLocationBinding.Designer.cs:RemoveLocationBinding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs",
+      "target": "function:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs",
+      "target": "function:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs",
+      "target": "class:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs:AddedRaduisAffectedColumn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs",
+      "target": "class:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.cs:AddedRaduisAffectedColumn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250615075435_AddedRaduisAffectedColumn.Designer.cs:AddedRaduisAffectedColumn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs",
+      "target": "function:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs",
+      "target": "function:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs",
+      "target": "class:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs:AddedAddressProperty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs",
+      "target": "class:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.cs:AddedAddressProperty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250617180830_AddedAddressProperty.Designer.cs:AddedAddressProperty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs",
+      "target": "function:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs",
+      "target": "function:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs",
+      "target": "class:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs:DeletedAccessToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs",
+      "target": "class:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.cs:DeletedAccessToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250619065729_DeletedAccessToken.Designer.cs:DeletedAccessToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs",
+      "target": "function:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs",
+      "target": "class:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs:AddedAttachmentsTable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs",
+      "target": "class:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.cs:AddedAttachmentsTable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250621211403_AddedAttachmentsTable.Designer.cs:AddedAttachmentsTable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.cs",
+      "target": "class:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.cs:AddedTypeToAttachmentDeficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.cs",
+      "target": "class:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.cs:AddedTypeToAttachmentDeficiency",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250622104728_AddedTypeToAttachmentDeficiency.Designer.cs:AddedTypeToAttachmentDeficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs",
+      "target": "function:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs",
+      "target": "class:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs:AddedCommentMessages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs",
+      "target": "class:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.cs:AddedCommentMessages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250623055333_AddedCommentMessages.Designer.cs:AddedCommentMessages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.cs",
+      "target": "class:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.cs:AddedCommentMessagesCreatorFullName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.cs",
+      "target": "class:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.cs:AddedCommentMessagesCreatorFullName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250623065344_AddedCommentMessagesCreatorFullName.Designer.cs:AddedCommentMessagesCreatorFullName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs",
+      "target": "function:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs",
+      "target": "function:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs",
+      "target": "class:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs:MonitoringAndEmailConfirmation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs",
+      "target": "class:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.cs:MonitoringAndEmailConfirmation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250827120925_MonitoringAndEmailConfirmation.Designer.cs:MonitoringAndEmailConfirmation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs",
+      "target": "function:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs",
+      "target": "function:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs",
+      "target": "class:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs:CascadeDeleteOrganization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs",
+      "target": "class:src/Infrastructure/Migrations/20250923073124_CascadeDeleteOrganization.cs:CascadeDeleteOrganization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

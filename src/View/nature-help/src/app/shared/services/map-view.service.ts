@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import * as L from "leaflet";
 import { BehaviorSubject, combineLatest, map, Observable } from "rxjs";
-import { HttpClient } from "@angular/common/http";
 
 import { ICoordinates } from "@/models/ICoordinates";
 import { IDeficiencyMapDto } from "@/models/IDeficiencyMapDto";
@@ -20,6 +19,33 @@ export interface IAddress {
   state?: string;
   country?: string;
   postalCode?: string;
+}
+
+interface INominatimAddress {
+  house_number?: string;
+  road?: string;
+  pedestrian?: string;
+  path?: string;
+  city?: string;
+  town?: string;
+  village?: string;
+  hamlet?: string;
+  state?: string;
+  postcode?: string;
+  country?: string;
+}
+
+interface INominatimResponse {
+  display_name?: string;
+  address?: INominatimAddress;
+}
+
+interface IBigDataCloudResponse {
+  locality?: string;
+  city?: string;
+  principalSubdivision?: string;
+  postcode?: string;
+  countryName?: string;
 }
 
 @Injectable({
@@ -107,10 +133,14 @@ export class MapViewService {
     private waterDataService: WaterAPIService,
     private soilDataService: SoilAPIService,
     private labsAPIService: LabsAPIService,
-    private http: HttpClient,
   ) {}
 
   public initMap(): void {
+    if (this.map) {
+      this.map.remove();
+      this.map = undefined;
+    }
+
     this.map = L.map("map", {
       center: [48.65, 22.26],
       zoom: 13,
@@ -130,8 +160,31 @@ export class MapViewService {
     tiles.addTo(this.map);
   }
 
-  public changeFocus(coordinates: ICoordinates, zoom: number) {
-    this.map.setView([coordinates.latitude, coordinates.longitude], zoom);
+  public changeFocus(coordinates: ICoordinates, zoom: number, options?: { layer?: EMapLayer; popupHtml?: string }) {
+    if (!this.map) {
+      return;
+    }
+
+    const latitude = Number(coordinates.latitude);
+    const longitude = Number(coordinates.longitude);
+
+    if (Number.isNaN(latitude) || Number.isNaN(longitude)) {
+      return;
+    }
+
+    const normalized: ICoordinates = { latitude, longitude };
+
+    if (options?.layer) {
+      this.ensureLayerVisible(options.layer);
+    }
+
+    this.map.invalidateSize();
+    this.map.setView([latitude, longitude], zoom);
+    this.showSelectedLocationMarker(normalized, options?.popupHtml);
+
+    if (options?.layer) {
+      this.revealLayerMarker(options.layer, normalized);
+    }
   }
 
   public fullScreenMap() {
@@ -298,33 +351,201 @@ export class MapViewService {
     this.soilDeficienciesLayer.clearLayers();
   }
 
-  private async lookupAddress(coordinates: ICoordinates): Promise<IAddress | null> {
+  private async fetchJson<T>(url: string, headers?: Record<string, string>): Promise<T | null> {
     try {
-      const response = await this.http
-        .get<any>(
-          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${coordinates.latitude}&lon=${coordinates.longitude}&zoom=18&addressdetails=1`,
-        )
-        .toPromise();
-
-      if (response) {
-        const address = response.address;
-        return {
-          displayName: response.display_name,
-          street: address.road || address.pedestrian || address.path,
-          city: address.city || address.town || address.village,
-          state: address.state,
-          country: address.country,
-          postalCode: address.postcode,
-        };
+      const response = await fetch(url, { headers });
+      if (!response.ok) {
+        return null;
       }
-      return null;
+
+      return (await response.json()) as T;
     } catch (error) {
-      console.error("Error looking up address:", error);
+      console.error("Geocoding request failed:", error);
       return null;
     }
   }
 
+  private buildDisplayNameFromNominatimParts(address: INominatimAddress): string {
+    const street = [address.house_number, address.road || address.pedestrian || address.path].filter(Boolean).join(" ");
+    const city = address.city || address.town || address.village || address.hamlet;
+
+    return [street, city, address.state, address.postcode, address.country].filter(Boolean).join(", ");
+  }
+
+  private buildDisplayNameFromBigDataCloud(response: IBigDataCloudResponse): string {
+    const parts = [
+      response.locality,
+      response.city !== response.locality ? response.city : undefined,
+      response.principalSubdivision,
+      response.postcode,
+      response.countryName,
+    ].filter((part, index, array) => part && array.indexOf(part) === index);
+
+    return parts.join(", ");
+  }
+
+  private async lookupAddress(coordinates: ICoordinates): Promise<IAddress | null> {
+    const bigDataCloudAddress = await this.lookupAddressFromBigDataCloud(coordinates);
+    if (bigDataCloudAddress) {
+      return bigDataCloudAddress;
+    }
+
+    return this.lookupAddressFromNominatim(coordinates);
+  }
+
+  private async lookupAddressFromNominatim(coordinates: ICoordinates): Promise<IAddress | null> {
+    const response = await this.fetchJson<INominatimResponse>(
+      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${coordinates.latitude}&lon=${coordinates.longitude}&zoom=18&addressdetails=1`,
+      { "Accept-Language": "en" },
+    );
+
+    if (!response) {
+      return null;
+    }
+
+    const address = response.address ?? {};
+    const displayName = response.display_name || this.buildDisplayNameFromNominatimParts(address);
+
+    if (!displayName) {
+      return null;
+    }
+
+    return {
+      displayName,
+      street: address.road || address.pedestrian || address.path,
+      city: address.city || address.town || address.village,
+      state: address.state,
+      country: address.country,
+      postalCode: address.postcode,
+    };
+  }
+
+  private async lookupAddressFromBigDataCloud(coordinates: ICoordinates): Promise<IAddress | null> {
+    const response = await this.fetchJson<IBigDataCloudResponse>(
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${coordinates.latitude}&longitude=${coordinates.longitude}&localityLanguage=en`,
+    );
+
+    if (!response) {
+      return null;
+    }
+
+    const displayName = this.buildDisplayNameFromBigDataCloud(response);
+
+    if (!displayName) {
+      return null;
+    }
+
+    return {
+      displayName,
+      city: response.city || response.locality,
+      state: response.principalSubdivision,
+      country: response.countryName,
+      postalCode: response.postcode,
+    };
+  }
+
+  private removeSelectedLocationMarker(): void {
+    this.map.eachLayer((layer: L.Layer) => {
+      if (layer instanceof L.Marker && layer.getIcon()?.options.className === "selected-location-marker") {
+        this.map.removeLayer(layer);
+      }
+    });
+  }
+
+  private stopCoordinateSelectionMode(): void {
+    const mapContainer = this.map.getContainer();
+    mapContainer.style.cursor = "";
+    mapContainer.classList.remove("crosshair");
+    this.map.off("click");
+  }
+
+  public highlightSelectedCoordinates(coordinates: ICoordinates, popupHtml?: string): void {
+    if (!this.map) {
+      return;
+    }
+
+    const latitude = Number(coordinates.latitude);
+    const longitude = Number(coordinates.longitude);
+
+    if (Number.isNaN(latitude) || Number.isNaN(longitude)) {
+      return;
+    }
+
+    this.showSelectedLocationMarker({ latitude, longitude }, popupHtml);
+  }
+
+  private showSelectedLocationMarker(coordinates: ICoordinates, popupHtml?: string): void {
+    this.removeSelectedLocationMarker();
+
+    const marker = L.marker([coordinates.latitude, coordinates.longitude], {
+      icon: L.divIcon({
+        className: "selected-location-marker",
+        html: '<div class="selected-location-pin"></div>',
+        iconSize: [20, 20],
+        iconAnchor: [10, 10],
+      }),
+      zIndexOffset: 1000,
+    }).addTo(this.map);
+
+    if (popupHtml) {
+      marker.bindPopup(popupHtml).openPopup();
+    }
+  }
+
+  private ensureLayerVisible(layer: EMapLayer): void {
+    const clusterGroup = this.getClusterGroup(layer);
+    if (clusterGroup && !this.map.hasLayer(clusterGroup)) {
+      clusterGroup.addTo(this.map);
+    }
+  }
+
+  private getClusterGroup(layer: EMapLayer): L.MarkerClusterGroup | null {
+    switch (layer) {
+      case EMapLayer.Laboratories:
+        return this.laboratoriesLayer;
+      case EMapLayer.WaterDeficiency:
+        return this.waterDeficienciesLayer;
+      case EMapLayer.SoilDeficiency:
+        return this.soilDeficienciesLayer;
+      default:
+        return null;
+    }
+  }
+
+  private revealLayerMarker(layer: EMapLayer, coordinates: ICoordinates): void {
+    const clusterGroup = this.getClusterGroup(layer);
+    if (!clusterGroup) {
+      return;
+    }
+
+    let matchedLayer: (L.Marker | L.CircleMarker) | null = null;
+
+    clusterGroup.eachLayer((layerItem: L.Layer) => {
+      if (!(layerItem instanceof L.Marker) && !(layerItem instanceof L.CircleMarker)) {
+        return;
+      }
+
+      const { lat, lng } = layerItem.getLatLng();
+      if (this.areCoordinatesClose(lat, lng, coordinates.latitude, coordinates.longitude)) {
+        matchedLayer = layerItem;
+      }
+    });
+
+    if (matchedLayer) {
+      clusterGroup.zoomToShowLayer(matchedLayer, () => {
+        matchedLayer?.openPopup();
+      });
+    }
+  }
+
+  private areCoordinatesClose(lat: number, lng: number, targetLat: number, targetLng: number): boolean {
+    return Math.abs(lat - targetLat) < 0.0001 && Math.abs(lng - targetLng) < 0.0001;
+  }
+
   public enableCoordinateSelection() {
+    this.stopCoordinateSelectionMode();
+    this.selectedAddressSubject.next(null);
+
     const mapContainer = this.map.getContainer();
     mapContainer.style.cursor = "crosshair";
     mapContainer.classList.add("crosshair");
@@ -334,44 +555,17 @@ export class MapViewService {
         latitude: e.latlng.lat,
         longitude: e.latlng.lng,
       };
-      this.selectedCoordinatesSubject.next(coordinates);
 
       const address = await this.lookupAddress(coordinates);
+
+      this.selectedCoordinatesSubject.next(coordinates);
       this.selectedAddressSubject.next(address);
-
-      const marker = L.marker([coordinates.latitude, coordinates.longitude], {
-        icon: L.divIcon({
-          className: "selected-location-marker",
-          html: '<div class="selected-location-pin"></div>',
-          iconSize: [20, 20],
-        }),
-      });
-
-      this.map.eachLayer((layer: L.Layer) => {
-        if (layer instanceof L.Marker && layer.getIcon()?.options.className === "selected-location-marker") {
-          this.map.removeLayer(layer);
-        }
-      });
-
-      marker.addTo(this.map);
-
-      this.disableCoordinateSelection();
+      this.showSelectedLocationMarker(coordinates, address?.displayName);
+      this.stopCoordinateSelectionMode();
     });
   }
 
   public disableCoordinateSelection() {
-    const mapContainer = this.map.getContainer();
-    mapContainer.style.cursor = "";
-    mapContainer.classList.remove("crosshair");
-
-    this.map.off("click");
-    this.selectedCoordinatesSubject.next(null);
-    this.selectedAddressSubject.next(null);
-
-    this.map.eachLayer((layer: L.Layer) => {
-      if (layer instanceof L.Marker && layer.getIcon()?.options.className === "selected-location-marker") {
-        this.map.removeLayer(layer);
-      }
-    });
+    this.stopCoordinateSelectionMode();
   }
 }

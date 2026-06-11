@@ -1,0 +1,150 @@
+{
+  "nodes": [
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": ".env.example",
+      "summary": "Configuration for . build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:DOCKER.md",
+      "type": "document",
+      "name": "DOCKER.md",
+      "filePath": "DOCKER.md",
+      "summary": "Documentation file (DOCKER.md) describing project or feature behavior.",
+      "tags": [
+        "documentation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "pipeline:Jenkinsfile",
+      "type": "pipeline",
+      "name": "Jenkinsfile",
+      "filePath": "Jenkinsfile",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (Jenkinsfile).",
+      "tags": [
+        "infra"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:LICENSE.txt",
+      "type": "document",
+      "name": "LICENSE.txt",
+      "filePath": "LICENSE.txt",
+      "summary": "Documentation file (LICENSE.txt) describing project or feature behavior.",
+      "tags": [
+        "documentation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:LOGGING-TESTING.md",
+      "type": "document",
+      "name": "LOGGING-TESTING.md",
+      "filePath": "LOGGING-TESTING.md",
+      "summary": "Documentation file (LOGGING-TESTING.md) describing project or feature behavior.",
+      "tags": [
+        "test",
+        "documentation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:NatureHelp.sln",
+      "type": "config",
+      "name": "NatureHelp.sln",
+      "filePath": "NatureHelp.sln",
+      "summary": "Configuration for . build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Documentation file (README.md) describing project or feature behavior.",
+      "tags": [
+        "documentation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:SECURITY.md",
+      "type": "document",
+      "name": "SECURITY.md",
+      "filePath": "SECURITY.md",
+      "summary": "Documentation file (SECURITY.md) describing project or feature behavior.",
+      "tags": [
+        "documentation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:USER_GUIDE.md",
+      "type": "document",
+      "name": "USER_GUIDE.md",
+      "filePath": "USER_GUIDE.md",
+      "summary": "Documentation file (USER_GUIDE.md) describing project or feature behavior.",
+      "tags": [
+        "documentation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:clean_project.ps1",
+      "type": "file",
+      "name": "clean_project.ps1",
+      "filePath": "clean_project.ps1",
+      "summary": "clean_project.ps1 is a powershell script module in NatureHelp.",
+      "tags": [
+        "script"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:prometheus.yml",
+      "type": "config",
+      "name": "prometheus.yml",
+      "filePath": "prometheus.yml",
+      "summary": "Configuration for . build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:test-upload.txt",
+      "type": "document",
+      "name": "test-upload.txt",
+      "filePath": "test-upload.txt",
+      "summary": "Documentation file (test-upload.txt) describing project or feature behavior.",
+      "tags": [
+        "test",
+        "documentation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tmp-login.json",
+      "type": "config",
+      "name": "tmp-login.json",
+      "filePath": "tmp-login.json",
+      "summary": "Configuration for . build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

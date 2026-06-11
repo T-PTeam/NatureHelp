@@ -1,0 +1,2234 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/Domain/Models/Analitycs/Report.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "Report",
+          "startLine": 6,
+          "endLine": 15,
+          "methods": [],
+          "properties": [
+            "Title",
+            "Topic",
+            "Data",
+            "Reporter",
+            "ReporterId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Title",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Topic",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Data",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Reporter",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "ReporterId",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "Report",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Analitycs/Research.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "Research",
+          "startLine": 6,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "Title",
+            "Type",
+            "Date",
+            "Description",
+            "LaboratoryId",
+            "Laboratory",
+            "ResearcherId",
+            "Researcher"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Title",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Type",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Date",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Description",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "LaboratoryId",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "Laboratory",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ResearcherId",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "Researcher",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "Research",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Attachment.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "Attachment",
+          "startLine": 5,
+          "endLine": 17,
+          "methods": [],
+          "properties": [
+            "FileName",
+            "FileSize",
+            "MimeType",
+            "StoragePath",
+            "PreviewUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileName",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "FileSize",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "MimeType",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "StoragePath",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "PreviewUrl",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "Attachment",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Audit/ChangedModelLog.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "ChangedModelLog",
+          "startLine": 4,
+          "endLine": 9,
+          "methods": [],
+          "properties": [
+            "DeficiencyType",
+            "DeficiencyId",
+            "ChangesJson"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeficiencyType",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyId",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "ChangesJson",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "ChangedModelLog",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Audit/ComplexMonitoringScheme.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "ComplexMonitoringScheme",
+          "startLine": 5,
+          "endLine": 10,
+          "methods": [],
+          "properties": [
+            "isMonitoringWaterDeficiencies",
+            "isMonitoringSoilDeficiencies"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isMonitoringWaterDeficiencies",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "isMonitoringSoilDeficiencies",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ComplexMonitoringScheme",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Audit/DeficiencyMonitoring.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "DeficiencyMonitoring",
+          "startLine": 5,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "IsMonitoring",
+            "UserId",
+            "User",
+            "DeficiencyType",
+            "DeficiencyId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IsMonitoring",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "UserId",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "User",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyType",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyId",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyMonitoring",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/BaseModel.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "BaseModel",
+          "startLine": 2,
+          "endLine": 9,
+          "methods": [],
+          "properties": [
+            "Id",
+            "CreatedBy",
+            "CreatedOn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "CreatedBy",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "CreatedOn",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "BaseModel",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/CommentMessage.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "CommentMessage",
+          "startLine": 7,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "Message",
+            "DeficiencyType",
+            "DeficiencyId",
+            "CreatorFullName",
+            "Deficiency"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Message",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyType",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyId",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "CreatorFullName",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "Deficiency",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "CommentMessage",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Nature/Deficiency.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "Deficiency",
+          "startLine": 8,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "Title",
+            "Description",
+            "Type",
+            "ResponsibleUserId",
+            "ResponsibleUser",
+            "EDangerState",
+            "IsPublic",
+            "ChangedModelLogEntityId",
+            "ChangedModelLog",
+            "CreatedBy",
+            "Creator",
+            "DeficiencyMonitoringId",
+            "DeficiencyMonitoring",
+            "Longitude",
+            "Latitude",
+            "RadiusAffected",
+            "Address"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Title",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Description",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "Type",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "ResponsibleUserId",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ResponsibleUser",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "EDangerState",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "IsPublic",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "ChangedModelLogEntityId",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "ChangedModelLog",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "CreatedBy",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "Creator",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyMonitoringId",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyMonitoring",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "Longitude",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "Latitude",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "RadiusAffected",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "Address",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "Deficiency",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 18,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Nature/DeficiencyAttachment.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "DeficiencyAttachment",
+          "startLine": 6,
+          "endLine": 15,
+          "methods": [],
+          "properties": [
+            "DeficiencyId",
+            "Deficiency",
+            "DeficiencyType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeficiencyId",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Deficiency",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyType",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyAttachment",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Nature/DeficiencyMapDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "DeficiencyMapDto",
+          "startLine": 4,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "Id",
+            "Title",
+            "Description",
+            "Type",
+            "EDangerState",
+            "Longitude",
+            "Latitude",
+            "RadiusAffected",
+            "CreatorFullName",
+            "ResponsibleUserFullName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "Title",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "Description",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Type",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "EDangerState",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Longitude",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "Latitude",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "RadiusAffected",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "CreatorFullName",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ResponsibleUserFullName",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyMapDto",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Nature/SoilDeficiency.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 59,
+      "classes": [
+        {
+          "name": "SoilDeficiency",
+          "startLine": 3,
+          "endLine": 70,
+          "methods": [],
+          "properties": [
+            "PH",
+            "OrganicMatter",
+            "LeadConcentration",
+            "CadmiumConcentration",
+            "MercuryConcentration",
+            "PesticidesContent",
+            "NitratesConcentration",
+            "HeavyMetalsConcentration",
+            "ElectricalConductivity",
+            "MicrobialActivity",
+            "AnalysisDate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PH",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "OrganicMatter",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "LeadConcentration",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "CadmiumConcentration",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "MercuryConcentration",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "PesticidesContent",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "NitratesConcentration",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "HeavyMetalsConcentration",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "ElectricalConductivity",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "MicrobialActivity",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "AnalysisDate",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "SoilDeficiency",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Nature/WaterDeficiency.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 95,
+      "classes": [
+        {
+          "name": "WaterDeficiency",
+          "startLine": 4,
+          "endLine": 110,
+          "methods": [],
+          "properties": [
+            "PH",
+            "DissolvedOxygen",
+            "LeadConcentration",
+            "MercuryConcentration",
+            "NitrateConcentration",
+            "PesticidesContent",
+            "MicrobialActivity",
+            "RadiationLevel",
+            "ChemicalOxygenDemand",
+            "BiologicalOxygenDemand",
+            "PhosphateConcentration",
+            "CadmiumConcentration",
+            "TotalDissolvedSolids",
+            "ElectricalConductivity",
+            "MicrobialLoad"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PH",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "DissolvedOxygen",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "LeadConcentration",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "MercuryConcentration",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "NitrateConcentration",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "PesticidesContent",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "MicrobialActivity",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "RadiationLevel",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "ChemicalOxygenDemand",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "BiologicalOxygenDemand",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "PhosphateConcentration",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "CadmiumConcentration",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "TotalDissolvedSolids",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "ElectricalConductivity",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "MicrobialLoad",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "WaterDeficiency",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 16,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Organization/Laboratory.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "Laboratory",
+          "startLine": 6,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "Title",
+            "ResearchersCount",
+            "Researchers",
+            "IsPublic",
+            "Longitude",
+            "Latitude",
+            "Address"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Title",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "ResearchersCount",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Researchers",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "IsPublic",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "Longitude",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "Latitude",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "Address",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "Laboratory",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Organization/LaboratoryMapDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "LaboratoryMapDto",
+          "startLine": 2,
+          "endLine": 10,
+          "methods": [],
+          "properties": [
+            "Id",
+            "Title",
+            "Longitude",
+            "Latitude",
+            "ResearchersCount",
+            "Researchers"
+          ]
+        },
+        {
+          "name": "ResearcherDto",
+          "startLine": 12,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "Id",
+            "FullName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "Title",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "Longitude",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "Latitude",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "ResearchersCount",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Researchers",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "LaboratoryMapDto",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "Id",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "FullName",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ResearcherDto",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "src/Domain/Models/Organization/Organization.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "AddMember",
+          "startLine": 11,
+          "endLine": 14,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "RemoveMember",
+          "startLine": 16,
+          "endLine": 19,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "GetMembers",
+          "startLine": 21,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "IsMember",
+          "startLine": 26,
+          "endLine": 29,
+          "params": [
+            "user"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Organization",
+          "startLine": 3,
+          "endLine": 30,
+          "methods": [
+            "AddMember",
+            "RemoveMember",
+            "GetMembers",
+            "IsMember"
+          ],
+          "properties": [
+            "staff",
+            "Title",
+            "AllowedMembersCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Title",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "AllowedMembersCount",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "AddMember",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "RemoveMember",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "GetMembers",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "IsMember",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "Organization",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AddMember",
+          "callee": "staff.Add",
+          "lineNumber": 13
+        },
+        {
+          "caller": "RemoveMember",
+          "callee": "staff.Remove",
+          "lineNumber": 18
+        },
+        {
+          "caller": "GetMembers",
+          "callee": "staff.ToList",
+          "lineNumber": 23
+        },
+        {
+          "caller": "IsMember",
+          "callee": "staff.Contains",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Organization/Person.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "functions": [
+        {
+          "name": "GetFullName",
+          "startLine": 10,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "UpdateContactDetails",
+          "startLine": 15,
+          "endLine": 18,
+          "params": [
+            "phoneNumber"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Person",
+          "startLine": 3,
+          "endLine": 19,
+          "methods": [
+            "GetFullName",
+            "UpdateContactDetails"
+          ],
+          "properties": [
+            "FirstName",
+            "LastName",
+            "DateOfBirth",
+            "PhoneNumber"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FirstName",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "LastName",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "DateOfBirth",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "PhoneNumber",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "GetFullName",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateContactDetails",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "Person",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Organization/User.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "IsEmailValid",
+          "startLine": 48,
+          "endLine": 58,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "IsPasswordValid",
+          "startLine": 59,
+          "endLine": 69,
+          "params": [
+            "password"
+          ]
+        },
+        {
+          "name": "AssignRole",
+          "startLine": 71,
+          "endLine": 74,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "HasRole",
+          "startLine": 76,
+          "endLine": 79,
+          "params": [
+            "role"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "User",
+          "startLine": 7,
+          "endLine": 80,
+          "methods": [
+            "IsEmailValid",
+            "IsPasswordValid",
+            "AssignRole",
+            "HasRole"
+          ],
+          "properties": [
+            "role",
+            "Role",
+            "Email",
+            "IsEmailConfirmed",
+            "EmailConfirmationToken",
+            "PasswordHash",
+            "Organization",
+            "Laboratory",
+            "AccessToken",
+            "AccessTokenExpireTime",
+            "RefreshToken",
+            "RefreshTokenExpireTime",
+            "OrganizationId",
+            "LaboratoryId",
+            "Password",
+            "PasswordResetToken",
+            "PasswordResetTokenExpiry",
+            "DeficiencyMonitoringScheme",
+            "ProfileIsPublic",
+            "EmailNotificationsEnabled",
+            "AchievementAlertsEnabled",
+            "NewsletterEnabled",
+            "TotalXp",
+            "CurrentLevel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Role",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "Email",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "IsEmailConfirmed",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "EmailConfirmationToken",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "PasswordHash",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "Organization",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "Laboratory",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "AccessToken",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "AccessTokenExpireTime",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "RefreshToken",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "RefreshTokenExpireTime",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "OrganizationId",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "LaboratoryId",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "Password",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "PasswordResetToken",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "PasswordResetTokenExpiry",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyMonitoringScheme",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "ProfileIsPublic",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "EmailNotificationsEnabled",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "AchievementAlertsEnabled",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "NewsletterEnabled",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "TotalXp",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "CurrentLevel",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "IsEmailValid",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "IsPasswordValid",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "AssignRole",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "HasRole",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "User",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "IsEmailValid",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 50
+        },
+        {
+          "caller": "IsEmailValid",
+          "callee": "System.Text.RegularExpressions.Regex.IsMatch",
+          "lineNumber": 57
+        },
+        {
+          "caller": "IsPasswordValid",
+          "callee": "string.IsNullOrWhiteSpace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "IsPasswordValid",
+          "callee": "System.Text.RegularExpressions.Regex.IsMatch",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 28,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Profile/Achievement.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "Achievement",
+          "startLine": 5,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "Id",
+            "Code",
+            "Title",
+            "Description",
+            "Icon",
+            "RuleType",
+            "TargetInt",
+            "SortOrder",
+            "IsActive"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "Code",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Title",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Description",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Icon",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "RuleType",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "TargetInt",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "SortOrder",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "IsActive",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "Achievement",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Profile/AppDictEntry.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "AppDictEntry",
+          "startLine": 3,
+          "endLine": 8,
+          "methods": [],
+          "properties": [
+            "Id",
+            "EntryKey",
+            "ValueJson"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "EntryKey",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "ValueJson",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "AppDictEntry",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Profile/DeficiencyConfirmation.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "DeficiencyConfirmation",
+          "startLine": 6,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "Id",
+            "UserId",
+            "User",
+            "DeficiencyId",
+            "DeficiencyType",
+            "CreatedOn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "UserId",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "User",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyId",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyType",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "CreatedOn",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyConfirmation",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Profile/UserAchievement.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "UserAchievement",
+          "startLine": 5,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "UserId",
+            "User",
+            "AchievementId",
+            "Achievement",
+            "Progress",
+            "UnlockedAt",
+            "IsCompleted"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserId",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "User",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "AchievementId",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Achievement",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Progress",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "UnlockedAt",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "IsCompleted",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "UserAchievement",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Profile/UserDailyVisit.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "UserDailyVisit",
+          "startLine": 5,
+          "endLine": 11,
+          "methods": [],
+          "properties": [
+            "Id",
+            "UserId",
+            "User",
+            "VisitDate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "UserId",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "User",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "VisitDate",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "UserDailyVisit",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Domain/Models/Profile/UserXpLedger.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "UserXpLedger",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "Id",
+            "UserId",
+            "User",
+            "Amount",
+            "Reason",
+            "ReferenceType",
+            "ReferenceId",
+            "CreatedOn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "UserId",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "User",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Amount",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "Reason",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "ReferenceType",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "ReferenceId",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "CreatedOn",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "UserXpLedger",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Infrastructure/Data/ApplicationContext.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "ApplicationContext",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "OnModelCreating",
+          "startLine": 37,
+          "endLine": 66,
+          "params": [
+            "builder"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApplicationContext",
+          "startLine": 12,
+          "endLine": 67,
+          "methods": [
+            "ApplicationContext",
+            "OnModelCreating"
+          ],
+          "properties": [
+            "Reports",
+            "WaterDeficiencies",
+            "SoilDeficiencies",
+            "Laboratories",
+            "Organizations",
+            "Users",
+            "Researches",
+            "ChangedModelLogs",
+            "Attachments",
+            "Comments",
+            "DeficiencyMonitoring",
+            "UserXpLedgers",
+            "UserDailyVisits",
+            "DeficiencyConfirmations",
+            "Achievements",
+            "UserAchievements",
+            "DictEntries"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Reports",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "WaterDeficiencies",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "SoilDeficiencies",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "Laboratories",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "Organizations",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "Users",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "Researches",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "ChangedModelLogs",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "Attachments",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "Comments",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyMonitoring",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "UserXpLedgers",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "UserDailyVisits",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyConfirmations",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "Achievements",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "UserAchievements",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "DictEntries",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "ApplicationContext",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "ApplicationContext",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "OnModelCreating",
+          "callee": "base.OnModelCreating",
+          "lineNumber": 39
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<Attachment>()\n            .HasDiscriminator<string>(\"AttachmentType\")\n            .HasValue<DeficiencyAttachment>",
+          "lineNumber": 41
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<Attachment>()\n            .HasDiscriminator<string>",
+          "lineNumber": 41
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<Attachment>",
+          "lineNumber": 41
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<User>().OwnsOne",
+          "lineNumber": 45
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<User>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<User>()\n            .HasOne(u => u.Organization)\n            .WithMany()\n            .HasForeignKey(u => u.OrganizationId)\n            .OnDelete",
+          "lineNumber": 47
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<User>()\n            .HasOne(u => u.Organization)\n            .WithMany()\n            .HasForeignKey",
+          "lineNumber": 47
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<User>()\n            .HasOne(u => u.Organization)\n            .WithMany",
+          "lineNumber": 47
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<User>()\n            .HasOne",
+          "lineNumber": 47
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<User>",
+          "lineNumber": 47
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "builder.Entity<UserAchievement>",
+          "lineNumber": 53
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "e.HasKey",
+          "lineNumber": 55
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "e.HasOne(ua => ua.User)\n                .WithMany()\n                .HasForeignKey(ua => ua.UserId)\n                .OnDelete",
+          "lineNumber": 56
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "e.HasOne(ua => ua.User)\n                .WithMany()\n                .HasForeignKey",
+          "lineNumber": 56
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "e.HasOne(ua => ua.User)\n                .WithMany",
+          "lineNumber": 56
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "e.HasOne",
+          "lineNumber": 56
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "e.HasOne(ua => ua.Achievement)\n                .WithMany()\n                .HasForeignKey(ua => ua.AchievementId)\n                .OnDelete",
+          "lineNumber": 60
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "e.HasOne(ua => ua.Achievement)\n                .WithMany()\n                .HasForeignKey",
+          "lineNumber": 60
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "e.HasOne(ua => ua.Achievement)\n                .WithMany",
+          "lineNumber": 60
+        },
+        {
+          "caller": "OnModelCreating",
+          "callee": "e.HasOne",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 19,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

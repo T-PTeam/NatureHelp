@@ -27,4 +27,4 @@ Postman and Newman only send HTTP to whatever URL `baseUrl` is. They do not star
 
 ## Identifiers and login
 
-For **local Development**, run the API with `ASPNETCORE_ENVIRONMENT=Development` so migrations apply and [DevelopmentDatabaseSeeder.cs](../Infrastructure/Data/DevelopmentDatabaseSeeder.cs) inserts demo rows. Postman IDs then match that seed (e.g. `valentyn@example.com` / `12341234`). **Production** does not run that seeder; use real IDs and a real user, or create a SuperAdmin via `SuperAdmin:Email` / `SuperAdmin:Password` on first deploy (see deploy docs).
+For **local Development**, run the API with `ASPNETCORE_ENVIRONMENT=Development` so migrations apply and [DevelopmentDatabaseSeeder.cs](../Infrastructure/Data/DevelopmentDatabaseSeeder.cs) inserts demo rows. Postman IDs then match that seed (e.g. `valentyn@example.com` / `12341234`). Other demo accounts use `DemoPass1!` — see [docs/SEED_DATA.md](../../docs/SEED_DATA.md). **Production** does not run that seeder; use real IDs and a real user, or create a SuperAdmin via `SuperAdmin:Email` / `SuperAdmin:Password` on first deploy (see deploy docs).

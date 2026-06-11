@@ -1,0 +1,1306 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "type": "file",
+      "name": "LaboratoryControllerTests.cs",
+      "filePath": "src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "summary": "LaboratoryControllerTests.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "test",
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs:LaboratoryControllerTests",
+      "type": "function",
+      "name": "LaboratoryControllerTests",
+      "filePath": "src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "summary": "Function LaboratoryControllerTests in LaboratoryControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs:Post_Creates_New_Laboratory",
+      "type": "function",
+      "name": "Post_Creates_New_Laboratory",
+      "filePath": "src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "summary": "Function Post_Creates_New_Laboratory in LaboratoryControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs:LaboratoryControllerTests",
+      "type": "class",
+      "name": "LaboratoryControllerTests",
+      "filePath": "src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "summary": "Class LaboratoryControllerTests with 2 method(s) in LaboratoryControllerTests.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "type": "file",
+      "name": "UserControllerTests.cs",
+      "filePath": "src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "summary": "UserControllerTests.cs defines 1 class(es) and 6 function(s) in the csharp layer.",
+      "tags": [
+        "test",
+        "api-handler",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:UserControllerTests",
+      "type": "function",
+      "name": "UserControllerTests",
+      "filePath": "src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "summary": "Function UserControllerTests in UserControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+      "type": "function",
+      "name": "GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+      "filePath": "src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "summary": "Function GetOrganizationUsers_ReturnsForbidden_ForNoAuth in UserControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+      "type": "function",
+      "name": "GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+      "filePath": "src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "summary": "Function GetOrganizationUsers_ReturnsOk_ForOwnerRole in UserControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+      "type": "function",
+      "name": "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+      "filePath": "src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "summary": "Function ChangeUsersRoles_ReturnsOk_ForOwnerRole in UserControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:LoginAsync_ReturnsOk_WithoutAuth",
+      "type": "function",
+      "name": "LoginAsync_ReturnsOk_WithoutAuth",
+      "filePath": "src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "summary": "Function LoginAsync_ReturnsOk_WithoutAuth in UserControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+      "type": "function",
+      "name": "ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+      "filePath": "src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "summary": "Function ChangeUsersRoles_ReturnsForbidden_ForManagerRole in UserControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:UserControllerTests",
+      "type": "class",
+      "name": "UserControllerTests",
+      "filePath": "src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "summary": "Class UserControllerTests with 6 method(s) in UserControllerTests.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "type": "file",
+      "name": "WaterDeficiencyControllerTests.cs",
+      "filePath": "src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "summary": "WaterDeficiencyControllerTests.cs defines 1 class(es) and 5 function(s) in the csharp layer.",
+      "tags": [
+        "test",
+        "api-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:WaterDeficiencyControllerTests",
+      "type": "function",
+      "name": "WaterDeficiencyControllerTests",
+      "filePath": "src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "summary": "Function WaterDeficiencyControllerTests in WaterDeficiencyControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Post_Creates_New_WaterDeficiency",
+      "type": "function",
+      "name": "Post_Creates_New_WaterDeficiency",
+      "filePath": "src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "summary": "Function Post_Creates_New_WaterDeficiency in WaterDeficiencyControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Get_Returns_WaterDeficiency_By_Id",
+      "type": "function",
+      "name": "Get_Returns_WaterDeficiency_By_Id",
+      "filePath": "src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "summary": "Function Get_Returns_WaterDeficiency_By_Id in WaterDeficiencyControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Put_Updates_WaterDeficiency",
+      "type": "function",
+      "name": "Put_Updates_WaterDeficiency",
+      "filePath": "src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "summary": "Function Put_Updates_WaterDeficiency in WaterDeficiencyControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Delete_Removes_WaterDeficiency",
+      "type": "function",
+      "name": "Delete_Removes_WaterDeficiency",
+      "filePath": "src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "summary": "Function Delete_Removes_WaterDeficiency in WaterDeficiencyControllerTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:WaterDeficiencyControllerTests",
+      "type": "class",
+      "name": "WaterDeficiencyControllerTests",
+      "filePath": "src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "summary": "Class WaterDeficiencyControllerTests with 5 method(s) in WaterDeficiencyControllerTests.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Tests/NatureHelpWebAppFactory.cs",
+      "type": "file",
+      "name": "NatureHelpWebAppFactory.cs",
+      "filePath": "src/Tests/NatureHelpWebAppFactory.cs",
+      "summary": "NatureHelpWebAppFactory.cs defines 1 class(es) and 4 function(s) in the csharp layer.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/NatureHelpWebAppFactory.cs:ConfigureWebHost",
+      "type": "function",
+      "name": "ConfigureWebHost",
+      "filePath": "src/Tests/NatureHelpWebAppFactory.cs",
+      "summary": "Function ConfigureWebHost in NatureHelpWebAppFactory.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/NatureHelpWebAppFactory.cs:InitializeAsync",
+      "type": "function",
+      "name": "InitializeAsync",
+      "filePath": "src/Tests/NatureHelpWebAppFactory.cs",
+      "summary": "Function InitializeAsync in NatureHelpWebAppFactory.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/NatureHelpWebAppFactory.cs:WithTestAuth",
+      "type": "function",
+      "name": "WithTestAuth",
+      "filePath": "src/Tests/NatureHelpWebAppFactory.cs",
+      "summary": "Function WithTestAuth in NatureHelpWebAppFactory.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Tests/NatureHelpWebAppFactory.cs:NatureHelpWebAppFactory",
+      "type": "class",
+      "name": "NatureHelpWebAppFactory",
+      "filePath": "src/Tests/NatureHelpWebAppFactory.cs",
+      "summary": "Class NatureHelpWebAppFactory with 4 method(s) in NatureHelpWebAppFactory.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Tests/TestAuthHandler.cs",
+      "type": "file",
+      "name": "TestAuthHandler.cs",
+      "filePath": "src/Tests/TestAuthHandler.cs",
+      "summary": "TestAuthHandler.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/TestAuthHandler.cs:TestAuthHandler",
+      "type": "function",
+      "name": "TestAuthHandler",
+      "filePath": "src/Tests/TestAuthHandler.cs",
+      "summary": "Function TestAuthHandler in TestAuthHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/TestAuthHandler.cs:HandleAuthenticateAsync",
+      "type": "function",
+      "name": "HandleAuthenticateAsync",
+      "filePath": "src/Tests/TestAuthHandler.cs",
+      "summary": "Function HandleAuthenticateAsync in TestAuthHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Tests/TestAuthHandler.cs:TestAuthHandler",
+      "type": "class",
+      "name": "TestAuthHandler",
+      "filePath": "src/Tests/TestAuthHandler.cs",
+      "summary": "Class TestAuthHandler with 2 method(s) in TestAuthHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/Tests/Tests.csproj",
+      "type": "config",
+      "name": "Tests.csproj",
+      "filePath": "src/Tests/Tests.csproj",
+      "summary": "Configuration for src/Tests build or runtime settings.",
+      "tags": [
+        "test",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Tests/UnitTests/Application/AuditTests.cs",
+      "type": "file",
+      "name": "AuditTests.cs",
+      "filePath": "src/Tests/UnitTests/Application/AuditTests.cs",
+      "summary": "AuditTests.cs defines 1 class(es) and 3 function(s) in the csharp layer.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/AuditTests.cs:AuditTests",
+      "type": "function",
+      "name": "AuditTests",
+      "filePath": "src/Tests/UnitTests/Application/AuditTests.cs",
+      "summary": "Function AuditTests in AuditTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/AuditTests.cs:LogDeficiencyChangesAsync_ShouldLog",
+      "type": "function",
+      "name": "LogDeficiencyChangesAsync_ShouldLog",
+      "filePath": "src/Tests/UnitTests/Application/AuditTests.cs",
+      "summary": "Function LogDeficiencyChangesAsync_ShouldLog in AuditTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/AuditTests.cs:LogDeficiencyChangesAsync_ShouldNotLog",
+      "type": "function",
+      "name": "LogDeficiencyChangesAsync_ShouldNotLog",
+      "filePath": "src/Tests/UnitTests/Application/AuditTests.cs",
+      "summary": "Function LogDeficiencyChangesAsync_ShouldNotLog in AuditTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Tests/UnitTests/Application/AuditTests.cs:AuditTests",
+      "type": "class",
+      "name": "AuditTests",
+      "filePath": "src/Tests/UnitTests/Application/AuditTests.cs",
+      "summary": "Class AuditTests with 3 method(s) in AuditTests.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "type": "file",
+      "name": "UserTests.cs",
+      "filePath": "src/Tests/UnitTests/Application/UserTests.cs",
+      "summary": "UserTests.cs defines 1 class(es) and 7 function(s) in the csharp layer.",
+      "tags": [
+        "test",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/UserTests.cs:UserTests",
+      "type": "function",
+      "name": "UserTests",
+      "filePath": "src/Tests/UnitTests/Application/UserTests.cs",
+      "summary": "Function UserTests in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_ShouldThrow_WhenUserNotFound",
+      "type": "function",
+      "name": "LoginAsync_ShouldThrow_WhenUserNotFound",
+      "filePath": "src/Tests/UnitTests/Application/UserTests.cs",
+      "summary": "Function LoginAsync_ShouldThrow_WhenUserNotFound in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_Should_Throw_VerificationFailed",
+      "type": "function",
+      "name": "LoginAsync_Should_Throw_VerificationFailed",
+      "filePath": "src/Tests/UnitTests/Application/UserTests.cs",
+      "summary": "Function LoginAsync_Should_Throw_VerificationFailed in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+      "type": "function",
+      "name": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+      "filePath": "src/Tests/UnitTests/Application/UserTests.cs",
+      "summary": "Function LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+      "type": "function",
+      "name": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+      "filePath": "src/Tests/UnitTests/Application/UserTests.cs",
+      "summary": "Function LoginAsync_ShouldSucceed_WhenPasswordHashMatches in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/UserTests.cs:GeneratingToken_And_IsTokenExpired_Method",
+      "type": "function",
+      "name": "GeneratingToken_And_IsTokenExpired_Method",
+      "filePath": "src/Tests/UnitTests/Application/UserTests.cs",
+      "summary": "Function GeneratingToken_And_IsTokenExpired_Method in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Application/UserTests.cs:UpdateAccessTokenByRefreshToken",
+      "type": "function",
+      "name": "UpdateAccessTokenByRefreshToken",
+      "filePath": "src/Tests/UnitTests/Application/UserTests.cs",
+      "summary": "Function UpdateAccessTokenByRefreshToken in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Tests/UnitTests/Application/UserTests.cs:UserTests",
+      "type": "class",
+      "name": "UserTests",
+      "filePath": "src/Tests/UnitTests/Application/UserTests.cs",
+      "summary": "Class UserTests with 7 method(s) in UserTests.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "type": "file",
+      "name": "UserTests.cs",
+      "filePath": "src/Tests/UnitTests/Domain/UserTests.cs",
+      "summary": "UserTests.cs defines 1 class(es) and 5 function(s) in the csharp layer.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Domain/UserTests.cs:UserEmailChecking",
+      "type": "function",
+      "name": "UserEmailChecking",
+      "filePath": "src/Tests/UnitTests/Domain/UserTests.cs",
+      "summary": "Function UserEmailChecking in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Domain/UserTests.cs:UserPasswordChecking",
+      "type": "function",
+      "name": "UserPasswordChecking",
+      "filePath": "src/Tests/UnitTests/Domain/UserTests.cs",
+      "summary": "Function UserPasswordChecking in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Domain/UserTests.cs:UserAssigningAndCheckingRole",
+      "type": "function",
+      "name": "UserAssigningAndCheckingRole",
+      "filePath": "src/Tests/UnitTests/Domain/UserTests.cs",
+      "summary": "Function UserAssigningAndCheckingRole in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Domain/UserTests.cs:GetPersonFullName",
+      "type": "function",
+      "name": "GetPersonFullName",
+      "filePath": "src/Tests/UnitTests/Domain/UserTests.cs",
+      "summary": "Function GetPersonFullName in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Tests/UnitTests/Domain/UserTests.cs:CheckChangingContactPersonDetails",
+      "type": "function",
+      "name": "CheckChangingContactPersonDetails",
+      "filePath": "src/Tests/UnitTests/Domain/UserTests.cs",
+      "summary": "Function CheckChangingContactPersonDetails in UserTests.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Tests/UnitTests/Domain/UserTests.cs:UserTests",
+      "type": "class",
+      "name": "UserTests",
+      "filePath": "src/Tests/UnitTests/Domain/UserTests.cs",
+      "summary": "Class UserTests with 5 method(s) in UserTests.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/.cursor/rules/universal-components.mdc",
+      "type": "file",
+      "name": "universal-components.mdc",
+      "filePath": "src/View/nature-help/.cursor/rules/universal-components.mdc",
+      "summary": "universal-components.mdc is a mdc code module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/.firebaserc",
+      "type": "file",
+      "name": ".firebaserc",
+      "filePath": "src/View/nature-help/.firebaserc",
+      "summary": ".firebaserc is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/.npmrc",
+      "type": "file",
+      "name": ".npmrc",
+      "filePath": "src/View/nature-help/.npmrc",
+      "summary": ".npmrc is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/cypress.config.ts",
+      "type": "file",
+      "name": "cypress.config.ts",
+      "filePath": "src/View/nature-help/cypress.config.ts",
+      "summary": "cypress.config.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/cypress/e2e/add-water-deficiency.cy.ts",
+      "type": "file",
+      "name": "add-water-deficiency.cy.ts",
+      "filePath": "src/View/nature-help/cypress/e2e/add-water-deficiency.cy.ts",
+      "summary": "add-water-deficiency.cy.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/cypress/e2e/check-changing-history.cy.ts",
+      "type": "file",
+      "name": "check-changing-history.cy.ts",
+      "filePath": "src/View/nature-help/cypress/e2e/check-changing-history.cy.ts",
+      "summary": "check-changing-history.cy.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/cypress/e2e/check-map-markers.cy.ts",
+      "type": "file",
+      "name": "check-map-markers.cy.ts",
+      "filePath": "src/View/nature-help/cypress/e2e/check-map-markers.cy.ts",
+      "summary": "check-map-markers.cy.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/cypress/e2e/login.cy.ts",
+      "type": "file",
+      "name": "login.cy.ts",
+      "filePath": "src/View/nature-help/cypress/e2e/login.cy.ts",
+      "summary": "login.cy.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/cypress/support/component-index.html",
+      "type": "file",
+      "name": "component-index.html",
+      "filePath": "src/View/nature-help/cypress/support/component-index.html",
+      "summary": "component-index.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/cypress/support/index.d.ts",
+      "type": "file",
+      "name": "index.d.ts",
+      "filePath": "src/View/nature-help/cypress/support/index.d.ts",
+      "summary": "index.d.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/eslint.config.mjs",
+      "type": "file",
+      "name": "eslint.config.mjs",
+      "filePath": "src/View/nature-help/eslint.config.mjs",
+      "summary": "eslint.config.mjs is a javascript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/lint-staged.config.js",
+      "type": "file",
+      "name": "lint-staged.config.js",
+      "filePath": "src/View/nature-help/lint-staged.config.js",
+      "summary": "lint-staged.config.js is a javascript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/nginx.conf",
+      "type": "file",
+      "name": "nginx.conf",
+      "filePath": "src/View/nature-help/nginx.conf",
+      "summary": "nginx.conf is a conf code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/postcss.config.js",
+      "type": "file",
+      "name": "postcss.config.js",
+      "filePath": "src/View/nature-help/postcss.config.js",
+      "summary": "postcss.config.js is a javascript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/prettier.config.js",
+      "type": "file",
+      "name": "prettier.config.js",
+      "filePath": "src/View/nature-help/prettier.config.js",
+      "summary": "prettier.config.js is a javascript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/Program.cs",
+      "type": "file",
+      "name": "Program.cs",
+      "filePath": "src/View/nature-help/Program.cs",
+      "summary": "Program.cs is a csharp code module in NatureHelp.",
+      "tags": [
+        "entry-point"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs:LaboratoryControllerTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs:LaboratoryControllerTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs:Post_Creates_New_Laboratory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs:Post_Creates_New_Laboratory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "target": "class:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs:LaboratoryControllerTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "target": "class:src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs:LaboratoryControllerTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:UserControllerTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:UserControllerTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:LoginAsync_ReturnsOk_WithoutAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:LoginAsync_ReturnsOk_WithoutAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "class:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:UserControllerTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "target": "class:src/Tests/IntegrationTests/Controllers/UserControllerTests.cs:UserControllerTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:WaterDeficiencyControllerTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:WaterDeficiencyControllerTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Post_Creates_New_WaterDeficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Post_Creates_New_WaterDeficiency",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Get_Returns_WaterDeficiency_By_Id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Get_Returns_WaterDeficiency_By_Id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Put_Updates_WaterDeficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Put_Updates_WaterDeficiency",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Delete_Removes_WaterDeficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "function:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:Delete_Removes_WaterDeficiency",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "class:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:WaterDeficiencyControllerTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "target": "class:src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs:WaterDeficiencyControllerTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/NatureHelpWebAppFactory.cs",
+      "target": "function:src/Tests/NatureHelpWebAppFactory.cs:ConfigureWebHost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/NatureHelpWebAppFactory.cs",
+      "target": "function:src/Tests/NatureHelpWebAppFactory.cs:InitializeAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/NatureHelpWebAppFactory.cs",
+      "target": "function:src/Tests/NatureHelpWebAppFactory.cs:InitializeAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/NatureHelpWebAppFactory.cs",
+      "target": "function:src/Tests/NatureHelpWebAppFactory.cs:WithTestAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/NatureHelpWebAppFactory.cs",
+      "target": "function:src/Tests/NatureHelpWebAppFactory.cs:WithTestAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/NatureHelpWebAppFactory.cs",
+      "target": "class:src/Tests/NatureHelpWebAppFactory.cs:NatureHelpWebAppFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/NatureHelpWebAppFactory.cs",
+      "target": "class:src/Tests/NatureHelpWebAppFactory.cs:NatureHelpWebAppFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/TestAuthHandler.cs",
+      "target": "function:src/Tests/TestAuthHandler.cs:TestAuthHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/TestAuthHandler.cs",
+      "target": "function:src/Tests/TestAuthHandler.cs:TestAuthHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/TestAuthHandler.cs",
+      "target": "function:src/Tests/TestAuthHandler.cs:HandleAuthenticateAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/TestAuthHandler.cs",
+      "target": "class:src/Tests/TestAuthHandler.cs:TestAuthHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/TestAuthHandler.cs",
+      "target": "class:src/Tests/TestAuthHandler.cs:TestAuthHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/AuditTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/AuditTests.cs:AuditTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/AuditTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/AuditTests.cs:AuditTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/AuditTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/AuditTests.cs:LogDeficiencyChangesAsync_ShouldLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/AuditTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/AuditTests.cs:LogDeficiencyChangesAsync_ShouldLog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/AuditTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/AuditTests.cs:LogDeficiencyChangesAsync_ShouldNotLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/AuditTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/AuditTests.cs:LogDeficiencyChangesAsync_ShouldNotLog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/AuditTests.cs",
+      "target": "class:src/Tests/UnitTests/Application/AuditTests.cs:AuditTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/AuditTests.cs",
+      "target": "class:src/Tests/UnitTests/Application/AuditTests.cs:AuditTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:UserTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:UserTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_ShouldThrow_WhenUserNotFound",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_ShouldThrow_WhenUserNotFound",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_Should_Throw_VerificationFailed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_Should_Throw_VerificationFailed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:GeneratingToken_And_IsTokenExpired_Method",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:GeneratingToken_And_IsTokenExpired_Method",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:UpdateAccessTokenByRefreshToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Application/UserTests.cs:UpdateAccessTokenByRefreshToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "class:src/Tests/UnitTests/Application/UserTests.cs:UserTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Application/UserTests.cs",
+      "target": "class:src/Tests/UnitTests/Application/UserTests.cs:UserTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:UserEmailChecking",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:UserEmailChecking",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:UserPasswordChecking",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:UserPasswordChecking",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:UserAssigningAndCheckingRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:UserAssigningAndCheckingRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:GetPersonFullName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:GetPersonFullName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:CheckChangingContactPersonDetails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "function:src/Tests/UnitTests/Domain/UserTests.cs:CheckChangingContactPersonDetails",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "class:src/Tests/UnitTests/Domain/UserTests.cs:UserTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Tests/UnitTests/Domain/UserTests.cs",
+      "target": "class:src/Tests/UnitTests/Domain/UserTests.cs:UserTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

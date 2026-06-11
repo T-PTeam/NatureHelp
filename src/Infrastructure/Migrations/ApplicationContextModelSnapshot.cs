@@ -52,38 +52,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("ReporterId");
 
                     b.ToTable("Reports");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("a1111111-1111-1111-1111-111111111111"),
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(5064),
-                            Data = "Genetic research data goes here...",
-                            ReporterId = new Guid("11112222-3333-4444-5555-666677778888"),
-                            Title = "Annual Genetic Study",
-                            Topic = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("a2222222-2222-2222-2222-222222222222"),
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(6146),
-                            Data = "Performance analysis data goes here...",
-                            ReporterId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
-                            Title = "AI Algorithm Performance",
-                            Topic = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("a3333333-3333-3333-3333-333333333333"),
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(6152),
-                            Data = "Pandemic analysis data goes here...",
-                            ReporterId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
-                            Title = "Global Pandemic Analysis",
-                            Topic = 0
-                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Analitycs.Research", b =>
@@ -355,86 +323,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("ResponsibleUserId");
 
                     b.ToTable("SoilDeficiencies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("d1111111-1111-1111-1111-111111111111"),
-                            AnalysisDate = new DateTime(2025, 1, 14, 22, 0, 0, 0, DateTimeKind.Utc),
-                            CadmiumConcentration = 1.2,
-                            CreatedBy = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(599),
-                            Description = "",
-                            EDangerState = 0,
-                            ElectricalConductivity = 0.69999999999999996,
-                            HeavyMetalsConcentration = 120.0,
-                            IsPublic = true,
-                            Latitude = 50.450099999999999,
-                            LeadConcentration = 150.0,
-                            Longitude = 30.523399999999999,
-                            MercuryConcentration = 0.59999999999999998,
-                            MicrobialActivity = 3200.0,
-                            NitratesConcentration = 45.0,
-                            OrganicMatter = 3.7999999999999998,
-                            PH = 6.5,
-                            PesticidesContent = 0.80000000000000004,
-                            RadiusAffected = 10.0,
-                            ResponsibleUserId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
-                            Title = "First Soil def",
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("d2222222-2222-2222-2222-222222222222"),
-                            AnalysisDate = new DateTime(2025, 1, 17, 22, 0, 0, 0, DateTimeKind.Utc),
-                            CadmiumConcentration = 2.5,
-                            CreatedBy = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(2791),
-                            Description = "",
-                            EDangerState = 2,
-                            ElectricalConductivity = 0.90000000000000002,
-                            HeavyMetalsConcentration = 200.0,
-                            IsPublic = true,
-                            Latitude = 49.993499999999997,
-                            LeadConcentration = 250.0,
-                            Longitude = 36.229199999999999,
-                            MercuryConcentration = 1.1000000000000001,
-                            MicrobialActivity = 1500.0,
-                            NitratesConcentration = 60.0,
-                            OrganicMatter = 2.5,
-                            PH = 5.9000000000000004,
-                            PesticidesContent = 1.5,
-                            RadiusAffected = 10.0,
-                            ResponsibleUserId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
-                            Title = "Second Soil def",
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("d3333333-3333-3333-3333-333333333333"),
-                            AnalysisDate = new DateTime(2025, 1, 19, 22, 0, 0, 0, DateTimeKind.Utc),
-                            CadmiumConcentration = 0.80000000000000004,
-                            CreatedBy = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(2808),
-                            Description = "",
-                            EDangerState = 1,
-                            ElectricalConductivity = 0.5,
-                            HeavyMetalsConcentration = 50.0,
-                            IsPublic = true,
-                            Latitude = 48.464700000000001,
-                            LeadConcentration = 80.0,
-                            Longitude = 35.0456,
-                            MercuryConcentration = 0.29999999999999999,
-                            MicrobialActivity = 4000.0,
-                            NitratesConcentration = 30.0,
-                            OrganicMatter = 4.0999999999999996,
-                            PH = 7.2000000000000002,
-                            PesticidesContent = 0.5,
-                            RadiusAffected = 10.0,
-                            ResponsibleUserId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
-                            Title = "Third Soil def",
-                            Type = 1
-                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Nature.WaterDeficiency", b =>
@@ -543,98 +431,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("ResponsibleUserId");
 
                     b.ToTable("WaterDeficiencies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("c1111111-1111-1111-1111-111111111111"),
-                            BiologicalOxygenDemand = 4.5,
-                            CadmiumConcentration = 0.029999999999999999,
-                            ChemicalOxygenDemand = 0.0,
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(7718),
-                            Description = "",
-                            DissolvedOxygen = 6.7999999999999998,
-                            EDangerState = 0,
-                            ElectricalConductivity = 1.2,
-                            IsPublic = true,
-                            Latitude = 50.450099999999999,
-                            LeadConcentration = 0.14999999999999999,
-                            Longitude = 30.523399999999999,
-                            MercuryConcentration = 0.02,
-                            MicrobialActivity = 0.0,
-                            MicrobialLoad = 1500.0,
-                            NitrateConcentration = 20.0,
-                            PH = 7.2000000000000002,
-                            PesticidesContent = 0.10000000000000001,
-                            PhosphateConcentration = 2.1000000000000001,
-                            RadiationLevel = 0.0,
-                            RadiusAffected = 10.0,
-                            ResponsibleUserId = new Guid("11112222-3333-4444-5555-666677778888"),
-                            Title = "First Water def",
-                            TotalDissolvedSolids = 500.0,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("c2222222-2222-2222-2222-222222222222"),
-                            BiologicalOxygenDemand = 8.0,
-                            CadmiumConcentration = 0.14999999999999999,
-                            ChemicalOxygenDemand = 0.0,
-                            CreatedBy = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(253),
-                            Description = "",
-                            DissolvedOxygen = 4.0,
-                            EDangerState = 2,
-                            ElectricalConductivity = 2.5,
-                            IsPublic = true,
-                            Latitude = 49.8429,
-                            LeadConcentration = 0.5,
-                            Longitude = 24.031600000000001,
-                            MercuryConcentration = 0.10000000000000001,
-                            MicrobialActivity = 0.0,
-                            MicrobialLoad = 4000.0,
-                            NitrateConcentration = 50.0,
-                            PH = 6.5,
-                            PesticidesContent = 0.80000000000000004,
-                            PhosphateConcentration = 5.5,
-                            RadiationLevel = 0.0,
-                            RadiusAffected = 10.0,
-                            ResponsibleUserId = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
-                            Title = "Second Water def",
-                            TotalDissolvedSolids = 800.0,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("c3333333-3333-3333-3333-333333333333"),
-                            BiologicalOxygenDemand = 2.0,
-                            CadmiumConcentration = 0.01,
-                            ChemicalOxygenDemand = 0.0,
-                            CreatedBy = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(262),
-                            Description = "",
-                            DissolvedOxygen = 7.5,
-                            EDangerState = 1,
-                            ElectricalConductivity = 0.90000000000000002,
-                            IsPublic = true,
-                            Latitude = 46.482500000000002,
-                            LeadConcentration = 0.050000000000000003,
-                            Longitude = 30.732600000000001,
-                            MercuryConcentration = 0.0050000000000000001,
-                            MicrobialActivity = 0.0,
-                            MicrobialLoad = 800.0,
-                            NitrateConcentration = 10.0,
-                            PH = 8.0,
-                            PesticidesContent = 0.050000000000000003,
-                            PhosphateConcentration = 1.0,
-                            RadiationLevel = 0.0,
-                            RadiusAffected = 10.0,
-                            ResponsibleUserId = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
-                            Title = "Third Water def",
-                            TotalDissolvedSolids = 350.0,
-                            Type = 0
-                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Organization.Laboratory", b =>
@@ -668,38 +464,6 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Laboratories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("dddddddd-dddd-dddd-dddd-dddddddddddd"),
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(8668),
-                            IsPublic = false,
-                            Latitude = 0.0,
-                            Longitude = 0.0,
-                            Title = "Biomedical Research Lab"
-                        },
-                        new
-                        {
-                            Id = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(9007),
-                            IsPublic = false,
-                            Latitude = 0.0,
-                            Longitude = 0.0,
-                            Title = "AI and Machine Learning Lab"
-                        },
-                        new
-                        {
-                            Id = new Guid("ffffffff-ffff-ffff-ffff-ffffffffffff"),
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(9011),
-                            IsPublic = false,
-                            Latitude = 0.0,
-                            Longitude = 0.0,
-                            Title = "Genetics and Biotechnology Lab"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Organization.Organization", b =>
@@ -724,24 +488,6 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Organizations");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
-                            AllowedMembersCount = 11,
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(8020),
-                            Title = "Global Research Institute"
-                        },
-                        new
-                        {
-                            Id = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc"),
-                            AllowedMembersCount = 11,
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(8414),
-                            Title = "International Tech Hub"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Organization.User", b =>
@@ -830,74 +576,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("OrganizationId");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("11112222-3333-4444-5555-666677778888"),
-                            AchievementAlertsEnabled = true,
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(9649),
-                            CurrentLevel = 1,
-                            DateOfBirth = new DateTime(1985, 5, 19, 21, 0, 0, 0, DateTimeKind.Utc),
-                            Email = "valentyn@example.com",
-                            EmailNotificationsEnabled = true,
-                            FirstName = "Valentyn",
-                            IsEmailConfirmed = true,
-                            LaboratoryId = new Guid("dddddddd-dddd-dddd-dddd-dddddddddddd"),
-                            LastName = "Riabinchak",
-                            NewsletterEnabled = false,
-                            OrganizationId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
-                            PasswordHash = "AQAAAAIAAYagAAAAECguO79y3aAyVPpzpWncaB4IYu9PYjpnVFccaS8craV/lS2/wsFIdGgP3zt57jcgng==",
-                            PhoneNumber = "+380501234567",
-                            ProfileIsPublic = true,
-                            Role = 3,
-                            TotalXp = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("11223344-5566-7788-99aa-bbccddeeff00"),
-                            AchievementAlertsEnabled = true,
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 585, DateTimeKind.Utc).AddTicks(5636),
-                            CurrentLevel = 1,
-                            DateOfBirth = new DateTime(1980, 3, 9, 22, 0, 0, 0, DateTimeKind.Utc),
-                            Email = "igor@example.com",
-                            EmailNotificationsEnabled = true,
-                            FirstName = "Igor",
-                            IsEmailConfirmed = true,
-                            LaboratoryId = new Guid("ffffffff-ffff-ffff-ffff-ffffffffffff"),
-                            LastName = "Zaitsev",
-                            NewsletterEnabled = false,
-                            OrganizationId = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc"),
-                            PasswordHash = "AQAAAAIAAYagAAAAEKxFyghqrxHSumgKLFEzw7dG6LzDHXmxeuQErcXaVxRD8l7pFWl/gJI94vUXdtBUHw==",
-                            PhoneNumber = "+49 17612345678",
-                            ProfileIsPublic = true,
-                            Role = 3,
-                            TotalXp = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
-                            AchievementAlertsEnabled = true,
-                            CreatedBy = new Guid("11112222-3333-4444-5555-666677778888"),
-                            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 536, DateTimeKind.Utc).AddTicks(4675),
-                            CurrentLevel = 1,
-                            DateOfBirth = new DateTime(1990, 7, 14, 21, 0, 0, 0, DateTimeKind.Utc),
-                            Email = "igorzayets@example.com",
-                            EmailNotificationsEnabled = true,
-                            FirstName = "Valentyn",
-                            IsEmailConfirmed = true,
-                            LaboratoryId = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
-                            LastName = "Riabinchak",
-                            NewsletterEnabled = false,
-                            OrganizationId = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc"),
-                            PasswordHash = "AQAAAAIAAYagAAAAEAvDOvE1RJIgnTiRC1b1t8ovIg71oxhDmkd+tdUk85PBDMsoLY1lk5hiNFi2OI54yw==",
-                            PhoneNumber = "+380631234567",
-                            ProfileIsPublic = true,
-                            Role = 3,
-                            TotalXp = 0
-                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Profile.Achievement", b =>
@@ -936,96 +614,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Code")
-                        .IsUnique();
-
                     b.ToTable("Achievements");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("a0000001-0000-4000-8000-000000000001"),
-                            Code = "first_report",
-                            Description = "Create your first deficiency report",
-                            Icon = "eco",
-                            IsActive = true,
-                            RuleType = 0,
-                            SortOrder = 1,
-                            TargetInt = 1,
-                            Title = "First report"
-                        },
-                        new
-                        {
-                            Id = new Guid("a0000001-0000-4000-8000-000000000002"),
-                            Code = "water_5",
-                            Description = "Create 5 water deficiency reports",
-                            Icon = "water_drop",
-                            IsActive = true,
-                            RuleType = 1,
-                            SortOrder = 2,
-                            TargetInt = 5,
-                            Title = "Water guardian"
-                        },
-                        new
-                        {
-                            Id = new Guid("a0000001-0000-4000-8000-000000000003"),
-                            Code = "soil_3",
-                            Description = "Create 3 soil deficiency reports",
-                            Icon = "grass",
-                            IsActive = true,
-                            RuleType = 2,
-                            SortOrder = 3,
-                            TargetInt = 3,
-                            Title = "Soil scientist"
-                        },
-                        new
-                        {
-                            Id = new Guid("a0000001-0000-4000-8000-000000000004"),
-                            Code = "xp_500",
-                            Description = "Reach 500 total XP",
-                            Icon = "stars",
-                            IsActive = true,
-                            RuleType = 3,
-                            SortOrder = 4,
-                            TargetInt = 500,
-                            Title = "Dedicated contributor"
-                        },
-                        new
-                        {
-                            Id = new Guid("a0000001-0000-4000-8000-000000000005"),
-                            Code = "level_3",
-                            Description = "Reach level 3",
-                            Icon = "trending_up",
-                            IsActive = true,
-                            RuleType = 4,
-                            SortOrder = 5,
-                            TargetInt = 3,
-                            Title = "Rising star"
-                        },
-                        new
-                        {
-                            Id = new Guid("a0000001-0000-4000-8000-000000000006"),
-                            Code = "confirm_5_others",
-                            Description = "Confirm 5 deficiencies created by others",
-                            Icon = "verified",
-                            IsActive = true,
-                            RuleType = 5,
-                            SortOrder = 6,
-                            TargetInt = 5,
-                            Title = "Community voice"
-                        },
-                        new
-                        {
-                            Id = new Guid("a0000001-0000-4000-8000-000000000007"),
-                            Code = "five_confirmations_own",
-                            Description = "Have one of your reports confirmed by 5 people",
-                            Icon = "groups",
-                            IsActive = true,
-                            RuleType = 6,
-                            SortOrder = 7,
-                            TargetInt = 1,
-                            Title = "Trusted report"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Profile.AppDictEntry", b =>
@@ -1036,21 +625,15 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("EntryKey")
                         .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("character varying(256)")
-                        .HasColumnName("key");
+                        .HasColumnType("text");
 
                     b.Property<string>("ValueJson")
                         .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("value");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EntryKey")
-                        .IsUnique();
-
-                    b.ToTable("dict", (string)null);
+                    b.ToTable("DictEntries");
                 });
 
             modelBuilder.Entity("Domain.Models.Profile.DeficiencyConfirmation", b =>
@@ -1073,8 +656,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId", "DeficiencyId", "DeficiencyType")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("DeficiencyConfirmations");
                 });
@@ -1117,8 +699,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId", "VisitDate")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("UserDailyVisits");
                 });

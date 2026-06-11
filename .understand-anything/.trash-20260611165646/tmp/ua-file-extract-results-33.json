@@ -1,0 +1,207 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 101,
+      "nonEmptyLines": 96,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 27,
+      "nonEmptyLines": 25,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 15,
+      "nonEmptyLines": 15,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 64,
+      "nonEmptyLines": 53,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 41,
+      "nonEmptyLines": 41,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/donation/donation.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 53,
+      "nonEmptyLines": 44,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/donation/donation.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 79,
+      "nonEmptyLines": 74,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 191,
+      "nonEmptyLines": 166,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 47,
+      "nonEmptyLines": 47,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/email-confirmation/email-confirmation.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 101,
+      "nonEmptyLines": 88,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/email-confirmation/email-confirmation.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 55,
+      "nonEmptyLines": 53,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 52,
+      "nonEmptyLines": 49,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/footer/footer.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 39,
+      "nonEmptyLines": 34,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/footer/footer.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 30,
+      "nonEmptyLines": 30,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 139,
+      "nonEmptyLines": 117,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 32,
+      "nonEmptyLines": 31,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 95,
+      "nonEmptyLines": 81,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 80,
+      "nonEmptyLines": 77,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 63,
+      "nonEmptyLines": 55,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 39,
+      "nonEmptyLines": 35,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/main-map/main-map.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 63,
+      "nonEmptyLines": 55,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/main-map/main-map.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/privacy-policy/privacy-policy.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 43,
+      "nonEmptyLines": 37,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/privacy-policy/privacy-policy.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 54,
+      "nonEmptyLines": 45,
+      "metrics": {}
+    }
+  ]
+}

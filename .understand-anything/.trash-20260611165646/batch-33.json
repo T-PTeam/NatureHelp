@@ -1,0 +1,280 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.html",
+      "type": "file",
+      "name": "add-organization-users.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.html",
+      "summary": "add-organization-users.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.css",
+      "type": "file",
+      "name": "attachment-preview-dialog.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.css",
+      "summary": "attachment-preview-dialog.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.html",
+      "type": "file",
+      "name": "attachment-preview-dialog.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.html",
+      "summary": "attachment-preview-dialog.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.css",
+      "type": "file",
+      "name": "post-auth-welcome-dialog.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.css",
+      "summary": "post-auth-welcome-dialog.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.html",
+      "type": "file",
+      "name": "post-auth-welcome-dialog.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/post-auth-welcome-dialog/post-auth-welcome-dialog.component.html",
+      "summary": "post-auth-welcome-dialog.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/donation/donation.component.css",
+      "type": "file",
+      "name": "donation.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/donation/donation.component.css",
+      "summary": "donation.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/donation/donation.component.html",
+      "type": "file",
+      "name": "donation.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/donation/donation.component.html",
+      "summary": "donation.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.css",
+      "type": "file",
+      "name": "dynamic-avatar.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.css",
+      "summary": "dynamic-avatar.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.html",
+      "type": "file",
+      "name": "dynamic-avatar.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.html",
+      "summary": "dynamic-avatar.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/email-confirmation/email-confirmation.component.css",
+      "type": "file",
+      "name": "email-confirmation.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/email-confirmation/email-confirmation.component.css",
+      "summary": "email-confirmation.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/email-confirmation/email-confirmation.component.html",
+      "type": "file",
+      "name": "email-confirmation.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/email-confirmation/email-confirmation.component.html",
+      "summary": "email-confirmation.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.css",
+      "type": "file",
+      "name": "file-upload.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.css",
+      "summary": "file-upload.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.html",
+      "type": "file",
+      "name": "file-upload.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.html",
+      "summary": "file-upload.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/footer/footer.component.css",
+      "type": "file",
+      "name": "footer.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/footer/footer.component.css",
+      "summary": "footer.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/footer/footer.component.html",
+      "type": "file",
+      "name": "footer.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/footer/footer.component.html",
+      "summary": "footer.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.css",
+      "type": "file",
+      "name": "language-switcher.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.css",
+      "summary": "language-switcher.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.html",
+      "type": "file",
+      "name": "language-switcher.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/language-switcher/language-switcher.component.html",
+      "summary": "language-switcher.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.css",
+      "type": "file",
+      "name": "legal-info.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.css",
+      "summary": "legal-info.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.html",
+      "type": "file",
+      "name": "legal-info.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/legal-info/legal-info.component.html",
+      "summary": "legal-info.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.css",
+      "type": "file",
+      "name": "loading-indicator.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.css",
+      "summary": "loading-indicator.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.html",
+      "type": "file",
+      "name": "loading-indicator.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.html",
+      "summary": "loading-indicator.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.component.css",
+      "type": "file",
+      "name": "main-map.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/main-map/main-map.component.css",
+      "summary": "main-map.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.component.html",
+      "type": "file",
+      "name": "main-map.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/main-map/main-map.component.html",
+      "summary": "main-map.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/privacy-policy/privacy-policy.component.css",
+      "type": "file",
+      "name": "privacy-policy.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/privacy-policy/privacy-policy.component.css",
+      "summary": "privacy-policy.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/privacy-policy/privacy-policy.component.html",
+      "type": "file",
+      "name": "privacy-policy.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/privacy-policy/privacy-policy.component.html",
+      "summary": "privacy-policy.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

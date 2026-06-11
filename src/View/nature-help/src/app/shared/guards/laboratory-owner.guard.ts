@@ -4,6 +4,7 @@ import { Observable, map, catchError, of } from "rxjs";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 import { LabsAPIService } from "../../modules/laboratories/services/labs-api.service";
+import { canEditLaboratory } from "../helpers/laboratory-access.helper";
 
 @Injectable({
   providedIn: "root",
@@ -29,17 +30,24 @@ export class LaboratoryOwnerGuard implements CanActivate {
       return false;
     }
 
-    return this.labsAPIService.getLabById(labId).pipe(
-      map((lab: any) => {
-        const createdById = lab.createdBy?.id || lab.createdById;
+    if (sessionStorage.getItem("laboratoryId") === labId) {
+      return true;
+    }
 
-        if (createdById === currentUserId) {
+    const role = sessionStorage.getItem("role")?.toLowerCase();
+    if (role === "superadmin") {
+      return true;
+    }
+
+    return this.labsAPIService.getLabById(labId).pipe(
+      map((lab) => {
+        if (canEditLaboratory(lab, currentUserId, role)) {
           return true;
-        } else {
-          this.showPermissionError("You can only edit laboratories that you created");
-          this.router.navigate(["/labs"]);
-          return false;
         }
+
+        this.showPermissionError("You can only edit laboratories that you created or belong to");
+        this.router.navigate(["/labs"]);
+        return false;
       }),
       catchError(() => {
         this.showPermissionError("Laboratory not found");

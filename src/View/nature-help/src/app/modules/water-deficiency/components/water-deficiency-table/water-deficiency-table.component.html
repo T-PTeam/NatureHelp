@@ -94,15 +94,57 @@
 
   <div class="grid-container">
     <div class="grid-header">
-      <div [matTooltip]="'tableHeaders.title' | translate">{{ "tableHeaders.title" | translate }}</div>
-      <div [matTooltip]="'forms.dissolvedOxygen' | translate">{{ "forms.dissolvedOxygen" | translate }}</div>
-      <div [matTooltip]="'forms.pH' | translate">{{ "forms.pH" | translate }}</div>
-      <div [matTooltip]="'forms.leadConcentration' | translate">{{ "forms.leadConcentration" | translate }}</div>
-      <div [matTooltip]="'forms.nitrateConcentration' | translate">{{ "forms.nitrateConcentration" | translate }}</div>
-      <div [matTooltip]="'forms.chemicalOxygenDemand' | translate">{{ "forms.chemicalOxygenDemand" | translate }}</div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'title'"
+        [matTooltip]="'tableHeaders.title' | translate"
+        (click)="onSort('title')">
+        {{ "tableHeaders.title" | translate }}{{ sortIndicator(sort, "title") }}
+      </div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'dissolvedOxygen'"
+        [matTooltip]="'forms.dissolvedOxygen' | translate"
+        (click)="onSort('dissolvedOxygen')">
+        {{ "forms.dissolvedOxygen" | translate }}{{ sortIndicator(sort, "dissolvedOxygen") }}
+      </div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'ph'"
+        [matTooltip]="'forms.pH' | translate"
+        (click)="onSort('ph')">
+        {{ "forms.pH" | translate }}{{ sortIndicator(sort, "ph") }}
+      </div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'leadConcentration'"
+        [matTooltip]="'forms.leadConcentration' | translate"
+        (click)="onSort('leadConcentration')">
+        {{ "forms.leadConcentration" | translate }}{{ sortIndicator(sort, "leadConcentration") }}
+      </div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'nitrateConcentration'"
+        [matTooltip]="'forms.nitrateConcentration' | translate"
+        (click)="onSort('nitrateConcentration')">
+        {{ "forms.nitrateConcentration" | translate }}{{ sortIndicator(sort, "nitrateConcentration") }}
+      </div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'chemicalOxygenDemand'"
+        [matTooltip]="'forms.chemicalOxygenDemand' | translate"
+        (click)="onSort('chemicalOxygenDemand')">
+        {{ "forms.chemicalOxygenDemand" | translate }}{{ sortIndicator(sort, "chemicalOxygenDemand") }}
+      </div>
       <div [matTooltip]="'tableHeaders.createdBy' | translate">{{ "tableHeaders.createdBy" | translate }}</div>
       <div [matTooltip]="'forms.responsibleUser' | translate">{{ "forms.responsibleUser" | translate }}</div>
-      <div [matTooltip]="'forms.dangerState' | translate">{{ "forms.dangerState" | translate }}</div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'eDangerState'"
+        [matTooltip]="'forms.dangerState' | translate"
+        (click)="onSort('eDangerState')">
+        {{ "forms.dangerState" | translate }}{{ sortIndicator(sort, "eDangerState") }}
+      </div>
       <div [matTooltip]="'tableHeaders.location' | translate">{{ "tableHeaders.location" | translate }}</div>
       <div [matTooltip]="'tableHeaders.edit' | translate">{{ "tableHeaders.edit" | translate }}</div>
     </div>
@@ -124,20 +166,34 @@
       <div
         *ngFor="let deficiency of waterAPIService.deficiencies$ | async"
         class="grid-row">
-        <div>{{ deficiency.title }}</div>
-        <div>{{ deficiency.dissolvedOxygen || 0 }}</div>
-        <div>{{ deficiency.ph || 0 }}</div>
-        <div>{{ deficiency.leadConcentration || 0 }}</div>
-        <div>{{ deficiency.nitrateConcentration || 0 }}</div>
-        <div>{{ deficiency.chemicalOxygenDemand || 0 }}</div>
-        <div>{{ deficiency.creator.firstName }} {{ deficiency.creator.lastName }}</div>
-        <div>{{ deficiency.responsibleUser?.firstName }} {{ deficiency.responsibleUser?.lastName }}</div>
-        <div>{{ deficiency.eDangerState | enumToString: "EDangerState" }}</div>
+        <nat-truncated-cell [value]="deficiency.title"></nat-truncated-cell>
+        <nat-truncated-cell
+          [value]="deficiency.dissolvedOxygen"
+          fallback="0"></nat-truncated-cell>
+        <nat-truncated-cell
+          [value]="deficiency.ph"
+          fallback="0"></nat-truncated-cell>
+        <nat-truncated-cell
+          [value]="deficiency.leadConcentration"
+          fallback="0"></nat-truncated-cell>
+        <nat-truncated-cell
+          [value]="deficiency.nitrateConcentration"
+          fallback="0"></nat-truncated-cell>
+        <nat-truncated-cell
+          [value]="deficiency.chemicalOxygenDemand"
+          fallback="0"></nat-truncated-cell>
+        <nat-truncated-cell
+          [value]="deficiency.creator.firstName + ' ' + deficiency.creator.lastName"></nat-truncated-cell>
+        <nat-truncated-cell
+          [value]="
+            (deficiency.responsibleUser?.firstName ?? '') + ' ' + (deficiency.responsibleUser?.lastName ?? '')
+          "></nat-truncated-cell>
+        <nat-truncated-cell [value]="deficiency.eDangerState | enumToString: 'EDangerState'"></nat-truncated-cell>
         <div class="btn-ceil">
           <button
             mat-icon-button
             color="primary"
-            (click)="changeMapFocus(deficiency.latitude, deficiency.longitude)"
+            (click)="changeMapFocus(deficiency)"
             [matTooltip]="'tableHeaders.location' | translate">
             <mat-icon>my_location</mat-icon>
           </button>

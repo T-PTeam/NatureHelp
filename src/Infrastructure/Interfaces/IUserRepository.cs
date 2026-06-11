@@ -21,5 +21,12 @@ public interface IUserRepository : IBaseRepository<User>
 
     Task<(int WaterCount, int SoilCount)> CountCreatedDeficienciesAsync(Guid userId);
 
+    Task<IEnumerable<User>> GetByOrganizationAsync(
+        Guid organizationId,
+        int scrollCount,
+        IDictionary<string, string?>? filters = null);
+
+    Task<int> GetTotalCountByOrganization(Guid organizationId);
+
 }
 

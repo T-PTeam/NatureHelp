@@ -9,20 +9,20 @@
   gap: 4px;
   padding: 8px 12px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--color-primary);
   color: white;
-  border: none;
+  border: 2px solid var(--color-primary);
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.3);
   min-width: 60px;
   height: 40px;
 }
 
 .language-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.4);
+  background: var(--color-primary);
 }
 
 .current-flag {
@@ -48,6 +48,12 @@
   overflow: hidden;
 }
 
+.language-switcher ::ng-deep .language-menu-item .mat-mdc-menu-item-text {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .language-menu-item {
   display: flex;
   align-items: center;
@@ -62,24 +68,37 @@
 }
 
 .language-menu-item.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--color-primary);
   color: white;
 }
 
-.language-menu-item.active .flag,
+.language-menu-item.active .country-code,
+.language-menu-item.active .language-menu-divider,
 .language-menu-item.active .language-name {
   color: white;
 }
 
-.flag {
-  font-size: 20px;
-  line-height: 1;
+.language-menu-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.country-code {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.language-menu-divider {
+  opacity: 0.45;
+  font-weight: 400;
 }
 
 .language-name {
-  font-size: 14px;
   font-weight: 500;
-  flex: 1;
 }
 
 .check-icon {
@@ -114,11 +133,7 @@
     padding: 10px 14px;
   }
 
-  .flag {
-    font-size: 18px;
-  }
-
-  .language-name {
+  .language-menu-label {
     font-size: 13px;
   }
 }

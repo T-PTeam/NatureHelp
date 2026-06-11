@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { UserAPIService } from "./shared/services/user-api.service";
+import { PostAuthWelcomeDialogService } from "./shared/services/post-auth-welcome-dialog.service";
 import { AuditService } from "./shared/services/audit.service";
 import { LanguageService } from "./shared/services/language.service";
 
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
     private languageService: LanguageService,
     private route: ActivatedRoute,
     private router: Router,
+    private postAuthWelcomeDialog: PostAuthWelcomeDialogService,
   ) {}
 
   ngOnInit() {
@@ -47,11 +49,12 @@ export class AppComponent implements OnInit {
   private handleOAuth2Redirect(): void {
     this.route.queryParams.subscribe((params) => {
       if (params["oauth"]) {
-        const provider = params["oauth"];
         setTimeout(() => {
-          this.userService.handleOAuth2Callback().subscribe((isLoggedIn) => {
-            if (isLoggedIn) {
-              this.router.navigate(["/"], { replaceUrl: true, queryParams: {} });
+          this.userService.handleOAuth2Callback().subscribe((user) => {
+            if (user) {
+              this.router.navigate(["/"], { replaceUrl: true, queryParams: {} }).then(() => {
+                this.postAuthWelcomeDialog.open(user);
+              });
             } else {
               this.router.navigate(["/"], { replaceUrl: true, queryParams: { error: "oauth_failed" } });
             }

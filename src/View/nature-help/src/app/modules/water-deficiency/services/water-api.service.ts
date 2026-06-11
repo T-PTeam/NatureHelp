@@ -5,6 +5,8 @@ import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from "r
 
 import { IWaterDeficiency } from "@/modules/water-deficiency/models/IWaterDeficiency";
 import { IDeficiencyMapDto } from "@/models/IDeficiencyMapDto";
+import { appendSortParams } from "@/shared/helpers/table-sort.helper";
+import { ITableSort } from "@/shared/models/ITableSort";
 import { LoadingService } from "@/shared/services/loading.service";
 import { IListData } from "@/shared/models/IListData";
 import { IWaterDeficiencyFilter } from "../models/IWaterDeficiencyFilter";
@@ -33,7 +35,11 @@ export class WaterAPIService {
     this.loadAllWaterDeficienciesForMap();
   }
 
-  public loadWaterDeficiencies(scrollCount: number, filter: IWaterDeficiencyFilter | null) {
+  public loadWaterDeficiencies(
+    scrollCount: number,
+    filter: IWaterDeficiencyFilter | null,
+    sort: ITableSort | null = null,
+  ) {
     let params = new HttpParams();
 
     if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
@@ -41,6 +47,7 @@ export class WaterAPIService {
     if (filter?.description) params = params.set("Description", filter.description);
     if (filter?.eDangerState || filter?.eDangerState === 0)
       params = params.set("EDangerState", filter.eDangerState.toString());
+    params = appendSortParams(params, sort);
 
     const loaddeficiencies$ = this.http.get<IListData<IWaterDeficiency>>(`${this.watersUrl}`, { params }).pipe(
       tap((listData) => {

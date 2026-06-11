@@ -1,0 +1,280 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.css",
+      "type": "file",
+      "name": "profile-page.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.css",
+      "summary": "profile-page.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.html",
+      "type": "file",
+      "name": "profile-page.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.html",
+      "summary": "profile-page.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.css",
+      "type": "file",
+      "name": "profile-settings-tab.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.css",
+      "summary": "profile-settings-tab.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.html",
+      "type": "file",
+      "name": "profile-settings-tab.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.html",
+      "summary": "profile-settings-tab.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.css",
+      "type": "file",
+      "name": "soil-deficiency-details.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.css",
+      "summary": "soil-deficiency-details.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html",
+      "type": "file",
+      "name": "soil-deficiency-details.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html",
+      "summary": "soil-deficiency-details.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.css",
+      "type": "file",
+      "name": "soil-deficiency-table.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.css",
+      "summary": "soil-deficiency-table.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html",
+      "type": "file",
+      "name": "soil-deficiency-table.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html",
+      "summary": "soil-deficiency-table.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.css",
+      "type": "file",
+      "name": "water-deficiency-details.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.css",
+      "summary": "water-deficiency-details.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html",
+      "type": "file",
+      "name": "water-deficiency-details.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html",
+      "summary": "water-deficiency-details.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.css",
+      "type": "file",
+      "name": "water-deficiency-table.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.css",
+      "summary": "water-deficiency-table.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html",
+      "type": "file",
+      "name": "water-deficiency-table.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html",
+      "summary": "water-deficiency-table.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.css",
+      "type": "file",
+      "name": "attachment-list.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.css",
+      "summary": "attachment-list.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.html",
+      "type": "file",
+      "name": "attachment-list.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.html",
+      "summary": "attachment-list.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.css",
+      "type": "file",
+      "name": "audit-list.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.css",
+      "summary": "audit-list.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.html",
+      "type": "file",
+      "name": "audit-list.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.html",
+      "summary": "audit-list.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.css",
+      "type": "file",
+      "name": "water-soil-toggle.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.css",
+      "summary": "water-soil-toggle.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.html",
+      "type": "file",
+      "name": "water-soil-toggle.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.html",
+      "summary": "water-soil-toggle.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.css",
+      "type": "file",
+      "name": "comment-message-list.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.css",
+      "summary": "comment-message-list.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.html",
+      "type": "file",
+      "name": "comment-message-list.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.html",
+      "summary": "comment-message-list.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/contacts/contacts.component.css",
+      "type": "file",
+      "name": "contacts.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/contacts/contacts.component.css",
+      "summary": "contacts.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/contacts/contacts.component.html",
+      "type": "file",
+      "name": "contacts.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/contacts/contacts.component.html",
+      "summary": "contacts.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.css",
+      "type": "file",
+      "name": "pick-coordinates-button.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.css",
+      "summary": "pick-coordinates-button.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.html",
+      "type": "file",
+      "name": "pick-coordinates-button.component.html",
+      "filePath": "src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.html",
+      "summary": "pick-coordinates-button.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.css",
+      "type": "file",
+      "name": "add-organization-users.component.css",
+      "filePath": "src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.css",
+      "summary": "add-organization-users.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

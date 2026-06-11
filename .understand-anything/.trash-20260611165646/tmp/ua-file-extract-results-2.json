@@ -1,0 +1,2246 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 27,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/models/ICoordinates.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/IDeficiencyMapDto.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/IMonitoringScheme.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "HttpLoaderFactory",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "http"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HttpLoaderFactory",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryMapDto.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/models/IResearcherDto.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 139,
+      "nonEmptyLines": 118,
+      "classes": [
+        {
+          "name": "SoilDeficiencyTable",
+          "startLine": 25,
+          "endLine": 139,
+          "methods": [
+            "constructor",
+            "downloadExcel",
+            "navigateToDetail",
+            "onSort",
+            "onScroll",
+            "goToWater",
+            "changeMapFocus",
+            "applyFilter",
+            "toggleMonitoring"
+          ],
+          "properties": [
+            "scrollCheckDisabled",
+            "filterForm",
+            "isMonitoring",
+            "isLoading",
+            "isLoadingMore",
+            "sort",
+            "sortIndicator",
+            "dangerStates",
+            "listScrollCount",
+            "isFilterChanged"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SoilDeficiencyTable",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "enumToSelectOptions",
+          "lineNumber": 47
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 49
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.filterForm.valueChanges.subscribe",
+          "lineNumber": 57
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.userService.$user.subscribe",
+          "lineNumber": 61
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.soilAPIService.deficiencies$.subscribe",
+          "lineNumber": 65
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.soilAPIService.totalCount$.subscribe",
+          "lineNumber": 71
+        },
+        {
+          "caller": "downloadExcel",
+          "callee": "this.reportAPIService.downloadSoilDeficiencyExcelListFile",
+          "lineNumber": 79
+        },
+        {
+          "caller": "navigateToDetail",
+          "callee": "this.router.navigate",
+          "lineNumber": 84
+        },
+        {
+          "caller": "navigateToDetail",
+          "callee": "this.router.navigate",
+          "lineNumber": 86
+        },
+        {
+          "caller": "onSort",
+          "callee": "toggleSort",
+          "lineNumber": 91
+        },
+        {
+          "caller": "onSort",
+          "callee": "this.soilAPIService.loadSoilDeficiencies",
+          "lineNumber": 94
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.soilAPIService.loadSoilDeficiencies",
+          "lineNumber": 102
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.soilAPIService.deficiencies$\n      .pipe(withLatestFrom(this.soilAPIService.totalCount$))\n      .subscribe",
+          "lineNumber": 104
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.soilAPIService.deficiencies$\n      .pipe",
+          "lineNumber": 104
+        },
+        {
+          "caller": "onScroll",
+          "callee": "withLatestFrom",
+          "lineNumber": 105
+        },
+        {
+          "caller": "goToWater",
+          "callee": "this.router.navigateByUrl",
+          "lineNumber": 114
+        },
+        {
+          "caller": "changeMapFocus",
+          "callee": "this.mapViewService.changeFocus",
+          "lineNumber": 119
+        },
+        {
+          "caller": "applyFilter",
+          "callee": "this.soilAPIService.loadSoilDeficiencies",
+          "lineNumber": 133
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.auditService.toggleMonitoring(null, EDeficiencyType.Soil).subscribe",
+          "lineNumber": 137
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.auditService.toggleMonitoring",
+          "lineNumber": 137
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "HttpLoaderFactory",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "http"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HttpLoaderFactory",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiencyFilter.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 88,
+      "classes": [
+        {
+          "name": "SoilAPIService",
+          "startLine": 16,
+          "endLine": 102,
+          "methods": [
+            "constructor",
+            "loadSoilDeficiencies",
+            "loadAllSoilDeficienciesForMap",
+            "getSoilDeficiencyById",
+            "addNewSoilDeficiency",
+            "updateSoilDeficiencyById",
+            "deleteSoilDeficiencyById"
+          ],
+          "properties": [
+            "listSubject",
+            "totalCountSubject",
+            "mapDataSubject",
+            "deficiencies$",
+            "totalCount$",
+            "mapDeficiencies$",
+            "soilsUrl",
+            "httpOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SoilAPIService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.loadSoilDeficiencies",
+          "lineNumber": 34
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.loadAllSoilDeficienciesForMap",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "params.set",
+          "lineNumber": 45
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "params.set",
+          "lineNumber": 46
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "params.set",
+          "lineNumber": 47
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "params.set",
+          "lineNumber": 49
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "filter.eDangerState.toString",
+          "lineNumber": 49
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "appendSortParams",
+          "lineNumber": 50
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "this.http.get<IListData<ISoilDeficiency>>(`${this.soilsUrl}`, { params }).pipe",
+          "lineNumber": 52
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "this.http.get",
+          "lineNumber": 52
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "tap",
+          "lineNumber": 53
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "this.listSubject.next",
+          "lineNumber": 54
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "this.listSubject.next",
+          "lineNumber": 55
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "this.listSubject.getValue",
+          "lineNumber": 55
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "this.totalCountSubject.next",
+          "lineNumber": 57
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "catchError",
+          "lineNumber": 59
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "this.notify.open",
+          "lineNumber": 62
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "of",
+          "lineNumber": 63
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "shareReplay",
+          "lineNumber": 65
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "this.loading.showLoaderUntilCompleted(loadDeficiencies$).subscribe",
+          "lineNumber": 67
+        },
+        {
+          "caller": "loadSoilDeficiencies",
+          "callee": "this.loading.showLoaderUntilCompleted",
+          "lineNumber": 67
+        },
+        {
+          "caller": "loadAllSoilDeficienciesForMap",
+          "callee": "this.http\n      .get<IListData<IDeficiencyMapDto>>(`${this.soilsUrl}/map-objects`)\n      .pipe(\n        tap((data) => {\n          this.mapDataSubject.next(data.list);\n        }),\n        catchError((err) => {\n          console.error(\"Could not load soil deficiencies for map\", err);\n          return of({ list: [], totalCount: 0 } as IListData<IDeficiencyMapDto>);\n        }),\n        shareReplay(),\n      )\n      .subscribe",
+          "lineNumber": 72
+        },
+        {
+          "caller": "loadAllSoilDeficienciesForMap",
+          "callee": "this.http\n      .get<IListData<IDeficiencyMapDto>>(`${this.soilsUrl}/map-objects`)\n      .pipe",
+          "lineNumber": 72
+        },
+        {
+          "caller": "loadAllSoilDeficienciesForMap",
+          "callee": "this.http\n      .get",
+          "lineNumber": 72
+        },
+        {
+          "caller": "loadAllSoilDeficienciesForMap",
+          "callee": "tap",
+          "lineNumber": 75
+        },
+        {
+          "caller": "loadAllSoilDeficienciesForMap",
+          "callee": "this.mapDataSubject.next",
+          "lineNumber": 76
+        },
+        {
+          "caller": "loadAllSoilDeficienciesForMap",
+          "callee": "catchError",
+          "lineNumber": 78
+        },
+        {
+          "caller": "loadAllSoilDeficienciesForMap",
+          "callee": "console.error",
+          "lineNumber": 79
+        },
+        {
+          "caller": "loadAllSoilDeficienciesForMap",
+          "callee": "of",
+          "lineNumber": 80
+        },
+        {
+          "caller": "loadAllSoilDeficienciesForMap",
+          "callee": "shareReplay",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getSoilDeficiencyById",
+          "callee": "this.http.get",
+          "lineNumber": 88
+        },
+        {
+          "caller": "addNewSoilDeficiency",
+          "callee": "this.http.post",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addNewSoilDeficiency",
+          "callee": "JSON.stringify",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateSoilDeficiencyById",
+          "callee": "this.http.put",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateSoilDeficiencyById",
+          "callee": "JSON.stringify",
+          "lineNumber": 96
+        },
+        {
+          "caller": "deleteSoilDeficiencyById",
+          "callee": "this.http.delete",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 120,
+      "classes": [
+        {
+          "name": "WaterDeficiencyTable",
+          "startLine": 27,
+          "endLine": 143,
+          "methods": [
+            "constructor",
+            "downloadExcel",
+            "navigateToDetail",
+            "onSort",
+            "onScroll",
+            "goToSoil",
+            "changeMapFocus",
+            "applyFilter",
+            "toggleMonitoring"
+          ],
+          "properties": [
+            "scrollCheckDisabled",
+            "filterForm",
+            "isMonitoring",
+            "isLoading",
+            "isLoadingMore",
+            "sort",
+            "sortIndicator",
+            "dangerStates",
+            "listScrollCount",
+            "isFilterChanged"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WaterDeficiencyTable",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "enumToSelectOptions",
+          "lineNumber": 51
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 53
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.filterForm.valueChanges.subscribe",
+          "lineNumber": 61
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.userService.$user.subscribe",
+          "lineNumber": 65
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.waterAPIService.deficiencies$.subscribe",
+          "lineNumber": 69
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.waterAPIService.totalCount$.subscribe",
+          "lineNumber": 75
+        },
+        {
+          "caller": "downloadExcel",
+          "callee": "this.reportAPIService.downloadWaterDeficiencyExcelListFile",
+          "lineNumber": 83
+        },
+        {
+          "caller": "navigateToDetail",
+          "callee": "this.router.navigate",
+          "lineNumber": 88
+        },
+        {
+          "caller": "navigateToDetail",
+          "callee": "this.router.navigate",
+          "lineNumber": 90
+        },
+        {
+          "caller": "onSort",
+          "callee": "toggleSort",
+          "lineNumber": 95
+        },
+        {
+          "caller": "onSort",
+          "callee": "this.waterAPIService.loadWaterDeficiencies",
+          "lineNumber": 98
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.waterAPIService.loadWaterDeficiencies",
+          "lineNumber": 106
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.waterAPIService.deficiencies$\n      .pipe(withLatestFrom(this.waterAPIService.totalCount$))\n      .subscribe",
+          "lineNumber": 108
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.waterAPIService.deficiencies$\n      .pipe",
+          "lineNumber": 108
+        },
+        {
+          "caller": "onScroll",
+          "callee": "withLatestFrom",
+          "lineNumber": 109
+        },
+        {
+          "caller": "goToSoil",
+          "callee": "this.router.navigateByUrl",
+          "lineNumber": 118
+        },
+        {
+          "caller": "changeMapFocus",
+          "callee": "this.mapViewService.changeFocus",
+          "lineNumber": 123
+        },
+        {
+          "caller": "applyFilter",
+          "callee": "this.waterAPIService.loadWaterDeficiencies",
+          "lineNumber": 137
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.auditService.toggleMonitoring(null, EDeficiencyType.Water).subscribe",
+          "lineNumber": 141
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.auditService.toggleMonitoring",
+          "lineNumber": 141
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "HttpLoaderFactory",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "http"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HttpLoaderFactory",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiencyFilter.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 122,
+      "nonEmptyLines": 101,
+      "classes": [
+        {
+          "name": "WaterAPIService",
+          "startLine": 16,
+          "endLine": 122,
+          "methods": [
+            "constructor",
+            "loadWaterDeficiencies",
+            "loadAllWaterDeficienciesForMap",
+            "getWaterDeficiencyById",
+            "addNewWaterDeficiency",
+            "updateWaterDeficiencyById"
+          ],
+          "properties": [
+            "listSubject",
+            "totalCountSubject",
+            "mapDataSubject",
+            "deficiencies$",
+            "totalCount$",
+            "mapDeficiencies$",
+            "watersUrl",
+            "httpOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WaterAPIService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.loadWaterDeficiencies",
+          "lineNumber": 34
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.loadAllWaterDeficienciesForMap",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "params.set",
+          "lineNumber": 45
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "params.set",
+          "lineNumber": 46
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "params.set",
+          "lineNumber": 47
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "params.set",
+          "lineNumber": 49
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "filter.eDangerState.toString",
+          "lineNumber": 49
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "appendSortParams",
+          "lineNumber": 50
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "this.http.get<IListData<IWaterDeficiency>>(`${this.watersUrl}`, { params }).pipe",
+          "lineNumber": 52
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "this.http.get",
+          "lineNumber": 52
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "tap",
+          "lineNumber": 53
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "this.listSubject.next",
+          "lineNumber": 54
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "this.listSubject.next",
+          "lineNumber": 55
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "this.listSubject.getValue",
+          "lineNumber": 55
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "this.totalCountSubject.next",
+          "lineNumber": 57
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "catchError",
+          "lineNumber": 59
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "console.error",
+          "lineNumber": 62
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "this.notify.open",
+          "lineNumber": 63
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "of",
+          "lineNumber": 64
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "shareReplay",
+          "lineNumber": 66
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "this.loading.showLoaderUntilCompleted(loaddeficiencies$).subscribe",
+          "lineNumber": 68
+        },
+        {
+          "caller": "loadWaterDeficiencies",
+          "callee": "this.loading.showLoaderUntilCompleted",
+          "lineNumber": 68
+        },
+        {
+          "caller": "loadAllWaterDeficienciesForMap",
+          "callee": "this.http\n      .get<IListData<IDeficiencyMapDto>>(`${this.watersUrl}/map-objects`)\n      .pipe(\n        tap((data) => {\n          this.mapDataSubject.next(data.list);\n        }),\n        catchError((err) => {\n          console.error(\"Could not load water deficiencies for map\", err);\n          return of({ list: [], totalCount: 0 } as IListData<IDeficiencyMapDto>);\n        }),\n        shareReplay(),\n      )\n      .subscribe",
+          "lineNumber": 72
+        },
+        {
+          "caller": "loadAllWaterDeficienciesForMap",
+          "callee": "this.http\n      .get<IListData<IDeficiencyMapDto>>(`${this.watersUrl}/map-objects`)\n      .pipe",
+          "lineNumber": 72
+        },
+        {
+          "caller": "loadAllWaterDeficienciesForMap",
+          "callee": "this.http\n      .get",
+          "lineNumber": 72
+        },
+        {
+          "caller": "loadAllWaterDeficienciesForMap",
+          "callee": "tap",
+          "lineNumber": 75
+        },
+        {
+          "caller": "loadAllWaterDeficienciesForMap",
+          "callee": "this.mapDataSubject.next",
+          "lineNumber": 76
+        },
+        {
+          "caller": "loadAllWaterDeficienciesForMap",
+          "callee": "catchError",
+          "lineNumber": 78
+        },
+        {
+          "caller": "loadAllWaterDeficienciesForMap",
+          "callee": "console.error",
+          "lineNumber": 79
+        },
+        {
+          "caller": "loadAllWaterDeficienciesForMap",
+          "callee": "of",
+          "lineNumber": 80
+        },
+        {
+          "caller": "loadAllWaterDeficienciesForMap",
+          "callee": "shareReplay",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getWaterDeficiencyById",
+          "callee": "this.http.get",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getWaterDeficiencyById",
+          "callee": "id.toString",
+          "lineNumber": 88
+        },
+        {
+          "caller": "addNewWaterDeficiency",
+          "callee": "this.http.post",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addNewWaterDeficiency",
+          "callee": "JSON.stringify",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateWaterDeficiencyById",
+          "callee": "this.listSubject.getValue",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateWaterDeficiencyById",
+          "callee": "deficiencies.findIndex",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateWaterDeficiencyById",
+          "callee": "deficiencies.slice",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateWaterDeficiencyById",
+          "callee": "this.listSubject.next",
+          "lineNumber": 109
+        },
+        {
+          "caller": "updateWaterDeficiencyById",
+          "callee": "this.http.put(`${this.watersUrl}/${id}`, changes).pipe",
+          "lineNumber": 111
+        },
+        {
+          "caller": "updateWaterDeficiencyById",
+          "callee": "this.http.put",
+          "lineNumber": 111
+        },
+        {
+          "caller": "updateWaterDeficiencyById",
+          "callee": "catchError",
+          "lineNumber": 112
+        },
+        {
+          "caller": "updateWaterDeficiencyById",
+          "callee": "this.notify.open",
+          "lineNumber": 115
+        },
+        {
+          "caller": "updateWaterDeficiencyById",
+          "callee": "shareReplay",
+          "lineNumber": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "LoadingIndicatorComponent",
+          "startLine": 9,
+          "endLine": 15,
+          "methods": [],
+          "properties": [
+            "type",
+            "diameter",
+            "message",
+            "progress",
+            "showMessage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoadingIndicatorComponent",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "MapComponent",
+          "startLine": 10,
+          "endLine": 19,
+          "methods": [
+            "constructor",
+            "ngOnInit"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MapComponent",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.mapViewService.initMap",
+          "lineNumber": 14
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.mapViewService.makeDeficiencyMarkers",
+          "lineNumber": 16
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.mapViewService.makeLabMarkers",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 92,
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/helpers/enum-helper.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "enumToSelectOptions",
+          "startLine": 1,
+          "endLine": 10,
+          "params": [
+            "enumObj"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "enumToSelectOptions",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "enumToSelectOptions",
+          "callee": "Object.keys(enumObj)\n    .filter((key) => isNaN(Number(key)))\n    .map",
+          "lineNumber": 2
+        },
+        {
+          "caller": "enumToSelectOptions",
+          "callee": "Object.keys(enumObj)\n    .filter",
+          "lineNumber": 2
+        },
+        {
+          "caller": "enumToSelectOptions",
+          "callee": "Object.keys",
+          "lineNumber": 2
+        },
+        {
+          "caller": "enumToSelectOptions",
+          "callee": "isNaN",
+          "lineNumber": 3
+        },
+        {
+          "caller": "enumToSelectOptions",
+          "callee": "Number",
+          "lineNumber": 3
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/models/ISelectOption.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/pipes/enum-to-string.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "EnumToStringPipe",
+          "startLine": 9,
+          "endLine": 22,
+          "methods": [
+            "transform"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "EnumToStringPipe",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "transform",
+          "callee": "formattedValue.replace(/([A-Z])/g, \" $1\").trim",
+          "lineNumber": 15
+        },
+        {
+          "caller": "transform",
+          "callee": "formattedValue.replace",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/pipes/lab-researchers.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 81,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "LabResearchersPipe",
+          "startLine": 8,
+          "endLine": 21,
+          "methods": [
+            "transform"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LabResearchersPipe",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "transform",
+          "callee": "researchers\n          .slice(0, 5)\n          .map((r) => `${r.firstName} ${r.lastName}`)\n          .join",
+          "lineNumber": 12
+        },
+        {
+          "caller": "transform",
+          "callee": "researchers\n          .slice(0, 5)\n          .map",
+          "lineNumber": 12
+        },
+        {
+          "caller": "transform",
+          "callee": "researchers\n          .slice",
+          "lineNumber": 12
+        },
+        {
+          "caller": "transform",
+          "callee": "researchers.map((r) => `${r.firstName} ${r.lastName}`).join",
+          "lineNumber": 19
+        },
+        {
+          "caller": "transform",
+          "callee": "researchers.map",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 87,
+      "classes": [
+        {
+          "name": "AuditService",
+          "startLine": 16,
+          "endLine": 98,
+          "methods": [
+            "constructor",
+            "loadDeficiencyHistory",
+            "toggleMonitoring",
+            "setMonitoringScheme"
+          ],
+          "properties": [
+            "deficiencyHistorySybject",
+            "monitoringSoilDeficiencySubject",
+            "monitoringWaterDeficiencySubject",
+            "deficiencyHistory$",
+            "monitoringSoilDeficiency$",
+            "monitoringWaterDeficiency$",
+            "auditUrl",
+            "monitoringUrl",
+            "httpOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuditService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "this.http\n      .get<IChangedModelLog[]>(`${this.auditUrl}/deficiency-history?deficiencyId=${id}&type=${type}`)\n      .pipe",
+          "lineNumber": 41
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "this.http\n      .get",
+          "lineNumber": 41
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "tap",
+          "lineNumber": 44
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "this.deficiencyHistorySybject.next",
+          "lineNumber": 45
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "catchError",
+          "lineNumber": 47
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "console.error",
+          "lineNumber": 50
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "this.notify.open",
+          "lineNumber": 51
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "of",
+          "lineNumber": 52
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "shareReplay",
+          "lineNumber": 54
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "this.loading.showLoaderUntilCompleted(loaddeficiencies$).subscribe",
+          "lineNumber": 56
+        },
+        {
+          "caller": "loadDeficiencyHistory",
+          "callee": "this.loading.showLoaderUntilCompleted",
+          "lineNumber": 56
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "`${this.monitoringUrl}/toggle-monitoring?${deficiencyIdParam}&type=${type}`\n      .replace(/&+/g, \"&\")\n      .replace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "`${this.monitoringUrl}/toggle-monitoring?${deficiencyIdParam}&type=${type}`\n      .replace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.http.put<boolean>(url, { refreshToken: localStorage.getItem(\"refreshToken\") }, this.httpOptions).pipe",
+          "lineNumber": 65
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.http.put",
+          "lineNumber": 65
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "localStorage.getItem",
+          "lineNumber": 65
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "tap",
+          "lineNumber": 66
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.soilAPIService.loadSoilDeficiencies",
+          "lineNumber": 69
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.waterAPIService.loadWaterDeficiencies",
+          "lineNumber": 71
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.monitoringSoilDeficiencySubject.next",
+          "lineNumber": 76
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.monitoringWaterDeficiencySubject.next",
+          "lineNumber": 78
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "map",
+          "lineNumber": 81
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.notify.open",
+          "lineNumber": 83
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "catchError",
+          "lineNumber": 87
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "console.error",
+          "lineNumber": 88
+        },
+        {
+          "caller": "setMonitoringScheme",
+          "callee": "this.monitoringWaterDeficiencySubject.next",
+          "lineNumber": 95
+        },
+        {
+          "caller": "setMonitoringScheme",
+          "callee": "this.monitoringSoilDeficiencySubject.next",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "LoadingService",
+          "startLine": 8,
+          "endLine": 30,
+          "methods": [
+            "constructor",
+            "showLoaderUntilCompleted",
+            "loadingOn",
+            "loadingOff"
+          ],
+          "properties": [
+            "loadingSubject",
+            "loading$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoadingService",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "showLoaderUntilCompleted",
+          "callee": "of(null).pipe",
+          "lineNumber": 16
+        },
+        {
+          "caller": "showLoaderUntilCompleted",
+          "callee": "of",
+          "lineNumber": 16
+        },
+        {
+          "caller": "showLoaderUntilCompleted",
+          "callee": "tap",
+          "lineNumber": 17
+        },
+        {
+          "caller": "showLoaderUntilCompleted",
+          "callee": "this.loadingOn",
+          "lineNumber": 17
+        },
+        {
+          "caller": "showLoaderUntilCompleted",
+          "callee": "concatMap",
+          "lineNumber": 18
+        },
+        {
+          "caller": "showLoaderUntilCompleted",
+          "callee": "finalize",
+          "lineNumber": 19
+        },
+        {
+          "caller": "showLoaderUntilCompleted",
+          "callee": "this.loadingOff",
+          "lineNumber": 19
+        },
+        {
+          "caller": "loadingOn",
+          "callee": "this.loadingSubject.next",
+          "lineNumber": 24
+        },
+        {
+          "caller": "loadingOff",
+          "callee": "this.loadingSubject.next",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 571,
+      "nonEmptyLines": 480,
+      "classes": [
+        {
+          "name": "MapViewService",
+          "startLine": 54,
+          "endLine": 571,
+          "methods": [
+            "constructor",
+            "initMap",
+            "changeFocus",
+            "fullScreenMap",
+            "makeDeficiencyMarkers",
+            "makeLabMarkers",
+            "makeCircleMarker",
+            "makeIconMarker",
+            "getDeficiencyPopup",
+            "getLabPopup",
+            "isWaterDeficiency",
+            "addAllLayersToMap",
+            "clearDeficienciesLayersFromMap",
+            "fetchJson",
+            "buildDisplayNameFromNominatimParts",
+            "buildDisplayNameFromBigDataCloud",
+            "lookupAddress",
+            "lookupAddressFromNominatim",
+            "lookupAddressFromBigDataCloud",
+            "removeSelectedLocationMarker",
+            "stopCoordinateSelectionMode",
+            "highlightSelectedCoordinates",
+            "showSelectedLocationMarker",
+            "ensureLayerVisible",
+            "getClusterGroup",
+            "revealLayerMarker",
+            "areCoordinatesClose",
+            "enableCoordinateSelection",
+            "disableCoordinateSelection"
+          ],
+          "properties": [
+            "osm",
+            "satellite",
+            "laboratoriesLayer",
+            "waterDeficienciesLayer",
+            "soilDeficienciesLayer",
+            "baseMaps",
+            "overlayMaps",
+            "markerList$",
+            "map",
+            "labIcon",
+            "selectedCoordinatesSubject",
+            "selectedCoordinates$",
+            "selectedAddressSubject",
+            "selectedAddress$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MapViewService",
+          "line": 51,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initMap",
+          "callee": "this.map.remove",
+          "lineNumber": 140
+        },
+        {
+          "caller": "initMap",
+          "callee": "L.map",
+          "lineNumber": 144
+        },
+        {
+          "caller": "initMap",
+          "callee": "L.control.layers(this.baseMaps, this.overlayMaps).addTo",
+          "lineNumber": 150
+        },
+        {
+          "caller": "initMap",
+          "callee": "L.control.layers",
+          "lineNumber": 150
+        },
+        {
+          "caller": "initMap",
+          "callee": "this.addAllLayersToMap",
+          "lineNumber": 152
+        },
+        {
+          "caller": "initMap",
+          "callee": "L.tileLayer",
+          "lineNumber": 154
+        },
+        {
+          "caller": "initMap",
+          "callee": "tiles.addTo",
+          "lineNumber": 160
+        },
+        {
+          "caller": "changeFocus",
+          "callee": "Number",
+          "lineNumber": 168
+        },
+        {
+          "caller": "changeFocus",
+          "callee": "Number",
+          "lineNumber": 169
+        },
+        {
+          "caller": "changeFocus",
+          "callee": "Number.isNaN",
+          "lineNumber": 171
+        },
+        {
+          "caller": "changeFocus",
+          "callee": "Number.isNaN",
+          "lineNumber": 171
+        },
+        {
+          "caller": "changeFocus",
+          "callee": "this.ensureLayerVisible",
+          "lineNumber": 178
+        },
+        {
+          "caller": "changeFocus",
+          "callee": "this.map.invalidateSize",
+          "lineNumber": 181
+        },
+        {
+          "caller": "changeFocus",
+          "callee": "this.map.setView",
+          "lineNumber": 182
+        },
+        {
+          "caller": "changeFocus",
+          "callee": "this.showSelectedLocationMarker",
+          "lineNumber": 183
+        },
+        {
+          "caller": "changeFocus",
+          "callee": "this.revealLayerMarker",
+          "lineNumber": 186
+        },
+        {
+          "caller": "fullScreenMap",
+          "callee": "document.getElementById",
+          "lineNumber": 191
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "this.markerList$\n      .pipe(\n        map((list) => {\n          if (list && list.length) {\n            this.clearDeficienciesLayersFromMap();\n\n            list.forEach((d) => {\n              const radius = d.radiusAffected > 0 ? d.radiusAffected : 10;\n              if (this.isWaterDeficiency(d)) {\n                this.makeCircleMarker(\n                  EMapLayer.WaterDeficiency,\n                  { longitude: d.longitude, latitude: d.latitude },\n                  \"#4285f4\",\n                  this.getDeficiencyPopup(d),\n                  radius,\n                );\n              } else {\n                this.makeCircleMarker(\n                  EMapLayer.SoilDeficiency,\n                  { longitude: d.longitude, latitude: d.latitude },\n                  \"brown\",\n                  this.getDeficiencyPopup(d),\n                  radius,\n                );\n              }\n            });\n          }\n        }),\n      )\n      .subscribe",
+          "lineNumber": 197
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "this.markerList$\n      .pipe",
+          "lineNumber": 197
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "map",
+          "lineNumber": 199
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "this.clearDeficienciesLayersFromMap",
+          "lineNumber": 201
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "list.forEach",
+          "lineNumber": 203
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "this.isWaterDeficiency",
+          "lineNumber": 205
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "this.makeCircleMarker",
+          "lineNumber": 206
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "this.getDeficiencyPopup",
+          "lineNumber": 210
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "this.makeCircleMarker",
+          "lineNumber": 214
+        },
+        {
+          "caller": "makeDeficiencyMarkers",
+          "callee": "this.getDeficiencyPopup",
+          "lineNumber": 218
+        },
+        {
+          "caller": "makeLabMarkers",
+          "callee": "this.labsAPIService.mapLabs$\n      .pipe(\n        map((list) => {\n          this.laboratoriesLayer.clearLayers();\n\n          if (list && list.length > 0) {\n            list.forEach((lab) => {\n              this.makeIconMarker(\n                EMapLayer.Laboratories,\n                { longitude: lab.longitude, latitude: lab.latitude },\n                this.labIcon,\n                this.getLabPopup(lab),\n              );\n            });\n          }\n        }),\n      )\n      .subscribe",
+          "lineNumber": 230
+        },
+        {
+          "caller": "makeLabMarkers",
+          "callee": "this.labsAPIService.mapLabs$\n      .pipe",
+          "lineNumber": 230
+        },
+        {
+          "caller": "makeLabMarkers",
+          "callee": "map",
+          "lineNumber": 232
+        },
+        {
+          "caller": "makeLabMarkers",
+          "callee": "this.laboratoriesLayer.clearLayers",
+          "lineNumber": 233
+        },
+        {
+          "caller": "makeLabMarkers",
+          "callee": "list.forEach",
+          "lineNumber": 236
+        },
+        {
+          "caller": "makeLabMarkers",
+          "callee": "this.makeIconMarker",
+          "lineNumber": 237
+        },
+        {
+          "caller": "makeLabMarkers",
+          "callee": "this.getLabPopup",
+          "lineNumber": 241
+        },
+        {
+          "caller": "makeCircleMarker",
+          "callee": "L.circleMarker",
+          "lineNumber": 257
+        },
+        {
+          "caller": "makeCircleMarker",
+          "callee": "circle.bindPopup",
+          "lineNumber": 265
+        },
+        {
+          "caller": "makeCircleMarker",
+          "callee": "this.waterDeficienciesLayer.addLayer",
+          "lineNumber": 269
+        },
+        {
+          "caller": "makeCircleMarker",
+          "callee": "this.soilDeficienciesLayer.addLayer",
+          "lineNumber": 272
+        },
+        {
+          "caller": "makeCircleMarker",
+          "callee": "this.laboratoriesLayer.addLayer",
+          "lineNumber": 275
+        },
+        {
+          "caller": "makeCircleMarker",
+          "callee": "circle.addTo",
+          "lineNumber": 278
+        },
+        {
+          "caller": "makeIconMarker",
+          "callee": "L.marker",
+          "lineNumber": 289
+        },
+        {
+          "caller": "makeIconMarker",
+          "callee": "circle.bindPopup",
+          "lineNumber": 294
+        },
+        {
+          "caller": "makeIconMarker",
+          "callee": "this.waterDeficienciesLayer.addLayer",
+          "lineNumber": 298
+        },
+        {
+          "caller": "makeIconMarker",
+          "callee": "this.soilDeficienciesLayer.addLayer",
+          "lineNumber": 301
+        },
+        {
+          "caller": "makeIconMarker",
+          "callee": "this.laboratoriesLayer.addLayer",
+          "lineNumber": 304
+        },
+        {
+          "caller": "makeIconMarker",
+          "callee": "circle.addTo",
+          "lineNumber": 307
+        },
+        {
+          "caller": "getLabPopup",
+          "callee": "item.researchers.map((r) => `<li>${r.fullName}</li>`).join",
+          "lineNumber": 333
+        },
+        {
+          "caller": "getLabPopup",
+          "callee": "item.researchers.map",
+          "lineNumber": 333
+        },
+        {
+          "caller": "addAllLayersToMap",
+          "callee": "this.waterDeficienciesLayer.addTo",
+          "lineNumber": 344
+        },
+        {
+          "caller": "addAllLayersToMap",
+          "callee": "this.soilDeficienciesLayer.addTo",
+          "lineNumber": 345
+        },
+        {
+          "caller": "addAllLayersToMap",
+          "callee": "this.laboratoriesLayer.addTo",
+          "lineNumber": 346
+        },
+        {
+          "caller": "clearDeficienciesLayersFromMap",
+          "callee": "this.waterDeficienciesLayer.clearLayers",
+          "lineNumber": 350
+        },
+        {
+          "caller": "clearDeficienciesLayersFromMap",
+          "callee": "this.soilDeficienciesLayer.clearLayers",
+          "lineNumber": 351
+        },
+        {
+          "caller": "fetchJson",
+          "callee": "fetch",
+          "lineNumber": 356
+        },
+        {
+          "caller": "fetchJson",
+          "callee": "response.json",
+          "lineNumber": 361
+        },
+        {
+          "caller": "fetchJson",
+          "callee": "console.error",
+          "lineNumber": 363
+        },
+        {
+          "caller": "buildDisplayNameFromNominatimParts",
+          "callee": "[address.house_number, address.road || address.pedestrian || address.path].filter(Boolean).join",
+          "lineNumber": 369
+        },
+        {
+          "caller": "buildDisplayNameFromNominatimParts",
+          "callee": "[address.house_number, address.road || address.pedestrian || address.path].filter",
+          "lineNumber": 369
+        },
+        {
+          "caller": "buildDisplayNameFromNominatimParts",
+          "callee": "[street, city, address.state, address.postcode, address.country].filter(Boolean).join",
+          "lineNumber": 372
+        },
+        {
+          "caller": "buildDisplayNameFromNominatimParts",
+          "callee": "[street, city, address.state, address.postcode, address.country].filter",
+          "lineNumber": 372
+        },
+        {
+          "caller": "buildDisplayNameFromBigDataCloud",
+          "callee": "[\n      response.locality,\n      response.city !== response.locality ? response.city : undefined,\n      response.principalSubdivision,\n      response.postcode,\n      response.countryName,\n    ].filter",
+          "lineNumber": 376
+        },
+        {
+          "caller": "buildDisplayNameFromBigDataCloud",
+          "callee": "array.indexOf",
+          "lineNumber": 382
+        },
+        {
+          "caller": "buildDisplayNameFromBigDataCloud",
+          "callee": "parts.join",
+          "lineNumber": 384
+        },
+        {
+          "caller": "lookupAddress",
+          "callee": "this.lookupAddressFromBigDataCloud",
+          "lineNumber": 388
+        },
+        {
+          "caller": "lookupAddress",
+          "callee": "this.lookupAddressFromNominatim",
+          "lineNumber": 393
+        },
+        {
+          "caller": "lookupAddressFromNominatim",
+          "callee": "await this.fetchJson",
+          "lineNumber": 397
+        },
+        {
+          "caller": "lookupAddressFromNominatim",
+          "callee": "this.buildDisplayNameFromNominatimParts",
+          "lineNumber": 407
+        },
+        {
+          "caller": "lookupAddressFromBigDataCloud",
+          "callee": "await this.fetchJson",
+          "lineNumber": 424
+        },
+        {
+          "caller": "lookupAddressFromBigDataCloud",
+          "callee": "this.buildDisplayNameFromBigDataCloud",
+          "lineNumber": 432
+        },
+        {
+          "caller": "removeSelectedLocationMarker",
+          "callee": "this.map.eachLayer",
+          "lineNumber": 448
+        },
+        {
+          "caller": "removeSelectedLocationMarker",
+          "callee": "layer.getIcon",
+          "lineNumber": 449
+        },
+        {
+          "caller": "removeSelectedLocationMarker",
+          "callee": "this.map.removeLayer",
+          "lineNumber": 450
+        },
+        {
+          "caller": "stopCoordinateSelectionMode",
+          "callee": "this.map.getContainer",
+          "lineNumber": 456
+        },
+        {
+          "caller": "stopCoordinateSelectionMode",
+          "callee": "mapContainer.classList.remove",
+          "lineNumber": 458
+        },
+        {
+          "caller": "stopCoordinateSelectionMode",
+          "callee": "this.map.off",
+          "lineNumber": 459
+        },
+        {
+          "caller": "highlightSelectedCoordinates",
+          "callee": "Number",
+          "lineNumber": 467
+        },
+        {
+          "caller": "highlightSelectedCoordinates",
+          "callee": "Number",
+          "lineNumber": 468
+        },
+        {
+          "caller": "highlightSelectedCoordinates",
+          "callee": "Number.isNaN",
+          "lineNumber": 470
+        },
+        {
+          "caller": "highlightSelectedCoordinates",
+          "callee": "Number.isNaN",
+          "lineNumber": 470
+        },
+        {
+          "caller": "highlightSelectedCoordinates",
+          "callee": "this.showSelectedLocationMarker",
+          "lineNumber": 474
+        },
+        {
+          "caller": "showSelectedLocationMarker",
+          "callee": "this.removeSelectedLocationMarker",
+          "lineNumber": 478
+        },
+        {
+          "caller": "showSelectedLocationMarker",
+          "callee": "L.marker([coordinates.latitude, coordinates.longitude], {\n      icon: L.divIcon({\n        className: \"selected-location-marker\",\n        html: '<div class=\"selected-location-pin\"></div>',\n        iconSize: [20, 20],\n        iconAnchor: [10, 10],\n      }),\n      zIndexOffset: 1000,\n    }).addTo",
+          "lineNumber": 480
+        },
+        {
+          "caller": "showSelectedLocationMarker",
+          "callee": "L.marker",
+          "lineNumber": 480
+        },
+        {
+          "caller": "showSelectedLocationMarker",
+          "callee": "L.divIcon",
+          "lineNumber": 481
+        },
+        {
+          "caller": "showSelectedLocationMarker",
+          "callee": "marker.bindPopup(popupHtml).openPopup",
+          "lineNumber": 491
+        },
+        {
+          "caller": "showSelectedLocationMarker",
+          "callee": "marker.bindPopup",
+          "lineNumber": 491
+        },
+        {
+          "caller": "ensureLayerVisible",
+          "callee": "this.getClusterGroup",
+          "lineNumber": 496
+        },
+        {
+          "caller": "ensureLayerVisible",
+          "callee": "this.map.hasLayer",
+          "lineNumber": 497
+        },
+        {
+          "caller": "ensureLayerVisible",
+          "callee": "clusterGroup.addTo",
+          "lineNumber": 498
+        },
+        {
+          "caller": "revealLayerMarker",
+          "callee": "this.getClusterGroup",
+          "lineNumber": 516
+        },
+        {
+          "caller": "revealLayerMarker",
+          "callee": "clusterGroup.eachLayer",
+          "lineNumber": 523
+        },
+        {
+          "caller": "revealLayerMarker",
+          "callee": "layerItem.getLatLng",
+          "lineNumber": 528
+        },
+        {
+          "caller": "revealLayerMarker",
+          "callee": "this.areCoordinatesClose",
+          "lineNumber": 529
+        },
+        {
+          "caller": "revealLayerMarker",
+          "callee": "clusterGroup.zoomToShowLayer",
+          "lineNumber": 535
+        },
+        {
+          "caller": "revealLayerMarker",
+          "callee": "matchedLayer?.openPopup",
+          "lineNumber": 536
+        },
+        {
+          "caller": "areCoordinatesClose",
+          "callee": "Math.abs",
+          "lineNumber": 542
+        },
+        {
+          "caller": "areCoordinatesClose",
+          "callee": "Math.abs",
+          "lineNumber": 542
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "this.stopCoordinateSelectionMode",
+          "lineNumber": 546
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "this.selectedAddressSubject.next",
+          "lineNumber": 547
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "this.map.getContainer",
+          "lineNumber": 549
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "mapContainer.classList.add",
+          "lineNumber": 551
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "this.map.on",
+          "lineNumber": 553
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "this.lookupAddress",
+          "lineNumber": 559
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "this.selectedCoordinatesSubject.next",
+          "lineNumber": 561
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "this.selectedAddressSubject.next",
+          "lineNumber": 562
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "this.showSelectedLocationMarker",
+          "lineNumber": 563
+        },
+        {
+          "caller": "enableCoordinateSelection",
+          "callee": "this.stopCoordinateSelectionMode",
+          "lineNumber": 564
+        },
+        {
+          "caller": "disableCoordinateSelection",
+          "callee": "this.stopCoordinateSelectionMode",
+          "lineNumber": 569
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "ReportAPIService",
+          "startLine": 9,
+          "endLine": 39,
+          "methods": [
+            "constructor",
+            "downloadWaterDeficiencyExcelListFile",
+            "downloadSoilDeficiencyExcelListFile",
+            "downloadOrgUsersExcelListFile"
+          ],
+          "properties": [
+            "reportsUrl",
+            "httpOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ReportAPIService",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "downloadWaterDeficiencyExcelListFile",
+          "callee": "this.http\n      .get(this.reportsUrl + \"water\", { responseType: \"blob\" })\n      .subscribe",
+          "lineNumber": 23
+        },
+        {
+          "caller": "downloadWaterDeficiencyExcelListFile",
+          "callee": "this.http\n      .get",
+          "lineNumber": 23
+        },
+        {
+          "caller": "downloadWaterDeficiencyExcelListFile",
+          "callee": "saveAs",
+          "lineNumber": 25
+        },
+        {
+          "caller": "downloadSoilDeficiencyExcelListFile",
+          "callee": "this.http\n      .get(this.reportsUrl + \"soil\", { responseType: \"blob\" })\n      .subscribe",
+          "lineNumber": 29
+        },
+        {
+          "caller": "downloadSoilDeficiencyExcelListFile",
+          "callee": "this.http\n      .get",
+          "lineNumber": 29
+        },
+        {
+          "caller": "downloadSoilDeficiencyExcelListFile",
+          "callee": "saveAs",
+          "lineNumber": 31
+        },
+        {
+          "caller": "downloadOrgUsersExcelListFile",
+          "callee": "this.http\n      .get(this.reportsUrl + \"org-users\", { responseType: \"blob\" })\n      .subscribe",
+          "lineNumber": 35
+        },
+        {
+          "caller": "downloadOrgUsersExcelListFile",
+          "callee": "this.http\n      .get",
+          "lineNumber": 35
+        },
+        {
+          "caller": "downloadOrgUsersExcelListFile",
+          "callee": "saveAs",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

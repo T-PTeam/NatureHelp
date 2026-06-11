@@ -1,0 +1,1538 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/NatureHelp/Exceptions/Handlers/FileExceptionsHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "CanHandle",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "exceptionContext"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 28,
+          "endLine": 41,
+          "params": [
+            "exceptionContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileExceptionsHandler",
+          "startLine": 12,
+          "endLine": 42,
+          "methods": [
+            "CanHandle",
+            "Handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CanHandle",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "FileExceptionsHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handle",
+          "callee": "new ObjectResult",
+          "lineNumber": 30
+        },
+        {
+          "caller": "Handle",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 30
+        },
+        {
+          "caller": "Handle",
+          "callee": "exceptionContext.Exception.GetType",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Exceptions/Handlers/NetworkExceptionsHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "CanHandle",
+          "startLine": 15,
+          "endLine": 18,
+          "params": [
+            "exceptionContext"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 21,
+          "endLine": 34,
+          "params": [
+            "exceptionContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NetworkExceptionsHandler",
+          "startLine": 12,
+          "endLine": 35,
+          "methods": [
+            "CanHandle",
+            "Handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CanHandle",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "NetworkExceptionsHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handle",
+          "callee": "new ObjectResult",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "exceptionContext.Exception.GetType",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Exceptions/Handlers/SecurityExceptionsHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "CanHandle",
+          "startLine": 15,
+          "endLine": 18,
+          "params": [
+            "exceptionContext"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 21,
+          "endLine": 34,
+          "params": [
+            "exceptionContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityExceptionsHandler",
+          "startLine": 12,
+          "endLine": 35,
+          "methods": [
+            "CanHandle",
+            "Handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CanHandle",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityExceptionsHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handle",
+          "callee": "new ObjectResult",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "exceptionContext.Exception.GetType",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Exceptions/Handlers/SerializationExceptionsHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "CanHandle",
+          "startLine": 15,
+          "endLine": 18,
+          "params": [
+            "exceptionContext"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 21,
+          "endLine": 34,
+          "params": [
+            "exceptionContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SerializationExceptionsHandler",
+          "startLine": 12,
+          "endLine": 35,
+          "methods": [
+            "CanHandle",
+            "Handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CanHandle",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "SerializationExceptionsHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handle",
+          "callee": "new ObjectResult",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "exceptionContext.Exception.GetType",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Exceptions/Handlers/SystemExceptionsHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "CanHandle",
+          "startLine": 15,
+          "endLine": 18,
+          "params": [
+            "exceptionContext"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 21,
+          "endLine": 34,
+          "params": [
+            "exceptionContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SystemExceptionsHandler",
+          "startLine": 12,
+          "endLine": 35,
+          "methods": [
+            "CanHandle",
+            "Handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CanHandle",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "SystemExceptionsHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handle",
+          "callee": "new ObjectResult",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "exceptionContext.Exception.GetType",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Exceptions/Handlers/ThreadingExceptionsHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "CanHandle",
+          "startLine": 15,
+          "endLine": 18,
+          "params": [
+            "exceptionContext"
+          ]
+        },
+        {
+          "name": "Handle",
+          "startLine": 21,
+          "endLine": 34,
+          "params": [
+            "exceptionContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ThreadingExceptionsHandler",
+          "startLine": 12,
+          "endLine": 35,
+          "methods": [
+            "CanHandle",
+            "Handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CanHandle",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "Handle",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ThreadingExceptionsHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Handle",
+          "callee": "new ObjectResult",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "new ErrorResponseDto",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Handle",
+          "callee": "exceptionContext.Exception.GetType",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Filters/AppExceptionFilterAttribute.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "AppExceptionFilterAttribute",
+          "startLine": 19,
+          "endLine": 23,
+          "params": [
+            "_provider",
+            "logger"
+          ]
+        },
+        {
+          "name": "OnException",
+          "startLine": 29,
+          "endLine": 41,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppExceptionFilterAttribute",
+          "startLine": 9,
+          "endLine": 42,
+          "methods": [
+            "AppExceptionFilterAttribute",
+            "OnException"
+          ],
+          "properties": [
+            "_handlers",
+            "_logger"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppExceptionFilterAttribute",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "OnException",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "AppExceptionFilterAttribute",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AppExceptionFilterAttribute",
+          "callee": "_provider.GetObjects",
+          "lineNumber": 21
+        },
+        {
+          "caller": "OnException",
+          "callee": "_logger.LogError",
+          "lineNumber": 31
+        },
+        {
+          "caller": "OnException",
+          "callee": "_handlers.First(e => e.CanHandle(context)).Handle",
+          "lineNumber": 35
+        },
+        {
+          "caller": "OnException",
+          "callee": "_handlers.First",
+          "lineNumber": 35
+        },
+        {
+          "caller": "OnException",
+          "callee": "e.CanHandle",
+          "lineNumber": 35
+        },
+        {
+          "caller": "OnException",
+          "callee": "_logger.LogError",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Interfaces/IExceptionHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "IExceptionHandler",
+          "startLine": 8,
+          "endLine": 22,
+          "methods": [
+            "CanHandle",
+            "Handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IExceptionHandler",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Interfaces/IObjectsProvider.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "IObjectsProvider",
+          "startLine": 7,
+          "endLine": 14,
+          "methods": [
+            "GetObjects"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IObjectsProvider",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Program.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 474,
+      "nonEmptyLines": 412,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/NatureHelp/Properties/launchSettings.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 28,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "profiles",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Providers/ErrorHandlersProvider.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "GetObjects",
+          "startLine": 15,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErrorHandlersProvider",
+          "startLine": 9,
+          "endLine": 29,
+          "methods": [
+            "GetObjects"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GetObjects",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ErrorHandlersProvider",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetObjects",
+          "callee": "new List<IExceptionHandler>",
+          "lineNumber": 17
+        },
+        {
+          "caller": "GetObjects",
+          "callee": "new CommonExceptionsHandler",
+          "lineNumber": 19
+        },
+        {
+          "caller": "GetObjects",
+          "callee": "new SerializationExceptionsHandler",
+          "lineNumber": 20
+        },
+        {
+          "caller": "GetObjects",
+          "callee": "new SecurityExceptionsHandler",
+          "lineNumber": 21
+        },
+        {
+          "caller": "GetObjects",
+          "callee": "new ThreadingExceptionsHandler",
+          "lineNumber": 22
+        },
+        {
+          "caller": "GetObjects",
+          "callee": "new NetworkExceptionsHandler",
+          "lineNumber": 23
+        },
+        {
+          "caller": "GetObjects",
+          "callee": "new FileExceptionsHandler",
+          "lineNumber": 24
+        },
+        {
+          "caller": "GetObjects",
+          "callee": "new DataAccessExceptionsHandler",
+          "lineNumber": 25
+        },
+        {
+          "caller": "GetObjects",
+          "callee": "new SystemExceptionsHandler",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/Security/SecurityHeadersMiddleware.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "SecurityHeadersMiddleware",
+          "startLine": 10,
+          "endLine": 14,
+          "params": [
+            "next",
+            "environment"
+          ]
+        },
+        {
+          "name": "InvokeAsync",
+          "startLine": 16,
+          "endLine": 36,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityHeadersMiddleware",
+          "startLine": 5,
+          "endLine": 37,
+          "methods": [
+            "SecurityHeadersMiddleware",
+            "InvokeAsync"
+          ],
+          "properties": [
+            "_next",
+            "_environment"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SecurityHeadersMiddleware",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "InvokeAsync",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityHeadersMiddleware",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "InvokeAsync",
+          "callee": "context.Response.Headers.Append",
+          "lineNumber": 18
+        },
+        {
+          "caller": "InvokeAsync",
+          "callee": "context.Response.Headers.Append",
+          "lineNumber": 20
+        },
+        {
+          "caller": "InvokeAsync",
+          "callee": "context.Response.Headers.Append",
+          "lineNumber": 22
+        },
+        {
+          "caller": "InvokeAsync",
+          "callee": "context.Response.Headers.Append",
+          "lineNumber": 24
+        },
+        {
+          "caller": "InvokeAsync",
+          "callee": "_environment.IsDevelopment",
+          "lineNumber": 26
+        },
+        {
+          "caller": "InvokeAsync",
+          "callee": "context.Response.Headers.Append",
+          "lineNumber": 28
+        },
+        {
+          "caller": "InvokeAsync",
+          "callee": "context.Response.Headers.Append",
+          "lineNumber": 32
+        },
+        {
+          "caller": "InvokeAsync",
+          "callee": "_next",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Dtos/ErrorResponseDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "ErrorResponseDto",
+          "startLine": 6,
+          "endLine": 11,
+          "methods": [],
+          "properties": [
+            "Message",
+            "StatusCode",
+            "ErrorType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Message",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "StatusCode",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ErrorType",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ErrorResponseDto",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Dtos/ListData.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "classes": [
+        {
+          "name": "ListData",
+          "startLine": 2,
+          "endLine": 6,
+          "methods": [],
+          "properties": [
+            "List",
+            "TotalCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "List",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "TotalCount",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "ListData",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Dtos/ProfileAchievementDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "ProfileAchievementDto",
+          "startLine": 3,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "Id",
+            "Code",
+            "Title",
+            "Description",
+            "Icon",
+            "RuleType",
+            "TargetInt",
+            "SortOrder",
+            "Progress",
+            "IsCompleted",
+            "UnlockedAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "Code",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "Title",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "Description",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Icon",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "RuleType",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "TargetInt",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "SortOrder",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "Progress",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "IsCompleted",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "UnlockedAt",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ProfileAchievementDto",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Dtos/ProfileJournalEntryDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "ProfileJournalEntryDto",
+          "startLine": 3,
+          "endLine": 10,
+          "methods": [],
+          "properties": [
+            "Id",
+            "DeficiencyType",
+            "Title",
+            "CreatedOn",
+            "Address"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyType",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "Title",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "CreatedOn",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Address",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ProfileJournalEntryDto",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Dtos/ProfilePhotoHistoryDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "ProfilePhotoHistoryDto",
+          "startLine": 3,
+          "endLine": 10,
+          "methods": [],
+          "properties": [
+            "Id",
+            "PreviewUrl",
+            "DeficiencyId",
+            "DeficiencyType",
+            "CreatedOn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Id",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "PreviewUrl",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyId",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "DeficiencyType",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "CreatedOn",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ProfilePhotoHistoryDto",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Dtos/TokensDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "TokensDto",
+          "startLine": 2,
+          "endLine": 10,
+          "methods": [],
+          "properties": [
+            "Token",
+            "AccessToken",
+            "RefreshToken"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Token",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "AccessToken",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "RefreshToken",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "TokensDto",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Dtos/UserDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "UserDto",
+          "startLine": 4,
+          "endLine": 7,
+          "methods": [],
+          "properties": [
+            "Email"
+          ]
+        },
+        {
+          "name": "SendPasswordResetLinkDto",
+          "startLine": 9,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "Email"
+          ]
+        },
+        {
+          "name": "ResetPasswordDto",
+          "startLine": 16,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "Token",
+            "NewPassword"
+          ]
+        },
+        {
+          "name": "ResetPasswordWithTokenDto",
+          "startLine": 26,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "ResetPasswordToken",
+            "NewPassword"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Email",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "UserDto",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "Email",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "SendPasswordResetLinkDto",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Token",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "NewPassword",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ResetPasswordDto",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "ResetPasswordToken",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "NewPassword",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "ResetPasswordWithTokenDto",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "src/Shared/Dtos/UserProfileSettingsDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "UserProfileSettingsDto",
+          "startLine": 3,
+          "endLine": 9,
+          "methods": [],
+          "properties": [
+            "ProfileIsPublic",
+            "EmailNotificationsEnabled",
+            "AchievementAlertsEnabled",
+            "NewsletterEnabled"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProfileIsPublic",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "EmailNotificationsEnabled",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "AchievementAlertsEnabled",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "NewsletterEnabled",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "UserProfileSettingsDto",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Dtos/UserProfileStatsDto.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "UserProfileStatsDto",
+          "startLine": 3,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "ReportsCount",
+            "WaterReportsCount",
+            "SoilReportsCount",
+            "ReferralsCount",
+            "TotalXp",
+            "Level",
+            "XpCurrent",
+            "XpToNextLevel",
+            "AvatarStage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ReportsCount",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "WaterReportsCount",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "SoilReportsCount",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "ReferralsCount",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "TotalXp",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Level",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "XpCurrent",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "XpToNextLevel",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "AvatarStage",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "UserProfileStatsDto",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Exceptions/OperationCanNotBeCompleted.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "OperationCanNotBeCompleted",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "OperationCanNotBeCompleted",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "message",
+            "innerException"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OperationCanNotBeCompleted",
+          "startLine": 3,
+          "endLine": 12,
+          "methods": [
+            "OperationCanNotBeCompleted",
+            "OperationCanNotBeCompleted"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperationCanNotBeCompleted",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "OperationCanNotBeCompleted",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "OperationCanNotBeCompleted",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Shared/Shared.csproj",
+      "language": "csproj",
+      "fileCategory": "config",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "metrics": {}
+    },
+    {
+      "path": "src/Tests/AssemblyInfo.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

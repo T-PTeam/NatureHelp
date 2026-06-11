@@ -4,28 +4,18 @@ import { Observable, throwError } from "rxjs";
 import { catchError, switchMap } from "rxjs/operators";
 import { UserAPIService } from "./user-api.service";
 
-const AUTH_PATH_SEGMENTS = [
-  "login",
-  "register",
-  "refresh-access-token",
-  "current-user",
-  "logout",
-  "send-password-reset-link",
-  "reset-password",
-];
-
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(private userService: UserAPIService) {}
 
-  private isAuthRequest(req: HttpRequest<unknown>): boolean {
-    const url = req.url;
-    if (!url.includes("/user/")) return false;
-    const afterUser = url.split("/user/")[1]?.split("?")[0]?.split("/")[0] ?? "";
-    return AUTH_PATH_SEGMENTS.includes(afterUser);
-  }
-
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const isExternalGeocoding =
+      req.url.includes("nominatim.openstreetmap.org") || req.url.includes("api.bigdatacloud.net");
+
+    if (isExternalGeocoding) {
+      return next.handle(req);
+    }
+
     const token = sessionStorage.getItem("accessToken");
     let authReq = req;
 
@@ -45,12 +35,10 @@ export class AuthInterceptor implements HttpInterceptor {
           return this.userService.refreshAccessToken().pipe(
             switchMap(() => {
               const newToken = sessionStorage.getItem("accessToken");
-              const retryOptions: { setHeaders: { Authorization: string }; withCredentials?: boolean } = {
+              const retryOptions: { setHeaders: { Authorization: string }; withCredentials: boolean } = {
                 setHeaders: { Authorization: `Bearer ${newToken}` },
+                withCredentials: true,
               };
-              if (this.isAuthRequest(req)) {
-                retryOptions.withCredentials = true;
-              }
               return next.handle(req.clone(retryOptions));
             }),
             catchError((err) => {

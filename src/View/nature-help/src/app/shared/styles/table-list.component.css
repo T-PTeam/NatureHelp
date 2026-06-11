@@ -186,6 +186,7 @@
   min-height: 0;
   overflow: hidden;
   width: 100%;
+  border-bottom: 2px solid hsl(var(--border));
 }
 
 .grid-body {
@@ -225,17 +226,32 @@
   background: hsl(var(--muted) / 0.5);
 }
 
-.grid-header div,
-.grid-row div div {
+.grid-header > div,
+.grid-row > div:not(.btn-ceil):not(.status-cell),
+.grid-row > nat-truncated-cell {
   padding: 8px 5px;
   border-right: 1px solid hsl(var(--border));
+  min-width: 0;
+}
+
+.grid-header > div {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.grid-row div div {
-  white-space: wrap;
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.sortable-header:hover {
+  background: hsl(var(--muted) / 0.8);
+}
+
+.sortable-header.active {
+  color: hsl(var(--primary));
 }
 
 .grid-header div:last-child,
@@ -449,4 +465,8 @@
   .grid-body {
     max-height: calc(100vh - 60px - 60px - 60px - 60px);
   }
+}
+
+.table-wrapper {
+  border-bottom: 2px solid hsl(var(--border));
 }

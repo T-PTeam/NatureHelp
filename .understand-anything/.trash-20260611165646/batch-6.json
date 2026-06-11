@@ -1,0 +1,635 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "type": "file",
+      "name": "labs-table.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "summary": "labs-table.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts:LabsTableComponent",
+      "type": "class",
+      "name": "LabsTableComponent",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "summary": "Class LabsTableComponent with 8 method(s) in labs-table.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "type": "file",
+      "name": "research-table.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "summary": "research-table.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts:ResearchTableComponent",
+      "type": "class",
+      "name": "ResearchTableComponent",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "summary": "Class ResearchTableComponent with 5 method(s) in research-table.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryFilter.ts",
+      "type": "file",
+      "name": "ILaboratoryFilter.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryFilter.ts",
+      "summary": "ILaboratoryFilter.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "type": "file",
+      "name": "labs-api.service.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "summary": "labs-api.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts:LabsAPIService",
+      "type": "class",
+      "name": "LabsAPIService",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "summary": "Class LabsAPIService with 8 method(s) in labs-api.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "type": "file",
+      "name": "researches-api.service.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "summary": "researches-api.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts:ResearchesAPIService",
+      "type": "class",
+      "name": "ResearchesAPIService",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "summary": "Class ResearchesAPIService with 2 method(s) in researches-api.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "type": "file",
+      "name": "organization-users-table.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "summary": "organization-users-table.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts:OrganizationUsersTableComponent",
+      "type": "class",
+      "name": "OrganizationUsersTableComponent",
+      "filePath": "src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "summary": "Class OrganizationUsersTableComponent with 8 method(s) in organization-users-table.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts",
+      "type": "file",
+      "name": "laboratory-owner.guard.ts",
+      "filePath": "src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts",
+      "summary": "laboratory-owner.guard.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts:LaboratoryOwnerGuard",
+      "type": "class",
+      "name": "LaboratoryOwnerGuard",
+      "filePath": "src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts",
+      "summary": "Class LaboratoryOwnerGuard with 3 method(s) in laboratory-owner.guard.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts",
+      "type": "file",
+      "name": "laboratory-access.helper.ts",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts",
+      "summary": "laboratory-access.helper.ts provides 1 function(s) used by surrounding modules.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts:canEditLaboratory",
+      "type": "function",
+      "name": "canEditLaboratory",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts",
+      "summary": "Function canEditLaboratory in laboratory-access.helper.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "file",
+      "name": "table-sort.helper.ts",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "summary": "table-sort.helper.ts provides 3 function(s) used by surrounding modules.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts:toggleSort",
+      "type": "function",
+      "name": "toggleSort",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "summary": "Function toggleSort in table-sort.helper.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts:sortIndicator",
+      "type": "function",
+      "name": "sortIndicator",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "summary": "Function sortIndicator in table-sort.helper.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts:appendSortParams",
+      "type": "function",
+      "name": "appendSortParams",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "summary": "Function appendSortParams in table-sort.helper.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/models/IListData.ts",
+      "type": "file",
+      "name": "IListData.ts",
+      "filePath": "src/View/nature-help/src/app/shared/models/IListData.ts",
+      "summary": "IListData.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "file",
+      "name": "ITableSort.ts",
+      "filePath": "src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "summary": "ITableSort.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratory.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryFilter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/mobile-map.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts:LabsTableComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts:LabsTableComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts:ResearchTableComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts:ResearchTableComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratory.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryFilter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryMapDto.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/IListData.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts:LabsAPIService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts:LabsAPIService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/IResearch.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/IListData.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts:ResearchesAPIService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts:ResearchesAPIService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts:OrganizationUsersTableComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts:OrganizationUsersTableComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts",
+      "target": "class:src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts:LaboratoryOwnerGuard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts",
+      "target": "class:src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts:LaboratoryOwnerGuard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratory.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts:canEditLaboratory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts:canEditLaboratory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts:toggleSort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts:toggleSort",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts:sortIndicator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts:sortIndicator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts:appendSortParams",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts:appendSortParams",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

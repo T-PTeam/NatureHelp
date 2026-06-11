@@ -1,0 +1,2579 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "type": "file",
+      "name": "RedisCacheService.cs",
+      "filePath": "src/Application/Services/Cache/RedisCacheService.cs",
+      "summary": "RedisCacheService.cs defines 1 class(es) and 4 function(s) in the csharp layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Cache/RedisCacheService.cs:RedisCacheService",
+      "type": "function",
+      "name": "RedisCacheService",
+      "filePath": "src/Application/Services/Cache/RedisCacheService.cs",
+      "summary": "Function RedisCacheService in RedisCacheService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Cache/RedisCacheService.cs:SetAsync",
+      "type": "function",
+      "name": "SetAsync",
+      "filePath": "src/Application/Services/Cache/RedisCacheService.cs",
+      "summary": "Function SetAsync in RedisCacheService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Cache/RedisCacheService.cs:GetAsync",
+      "type": "function",
+      "name": "GetAsync",
+      "filePath": "src/Application/Services/Cache/RedisCacheService.cs",
+      "summary": "Function GetAsync in RedisCacheService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Cache/RedisCacheService.cs:RemoveAsync",
+      "type": "function",
+      "name": "RemoveAsync",
+      "filePath": "src/Application/Services/Cache/RedisCacheService.cs",
+      "summary": "Function RemoveAsync in RedisCacheService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/Cache/RedisCacheService.cs:RedisCacheService",
+      "type": "class",
+      "name": "RedisCacheService",
+      "filePath": "src/Application/Services/Cache/RedisCacheService.cs",
+      "summary": "Class RedisCacheService with 4 method(s) in RedisCacheService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Application/Services/DeficiencyBindModelService.cs",
+      "type": "file",
+      "name": "DeficiencyBindModelService.cs",
+      "filePath": "src/Application/Services/DeficiencyBindModelService.cs",
+      "summary": "DeficiencyBindModelService.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/DeficiencyBindModelService.cs:DeficiencyBindModelService",
+      "type": "function",
+      "name": "DeficiencyBindModelService",
+      "filePath": "src/Application/Services/DeficiencyBindModelService.cs",
+      "summary": "Function DeficiencyBindModelService in DeficiencyBindModelService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/DeficiencyBindModelService.cs:GetModelsByDeficiencyIdAsync",
+      "type": "function",
+      "name": "GetModelsByDeficiencyIdAsync",
+      "filePath": "src/Application/Services/DeficiencyBindModelService.cs",
+      "summary": "Function GetModelsByDeficiencyIdAsync in DeficiencyBindModelService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/DeficiencyBindModelService.cs:DeficiencyBindModelService",
+      "type": "class",
+      "name": "DeficiencyBindModelService",
+      "filePath": "src/Application/Services/DeficiencyBindModelService.cs",
+      "summary": "Class DeficiencyBindModelService with 2 method(s) in DeficiencyBindModelService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Application/Services/LevelProgressCalculator.cs",
+      "type": "file",
+      "name": "LevelProgressCalculator.cs",
+      "filePath": "src/Application/Services/LevelProgressCalculator.cs",
+      "summary": "LevelProgressCalculator.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/LevelProgressCalculator.cs:ComputeProgress",
+      "type": "function",
+      "name": "ComputeProgress",
+      "filePath": "src/Application/Services/LevelProgressCalculator.cs",
+      "summary": "Function ComputeProgress in LevelProgressCalculator.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/LevelProgressCalculator.cs:ComputeLevel",
+      "type": "function",
+      "name": "ComputeLevel",
+      "filePath": "src/Application/Services/LevelProgressCalculator.cs",
+      "summary": "Function ComputeLevel in LevelProgressCalculator.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/LevelProgressCalculator.cs:LevelProgressCalculator",
+      "type": "class",
+      "name": "LevelProgressCalculator",
+      "filePath": "src/Application/Services/LevelProgressCalculator.cs",
+      "summary": "Class LevelProgressCalculator with 2 method(s) in LevelProgressCalculator.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Application/Services/LevelThresholdsProvider.cs",
+      "type": "file",
+      "name": "LevelThresholdsProvider.cs",
+      "filePath": "src/Application/Services/LevelThresholdsProvider.cs",
+      "summary": "LevelThresholdsProvider.cs defines 1 class(es) and 4 function(s) in the csharp layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/LevelThresholdsProvider.cs:LevelThresholdsProvider",
+      "type": "function",
+      "name": "LevelThresholdsProvider",
+      "filePath": "src/Application/Services/LevelThresholdsProvider.cs",
+      "summary": "Function LevelThresholdsProvider in LevelThresholdsProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/LevelThresholdsProvider.cs:GetCumulativeThresholdsAsync",
+      "type": "function",
+      "name": "GetCumulativeThresholdsAsync",
+      "filePath": "src/Application/Services/LevelThresholdsProvider.cs",
+      "summary": "Function GetCumulativeThresholdsAsync in LevelThresholdsProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/LevelThresholdsProvider.cs:InvalidateCacheAsync",
+      "type": "function",
+      "name": "InvalidateCacheAsync",
+      "filePath": "src/Application/Services/LevelThresholdsProvider.cs",
+      "summary": "Function InvalidateCacheAsync in LevelThresholdsProvider.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/LevelThresholdsProvider.cs:LevelThresholdsProvider",
+      "type": "class",
+      "name": "LevelThresholdsProvider",
+      "filePath": "src/Application/Services/LevelThresholdsProvider.cs",
+      "summary": "Class LevelThresholdsProvider with 4 method(s) in LevelThresholdsProvider.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "type": "file",
+      "name": "SoilDeficiencyService.cs",
+      "filePath": "src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "summary": "SoilDeficiencyService.cs defines 1 class(es) and 5 function(s) in the csharp layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:SoilDeficiencyService",
+      "type": "function",
+      "name": "SoilDeficiencyService",
+      "filePath": "src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "summary": "Function SoilDeficiencyService in SoilDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:AddAsync",
+      "type": "function",
+      "name": "AddAsync",
+      "filePath": "src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "summary": "Function AddAsync in SoilDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:GetMapObjectsAsync",
+      "type": "function",
+      "name": "GetMapObjectsAsync",
+      "filePath": "src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "summary": "Function GetMapObjectsAsync in SoilDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:GetList",
+      "type": "function",
+      "name": "GetList",
+      "filePath": "src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "summary": "Function GetList in SoilDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:UpdateAsync",
+      "type": "function",
+      "name": "UpdateAsync",
+      "filePath": "src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "summary": "Function UpdateAsync in SoilDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/Nature/SoilDeficiencyService.cs:SoilDeficiencyService",
+      "type": "class",
+      "name": "SoilDeficiencyService",
+      "filePath": "src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "summary": "Class SoilDeficiencyService with 5 method(s) in SoilDeficiencyService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "type": "file",
+      "name": "WaterDeficiencyService.cs",
+      "filePath": "src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "summary": "WaterDeficiencyService.cs defines 1 class(es) and 5 function(s) in the csharp layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:WaterDeficiencyService",
+      "type": "function",
+      "name": "WaterDeficiencyService",
+      "filePath": "src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "summary": "Function WaterDeficiencyService in WaterDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:AddAsync",
+      "type": "function",
+      "name": "AddAsync",
+      "filePath": "src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "summary": "Function AddAsync in WaterDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:GetMapObjectsAsync",
+      "type": "function",
+      "name": "GetMapObjectsAsync",
+      "filePath": "src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "summary": "Function GetMapObjectsAsync in WaterDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:GetList",
+      "type": "function",
+      "name": "GetList",
+      "filePath": "src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "summary": "Function GetList in WaterDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:UpdateAsync",
+      "type": "function",
+      "name": "UpdateAsync",
+      "filePath": "src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "summary": "Function UpdateAsync in WaterDeficiencyService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/Nature/WaterDeficiencyService.cs:WaterDeficiencyService",
+      "type": "class",
+      "name": "WaterDeficiencyService",
+      "filePath": "src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "summary": "Class WaterDeficiencyService with 5 method(s) in WaterDeficiencyService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Application/Services/Organization/EmailService.cs",
+      "type": "file",
+      "name": "EmailService.cs",
+      "filePath": "src/Application/Services/Organization/EmailService.cs",
+      "summary": "EmailService.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/EmailService.cs:EmailService",
+      "type": "function",
+      "name": "EmailService",
+      "filePath": "src/Application/Services/Organization/EmailService.cs",
+      "summary": "Function EmailService in EmailService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/EmailService.cs:SendEmailAsync",
+      "type": "function",
+      "name": "SendEmailAsync",
+      "filePath": "src/Application/Services/Organization/EmailService.cs",
+      "summary": "Function SendEmailAsync in EmailService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/Organization/EmailService.cs:EmailService",
+      "type": "class",
+      "name": "EmailService",
+      "filePath": "src/Application/Services/Organization/EmailService.cs",
+      "summary": "Class EmailService with 2 method(s) in EmailService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "type": "file",
+      "name": "LaboratoryService.cs",
+      "filePath": "src/Application/Services/Organization/LaboratoryService.cs",
+      "summary": "LaboratoryService.cs defines 1 class(es) and 8 function(s) in the csharp layer.",
+      "tags": [
+        "service",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/LaboratoryService.cs:LaboratoryService",
+      "type": "function",
+      "name": "LaboratoryService",
+      "filePath": "src/Application/Services/Organization/LaboratoryService.cs",
+      "summary": "Function LaboratoryService in LaboratoryService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/LaboratoryService.cs:GetMapObjectsAsync",
+      "type": "function",
+      "name": "GetMapObjectsAsync",
+      "filePath": "src/Application/Services/Organization/LaboratoryService.cs",
+      "summary": "Function GetMapObjectsAsync in LaboratoryService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/LaboratoryService.cs:GetList",
+      "type": "function",
+      "name": "GetList",
+      "filePath": "src/Application/Services/Organization/LaboratoryService.cs",
+      "summary": "Function GetList in LaboratoryService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/LaboratoryService.cs:AddAsync",
+      "type": "function",
+      "name": "AddAsync",
+      "filePath": "src/Application/Services/Organization/LaboratoryService.cs",
+      "summary": "Function AddAsync in LaboratoryService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/LaboratoryService.cs:UpdateAsync",
+      "type": "function",
+      "name": "UpdateAsync",
+      "filePath": "src/Application/Services/Organization/LaboratoryService.cs",
+      "summary": "Function UpdateAsync in LaboratoryService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/LaboratoryService.cs:CanEditLaboratory",
+      "type": "function",
+      "name": "CanEditLaboratory",
+      "filePath": "src/Application/Services/Organization/LaboratoryService.cs",
+      "summary": "Function CanEditLaboratory in LaboratoryService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/LaboratoryService.cs:DeleteAsync",
+      "type": "function",
+      "name": "DeleteAsync",
+      "filePath": "src/Application/Services/Organization/LaboratoryService.cs",
+      "summary": "Function DeleteAsync in LaboratoryService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/Organization/LaboratoryService.cs:LaboratoryService",
+      "type": "class",
+      "name": "LaboratoryService",
+      "filePath": "src/Application/Services/Organization/LaboratoryService.cs",
+      "summary": "Class LaboratoryService with 8 method(s) in LaboratoryService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Application/Services/Organization/OrganizationService.cs",
+      "type": "file",
+      "name": "OrganizationService.cs",
+      "filePath": "src/Application/Services/Organization/OrganizationService.cs",
+      "summary": "OrganizationService.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/OrganizationService.cs:OrganizationService",
+      "type": "function",
+      "name": "OrganizationService",
+      "filePath": "src/Application/Services/Organization/OrganizationService.cs",
+      "summary": "Function OrganizationService in OrganizationService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/Organization/OrganizationService.cs:OrganizationService",
+      "type": "class",
+      "name": "OrganizationService",
+      "filePath": "src/Application/Services/Organization/OrganizationService.cs",
+      "summary": "Class OrganizationService with 1 method(s) in OrganizationService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Application/Services/Organization/UserService.cs",
+      "type": "file",
+      "name": "UserService.cs",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "UserService.cs defines 1 class(es) and 32 function(s) in the csharp layer.",
+      "tags": [
+        "service",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:UserService",
+      "type": "function",
+      "name": "UserService",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function UserService in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:LoginAsync",
+      "type": "function",
+      "name": "LoginAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function LoginAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GetModelByEmail",
+      "type": "function",
+      "name": "GetModelByEmail",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GetModelByEmail in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:ConfirmEmailByToken",
+      "type": "function",
+      "name": "ConfirmEmailByToken",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function ConfirmEmailByToken in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:UpdateEmailConfirmationTokenByEmail",
+      "type": "function",
+      "name": "UpdateEmailConfirmationTokenByEmail",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function UpdateEmailConfirmationTokenByEmail in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GetOrganizationUsers",
+      "type": "function",
+      "name": "GetOrganizationUsers",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GetOrganizationUsers in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:ChangeUsersRoles",
+      "type": "function",
+      "name": "ChangeUsersRoles",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function ChangeUsersRoles in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:IsTokenExpired",
+      "type": "function",
+      "name": "IsTokenExpired",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function IsTokenExpired in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:RefreshAccessTokenAsync",
+      "type": "function",
+      "name": "RefreshAccessTokenAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function RefreshAccessTokenAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:AddUserToOrganizationAsync",
+      "type": "function",
+      "name": "AddUserToOrganizationAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function AddUserToOrganizationAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:AddMultipleUsersToOrganizationAsync",
+      "type": "function",
+      "name": "AddMultipleUsersToOrganizationAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function AddMultipleUsersToOrganizationAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GetOrganizationUsersNotLoginEver",
+      "type": "function",
+      "name": "GetOrganizationUsersNotLoginEver",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GetOrganizationUsersNotLoginEver in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:SendPasswordResetLinkAsync",
+      "type": "function",
+      "name": "SendPasswordResetLinkAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function SendPasswordResetLinkAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:ResetPasswordByEmailAsync",
+      "type": "function",
+      "name": "ResetPasswordByEmailAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function ResetPasswordByEmailAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:ResetPasswordWithTokenAsync",
+      "type": "function",
+      "name": "ResetPasswordWithTokenAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function ResetPasswordWithTokenAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GenerateSecureToken",
+      "type": "function",
+      "name": "GenerateSecureToken",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GenerateSecureToken in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GeneratePasswordResetEmail",
+      "type": "function",
+      "name": "GeneratePasswordResetEmail",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GeneratePasswordResetEmail in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:NotifyNewOrganizationUsersAsync",
+      "type": "function",
+      "name": "NotifyNewOrganizationUsersAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function NotifyNewOrganizationUsersAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:TrySendOrganizationInviteEmailAsync",
+      "type": "function",
+      "name": "TrySendOrganizationInviteEmailAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function TrySendOrganizationInviteEmailAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GenerateOrganizationInviteEmail",
+      "type": "function",
+      "name": "GenerateOrganizationInviteEmail",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GenerateOrganizationInviteEmail in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:ExtractUserIdFromPasswordResetToken",
+      "type": "function",
+      "name": "ExtractUserIdFromPasswordResetToken",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function ExtractUserIdFromPasswordResetToken in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:LoginOrRegisterWithOAuth2Async",
+      "type": "function",
+      "name": "LoginOrRegisterWithOAuth2Async",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function LoginOrRegisterWithOAuth2Async in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:DeleteUserDataAsync",
+      "type": "function",
+      "name": "DeleteUserDataAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function DeleteUserDataAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GetProfileStatsAsync",
+      "type": "function",
+      "name": "GetProfileStatsAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GetProfileStatsAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GetProfileJournalAsync",
+      "type": "function",
+      "name": "GetProfileJournalAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GetProfileJournalAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GetProfilePhotoHistoryAsync",
+      "type": "function",
+      "name": "GetProfilePhotoHistoryAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GetProfilePhotoHistoryAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:GetProfileAchievementsAsync",
+      "type": "function",
+      "name": "GetProfileAchievementsAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function GetProfileAchievementsAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:RecordProfileVisitAsync",
+      "type": "function",
+      "name": "RecordProfileVisitAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function RecordProfileVisitAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/Organization/UserService.cs:UpdateProfileSettingsAsync",
+      "type": "function",
+      "name": "UpdateProfileSettingsAsync",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Function UpdateProfileSettingsAsync in UserService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/Organization/UserService.cs:UserService",
+      "type": "class",
+      "name": "UserService",
+      "filePath": "src/Application/Services/Organization/UserService.cs",
+      "summary": "Class UserService with 32 method(s) in UserService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Application/Services/PaymentService.cs",
+      "type": "file",
+      "name": "PaymentService.cs",
+      "filePath": "src/Application/Services/PaymentService.cs",
+      "summary": "PaymentService.cs defines 1 class(es) and 3 function(s) in the csharp layer.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/PaymentService.cs:PaymentService",
+      "type": "function",
+      "name": "PaymentService",
+      "filePath": "src/Application/Services/PaymentService.cs",
+      "summary": "Function PaymentService in PaymentService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/PaymentService.cs:CreateDonationPaymentAsync",
+      "type": "function",
+      "name": "CreateDonationPaymentAsync",
+      "filePath": "src/Application/Services/PaymentService.cs",
+      "summary": "Function CreateDonationPaymentAsync in PaymentService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/PaymentService.cs:VerifyPaymentCallbackAsync",
+      "type": "function",
+      "name": "VerifyPaymentCallbackAsync",
+      "filePath": "src/Application/Services/PaymentService.cs",
+      "summary": "Function VerifyPaymentCallbackAsync in PaymentService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Application/Services/PaymentService.cs:PaymentService",
+      "type": "class",
+      "name": "PaymentService",
+      "filePath": "src/Application/Services/PaymentService.cs",
+      "summary": "Class PaymentService with 3 method(s) in PaymentService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Application/Services/ProfileService.cs",
+      "type": "file",
+      "name": "ProfileService.cs",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "ProfileService.cs defines 1 class(es) and 8 function(s) in the csharp layer.",
+      "tags": [
+        "service",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/ProfileService.cs:ProfileService",
+      "type": "function",
+      "name": "ProfileService",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "Function ProfileService in ProfileService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/ProfileService.cs:TryAwardDailyVisitAsync",
+      "type": "function",
+      "name": "TryAwardDailyVisitAsync",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "Function TryAwardDailyVisitAsync in ProfileService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/ProfileService.cs:TryAwardPhotoAddedAsync",
+      "type": "function",
+      "name": "TryAwardPhotoAddedAsync",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "Function TryAwardPhotoAddedAsync in ProfileService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/ProfileService.cs:TryAwardDeficiencyEditedAsync",
+      "type": "function",
+      "name": "TryAwardDeficiencyEditedAsync",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "Function TryAwardDeficiencyEditedAsync in ProfileService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/ProfileService.cs:ConfirmDeficiencyAsync",
+      "type": "function",
+      "name": "ConfirmDeficiencyAsync",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "Function ConfirmDeficiencyAsync in ProfileService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Application/Services/ProfileService.cs:GetLevelProgressAsync",
+      "type": "function",
+      "name": "GetLevelProgressAsync",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "Function GetLevelProgressAsync in ProfileService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/ProfileService.cs:RecalculateLevelAsync",
+      "type": "function",
+      "name": "RecalculateLevelAsync",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "Function RecalculateLevelAsync in ProfileService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Application/Services/ProfileService.cs:TryAwardXpAsync",
+      "type": "function",
+      "name": "TryAwardXpAsync",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "Function TryAwardXpAsync in ProfileService.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Application/Services/ProfileService.cs:ProfileService",
+      "type": "class",
+      "name": "ProfileService",
+      "filePath": "src/Application/Services/ProfileService.cs",
+      "summary": "Class ProfileService with 8 method(s) in ProfileService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:src/Domain/Domain.csproj",
+      "type": "config",
+      "name": "Domain.csproj",
+      "filePath": "src/Domain/Domain.csproj",
+      "summary": "Configuration for src/Domain build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/DomainClassDiagram",
+      "type": "file",
+      "name": "DomainClassDiagram",
+      "filePath": "src/Domain/DomainClassDiagram",
+      "summary": "DomainClassDiagram is a unknown code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Domain/Enums/Analitycs.cs",
+      "type": "file",
+      "name": "Analitycs.cs",
+      "filePath": "src/Domain/Enums/Analitycs.cs",
+      "summary": "Analitycs.cs is a csharp code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Enums/Nature.cs",
+      "type": "file",
+      "name": "Nature.cs",
+      "filePath": "src/Domain/Enums/Nature.cs",
+      "summary": "Nature.cs is a csharp code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Enums/Organization.cs",
+      "type": "file",
+      "name": "Organization.cs",
+      "filePath": "src/Domain/Enums/Organization.cs",
+      "summary": "Organization.cs is a csharp code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Enums/ProfileEnums.cs",
+      "type": "file",
+      "name": "ProfileEnums.cs",
+      "filePath": "src/Domain/Enums/ProfileEnums.cs",
+      "summary": "ProfileEnums.cs is a csharp code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Exceptions/EntityNotFoundException.cs",
+      "type": "file",
+      "name": "EntityNotFoundException.cs",
+      "filePath": "src/Domain/Exceptions/EntityNotFoundException.cs",
+      "summary": "EntityNotFoundException.cs defines 1 class(es) and 3 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "function",
+      "name": "EntityNotFoundException",
+      "filePath": "src/Domain/Exceptions/EntityNotFoundException.cs",
+      "summary": "Function EntityNotFoundException in EntityNotFoundException.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "function",
+      "name": "EntityNotFoundException",
+      "filePath": "src/Domain/Exceptions/EntityNotFoundException.cs",
+      "summary": "Function EntityNotFoundException in EntityNotFoundException.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "function",
+      "name": "EntityNotFoundException",
+      "filePath": "src/Domain/Exceptions/EntityNotFoundException.cs",
+      "summary": "Function EntityNotFoundException in EntityNotFoundException.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "class",
+      "name": "EntityNotFoundException",
+      "filePath": "src/Domain/Exceptions/EntityNotFoundException.cs",
+      "summary": "Class EntityNotFoundException with 3 method(s) in EntityNotFoundException.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Interfaces/IBaseRepository.cs",
+      "type": "file",
+      "name": "IBaseRepository.cs",
+      "filePath": "src/Domain/Interfaces/IBaseRepository.cs",
+      "summary": "IBaseRepository.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Interfaces/IBaseRepository.cs:IBaseRepository",
+      "type": "class",
+      "name": "IBaseRepository",
+      "filePath": "src/Domain/Interfaces/IBaseRepository.cs",
+      "summary": "Class IBaseRepository with 10 method(s) in IBaseRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Interfaces/IBaseService.cs",
+      "type": "file",
+      "name": "IBaseService.cs",
+      "filePath": "src/Domain/Interfaces/IBaseService.cs",
+      "summary": "IBaseService.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Interfaces/IBaseService.cs:IBaseService",
+      "type": "class",
+      "name": "IBaseService",
+      "filePath": "src/Domain/Interfaces/IBaseService.cs",
+      "summary": "Class IBaseService with 6 method(s) in IBaseService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Interfaces/ICoordinates.cs",
+      "type": "file",
+      "name": "ICoordinates.cs",
+      "filePath": "src/Domain/Interfaces/ICoordinates.cs",
+      "summary": "ICoordinates.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Interfaces/ICoordinates.cs:ICoordinates",
+      "type": "class",
+      "name": "ICoordinates",
+      "filePath": "src/Domain/Interfaces/ICoordinates.cs",
+      "summary": "Class ICoordinates with 2 method(s) in ICoordinates.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Interfaces/IDeficiencyBindModel.cs",
+      "type": "file",
+      "name": "IDeficiencyBindModel.cs",
+      "filePath": "src/Domain/Interfaces/IDeficiencyBindModel.cs",
+      "summary": "IDeficiencyBindModel.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Interfaces/IDeficiencyBindModel.cs:IDeficiencyBindModel",
+      "type": "class",
+      "name": "IDeficiencyBindModel",
+      "filePath": "src/Domain/Interfaces/IDeficiencyBindModel.cs",
+      "summary": "Class IDeficiencyBindModel with 0 method(s) in IDeficiencyBindModel.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Interfaces/IMapObjectsRepository.cs",
+      "type": "file",
+      "name": "IMapObjectsRepository.cs",
+      "filePath": "src/Domain/Interfaces/IMapObjectsRepository.cs",
+      "summary": "IMapObjectsRepository.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Interfaces/IMapObjectsRepository.cs:IMapObjectsRepository",
+      "type": "class",
+      "name": "IMapObjectsRepository",
+      "filePath": "src/Domain/Interfaces/IMapObjectsRepository.cs",
+      "summary": "Class IMapObjectsRepository with 1 method(s) in IMapObjectsRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Interfaces/IMapObjectsService.cs",
+      "type": "file",
+      "name": "IMapObjectsService.cs",
+      "filePath": "src/Domain/Interfaces/IMapObjectsService.cs",
+      "summary": "IMapObjectsService.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Interfaces/IMapObjectsService.cs:IMapObjectsService",
+      "type": "class",
+      "name": "IMapObjectsService",
+      "filePath": "src/Domain/Interfaces/IMapObjectsService.cs",
+      "summary": "Class IMapObjectsService with 1 method(s) in IMapObjectsService.cs.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "function:src/Application/Services/Cache/RedisCacheService.cs:RedisCacheService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "function:src/Application/Services/Cache/RedisCacheService.cs:RedisCacheService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "function:src/Application/Services/Cache/RedisCacheService.cs:SetAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "function:src/Application/Services/Cache/RedisCacheService.cs:SetAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "function:src/Application/Services/Cache/RedisCacheService.cs:GetAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "function:src/Application/Services/Cache/RedisCacheService.cs:GetAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "function:src/Application/Services/Cache/RedisCacheService.cs:RemoveAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "function:src/Application/Services/Cache/RedisCacheService.cs:RemoveAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "class:src/Application/Services/Cache/RedisCacheService.cs:RedisCacheService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Cache/RedisCacheService.cs",
+      "target": "class:src/Application/Services/Cache/RedisCacheService.cs:RedisCacheService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/DeficiencyBindModelService.cs",
+      "target": "function:src/Application/Services/DeficiencyBindModelService.cs:DeficiencyBindModelService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/DeficiencyBindModelService.cs",
+      "target": "function:src/Application/Services/DeficiencyBindModelService.cs:DeficiencyBindModelService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/DeficiencyBindModelService.cs",
+      "target": "function:src/Application/Services/DeficiencyBindModelService.cs:GetModelsByDeficiencyIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/DeficiencyBindModelService.cs",
+      "target": "function:src/Application/Services/DeficiencyBindModelService.cs:GetModelsByDeficiencyIdAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/DeficiencyBindModelService.cs",
+      "target": "class:src/Application/Services/DeficiencyBindModelService.cs:DeficiencyBindModelService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/DeficiencyBindModelService.cs",
+      "target": "class:src/Application/Services/DeficiencyBindModelService.cs:DeficiencyBindModelService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/LevelProgressCalculator.cs",
+      "target": "function:src/Application/Services/LevelProgressCalculator.cs:ComputeProgress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/LevelProgressCalculator.cs",
+      "target": "function:src/Application/Services/LevelProgressCalculator.cs:ComputeProgress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/LevelProgressCalculator.cs",
+      "target": "function:src/Application/Services/LevelProgressCalculator.cs:ComputeLevel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/LevelProgressCalculator.cs",
+      "target": "function:src/Application/Services/LevelProgressCalculator.cs:ComputeLevel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/LevelProgressCalculator.cs",
+      "target": "class:src/Application/Services/LevelProgressCalculator.cs:LevelProgressCalculator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/LevelProgressCalculator.cs",
+      "target": "class:src/Application/Services/LevelProgressCalculator.cs:LevelProgressCalculator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/LevelThresholdsProvider.cs",
+      "target": "function:src/Application/Services/LevelThresholdsProvider.cs:LevelThresholdsProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/LevelThresholdsProvider.cs",
+      "target": "function:src/Application/Services/LevelThresholdsProvider.cs:LevelThresholdsProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/LevelThresholdsProvider.cs",
+      "target": "function:src/Application/Services/LevelThresholdsProvider.cs:GetCumulativeThresholdsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/LevelThresholdsProvider.cs",
+      "target": "function:src/Application/Services/LevelThresholdsProvider.cs:GetCumulativeThresholdsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/LevelThresholdsProvider.cs",
+      "target": "function:src/Application/Services/LevelThresholdsProvider.cs:InvalidateCacheAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/LevelThresholdsProvider.cs",
+      "target": "function:src/Application/Services/LevelThresholdsProvider.cs:InvalidateCacheAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/LevelThresholdsProvider.cs",
+      "target": "class:src/Application/Services/LevelThresholdsProvider.cs:LevelThresholdsProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/LevelThresholdsProvider.cs",
+      "target": "class:src/Application/Services/LevelThresholdsProvider.cs:LevelThresholdsProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:SoilDeficiencyService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:SoilDeficiencyService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:AddAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:AddAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:GetMapObjectsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:GetMapObjectsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:GetList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:GetList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:UpdateAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/SoilDeficiencyService.cs:UpdateAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "class:src/Application/Services/Nature/SoilDeficiencyService.cs:SoilDeficiencyService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/SoilDeficiencyService.cs",
+      "target": "class:src/Application/Services/Nature/SoilDeficiencyService.cs:SoilDeficiencyService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:WaterDeficiencyService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:WaterDeficiencyService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:AddAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:AddAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:GetMapObjectsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:GetMapObjectsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:GetList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:GetList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:UpdateAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "function:src/Application/Services/Nature/WaterDeficiencyService.cs:UpdateAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "class:src/Application/Services/Nature/WaterDeficiencyService.cs:WaterDeficiencyService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Nature/WaterDeficiencyService.cs",
+      "target": "class:src/Application/Services/Nature/WaterDeficiencyService.cs:WaterDeficiencyService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/EmailService.cs",
+      "target": "function:src/Application/Services/Organization/EmailService.cs:EmailService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/EmailService.cs",
+      "target": "function:src/Application/Services/Organization/EmailService.cs:EmailService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/EmailService.cs",
+      "target": "function:src/Application/Services/Organization/EmailService.cs:SendEmailAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/EmailService.cs",
+      "target": "function:src/Application/Services/Organization/EmailService.cs:SendEmailAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/EmailService.cs",
+      "target": "class:src/Application/Services/Organization/EmailService.cs:EmailService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/EmailService.cs",
+      "target": "class:src/Application/Services/Organization/EmailService.cs:EmailService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:LaboratoryService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:LaboratoryService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:GetMapObjectsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:GetMapObjectsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:GetList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:GetList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:AddAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:AddAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:UpdateAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:UpdateAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:CanEditLaboratory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:DeleteAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "function:src/Application/Services/Organization/LaboratoryService.cs:DeleteAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "class:src/Application/Services/Organization/LaboratoryService.cs:LaboratoryService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/LaboratoryService.cs",
+      "target": "class:src/Application/Services/Organization/LaboratoryService.cs:LaboratoryService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/OrganizationService.cs",
+      "target": "function:src/Application/Services/Organization/OrganizationService.cs:OrganizationService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/OrganizationService.cs",
+      "target": "function:src/Application/Services/Organization/OrganizationService.cs:OrganizationService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/OrganizationService.cs",
+      "target": "class:src/Application/Services/Organization/OrganizationService.cs:OrganizationService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/OrganizationService.cs",
+      "target": "class:src/Application/Services/Organization/OrganizationService.cs:OrganizationService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:UserService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:UserService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:LoginAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:LoginAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetModelByEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetModelByEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ConfirmEmailByToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ConfirmEmailByToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:UpdateEmailConfirmationTokenByEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:UpdateEmailConfirmationTokenByEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetOrganizationUsers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetOrganizationUsers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ChangeUsersRoles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ChangeUsersRoles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:IsTokenExpired",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:IsTokenExpired",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:RefreshAccessTokenAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:RefreshAccessTokenAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:AddUserToOrganizationAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:AddUserToOrganizationAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:AddMultipleUsersToOrganizationAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:AddMultipleUsersToOrganizationAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetOrganizationUsersNotLoginEver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetOrganizationUsersNotLoginEver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:SendPasswordResetLinkAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:SendPasswordResetLinkAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ResetPasswordByEmailAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ResetPasswordByEmailAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ResetPasswordWithTokenAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ResetPasswordWithTokenAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GenerateSecureToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GeneratePasswordResetEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:NotifyNewOrganizationUsersAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:TrySendOrganizationInviteEmailAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GenerateOrganizationInviteEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ExtractUserIdFromPasswordResetToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:ExtractUserIdFromPasswordResetToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:LoginOrRegisterWithOAuth2Async",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:LoginOrRegisterWithOAuth2Async",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:DeleteUserDataAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:DeleteUserDataAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetProfileStatsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetProfileStatsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetProfileJournalAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetProfileJournalAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetProfilePhotoHistoryAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetProfilePhotoHistoryAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetProfileAchievementsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:GetProfileAchievementsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:RecordProfileVisitAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:RecordProfileVisitAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:UpdateProfileSettingsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "function:src/Application/Services/Organization/UserService.cs:UpdateProfileSettingsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "class:src/Application/Services/Organization/UserService.cs:UserService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/Organization/UserService.cs",
+      "target": "class:src/Application/Services/Organization/UserService.cs:UserService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/PaymentService.cs",
+      "target": "function:src/Application/Services/PaymentService.cs:PaymentService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/PaymentService.cs",
+      "target": "function:src/Application/Services/PaymentService.cs:PaymentService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/PaymentService.cs",
+      "target": "function:src/Application/Services/PaymentService.cs:CreateDonationPaymentAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/PaymentService.cs",
+      "target": "function:src/Application/Services/PaymentService.cs:CreateDonationPaymentAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/PaymentService.cs",
+      "target": "function:src/Application/Services/PaymentService.cs:VerifyPaymentCallbackAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/PaymentService.cs",
+      "target": "function:src/Application/Services/PaymentService.cs:VerifyPaymentCallbackAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/PaymentService.cs",
+      "target": "class:src/Application/Services/PaymentService.cs:PaymentService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/PaymentService.cs",
+      "target": "class:src/Application/Services/PaymentService.cs:PaymentService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:ProfileService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:ProfileService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:TryAwardDailyVisitAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:TryAwardDailyVisitAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:TryAwardPhotoAddedAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:TryAwardPhotoAddedAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:TryAwardDeficiencyEditedAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:TryAwardDeficiencyEditedAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:ConfirmDeficiencyAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:ConfirmDeficiencyAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:GetLevelProgressAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:GetLevelProgressAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:RecalculateLevelAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:RecalculateLevelAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "function:src/Application/Services/ProfileService.cs:TryAwardXpAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "class:src/Application/Services/ProfileService.cs:ProfileService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Application/Services/ProfileService.cs",
+      "target": "class:src/Application/Services/ProfileService.cs:ProfileService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Exceptions/EntityNotFoundException.cs",
+      "target": "function:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Exceptions/EntityNotFoundException.cs",
+      "target": "function:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Exceptions/EntityNotFoundException.cs",
+      "target": "function:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Exceptions/EntityNotFoundException.cs",
+      "target": "function:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Exceptions/EntityNotFoundException.cs",
+      "target": "function:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Exceptions/EntityNotFoundException.cs",
+      "target": "function:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Exceptions/EntityNotFoundException.cs",
+      "target": "class:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Exceptions/EntityNotFoundException.cs",
+      "target": "class:src/Domain/Exceptions/EntityNotFoundException.cs:EntityNotFoundException",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IBaseRepository.cs",
+      "target": "class:src/Domain/Interfaces/IBaseRepository.cs:IBaseRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IBaseRepository.cs",
+      "target": "class:src/Domain/Interfaces/IBaseRepository.cs:IBaseRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IBaseService.cs",
+      "target": "class:src/Domain/Interfaces/IBaseService.cs:IBaseService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IBaseService.cs",
+      "target": "class:src/Domain/Interfaces/IBaseService.cs:IBaseService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Interfaces/ICoordinates.cs",
+      "target": "class:src/Domain/Interfaces/ICoordinates.cs:ICoordinates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Interfaces/ICoordinates.cs",
+      "target": "class:src/Domain/Interfaces/ICoordinates.cs:ICoordinates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IDeficiencyBindModel.cs",
+      "target": "class:src/Domain/Interfaces/IDeficiencyBindModel.cs:IDeficiencyBindModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IDeficiencyBindModel.cs",
+      "target": "class:src/Domain/Interfaces/IDeficiencyBindModel.cs:IDeficiencyBindModel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IMapObjectsRepository.cs",
+      "target": "class:src/Domain/Interfaces/IMapObjectsRepository.cs:IMapObjectsRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IMapObjectsRepository.cs",
+      "target": "class:src/Domain/Interfaces/IMapObjectsRepository.cs:IMapObjectsRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IMapObjectsService.cs",
+      "target": "class:src/Domain/Interfaces/IMapObjectsService.cs:IMapObjectsService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Interfaces/IMapObjectsService.cs",
+      "target": "class:src/Domain/Interfaces/IMapObjectsService.cs:IMapObjectsService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

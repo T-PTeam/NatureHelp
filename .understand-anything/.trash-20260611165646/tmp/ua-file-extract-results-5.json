@@ -1,0 +1,1980 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 15,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/models/IAuthResponse.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/profile/IAchievement.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/profile/IProfileJournalEntry.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/profile/IProfilePhotoHistory.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/profile/IProfileStats.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/profile/avatar-stage.enum.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "ProfileAchievementsTabComponent",
+          "startLine": 20,
+          "endLine": 39,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy"
+          ],
+          "properties": [
+            "badges",
+            "destroy$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProfileAchievementsTabComponent",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi\n      .getProfileAchievements()\n      .pipe(takeUntil(this.destroy$))\n      .subscribe",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi\n      .getProfileAchievements()\n      .pipe",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi\n      .getProfileAchievements",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "takeUntil",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 60,
+      "classes": [
+        {
+          "name": "ProfileJournalTabComponent",
+          "startLine": 25,
+          "endLine": 67,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy",
+            "deficiencyPath",
+            "deficiencyLinkCommands"
+          ],
+          "properties": [
+            "displayedColumns",
+            "journal",
+            "photos",
+            "deficiencyTypeEnum",
+            "destroy$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProfileJournalTabComponent",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi\n      .getProfileJournal()\n      .pipe(takeUntil(this.destroy$))\n      .subscribe",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi\n      .getProfileJournal()\n      .pipe",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi\n      .getProfileJournal",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "takeUntil",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi\n      .getProfilePhotoHistory()\n      .pipe(takeUntil(this.destroy$))\n      .subscribe",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi\n      .getProfilePhotoHistory()\n      .pipe",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi\n      .getProfilePhotoHistory",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "takeUntil",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deficiencyLinkCommands",
+          "callee": "this.deficiencyPath",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deficiencyLinkCommands",
+          "callee": "this.languageService.getLanguageFromUrl",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "ProfileOverviewTabComponent",
+          "startLine": 17,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "stats"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProfileOverviewTabComponent",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 101,
+      "classes": [
+        {
+          "name": "ProfilePageComponent",
+          "startLine": 45,
+          "endLine": 111,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy",
+            "onTabChange",
+            "loadProfileStats",
+            "getAvatarStage",
+            "getLevelProgress"
+          ],
+          "properties": [
+            "user$",
+            "profileStats",
+            "selectedTabIndex",
+            "destroy$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProfilePageComponent",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService.refreshCurrentUser().pipe(takeUntil(this.destroy$)).subscribe",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService.refreshCurrentUser().pipe",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService.refreshCurrentUser",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "takeUntil",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.loadProfileStats",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService\n      .recordProfileVisit()\n      .pipe(takeUntil(this.destroy$))\n      .subscribe",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService\n      .recordProfileVisit()\n      .pipe",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userService\n      .recordProfileVisit",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "takeUntil",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.loadProfileStats",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.route.queryParams.pipe",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "takeUntil",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "PROFILE_TAB_SLUGS.indexOf",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 75
+        },
+        {
+          "caller": "onTabChange",
+          "callee": "this.router.navigate",
+          "lineNumber": 81
+        },
+        {
+          "caller": "loadProfileStats",
+          "callee": "this.userService\n      .getProfileStats()\n      .pipe(takeUntil(this.destroy$))\n      .subscribe",
+          "lineNumber": 90
+        },
+        {
+          "caller": "loadProfileStats",
+          "callee": "this.userService\n      .getProfileStats()\n      .pipe",
+          "lineNumber": 90
+        },
+        {
+          "caller": "loadProfileStats",
+          "callee": "this.userService\n      .getProfileStats",
+          "lineNumber": 90
+        },
+        {
+          "caller": "loadProfileStats",
+          "callee": "takeUntil",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getAvatarStage",
+          "callee": "Object.values(AvatarStage).includes",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getAvatarStage",
+          "callee": "Object.values",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 76,
+      "classes": [
+        {
+          "name": "ProfileSettingsTabComponent",
+          "startLine": 33,
+          "endLine": 82,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy",
+            "saveSettings"
+          ],
+          "properties": [
+            "emailNotifications",
+            "achievementAlerts",
+            "newsletter",
+            "profilePublic",
+            "saving",
+            "destroy$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProfileSettingsTabComponent",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi.$user.pipe(takeUntil(this.destroy$)).subscribe",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.userApi.$user.pipe",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "takeUntil",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 59
+        },
+        {
+          "caller": "saveSettings",
+          "callee": "this.userApi\n      .updateProfileSettings({\n        profileIsPublic: this.profilePublic,\n        emailNotificationsEnabled: this.emailNotifications,\n        achievementAlertsEnabled: this.achievementAlerts,\n        newsletterEnabled: this.newsletter,\n      })\n      .pipe(finalize(() => (this.saving = false)))\n      .subscribe",
+          "lineNumber": 64
+        },
+        {
+          "caller": "saveSettings",
+          "callee": "this.userApi\n      .updateProfileSettings({\n        profileIsPublic: this.profilePublic,\n        emailNotificationsEnabled: this.emailNotifications,\n        achievementAlertsEnabled: this.achievementAlerts,\n        newsletterEnabled: this.newsletter,\n      })\n      .pipe",
+          "lineNumber": 64
+        },
+        {
+          "caller": "saveSettings",
+          "callee": "this.userApi\n      .updateProfileSettings",
+          "lineNumber": 64
+        },
+        {
+          "caller": "saveSettings",
+          "callee": "finalize",
+          "lineNumber": 71
+        },
+        {
+          "caller": "saveSettings",
+          "callee": "this.snackBar.open",
+          "lineNumber": 74
+        },
+        {
+          "caller": "saveSettings",
+          "callee": "this.translate.instant",
+          "lineNumber": 75
+        },
+        {
+          "caller": "saveSettings",
+          "callee": "this.translate.instant",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/profile.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "ProfileModule",
+          "startLine": 8,
+          "endLine": 8,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProfileModule",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dynamic-avatar/dynamic-avatar.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "DynamicAvatarComponent",
+          "startLine": 13,
+          "endLine": 24,
+          "methods": [
+            "stageClass"
+          ],
+          "properties": [
+            "stage",
+            "size",
+            "showLabel",
+            "AvatarStage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DynamicAvatarComponent",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/auth-interceptor.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "AuthInterceptor",
+          "startLine": 8,
+          "endLine": 54,
+          "methods": [
+            "constructor",
+            "intercept"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuthInterceptor",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "intercept",
+          "callee": "req.url.includes",
+          "lineNumber": 13
+        },
+        {
+          "caller": "intercept",
+          "callee": "req.url.includes",
+          "lineNumber": 13
+        },
+        {
+          "caller": "intercept",
+          "callee": "next.handle",
+          "lineNumber": 16
+        },
+        {
+          "caller": "intercept",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 19
+        },
+        {
+          "caller": "intercept",
+          "callee": "req.clone",
+          "lineNumber": 30
+        },
+        {
+          "caller": "intercept",
+          "callee": "next.handle(authReq).pipe",
+          "lineNumber": 32
+        },
+        {
+          "caller": "intercept",
+          "callee": "next.handle",
+          "lineNumber": 32
+        },
+        {
+          "caller": "intercept",
+          "callee": "catchError",
+          "lineNumber": 33
+        },
+        {
+          "caller": "intercept",
+          "callee": "localStorage.getItem",
+          "lineNumber": 34
+        },
+        {
+          "caller": "intercept",
+          "callee": "this.userService.refreshAccessToken().pipe",
+          "lineNumber": 35
+        },
+        {
+          "caller": "intercept",
+          "callee": "this.userService.refreshAccessToken",
+          "lineNumber": 35
+        },
+        {
+          "caller": "intercept",
+          "callee": "switchMap",
+          "lineNumber": 36
+        },
+        {
+          "caller": "intercept",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 37
+        },
+        {
+          "caller": "intercept",
+          "callee": "next.handle",
+          "lineNumber": 42
+        },
+        {
+          "caller": "intercept",
+          "callee": "req.clone",
+          "lineNumber": 42
+        },
+        {
+          "caller": "intercept",
+          "callee": "catchError",
+          "lineNumber": 44
+        },
+        {
+          "caller": "intercept",
+          "callee": "this.userService.logout",
+          "lineNumber": 45
+        },
+        {
+          "caller": "intercept",
+          "callee": "throwError",
+          "lineNumber": 46
+        },
+        {
+          "caller": "intercept",
+          "callee": "throwError",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 532,
+      "nonEmptyLines": 463,
+      "functions": [
+        {
+          "name": "mapAchievement",
+          "startLine": 33,
+          "endLine": 45,
+          "params": [
+            "a"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserAPIService",
+          "startLine": 57,
+          "endLine": 532,
+          "methods": [
+            "constructor",
+            "initializeAuth",
+            "handleOAuth2Callback",
+            "auth",
+            "refreshAccessToken",
+            "getCurrentUser",
+            "refreshCurrentUser",
+            "getProfileStats",
+            "recordProfileVisit",
+            "getProfileJournal",
+            "getProfilePhotoHistory",
+            "getProfileAchievements",
+            "updateProfileSettings",
+            "loginWithGoogle",
+            "loginWithFacebook",
+            "logout",
+            "clearLocalStorage",
+            "loadOrganizationUsers",
+            "fetchOrganizationUsers",
+            "loadNotLoginEverOrganizationUsers",
+            "addOrganizationUsers",
+            "addOrganizationUser",
+            "addUserToOrganization",
+            "changeUsersRoles",
+            "resetPassword",
+            "sendPasswordResetLink",
+            "getCurrentUserMonitoringScheme",
+            "getErrorMessage",
+            "setAuthOptions"
+          ],
+          "properties": [
+            "apiUrl",
+            "jwtHelper",
+            "subject",
+            "$user",
+            "isLoggedIn$",
+            "isLoggedOut$",
+            "isSuperAdmin$",
+            "isOwner$",
+            "isEmailConfirmed$",
+            "organizationUsersSubject",
+            "$organizationUsers",
+            "notLoginEverOrganizationUsersSubject",
+            "$notLoginEverOrganizationUsers",
+            "totalCountSubject",
+            "$totalCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserAPIService",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.$user.pipe",
+          "lineNumber": 86
+        },
+        {
+          "caller": "constructor",
+          "callee": "map",
+          "lineNumber": 86
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.$user.pipe",
+          "lineNumber": 87
+        },
+        {
+          "caller": "constructor",
+          "callee": "map",
+          "lineNumber": 87
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.$user.pipe",
+          "lineNumber": 89
+        },
+        {
+          "caller": "constructor",
+          "callee": "map",
+          "lineNumber": 89
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.$user.pipe",
+          "lineNumber": 90
+        },
+        {
+          "caller": "constructor",
+          "callee": "map",
+          "lineNumber": 90
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.$user.pipe",
+          "lineNumber": 91
+        },
+        {
+          "caller": "constructor",
+          "callee": "map",
+          "lineNumber": 91
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 95
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "localStorage.getItem",
+          "lineNumber": 96
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "of",
+          "lineNumber": 99
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.jwtHelper.isTokenExpired",
+          "lineNumber": 102
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.getCurrentUser().pipe",
+          "lineNumber": 103
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.getCurrentUser",
+          "lineNumber": 103
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "map",
+          "lineNumber": 104
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.subject.next",
+          "lineNumber": 106
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.refreshAccessToken().subscribe",
+          "lineNumber": 107
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.refreshAccessToken",
+          "lineNumber": 107
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.logout",
+          "lineNumber": 110
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "catchError",
+          "lineNumber": 114
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.logout",
+          "lineNumber": 115
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "of",
+          "lineNumber": 116
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.refreshAccessToken().pipe",
+          "lineNumber": 122
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.refreshAccessToken",
+          "lineNumber": 122
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "map",
+          "lineNumber": 123
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.refreshAccessToken().subscribe",
+          "lineNumber": 124
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.refreshAccessToken",
+          "lineNumber": 124
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "catchError",
+          "lineNumber": 127
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.logout",
+          "lineNumber": 128
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "of",
+          "lineNumber": 129
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "this.logout",
+          "lineNumber": 134
+        },
+        {
+          "caller": "initializeAuth",
+          "callee": "of",
+          "lineNumber": 135
+        },
+        {
+          "caller": "handleOAuth2Callback",
+          "callee": "this.http.post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {}, { withCredentials: true }).pipe",
+          "lineNumber": 139
+        },
+        {
+          "caller": "handleOAuth2Callback",
+          "callee": "this.http.post",
+          "lineNumber": 139
+        },
+        {
+          "caller": "handleOAuth2Callback",
+          "callee": "map",
+          "lineNumber": 140
+        },
+        {
+          "caller": "handleOAuth2Callback",
+          "callee": "this.setAuthOptions",
+          "lineNumber": 142
+        },
+        {
+          "caller": "handleOAuth2Callback",
+          "callee": "catchError",
+          "lineNumber": 147
+        },
+        {
+          "caller": "handleOAuth2Callback",
+          "callee": "of",
+          "lineNumber": 148
+        },
+        {
+          "caller": "auth",
+          "callee": "this.http\n        .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {\n          email,\n          password,\n          organizationId: sessionStorage.getItem(\"organizationId\"),\n        })\n        .pipe",
+          "lineNumber": 155
+        },
+        {
+          "caller": "auth",
+          "callee": "this.http\n        .post",
+          "lineNumber": 155
+        },
+        {
+          "caller": "auth",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 159
+        },
+        {
+          "caller": "auth",
+          "callee": "tap",
+          "lineNumber": 162
+        },
+        {
+          "caller": "auth",
+          "callee": "this.clearLocalStorage",
+          "lineNumber": 163
+        },
+        {
+          "caller": "auth",
+          "callee": "this.setAuthOptions",
+          "lineNumber": 164
+        },
+        {
+          "caller": "auth",
+          "callee": "shareReplay",
+          "lineNumber": 166
+        },
+        {
+          "caller": "auth",
+          "callee": "catchError",
+          "lineNumber": 167
+        },
+        {
+          "caller": "auth",
+          "callee": "getErrorMessage",
+          "lineNumber": 168
+        },
+        {
+          "caller": "auth",
+          "callee": "this.notify.open",
+          "lineNumber": 169
+        },
+        {
+          "caller": "auth",
+          "callee": "of",
+          "lineNumber": 170
+        },
+        {
+          "caller": "auth",
+          "callee": "this.http\n        .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {\n          email,\n          organizationId: sessionStorage.getItem(\"organizationId\"),\n        })\n        .pipe",
+          "lineNumber": 174
+        },
+        {
+          "caller": "auth",
+          "callee": "this.http\n        .post",
+          "lineNumber": 174
+        },
+        {
+          "caller": "auth",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 177
+        },
+        {
+          "caller": "auth",
+          "callee": "tap",
+          "lineNumber": 180
+        },
+        {
+          "caller": "auth",
+          "callee": "this.clearLocalStorage",
+          "lineNumber": 181
+        },
+        {
+          "caller": "auth",
+          "callee": "this.setAuthOptions",
+          "lineNumber": 182
+        },
+        {
+          "caller": "auth",
+          "callee": "shareReplay",
+          "lineNumber": 184
+        },
+        {
+          "caller": "refreshAccessToken",
+          "callee": "this.http\n      .post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {\n        refreshToken: localStorage.getItem(\"refreshToken\"),\n      })\n      .pipe",
+          "lineNumber": 190
+        },
+        {
+          "caller": "refreshAccessToken",
+          "callee": "this.http\n      .post",
+          "lineNumber": 190
+        },
+        {
+          "caller": "refreshAccessToken",
+          "callee": "localStorage.getItem",
+          "lineNumber": 192
+        },
+        {
+          "caller": "refreshAccessToken",
+          "callee": "tap",
+          "lineNumber": 195
+        },
+        {
+          "caller": "refreshAccessToken",
+          "callee": "this.clearLocalStorage",
+          "lineNumber": 196
+        },
+        {
+          "caller": "refreshAccessToken",
+          "callee": "this.setAuthOptions",
+          "lineNumber": 197
+        },
+        {
+          "caller": "refreshAccessToken",
+          "callee": "shareReplay",
+          "lineNumber": 199
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 204
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "of",
+          "lineNumber": 206
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "this.http.post<IUser>(`${this.apiUrl}/current-user`, { email }).pipe",
+          "lineNumber": 209
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "this.http.post",
+          "lineNumber": 209
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "shareReplay",
+          "lineNumber": 209
+        },
+        {
+          "caller": "refreshCurrentUser",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 213
+        },
+        {
+          "caller": "refreshCurrentUser",
+          "callee": "of",
+          "lineNumber": 214
+        },
+        {
+          "caller": "refreshCurrentUser",
+          "callee": "this.http.post<IUser>(`${this.apiUrl}/current-user`, { email }).pipe",
+          "lineNumber": 215
+        },
+        {
+          "caller": "refreshCurrentUser",
+          "callee": "this.http.post",
+          "lineNumber": 215
+        },
+        {
+          "caller": "refreshCurrentUser",
+          "callee": "tap",
+          "lineNumber": 216
+        },
+        {
+          "caller": "refreshCurrentUser",
+          "callee": "this.subject.next",
+          "lineNumber": 217
+        },
+        {
+          "caller": "refreshCurrentUser",
+          "callee": "catchError",
+          "lineNumber": 219
+        },
+        {
+          "caller": "refreshCurrentUser",
+          "callee": "of",
+          "lineNumber": 219
+        },
+        {
+          "caller": "getProfileStats",
+          "callee": "this.http.get<IProfileStats>(`${this.apiUrl}/profile-stats`).pipe",
+          "lineNumber": 224
+        },
+        {
+          "caller": "getProfileStats",
+          "callee": "this.http.get",
+          "lineNumber": 224
+        },
+        {
+          "caller": "getProfileStats",
+          "callee": "catchError",
+          "lineNumber": 225
+        },
+        {
+          "caller": "getProfileStats",
+          "callee": "getErrorMessage",
+          "lineNumber": 226
+        },
+        {
+          "caller": "getProfileStats",
+          "callee": "this.notify.open",
+          "lineNumber": 227
+        },
+        {
+          "caller": "getProfileStats",
+          "callee": "of",
+          "lineNumber": 228
+        },
+        {
+          "caller": "recordProfileVisit",
+          "callee": "this.http.post<{ awarded: boolean }>(`${this.apiUrl}/profile/visit`, {}).pipe",
+          "lineNumber": 234
+        },
+        {
+          "caller": "recordProfileVisit",
+          "callee": "this.http.post",
+          "lineNumber": 234
+        },
+        {
+          "caller": "recordProfileVisit",
+          "callee": "catchError",
+          "lineNumber": 234
+        },
+        {
+          "caller": "recordProfileVisit",
+          "callee": "of",
+          "lineNumber": 234
+        },
+        {
+          "caller": "getProfileJournal",
+          "callee": "this.http.get<IProfileJournalEntry[]>(`${this.apiUrl}/profile/journal?take=${take}`).pipe",
+          "lineNumber": 238
+        },
+        {
+          "caller": "getProfileJournal",
+          "callee": "this.http.get",
+          "lineNumber": 238
+        },
+        {
+          "caller": "getProfileJournal",
+          "callee": "catchError",
+          "lineNumber": 239
+        },
+        {
+          "caller": "getProfileJournal",
+          "callee": "getErrorMessage",
+          "lineNumber": 240
+        },
+        {
+          "caller": "getProfileJournal",
+          "callee": "this.notify.open",
+          "lineNumber": 241
+        },
+        {
+          "caller": "getProfileJournal",
+          "callee": "of",
+          "lineNumber": 242
+        },
+        {
+          "caller": "getProfilePhotoHistory",
+          "callee": "this.http.get<IProfilePhotoHistory[]>(`${this.apiUrl}/profile/photo-history?take=${take}`).pipe",
+          "lineNumber": 248
+        },
+        {
+          "caller": "getProfilePhotoHistory",
+          "callee": "this.http.get",
+          "lineNumber": 248
+        },
+        {
+          "caller": "getProfilePhotoHistory",
+          "callee": "catchError",
+          "lineNumber": 249
+        },
+        {
+          "caller": "getProfilePhotoHistory",
+          "callee": "getErrorMessage",
+          "lineNumber": 250
+        },
+        {
+          "caller": "getProfilePhotoHistory",
+          "callee": "this.notify.open",
+          "lineNumber": 251
+        },
+        {
+          "caller": "getProfilePhotoHistory",
+          "callee": "of",
+          "lineNumber": 252
+        },
+        {
+          "caller": "getProfileAchievements",
+          "callee": "this.http.get<IAchievementApi[]>(`${this.apiUrl}/profile/achievements`).pipe",
+          "lineNumber": 258
+        },
+        {
+          "caller": "getProfileAchievements",
+          "callee": "this.http.get",
+          "lineNumber": 258
+        },
+        {
+          "caller": "getProfileAchievements",
+          "callee": "map",
+          "lineNumber": 259
+        },
+        {
+          "caller": "getProfileAchievements",
+          "callee": "list.map",
+          "lineNumber": 259
+        },
+        {
+          "caller": "getProfileAchievements",
+          "callee": "mapAchievement",
+          "lineNumber": 259
+        },
+        {
+          "caller": "getProfileAchievements",
+          "callee": "catchError",
+          "lineNumber": 260
+        },
+        {
+          "caller": "getProfileAchievements",
+          "callee": "getErrorMessage",
+          "lineNumber": 261
+        },
+        {
+          "caller": "getProfileAchievements",
+          "callee": "this.notify.open",
+          "lineNumber": 262
+        },
+        {
+          "caller": "getProfileAchievements",
+          "callee": "of",
+          "lineNumber": 263
+        },
+        {
+          "caller": "updateProfileSettings",
+          "callee": "this.http.put<IUser>(`${this.apiUrl}/profile-settings`, payload).pipe",
+          "lineNumber": 269
+        },
+        {
+          "caller": "updateProfileSettings",
+          "callee": "this.http.put",
+          "lineNumber": 269
+        },
+        {
+          "caller": "updateProfileSettings",
+          "callee": "switchMap",
+          "lineNumber": 270
+        },
+        {
+          "caller": "updateProfileSettings",
+          "callee": "this.refreshCurrentUser",
+          "lineNumber": 270
+        },
+        {
+          "caller": "updateProfileSettings",
+          "callee": "catchError",
+          "lineNumber": 271
+        },
+        {
+          "caller": "updateProfileSettings",
+          "callee": "getErrorMessage",
+          "lineNumber": 272
+        },
+        {
+          "caller": "updateProfileSettings",
+          "callee": "this.notify.open",
+          "lineNumber": 273
+        },
+        {
+          "caller": "updateProfileSettings",
+          "callee": "of",
+          "lineNumber": 274
+        },
+        {
+          "caller": "logout",
+          "callee": "this.http.post(`${this.apiUrl}/logout`, {}).subscribe",
+          "lineNumber": 288
+        },
+        {
+          "caller": "logout",
+          "callee": "this.http.post",
+          "lineNumber": 288
+        },
+        {
+          "caller": "logout",
+          "callee": "this.clearLocalStorage",
+          "lineNumber": 290
+        },
+        {
+          "caller": "logout",
+          "callee": "this.clearLocalStorage",
+          "lineNumber": 293
+        },
+        {
+          "caller": "clearLocalStorage",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 299
+        },
+        {
+          "caller": "clearLocalStorage",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 300
+        },
+        {
+          "caller": "clearLocalStorage",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 301
+        },
+        {
+          "caller": "clearLocalStorage",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 302
+        },
+        {
+          "caller": "clearLocalStorage",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 303
+        },
+        {
+          "caller": "clearLocalStorage",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 304
+        },
+        {
+          "caller": "clearLocalStorage",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 305
+        },
+        {
+          "caller": "clearLocalStorage",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 306
+        },
+        {
+          "caller": "clearLocalStorage",
+          "callee": "this.subject.next",
+          "lineNumber": 308
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "this.organizationUsersSubject.next",
+          "lineNumber": 313
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "this.loading.showLoaderUntilCompleted(this.fetchOrganizationUsers(scrollCount, sort, options)).subscribe",
+          "lineNumber": 316
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "this.loading.showLoaderUntilCompleted",
+          "lineNumber": 316
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "this.fetchOrganizationUsers",
+          "lineNumber": 316
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 324
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "this.notify.open",
+          "lineNumber": 328
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "of",
+          "lineNumber": 330
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "new HttpParams().set(\"organizationId\", organizationId).set",
+          "lineNumber": 333
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "new HttpParams().set",
+          "lineNumber": 333
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "scrollCount.toString",
+          "lineNumber": 333
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "appendSortParams",
+          "lineNumber": 334
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "this.http.get<IListData<IUser>>(`${this.apiUrl}/organization-users`, { params }).pipe",
+          "lineNumber": 336
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "this.http.get",
+          "lineNumber": 336
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "tap",
+          "lineNumber": 337
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "this.organizationUsersSubject.next",
+          "lineNumber": 339
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "this.organizationUsersSubject.next",
+          "lineNumber": 341
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "this.organizationUsersSubject.getValue",
+          "lineNumber": 341
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "this.totalCountSubject.next",
+          "lineNumber": 344
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "map",
+          "lineNumber": 346
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "catchError",
+          "lineNumber": 347
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "console.error",
+          "lineNumber": 348
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "this.notify.open",
+          "lineNumber": 350
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "of",
+          "lineNumber": 352
+        },
+        {
+          "caller": "fetchOrganizationUsers",
+          "callee": "shareReplay",
+          "lineNumber": 354
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 359
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "this.notify.open",
+          "lineNumber": 362
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "this.http\n      .get<IListData<IUser>>(`${this.apiUrl}/users-not-login-ever?organizationId=${organizationId}`)\n      .pipe",
+          "lineNumber": 366
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "this.http\n      .get",
+          "lineNumber": 366
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "tap",
+          "lineNumber": 369
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "this.totalCountSubject.next",
+          "lineNumber": 370
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "this.notLoginEverOrganizationUsersSubject.next",
+          "lineNumber": 371
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "catchError",
+          "lineNumber": 373
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "console.error",
+          "lineNumber": 376
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "this.notify.open",
+          "lineNumber": 377
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "of",
+          "lineNumber": 378
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "shareReplay",
+          "lineNumber": 380
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "this.loading.showLoaderUntilCompleted(loadNotLoginEverOrganizationUsers$).subscribe",
+          "lineNumber": 382
+        },
+        {
+          "caller": "loadNotLoginEverOrganizationUsers",
+          "callee": "this.loading.showLoaderUntilCompleted",
+          "lineNumber": 382
+        },
+        {
+          "caller": "addOrganizationUsers",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 386
+        },
+        {
+          "caller": "addOrganizationUsers",
+          "callee": "users.map",
+          "lineNumber": 388
+        },
+        {
+          "caller": "addOrganizationUsers",
+          "callee": "this.http.post<IUser[]>(`${this.apiUrl}/${authType}`, users).pipe",
+          "lineNumber": 393
+        },
+        {
+          "caller": "addOrganizationUsers",
+          "callee": "this.http.post",
+          "lineNumber": 393
+        },
+        {
+          "caller": "addOrganizationUsers",
+          "callee": "tap",
+          "lineNumber": 394
+        },
+        {
+          "caller": "addOrganizationUsers",
+          "callee": "this.notify.open",
+          "lineNumber": 395
+        },
+        {
+          "caller": "addOrganizationUsers",
+          "callee": "users.map((u) => u.email).join",
+          "lineNumber": 395
+        },
+        {
+          "caller": "addOrganizationUsers",
+          "callee": "users.map",
+          "lineNumber": 395
+        },
+        {
+          "caller": "addOrganizationUsers",
+          "callee": "shareReplay",
+          "lineNumber": 399
+        },
+        {
+          "caller": "addOrganizationUser",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 404
+        },
+        {
+          "caller": "addOrganizationUser",
+          "callee": "this.http.post<IUser>(`${this.apiUrl}/${authType}`, user).pipe",
+          "lineNumber": 408
+        },
+        {
+          "caller": "addOrganizationUser",
+          "callee": "this.http.post",
+          "lineNumber": 408
+        },
+        {
+          "caller": "addOrganizationUser",
+          "callee": "tap",
+          "lineNumber": 409
+        },
+        {
+          "caller": "addOrganizationUser",
+          "callee": "this.notify.open",
+          "lineNumber": 410
+        },
+        {
+          "caller": "addOrganizationUser",
+          "callee": "shareReplay",
+          "lineNumber": 414
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.http.post<IUser>(`${this.apiUrl}/add-new-to-org`, { ...userData, isCreatingOwner }).pipe",
+          "lineNumber": 419
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.http.post",
+          "lineNumber": 419
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "tap",
+          "lineNumber": 420
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.notify.open",
+          "lineNumber": 421
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "shareReplay",
+          "lineNumber": 425
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "Object.fromEntries",
+          "lineNumber": 430
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "this.http.put<boolean>(`${this.apiUrl}/users-roles`, payload).pipe",
+          "lineNumber": 432
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "this.http.put",
+          "lineNumber": 432
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "tap",
+          "lineNumber": 433
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "this.notify.open",
+          "lineNumber": 438
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "this.loadOrganizationUsers",
+          "lineNumber": 439
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "shareReplay",
+          "lineNumber": 441
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "catchError",
+          "lineNumber": 442
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "getErrorMessage",
+          "lineNumber": 443
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "this.notify.open",
+          "lineNumber": 444
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "this.loadOrganizationUsers",
+          "lineNumber": 445
+        },
+        {
+          "caller": "changeUsersRoles",
+          "callee": "of",
+          "lineNumber": 447
+        },
+        {
+          "caller": "resetPassword",
+          "callee": "this.http\n      .post<boolean>(`${this.apiUrl}/reset-password`, {\n        token: token,\n        newPassword: newPassword,\n      })\n      .pipe",
+          "lineNumber": 453
+        },
+        {
+          "caller": "resetPassword",
+          "callee": "this.http\n      .post",
+          "lineNumber": 453
+        },
+        {
+          "caller": "resetPassword",
+          "callee": "tap",
+          "lineNumber": 459
+        },
+        {
+          "caller": "resetPassword",
+          "callee": "this.notify.open",
+          "lineNumber": 462
+        },
+        {
+          "caller": "resetPassword",
+          "callee": "shareReplay",
+          "lineNumber": 464
+        },
+        {
+          "caller": "resetPassword",
+          "callee": "catchError",
+          "lineNumber": 465
+        },
+        {
+          "caller": "resetPassword",
+          "callee": "getErrorMessage",
+          "lineNumber": 466
+        },
+        {
+          "caller": "resetPassword",
+          "callee": "this.notify.open",
+          "lineNumber": 467
+        },
+        {
+          "caller": "resetPassword",
+          "callee": "of",
+          "lineNumber": 468
+        },
+        {
+          "caller": "sendPasswordResetLink",
+          "callee": "this.http\n      .post<boolean>(`${this.apiUrl}/send-password-reset-link`, {\n        email: email,\n      })\n      .pipe",
+          "lineNumber": 474
+        },
+        {
+          "caller": "sendPasswordResetLink",
+          "callee": "this.http\n      .post",
+          "lineNumber": 474
+        },
+        {
+          "caller": "sendPasswordResetLink",
+          "callee": "tap",
+          "lineNumber": 479
+        },
+        {
+          "caller": "sendPasswordResetLink",
+          "callee": "this.notify.open",
+          "lineNumber": 484
+        },
+        {
+          "caller": "sendPasswordResetLink",
+          "callee": "shareReplay",
+          "lineNumber": 486
+        },
+        {
+          "caller": "sendPasswordResetLink",
+          "callee": "catchError",
+          "lineNumber": 487
+        },
+        {
+          "caller": "sendPasswordResetLink",
+          "callee": "getErrorMessage",
+          "lineNumber": 488
+        },
+        {
+          "caller": "sendPasswordResetLink",
+          "callee": "this.notify.open",
+          "lineNumber": 489
+        },
+        {
+          "caller": "sendPasswordResetLink",
+          "callee": "of",
+          "lineNumber": 490
+        },
+        {
+          "caller": "getErrorMessage",
+          "callee": "getErrorMessage",
+          "lineNumber": 501
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "sessionStorage.setItem",
+          "lineNumber": 517
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "sessionStorage.setItem",
+          "lineNumber": 518
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "localStorage.setItem",
+          "lineNumber": 519
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "sessionStorage.setItem",
+          "lineNumber": 520
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "sessionStorage.setItem",
+          "lineNumber": 521
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 522
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "sessionStorage.setItem",
+          "lineNumber": 523
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "sessionStorage.setItem",
+          "lineNumber": 524
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "this.jwtHelper.decodeToken",
+          "lineNumber": 526
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "sessionStorage.setItem",
+          "lineNumber": 528
+        },
+        {
+          "caller": "setAuthOptions",
+          "callee": "this.subject.next",
+          "lineNumber": 530
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

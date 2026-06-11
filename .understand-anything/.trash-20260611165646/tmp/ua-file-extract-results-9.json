@@ -1,0 +1,291 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".dockerignore",
+      "language": "unknown",
+      "fileCategory": "infra",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "metrics": {}
+    },
+    {
+      "path": "docker-compose.dev.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 57,
+      "nonEmptyLines": 55,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "volumes",
+          "level": 1,
+          "line": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "docker-compose.do.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 60,
+      "nonEmptyLines": 56,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "volumes",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "networks",
+          "level": 1,
+          "line": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "docker-compose.local-db.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 11,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docker-compose.prod.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 27,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docker-compose.stage.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 12,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docker-compose.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 256,
+      "nonEmptyLines": 234,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "volumes",
+          "level": 1,
+          "line": 243
+        },
+        {
+          "heading": "networks",
+          "level": 1,
+          "line": 254
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "Dockerfile",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 21,
+      "nonEmptyLines": 18,
+      "services": [
+        {
+          "name": "backend-build",
+          "image": "mcr.microsoft.com/dotnet/sdk:8.0-alpine",
+          "ports": [],
+          "startLine": 1,
+          "endLine": 15
+        },
+        {
+          "name": "backend",
+          "image": "mcr.microsoft.com/dotnet/aspnet:8.0-alpine",
+          "ports": [
+            5000
+          ],
+          "startLine": 16,
+          "endLine": 22
+        }
+      ],
+      "steps": [
+        {
+          "name": "FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS backend-build",
+          "startLine": 1,
+          "endLine": 1
+        },
+        {
+          "name": "WORKDIR /app",
+          "startLine": 2,
+          "endLine": 2
+        },
+        {
+          "name": "ENV ASPNETCORE_URLS=http://0.0.0.0:5000",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "COPY NatureHelp.sln ./NatureHelp/",
+          "startLine": 5,
+          "endLine": 5
+        },
+        {
+          "name": "COPY ./src/NatureHelp/NatureHelp.csproj ./src/NatureHelp/",
+          "startLine": 6,
+          "endLine": 6
+        },
+        {
+          "name": "COPY ./src/Application ./src/Application",
+          "startLine": 7,
+          "endLine": 7
+        },
+        {
+          "name": "COPY ./src/Domain ./src/Domain",
+          "startLine": 8,
+          "endLine": 8
+        },
+        {
+          "name": "COPY ./src/Infrastructure ./src/Infrastructure",
+          "startLine": 9,
+          "endLine": 9
+        },
+        {
+          "name": "COPY ./src/Shared ./src/Shared",
+          "startLine": 10,
+          "endLine": 10
+        },
+        {
+          "name": "COPY ./src/NatureHelp ./src/NatureHelp",
+          "startLine": 11,
+          "endLine": 11
+        },
+        {
+          "name": "RUN dotnet restore \"./src/NatureHelp/NatureHelp.csproj\"",
+          "startLine": 13,
+          "endLine": 13
+        },
+        {
+          "name": "RUN dotnet publish \"./src/NatureHelp/NatureHelp.csproj\" -c Relea",
+          "startLine": 14,
+          "endLine": 14
+        },
+        {
+          "name": "FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS backend",
+          "startLine": 16,
+          "endLine": 16
+        },
+        {
+          "name": "RUN apk add --no-cache curl icu-libs",
+          "startLine": 17,
+          "endLine": 17
+        },
+        {
+          "name": "WORKDIR /app",
+          "startLine": 18,
+          "endLine": 18
+        },
+        {
+          "name": "COPY --from=backend-build /out .",
+          "startLine": 19,
+          "endLine": 19
+        },
+        {
+          "name": "EXPOSE 5000",
+          "startLine": 20,
+          "endLine": 20
+        },
+        {
+          "name": "ENTRYPOINT [\"dotnet\", \"NatureHelp.dll\"]",
+          "startLine": 21,
+          "endLine": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "serviceCount": 2,
+        "stepCount": 18
+      }
+    }
+  ]
+}

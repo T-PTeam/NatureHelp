@@ -50,8 +50,20 @@
 
 <div class="grid-container">
   <div class="grid-header">
-    <div [matTooltip]="'tableHeaders.title' | translate">{{ "tableHeaders.title" | translate }}</div>
-    <div [matTooltip]="'tableHeaders.location' | translate">{{ "tableHeaders.location" | translate }}</div>
+    <div
+      class="sortable-header"
+      [class.active]="sort?.sortBy === 'title'"
+      [matTooltip]="'tableHeaders.title' | translate"
+      (click)="onSort('title')">
+      {{ "tableHeaders.title" | translate }}{{ sortIndicator(sort, "title") }}
+    </div>
+    <div
+      class="sortable-header"
+      [class.active]="sort?.sortBy === 'latitude'"
+      [matTooltip]="'tableHeaders.location' | translate"
+      (click)="onSort('latitude')">
+      {{ "tableHeaders.location" | translate }}{{ sortIndicator(sort, "latitude") }}
+    </div>
     <div [matTooltip]="'tableHeaders.researchers' | translate">{{ "tableHeaders.researchers" | translate }}</div>
     <div [matTooltip]="'tableHeaders.researchesCount' | translate">
       {{ "tableHeaders.researchesCount" | translate }}
@@ -69,15 +81,16 @@
     <div
       *ngFor="let lab of labsAPIService.labs$ | async"
       class="grid-row">
-      <div>{{ lab.title }}</div>
-      <div>{{ lab.latitude }}, {{ lab.longitude }}</div>
-      <div>{{ lab.researchersCount ? (lab.researchers | labResearchers) : "—" }}</div>
-      <div>{{ lab.researchersCount }}</div>
+      <nat-truncated-cell [value]="lab.title"></nat-truncated-cell>
+      <nat-truncated-cell [value]="lab.latitude + ', ' + lab.longitude"></nat-truncated-cell>
+      <nat-truncated-cell
+        [value]="lab.researchersCount ? (lab.researchers | labResearchers) : '—'"></nat-truncated-cell>
+      <nat-truncated-cell [value]="lab.researchersCount"></nat-truncated-cell>
       <div class="btn-ceil">
         <button
           mat-icon-button
           color="primary"
-          (click)="changeMapFocus(lab.latitude, lab.longitude)"
+          (click)="changeMapFocus(lab)"
           [matTooltip]="'tableHeaders.location' | translate">
           <mat-icon>my_location</mat-icon>
         </button>
@@ -85,7 +98,7 @@
       <div class="btn-ceil">
         <button
           (click)="navigateToDetail(lab.id)"
-          [disabled]="!(userAPIService.isLoggedIn$ | async)"
+          [disabled]="!canEditLab(lab)"
           class="btn-like"
           id="edit-btn">
           <i class="fa fa-edit"></i>

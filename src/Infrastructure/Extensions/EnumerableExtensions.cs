@@ -19,18 +19,22 @@ public static class EnumerableeExtensions
             if (property.PropertyType == typeof(string))
             {
                 var method = typeof(string).GetMethod("Contains", new[] { typeof(string) });
-                var right = Expression.Constant(filter.Value.ToString(), typeof(string));
-                predicate = Expression.Call(left, method, right);
-            }
-            else if (property.PropertyType.IsEnum)
-            {
-                var value = Enum.Parse(property.PropertyType, filter.Value.ToString(), ignoreCase: true);
-                var right = Expression.Constant(value);
-                predicate = Expression.Equal(left, right);
+                var right = Expression.Constant(filter.Value, typeof(string));
+                predicate = Expression.Call(left, method!, right);
             }
             else
             {
-                var right = Expression.Constant(Convert.ChangeType(filter.Value, property.PropertyType));
+                object? convertedValue;
+                try
+                {
+                    convertedValue = QueryableExtensions.ConvertFilterValue(filter.Value, property.PropertyType);
+                }
+                catch
+                {
+                    continue;
+                }
+
+                var right = Expression.Constant(convertedValue, property.PropertyType);
                 predicate = Expression.Equal(left, right);
             }
 

@@ -22,5 +22,6 @@ export interface IDeficiencyDetailsState {
 
 export interface IDeficiencyFormConfig {
   deficiencyType: EDeficiencyType;
+  researchFieldNames: string[];
   getSpecificFormFields: (deficiency: any, currentUser: IUser | null) => any;
 }

@@ -20,7 +20,10 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
     {
         var context = GetContext();
 
-        var query = context.Set<T>().AsQueryable().ApplyFilters(filters ?? new Dictionary<string, string?>());
+        var (sortBy, sortDirection, remainingFilters) = QueryableExtensions.ExtractSorting(filters);
+        var query = context.Set<T>().AsQueryable()
+            .ApplyFilters(remainingFilters)
+            .ApplySorting(sortBy, sortDirection);
 
         if (scrollCount != -1)
         {

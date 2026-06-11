@@ -21,14 +21,14 @@ public class WaterDeficiency : Deficiency
     /// Концентрація свинцю у воді (мг/л).
     /// </summary>
     /// <example>0.01</example>
-    [Range(0, 0.01, ErrorMessage = "Концентрація свинцю повинна бути в межах 0 - 0.01 мг/л.")]
+    [Range(0, 0.02, ErrorMessage = "Концентрація свинцю повинна бути в межах 0 - 0.02 мг/л.")]
     public double LeadConcentration { get; set; }
 
     /// <summary>
     /// Концентрація ртуті у воді (мг/л).
     /// </summary>
     /// <example>0.0005</example>
-    [Range(0, 0.001, ErrorMessage = "Концентрація ртуті повинна бути в межах 0 - 0.001 мг/л.")]
+    [Range(0, 0.01, ErrorMessage = "Концентрація ртуті повинна бути в межах 0 - 0.01 мг/л.")]
     public double MercuryConcentration { get; set; }
 
     /// <summary>
@@ -42,7 +42,7 @@ public class WaterDeficiency : Deficiency
     /// Концентрація пестицидів у воді (мг/л).
     /// </summary>
     /// <example>0.002</example>
-    [Range(0, 0.005, ErrorMessage = "Концентрація пестицидів повинна бути в межах 0 - 0.005 мг/л.")]
+    [Range(0, 0.1, ErrorMessage = "Концентрація пестицидів повинна бути в межах 0 - 0.1 мг/л.")]
     public double PesticidesContent { get; set; }
 
     /// <summary>
@@ -56,7 +56,7 @@ public class WaterDeficiency : Deficiency
     /// Рівень радіації у воді (Bk/l).
     /// </summary>
     /// <example>3</example>
-    [Range(0, 10, ErrorMessage = "Рівень радіації повинен бути в межах 0 - 10 Bk/l.")]
+    [Range(0, 50, ErrorMessage = "Рівень радіації повинен бути в межах 0 - 50 Bk/l.")]
     public double RadiationLevel { get; set; }
 
     /// <summary>
@@ -77,14 +77,14 @@ public class WaterDeficiency : Deficiency
     /// Концентрація фосфатів у воді (мг/л).
     /// </summary>
     /// <example>0.5</example>
-    [Range(0, 2, ErrorMessage = "Концентрація фосфатів повинна бути в межах 0 - 2 мг/л.")]
+    [Range(0, 10, ErrorMessage = "Концентрація фосфатів повинна бути в межах 0 - 10 мг/л.")]
     public double PhosphateConcentration { get; set; }
 
     /// <summary>
     /// Концентрація кадмію у воді (мг/л).
     /// </summary>
     /// <example>0.001</example>
-    [Range(0, 0.005, ErrorMessage = "Концентрація кадмію повинна бути в межах 0 - 0.005 мг/л.")]
+    [Range(0, 0.01, ErrorMessage = "Концентрація кадмію повинна бути в межах 0 - 0.01 мг/л.")]
     public double CadmiumConcentration { get; set; }
 
     /// <summary>
@@ -105,6 +105,6 @@ public class WaterDeficiency : Deficiency
     /// Мікробне навантаження у воді (КУО/мл).
     /// </summary>
     /// <example>1500</example>
-    [Range(0, 2000, ErrorMessage = "Мікробне навантаження повинно бути в межах 0 - 2000 КУО/мл.")]
+    [Range(0, 5000, ErrorMessage = "Мікробне навантаження повинно бути в межах 0 - 5000 КУО/мл.")]
     public double MicrobialLoad { get; set; }
 }

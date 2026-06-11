@@ -9,6 +9,7 @@ export interface IUser {
   passwordHash: string;
   role: number;
   organizationId: string | null;
+  laboratoryId?: string | null;
   isEmailConfirmed?: boolean;
   deficiencyMonitoringScheme?: IMonitoringScheme;
   profileIsPublic?: boolean;

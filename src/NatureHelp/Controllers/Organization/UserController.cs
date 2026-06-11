@@ -33,10 +33,12 @@ public class UserController : Controller
     /// <returns></returns>
     [Authorize(Roles = "SuperAdmin,Owner,Manager,Supervisor,Researcher")]
     [HttpGet("organization-users")]
-    public async Task<IActionResult> GetOrganizationUsers([FromQuery] Guid organizationId, [FromQuery] int scrollCount)
+    public async Task<IActionResult> GetOrganizationUsers(
+        [FromQuery] Guid organizationId,
+        [FromQuery] int scrollCount,
+        [FromQuery] IDictionary<string, string?>? filters)
     {
-        return Ok(await _userService.GetOrganizationUsers(organizationId, scrollCount));
-
+        return Ok(await _userService.GetOrganizationUsers(organizationId, scrollCount, filters));
     }
 
     /// <summary>

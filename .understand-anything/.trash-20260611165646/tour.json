@@ -1,0 +1,88 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "Start with the README to understand NatureHelp purpose, stack, and architecture.",
+    "nodeIds": [
+      "document:README.md"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "API Entry Point",
+    "description": "Program.cs bootstraps the ASP.NET Core host, configures middleware, and wires dependency injection.",
+    "nodeIds": [
+      "file:src/NatureHelp/Program.cs"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Dependency Injection",
+    "description": "DependencyInjection.cs registers application, infrastructure, and cross-cutting services.",
+    "nodeIds": [
+      "file:src/NatureHelp/DependencyInjection.cs"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "User & Auth API",
+    "description": "UserController handles login, registration, organization users, and profile endpoints.",
+    "nodeIds": [
+      "file:src/NatureHelp/Controllers/Organization/UserController.cs"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "Environmental Deficiencies",
+    "description": "Water and soil deficiency controllers and services manage environmental monitoring data.",
+    "nodeIds": [
+      "file:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "file:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Domain Models",
+    "description": "Domain layer defines users, organizations, laboratories, and deficiency entities.",
+    "nodeIds": [
+      "file:src/Domain/Models/Organization/User.cs",
+      "file:src/Domain/Models/Nature/WaterDeficiency.cs"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "Data Access",
+    "description": "Infrastructure repositories and ApplicationContext provide PostgreSQL persistence via EF Core.",
+    "nodeIds": [
+      "file:src/Infrastructure/Data/ApplicationContext.cs",
+      "file:src/Infrastructure/Repositories/BaseRepository.cs"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "Angular Bootstrap",
+    "description": "The frontend Angular app boots from app.component and routes into feature modules.",
+    "nodeIds": [
+      "file:src/View/nature-help/src/app/app.component.ts",
+      "file:src/View/nature-help/src/app/app-routing.module.ts"
+    ]
+  },
+  {
+    "order": 9,
+    "title": "Deficiency UI",
+    "description": "Water and soil deficiency tables and detail forms are core user-facing monitoring screens.",
+    "nodeIds": [
+      "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts"
+    ]
+  },
+  {
+    "order": 10,
+    "title": "Docker & Deployment",
+    "description": "docker-compose.yml orchestrates API, frontend, database, and observability stack for local and production.",
+    "nodeIds": [
+      "service:docker-compose.yml",
+      "pipeline:.github/workflows/deploy-production-droplet.yml"
+    ]
+  }
+]

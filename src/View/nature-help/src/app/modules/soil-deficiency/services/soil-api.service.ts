@@ -5,6 +5,8 @@ import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from "r
 
 import { ISoilDeficiency } from "@/modules/soil-deficiency/models/ISoilDeficiency";
 import { IDeficiencyMapDto } from "@/models/IDeficiencyMapDto";
+import { appendSortParams } from "@/shared/helpers/table-sort.helper";
+import { ITableSort } from "@/shared/models/ITableSort";
 import { LoadingService } from "@/shared/services/loading.service";
 import { IListData } from "@/shared/models/IListData";
 import { ISoilDeficiencyFilter } from "../models/ISoilDeficiencyFilter";
@@ -36,6 +38,7 @@ export class SoilAPIService {
   public loadSoilDeficiencies(
     scrollCount: number,
     filter: ISoilDeficiencyFilter | null,
+    sort: ITableSort | null = null,
   ): Observable<ISoilDeficiency[]> {
     let params = new HttpParams();
 
@@ -44,6 +47,7 @@ export class SoilAPIService {
     if (filter?.description) params = params.set("Description", filter.description);
     if (filter?.eDangerState || filter?.eDangerState === 0)
       params = params.set("EDangerState", filter.eDangerState.toString());
+    params = appendSortParams(params, sort);
 
     const loadDeficiencies$ = this.http.get<IListData<ISoilDeficiency>>(`${this.soilsUrl}`, { params }).pipe(
       tap((listData) => {

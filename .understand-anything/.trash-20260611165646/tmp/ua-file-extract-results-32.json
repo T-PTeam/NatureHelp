@@ -1,0 +1,207 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 114,
+      "nonEmptyLines": 95,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-page/profile-page.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 64,
+      "nonEmptyLines": 63,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 52,
+      "nonEmptyLines": 43,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/profile/components/profile-settings-tab/profile-settings-tab.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 68,
+      "nonEmptyLines": 66,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 108,
+      "nonEmptyLines": 88,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 320,
+      "nonEmptyLines": 289,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 209,
+      "nonEmptyLines": 197,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 108,
+      "nonEmptyLines": 88,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 407,
+      "nonEmptyLines": 372,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 219,
+      "nonEmptyLines": 207,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 176,
+      "nonEmptyLines": 147,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 71,
+      "nonEmptyLines": 66,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 52,
+      "nonEmptyLines": 42,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 93,
+      "nonEmptyLines": 86,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 71,
+      "nonEmptyLines": 60,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/buttons/water-soil-toggle/water-soil-toggle.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 14,
+      "nonEmptyLines": 14,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 54,
+      "nonEmptyLines": 46,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 63,
+      "nonEmptyLines": 60,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/contacts/contacts.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 62,
+      "nonEmptyLines": 53,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/contacts/contacts.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 64,
+      "nonEmptyLines": 59,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 26,
+      "nonEmptyLines": 24,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/custom-elements/pick-coordinates-button/pick-coordinates-button.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/add-organization-users/add-organization-users.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {}
+    }
+  ]
+}

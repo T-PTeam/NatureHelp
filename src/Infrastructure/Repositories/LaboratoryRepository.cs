@@ -10,13 +10,24 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
     public LaboratoryRepository(IDbContextFactory<ApplicationContext> contextFactory)
         : base(contextFactory) { }
 
+    private static IQueryable<Laboratory> ApplyVisibilityFilter(IQueryable<Laboratory> query, User? currentUser)
+    {
+        if (currentUser == null)
+        {
+            return query.Where(l => l.IsPublic);
+        }
+
+        return query.Where(l =>
+            l.IsPublic
+            || l.CreatedBy == currentUser.Id
+            || l.Id == currentUser.LaboratoryId);
+    }
+
     public async Task<IEnumerable<LaboratoryMapDto>> GetMapObjects(IDictionary<string, string?>? filters, User? currentUser = null)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
-            var query = context.Laboratories
-                .Where(l => l.IsPublic || (currentUser != null && l.CreatedBy == currentUser.Id))
-                .AsNoTracking()
+            var query = ApplyVisibilityFilter(context.Laboratories.AsNoTracking(), currentUser)
                 .Select(l => new LaboratoryMapDto
                 {
                     Id = l.Id,
@@ -47,13 +58,16 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
     {
         using (var context = _contextFactory.CreateDbContext())
         {
-            var query = context.Set<Laboratory>()
-                .Where(l => l.IsPublic || (currentUser != null && l.CreatedBy == currentUser.Id))
+            var (sortBy, sortDirection, remainingFilters) = QueryableExtensions.ExtractSorting(filters);
+            var query = ApplyVisibilityFilter(context.Set<Laboratory>(), currentUser)
+                .ApplyFilters(remainingFilters)
+                .ApplySorting(sortBy, sortDirection)
                 .Include(l => l.Researchers)
                 .Select(l => new Laboratory
                 {
                     Id = l.Id,
                     Title = l.Title,
+                    CreatedBy = l.CreatedBy,
                     Researchers = l.Researchers != null
                         ? l.Researchers.Select(r => new User()
                         {
@@ -65,11 +79,6 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
                     Latitude = l.Latitude,
                     Longitude = l.Longitude
                 });
-
-            if (filters != null && filters.Any())
-            {
-                query = query.ApplyFilters(filters);
-            }
 
             if (scrollCount != -1)
             {
@@ -90,10 +99,14 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
                 {
                     Id = l.Id,
                     Title = l.Title,
+                    CreatedBy = l.CreatedBy,
+                    CreatedOn = l.CreatedOn,
                     Researchers = l.Researchers,
                     ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
                     Latitude = l.Latitude,
-                    Longitude = l.Longitude
+                    Longitude = l.Longitude,
+                    Address = l.Address,
+                    IsPublic = l.IsPublic
                 })
                 .FirstOrDefaultAsync(x => x.Id == id);
         }

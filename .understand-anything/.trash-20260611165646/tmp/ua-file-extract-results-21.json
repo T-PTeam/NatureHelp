@@ -1,0 +1,402 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".gitattributes",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 59,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/applypatch-msg",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/commit-msg",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/h",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/husky.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": ".husky/install.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": ".husky/post-applypatch",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/post-checkout",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/post-commit",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/post-merge",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/post-rewrite",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/pre-applypatch",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/pre-auto-gc",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/pre-commit",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/pre-merge-commit",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/pre-push",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/pre-rebase",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/prepare-commit-msg",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 243,
+      "nonEmptyLines": 238,
+      "metrics": {}
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "sections": [
+        {
+          "heading": "outputLanguage",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "autoUpdate",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "docs/LOGGING-STACK.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 106,
+      "nonEmptyLines": 76,
+      "sections": [
+        {
+          "heading": "Logging stack: Elasticsearch, Kibana, Grafana (and Loki, Seq)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What each service is",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "How to run the logging stack",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "How to test each one",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "1. Elasticsearch",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "2. Kibana",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "3. Grafana",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "4. Seq (optional)",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Summary: one command to run and test",
+          "level": 2,
+          "line": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "docs/SEED_DATA.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 161,
+      "nonEmptyLines": 121,
+      "sections": [
+        {
+          "heading": "Development Seed Data",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "When seed data is applied",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Configurable bulk counts",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Login credentials",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Organizations",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Core laboratories",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "Core users",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Bulk users (generated when `Seed:UsersCount` > 8)",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Core soil deficiencies",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "Core water deficiencies",
+          "level": 2,
+          "line": 120
+        },
+        {
+          "heading": "Bulk deficiencies",
+          "level": 2,
+          "line": 131
+        },
+        {
+          "heading": "Map placement strategy",
+          "level": 2,
+          "line": 144
+        },
+        {
+          "heading": "Reports (core seed)",
+          "level": 2,
+          "line": 150
+        },
+        {
+          "heading": "Related docs",
+          "level": 2,
+          "line": 158
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "grafana/provisioning/datasources/loki.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "datasources",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "grafana/provisioning/datasources/prometheus.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "sections": [
+        {
+          "heading": "apiVersion",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "datasources",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "prepros.config",
+      "language": "config",
+      "fileCategory": "code",
+      "totalLines": 919,
+      "nonEmptyLines": 919,
+      "metrics": {}
+    }
+  ]
+}

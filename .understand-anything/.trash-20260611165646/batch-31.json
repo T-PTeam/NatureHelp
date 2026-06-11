@@ -1,0 +1,280 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/models/profile/IReferral.ts",
+      "type": "file",
+      "name": "IReferral.ts",
+      "filePath": "src/View/nature-help/src/app/models/profile/IReferral.ts",
+      "summary": "IReferral.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/components/lab-details/lab-details.component.css",
+      "type": "file",
+      "name": "lab-details.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/lab-details/lab-details.component.css",
+      "summary": "lab-details.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/components/lab-details/lab-details.component.html",
+      "type": "file",
+      "name": "lab-details.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/lab-details/lab-details.component.html",
+      "summary": "lab-details.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.css",
+      "type": "file",
+      "name": "labs-table.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.css",
+      "summary": "labs-table.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.html",
+      "type": "file",
+      "name": "labs-table.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.html",
+      "summary": "labs-table.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.css",
+      "type": "file",
+      "name": "research-table.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.css",
+      "summary": "research-table.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.html",
+      "type": "file",
+      "name": "research-table.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.html",
+      "summary": "research-table.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/main/components/about/about.component.css",
+      "type": "file",
+      "name": "about.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/main/components/about/about.component.css",
+      "summary": "about.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/main/components/about/about.component.html",
+      "type": "file",
+      "name": "about.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/main/components/about/about.component.html",
+      "summary": "about.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/main/components/main-container/main-container.component.css",
+      "type": "file",
+      "name": "main-container.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/main/components/main-container/main-container.component.css",
+      "summary": "main-container.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/main/components/main-container/main-container.component.html",
+      "type": "file",
+      "name": "main-container.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/main/components/main-container/main-container.component.html",
+      "summary": "main-container.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/main/components/navigation-bar/navigation-bar.component.css",
+      "type": "file",
+      "name": "navigation-bar.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/main/components/navigation-bar/navigation-bar.component.css",
+      "summary": "navigation-bar.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/main/components/navigation-bar/navigation-bar.component.html",
+      "type": "file",
+      "name": "navigation-bar.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/main/components/navigation-bar/navigation-bar.component.html",
+      "summary": "navigation-bar.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/organization-management/components/organization-detail/organization-detail.component.css",
+      "type": "file",
+      "name": "organization-detail.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/organization-management/components/organization-detail/organization-detail.component.css",
+      "summary": "organization-detail.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/organization-management/components/organization-detail/organization-detail.component.html",
+      "type": "file",
+      "name": "organization-detail.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/organization-management/components/organization-detail/organization-detail.component.html",
+      "summary": "organization-detail.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/organization-management/components/organization-list/organization-list.component.css",
+      "type": "file",
+      "name": "organization-list.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/organization-management/components/organization-list/organization-list.component.css",
+      "summary": "organization-list.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/organization-management/components/organization-list/organization-list.component.html",
+      "type": "file",
+      "name": "organization-list.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/organization-management/components/organization-list/organization-list.component.html",
+      "summary": "organization-list.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.css",
+      "type": "file",
+      "name": "organization-users-table.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.css",
+      "summary": "organization-users-table.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.html",
+      "type": "file",
+      "name": "organization-users-table.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.html",
+      "summary": "organization-users-table.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.css",
+      "type": "file",
+      "name": "profile-achievements-tab.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.css",
+      "summary": "profile-achievements-tab.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.html",
+      "type": "file",
+      "name": "profile-achievements-tab.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-achievements-tab/profile-achievements-tab.component.html",
+      "summary": "profile-achievements-tab.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.css",
+      "type": "file",
+      "name": "profile-journal-tab.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.css",
+      "summary": "profile-journal-tab.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.html",
+      "type": "file",
+      "name": "profile-journal-tab.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-journal-tab/profile-journal-tab.component.html",
+      "summary": "profile-journal-tab.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.css",
+      "type": "file",
+      "name": "profile-overview-tab.component.css",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.css",
+      "summary": "profile-overview-tab.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.html",
+      "type": "file",
+      "name": "profile-overview-tab.component.html",
+      "filePath": "src/View/nature-help/src/app/modules/profile/components/profile-overview-tab/profile-overview-tab.component.html",
+      "summary": "profile-overview-tab.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

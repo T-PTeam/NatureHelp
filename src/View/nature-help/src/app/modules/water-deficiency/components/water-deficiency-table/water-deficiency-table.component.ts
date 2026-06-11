@@ -9,11 +9,14 @@ import { ReportAPIService } from "@/shared/services/report-api.service";
 import { MapViewService } from "@/shared/services/map-view.service";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { IWaterDeficiencyFilter } from "../../models/IWaterDeficiencyFilter";
+import { IWaterDeficiency } from "../../models/IWaterDeficiency";
 import { enumToSelectOptions } from "@/shared/helpers/enum-helper";
-import { EDangerState, EDeficiencyType } from "@/models/enums";
+import { EDangerState, EDeficiencyType, EMapLayer } from "@/models/enums";
 import { ISelectOption } from "@/shared/models/ISelectOption";
 import { AuditService } from "@/shared/services/audit.service";
 import { LoadingService } from "@/shared/services/loading.service";
+import { sortIndicator, toggleSort } from "@/shared/helpers/table-sort.helper";
+import { ITableSort } from "@/shared/models/ITableSort";
 
 @Component({
   selector: "n-water-deficiencies",
@@ -27,6 +30,8 @@ export class WaterDeficiencyTable {
   isMonitoring: boolean = false;
   isLoading: boolean = true;
   isLoadingMore: boolean = false;
+  sort: ITableSort | null = null;
+  sortIndicator = sortIndicator;
 
   dangerStates: ISelectOption<EDangerState>[] = [];
 
@@ -86,12 +91,19 @@ export class WaterDeficiencyTable {
     }
   }
 
+  onSort(field: string) {
+    this.sort = toggleSort(this.sort, field);
+    this.listScrollCount = 0;
+    this.isLoading = true;
+    this.waterAPIService.loadWaterDeficiencies(0, this.filterForm.value, this.sort);
+  }
+
   onScroll() {
     if (this.isLoadingMore) return;
 
     this.isLoadingMore = true;
     this.listScrollCount++;
-    this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, this.filterForm.value);
+    this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, this.filterForm.value, this.sort);
 
     this.waterAPIService.deficiencies$
       .pipe(withLatestFrom(this.waterAPIService.totalCount$))
@@ -107,8 +119,11 @@ export class WaterDeficiencyTable {
     }
   }
 
-  changeMapFocus(latitude: number, longitude: number) {
-    this.mapViewService.changeFocus({ latitude, longitude }, 12);
+  changeMapFocus(deficiency: IWaterDeficiency) {
+    this.mapViewService.changeFocus({ latitude: deficiency.latitude, longitude: deficiency.longitude }, 12, {
+      layer: EMapLayer.WaterDeficiency,
+      popupHtml: `<strong>${deficiency.title}</strong>`,
+    });
   }
 
   applyFilter(): void {
@@ -119,7 +134,7 @@ export class WaterDeficiencyTable {
       this.isLoading = true;
     }
 
-    this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, filter);
+    this.waterAPIService.loadWaterDeficiencies(this.listScrollCount, filter, this.sort);
   }
 
   toggleMonitoring() {

@@ -1,0 +1,2403 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/Tests/IntegrationTests/Controllers/LaboratoryControllerTests.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "LaboratoryControllerTests",
+          "startLine": 15,
+          "endLine": 22,
+          "params": [
+            "factory"
+          ]
+        },
+        {
+          "name": "Post_Creates_New_Laboratory",
+          "startLine": 25,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "LaboratoryControllerTests",
+          "startLine": 10,
+          "endLine": 48,
+          "methods": [
+            "LaboratoryControllerTests",
+            "Post_Creates_New_Laboratory"
+          ],
+          "properties": [
+            "_client",
+            "_logger"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LaboratoryControllerTests",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "Post_Creates_New_Laboratory",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "LaboratoryControllerTests",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LaboratoryControllerTests",
+          "callee": "factory.WithTestAuth(\"Owner\").CreateClient",
+          "lineNumber": 17
+        },
+        {
+          "caller": "LaboratoryControllerTests",
+          "callee": "factory.WithTestAuth",
+          "lineNumber": 17
+        },
+        {
+          "caller": "LaboratoryControllerTests",
+          "callee": "factory.Services.CreateScope",
+          "lineNumber": 19
+        },
+        {
+          "caller": "LaboratoryControllerTests",
+          "callee": "score.ServiceProvider.GetRequiredService<ILogger<LaboratoryControllerTests>>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "new Laboratory",
+          "lineNumber": 29
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "new List<User>",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "_client.PostAsJsonAsync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "response.StatusCode.Should().Be",
+          "lineNumber": 41
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "response.StatusCode.Should",
+          "lineNumber": 41
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "response.Content.ReadFromJsonAsync<Laboratory>",
+          "lineNumber": 43
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "created.Should().NotBeNull",
+          "lineNumber": 44
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "created.Should",
+          "lineNumber": 44
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "created!.Title.Should().Be",
+          "lineNumber": 45
+        },
+        {
+          "caller": "Post_Creates_New_Laboratory",
+          "callee": "created!.Title.Should",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Tests/IntegrationTests/Controllers/UserControllerTests.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "UserControllerTests",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "factory"
+          ]
+        },
+        {
+          "name": "GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+          "startLine": 17,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+          "startLine": 29,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+          "startLine": 41,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "LoginAsync_ReturnsOk_WithoutAuth",
+          "startLine": 56,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+          "startLine": 72,
+          "endLine": 85,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserControllerTests",
+          "startLine": 8,
+          "endLine": 86,
+          "methods": [
+            "UserControllerTests",
+            "GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+            "GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+            "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+            "LoginAsync_ReturnsOk_WithoutAuth",
+            "ChangeUsersRoles_ReturnsForbidden_ForManagerRole"
+          ],
+          "properties": [
+            "_factory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserControllerTests",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "LoginAsync_ReturnsOk_WithoutAuth",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "UserControllerTests",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+          "callee": "_factory.CreateClient",
+          "lineNumber": 20
+        },
+        {
+          "caller": "GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 22
+        },
+        {
+          "caller": "GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+          "callee": "client.GetAsync",
+          "lineNumber": 24
+        },
+        {
+          "caller": "GetOrganizationUsers_ReturnsForbidden_ForNoAuth",
+          "callee": "Assert.Equal",
+          "lineNumber": 26
+        },
+        {
+          "caller": "GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+          "callee": "_factory.WithTestAuth(\"Owner\").CreateClient",
+          "lineNumber": 32
+        },
+        {
+          "caller": "GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+          "callee": "_factory.WithTestAuth",
+          "lineNumber": 32
+        },
+        {
+          "caller": "GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 34
+        },
+        {
+          "caller": "GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+          "callee": "client.GetAsync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "GetOrganizationUsers_ReturnsOk_ForOwnerRole",
+          "callee": "Assert.Equal",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+          "callee": "_factory.WithTestAuth(\"Owner\").CreateClient",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+          "callee": "_factory.WithTestAuth",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+          "callee": "new Dictionary<Guid, int>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+          "callee": "client.PutAsJsonAsync",
+          "lineNumber": 51
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsOk_ForOwnerRole",
+          "callee": "Assert.Equal",
+          "lineNumber": 53
+        },
+        {
+          "caller": "LoginAsync_ReturnsOk_WithoutAuth",
+          "callee": "_factory.CreateClient",
+          "lineNumber": 59
+        },
+        {
+          "caller": "LoginAsync_ReturnsOk_WithoutAuth",
+          "callee": "new UserLoginDto",
+          "lineNumber": 61
+        },
+        {
+          "caller": "LoginAsync_ReturnsOk_WithoutAuth",
+          "callee": "client.PostAsJsonAsync",
+          "lineNumber": 67
+        },
+        {
+          "caller": "LoginAsync_ReturnsOk_WithoutAuth",
+          "callee": "Assert.Equal",
+          "lineNumber": 69
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+          "callee": "_factory.WithTestAuth(\"Manager\").CreateClient",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+          "callee": "_factory.WithTestAuth",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+          "callee": "new Dictionary<Guid, int>",
+          "lineNumber": 77
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 79
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+          "callee": "client.PutAsJsonAsync",
+          "lineNumber": 82
+        },
+        {
+          "caller": "ChangeUsersRoles_ReturnsForbidden_ForManagerRole",
+          "callee": "Assert.Equal",
+          "lineNumber": 84
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Tests/IntegrationTests/Controllers/WaterDeficiencyControllerTests.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 212,
+      "nonEmptyLines": 181,
+      "functions": [
+        {
+          "name": "WaterDeficiencyControllerTests",
+          "startLine": 24,
+          "endLine": 31,
+          "params": [
+            "factory"
+          ]
+        },
+        {
+          "name": "Post_Creates_New_WaterDeficiency",
+          "startLine": 33,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "Get_Returns_WaterDeficiency_By_Id",
+          "startLine": 80,
+          "endLine": 118,
+          "params": []
+        },
+        {
+          "name": "Put_Updates_WaterDeficiency",
+          "startLine": 120,
+          "endLine": 180,
+          "params": []
+        },
+        {
+          "name": "Delete_Removes_WaterDeficiency",
+          "startLine": 182,
+          "endLine": 211,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "WaterDeficiencyControllerTests",
+          "startLine": 13,
+          "endLine": 212,
+          "methods": [
+            "WaterDeficiencyControllerTests",
+            "Post_Creates_New_WaterDeficiency",
+            "Get_Returns_WaterDeficiency_By_Id",
+            "Put_Updates_WaterDeficiency",
+            "Delete_Removes_WaterDeficiency"
+          ],
+          "properties": [
+            "ApiJsonReadOptions",
+            "_client",
+            "_factory",
+            "_logger"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WaterDeficiencyControllerTests",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "Post_Creates_New_WaterDeficiency",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "Get_Returns_WaterDeficiency_By_Id",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "Put_Updates_WaterDeficiency",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "Delete_Removes_WaterDeficiency",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "WaterDeficiencyControllerTests",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WaterDeficiencyControllerTests",
+          "callee": "factory.WithTestAuth(\"Owner\").CreateClient",
+          "lineNumber": 27
+        },
+        {
+          "caller": "WaterDeficiencyControllerTests",
+          "callee": "factory.WithTestAuth",
+          "lineNumber": 27
+        },
+        {
+          "caller": "WaterDeficiencyControllerTests",
+          "callee": "factory.Services.CreateScope",
+          "lineNumber": 29
+        },
+        {
+          "caller": "WaterDeficiencyControllerTests",
+          "callee": "scope.ServiceProvider.GetRequiredService<ILogger<WaterDeficiencyControllerTests>>",
+          "lineNumber": 30
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "new WaterDeficiency",
+          "lineNumber": 37
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "_client.PostAsJsonAsync",
+          "lineNumber": 59
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "response.Content.ReadAsStringAsync",
+          "lineNumber": 62
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 63
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 64
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "new Exception",
+          "lineNumber": 69
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "response.StatusCode.Should().Be",
+          "lineNumber": 73
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "response.StatusCode.Should",
+          "lineNumber": 73
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "JsonConvert.DeserializeObject<WaterDeficiency>",
+          "lineNumber": 76
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "result.PH.Should().BeApproximately",
+          "lineNumber": 77
+        },
+        {
+          "caller": "Post_Creates_New_WaterDeficiency",
+          "callee": "result.PH.Should",
+          "lineNumber": 77
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "new WaterDeficiency",
+          "lineNumber": 84
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "new Guid",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "new Guid",
+          "lineNumber": 101
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "_client.PostAsJsonAsync",
+          "lineNumber": 104
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "postResponse.EnsureSuccessStatusCode",
+          "lineNumber": 105
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "postResponse.Content.ReadFromJsonAsync<WaterDeficiency>",
+          "lineNumber": 106
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "_client.GetAsync",
+          "lineNumber": 109
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "_client.GetAsync",
+          "lineNumber": 111
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "response.StatusCode.Should().Be",
+          "lineNumber": 114
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "response.StatusCode.Should",
+          "lineNumber": 114
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "response.Content.ReadFromJsonAsync<WaterDeficiency>",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "fetched.Should().NotBeNull",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "fetched.Should",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "fetched!.Title.Should().Be",
+          "lineNumber": 117
+        },
+        {
+          "caller": "Get_Returns_WaterDeficiency_By_Id",
+          "callee": "fetched!.Title.Should",
+          "lineNumber": 117
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "new WaterDeficiency",
+          "lineNumber": 124
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "new Guid",
+          "lineNumber": 140
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "new Guid",
+          "lineNumber": 141
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "_client.PostAsJsonAsync",
+          "lineNumber": 144
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "postResponse.Content.ReadAsStringAsync",
+          "lineNumber": 146
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 147
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 148
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "new Exception",
+          "lineNumber": 152
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "postResponse.EnsureSuccessStatusCode",
+          "lineNumber": 154
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "postResponse.Content.ReadFromJsonAsync<WaterDeficiency>",
+          "lineNumber": 156
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "created.Should().NotBeNull",
+          "lineNumber": 158
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "created.Should",
+          "lineNumber": 158
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "_client.PutAsJsonAsync",
+          "lineNumber": 163
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "response.Content.ReadAsStringAsync",
+          "lineNumber": 164
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 165
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "_logger.LogInformation",
+          "lineNumber": 166
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "new Exception",
+          "lineNumber": 170
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "response.StatusCode.Should().Be",
+          "lineNumber": 174
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "response.StatusCode.Should",
+          "lineNumber": 174
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "_client.GetAsync",
+          "lineNumber": 177
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "getResponse.Content.ReadFromJsonAsync<WaterDeficiency>",
+          "lineNumber": 178
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "updated!.PH.Should().BeApproximately",
+          "lineNumber": 179
+        },
+        {
+          "caller": "Put_Updates_WaterDeficiency",
+          "callee": "updated!.PH.Should",
+          "lineNumber": 179
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "new WaterDeficiency",
+          "lineNumber": 186
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "_client.PostAsJsonAsync",
+          "lineNumber": 198
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "postResponse.EnsureSuccessStatusCode",
+          "lineNumber": 199
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "postResponse.Content.ReadFromJsonAsync<WaterDeficiency>",
+          "lineNumber": 200
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "_client.DeleteAsync",
+          "lineNumber": 203
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "deleteResponse.StatusCode.Should().Be",
+          "lineNumber": 206
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "deleteResponse.StatusCode.Should",
+          "lineNumber": 206
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "_client.GetAsync",
+          "lineNumber": 209
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "getResponse.StatusCode.Should().Be",
+          "lineNumber": 210
+        },
+        {
+          "caller": "Delete_Removes_WaterDeficiency",
+          "callee": "getResponse.StatusCode.Should",
+          "lineNumber": 210
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Tests/NatureHelpWebAppFactory.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "ConfigureWebHost",
+          "startLine": 21,
+          "endLine": 31,
+          "params": [
+            "builder"
+          ]
+        },
+        {
+          "name": "InitializeAsync",
+          "startLine": 33,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "DisposeAsync",
+          "startLine": 80,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "WithTestAuth",
+          "startLine": 82,
+          "endLine": 103,
+          "params": [
+            "role"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NatureHelpWebAppFactory",
+          "startLine": 16,
+          "endLine": 104,
+          "methods": [
+            "ConfigureWebHost",
+            "InitializeAsync",
+            "DisposeAsync",
+            "WithTestAuth"
+          ],
+          "properties": [
+            "IntegrationTestUserId",
+            "SeedGate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IntegrationTestUserId",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "InitializeAsync",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "WithTestAuth",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "NatureHelpWebAppFactory",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ConfigureWebHost",
+          "callee": "builder.UseEnvironment",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ConfigureWebHost",
+          "callee": "builder.ConfigureLogging",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ConfigureWebHost",
+          "callee": "logging.ClearProviders",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ConfigureWebHost",
+          "callee": "logging.AddConsole",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ConfigureWebHost",
+          "callee": "logging.SetMinimumLevel",
+          "lineNumber": 29
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "SeedGate.WaitAsync",
+          "lineNumber": 35
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "Services.CreateScope",
+          "lineNumber": 38
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "scope.ServiceProvider.GetRequiredService<IDbContextFactory<ApplicationContext>>",
+          "lineNumber": 39
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "contextFactory.CreateDbContextAsync",
+          "lineNumber": 40
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "db.Database.EnsureCreatedAsync",
+          "lineNumber": 41
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "db.DictEntries.AnyAsync",
+          "lineNumber": 43
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "db.DictEntries.Add",
+          "lineNumber": 45
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "new AppDictEntry",
+          "lineNumber": 45
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 47
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "db.SaveChangesAsync",
+          "lineNumber": 51
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "db.Users.AnyAsync",
+          "lineNumber": 54
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "new User",
+          "lineNumber": 57
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "new DateTime",
+          "lineNumber": 63
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "new PasswordHasher<User>().HashPassword",
+          "lineNumber": 69
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "new PasswordHasher<User>",
+          "lineNumber": 69
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "user.AssignRole",
+          "lineNumber": 70
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "db.Users.Add",
+          "lineNumber": 71
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "db.SaveChangesAsync",
+          "lineNumber": 72
+        },
+        {
+          "caller": "InitializeAsync",
+          "callee": "SeedGate.Release",
+          "lineNumber": 76
+        },
+        {
+          "caller": "WithTestAuth",
+          "callee": "this.WithWebHostBuilder",
+          "lineNumber": 86
+        },
+        {
+          "caller": "WithTestAuth",
+          "callee": "builder.ConfigureServices",
+          "lineNumber": 88
+        },
+        {
+          "caller": "WithTestAuth",
+          "callee": "services.AddAuthentication(TestAuthHandler.SchemeName)\n                        .AddScheme<AuthenticationSchemeOptions, TestAuthHandler>",
+          "lineNumber": 90
+        },
+        {
+          "caller": "WithTestAuth",
+          "callee": "services.AddAuthentication",
+          "lineNumber": 90
+        },
+        {
+          "caller": "WithTestAuth",
+          "callee": "services.PostConfigureAll<AuthenticationOptions>",
+          "lineNumber": 94
+        },
+        {
+          "caller": "WithTestAuth",
+          "callee": "services.AddAuthorization",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Tests/TestAuthHandler.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "TestAuthHandler",
+          "startLine": 14,
+          "endLine": 16,
+          "params": [
+            "options",
+            "logger",
+            "encoder",
+            "clock"
+          ]
+        },
+        {
+          "name": "HandleAuthenticateAsync",
+          "startLine": 18,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestAuthHandler",
+          "startLine": 9,
+          "endLine": 34,
+          "methods": [
+            "TestAuthHandler",
+            "HandleAuthenticateAsync"
+          ],
+          "properties": [
+            "SchemeName",
+            "Role"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SchemeName",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "Role",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "TestAuthHandler",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "TestAuthHandler",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "new List<Claim>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "new Claim",
+          "lineNumber": 23
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "new Claim",
+          "lineNumber": 24
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "new Claim",
+          "lineNumber": 25
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "Guid.NewGuid().ToString",
+          "lineNumber": 25
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 25
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "new ClaimsIdentity",
+          "lineNumber": 28
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "new ClaimsPrincipal",
+          "lineNumber": 29
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "new AuthenticationTicket",
+          "lineNumber": 30
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "Task.FromResult",
+          "lineNumber": 32
+        },
+        {
+          "caller": "HandleAuthenticateAsync",
+          "callee": "AuthenticateResult.Success",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Tests/Tests.csproj",
+      "language": "csproj",
+      "fileCategory": "config",
+      "totalLines": 41,
+      "nonEmptyLines": 34,
+      "metrics": {}
+    },
+    {
+      "path": "src/Tests/UnitTests/Application/AuditTests.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "AuditTests",
+          "startLine": 15,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "LogDeficiencyChangesAsync_ShouldLog",
+          "startLine": 21,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "LogDeficiencyChangesAsync_ShouldNotLog",
+          "startLine": 48,
+          "endLine": 60,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuditTests",
+          "startLine": 10,
+          "endLine": 61,
+          "methods": [
+            "AuditTests",
+            "LogDeficiencyChangesAsync_ShouldLog",
+            "LogDeficiencyChangesAsync_ShouldNotLog"
+          ],
+          "properties": [
+            "_changedModelLogRepositoryMock",
+            "_logger"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuditTests",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "LogDeficiencyChangesAsync_ShouldLog",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "LogDeficiencyChangesAsync_ShouldNotLog",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "AuditTests",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AuditTests",
+          "callee": "new Mock<IChangedModelLogRepository>",
+          "lineNumber": 17
+        },
+        {
+          "caller": "AuditTests",
+          "callee": "new ChangedModelLogService",
+          "lineNumber": 18
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "new WaterDeficiency",
+          "lineNumber": 24
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 26
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "new WaterDeficiency",
+          "lineNumber": 31
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "_logger.LogDeficiencyChangesAsync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 38
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "_changedModelLogRepositoryMock.Verify",
+          "lineNumber": 40
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "x.AddAsync",
+          "lineNumber": 40
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "It.Is<ChangedModelLog>",
+          "lineNumber": 40
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "log.ChangesJson.Contains",
+          "lineNumber": 43
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldLog",
+          "callee": "log.ChangesJson.Contains",
+          "lineNumber": 44
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldNotLog",
+          "callee": "new WaterDeficiency",
+          "lineNumber": 51
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldNotLog",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 53
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldNotLog",
+          "callee": "_logger.LogDeficiencyChangesAsync",
+          "lineNumber": 57
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldNotLog",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 57
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldNotLog",
+          "callee": "_changedModelLogRepositoryMock.Verify",
+          "lineNumber": 59
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldNotLog",
+          "callee": "x.AddAsync",
+          "lineNumber": 59
+        },
+        {
+          "caller": "LogDeficiencyChangesAsync_ShouldNotLog",
+          "callee": "It.IsAny<ChangedModelLog>",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Tests/UnitTests/Application/UserTests.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 184,
+      "nonEmptyLines": 149,
+      "functions": [
+        {
+          "name": "UserTests",
+          "startLine": 23,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "startLine": 42,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "LoginAsync_Should_Throw_VerificationFailed",
+          "startLine": 54,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "startLine": 78,
+          "endLine": 101,
+          "params": []
+        },
+        {
+          "name": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "startLine": 103,
+          "endLine": 128,
+          "params": []
+        },
+        {
+          "name": "GeneratingToken_And_IsTokenExpired_Method",
+          "startLine": 130,
+          "endLine": 153,
+          "params": [
+            "email",
+            "role"
+          ]
+        },
+        {
+          "name": "UpdateAccessTokenByRefreshToken",
+          "startLine": 157,
+          "endLine": 183,
+          "params": [
+            "email",
+            "role"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserTests",
+          "startLine": 17,
+          "endLine": 184,
+          "methods": [
+            "UserTests",
+            "LoginAsync_ShouldThrow_WhenUserNotFound",
+            "LoginAsync_Should_Throw_VerificationFailed",
+            "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+            "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+            "GeneratingToken_And_IsTokenExpired_Method",
+            "UpdateAccessTokenByRefreshToken"
+          ],
+          "properties": [
+            "_userRepositoryMock",
+            "_userService",
+            "PasswordHasher"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserTests",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "LoginAsync_Should_Throw_VerificationFailed",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "GeneratingToken_And_IsTokenExpired_Method",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateAccessTokenByRefreshToken",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "UserTests",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "UserTests",
+          "callee": "new Mock<IBaseService<Organization>>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "UserTests",
+          "callee": "new Mock<IEmailService>",
+          "lineNumber": 26
+        },
+        {
+          "caller": "UserTests",
+          "callee": "new Mock<IConfiguration>",
+          "lineNumber": 27
+        },
+        {
+          "caller": "UserTests",
+          "callee": "new Mock<IProfileRepository>",
+          "lineNumber": 28
+        },
+        {
+          "caller": "UserTests",
+          "callee": "new Mock<IProfileService>",
+          "lineNumber": 29
+        },
+        {
+          "caller": "UserTests",
+          "callee": "new Mock<IAchievementEvaluationService>",
+          "lineNumber": 30
+        },
+        {
+          "caller": "UserTests",
+          "callee": "new UserService",
+          "lineNumber": 31
+        },
+        {
+          "caller": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "callee": "_userRepositoryMock.Setup(x => x.GetUserByEmail(It.IsAny<string>()))\n            .ReturnsAsync",
+          "lineNumber": 45
+        },
+        {
+          "caller": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "callee": "_userRepositoryMock.Setup",
+          "lineNumber": 45
+        },
+        {
+          "caller": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "callee": "x.GetUserByEmail",
+          "lineNumber": 45
+        },
+        {
+          "caller": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "callee": "It.IsAny<string>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "callee": "_userService.LoginAsync",
+          "lineNumber": 48
+        },
+        {
+          "caller": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "callee": "new UserLoginDto",
+          "lineNumber": 48
+        },
+        {
+          "caller": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "callee": "act.Should().ThrowAsync<NullReferenceException>()\n            .WithMessage",
+          "lineNumber": 50
+        },
+        {
+          "caller": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "callee": "act.Should().ThrowAsync<NullReferenceException>",
+          "lineNumber": 50
+        },
+        {
+          "caller": "LoginAsync_ShouldThrow_WhenUserNotFound",
+          "callee": "act.Should",
+          "lineNumber": 50
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "new User",
+          "lineNumber": 57
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "Guid.NewGuid",
+          "lineNumber": 59
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "PasswordHasher.HashPassword",
+          "lineNumber": 61
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "new User",
+          "lineNumber": 61
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "_userRepositoryMock.Setup(repo => repo.GetUserByEmail(user.Email))\n            .ReturnsAsync",
+          "lineNumber": 64
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "_userRepositoryMock.Setup",
+          "lineNumber": 64
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "repo.GetUserByEmail",
+          "lineNumber": 64
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "new UserLoginDto",
+          "lineNumber": 67
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "_userService.LoginAsync",
+          "lineNumber": 73
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "act.Should().ThrowAsync<UnauthorizedAccessException>().WithMessage",
+          "lineNumber": 75
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "act.Should().ThrowAsync<UnauthorizedAccessException>",
+          "lineNumber": 75
+        },
+        {
+          "caller": "LoginAsync_Should_Throw_VerificationFailed",
+          "callee": "act.Should",
+          "lineNumber": 75
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "new User",
+          "lineNumber": 82
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "PasswordHasher.HashPassword",
+          "lineNumber": 85
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "new User",
+          "lineNumber": 85
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "_userRepositoryMock.Setup(x => x.GetUserByEmail(user.Email))\n            .ReturnsAsync",
+          "lineNumber": 88
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "_userRepositoryMock.Setup",
+          "lineNumber": 88
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "x.GetUserByEmail",
+          "lineNumber": 88
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "_userRepositoryMock.Setup(x => x.UpdateAsync(It.IsAny<User>()))\n            .Returns",
+          "lineNumber": 91
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "_userRepositoryMock.Setup",
+          "lineNumber": 91
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "x.UpdateAsync",
+          "lineNumber": 91
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "It.IsAny<User>",
+          "lineNumber": 91
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "Task.FromResult",
+          "lineNumber": 92
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "_userService.LoginAsync",
+          "lineNumber": 94
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "new UserLoginDto",
+          "lineNumber": 94
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.Should().NotBeNull",
+          "lineNumber": 96
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.Should",
+          "lineNumber": 96
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.AccessToken.Should().NotBeNullOrEmpty",
+          "lineNumber": 97
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.AccessToken.Should",
+          "lineNumber": 97
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.RefreshToken.Should().NotBeNullOrEmpty",
+          "lineNumber": 98
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.RefreshToken.Should",
+          "lineNumber": 98
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.AccessTokenExpireTime.Should().BeAfter",
+          "lineNumber": 99
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.AccessTokenExpireTime.Should",
+          "lineNumber": 99
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.RefreshTokenExpireTime.Should().BeAfter",
+          "lineNumber": 100
+        },
+        {
+          "caller": "LoginAsync_ShouldReturnUser_WhenPasswordIsCorrect",
+          "callee": "result.RefreshTokenExpireTime.Should",
+          "lineNumber": 100
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "new User",
+          "lineNumber": 107
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "PasswordHasher.HashPassword",
+          "lineNumber": 110
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "new User",
+          "lineNumber": 110
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "_userRepositoryMock.Setup(x => x.GetUserByEmail(user.Email))\n            .ReturnsAsync",
+          "lineNumber": 113
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "_userRepositoryMock.Setup",
+          "lineNumber": 113
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "x.GetUserByEmail",
+          "lineNumber": 113
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "_userRepositoryMock.Setup(x => x.UpdateAsync(It.IsAny<User>()))\n            .Returns",
+          "lineNumber": 116
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "_userRepositoryMock.Setup",
+          "lineNumber": 116
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "x.UpdateAsync",
+          "lineNumber": 116
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "It.IsAny<User>",
+          "lineNumber": 116
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "Task.FromResult",
+          "lineNumber": 117
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "_userService.LoginAsync",
+          "lineNumber": 119
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "new UserLoginDto",
+          "lineNumber": 119
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "result.Should().NotBeNull",
+          "lineNumber": 125
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "result.Should",
+          "lineNumber": 125
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "result.AccessToken.Should().NotBeNullOrEmpty",
+          "lineNumber": 126
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "result.AccessToken.Should",
+          "lineNumber": 126
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "result.RefreshToken.Should().NotBeNullOrEmpty",
+          "lineNumber": 127
+        },
+        {
+          "caller": "LoginAsync_ShouldSucceed_WhenPasswordHashMatches",
+          "callee": "result.RefreshToken.Should",
+          "lineNumber": 127
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "new User",
+          "lineNumber": 137
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "user.AssignRole",
+          "lineNumber": 138
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "user.Role.Should().Be",
+          "lineNumber": 140
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "user.Role.Should",
+          "lineNumber": 140
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "AuthTokensProvider.GenerateRefreshToken",
+          "lineNumber": 142
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "AuthTokensProvider.GenerateAccessToken",
+          "lineNumber": 143
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "refreshToken.Should().NotBeNullOrEmpty",
+          "lineNumber": 145
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "refreshToken.Should",
+          "lineNumber": 145
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "accessToken.Should().NotBeNullOrEmpty",
+          "lineNumber": 146
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "accessToken.Should",
+          "lineNumber": 146
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "AuthTokensProvider.IsTokenExpired",
+          "lineNumber": 148
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "AuthTokensProvider.IsTokenExpired",
+          "lineNumber": 149
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "isExpiredAccessToken.Should().BeFalse",
+          "lineNumber": 151
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "isExpiredAccessToken.Should",
+          "lineNumber": 151
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "isExpiredRefreshToken.Should().BeFalse",
+          "lineNumber": 152
+        },
+        {
+          "caller": "GeneratingToken_And_IsTokenExpired_Method",
+          "callee": "isExpiredRefreshToken.Should",
+          "lineNumber": 152
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "new User",
+          "lineNumber": 164
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "user.AssignRole",
+          "lineNumber": 165
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "user.Role.Should().Be",
+          "lineNumber": 167
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "user.Role.Should",
+          "lineNumber": 167
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "AuthTokensProvider.GenerateRefreshToken",
+          "lineNumber": 169
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "AuthTokensProvider.GenerateAccessToken",
+          "lineNumber": 170
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "refreshToken.Should().NotBeNullOrEmpty",
+          "lineNumber": 172
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "refreshToken.Should",
+          "lineNumber": 172
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "accessToken.Should().NotBeNullOrEmpty",
+          "lineNumber": 173
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "accessToken.Should",
+          "lineNumber": 173
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "_userRepositoryMock\n            .Setup(x => x.GetUserByRefreshTokenAsync(refreshToken))\n            .ReturnsAsync",
+          "lineNumber": 175
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "_userRepositoryMock\n            .Setup",
+          "lineNumber": 175
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "x.GetUserByRefreshTokenAsync",
+          "lineNumber": 176
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "_userService.RefreshAccessTokenAsync",
+          "lineNumber": 179
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "resultUser?.AccessToken.Should().NotBeNullOrEmpty",
+          "lineNumber": 181
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "resultUser?.AccessToken.Should",
+          "lineNumber": 181
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "resultUser?.AccessToken.Should().NotBeEquivalentTo",
+          "lineNumber": 182
+        },
+        {
+          "caller": "UpdateAccessTokenByRefreshToken",
+          "callee": "resultUser?.AccessToken.Should",
+          "lineNumber": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/Tests/UnitTests/Domain/UserTests.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "UserEmailChecking",
+          "startLine": 8,
+          "endLine": 21,
+          "params": [
+            "email",
+            "expectedResult"
+          ]
+        },
+        {
+          "name": "UserPasswordChecking",
+          "startLine": 23,
+          "endLine": 39,
+          "params": [
+            "password",
+            "expectedResult"
+          ]
+        },
+        {
+          "name": "UserAssigningAndCheckingRole",
+          "startLine": 41,
+          "endLine": 58,
+          "params": [
+            "hasRole",
+            "shouldBe"
+          ]
+        },
+        {
+          "name": "GetPersonFullName",
+          "startLine": 60,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "CheckChangingContactPersonDetails",
+          "startLine": 70,
+          "endLine": 81,
+          "params": [
+            "phoneNumber"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserTests",
+          "startLine": 6,
+          "endLine": 82,
+          "methods": [
+            "UserEmailChecking",
+            "UserPasswordChecking",
+            "UserAssigningAndCheckingRole",
+            "GetPersonFullName",
+            "CheckChangingContactPersonDetails"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserEmailChecking",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "UserPasswordChecking",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "UserAssigningAndCheckingRole",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "GetPersonFullName",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "CheckChangingContactPersonDetails",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "UserTests",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "UserEmailChecking",
+          "callee": "new User",
+          "lineNumber": 19
+        },
+        {
+          "caller": "UserEmailChecking",
+          "callee": "user.IsEmailValid(email).Should().Be",
+          "lineNumber": 20
+        },
+        {
+          "caller": "UserEmailChecking",
+          "callee": "user.IsEmailValid(email).Should",
+          "lineNumber": 20
+        },
+        {
+          "caller": "UserEmailChecking",
+          "callee": "user.IsEmailValid",
+          "lineNumber": 20
+        },
+        {
+          "caller": "UserPasswordChecking",
+          "callee": "new User",
+          "lineNumber": 36
+        },
+        {
+          "caller": "UserPasswordChecking",
+          "callee": "user.IsPasswordValid(password).Should().Be",
+          "lineNumber": 38
+        },
+        {
+          "caller": "UserPasswordChecking",
+          "callee": "user.IsPasswordValid(password).Should",
+          "lineNumber": 38
+        },
+        {
+          "caller": "UserPasswordChecking",
+          "callee": "user.IsPasswordValid",
+          "lineNumber": 38
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "new User",
+          "lineNumber": 50
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "user.AssignRole",
+          "lineNumber": 52
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "user.Should().NotBeNull",
+          "lineNumber": 53
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "user.Should",
+          "lineNumber": 53
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "user.AssignRole",
+          "lineNumber": 54
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "user.Role.Should().Be",
+          "lineNumber": 56
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "user.Role.Should",
+          "lineNumber": 56
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "user.HasRole(shouldBe).Should().BeTrue",
+          "lineNumber": 57
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "user.HasRole(shouldBe).Should",
+          "lineNumber": 57
+        },
+        {
+          "caller": "UserAssigningAndCheckingRole",
+          "callee": "user.HasRole",
+          "lineNumber": 57
+        },
+        {
+          "caller": "GetPersonFullName",
+          "callee": "new User",
+          "lineNumber": 63
+        },
+        {
+          "caller": "GetPersonFullName",
+          "callee": "user.GetFullName().Should().BeOneOf",
+          "lineNumber": 67
+        },
+        {
+          "caller": "GetPersonFullName",
+          "callee": "user.GetFullName().Should",
+          "lineNumber": 67
+        },
+        {
+          "caller": "GetPersonFullName",
+          "callee": "user.GetFullName",
+          "lineNumber": 67
+        },
+        {
+          "caller": "CheckChangingContactPersonDetails",
+          "callee": "new User",
+          "lineNumber": 75
+        },
+        {
+          "caller": "CheckChangingContactPersonDetails",
+          "callee": "user.UpdateContactDetails",
+          "lineNumber": 77
+        },
+        {
+          "caller": "CheckChangingContactPersonDetails",
+          "callee": "user.PhoneNumber.Should().Be",
+          "lineNumber": 79
+        },
+        {
+          "caller": "CheckChangingContactPersonDetails",
+          "callee": "user.PhoneNumber.Should",
+          "lineNumber": 79
+        },
+        {
+          "caller": "CheckChangingContactPersonDetails",
+          "callee": "user.PhoneNumber.Should().BeEquivalentTo",
+          "lineNumber": 80
+        },
+        {
+          "caller": "CheckChangingContactPersonDetails",
+          "callee": "user.PhoneNumber.Should",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/.cursor/rules/universal-components.mdc",
+      "language": "mdc",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/.firebaserc",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/.npmrc",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 1,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/cypress.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/cypress/e2e/add-water-deficiency.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 41,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/cypress/e2e/check-changing-history.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/cypress/e2e/check-map-markers.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/cypress/e2e/login.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/cypress/support/component-index.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 37,
+      "nonEmptyLines": 37,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/cypress/support/index.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/eslint.config.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 101,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/lint-staged.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/nginx.conf",
+      "language": "conf",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/postcss.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/prettier.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/Program.cs",
+      "language": "csharp",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 43,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

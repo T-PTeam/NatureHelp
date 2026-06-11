@@ -1,0 +1,1174 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 11,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 86,
+      "classes": [
+        {
+          "name": "LabsTableComponent",
+          "startLine": 23,
+          "endLine": 103,
+          "methods": [
+            "constructor",
+            "navigateToDetail",
+            "switchTable",
+            "changeMapFocus",
+            "onSort",
+            "onScroll",
+            "applyFilter",
+            "canEditLab"
+          ],
+          "properties": [
+            "scrollCheckDisabled",
+            "sort",
+            "sortIndicator",
+            "filterForm",
+            "listScrollCount",
+            "isFilterChanged"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LabsTableComponent",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 40
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.filterForm.valueChanges.subscribe",
+          "lineNumber": 44
+        },
+        {
+          "caller": "navigateToDetail",
+          "callee": "this.router.navigate",
+          "lineNumber": 51
+        },
+        {
+          "caller": "navigateToDetail",
+          "callee": "this.router.navigate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "switchTable",
+          "callee": "this.router.navigateByUrl",
+          "lineNumber": 58
+        },
+        {
+          "caller": "focus",
+          "callee": "this.mapViewService.changeFocus",
+          "lineNumber": 63
+        },
+        {
+          "caller": "changeMapFocus",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 68
+        },
+        {
+          "caller": "changeMapFocus",
+          "callee": "this.mobileMapService.showMobileMap",
+          "lineNumber": 69
+        },
+        {
+          "caller": "changeMapFocus",
+          "callee": "setTimeout",
+          "lineNumber": 70
+        },
+        {
+          "caller": "changeMapFocus",
+          "callee": "focus",
+          "lineNumber": 74
+        },
+        {
+          "caller": "onSort",
+          "callee": "toggleSort",
+          "lineNumber": 78
+        },
+        {
+          "caller": "onSort",
+          "callee": "this.labsAPIService.loadLabs",
+          "lineNumber": 80
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.labsAPIService.loadLabs",
+          "lineNumber": 85
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.labsAPIService.labs$.pipe(withLatestFrom(this.labsAPIService.totalCount$)).subscribe",
+          "lineNumber": 87
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.labsAPIService.labs$.pipe",
+          "lineNumber": 87
+        },
+        {
+          "caller": "onScroll",
+          "callee": "withLatestFrom",
+          "lineNumber": 87
+        },
+        {
+          "caller": "applyFilter",
+          "callee": "this.labsAPIService.loadLabs",
+          "lineNumber": 97
+        },
+        {
+          "caller": "canEditLab",
+          "callee": "canEditLaboratory",
+          "lineNumber": 101
+        },
+        {
+          "caller": "canEditLab",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 101
+        },
+        {
+          "caller": "canEditLab",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/research-table/research-table.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "ResearchTableComponent",
+          "startLine": 15,
+          "endLine": 49,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "switchTable",
+            "onSort",
+            "onScroll"
+          ],
+          "properties": [
+            "scrollCheckDisabled",
+            "sort",
+            "sortIndicator",
+            "listScrollCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ResearchTableComponent",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "switchTable",
+          "callee": "this.router.navigateByUrl",
+          "lineNumber": 30
+        },
+        {
+          "caller": "onSort",
+          "callee": "toggleSort",
+          "lineNumber": 34
+        },
+        {
+          "caller": "onSort",
+          "callee": "this.researchesAPIService.loadResearches",
+          "lineNumber": 36
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.researchesAPIService.loadResearches",
+          "lineNumber": 41
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.researchesAPIService.researches$\n      .pipe(withLatestFrom(this.researchesAPIService.totalCount$))\n      .subscribe",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.researchesAPIService.researches$\n      .pipe",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onScroll",
+          "callee": "withLatestFrom",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryFilter.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 100,
+      "classes": [
+        {
+          "name": "LabsAPIService",
+          "startLine": 19,
+          "endLine": 120,
+          "methods": [
+            "constructor",
+            "loadLabs",
+            "loadAllLabsForMap",
+            "getLabById",
+            "addUserToLab",
+            "addLab",
+            "updateLabById",
+            "deleteLabById"
+          ],
+          "properties": [
+            "labsUrl",
+            "labsSubject",
+            "labs$",
+            "mapDataSubject",
+            "mapLabs$",
+            "totalCountSubject",
+            "totalCount$",
+            "httpOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LabsAPIService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.loadLabs",
+          "lineNumber": 40
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.loadAllLabsForMap",
+          "lineNumber": 41
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "params.set",
+          "lineNumber": 51
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "params.set",
+          "lineNumber": 52
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "appendSortParams",
+          "lineNumber": 53
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "this.http.get<IListData<ILaboratory>>(`${this.labsUrl}`, { params }).pipe",
+          "lineNumber": 55
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "this.http.get",
+          "lineNumber": 55
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "tap",
+          "lineNumber": 56
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "this.labsSubject.next",
+          "lineNumber": 57
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "this.labsSubject.next",
+          "lineNumber": 58
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "this.labsSubject.getValue",
+          "lineNumber": 58
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "this.totalCountSubject.next",
+          "lineNumber": 60
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "catchError",
+          "lineNumber": 62
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "this.notify.open",
+          "lineNumber": 65
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "of",
+          "lineNumber": 66
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "shareReplay",
+          "lineNumber": 68
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "this.loading.showLoaderUntilCompleted(loadlabs$).subscribe",
+          "lineNumber": 71
+        },
+        {
+          "caller": "loadLabs",
+          "callee": "this.loading.showLoaderUntilCompleted",
+          "lineNumber": 71
+        },
+        {
+          "caller": "loadAllLabsForMap",
+          "callee": "this.http\n      .get<IListData<ILaboratoryMapDto>>(`${this.labsUrl}/map-objects`)\n      .pipe(\n        tap((data) => {\n          this.mapDataSubject.next(data.list);\n        }),\n        catchError((err) => {\n          console.error(\"Could not load labs for map\", err);\n          return of({ list: [], totalCount: 0 } as IListData<ILaboratoryMapDto>);\n        }),\n        shareReplay(),\n      )\n      .subscribe",
+          "lineNumber": 76
+        },
+        {
+          "caller": "loadAllLabsForMap",
+          "callee": "this.http\n      .get<IListData<ILaboratoryMapDto>>(`${this.labsUrl}/map-objects`)\n      .pipe",
+          "lineNumber": 76
+        },
+        {
+          "caller": "loadAllLabsForMap",
+          "callee": "this.http\n      .get",
+          "lineNumber": 76
+        },
+        {
+          "caller": "loadAllLabsForMap",
+          "callee": "tap",
+          "lineNumber": 79
+        },
+        {
+          "caller": "loadAllLabsForMap",
+          "callee": "this.mapDataSubject.next",
+          "lineNumber": 80
+        },
+        {
+          "caller": "loadAllLabsForMap",
+          "callee": "catchError",
+          "lineNumber": 82
+        },
+        {
+          "caller": "loadAllLabsForMap",
+          "callee": "console.error",
+          "lineNumber": 83
+        },
+        {
+          "caller": "loadAllLabsForMap",
+          "callee": "of",
+          "lineNumber": 84
+        },
+        {
+          "caller": "loadAllLabsForMap",
+          "callee": "shareReplay",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getLabById",
+          "callee": "this.http.get",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addUserToLab",
+          "callee": "this.http.post",
+          "lineNumber": 96
+        },
+        {
+          "caller": "addUserToLab",
+          "callee": "JSON.stringify",
+          "lineNumber": 96
+        },
+        {
+          "caller": "addLab",
+          "callee": "this.http.post<ILaboratory>(`${this.labsUrl}`, JSON.stringify(value), this.httpOptions).pipe",
+          "lineNumber": 100
+        },
+        {
+          "caller": "addLab",
+          "callee": "this.http.post",
+          "lineNumber": 100
+        },
+        {
+          "caller": "addLab",
+          "callee": "JSON.stringify",
+          "lineNumber": 100
+        },
+        {
+          "caller": "addLab",
+          "callee": "tap",
+          "lineNumber": 101
+        },
+        {
+          "caller": "addLab",
+          "callee": "this.loadLabs",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addLab",
+          "callee": "this.loadAllLabsForMap",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateLabById",
+          "callee": "this.http.put<ILaboratory>(`${this.labsUrl}/${id}`, JSON.stringify(value), this.httpOptions).pipe",
+          "lineNumber": 109
+        },
+        {
+          "caller": "updateLabById",
+          "callee": "this.http.put",
+          "lineNumber": 109
+        },
+        {
+          "caller": "updateLabById",
+          "callee": "JSON.stringify",
+          "lineNumber": 109
+        },
+        {
+          "caller": "updateLabById",
+          "callee": "tap",
+          "lineNumber": 110
+        },
+        {
+          "caller": "updateLabById",
+          "callee": "this.loadLabs",
+          "lineNumber": 111
+        },
+        {
+          "caller": "updateLabById",
+          "callee": "this.loadAllLabsForMap",
+          "lineNumber": 112
+        },
+        {
+          "caller": "deleteLabById",
+          "callee": "this.http.delete",
+          "lineNumber": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/services/researches-api.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "ResearchesAPIService",
+          "startLine": 15,
+          "endLine": 60,
+          "methods": [
+            "constructor",
+            "loadResearches"
+          ],
+          "properties": [
+            "researchesUrl",
+            "researchesSubject",
+            "researches$",
+            "totalCountSubject",
+            "totalCount$",
+            "httpOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ResearchesAPIService",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.loadResearches",
+          "lineNumber": 33
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "new HttpParams().set",
+          "lineNumber": 37
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "appendSortParams",
+          "lineNumber": 38
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "this.http.get<IListData<IResearch>>(this.researchesUrl, { params }).pipe",
+          "lineNumber": 40
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "this.http.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "tap",
+          "lineNumber": 41
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "this.researchesSubject.next",
+          "lineNumber": 43
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "this.researchesSubject.next",
+          "lineNumber": 45
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "this.researchesSubject.getValue",
+          "lineNumber": 45
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "this.totalCountSubject.next",
+          "lineNumber": 48
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "catchError",
+          "lineNumber": 50
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "this.notify.open",
+          "lineNumber": 51
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "of",
+          "lineNumber": 52
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "shareReplay",
+          "lineNumber": 54
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "this.loading.showLoaderUntilCompleted(loadResearches$).subscribe",
+          "lineNumber": 57
+        },
+        {
+          "caller": "loadResearches",
+          "callee": "this.loading.showLoaderUntilCompleted",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/owner/components/organization-users-table/organization-users-table.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 201,
+      "nonEmptyLines": 184,
+      "classes": [
+        {
+          "name": "OrganizationUsersTableComponent",
+          "startLine": 21,
+          "endLine": 201,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "onSort",
+            "downloadExcel",
+            "addUserToOrganization",
+            "userRoleChanged",
+            "saveChangedRoles",
+            "onScroll"
+          ],
+          "properties": [
+            "scrollCheckDisabled",
+            "combinedUsers",
+            "filterForm",
+            "changedUsersRoles",
+            "ERole",
+            "roleOptions",
+            "isAddingUser",
+            "isSavingRoles",
+            "isLoading",
+            "sort",
+            "sortIndicator",
+            "listScrollCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrganizationUsersTableComponent",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 48
+        },
+        {
+          "caller": "constructor",
+          "callee": "combineLatest([\n      this.usersAPIService.$organizationUsers,\n      this.usersAPIService.$notLoginEverOrganizationUsers,\n      this.filterForm.valueChanges.pipe(startWith(this.filterForm.value)),\n    ]).pipe",
+          "lineNumber": 53
+        },
+        {
+          "caller": "constructor",
+          "callee": "combineLatest",
+          "lineNumber": 53
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.filterForm.valueChanges.pipe",
+          "lineNumber": 56
+        },
+        {
+          "caller": "constructor",
+          "callee": "startWith",
+          "lineNumber": 56
+        },
+        {
+          "caller": "constructor",
+          "callee": "map",
+          "lineNumber": 58
+        },
+        {
+          "caller": "constructor",
+          "callee": "orgUsers.map",
+          "lineNumber": 59
+        },
+        {
+          "caller": "constructor",
+          "callee": "notLoginEverUsers.map",
+          "lineNumber": 60
+        },
+        {
+          "caller": "constructor",
+          "callee": "filters.search.toLowerCase",
+          "lineNumber": 64
+        },
+        {
+          "caller": "constructor",
+          "callee": "combined.filter",
+          "lineNumber": 65
+        },
+        {
+          "caller": "constructor",
+          "callee": "user.firstName?.toLowerCase().includes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "constructor",
+          "callee": "user.firstName?.toLowerCase",
+          "lineNumber": 67
+        },
+        {
+          "caller": "constructor",
+          "callee": "user.lastName?.toLowerCase().includes",
+          "lineNumber": 68
+        },
+        {
+          "caller": "constructor",
+          "callee": "user.lastName?.toLowerCase",
+          "lineNumber": 68
+        },
+        {
+          "caller": "constructor",
+          "callee": "user.email?.toLowerCase().includes",
+          "lineNumber": 69
+        },
+        {
+          "caller": "constructor",
+          "callee": "user.email?.toLowerCase",
+          "lineNumber": 69
+        },
+        {
+          "caller": "constructor",
+          "callee": "Number",
+          "lineNumber": 74
+        },
+        {
+          "caller": "constructor",
+          "callee": "combined.filter",
+          "lineNumber": 75
+        },
+        {
+          "caller": "constructor",
+          "callee": "combined.filter",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.usersAPIService.$organizationUsers.subscribe",
+          "lineNumber": 89
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.usersAPIService.loadOrganizationUsers",
+          "lineNumber": 94
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.usersAPIService.loadNotLoginEverOrganizationUsers",
+          "lineNumber": 95
+        },
+        {
+          "caller": "onSort",
+          "callee": "toggleSort",
+          "lineNumber": 99
+        },
+        {
+          "caller": "onSort",
+          "callee": "this.usersAPIService.loadOrganizationUsers",
+          "lineNumber": 102
+        },
+        {
+          "caller": "downloadExcel",
+          "callee": "this.reportAPIService.downloadOrgUsersExcelListFile",
+          "lineNumber": 106
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.dialog.open",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "dialogRef.afterClosed().subscribe",
+          "lineNumber": 123
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "dialogRef.afterClosed",
+          "lineNumber": 123
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.usersAPIService.addOrganizationUsers(EAuthType.AddMultipleToOrganization, result.users).subscribe",
+          "lineNumber": 126
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.usersAPIService.addOrganizationUsers",
+          "lineNumber": 126
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.notify.open",
+          "lineNumber": 132
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.dialog.open",
+          "lineNumber": 141
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "dialogRef.afterClosed().subscribe",
+          "lineNumber": 149
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "dialogRef.afterClosed",
+          "lineNumber": 149
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.usersAPIService.addOrganizationUser(EAuthType.AddOneToOrganization, result.users[0]).subscribe",
+          "lineNumber": 152
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.usersAPIService.addOrganizationUser",
+          "lineNumber": 152
+        },
+        {
+          "caller": "addUserToOrganization",
+          "callee": "this.notify.open",
+          "lineNumber": 158
+        },
+        {
+          "caller": "userRoleChanged",
+          "callee": "this.changedUsersRoles.set",
+          "lineNumber": 170
+        },
+        {
+          "caller": "saveChangedRoles",
+          "callee": "this.usersAPIService.changeUsersRoles(this.changedUsersRoles).subscribe",
+          "lineNumber": 176
+        },
+        {
+          "caller": "saveChangedRoles",
+          "callee": "this.usersAPIService.changeUsersRoles",
+          "lineNumber": 176
+        },
+        {
+          "caller": "saveChangedRoles",
+          "callee": "this.changedUsersRoles.clear",
+          "lineNumber": 179
+        },
+        {
+          "caller": "saveChangedRoles",
+          "callee": "this.notify.open",
+          "lineNumber": 183
+        },
+        {
+          "caller": "saveChangedRoles",
+          "callee": "this.notify.open",
+          "lineNumber": 187
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.usersAPIService.loadOrganizationUsers",
+          "lineNumber": 193
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.usersAPIService.$organizationUsers\n      .pipe(withLatestFrom(this.usersAPIService.$totalCount))\n      .subscribe",
+          "lineNumber": 195
+        },
+        {
+          "caller": "onScroll",
+          "callee": "this.usersAPIService.$organizationUsers\n      .pipe",
+          "lineNumber": 195
+        },
+        {
+          "caller": "onScroll",
+          "callee": "withLatestFrom",
+          "lineNumber": 196
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/guards/laboratory-owner.guard.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "LaboratoryOwnerGuard",
+          "startLine": 12,
+          "endLine": 63,
+          "methods": [
+            "constructor",
+            "canActivate",
+            "showPermissionError"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LaboratoryOwnerGuard",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "canActivate",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 26
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.showPermissionError",
+          "lineNumber": 28
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.router.navigate",
+          "lineNumber": 29
+        },
+        {
+          "caller": "canActivate",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 33
+        },
+        {
+          "caller": "canActivate",
+          "callee": "sessionStorage.getItem(\"role\")?.toLowerCase",
+          "lineNumber": 37
+        },
+        {
+          "caller": "canActivate",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 37
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.labsAPIService.getLabById(labId).pipe",
+          "lineNumber": 42
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.labsAPIService.getLabById",
+          "lineNumber": 42
+        },
+        {
+          "caller": "canActivate",
+          "callee": "map",
+          "lineNumber": 43
+        },
+        {
+          "caller": "canActivate",
+          "callee": "canEditLaboratory",
+          "lineNumber": 44
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.showPermissionError",
+          "lineNumber": 48
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.router.navigate",
+          "lineNumber": 49
+        },
+        {
+          "caller": "canActivate",
+          "callee": "catchError",
+          "lineNumber": 52
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.showPermissionError",
+          "lineNumber": 53
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.router.navigate",
+          "lineNumber": 54
+        },
+        {
+          "caller": "canActivate",
+          "callee": "of",
+          "lineNumber": 55
+        },
+        {
+          "caller": "showPermissionError",
+          "callee": "this.notify.open",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/helpers/laboratory-access.helper.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "canEditLaboratory",
+          "startLine": 3,
+          "endLine": 26,
+          "params": [
+            "lab",
+            "userId",
+            "role",
+            "laboratoryId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "canEditLaboratory",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "canEditLaboratory",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "toggleSort",
+          "startLine": 5,
+          "endLine": 14,
+          "params": [
+            "current",
+            "field"
+          ]
+        },
+        {
+          "name": "sortIndicator",
+          "startLine": 16,
+          "endLine": 22,
+          "params": [
+            "sort",
+            "field"
+          ]
+        },
+        {
+          "name": "appendSortParams",
+          "startLine": 24,
+          "endLine": 30,
+          "params": [
+            "params",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "toggleSort",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "sortIndicator",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "appendSortParams",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "appendSortParams",
+          "callee": "params.set(\"sortBy\", sort.sortBy).set",
+          "lineNumber": 29
+        },
+        {
+          "caller": "appendSortParams",
+          "callee": "params.set",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/models/IListData.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

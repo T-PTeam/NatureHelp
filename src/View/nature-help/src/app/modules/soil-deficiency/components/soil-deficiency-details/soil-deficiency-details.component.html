@@ -51,7 +51,8 @@
     <div class="checkbox-container">
       <mat-checkbox
         [(ngModel)]="disableResearchFields"
-        [ngModelOptions]="{ standalone: true }">
+        [ngModelOptions]="{ standalone: true }"
+        (ngModelChange)="onResearchFieldsToggle($event)">
         {{ "forms.disableResearchFields" | translate }}
       </mat-checkbox>
     </div>

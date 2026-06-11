@@ -1,0 +1,290 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/NatureHelp/NatureHelp.csproj",
+      "language": "csproj",
+      "fileCategory": "config",
+      "totalLines": 63,
+      "nonEmptyLines": 58,
+      "metrics": {}
+    },
+    {
+      "path": "src/NatureHelp/appsettings.CI.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 20,
+      "nonEmptyLines": 20,
+      "sections": [
+        {
+          "heading": "ConnectionStrings",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "Redis",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "Serilog",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "src/NatureHelp/appsettings.Development.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 136,
+      "nonEmptyLines": 136,
+      "sections": [
+        {
+          "heading": "ConnectionStrings",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "AzureBlobStorage",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "Cors",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "EmailSettings",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "Frontend",
+          "level": 1,
+          "line": 24
+        },
+        {
+          "heading": "Payment",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "IpRateLimiting",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "Serilog",
+          "level": 1,
+          "line": 57
+        },
+        {
+          "heading": "AllowedHosts",
+          "level": 1,
+          "line": 116
+        },
+        {
+          "heading": "Logging",
+          "level": 1,
+          "line": 117
+        },
+        {
+          "heading": "Redis",
+          "level": 1,
+          "line": 123
+        },
+        {
+          "heading": "OAuth2",
+          "level": 1,
+          "line": 126
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "src/NatureHelp/appsettings.Local.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "ConnectionStrings",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "src/NatureHelp/appsettings.Production.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 123,
+      "nonEmptyLines": 123,
+      "sections": [
+        {
+          "heading": "ConnectionStrings",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "Cors",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "EmailSettings",
+          "level": 1,
+          "line": 14
+        },
+        {
+          "heading": "Frontend",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "Payment",
+          "level": 1,
+          "line": 24
+        },
+        {
+          "heading": "IpRateLimiting",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "Serilog",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "AllowedHosts",
+          "level": 1,
+          "line": 113
+        },
+        {
+          "heading": "Logging",
+          "level": 1,
+          "line": 114
+        },
+        {
+          "heading": "Redis",
+          "level": 1,
+          "line": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "src/NatureHelp/appsettings.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 149,
+      "nonEmptyLines": 149,
+      "sections": [
+        {
+          "heading": "ConnectionStrings",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "Cors",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "Frontend",
+          "level": 1,
+          "line": 14
+        },
+        {
+          "heading": "SuperAdmin",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "Payment",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "EmailSettings",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "IpRateLimiting",
+          "level": 1,
+          "line": 34
+        },
+        {
+          "heading": "Serilog",
+          "level": 1,
+          "line": 58
+        },
+        {
+          "heading": "AllowedHosts",
+          "level": 1,
+          "line": 122
+        },
+        {
+          "heading": "Logging",
+          "level": 1,
+          "line": 123
+        },
+        {
+          "heading": "Redis",
+          "level": 1,
+          "line": 129
+        },
+        {
+          "heading": "Profile",
+          "level": 1,
+          "line": 132
+        },
+        {
+          "heading": "OAuth2",
+          "level": 1,
+          "line": 139
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    }
+  ]
+}

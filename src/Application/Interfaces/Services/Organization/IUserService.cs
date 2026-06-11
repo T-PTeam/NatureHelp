@@ -9,7 +9,10 @@ public interface IUserService
     public Task<User> GetModelByEmail(string email);
     public Task<User?> ConfirmEmailByToken(string emailConfirmationToken);
 
-    public Task<ListData<User>> GetOrganizationUsers(Guid organizationId, int scrollCount);
+    public Task<ListData<User>> GetOrganizationUsers(
+        Guid organizationId,
+        int scrollCount,
+        IDictionary<string, string?>? filters = null);
     public Task<bool> ChangeUsersRoles(Dictionary<Guid, int> changedUsersRoles);
 
     public bool IsTokenExpired(string token);

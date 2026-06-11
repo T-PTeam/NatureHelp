@@ -10,6 +10,8 @@ describe("Login Dialog", () => {
 
     cy.get('button[type="submit"]').contains("Login").click();
 
+    cy.get('[data-cy="post-auth-welcome-dialog"]').should("exist");
+    cy.get("body").type("{esc}");
     cy.get("mat-dialog-container").should("not.exist");
   });
 });

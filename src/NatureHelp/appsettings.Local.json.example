@@ -2,7 +2,10 @@
   "ConnectionStrings": {
     "LocalConnection": "Host=localhost;Port=5432;Database=NatureHelpDB;Username=postgres;Password=YOUR_PASSWORD",
     "DefaultConnection": "Host=localhost;Port=5432;Database=NatureHelpDB;Username=postgres;Password=YOUR_PASSWORD",
-    "AzureBlobStorage": "DefaultEndpointsProtocol=https;AccountName=;AccountKey=;EndpointSuffix=core.windows.net"
+    "AzureBlobStorage": "UseDevelopmentStorage=true"
+  },
+  "AzureBlobStorage": {
+    "PublicBlobBaseUrl": "http://127.0.0.1:10000/devstoreaccount1"
   },
   "Cors": {
     "AllowedOrigins": [
@@ -39,5 +42,9 @@
       "AppId": "",
       "AppSecret": ""
     }
+  },
+  "SuperAdmin": {
+    "Email": "",
+    "Password": ""
   }
 }

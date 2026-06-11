@@ -1,0 +1,140 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 2,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/.dockerignore",
+      "language": "unknown",
+      "fileCategory": "infra",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/Dockerfile",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 31,
+      "nonEmptyLines": 25,
+      "services": [
+        {
+          "name": "amd64",
+          "image": "--platform=linux/amd64",
+          "ports": [],
+          "startLine": 1,
+          "endLine": 13
+        },
+        {
+          "name": "amd64",
+          "image": "--platform=linux/amd64",
+          "ports": [
+            80
+          ],
+          "startLine": 14,
+          "endLine": 31
+        }
+      ],
+      "steps": [
+        {
+          "name": "FROM --platform=linux/amd64 node:20 AS frontend-build",
+          "startLine": 1,
+          "endLine": 1
+        },
+        {
+          "name": "WORKDIR /usr/src/app",
+          "startLine": 2,
+          "endLine": 2
+        },
+        {
+          "name": "ARG ENVIRONMENT_FILE=environment.docker.ts",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "ARG API_BASE_URL=",
+          "startLine": 4,
+          "endLine": 4
+        },
+        {
+          "name": "COPY package.json package-lock.json ./",
+          "startLine": 5,
+          "endLine": 5
+        },
+        {
+          "name": "RUN npm install -g @angular/cli",
+          "startLine": 6,
+          "endLine": 6
+        },
+        {
+          "name": "RUN npm install --legacy-peer-deps",
+          "startLine": 7,
+          "endLine": 7
+        },
+        {
+          "name": "COPY . .",
+          "startLine": 8,
+          "endLine": 8
+        },
+        {
+          "name": "COPY src/environments/${ENVIRONMENT_FILE} src/environments/enviro",
+          "startLine": 9,
+          "endLine": 9
+        },
+        {
+          "name": "RUN if [ -n \"$API_BASE_URL\" ]; then printf 'export const environ",
+          "startLine": 10,
+          "endLine": 10
+        },
+        {
+          "name": "RUN npm run build -- --configuration=production --base-href /nat",
+          "startLine": 12,
+          "endLine": 12
+        },
+        {
+          "name": "FROM --platform=linux/amd64 nginx:alpine",
+          "startLine": 14,
+          "endLine": 14
+        },
+        {
+          "name": "RUN rm -rf /usr/share/nginx/html/*",
+          "startLine": 18,
+          "endLine": 18
+        },
+        {
+          "name": "RUN rm /etc/nginx/conf.d/default.conf",
+          "startLine": 21,
+          "endLine": 21
+        },
+        {
+          "name": "COPY nginx.conf /etc/nginx/conf.d/default.conf",
+          "startLine": 24,
+          "endLine": 24
+        },
+        {
+          "name": "COPY --from=frontend-build /usr/src/app/dist/ /usr/share/nginx/ht",
+          "startLine": 28,
+          "endLine": 28
+        },
+        {
+          "name": "EXPOSE 80",
+          "startLine": 30,
+          "endLine": 30
+        },
+        {
+          "name": "CMD [\"nginx\", \"-g\", \"daemon off;\"]",
+          "startLine": 31,
+          "endLine": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "serviceCount": 2,
+        "stepCount": 18
+      }
+    }
+  ]
+}

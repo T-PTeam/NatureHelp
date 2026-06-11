@@ -14,8 +14,8 @@ import { LanguageService } from "../../services/language.service";
 export class LanguageSwitcherComponent implements OnInit, OnDestroy {
   currentLanguage: string = "uk";
   languages = [
-    { code: "uk", name: "Українська", flag: "🇺🇦" },
-    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "uk", name: "Українська", flag: "🇺🇦", countryCode: "UA" },
+    { code: "en", name: "English", flag: "🇺🇸", countryCode: "US" },
   ];
   private routerSubscription: Subscription = new Subscription();
   private translateSubscription: Subscription = new Subscription();

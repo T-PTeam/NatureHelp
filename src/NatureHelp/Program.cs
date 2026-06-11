@@ -1,5 +1,6 @@
 using Application.Providers;
 using AspNetCoreRateLimit;
+using Azure.Storage;
 using Azure.Storage.Blobs;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -16,13 +17,19 @@ using NatureHelp.Security;
 using Npgsql;
 using Serilog;
 using StackExchange.Redis;
-using System.IO;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Text.Json.Serialization;
+using Microsoft.Extensions.FileProviders;
 using Prometheus;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true);
+
+if (!File.Exists("/.dockerenv"))
+{
+    builder.Configuration.AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true);
+}
 
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
 
@@ -266,12 +273,73 @@ builder.Services.Configure<RouteOptions>(options =>
     options.LowercaseUrls = true;
 });
 
+BlobClientOptions CreateAzuriteBlobClientOptions() =>
+    new(BlobClientOptions.ServiceVersion.V2021_04_10);
+
+BlobServiceClient CreateAzuriteCompatibleBlobServiceClient(string? connectionString)
+{
+    if (string.IsNullOrWhiteSpace(connectionString))
+        throw new InvalidOperationException("AzureBlobStorage connection string is not configured.");
+
+    connectionString = ResolveAzuriteHostToIp(connectionString);
+    var options = CreateAzuriteBlobClientOptions();
+
+    if (connectionString.Contains("BlobEndpoint=", StringComparison.OrdinalIgnoreCase))
+    {
+        var settings = ParseBlobConnectionString(connectionString);
+        var serviceUri = new Uri(settings["BlobEndpoint"]);
+        return new BlobServiceClient(
+            serviceUri,
+            new StorageSharedKeyCredential(settings["AccountName"], settings["AccountKey"]),
+            options);
+    }
+
+    return new BlobServiceClient(connectionString, options);
+}
+
+static string ResolveAzuriteHostToIp(string connectionString)
+{
+    const string azuriteHost = "azurite";
+    if (!connectionString.Contains(azuriteHost, StringComparison.OrdinalIgnoreCase))
+        return connectionString;
+
+    try
+    {
+        var azuriteIp = Dns.GetHostEntry(azuriteHost)
+            .AddressList
+            .First(address => address.AddressFamily == AddressFamily.InterNetwork)
+            .ToString();
+
+        return connectionString.Replace(azuriteHost, azuriteIp, StringComparison.OrdinalIgnoreCase);
+    }
+    catch
+    {
+        return connectionString;
+    }
+}
+
+static Dictionary<string, string> ParseBlobConnectionString(string connectionString)
+{
+    var settings = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+    foreach (var part in connectionString.Split(';', StringSplitOptions.RemoveEmptyEntries))
+    {
+        var separatorIndex = part.IndexOf('=');
+        if (separatorIndex <= 0)
+            continue;
+
+        settings[part[..separatorIndex]] = part[(separatorIndex + 1)..];
+    }
+
+    return settings;
+}
+
 if (builder.Environment.IsEnvironment("Testing"))
 {
     builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
         ConnectionMultiplexer.Connect("127.0.0.1:6379,abortConnect=false"));
     builder.Services.AddSingleton(_ =>
-        new BlobServiceClient("UseDevelopmentStorage=true"));
+        CreateAzuriteCompatibleBlobServiceClient("UseDevelopmentStorage=true"));
 }
 else
 {
@@ -284,16 +352,36 @@ else
         return ConnectionMultiplexer.Connect(configuration);
     });
 
-    builder.Services.AddSingleton(_ =>
+    if (!builder.Configuration.GetValue("BlobStorage:UseLocalFiles", false))
     {
-        var blobConnectionString = builder.Configuration.GetConnectionString("AzureBlobStorage");
-        return new BlobServiceClient(blobConnectionString);
-    });
+        builder.Services.AddSingleton(_ =>
+        {
+            var blobConnectionString = builder.Configuration.GetConnectionString("AzureBlobStorage");
+            var useAzuriteCompat = builder.Environment.IsDevelopment()
+                || builder.Environment.IsEnvironment("CI");
+
+            return useAzuriteCompat
+                ? CreateAzuriteCompatibleBlobServiceClient(blobConnectionString!)
+                : new BlobServiceClient(blobConnectionString);
+        });
+    }
 }
 
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();
+
+if (builder.Configuration.GetValue("BlobStorage:UseLocalFiles", false))
+{
+    var localBlobPath = builder.Configuration["BlobStorage:LocalPath"]
+        ?? Path.Combine(app.Environment.ContentRootPath, "blob-storage");
+    Directory.CreateDirectory(localBlobPath);
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(localBlobPath),
+        RequestPath = "/blob-storage",
+    });
+}
 
 if (!app.Environment.IsDevelopment() && !app.Environment.IsEnvironment("Testing") && !app.Environment.IsEnvironment("CI"))
 {
@@ -365,7 +453,8 @@ if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("CI"))
         }
     }
 }
-else if (!app.Environment.IsEnvironment("Testing"))
+
+if (!app.Environment.IsEnvironment("Testing"))
 {
     using (var scope = app.Services.CreateScope())
     {

@@ -1,0 +1,55 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 82,
+      "nonEmptyLines": 69,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/auth-dialog.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 121,
+      "nonEmptyLines": 115,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/password-reset-dialog.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/password-reset-dialog.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 71,
+      "nonEmptyLines": 69,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/send-reset-link-dialog.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 42,
+      "nonEmptyLines": 41,
+      "metrics": {}
+    }
+  ]
+}

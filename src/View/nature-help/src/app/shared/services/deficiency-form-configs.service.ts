@@ -10,17 +10,35 @@ import { IDeficiencyFormConfig } from "@/shared/models/IDeficiencyFormConfig";
 export class WaterDeficiencyFormConfig implements IDeficiencyFormConfig {
   deficiencyType = EDeficiencyType.Water;
 
+  researchFieldNames = [
+    "ph",
+    "dissolvedOxygen",
+    "leadConcentration",
+    "mercuryConcentration",
+    "nitrateConcentration",
+    "pesticidesContent",
+    "microbialActivity",
+    "radiationLevel",
+    "chemicalOxygenDemand",
+    "biologicalOxygenDemand",
+    "phosphateConcentration",
+    "cadmiumConcentration",
+    "totalDissolvedSolids",
+    "electricalConductivity",
+    "microbialLoad",
+  ];
+
   getSpecificFormFields(deficiency: IWaterDeficiency | null, currentUser: IUser | null): any {
     return {
       ph: [deficiency?.ph || 0, [Validators.required, Validators.min(0), Validators.max(14)]],
       dissolvedOxygen: [deficiency?.dissolvedOxygen || 0, [Validators.required, Validators.min(0), Validators.max(20)]],
       leadConcentration: [
         deficiency?.leadConcentration || 0,
-        [Validators.required, Validators.min(0), Validators.max(0.01)],
+        [Validators.required, Validators.min(0), Validators.max(0.02)],
       ],
       mercuryConcentration: [
         deficiency?.mercuryConcentration || 0,
-        [Validators.required, Validators.min(0), Validators.max(0.001)],
+        [Validators.required, Validators.min(0), Validators.max(0.01)],
       ],
       nitrateConcentration: [
         deficiency?.nitrateConcentration || 0,
@@ -28,13 +46,13 @@ export class WaterDeficiencyFormConfig implements IDeficiencyFormConfig {
       ],
       pesticidesContent: [
         deficiency?.pesticidesContent || 0,
-        [Validators.required, Validators.min(0), Validators.max(0.005)],
+        [Validators.required, Validators.min(0), Validators.max(0.1)],
       ],
       microbialActivity: [
         deficiency?.microbialActivity || 0,
         [Validators.required, Validators.min(0), Validators.max(1000)],
       ],
-      radiationLevel: [deficiency?.radiationLevel || 0, [Validators.required, Validators.min(0), Validators.max(10)]],
+      radiationLevel: [deficiency?.radiationLevel || 0, [Validators.required, Validators.min(0), Validators.max(50)]],
       chemicalOxygenDemand: [
         deficiency?.chemicalOxygenDemand || 0,
         [Validators.required, Validators.min(0), Validators.max(1000)],
@@ -45,11 +63,11 @@ export class WaterDeficiencyFormConfig implements IDeficiencyFormConfig {
       ],
       phosphateConcentration: [
         deficiency?.phosphateConcentration || 0,
-        [Validators.required, Validators.min(0), Validators.max(2)],
+        [Validators.required, Validators.min(0), Validators.max(10)],
       ],
       cadmiumConcentration: [
         deficiency?.cadmiumConcentration || 0,
-        [Validators.required, Validators.min(0), Validators.max(0.005)],
+        [Validators.required, Validators.min(0), Validators.max(0.01)],
       ],
       totalDissolvedSolids: [
         deficiency?.totalDissolvedSolids || 0,
@@ -59,13 +77,27 @@ export class WaterDeficiencyFormConfig implements IDeficiencyFormConfig {
         deficiency?.electricalConductivity || 0,
         [Validators.required, Validators.min(0), Validators.max(2500)],
       ],
-      microbialLoad: [deficiency?.microbialLoad || 0, [Validators.required, Validators.min(0), Validators.max(2000)]],
+      microbialLoad: [deficiency?.microbialLoad || 0, [Validators.required, Validators.min(0), Validators.max(5000)]],
     };
   }
 }
 
 export class SoilDeficiencyFormConfig implements IDeficiencyFormConfig {
   deficiencyType = EDeficiencyType.Soil;
+
+  researchFieldNames = [
+    "ph",
+    "organicMatter",
+    "leadConcentration",
+    "cadmiumConcentration",
+    "mercuryConcentration",
+    "pesticidesContent",
+    "nitrateConcentration",
+    "heavyMetalsConcentration",
+    "electricalConductivity",
+    "microbialActivity",
+    "analysisDate",
+  ];
 
   getSpecificFormFields(deficiency: ISoilDeficiency | null, currentUser: IUser | null): any {
     return {

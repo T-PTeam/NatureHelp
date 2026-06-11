@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/app.component.css",
+      "type": "file",
+      "name": "app.component.css",
+      "filePath": "src/View/nature-help/src/app/app.component.css",
+      "summary": "app.component.css is a css markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/app.component.html",
+      "type": "file",
+      "name": "app.component.html",
+      "filePath": "src/View/nature-help/src/app/app.component.html",
+      "summary": "app.component.html is a html markup module in NatureHelp.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/styles.css",
+      "type": "file",
+      "name": "styles.css",
+      "filePath": "src/View/nature-help/src/app/styles.css",
+      "summary": "styles.css is a css markup module in NatureHelp.",
+      "tags": [
+        "markup"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,72 @@
+{
+  "nodes": [
+    {
+      "id": "config:src/View/nature-help/angular.json",
+      "type": "config",
+      "name": "angular.json",
+      "filePath": "src/View/nature-help/angular.json",
+      "summary": "Configuration for src/View/nature-help build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:src/View/nature-help/firebase.json",
+      "type": "config",
+      "name": "firebase.json",
+      "filePath": "src/View/nature-help/firebase.json",
+      "summary": "Configuration for src/View/nature-help build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/View/nature-help/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "src/View/nature-help/package.json",
+      "summary": "Configuration for src/View/nature-help build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:src/View/nature-help/tsconfig.app.json",
+      "type": "config",
+      "name": "tsconfig.app.json",
+      "filePath": "src/View/nature-help/tsconfig.app.json",
+      "summary": "Configuration for src/View/nature-help build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/View/nature-help/tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "src/View/nature-help/tsconfig.json",
+      "summary": "Configuration for src/View/nature-help build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:src/View/nature-help/tsconfig.spec.json",
+      "type": "config",
+      "name": "tsconfig.spec.json",
+      "filePath": "src/View/nature-help/tsconfig.spec.json",
+      "summary": "Configuration for src/View/nature-help build or runtime settings.",
+      "tags": [
+        "test",
+        "configuration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

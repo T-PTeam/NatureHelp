@@ -4,6 +4,14 @@
 
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
+:root {
+  --color-primary: #3f51b5;
+  --color-primary-rgb: 63, 81, 181;
+  --color-secondary: #388e3c;
+  --color-secondary-rgb: 56, 142, 60;
+  --mat-sys-primary: var(--color-primary);
+}
+
 html,
 body {
   height: 100%;

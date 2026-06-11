@@ -1,0 +1,1419 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/View/nature-help/src/app/models/ICoordinates.ts",
+      "type": "file",
+      "name": "ICoordinates.ts",
+      "filePath": "src/View/nature-help/src/app/models/ICoordinates.ts",
+      "summary": "ICoordinates.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/IDeficiencyMapDto.ts",
+      "type": "file",
+      "name": "IDeficiencyMapDto.ts",
+      "filePath": "src/View/nature-help/src/app/models/IDeficiencyMapDto.ts",
+      "summary": "IDeficiencyMapDto.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/models/IMonitoringScheme.ts",
+      "type": "file",
+      "name": "IMonitoringScheme.ts",
+      "filePath": "src/View/nature-help/src/app/models/IMonitoringScheme.ts",
+      "summary": "IMonitoringScheme.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "type": "file",
+      "name": "labs-table.cy.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "summary": "labs-table.cy.ts provides 1 function(s) used by surrounding modules.",
+      "tags": [
+        "test",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts:HttpLoaderFactory",
+      "type": "function",
+      "name": "HttpLoaderFactory",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "summary": "Function HttpLoaderFactory in labs-table.cy.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryMapDto.ts",
+      "type": "file",
+      "name": "ILaboratoryMapDto.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryMapDto.ts",
+      "summary": "ILaboratoryMapDto.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/laboratories/models/IResearcherDto.ts",
+      "type": "file",
+      "name": "IResearcherDto.ts",
+      "filePath": "src/View/nature-help/src/app/modules/laboratories/models/IResearcherDto.ts",
+      "summary": "IResearcherDto.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "type": "file",
+      "name": "soil-deficiency-table.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "summary": "soil-deficiency-table.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts:SoilDeficiencyTable",
+      "type": "class",
+      "name": "SoilDeficiencyTable",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "summary": "Class SoilDeficiencyTable with 9 method(s) in soil-deficiency-table.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "type": "file",
+      "name": "soil-deficiency-table.cy.ts",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "summary": "soil-deficiency-table.cy.ts provides 1 function(s) used by surrounding modules.",
+      "tags": [
+        "test",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts:HttpLoaderFactory",
+      "type": "function",
+      "name": "HttpLoaderFactory",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "summary": "Function HttpLoaderFactory in soil-deficiency-table.cy.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiencyFilter.ts",
+      "type": "file",
+      "name": "ISoilDeficiencyFilter.ts",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiencyFilter.ts",
+      "summary": "ISoilDeficiencyFilter.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "file",
+      "name": "soil-api.service.ts",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "summary": "soil-api.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts:SoilAPIService",
+      "type": "class",
+      "name": "SoilAPIService",
+      "filePath": "src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "summary": "Class SoilAPIService with 7 method(s) in soil-api.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "type": "file",
+      "name": "water-deficiency-table.component.ts",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "summary": "water-deficiency-table.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts:WaterDeficiencyTable",
+      "type": "class",
+      "name": "WaterDeficiencyTable",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "summary": "Class WaterDeficiencyTable with 9 method(s) in water-deficiency-table.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "type": "file",
+      "name": "water-deficiency-table.cy.ts",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "summary": "water-deficiency-table.cy.ts provides 1 function(s) used by surrounding modules.",
+      "tags": [
+        "test",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts:HttpLoaderFactory",
+      "type": "function",
+      "name": "HttpLoaderFactory",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "summary": "Function HttpLoaderFactory in water-deficiency-table.cy.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiencyFilter.ts",
+      "type": "file",
+      "name": "IWaterDeficiencyFilter.ts",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiencyFilter.ts",
+      "summary": "IWaterDeficiencyFilter.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "file",
+      "name": "water-api.service.ts",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "summary": "water-api.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts:WaterAPIService",
+      "type": "class",
+      "name": "WaterAPIService",
+      "filePath": "src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "summary": "Class WaterAPIService with 6 method(s) in water-api.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "type": "file",
+      "name": "loading-indicator.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "summary": "loading-indicator.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts:LoadingIndicatorComponent",
+      "type": "class",
+      "name": "LoadingIndicatorComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "summary": "Class LoadingIndicatorComponent with 0 method(s) in loading-indicator.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts",
+      "type": "file",
+      "name": "main-map.component.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts",
+      "summary": "main-map.component.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts:MapComponent",
+      "type": "class",
+      "name": "MapComponent",
+      "filePath": "src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts",
+      "summary": "Class MapComponent with 2 method(s) in main-map.component.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "type": "file",
+      "name": "main-map.cy.ts",
+      "filePath": "src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "summary": "main-map.cy.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "test",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/helpers/enum-helper.ts",
+      "type": "file",
+      "name": "enum-helper.ts",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/enum-helper.ts",
+      "summary": "enum-helper.ts provides 1 function(s) used by surrounding modules.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/View/nature-help/src/app/shared/helpers/enum-helper.ts:enumToSelectOptions",
+      "type": "function",
+      "name": "enumToSelectOptions",
+      "filePath": "src/View/nature-help/src/app/shared/helpers/enum-helper.ts",
+      "summary": "Function enumToSelectOptions in enum-helper.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/models/ISelectOption.ts",
+      "type": "file",
+      "name": "ISelectOption.ts",
+      "filePath": "src/View/nature-help/src/app/shared/models/ISelectOption.ts",
+      "summary": "ISelectOption.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.cy.ts",
+      "type": "file",
+      "name": "enum-to-string.cy.ts",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/enum-to-string.cy.ts",
+      "summary": "enum-to-string.cy.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "type": "file",
+      "name": "enum-to-string.pipe.ts",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "summary": "enum-to-string.pipe.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts:EnumToStringPipe",
+      "type": "class",
+      "name": "EnumToStringPipe",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "summary": "Class EnumToStringPipe with 1 method(s) in enum-to-string.pipe.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.cy.ts",
+      "type": "file",
+      "name": "lab-researchers.cy.ts",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/lab-researchers.cy.ts",
+      "summary": "lab-researchers.cy.ts is a typescript code module in NatureHelp.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "type": "file",
+      "name": "lab-researchers.pipe.ts",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "summary": "lab-researchers.pipe.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts:LabResearchersPipe",
+      "type": "class",
+      "name": "LabResearchersPipe",
+      "filePath": "src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "summary": "Class LabResearchersPipe with 1 method(s) in lab-researchers.pipe.ts.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "type": "file",
+      "name": "audit.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "summary": "audit.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/audit.service.ts:AuditService",
+      "type": "class",
+      "name": "AuditService",
+      "filePath": "src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "summary": "Class AuditService with 4 method(s) in audit.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "file",
+      "name": "loading.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "summary": "loading.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/loading.service.ts:LoadingService",
+      "type": "class",
+      "name": "LoadingService",
+      "filePath": "src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "summary": "Class LoadingService with 4 method(s) in loading.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "file",
+      "name": "map-view.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "summary": "map-view.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/map-view.service.ts:MapViewService",
+      "type": "class",
+      "name": "MapViewService",
+      "filePath": "src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "summary": "Class MapViewService with 29 method(s) in map-view.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "type": "file",
+      "name": "report-api.service.ts",
+      "filePath": "src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "summary": "report-api.service.ts defines 1 class(es) for the application domain.",
+      "tags": [
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/View/nature-help/src/app/shared/services/report-api.service.ts:ReportAPIService",
+      "type": "class",
+      "name": "ReportAPIService",
+      "filePath": "src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "summary": "Class ReportAPIService with 4 method(s) in report-api.service.ts.",
+      "tags": [
+        "class",
+        "service"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/View/nature-help/src/app/models/IDeficiencyMapDto.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "target": "function:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts:HttpLoaderFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts",
+      "target": "function:src/View/nature-help/src/app/modules/laboratories/components/labs-table/labs-table.cy.ts:HttpLoaderFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryMapDto.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/IResearcherDto.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiencyFilter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/enum-helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ISelectOption.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts:SoilDeficiencyTable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts:SoilDeficiencyTable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "function:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts:HttpLoaderFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts",
+      "target": "function:src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-table/soil-deficiency-table.cy.ts:HttpLoaderFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiencyFilter.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiencyMapDto.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiencyFilter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/IListData.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts:SoilAPIService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts:SoilAPIService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiencyFilter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/enum-helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ISelectOption.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts:WaterDeficiencyTable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "target": "class:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts:WaterDeficiencyTable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/user-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "function:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts:HttpLoaderFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts",
+      "target": "function:src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-table/water-deficiency-table.cy.ts:HttpLoaderFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiencyFilter.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiencyMapDto.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiency.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiencyFilter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/helpers/table-sort.helper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/IListData.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/models/ITableSort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts:WaterAPIService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts:WaterAPIService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts:LoadingIndicatorComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/loading-indicator/loading-indicator.component.ts:LoadingIndicatorComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts:MapComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts",
+      "target": "class:src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts:MapComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.component.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/components/main-map/main-map.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/enum-helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/enum-helper.ts:enumToSelectOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/helpers/enum-helper.ts",
+      "target": "function:src/View/nature-help/src/app/shared/helpers/enum-helper.ts:enumToSelectOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.cy.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "target": "class:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts:EnumToStringPipe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts",
+      "target": "class:src/View/nature-help/src/app/shared/pipes/enum-to-string.pipe.ts:EnumToStringPipe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.cy.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.cy.ts",
+      "target": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "target": "file:src/View/nature-help/src/app/models/IUser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "target": "class:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts:LabResearchersPipe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts",
+      "target": "class:src/View/nature-help/src/app/shared/pipes/lab-researchers.pipe.ts:LabResearchersPipe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IChangedModelLog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IMonitoringScheme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/audit.service.ts:AuditService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/audit.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/audit.service.ts:AuditService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/loading.service.ts:LoadingService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/loading.service.ts:LoadingService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/enums.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/ICoordinates.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "target": "file:src/View/nature-help/src/app/models/IDeficiencyMapDto.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/models/ILaboratoryMapDto.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/laboratories/services/labs-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/soil-deficiency/services/soil-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "target": "file:src/View/nature-help/src/app/modules/water-deficiency/services/water-api.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/map-view.service.ts:MapViewService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/map-view.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/map-view.service.ts:MapViewService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "target": "file:src/View/nature-help/src/app/shared/services/loading.service.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/report-api.service.ts:ReportAPIService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/View/nature-help/src/app/shared/services/report-api.service.ts",
+      "target": "class:src/View/nature-help/src/app/shared/services/report-api.service.ts:ReportAPIService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

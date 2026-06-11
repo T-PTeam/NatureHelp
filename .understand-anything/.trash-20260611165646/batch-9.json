@@ -1,0 +1,474 @@
+{
+  "nodes": [
+    {
+      "id": "service:.dockerignore",
+      "type": "service",
+      "name": ".dockerignore",
+      "filePath": ".dockerignore",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (.dockerignore).",
+      "tags": [
+        "infra"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:docker-compose.dev.yml",
+      "type": "service",
+      "name": "docker-compose.dev.yml",
+      "filePath": "docker-compose.dev.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (docker-compose.dev.yml).",
+      "tags": [
+        "infrastructure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:docker-compose.do.yml",
+      "type": "service",
+      "name": "docker-compose.do.yml",
+      "filePath": "docker-compose.do.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (docker-compose.do.yml).",
+      "tags": [
+        "infrastructure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:docker-compose.local-db.yml",
+      "type": "service",
+      "name": "docker-compose.local-db.yml",
+      "filePath": "docker-compose.local-db.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (docker-compose.local-db.yml).",
+      "tags": [
+        "infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:docker-compose.prod.yml",
+      "type": "service",
+      "name": "docker-compose.prod.yml",
+      "filePath": "docker-compose.prod.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (docker-compose.prod.yml).",
+      "tags": [
+        "infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:docker-compose.stage.yml",
+      "type": "service",
+      "name": "docker-compose.stage.yml",
+      "filePath": "docker-compose.stage.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (docker-compose.stage.yml).",
+      "tags": [
+        "infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:docker-compose.yml",
+      "type": "service",
+      "name": "docker-compose.yml",
+      "filePath": "docker-compose.yml",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (docker-compose.yml).",
+      "tags": [
+        "infrastructure"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "service:Dockerfile",
+      "type": "service",
+      "name": "Dockerfile",
+      "filePath": "Dockerfile",
+      "summary": "Infrastructure definition for deployment, CI/CD, or container orchestration (Dockerfile).",
+      "tags": [
+        "infrastructure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS backend-build",
+      "type": "pipeline",
+      "name": "FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS backend-build",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS backend-build in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:WORKDIR /app",
+      "type": "pipeline",
+      "name": "WORKDIR /app",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step WORKDIR /app in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:ENV ASPNETCORE_URLS=http://0.0.0.0:5000",
+      "type": "pipeline",
+      "name": "ENV ASPNETCORE_URLS=http://0.0.0.0:5000",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step ENV ASPNETCORE_URLS=http://0.0.0.0:5000 in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:COPY NatureHelp.sln ./NatureHelp/",
+      "type": "pipeline",
+      "name": "COPY NatureHelp.sln ./NatureHelp/",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step COPY NatureHelp.sln ./NatureHelp/ in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:COPY ./src/NatureHelp/NatureHelp.csproj ./src/NatureHelp/",
+      "type": "pipeline",
+      "name": "COPY ./src/NatureHelp/NatureHelp.csproj ./src/NatureHelp/",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step COPY ./src/NatureHelp/NatureHelp.csproj ./src/NatureHelp/ in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:COPY ./src/Application ./src/Application",
+      "type": "pipeline",
+      "name": "COPY ./src/Application ./src/Application",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step COPY ./src/Application ./src/Application in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:COPY ./src/Domain ./src/Domain",
+      "type": "pipeline",
+      "name": "COPY ./src/Domain ./src/Domain",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step COPY ./src/Domain ./src/Domain in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:COPY ./src/Infrastructure ./src/Infrastructure",
+      "type": "pipeline",
+      "name": "COPY ./src/Infrastructure ./src/Infrastructure",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step COPY ./src/Infrastructure ./src/Infrastructure in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:COPY ./src/Shared ./src/Shared",
+      "type": "pipeline",
+      "name": "COPY ./src/Shared ./src/Shared",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step COPY ./src/Shared ./src/Shared in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:COPY ./src/NatureHelp ./src/NatureHelp",
+      "type": "pipeline",
+      "name": "COPY ./src/NatureHelp ./src/NatureHelp",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step COPY ./src/NatureHelp ./src/NatureHelp in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:RUN dotnet restore \"./src/NatureHelp/NatureHelp.csproj\"",
+      "type": "pipeline",
+      "name": "RUN dotnet restore \"./src/NatureHelp/NatureHelp.csproj\"",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step RUN dotnet restore \"./src/NatureHelp/NatureHelp.csproj\" in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:RUN dotnet publish \"./src/NatureHelp/NatureHelp.csproj\" -c Relea",
+      "type": "pipeline",
+      "name": "RUN dotnet publish \"./src/NatureHelp/NatureHelp.csproj\" -c Relea",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step RUN dotnet publish \"./src/NatureHelp/NatureHelp.csproj\" -c Relea in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS backend",
+      "type": "pipeline",
+      "name": "FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS backend",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS backend in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:RUN apk add --no-cache curl icu-libs",
+      "type": "pipeline",
+      "name": "RUN apk add --no-cache curl icu-libs",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step RUN apk add --no-cache curl icu-libs in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:WORKDIR /app",
+      "type": "pipeline",
+      "name": "WORKDIR /app",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step WORKDIR /app in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:COPY --from=backend-build /out .",
+      "type": "pipeline",
+      "name": "COPY --from=backend-build /out .",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step COPY --from=backend-build /out . in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:EXPOSE 5000",
+      "type": "pipeline",
+      "name": "EXPOSE 5000",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step EXPOSE 5000 in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:Dockerfile:ENTRYPOINT [\"dotnet\", \"NatureHelp.dll\"]",
+      "type": "pipeline",
+      "name": "ENTRYPOINT [\"dotnet\", \"NatureHelp.dll\"]",
+      "filePath": "Dockerfile",
+      "summary": "CI/CD step ENTRYPOINT [\"dotnet\", \"NatureHelp.dll\"] in Dockerfile.",
+      "tags": [
+        "ci-cd",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:Dockerfile:backend-build",
+      "type": "service",
+      "name": "backend-build",
+      "filePath": "Dockerfile",
+      "summary": "Service backend-build defined in Dockerfile.",
+      "tags": [
+        "infrastructure",
+        "containerization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:Dockerfile:backend",
+      "type": "service",
+      "name": "backend",
+      "filePath": "Dockerfile",
+      "summary": "Service backend defined in Dockerfile.",
+      "tags": [
+        "infrastructure",
+        "containerization"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS backend-build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:WORKDIR /app",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:ENV ASPNETCORE_URLS=http://0.0.0.0:5000",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:COPY NatureHelp.sln ./NatureHelp/",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:COPY ./src/NatureHelp/NatureHelp.csproj ./src/NatureHelp/",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:COPY ./src/Application ./src/Application",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:COPY ./src/Domain ./src/Domain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:COPY ./src/Infrastructure ./src/Infrastructure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:COPY ./src/Shared ./src/Shared",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:COPY ./src/NatureHelp ./src/NatureHelp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:RUN dotnet restore \"./src/NatureHelp/NatureHelp.csproj\"",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:RUN dotnet publish \"./src/NatureHelp/NatureHelp.csproj\" -c Relea",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS backend",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:RUN apk add --no-cache curl icu-libs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:WORKDIR /app",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:COPY --from=backend-build /out .",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:EXPOSE 5000",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "step:Dockerfile:ENTRYPOINT [\"dotnet\", \"NatureHelp.dll\"]",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "service:Dockerfile:backend-build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "service:Dockerfile:backend",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

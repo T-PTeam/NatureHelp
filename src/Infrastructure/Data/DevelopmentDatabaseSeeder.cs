@@ -3,360 +3,491 @@ using Domain.Models.Analitycs;
 using Domain.Models.Nature;
 using Domain.Models.Organization;
 using Domain.Models.Profile;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using static Infrastructure.Data.DevelopmentSeedData;
 
 namespace Infrastructure.Data;
 
 public class DevelopmentDatabaseSeeder : IDevelopmentDatabaseSeeder
 {
-    private static readonly Guid SeedActorId = Guid.Parse("11112222-3333-4444-5555-666677778888");
-    private static readonly Guid OrgGlobalResearch = Guid.Parse("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb");
-    private static readonly Guid OrgTechHub = Guid.Parse("cccccccc-cccc-cccc-cccc-cccccccccccc");
-    private static readonly Guid LabBiomedical = Guid.Parse("dddddddd-dddd-dddd-dddd-dddddddddddd");
-    private static readonly Guid LabAi = Guid.Parse("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee");
-    private static readonly Guid LabGenetics = Guid.Parse("ffffffff-ffff-ffff-ffff-ffffffffffff");
-    private static readonly Guid UserValentynId = Guid.Parse("11112222-3333-4444-5555-666677778888");
-    private static readonly Guid UserIgorZId = Guid.Parse("99990000-aaaa-bbbb-cccc-ddddeeeeffff");
-    private static readonly Guid UserKaterynaId = Guid.Parse("11223344-5566-7788-99aa-bbccddeeff00");
-
-    private const string HashValentyn =
-        "AQAAAAIAAYagAAAAECguO79y3aAyVPpzpWncaB4IYu9PYjpnVFccaS8craV/lS2/wsFIdGgP3zt57jcgng==";
-    private const string HashIgorZayets =
-        "AQAAAAIAAYagAAAAEAvDOvE1RJIgnTiRC1b1t8ovIg71oxhDmkd+tdUk85PBDMsoLY1lk5hiNFi2OI54yw==";
-    private const string HashIgorExample =
-        "AQAAAAIAAYagAAAAEKxFyghqrxHSumgKLFEzw7dG6LzDHXmxeuQErcXaVxRD8l7pFWl/gJI94vUXdtBUHw==";
+    private static readonly PasswordHasher<User> PasswordHasher = new();
 
     private readonly IDbContextFactory<ApplicationContext> _contextFactory;
+    private readonly IConfiguration _configuration;
 
-    public DevelopmentDatabaseSeeder(IDbContextFactory<ApplicationContext> contextFactory)
+    public DevelopmentDatabaseSeeder(
+        IDbContextFactory<ApplicationContext> contextFactory,
+        IConfiguration configuration)
     {
         _contextFactory = contextFactory;
+        _configuration = configuration;
     }
 
     public async Task SeedAsync(CancellationToken cancellationToken = default)
     {
         await using var context = await _contextFactory.CreateDbContextAsync(cancellationToken);
         await EnsureLevelThresholdsDictAsync(context, cancellationToken);
-        if (await context.Organizations.AnyAsync(o => o.Id == OrgGlobalResearch, cancellationToken))
+
+        if (!await context.Organizations.AnyAsync(o => o.Id == OrgUkrainianInstitute, cancellationToken))
         {
-            return;
+            await SeedBaseDataAsync(context, cancellationToken);
         }
 
-        var t0 = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(8020);
-        var t1 = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(8414);
+        await EnsureBulkDataAsync(context, cancellationToken);
+        await EnsureSeedOwnerRolesAsync(context, cancellationToken);
+    }
 
-        var orgGlobal = new Organization
-        {
-            Id = OrgGlobalResearch,
-            Title = "Global Research Institute",
-            CreatedBy = SeedActorId,
-            CreatedOn = t0,
-            AllowedMembersCount = 11,
-        };
-        var orgTech = new Organization
-        {
-            Id = OrgTechHub,
-            Title = "International Tech Hub",
-            CreatedBy = SeedActorId,
-            CreatedOn = t1,
-            AllowedMembersCount = 11,
-        };
-        context.Organizations.AddRange(orgGlobal, orgTech);
+    private static async Task SeedBaseDataAsync(ApplicationContext context, CancellationToken cancellationToken)
+    {
+        var seedTime = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc);
 
-        var labBio = new Laboratory
+        foreach (var organization in Organizations)
         {
-            Id = LabBiomedical,
-            Title = "Biomedical Research Lab",
-            CreatedBy = SeedActorId,
-            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(8668),
-            Latitude = 50.4501,
-            Longitude = 30.5234,
-            Address = "Kyiv, Ukraine",
-            IsPublic = true,
-        };
-        var labAi = new Laboratory
-        {
-            Id = LabAi,
-            Title = "AI and Machine Learning Lab",
-            CreatedBy = SeedActorId,
-            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(9007),
-            Latitude = 52.52,
-            Longitude = 13.405,
-            Address = "Berlin, Germany",
-            IsPublic = true,
-        };
-        var labGen = new Laboratory
-        {
-            Id = LabGenetics,
-            Title = "Genetics and Biotechnology Lab",
-            CreatedBy = SeedActorId,
-            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(9011),
-            Latitude = 40.7128,
-            Longitude = -74.006,
-            Address = "New York, USA",
-            IsPublic = true,
-        };
-        context.Laboratories.AddRange(labBio, labAi, labGen);
+            context.Organizations.Add(new Organization
+            {
+                Id = organization.Id,
+                Title = organization.Title,
+                CreatedBy = SeedActorId,
+                CreatedOn = seedTime,
+                AllowedMembersCount = organization.AllowedMembersCount,
+            });
+        }
 
-        var uValentyn = new User
+        foreach (var laboratory in Laboratories)
         {
-            Id = UserValentynId,
-            FirstName = "Valentyn",
-            LastName = "Riabinchak",
-            DateOfBirth = new DateTime(1985, 5, 19, 21, 0, 0, DateTimeKind.Utc),
-            PhoneNumber = "+380501234567",
-            Email = "valentyn@example.com",
-            PasswordHash = HashValentyn,
-            LaboratoryId = LabBiomedical,
-            OrganizationId = OrgGlobalResearch,
-            CreatedBy = UserValentynId,
-            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 480, DateTimeKind.Utc).AddTicks(9649),
-            IsEmailConfirmed = true,
-        };
-        uValentyn.AssignRole(ERole.Supervisor);
+            context.Laboratories.Add(new Laboratory
+            {
+                Id = laboratory.Id,
+                Title = laboratory.Title,
+                CreatedBy = SeedActorId,
+                CreatedOn = seedTime,
+                Latitude = laboratory.Latitude,
+                Longitude = laboratory.Longitude,
+                Address = laboratory.Address,
+                IsPublic = true,
+            });
+        }
 
-        var uIgorZ = new User
+        foreach (var coreUser in CoreUsers)
         {
-            Id = UserIgorZId,
-            FirstName = "Valentyn",
-            LastName = "Riabinchak",
-            DateOfBirth = new DateTime(1990, 7, 14, 21, 0, 0, DateTimeKind.Utc),
-            PhoneNumber = "+380631234567",
-            Email = "igorzayets@example.com",
-            PasswordHash = HashIgorZayets,
-            LaboratoryId = LabAi,
-            OrganizationId = OrgTechHub,
-            CreatedBy = SeedActorId,
-            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 536, DateTimeKind.Utc).AddTicks(4675),
-            IsEmailConfirmed = true,
-        };
-        uIgorZ.AssignRole(ERole.Supervisor);
-
-        var uKateryna = new User
-        {
-            Id = UserKaterynaId,
-            FirstName = "Igor",
-            LastName = "Zaitsev",
-            DateOfBirth = new DateTime(1980, 3, 9, 22, 0, 0, DateTimeKind.Utc),
-            PhoneNumber = "+49 17612345678",
-            Email = "igor@example.com",
-            PasswordHash = HashIgorExample,
-            LaboratoryId = LabGenetics,
-            OrganizationId = OrgTechHub,
-            CreatedBy = SeedActorId,
-            CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 585, DateTimeKind.Utc).AddTicks(5636),
-            IsEmailConfirmed = true,
-        };
-        uKateryna.AssignRole(ERole.Supervisor);
-
-        context.Users.AddRange(uValentyn, uIgorZ, uKateryna);
+            var user = new User
+            {
+                Id = coreUser.Id,
+                FirstName = coreUser.FirstName,
+                LastName = coreUser.LastName,
+                DateOfBirth = coreUser.DateOfBirth,
+                PhoneNumber = coreUser.PhoneNumber,
+                Email = coreUser.Email,
+                PasswordHash = HashPassword(coreUser.Password),
+                LaboratoryId = coreUser.LaboratoryId,
+                OrganizationId = coreUser.OrganizationId,
+                CreatedBy = coreUser.Id == UserValentynId ? UserValentynId : SeedActorId,
+                CreatedOn = seedTime,
+                IsEmailConfirmed = true,
+            };
+            user.AssignRole(coreUser.Role);
+            context.Users.Add(user);
+        }
 
         context.Reports.AddRange(
             new Report
             {
                 Id = Guid.Parse("a1111111-1111-1111-1111-111111111111"),
-                Title = "Annual Genetic Study",
+                Title = "Chernozem health review for central Ukraine",
                 Topic = EReportTopic.Soil,
-                Data = "Genetic research data goes here...",
+                Data = "Quarterly comparison of organic matter and nitrate trends across Kyiv, Vinnytsia, and Poltava monitoring plots.",
                 ReporterId = UserValentynId,
                 CreatedBy = SeedActorId,
-                CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(5064),
+                CreatedOn = seedTime,
             },
             new Report
             {
                 Id = Guid.Parse("a2222222-2222-2222-2222-222222222222"),
-                Title = "AI Algorithm Performance",
-                Topic = EReportTopic.Soil,
-                Data = "Performance analysis data goes here...",
+                Title = "Black Sea bathing water quality summary",
+                Topic = EReportTopic.Water,
+                Data = "Summer microbial load and dissolved oxygen patterns for Odesa and Mykolaiv coastal stations.",
                 ReporterId = UserIgorZId,
                 CreatedBy = SeedActorId,
-                CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(6146),
+                CreatedOn = seedTime,
             },
             new Report
             {
                 Id = Guid.Parse("a3333333-3333-3333-3333-333333333333"),
-                Title = "Global Pandemic Analysis",
+                Title = "Dnipro basin nutrient transport model",
                 Topic = EReportTopic.Water,
-                Data = "Pandemic analysis data goes here...",
+                Data = "Estimated phosphate and nitrate inputs from agricultural and municipal sources between Kyiv and Zaporizhzhia.",
                 ReporterId = UserKaterynaId,
                 CreatedBy = SeedActorId,
-                CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(6152),
+                CreatedOn = seedTime,
             });
 
-        context.SoilDeficiencies.AddRange(
-            new SoilDeficiency
-            {
-                Id = Guid.Parse("d1111111-1111-1111-1111-111111111111"),
-                Title = "First Soil def",
-                Description = "",
-                Type = EDeficiencyType.Soil,
-                PH = 6.5,
-                OrganicMatter = 3.8,
-                LeadConcentration = 150.0,
-                CadmiumConcentration = 1.2,
-                MercuryConcentration = 0.6,
-                PesticidesContent = 0.8,
-                NitratesConcentration = 45.0,
-                HeavyMetalsConcentration = 120.0,
-                ElectricalConductivity = 0.7,
-                EDangerState = EDangerState.Moderate,
-                MicrobialActivity = 3200,
-                AnalysisDate = new DateTime(2025, 1, 14, 22, 0, 0, DateTimeKind.Utc),
-                ResponsibleUserId = UserKaterynaId,
-                CreatedBy = UserIgorZId,
-                CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(599),
-                Latitude = 50.450099999999999,
-                Longitude = 30.523399999999999,
-                RadiusAffected = 10,
-            },
-            new SoilDeficiency
-            {
-                Id = Guid.Parse("d2222222-2222-2222-2222-222222222222"),
-                Title = "Second Soil def",
-                Description = "",
-                Type = EDeficiencyType.Soil,
-                PH = 5.9,
-                OrganicMatter = 2.5,
-                LeadConcentration = 250.0,
-                CadmiumConcentration = 2.5,
-                MercuryConcentration = 1.1,
-                PesticidesContent = 1.5,
-                NitratesConcentration = 60.0,
-                HeavyMetalsConcentration = 200.0,
-                ElectricalConductivity = 0.9,
-                EDangerState = EDangerState.Critical,
-                MicrobialActivity = 1500,
-                AnalysisDate = new DateTime(2025, 1, 17, 22, 0, 0, DateTimeKind.Utc),
-                CreatedBy = UserIgorZId,
-                ResponsibleUserId = UserKaterynaId,
-                CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(2791),
-                Latitude = 49.993499999999997,
-                Longitude = 36.229199999999999,
-                RadiusAffected = 10,
-            },
-            new SoilDeficiency
-            {
-                Id = Guid.Parse("d3333333-3333-3333-3333-333333333333"),
-                Title = "Third Soil def",
-                Description = "",
-                Type = EDeficiencyType.Soil,
-                PH = 7.2,
-                OrganicMatter = 4.1,
-                LeadConcentration = 80.0,
-                CadmiumConcentration = 0.8,
-                MercuryConcentration = 0.3,
-                PesticidesContent = 0.5,
-                NitratesConcentration = 30.0,
-                HeavyMetalsConcentration = 50.0,
-                ElectricalConductivity = 0.5,
-                EDangerState = EDangerState.Dangerous,
-                MicrobialActivity = 4000,
-                AnalysisDate = new DateTime(2025, 1, 19, 22, 0, 0, DateTimeKind.Utc),
-                CreatedBy = UserIgorZId,
-                ResponsibleUserId = UserKaterynaId,
-                CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(2808),
-                Latitude = 48.464700000000001,
-                Longitude = 35.0456,
-                RadiusAffected = 10,
-            });
+        foreach (var template in CoreSoilDeficiencies)
+        {
+            context.SoilDeficiencies.Add(CreateSoilDeficiency(template, seedTime));
+        }
 
-        context.WaterDeficiencies.AddRange(
-            new WaterDeficiency
-            {
-                Id = Guid.Parse("c1111111-1111-1111-1111-111111111111"),
-                Title = "First Water def",
-                Description = "",
-                Type = EDeficiencyType.Water,
-                PH = 7.2,
-                DissolvedOxygen = 6.8,
-                BiologicalOxygenDemand = 4.5,
-                NitrateConcentration = 20.0,
-                PhosphateConcentration = 2.1,
-                LeadConcentration = 0.15,
-                MercuryConcentration = 0.02,
-                CadmiumConcentration = 0.03,
-                PesticidesContent = 0.1,
-                TotalDissolvedSolids = 500.0,
-                ElectricalConductivity = 1.2,
-                EDangerState = EDangerState.Moderate,
-                MicrobialLoad = 1500,
-                MicrobialActivity = 0,
-                RadiationLevel = 0,
-                ChemicalOxygenDemand = 0,
-                CreatedBy = UserValentynId,
-                CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 634, DateTimeKind.Utc).AddTicks(7718),
-                ResponsibleUserId = UserValentynId,
-                Latitude = 50.450099999999999,
-                Longitude = 30.523399999999999,
-                RadiusAffected = 10,
-            },
-            new WaterDeficiency
-            {
-                Id = Guid.Parse("c2222222-2222-2222-2222-222222222222"),
-                Title = "Second Water def",
-                Description = "",
-                Type = EDeficiencyType.Water,
-                PH = 6.5,
-                DissolvedOxygen = 4.0,
-                BiologicalOxygenDemand = 8.0,
-                NitrateConcentration = 50.0,
-                PhosphateConcentration = 5.5,
-                LeadConcentration = 0.5,
-                MercuryConcentration = 0.1,
-                CadmiumConcentration = 0.15,
-                PesticidesContent = 0.8,
-                TotalDissolvedSolids = 800.0,
-                ElectricalConductivity = 2.5,
-                EDangerState = EDangerState.Critical,
-                MicrobialLoad = 4000,
-                MicrobialActivity = 0,
-                RadiationLevel = 0,
-                ChemicalOxygenDemand = 0,
-                CreatedBy = UserKaterynaId,
-                CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(253),
-                ResponsibleUserId = UserIgorZId,
-                Latitude = 49.8429,
-                Longitude = 24.031600000000001,
-                RadiusAffected = 10,
-            },
-            new WaterDeficiency
-            {
-                Id = Guid.Parse("c3333333-3333-3333-3333-333333333333"),
-                Title = "Third Water def",
-                Description = "",
-                Type = EDeficiencyType.Water,
-                PH = 8.0,
-                DissolvedOxygen = 7.5,
-                BiologicalOxygenDemand = 2.0,
-                NitrateConcentration = 10.0,
-                PhosphateConcentration = 1.0,
-                LeadConcentration = 0.05,
-                MercuryConcentration = 0.005,
-                CadmiumConcentration = 0.01,
-                PesticidesContent = 0.05,
-                TotalDissolvedSolids = 350.0,
-                ElectricalConductivity = 0.9,
-                EDangerState = EDangerState.Dangerous,
-                MicrobialLoad = 800,
-                MicrobialActivity = 0,
-                RadiationLevel = 0,
-                ChemicalOxygenDemand = 0,
-                CreatedBy = UserIgorZId,
-                CreatedOn = new DateTime(2025, 3, 19, 9, 6, 35, 635, DateTimeKind.Utc).AddTicks(262),
-                ResponsibleUserId = UserKaterynaId,
-                Latitude = 46.482500000000002,
-                Longitude = 30.732600000000001,
-                RadiusAffected = 10,
-            });
+        foreach (var template in CoreWaterDeficiencies)
+        {
+            context.WaterDeficiencies.Add(CreateWaterDeficiency(template, seedTime));
+        }
 
         await context.SaveChangesAsync(cancellationToken);
+    }
+
+    private async Task EnsureBulkDataAsync(ApplicationContext context, CancellationToken cancellationToken)
+    {
+        var targets = GetSeedTargets();
+        await EnsureBulkLaboratoriesAsync(context, targets.Laboratories, cancellationToken);
+        await EnsureBulkUsersAsync(context, targets.Users, cancellationToken);
+        await EnsureBulkSoilDeficienciesAsync(context, targets.SoilDeficiencies, cancellationToken);
+        await EnsureBulkWaterDeficienciesAsync(context, targets.WaterDeficiencies, cancellationToken);
+    }
+
+    private SeedTargets GetSeedTargets()
+    {
+        static int ReadCount(IConfiguration configuration, string key, int defaultValue) =>
+            int.TryParse(configuration[key], out var count) && count >= 0 ? count : defaultValue;
+
+        return new SeedTargets
+        {
+            Users = ReadCount(_configuration, "Seed:UsersCount", 15),
+            Laboratories = ReadCount(_configuration, "Seed:LaboratoriesCount", 30),
+            SoilDeficiencies = ReadCount(_configuration, "Seed:SoilDeficienciesCount", 50),
+            WaterDeficiencies = ReadCount(_configuration, "Seed:WaterDeficienciesCount", 50),
+        };
+    }
+
+    private static async Task EnsureBulkLaboratoriesAsync(
+        ApplicationContext context,
+        int targetCount,
+        CancellationToken cancellationToken)
+    {
+        var existingCount = await context.Laboratories.CountAsync(cancellationToken);
+        if (existingCount >= targetCount)
+        {
+            return;
+        }
+
+        var now = DateTime.UtcNow;
+        var ukraineLocations = UkrainianLocations.Take(UkrainianLocations.Length - 3).ToArray();
+        var internationalLocations = UkrainianLocations.TakeLast(3).ToArray();
+
+        for (var index = existingCount + 1; index <= targetCount; index++)
+        {
+            var id = BulkId(0x20, index);
+            if (await context.Laboratories.AnyAsync(l => l.Id == id, cancellationToken))
+            {
+                continue;
+            }
+
+            var useInternational = index > targetCount - 3;
+            var location = useInternational
+                ? internationalLocations[(index - 1) % internationalLocations.Length]
+                : ukraineLocations[(index - 1) % ukraineLocations.Length];
+            var title = BulkLaboratoryTitles[(index - 1) % BulkLaboratoryTitles.Length];
+            var offset = ((index % 7) - 3) * 0.009;
+
+            context.Laboratories.Add(new Laboratory
+            {
+                Id = id,
+                Title = $"{title} #{index}",
+                CreatedBy = SeedActorId,
+                CreatedOn = now,
+                Latitude = location.Latitude + offset,
+                Longitude = location.Longitude + offset,
+                Address = location.Address,
+                IsPublic = true,
+            });
+        }
+
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
+    private static async Task EnsureBulkUsersAsync(
+        ApplicationContext context,
+        int targetCount,
+        CancellationToken cancellationToken)
+    {
+        var existingCount = await context.Users.CountAsync(cancellationToken);
+        if (existingCount >= targetCount)
+        {
+            return;
+        }
+
+        var laboratoryIds = await context.Laboratories
+            .OrderBy(l => l.CreatedOn)
+            .Select(l => l.Id)
+            .ToListAsync(cancellationToken);
+
+        if (laboratoryIds.Count == 0)
+        {
+            return;
+        }
+
+        var organizationIds = Organizations.Select(o => o.Id).ToArray();
+        var now = DateTime.UtcNow;
+
+        for (var index = existingCount + 1; index <= targetCount; index++)
+        {
+            var id = BulkId(0x10, index);
+            if (await context.Users.AnyAsync(u => u.Id == id, cancellationToken))
+            {
+                continue;
+            }
+
+            var profile = BulkUserProfiles[(index - 1) % BulkUserProfiles.Length];
+            var user = new User
+            {
+                Id = id,
+                FirstName = profile.FirstName,
+                LastName = profile.LastName,
+                DateOfBirth = new DateTime(1985 + (index % 15), (index % 12) + 1, (index % 27) + 1, 0, 0, 0, DateTimeKind.Utc),
+                PhoneNumber = $"+38050{index:D7}",
+                Email = profile.Email,
+                PasswordHash = HashPassword(DefaultDemoPassword),
+                LaboratoryId = laboratoryIds[(index - 1) % laboratoryIds.Count],
+                OrganizationId = organizationIds[(index - 1) % organizationIds.Length],
+                CreatedBy = SeedActorId,
+                CreatedOn = now,
+                IsEmailConfirmed = true,
+            };
+            user.AssignRole(index % 4 == 0 ? ERole.Supervisor : ERole.Researcher);
+            context.Users.Add(user);
+        }
+
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
+    private static async Task EnsureBulkSoilDeficienciesAsync(
+        ApplicationContext context,
+        int targetCount,
+        CancellationToken cancellationToken)
+    {
+        var existingCount = await context.SoilDeficiencies.CountAsync(cancellationToken);
+        if (existingCount >= targetCount)
+        {
+            return;
+        }
+
+        var userIds = await context.Users.Select(u => u.Id).ToListAsync(cancellationToken);
+        if (userIds.Count == 0)
+        {
+            return;
+        }
+
+        var dangerStates = new[] { EDangerState.Moderate, EDangerState.Dangerous, EDangerState.Critical };
+        var now = DateTime.UtcNow;
+
+        for (var index = existingCount + 1; index <= targetCount; index++)
+        {
+            var id = BulkId(0x30, index);
+            if (await context.SoilDeficiencies.AnyAsync(d => d.Id == id, cancellationToken))
+            {
+                continue;
+            }
+
+            var location = UkrainianLocations[(index - 1) % UkrainianLocations.Length];
+            var title = BulkSoilTitles[(index - 1) % BulkSoilTitles.Length];
+            var description = BulkSoilDescriptions[(index - 1) % BulkSoilDescriptions.Length];
+            var offset = ((index % 7) - 3) * 0.012;
+            var responsibleUserId = userIds[(index - 1) % userIds.Count];
+            var creatorId = userIds[index % userIds.Count];
+
+            context.SoilDeficiencies.Add(new SoilDeficiency
+            {
+                Id = id,
+                Title = $"{title} — {location.Region}",
+                Description = $"{description} Location reference: {location.Address}.",
+                Type = EDeficiencyType.Soil,
+                PH = 5.5 + (index % 20) * 0.1,
+                OrganicMatter = 2.0 + (index % 25) * 0.1,
+                LeadConcentration = 50 + index * 3,
+                CadmiumConcentration = 0.5 + (index % 10) * 0.1,
+                MercuryConcentration = 0.2 + (index % 8) * 0.05,
+                PesticidesContent = 0.3 + (index % 6) * 0.1,
+                NitratesConcentration = 20 + index,
+                HeavyMetalsConcentration = 40 + index * 2,
+                ElectricalConductivity = 0.4 + (index % 10) * 0.05,
+                MicrobialActivity = 1000 + index * 50,
+                AnalysisDate = now.AddDays(-index),
+                EDangerState = dangerStates[(index - 1) % dangerStates.Length],
+                ResponsibleUserId = responsibleUserId,
+                CreatedBy = creatorId,
+                CreatedOn = now,
+                Latitude = location.Latitude + offset,
+                Longitude = location.Longitude + offset,
+                Address = location.Address,
+                RadiusAffected = 2 + (index % 4),
+            });
+        }
+
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
+    private static async Task EnsureBulkWaterDeficienciesAsync(
+        ApplicationContext context,
+        int targetCount,
+        CancellationToken cancellationToken)
+    {
+        var existingCount = await context.WaterDeficiencies.CountAsync(cancellationToken);
+        if (existingCount >= targetCount)
+        {
+            return;
+        }
+
+        var userIds = await context.Users.Select(u => u.Id).ToListAsync(cancellationToken);
+        if (userIds.Count == 0)
+        {
+            return;
+        }
+
+        var dangerStates = new[] { EDangerState.Moderate, EDangerState.Dangerous, EDangerState.Critical };
+        var now = DateTime.UtcNow;
+
+        for (var index = existingCount + 1; index <= targetCount; index++)
+        {
+            var id = BulkId(0x40, index);
+            if (await context.WaterDeficiencies.AnyAsync(d => d.Id == id, cancellationToken))
+            {
+                continue;
+            }
+
+            var location = UkrainianLocations[(index + 5) % UkrainianLocations.Length];
+            var title = BulkWaterTitles[(index - 1) % BulkWaterTitles.Length];
+            var description = BulkWaterDescriptions[(index - 1) % BulkWaterDescriptions.Length];
+            var offset = ((index % 5) - 2) * 0.015;
+            var responsibleUserId = userIds[(index - 1) % userIds.Count];
+            var creatorId = userIds[index % userIds.Count];
+
+            context.WaterDeficiencies.Add(new WaterDeficiency
+            {
+                Id = id,
+                Title = $"{title} — {location.Region}",
+                Description = $"{description} Sampling site: {location.Address}.",
+                Type = EDeficiencyType.Water,
+                PH = 6.0 + (index % 20) * 0.1,
+                DissolvedOxygen = 4.0 + (index % 12) * 0.3,
+                BiologicalOxygenDemand = 2.0 + (index % 15) * 0.4,
+                NitrateConcentration = 5 + (index % 40),
+                PhosphateConcentration = 0.2 + (index % 15) * 0.1,
+                LeadConcentration = 0.001 + (index % 8) * 0.001,
+                MercuryConcentration = 0.0001 + (index % 8) * 0.0001,
+                CadmiumConcentration = 0.001 + (index % 4) * 0.001,
+                PesticidesContent = 0.001 + (index % 4) * 0.001,
+                TotalDissolvedSolids = 200 + index * 8,
+                ElectricalConductivity = 0.5 + (index % 20) * 0.1,
+                MicrobialLoad = 300 + index * 25,
+                MicrobialActivity = 100 + (index % 80) * 10,
+                RadiationLevel = index % 8,
+                ChemicalOxygenDemand = 5 + (index % 30),
+                EDangerState = dangerStates[(index - 1) % dangerStates.Length],
+                ResponsibleUserId = responsibleUserId,
+                CreatedBy = creatorId,
+                CreatedOn = now,
+                Latitude = location.Latitude + offset,
+                Longitude = location.Longitude + offset,
+                Address = location.Address,
+                RadiusAffected = 2 + (index % 5),
+            });
+        }
+
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
+    private static async Task EnsureSeedOwnerRolesAsync(
+        ApplicationContext context,
+        CancellationToken cancellationToken)
+    {
+        await context.Users
+            .Where(u => SeedOwnerEmails.Contains(u.Email) && u.Role != ERole.Owner)
+            .ExecuteUpdateAsync(
+                setters => setters.SetProperty(u => u.Role, ERole.Owner),
+                cancellationToken);
+    }
+
+    private static SoilDeficiency CreateSoilDeficiency(SeedSoilDeficiencyTemplate template, DateTime createdOn) =>
+        new()
+        {
+            Id = template.Id,
+            Title = template.Title,
+            Description = template.Description,
+            Type = EDeficiencyType.Soil,
+            PH = template.Ph,
+            OrganicMatter = template.OrganicMatter,
+            LeadConcentration = template.LeadConcentration,
+            CadmiumConcentration = template.CadmiumConcentration,
+            MercuryConcentration = template.MercuryConcentration,
+            PesticidesContent = template.PesticidesContent,
+            NitratesConcentration = template.NitratesConcentration,
+            HeavyMetalsConcentration = template.HeavyMetalsConcentration,
+            ElectricalConductivity = template.ElectricalConductivity,
+            MicrobialActivity = template.MicrobialActivity,
+            AnalysisDate = createdOn.AddDays(-30),
+            EDangerState = template.DangerState,
+            ResponsibleUserId = template.ResponsibleUserId,
+            CreatedBy = template.CreatedByUserId,
+            CreatedOn = createdOn,
+            Latitude = template.Latitude,
+            Longitude = template.Longitude,
+            Address = template.Address,
+            RadiusAffected = template.RadiusAffected,
+        };
+
+    private static WaterDeficiency CreateWaterDeficiency(SeedWaterDeficiencyTemplate template, DateTime createdOn) =>
+        new()
+        {
+            Id = template.Id,
+            Title = template.Title,
+            Description = template.Description,
+            Type = EDeficiencyType.Water,
+            PH = template.Ph,
+            DissolvedOxygen = template.DissolvedOxygen,
+            BiologicalOxygenDemand = template.BiologicalOxygenDemand,
+            NitrateConcentration = template.NitrateConcentration,
+            PhosphateConcentration = template.PhosphateConcentration,
+            LeadConcentration = template.LeadConcentration,
+            MercuryConcentration = template.MercuryConcentration,
+            CadmiumConcentration = template.CadmiumConcentration,
+            PesticidesContent = template.PesticidesContent,
+            TotalDissolvedSolids = template.TotalDissolvedSolids,
+            ElectricalConductivity = template.ElectricalConductivity,
+            MicrobialLoad = template.MicrobialLoad,
+            MicrobialActivity = template.MicrobialActivity,
+            RadiationLevel = 0,
+            ChemicalOxygenDemand = template.ChemicalOxygenDemand,
+            EDangerState = template.DangerState,
+            ResponsibleUserId = template.ResponsibleUserId,
+            CreatedBy = template.CreatedByUserId,
+            CreatedOn = createdOn,
+            Latitude = template.Latitude,
+            Longitude = template.Longitude,
+            Address = template.Address,
+            RadiusAffected = template.RadiusAffected,
+        };
+
+    private static string HashPassword(string password) =>
+        PasswordHasher.HashPassword(new User(), password);
+
+    private static Guid BulkId(int prefixByte, int index) =>
+        Guid.Parse($"{prefixByte:x2}000000-0000-4000-8000-{index:x12}");
+
+    private sealed class SeedTargets
+    {
+        public int Users { get; init; }
+        public int Laboratories { get; init; }
+        public int SoilDeficiencies { get; init; }
+        public int WaterDeficiencies { get; init; }
     }
 
     private static async Task EnsureLevelThresholdsDictAsync(ApplicationContext context, CancellationToken cancellationToken)
     {
         const string key = "level_thresholds";
         if (await context.DictEntries.AnyAsync(e => e.EntryKey == key, cancellationToken))
+        {
             return;
+        }
 
         context.DictEntries.Add(new AppDictEntry
         {

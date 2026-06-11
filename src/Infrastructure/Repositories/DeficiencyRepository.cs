@@ -73,11 +73,13 @@ public class DeficiencyRepository<D, MAPT> : BaseRepository<D>, IMapObjectsRepos
     {
         var context = _contextFactory.CreateDbContext();
 
+        var (sortBy, sortDirection, remainingFilters) = QueryableExtensions.ExtractSorting(filters);
         var query = context.Set<D>()
             .Where(d => d.IsPublic || (currentUser != null && d.Creator.OrganizationId == currentUser.OrganizationId))
             .Include(d => d.Creator)
             .Include(d => d.ResponsibleUser)
-            .ApplyFilters(filters ?? new Dictionary<string, string?>());
+            .ApplyFilters(remainingFilters)
+            .ApplySorting(sortBy, sortDirection);
 
         if (scrollCount != -1)
         {

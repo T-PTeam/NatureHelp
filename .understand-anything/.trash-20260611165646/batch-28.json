@@ -1,0 +1,3752 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "type": "file",
+      "name": "LaboratoryRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "summary": "LaboratoryRepository.cs defines 1 class(es) and 5 function(s) in the csharp layer.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:LaboratoryRepository",
+      "type": "function",
+      "name": "LaboratoryRepository",
+      "filePath": "src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "summary": "Function LaboratoryRepository in LaboratoryRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:ApplyVisibilityFilter",
+      "type": "function",
+      "name": "ApplyVisibilityFilter",
+      "filePath": "src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "summary": "Function ApplyVisibilityFilter in LaboratoryRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:GetMapObjects",
+      "type": "function",
+      "name": "GetMapObjects",
+      "filePath": "src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "summary": "Function GetMapObjects in LaboratoryRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:GetAllAsync",
+      "type": "function",
+      "name": "GetAllAsync",
+      "filePath": "src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "summary": "Function GetAllAsync in LaboratoryRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:GetByIdAsync",
+      "type": "function",
+      "name": "GetByIdAsync",
+      "filePath": "src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "summary": "Function GetByIdAsync in LaboratoryRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/LaboratoryRepository.cs:LaboratoryRepository",
+      "type": "class",
+      "name": "LaboratoryRepository",
+      "filePath": "src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "summary": "Class LaboratoryRepository with 5 method(s) in LaboratoryRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "type": "file",
+      "name": "MonitoringRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "summary": "MonitoringRepository.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/MonitoringRepository.cs:MonitoringRepository",
+      "type": "function",
+      "name": "MonitoringRepository",
+      "filePath": "src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "summary": "Function MonitoringRepository in MonitoringRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/MonitoringRepository.cs:GetUserDeficiencyMonitoringAsync",
+      "type": "function",
+      "name": "GetUserDeficiencyMonitoringAsync",
+      "filePath": "src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "summary": "Function GetUserDeficiencyMonitoringAsync in MonitoringRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/MonitoringRepository.cs:MonitoringRepository",
+      "type": "class",
+      "name": "MonitoringRepository",
+      "filePath": "src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "summary": "Class MonitoringRepository with 2 method(s) in MonitoringRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "type": "file",
+      "name": "ProfileRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "ProfileRepository.cs defines 1 class(es) and 19 function(s) in the csharp layer.",
+      "tags": [
+        "data-model",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:ProfileRepository",
+      "type": "function",
+      "name": "ProfileRepository",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function ProfileRepository in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:HasDailyVisitAsync",
+      "type": "function",
+      "name": "HasDailyVisitAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function HasDailyVisitAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:AddDailyVisitAsync",
+      "type": "function",
+      "name": "AddDailyVisitAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function AddDailyVisitAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:HasConfirmationAsync",
+      "type": "function",
+      "name": "HasConfirmationAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function HasConfirmationAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountConfirmationsAsync",
+      "type": "function",
+      "name": "CountConfirmationsAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function CountConfirmationsAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:AddConfirmationAsync",
+      "type": "function",
+      "name": "AddConfirmationAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function AddConfirmationAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:HasLedgerEntryAsync",
+      "type": "function",
+      "name": "HasLedgerEntryAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function HasLedgerEntryAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:AddLedgerEntryAsync",
+      "type": "function",
+      "name": "AddLedgerEntryAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function AddLedgerEntryAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetWaterDeficiencyByIdAsync",
+      "type": "function",
+      "name": "GetWaterDeficiencyByIdAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function GetWaterDeficiencyByIdAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetSoilDeficiencyByIdAsync",
+      "type": "function",
+      "name": "GetSoilDeficiencyByIdAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function GetSoilDeficiencyByIdAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountWaterByCreatorAsync",
+      "type": "function",
+      "name": "CountWaterByCreatorAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function CountWaterByCreatorAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountSoilByCreatorAsync",
+      "type": "function",
+      "name": "CountSoilByCreatorAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function CountSoilByCreatorAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountConfirmationsGivenByUserAsync",
+      "type": "function",
+      "name": "CountConfirmationsGivenByUserAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function CountConfirmationsGivenByUserAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CreatorHasDeficiencyWithFiveConfirmationsAsync",
+      "type": "function",
+      "name": "CreatorHasDeficiencyWithFiveConfirmationsAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function CreatorHasDeficiencyWithFiveConfirmationsAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetActiveAchievementsAsync",
+      "type": "function",
+      "name": "GetActiveAchievementsAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function GetActiveAchievementsAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetUserAchievementAsync",
+      "type": "function",
+      "name": "GetUserAchievementAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function GetUserAchievementAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:UpsertUserAchievementAsync",
+      "type": "function",
+      "name": "UpsertUserAchievementAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function UpsertUserAchievementAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetAttachmentsByCreatorAsync",
+      "type": "function",
+      "name": "GetAttachmentsByCreatorAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function GetAttachmentsByCreatorAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetProfileJournalAsync",
+      "type": "function",
+      "name": "GetProfileJournalAsync",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Function GetProfileJournalAsync in ProfileRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/ProfileRepository.cs:ProfileRepository",
+      "type": "class",
+      "name": "ProfileRepository",
+      "filePath": "src/Infrastructure/Repositories/ProfileRepository.cs",
+      "summary": "Class ProfileRepository with 19 method(s) in ProfileRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Repositories/ResearchRepository.cs",
+      "type": "file",
+      "name": "ResearchRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/ResearchRepository.cs",
+      "summary": "ResearchRepository.cs defines 1 class(es) and 3 function(s) in the csharp layer.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ResearchRepository.cs:ResearchRepository",
+      "type": "function",
+      "name": "ResearchRepository",
+      "filePath": "src/Infrastructure/Repositories/ResearchRepository.cs",
+      "summary": "Function ResearchRepository in ResearchRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ResearchRepository.cs:GetAllAsync",
+      "type": "function",
+      "name": "GetAllAsync",
+      "filePath": "src/Infrastructure/Repositories/ResearchRepository.cs",
+      "summary": "Function GetAllAsync in ResearchRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/ResearchRepository.cs:GetByLabId",
+      "type": "function",
+      "name": "GetByLabId",
+      "filePath": "src/Infrastructure/Repositories/ResearchRepository.cs",
+      "summary": "Function GetByLabId in ResearchRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/ResearchRepository.cs:ResearchRepository",
+      "type": "class",
+      "name": "ResearchRepository",
+      "filePath": "src/Infrastructure/Repositories/ResearchRepository.cs",
+      "summary": "Class ResearchRepository with 3 method(s) in ResearchRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "type": "file",
+      "name": "UserRepository.cs",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "UserRepository.cs defines 1 class(es) and 17 function(s) in the csharp layer.",
+      "tags": [
+        "data-model",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:UserRepository",
+      "type": "function",
+      "name": "UserRepository",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function UserRepository in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:GetAllAsync",
+      "type": "function",
+      "name": "GetAllAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function GetAllAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUserByEmail",
+      "type": "function",
+      "name": "GetUserByEmail",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function GetUserByEmail in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:ConfirmEmailByToken",
+      "type": "function",
+      "name": "ConfirmEmailByToken",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function ConfirmEmailByToken in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUserByRefreshTokenAsync",
+      "type": "function",
+      "name": "GetUserByRefreshTokenAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function GetUserByRefreshTokenAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:GetNotLoginEver",
+      "type": "function",
+      "name": "GetNotLoginEver",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function GetNotLoginEver in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUsersCountByOrganization",
+      "type": "function",
+      "name": "GetUsersCountByOrganization",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function GetUsersCountByOrganization in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:UpdatePasswordAsync",
+      "type": "function",
+      "name": "UpdatePasswordAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function UpdatePasswordAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:CreatePasswordResetTokenAsync",
+      "type": "function",
+      "name": "CreatePasswordResetTokenAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function CreatePasswordResetTokenAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:GetPasswordResetTokenAsync",
+      "type": "function",
+      "name": "GetPasswordResetTokenAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function GetPasswordResetTokenAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:InvalidatePasswordResetTokenAsync",
+      "type": "function",
+      "name": "InvalidatePasswordResetTokenAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function InvalidatePasswordResetTokenAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:IsPasswordResetTokenValidAsync",
+      "type": "function",
+      "name": "IsPasswordResetTokenValidAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function IsPasswordResetTokenValidAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUserIdByPasswordResetTokenAsync",
+      "type": "function",
+      "name": "GetUserIdByPasswordResetTokenAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function GetUserIdByPasswordResetTokenAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:DeleteUserDataAsync",
+      "type": "function",
+      "name": "DeleteUserDataAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function DeleteUserDataAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:CountCreatedDeficienciesAsync",
+      "type": "function",
+      "name": "CountCreatedDeficienciesAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function CountCreatedDeficienciesAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:GetByOrganizationAsync",
+      "type": "function",
+      "name": "GetByOrganizationAsync",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function GetByOrganizationAsync in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Repositories/UserRepository.cs:GetTotalCountByOrganization",
+      "type": "function",
+      "name": "GetTotalCountByOrganization",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Function GetTotalCountByOrganization in UserRepository.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Repositories/UserRepository.cs:UserRepository",
+      "type": "class",
+      "name": "UserRepository",
+      "filePath": "src/Infrastructure/Repositories/UserRepository.cs",
+      "summary": "Class UserRepository with 17 method(s) in UserRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/NatureHelp/appsettings.Local.json.example",
+      "type": "file",
+      "name": "appsettings.Local.json.example",
+      "filePath": "src/NatureHelp/appsettings.Local.json.example",
+      "summary": "appsettings.Local.json.example is a example code module in NatureHelp.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "type": "file",
+      "name": "ReportController.cs",
+      "filePath": "src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "summary": "ReportController.cs defines 1 class(es) and 4 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:ReportController",
+      "type": "function",
+      "name": "ReportController",
+      "filePath": "src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "summary": "Function ReportController in ReportController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:GetWaterDeficienciesExcelFile",
+      "type": "function",
+      "name": "GetWaterDeficienciesExcelFile",
+      "filePath": "src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "summary": "Function GetWaterDeficienciesExcelFile in ReportController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:GetSoilDeficienciesExcelFile",
+      "type": "function",
+      "name": "GetSoilDeficienciesExcelFile",
+      "filePath": "src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "summary": "Function GetSoilDeficienciesExcelFile in ReportController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:GetOrgUsersExcelFile",
+      "type": "function",
+      "name": "GetOrgUsersExcelFile",
+      "filePath": "src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "summary": "Function GetOrgUsersExcelFile in ReportController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Analitycs/ReportController.cs:ReportController",
+      "type": "class",
+      "name": "ReportController",
+      "filePath": "src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "summary": "Class ReportController with 4 method(s) in ReportController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "type": "file",
+      "name": "AttachmentsController.cs",
+      "filePath": "src/NatureHelp/Controllers/AttachmentsController.cs",
+      "summary": "AttachmentsController.cs defines 1 class(es) and 4 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/AttachmentsController.cs:AttachmentsController",
+      "type": "function",
+      "name": "AttachmentsController",
+      "filePath": "src/NatureHelp/Controllers/AttachmentsController.cs",
+      "summary": "Function AttachmentsController in AttachmentsController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/AttachmentsController.cs:GetByDeficiencyId",
+      "type": "function",
+      "name": "GetByDeficiencyId",
+      "filePath": "src/NatureHelp/Controllers/AttachmentsController.cs",
+      "summary": "Function GetByDeficiencyId in AttachmentsController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/AttachmentsController.cs:UploadAttachment",
+      "type": "function",
+      "name": "UploadAttachment",
+      "filePath": "src/NatureHelp/Controllers/AttachmentsController.cs",
+      "summary": "Function UploadAttachment in AttachmentsController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/AttachmentsController.cs:DownloadAttachment",
+      "type": "function",
+      "name": "DownloadAttachment",
+      "filePath": "src/NatureHelp/Controllers/AttachmentsController.cs",
+      "summary": "Function DownloadAttachment in AttachmentsController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/AttachmentsController.cs:AttachmentsController",
+      "type": "class",
+      "name": "AttachmentsController",
+      "filePath": "src/NatureHelp/Controllers/AttachmentsController.cs",
+      "summary": "Class AttachmentsController with 4 method(s) in AttachmentsController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "type": "file",
+      "name": "ChangedModelLogsController.cs",
+      "filePath": "src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "summary": "ChangedModelLogsController.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs:ChangedModelLogsController",
+      "type": "function",
+      "name": "ChangedModelLogsController",
+      "filePath": "src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "summary": "Function ChangedModelLogsController in ChangedModelLogsController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs:GetDeficiencyHistoryById",
+      "type": "function",
+      "name": "GetDeficiencyHistoryById",
+      "filePath": "src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "summary": "Function GetDeficiencyHistoryById in ChangedModelLogsController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs:ChangedModelLogsController",
+      "type": "class",
+      "name": "ChangedModelLogsController",
+      "filePath": "src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "summary": "Class ChangedModelLogsController with 2 method(s) in ChangedModelLogsController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "type": "file",
+      "name": "MonitoringController.cs",
+      "filePath": "src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "summary": "MonitoringController.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Audit/MonitoringController.cs:MonitoringController",
+      "type": "function",
+      "name": "MonitoringController",
+      "filePath": "src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "summary": "Function MonitoringController in MonitoringController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Audit/MonitoringController.cs:ToggleMonitoring",
+      "type": "function",
+      "name": "ToggleMonitoring",
+      "filePath": "src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "summary": "Function ToggleMonitoring in MonitoringController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Audit/MonitoringController.cs:MonitoringController",
+      "type": "class",
+      "name": "MonitoringController",
+      "filePath": "src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "summary": "Class MonitoringController with 2 method(s) in MonitoringController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/BaseCachedController.cs",
+      "type": "file",
+      "name": "BaseCachedController.cs",
+      "filePath": "src/NatureHelp/Controllers/BaseCachedController.cs",
+      "summary": "BaseCachedController.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/BaseCachedController.cs:BaseCachedController",
+      "type": "function",
+      "name": "BaseCachedController",
+      "filePath": "src/NatureHelp/Controllers/BaseCachedController.cs",
+      "summary": "Function BaseCachedController in BaseCachedController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/BaseCachedController.cs:GetList",
+      "type": "function",
+      "name": "GetList",
+      "filePath": "src/NatureHelp/Controllers/BaseCachedController.cs",
+      "summary": "Function GetList in BaseCachedController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/BaseCachedController.cs:BaseCachedController",
+      "type": "class",
+      "name": "BaseCachedController",
+      "filePath": "src/NatureHelp/Controllers/BaseCachedController.cs",
+      "summary": "Class BaseCachedController with 2 method(s) in BaseCachedController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "type": "file",
+      "name": "BaseController.cs",
+      "filePath": "src/NatureHelp/Controllers/BaseController.cs",
+      "summary": "BaseController.cs defines 1 class(es) and 6 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/BaseController.cs:BaseController",
+      "type": "function",
+      "name": "BaseController",
+      "filePath": "src/NatureHelp/Controllers/BaseController.cs",
+      "summary": "Function BaseController in BaseController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/BaseController.cs:GetList",
+      "type": "function",
+      "name": "GetList",
+      "filePath": "src/NatureHelp/Controllers/BaseController.cs",
+      "summary": "Function GetList in BaseController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/BaseController.cs:GetById",
+      "type": "function",
+      "name": "GetById",
+      "filePath": "src/NatureHelp/Controllers/BaseController.cs",
+      "summary": "Function GetById in BaseController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/BaseController.cs:Create",
+      "type": "function",
+      "name": "Create",
+      "filePath": "src/NatureHelp/Controllers/BaseController.cs",
+      "summary": "Function Create in BaseController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/BaseController.cs:Update",
+      "type": "function",
+      "name": "Update",
+      "filePath": "src/NatureHelp/Controllers/BaseController.cs",
+      "summary": "Function Update in BaseController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/BaseController.cs:Delete",
+      "type": "function",
+      "name": "Delete",
+      "filePath": "src/NatureHelp/Controllers/BaseController.cs",
+      "summary": "Function Delete in BaseController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/BaseController.cs:BaseController",
+      "type": "class",
+      "name": "BaseController",
+      "filePath": "src/NatureHelp/Controllers/BaseController.cs",
+      "summary": "Class BaseController with 6 method(s) in BaseController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "type": "file",
+      "name": "CommentMessagesController.cs",
+      "filePath": "src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "summary": "CommentMessagesController.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/CommentMessagesController.cs:CommentMessagesController",
+      "type": "function",
+      "name": "CommentMessagesController",
+      "filePath": "src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "summary": "Function CommentMessagesController in CommentMessagesController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/CommentMessagesController.cs:GetByDeficiencyId",
+      "type": "function",
+      "name": "GetByDeficiencyId",
+      "filePath": "src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "summary": "Function GetByDeficiencyId in CommentMessagesController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/CommentMessagesController.cs:CommentMessagesController",
+      "type": "class",
+      "name": "CommentMessagesController",
+      "filePath": "src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "summary": "Class CommentMessagesController with 2 method(s) in CommentMessagesController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "type": "file",
+      "name": "DeficiencyConfirmationController.cs",
+      "filePath": "src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "summary": "DeficiencyConfirmationController.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs:DeficiencyConfirmationController",
+      "type": "function",
+      "name": "DeficiencyConfirmationController",
+      "filePath": "src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "summary": "Function DeficiencyConfirmationController in DeficiencyConfirmationController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs:Confirm",
+      "type": "function",
+      "name": "Confirm",
+      "filePath": "src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "summary": "Function Confirm in DeficiencyConfirmationController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs:DeficiencyConfirmationController",
+      "type": "class",
+      "name": "DeficiencyConfirmationController",
+      "filePath": "src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "summary": "Class DeficiencyConfirmationController with 2 method(s) in DeficiencyConfirmationController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "type": "file",
+      "name": "LaboratoryController.cs",
+      "filePath": "src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "summary": "LaboratoryController.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Nature/LaboratoryController.cs:LaboratoryController",
+      "type": "function",
+      "name": "LaboratoryController",
+      "filePath": "src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "summary": "Function LaboratoryController in LaboratoryController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Nature/LaboratoryController.cs:GetDeficienciesForMapAsync",
+      "type": "function",
+      "name": "GetDeficienciesForMapAsync",
+      "filePath": "src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "summary": "Function GetDeficienciesForMapAsync in LaboratoryController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Nature/LaboratoryController.cs:LaboratoryController",
+      "type": "class",
+      "name": "LaboratoryController",
+      "filePath": "src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "summary": "Class LaboratoryController with 2 method(s) in LaboratoryController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Nature/ResearchController.cs",
+      "type": "file",
+      "name": "ResearchController.cs",
+      "filePath": "src/NatureHelp/Controllers/Nature/ResearchController.cs",
+      "summary": "ResearchController.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Nature/ResearchController.cs:ResearchController",
+      "type": "function",
+      "name": "ResearchController",
+      "filePath": "src/NatureHelp/Controllers/Nature/ResearchController.cs",
+      "summary": "Function ResearchController in ResearchController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Nature/ResearchController.cs:ResearchController",
+      "type": "class",
+      "name": "ResearchController",
+      "filePath": "src/NatureHelp/Controllers/Nature/ResearchController.cs",
+      "summary": "Class ResearchController with 1 method(s) in ResearchController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "type": "file",
+      "name": "SoilDeficiencyController.cs",
+      "filePath": "src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "summary": "SoilDeficiencyController.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs:SoilDeficiencyController",
+      "type": "function",
+      "name": "SoilDeficiencyController",
+      "filePath": "src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "summary": "Function SoilDeficiencyController in SoilDeficiencyController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs:GetDeficienciesForMapAsync",
+      "type": "function",
+      "name": "GetDeficienciesForMapAsync",
+      "filePath": "src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "summary": "Function GetDeficienciesForMapAsync in SoilDeficiencyController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs:SoilDeficiencyController",
+      "type": "class",
+      "name": "SoilDeficiencyController",
+      "filePath": "src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "summary": "Class SoilDeficiencyController with 2 method(s) in SoilDeficiencyController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "type": "file",
+      "name": "WaterDeficiencyController.cs",
+      "filePath": "src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "summary": "WaterDeficiencyController.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs:WaterDeficiencyController",
+      "type": "function",
+      "name": "WaterDeficiencyController",
+      "filePath": "src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "summary": "Function WaterDeficiencyController in WaterDeficiencyController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs:GetDeficienciesForMapAsync",
+      "type": "function",
+      "name": "GetDeficienciesForMapAsync",
+      "filePath": "src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "summary": "Function GetDeficienciesForMapAsync in WaterDeficiencyController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs:WaterDeficiencyController",
+      "type": "class",
+      "name": "WaterDeficiencyController",
+      "filePath": "src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "summary": "Class WaterDeficiencyController with 2 method(s) in WaterDeficiencyController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Organization/OrganizationController.cs",
+      "type": "file",
+      "name": "OrganizationController.cs",
+      "filePath": "src/NatureHelp/Controllers/Organization/OrganizationController.cs",
+      "summary": "OrganizationController.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/OrganizationController.cs:OrganizationController",
+      "type": "function",
+      "name": "OrganizationController",
+      "filePath": "src/NatureHelp/Controllers/Organization/OrganizationController.cs",
+      "summary": "Function OrganizationController in OrganizationController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Organization/OrganizationController.cs:OrganizationController",
+      "type": "class",
+      "name": "OrganizationController",
+      "filePath": "src/NatureHelp/Controllers/Organization/OrganizationController.cs",
+      "summary": "Class OrganizationController with 1 method(s) in OrganizationController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "type": "file",
+      "name": "UserController.cs",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "UserController.cs defines 1 class(es) and 26 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:UserController",
+      "type": "function",
+      "name": "UserController",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function UserController in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetOrganizationUsers",
+      "type": "function",
+      "name": "GetOrganizationUsers",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function GetOrganizationUsers in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ChangeUsersRoles",
+      "type": "function",
+      "name": "ChangeUsersRoles",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function ChangeUsersRoles in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:LoginAsync",
+      "type": "function",
+      "name": "LoginAsync",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function LoginAsync in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetCurrentUserAsync",
+      "type": "function",
+      "name": "GetCurrentUserAsync",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function GetCurrentUserAsync in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfileStats",
+      "type": "function",
+      "name": "GetProfileStats",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function GetProfileStats in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfileJournal",
+      "type": "function",
+      "name": "GetProfileJournal",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function GetProfileJournal in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfilePhotoHistory",
+      "type": "function",
+      "name": "GetProfilePhotoHistory",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function GetProfilePhotoHistory in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfileAchievements",
+      "type": "function",
+      "name": "GetProfileAchievements",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function GetProfileAchievements in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:RecordProfileVisit",
+      "type": "function",
+      "name": "RecordProfileVisit",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function RecordProfileVisit in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:UpdateProfileSettings",
+      "type": "function",
+      "name": "UpdateProfileSettings",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function UpdateProfileSettings in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:RefreshAccessTokenAsync",
+      "type": "function",
+      "name": "RefreshAccessTokenAsync",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function RefreshAccessTokenAsync in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:Logout",
+      "type": "function",
+      "name": "Logout",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function Logout in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:LoginWithGoogle",
+      "type": "function",
+      "name": "LoginWithGoogle",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function LoginWithGoogle in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GoogleCallback",
+      "type": "function",
+      "name": "GoogleCallback",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function GoogleCallback in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:LoginWithFacebook",
+      "type": "function",
+      "name": "LoginWithFacebook",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function LoginWithFacebook in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:FacebookCallback",
+      "type": "function",
+      "name": "FacebookCallback",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function FacebookCallback in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:SendVerificationEmail",
+      "type": "function",
+      "name": "SendVerificationEmail",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function SendVerificationEmail in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ConfirmEmail",
+      "type": "function",
+      "name": "ConfirmEmail",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function ConfirmEmail in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:AddNewUserToOrganizationAsync",
+      "type": "function",
+      "name": "AddNewUserToOrganizationAsync",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function AddNewUserToOrganizationAsync in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:AddMultipleUsersToOrganizationAsync",
+      "type": "function",
+      "name": "AddMultipleUsersToOrganizationAsync",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function AddMultipleUsersToOrganizationAsync in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetOrganizationUsersNotLoginEver",
+      "type": "function",
+      "name": "GetOrganizationUsersNotLoginEver",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function GetOrganizationUsersNotLoginEver in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:SendPasswordResetLink",
+      "type": "function",
+      "name": "SendPasswordResetLink",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function SendPasswordResetLink in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ResetPassword",
+      "type": "function",
+      "name": "ResetPassword",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function ResetPassword in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ResetPasswordWithUserId",
+      "type": "function",
+      "name": "ResetPasswordWithUserId",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function ResetPasswordWithUserId in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/Organization/UserController.cs:DeleteUserData",
+      "type": "function",
+      "name": "DeleteUserData",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Function DeleteUserData in UserController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/Organization/UserController.cs:UserController",
+      "type": "class",
+      "name": "UserController",
+      "filePath": "src/NatureHelp/Controllers/Organization/UserController.cs",
+      "summary": "Class UserController with 26 method(s) in UserController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "type": "file",
+      "name": "PaymentController.cs",
+      "filePath": "src/NatureHelp/Controllers/PaymentController.cs",
+      "summary": "PaymentController.cs defines 1 class(es) and 4 function(s) in the csharp layer.",
+      "tags": [
+        "api-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/PaymentController.cs:PaymentController",
+      "type": "function",
+      "name": "PaymentController",
+      "filePath": "src/NatureHelp/Controllers/PaymentController.cs",
+      "summary": "Function PaymentController in PaymentController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/PaymentController.cs:CreateDonationPayment",
+      "type": "function",
+      "name": "CreateDonationPayment",
+      "filePath": "src/NatureHelp/Controllers/PaymentController.cs",
+      "summary": "Function CreateDonationPayment in PaymentController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/PaymentController.cs:HandlePaymentCallback",
+      "type": "function",
+      "name": "HandlePaymentCallback",
+      "filePath": "src/NatureHelp/Controllers/PaymentController.cs",
+      "summary": "Function HandlePaymentCallback in PaymentController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/NatureHelp/Controllers/PaymentController.cs:GetPaymentConfig",
+      "type": "function",
+      "name": "GetPaymentConfig",
+      "filePath": "src/NatureHelp/Controllers/PaymentController.cs",
+      "summary": "Function GetPaymentConfig in PaymentController.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Controllers/PaymentController.cs:PaymentController",
+      "type": "class",
+      "name": "PaymentController",
+      "filePath": "src/NatureHelp/Controllers/PaymentController.cs",
+      "summary": "Class PaymentController with 4 method(s) in PaymentController.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:src/NatureHelp/DataProtection-Keys/key-c330fc09-0fa2-43fe-b8e9-3017c97050ec.xml",
+      "type": "config",
+      "name": "key-c330fc09-0fa2-43fe-b8e9-3017c97050ec.xml",
+      "filePath": "src/NatureHelp/DataProtection-Keys/key-c330fc09-0fa2-43fe-b8e9-3017c97050ec.xml",
+      "summary": "Configuration for src/NatureHelp/DataProtection-Keys build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/DependencyInjection.cs",
+      "type": "file",
+      "name": "DependencyInjection.cs",
+      "filePath": "src/NatureHelp/DependencyInjection.cs",
+      "summary": "DependencyInjection.cs defines 2 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/NatureHelp/DependencyInjection.cs:AddInfrastructureServices",
+      "type": "function",
+      "name": "AddInfrastructureServices",
+      "filePath": "src/NatureHelp/DependencyInjection.cs",
+      "summary": "Function AddInfrastructureServices in DependencyInjection.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/DependencyInjection.cs:AddApplicationServices",
+      "type": "function",
+      "name": "AddApplicationServices",
+      "filePath": "src/NatureHelp/DependencyInjection.cs",
+      "summary": "Function AddApplicationServices in DependencyInjection.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/NatureHelp/DependencyInjection.cs:Program",
+      "type": "class",
+      "name": "Program",
+      "filePath": "src/NatureHelp/DependencyInjection.cs",
+      "summary": "Class Program with 0 method(s) in DependencyInjection.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/DependencyInjection.cs:DependencyInjection",
+      "type": "class",
+      "name": "DependencyInjection",
+      "filePath": "src/NatureHelp/DependencyInjection.cs",
+      "summary": "Class DependencyInjection with 2 method(s) in DependencyInjection.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "type": "file",
+      "name": "CommonExceptionsHandler.cs",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "summary": "CommonExceptionsHandler.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs:CanHandle",
+      "type": "function",
+      "name": "CanHandle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "summary": "Function CanHandle in CommonExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "summary": "Function Handle in CommonExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs:CommonExceptionsHandler",
+      "type": "class",
+      "name": "CommonExceptionsHandler",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "summary": "Class CommonExceptionsHandler with 2 method(s) in CommonExceptionsHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "type": "file",
+      "name": "DataAccessExceptionsHandler.cs",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "summary": "DataAccessExceptionsHandler.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs:CanHandle",
+      "type": "function",
+      "name": "CanHandle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "summary": "Function CanHandle in DataAccessExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs:Handle",
+      "type": "function",
+      "name": "Handle",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "summary": "Function Handle in DataAccessExceptionsHandler.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs:DataAccessExceptionsHandler",
+      "type": "class",
+      "name": "DataAccessExceptionsHandler",
+      "filePath": "src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "summary": "Class DataAccessExceptionsHandler with 2 method(s) in DataAccessExceptionsHandler.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:LaboratoryRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:LaboratoryRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:ApplyVisibilityFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:GetMapObjects",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:GetMapObjects",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:GetAllAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:GetAllAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:GetByIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/LaboratoryRepository.cs:GetByIdAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/LaboratoryRepository.cs:LaboratoryRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/LaboratoryRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/LaboratoryRepository.cs:LaboratoryRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/MonitoringRepository.cs:MonitoringRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/MonitoringRepository.cs:MonitoringRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/MonitoringRepository.cs:GetUserDeficiencyMonitoringAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/MonitoringRepository.cs:GetUserDeficiencyMonitoringAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/MonitoringRepository.cs:MonitoringRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/MonitoringRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/MonitoringRepository.cs:MonitoringRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:ProfileRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:ProfileRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:HasDailyVisitAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:HasDailyVisitAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:AddDailyVisitAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:AddDailyVisitAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:HasConfirmationAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:HasConfirmationAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountConfirmationsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountConfirmationsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:AddConfirmationAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:AddConfirmationAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:HasLedgerEntryAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:HasLedgerEntryAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:AddLedgerEntryAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:AddLedgerEntryAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetWaterDeficiencyByIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetWaterDeficiencyByIdAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetSoilDeficiencyByIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetSoilDeficiencyByIdAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountWaterByCreatorAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountWaterByCreatorAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountSoilByCreatorAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountSoilByCreatorAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountConfirmationsGivenByUserAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CountConfirmationsGivenByUserAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CreatorHasDeficiencyWithFiveConfirmationsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:CreatorHasDeficiencyWithFiveConfirmationsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetActiveAchievementsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetActiveAchievementsAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetUserAchievementAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetUserAchievementAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:UpsertUserAchievementAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:UpsertUserAchievementAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetAttachmentsByCreatorAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetAttachmentsByCreatorAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetProfileJournalAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ProfileRepository.cs:GetProfileJournalAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/ProfileRepository.cs:ProfileRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ProfileRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/ProfileRepository.cs:ProfileRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ResearchRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ResearchRepository.cs:ResearchRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ResearchRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ResearchRepository.cs:ResearchRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ResearchRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ResearchRepository.cs:GetAllAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ResearchRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ResearchRepository.cs:GetAllAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ResearchRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ResearchRepository.cs:GetByLabId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ResearchRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/ResearchRepository.cs:GetByLabId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ResearchRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/ResearchRepository.cs:ResearchRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/ResearchRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/ResearchRepository.cs:ResearchRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:UserRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:UserRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetAllAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetAllAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUserByEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUserByEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:ConfirmEmailByToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:ConfirmEmailByToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUserByRefreshTokenAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUserByRefreshTokenAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetNotLoginEver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetNotLoginEver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUsersCountByOrganization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUsersCountByOrganization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:UpdatePasswordAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:UpdatePasswordAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:CreatePasswordResetTokenAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:CreatePasswordResetTokenAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetPasswordResetTokenAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetPasswordResetTokenAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:InvalidatePasswordResetTokenAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:InvalidatePasswordResetTokenAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:IsPasswordResetTokenValidAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:IsPasswordResetTokenValidAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUserIdByPasswordResetTokenAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetUserIdByPasswordResetTokenAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:DeleteUserDataAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:DeleteUserDataAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:CountCreatedDeficienciesAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:CountCreatedDeficienciesAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetByOrganizationAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetByOrganizationAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetTotalCountByOrganization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "function:src/Infrastructure/Repositories/UserRepository.cs:GetTotalCountByOrganization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/UserRepository.cs:UserRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Repositories/UserRepository.cs",
+      "target": "class:src/Infrastructure/Repositories/UserRepository.cs:UserRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:ReportController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:ReportController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:GetWaterDeficienciesExcelFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:GetWaterDeficienciesExcelFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:GetSoilDeficienciesExcelFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:GetSoilDeficienciesExcelFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:GetOrgUsersExcelFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "function:src/NatureHelp/Controllers/Analitycs/ReportController.cs:GetOrgUsersExcelFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "class:src/NatureHelp/Controllers/Analitycs/ReportController.cs:ReportController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Analitycs/ReportController.cs",
+      "target": "class:src/NatureHelp/Controllers/Analitycs/ReportController.cs:ReportController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "function:src/NatureHelp/Controllers/AttachmentsController.cs:AttachmentsController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "function:src/NatureHelp/Controllers/AttachmentsController.cs:AttachmentsController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "function:src/NatureHelp/Controllers/AttachmentsController.cs:GetByDeficiencyId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "function:src/NatureHelp/Controllers/AttachmentsController.cs:GetByDeficiencyId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "function:src/NatureHelp/Controllers/AttachmentsController.cs:UploadAttachment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "function:src/NatureHelp/Controllers/AttachmentsController.cs:UploadAttachment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "function:src/NatureHelp/Controllers/AttachmentsController.cs:DownloadAttachment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "function:src/NatureHelp/Controllers/AttachmentsController.cs:DownloadAttachment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "class:src/NatureHelp/Controllers/AttachmentsController.cs:AttachmentsController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/AttachmentsController.cs",
+      "target": "class:src/NatureHelp/Controllers/AttachmentsController.cs:AttachmentsController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "target": "function:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs:ChangedModelLogsController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "target": "function:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs:ChangedModelLogsController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "target": "function:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs:GetDeficiencyHistoryById",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "target": "function:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs:GetDeficiencyHistoryById",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "target": "class:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs:ChangedModelLogsController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs",
+      "target": "class:src/NatureHelp/Controllers/Audit/ChangedModelLogsController.cs:ChangedModelLogsController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "target": "function:src/NatureHelp/Controllers/Audit/MonitoringController.cs:MonitoringController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "target": "function:src/NatureHelp/Controllers/Audit/MonitoringController.cs:MonitoringController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "target": "function:src/NatureHelp/Controllers/Audit/MonitoringController.cs:ToggleMonitoring",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "target": "function:src/NatureHelp/Controllers/Audit/MonitoringController.cs:ToggleMonitoring",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "target": "class:src/NatureHelp/Controllers/Audit/MonitoringController.cs:MonitoringController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Audit/MonitoringController.cs",
+      "target": "class:src/NatureHelp/Controllers/Audit/MonitoringController.cs:MonitoringController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseCachedController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseCachedController.cs:BaseCachedController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseCachedController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseCachedController.cs:BaseCachedController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseCachedController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseCachedController.cs:GetList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseCachedController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseCachedController.cs:GetList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseCachedController.cs",
+      "target": "class:src/NatureHelp/Controllers/BaseCachedController.cs:BaseCachedController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseCachedController.cs",
+      "target": "class:src/NatureHelp/Controllers/BaseCachedController.cs:BaseCachedController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:BaseController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:BaseController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:GetList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:GetList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:GetById",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:GetById",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:Create",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:Create",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:Update",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:Update",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:Delete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "function:src/NatureHelp/Controllers/BaseController.cs:Delete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "class:src/NatureHelp/Controllers/BaseController.cs:BaseController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/BaseController.cs",
+      "target": "class:src/NatureHelp/Controllers/BaseController.cs:BaseController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "target": "function:src/NatureHelp/Controllers/CommentMessagesController.cs:CommentMessagesController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "target": "function:src/NatureHelp/Controllers/CommentMessagesController.cs:CommentMessagesController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "target": "function:src/NatureHelp/Controllers/CommentMessagesController.cs:GetByDeficiencyId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "target": "function:src/NatureHelp/Controllers/CommentMessagesController.cs:GetByDeficiencyId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "target": "class:src/NatureHelp/Controllers/CommentMessagesController.cs:CommentMessagesController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/CommentMessagesController.cs",
+      "target": "class:src/NatureHelp/Controllers/CommentMessagesController.cs:CommentMessagesController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs:DeficiencyConfirmationController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs:DeficiencyConfirmationController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs:Confirm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs:Confirm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs:DeficiencyConfirmationController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/DeficiencyConfirmationController.cs:DeficiencyConfirmationController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/LaboratoryController.cs:LaboratoryController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/LaboratoryController.cs:LaboratoryController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/LaboratoryController.cs:GetDeficienciesForMapAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/LaboratoryController.cs:GetDeficienciesForMapAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/LaboratoryController.cs:LaboratoryController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/LaboratoryController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/LaboratoryController.cs:LaboratoryController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/ResearchController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/ResearchController.cs:ResearchController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/ResearchController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/ResearchController.cs:ResearchController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/ResearchController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/ResearchController.cs:ResearchController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/ResearchController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/ResearchController.cs:ResearchController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs:SoilDeficiencyController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs:SoilDeficiencyController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs:GetDeficienciesForMapAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs:GetDeficienciesForMapAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs:SoilDeficiencyController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/SoilDeficiencyController.cs:SoilDeficiencyController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs:WaterDeficiencyController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs:WaterDeficiencyController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs:GetDeficienciesForMapAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "target": "function:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs:GetDeficienciesForMapAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs:WaterDeficiencyController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs",
+      "target": "class:src/NatureHelp/Controllers/Nature/WaterDeficiencyController.cs:WaterDeficiencyController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/OrganizationController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/OrganizationController.cs:OrganizationController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/OrganizationController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/OrganizationController.cs:OrganizationController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/OrganizationController.cs",
+      "target": "class:src/NatureHelp/Controllers/Organization/OrganizationController.cs:OrganizationController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/OrganizationController.cs",
+      "target": "class:src/NatureHelp/Controllers/Organization/OrganizationController.cs:OrganizationController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:UserController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:UserController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetOrganizationUsers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetOrganizationUsers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ChangeUsersRoles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ChangeUsersRoles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:LoginAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:LoginAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetCurrentUserAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetCurrentUserAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfileStats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfileStats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfileJournal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfileJournal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfilePhotoHistory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfilePhotoHistory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfileAchievements",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetProfileAchievements",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:RecordProfileVisit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:RecordProfileVisit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:UpdateProfileSettings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:UpdateProfileSettings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:RefreshAccessTokenAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:RefreshAccessTokenAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:Logout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:Logout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:LoginWithGoogle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:LoginWithGoogle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GoogleCallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GoogleCallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:LoginWithFacebook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:LoginWithFacebook",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:FacebookCallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:FacebookCallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:SendVerificationEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:SendVerificationEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ConfirmEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ConfirmEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:AddNewUserToOrganizationAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:AddNewUserToOrganizationAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:AddMultipleUsersToOrganizationAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:AddMultipleUsersToOrganizationAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetOrganizationUsersNotLoginEver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:GetOrganizationUsersNotLoginEver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:SendPasswordResetLink",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:SendPasswordResetLink",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ResetPassword",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ResetPassword",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ResetPasswordWithUserId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:ResetPasswordWithUserId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:DeleteUserData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "function:src/NatureHelp/Controllers/Organization/UserController.cs:DeleteUserData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "class:src/NatureHelp/Controllers/Organization/UserController.cs:UserController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/Organization/UserController.cs",
+      "target": "class:src/NatureHelp/Controllers/Organization/UserController.cs:UserController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "function:src/NatureHelp/Controllers/PaymentController.cs:PaymentController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "function:src/NatureHelp/Controllers/PaymentController.cs:PaymentController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "function:src/NatureHelp/Controllers/PaymentController.cs:CreateDonationPayment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "function:src/NatureHelp/Controllers/PaymentController.cs:CreateDonationPayment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "function:src/NatureHelp/Controllers/PaymentController.cs:HandlePaymentCallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "function:src/NatureHelp/Controllers/PaymentController.cs:HandlePaymentCallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "function:src/NatureHelp/Controllers/PaymentController.cs:GetPaymentConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "function:src/NatureHelp/Controllers/PaymentController.cs:GetPaymentConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "class:src/NatureHelp/Controllers/PaymentController.cs:PaymentController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Controllers/PaymentController.cs",
+      "target": "class:src/NatureHelp/Controllers/PaymentController.cs:PaymentController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/DependencyInjection.cs",
+      "target": "function:src/NatureHelp/DependencyInjection.cs:AddInfrastructureServices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/DependencyInjection.cs",
+      "target": "function:src/NatureHelp/DependencyInjection.cs:AddInfrastructureServices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/DependencyInjection.cs",
+      "target": "function:src/NatureHelp/DependencyInjection.cs:AddApplicationServices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/DependencyInjection.cs",
+      "target": "function:src/NatureHelp/DependencyInjection.cs:AddApplicationServices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/DependencyInjection.cs",
+      "target": "class:src/NatureHelp/DependencyInjection.cs:Program",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/DependencyInjection.cs",
+      "target": "class:src/NatureHelp/DependencyInjection.cs:Program",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/DependencyInjection.cs",
+      "target": "class:src/NatureHelp/DependencyInjection.cs:DependencyInjection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/DependencyInjection.cs",
+      "target": "class:src/NatureHelp/DependencyInjection.cs:DependencyInjection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs:CanHandle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs:CanHandle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs:CommonExceptionsHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/CommonExceptionsHandler.cs:CommonExceptionsHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs:CanHandle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs:CanHandle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs:Handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "target": "function:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs:Handle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs:DataAccessExceptionsHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs",
+      "target": "class:src/NatureHelp/Exceptions/Handlers/DataAccessExceptionsHandler.cs:DataAccessExceptionsHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

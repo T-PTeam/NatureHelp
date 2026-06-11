@@ -1,0 +1,31 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/shared/styles/detail-page.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 215,
+      "nonEmptyLines": 182,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/styles/dialog-styles.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 85,
+      "nonEmptyLines": 72,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/styles/table-list.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 472,
+      "nonEmptyLines": 409,
+      "metrics": {}
+    }
+  ]
+}

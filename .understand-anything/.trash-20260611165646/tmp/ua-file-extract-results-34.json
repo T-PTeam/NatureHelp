@@ -1,0 +1,391 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 14,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/truncated-cell/truncated-cell.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/unauthorised/unauthorised.component.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/unauthorised/unauthorised.component.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/assets/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/src/assets/i18n/en.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 524,
+      "nonEmptyLines": 524,
+      "sections": [
+        {
+          "heading": "app",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "navigation",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "postAuthWelcome",
+          "level": 1,
+          "line": 18
+        },
+        {
+          "heading": "about",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "forms",
+          "level": 1,
+          "line": 42
+        },
+        {
+          "heading": "tables",
+          "level": 1,
+          "line": 154
+        },
+        {
+          "heading": "organizations",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "emailConfirmation",
+          "level": 1,
+          "line": 199
+        },
+        {
+          "heading": "passwordReset",
+          "level": 1,
+          "line": 208
+        },
+        {
+          "heading": "auth",
+          "level": 1,
+          "line": 232
+        },
+        {
+          "heading": "legal",
+          "level": 1,
+          "line": 237
+        },
+        {
+          "heading": "filters",
+          "level": 1,
+          "line": 260
+        },
+        {
+          "heading": "tableHeaders",
+          "level": 1,
+          "line": 275
+        },
+        {
+          "heading": "footer",
+          "level": 1,
+          "line": 320
+        },
+        {
+          "heading": "loading",
+          "level": 1,
+          "line": 118
+        },
+        {
+          "heading": "common",
+          "level": 1,
+          "line": 335
+        },
+        {
+          "heading": "userManagement",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "privacy",
+          "level": 1,
+          "line": 321
+        },
+        {
+          "heading": "contacts",
+          "level": 1,
+          "line": 248
+        },
+        {
+          "heading": "deficiency",
+          "level": 1,
+          "line": 298
+        },
+        {
+          "heading": "profile",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 21
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/assets/i18n/uk.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 524,
+      "nonEmptyLines": 524,
+      "sections": [
+        {
+          "heading": "app",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "navigation",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "postAuthWelcome",
+          "level": 1,
+          "line": 18
+        },
+        {
+          "heading": "about",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "forms",
+          "level": 1,
+          "line": 42
+        },
+        {
+          "heading": "tables",
+          "level": 1,
+          "line": 154
+        },
+        {
+          "heading": "organizations",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "emailConfirmation",
+          "level": 1,
+          "line": 199
+        },
+        {
+          "heading": "passwordReset",
+          "level": 1,
+          "line": 208
+        },
+        {
+          "heading": "auth",
+          "level": 1,
+          "line": 232
+        },
+        {
+          "heading": "legal",
+          "level": 1,
+          "line": 237
+        },
+        {
+          "heading": "filters",
+          "level": 1,
+          "line": 260
+        },
+        {
+          "heading": "tableHeaders",
+          "level": 1,
+          "line": 275
+        },
+        {
+          "heading": "footer",
+          "level": 1,
+          "line": 320
+        },
+        {
+          "heading": "loading",
+          "level": 1,
+          "line": 118
+        },
+        {
+          "heading": "common",
+          "level": 1,
+          "line": 335
+        },
+        {
+          "heading": "userManagement",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "privacy",
+          "level": 1,
+          "line": 321
+        },
+        {
+          "heading": "contacts",
+          "level": 1,
+          "line": 248
+        },
+        {
+          "heading": "deficiency",
+          "level": 1,
+          "line": 298
+        },
+        {
+          "heading": "profile",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 21
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/environments/environment.docker.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "exports": [
+        {
+          "name": "environment",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/environments/environment.stage.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "exports": [
+        {
+          "name": "environment",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/environments/environment.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "exports": [
+        {
+          "name": "environment",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/web.config",
+      "language": "config",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 49,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/tailwind.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/web.config",
+      "language": "config",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 19,
+      "metrics": {}
+    },
+    {
+      "path": "src/View/nature-help/webpack.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 29,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

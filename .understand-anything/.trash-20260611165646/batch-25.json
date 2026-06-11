@@ -1,0 +1,1437 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "type": "file",
+      "name": "DevelopmentDatabaseSeeder.cs",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "DevelopmentDatabaseSeeder.cs defines 1 class(es) and 15 function(s) in the csharp layer.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:DevelopmentDatabaseSeeder",
+      "type": "function",
+      "name": "DevelopmentDatabaseSeeder",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function DevelopmentDatabaseSeeder in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:SeedAsync",
+      "type": "function",
+      "name": "SeedAsync",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function SeedAsync in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:SeedBaseDataAsync",
+      "type": "function",
+      "name": "SeedBaseDataAsync",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function SeedBaseDataAsync in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:GetSeedTargets",
+      "type": "function",
+      "name": "GetSeedTargets",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function GetSeedTargets in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureBulkLaboratoriesAsync",
+      "type": "function",
+      "name": "EnsureBulkLaboratoriesAsync",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function EnsureBulkLaboratoriesAsync in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureBulkUsersAsync",
+      "type": "function",
+      "name": "EnsureBulkUsersAsync",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function EnsureBulkUsersAsync in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureBulkSoilDeficienciesAsync",
+      "type": "function",
+      "name": "EnsureBulkSoilDeficienciesAsync",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function EnsureBulkSoilDeficienciesAsync in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureBulkWaterDeficienciesAsync",
+      "type": "function",
+      "name": "EnsureBulkWaterDeficienciesAsync",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function EnsureBulkWaterDeficienciesAsync in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureSeedOwnerRolesAsync",
+      "type": "function",
+      "name": "EnsureSeedOwnerRolesAsync",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function EnsureSeedOwnerRolesAsync in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:CreateSoilDeficiency",
+      "type": "function",
+      "name": "CreateSoilDeficiency",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function CreateSoilDeficiency in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:CreateWaterDeficiency",
+      "type": "function",
+      "name": "CreateWaterDeficiency",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function CreateWaterDeficiency in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureLevelThresholdsDictAsync",
+      "type": "function",
+      "name": "EnsureLevelThresholdsDictAsync",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Function EnsureLevelThresholdsDictAsync in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:DevelopmentDatabaseSeeder",
+      "type": "class",
+      "name": "DevelopmentDatabaseSeeder",
+      "filePath": "src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "summary": "Class DevelopmentDatabaseSeeder with 15 method(s) in DevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Data/DevelopmentSeedData.cs",
+      "type": "file",
+      "name": "DevelopmentSeedData.cs",
+      "filePath": "src/Infrastructure/Data/DevelopmentSeedData.cs",
+      "summary": "DevelopmentSeedData.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Data/DevelopmentSeedData.cs:DevelopmentSeedData",
+      "type": "class",
+      "name": "DevelopmentSeedData",
+      "filePath": "src/Infrastructure/Data/DevelopmentSeedData.cs",
+      "summary": "Class DevelopmentSeedData with 0 method(s) in DevelopmentSeedData.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Data/IDevelopmentDatabaseSeeder.cs",
+      "type": "file",
+      "name": "IDevelopmentDatabaseSeeder.cs",
+      "filePath": "src/Infrastructure/Data/IDevelopmentDatabaseSeeder.cs",
+      "summary": "IDevelopmentDatabaseSeeder.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Data/IDevelopmentDatabaseSeeder.cs:IDevelopmentDatabaseSeeder",
+      "type": "class",
+      "name": "IDevelopmentDatabaseSeeder",
+      "filePath": "src/Infrastructure/Data/IDevelopmentDatabaseSeeder.cs",
+      "summary": "Class IDevelopmentDatabaseSeeder with 1 method(s) in IDevelopmentDatabaseSeeder.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Data/IProductionSuperAdminBootstrapper.cs",
+      "type": "file",
+      "name": "IProductionSuperAdminBootstrapper.cs",
+      "filePath": "src/Infrastructure/Data/IProductionSuperAdminBootstrapper.cs",
+      "summary": "IProductionSuperAdminBootstrapper.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Data/IProductionSuperAdminBootstrapper.cs:IProductionSuperAdminBootstrapper",
+      "type": "class",
+      "name": "IProductionSuperAdminBootstrapper",
+      "filePath": "src/Infrastructure/Data/IProductionSuperAdminBootstrapper.cs",
+      "summary": "Class IProductionSuperAdminBootstrapper with 1 method(s) in IProductionSuperAdminBootstrapper.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "type": "file",
+      "name": "ProductionSuperAdminBootstrapper.cs",
+      "filePath": "src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "summary": "ProductionSuperAdminBootstrapper.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs:ProductionSuperAdminBootstrapper",
+      "type": "function",
+      "name": "ProductionSuperAdminBootstrapper",
+      "filePath": "src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "summary": "Function ProductionSuperAdminBootstrapper in ProductionSuperAdminBootstrapper.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs:EnsureSuperAdminAsync",
+      "type": "function",
+      "name": "EnsureSuperAdminAsync",
+      "filePath": "src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "summary": "Function EnsureSuperAdminAsync in ProductionSuperAdminBootstrapper.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs:ProductionSuperAdminBootstrapper",
+      "type": "class",
+      "name": "ProductionSuperAdminBootstrapper",
+      "filePath": "src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "summary": "Class ProductionSuperAdminBootstrapper with 2 method(s) in ProductionSuperAdminBootstrapper.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Extensions/EnumerableExtensions.cs",
+      "type": "file",
+      "name": "EnumerableExtensions.cs",
+      "filePath": "src/Infrastructure/Extensions/EnumerableExtensions.cs",
+      "summary": "EnumerableExtensions.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Extensions/EnumerableExtensions.cs:ApplyFilters",
+      "type": "function",
+      "name": "ApplyFilters",
+      "filePath": "src/Infrastructure/Extensions/EnumerableExtensions.cs",
+      "summary": "Function ApplyFilters in EnumerableExtensions.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Infrastructure/Extensions/EnumerableExtensions.cs:EnumerableeExtensions",
+      "type": "class",
+      "name": "EnumerableeExtensions",
+      "filePath": "src/Infrastructure/Extensions/EnumerableExtensions.cs",
+      "summary": "Class EnumerableeExtensions with 1 method(s) in EnumerableExtensions.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "type": "file",
+      "name": "QueryableExtensions.cs",
+      "filePath": "src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "summary": "QueryableExtensions.cs defines 1 class(es) and 4 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ExtractSorting",
+      "type": "function",
+      "name": "ExtractSorting",
+      "filePath": "src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "summary": "Function ExtractSorting in QueryableExtensions.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ConvertFilterValue",
+      "type": "function",
+      "name": "ConvertFilterValue",
+      "filePath": "src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "summary": "Function ConvertFilterValue in QueryableExtensions.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ApplySorting",
+      "type": "function",
+      "name": "ApplySorting",
+      "filePath": "src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "summary": "Function ApplySorting in QueryableExtensions.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ApplyFilters",
+      "type": "function",
+      "name": "ApplyFilters",
+      "filePath": "src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "summary": "Function ApplyFilters in QueryableExtensions.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Infrastructure/Extensions/QueryableExtensions.cs:QueryableExtensions",
+      "type": "class",
+      "name": "QueryableExtensions",
+      "filePath": "src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "summary": "Class QueryableExtensions with 4 method(s) in QueryableExtensions.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:src/Infrastructure/Infrastructure.csproj",
+      "type": "config",
+      "name": "Infrastructure.csproj",
+      "filePath": "src/Infrastructure/Infrastructure.csproj",
+      "summary": "Configuration for src/Infrastructure build or runtime settings.",
+      "tags": [
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Interfaces/IBlobStorageProvider.cs",
+      "type": "file",
+      "name": "IBlobStorageProvider.cs",
+      "filePath": "src/Infrastructure/Interfaces/IBlobStorageProvider.cs",
+      "summary": "IBlobStorageProvider.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Interfaces/IBlobStorageProvider.cs:IBlobStorageProvider",
+      "type": "class",
+      "name": "IBlobStorageProvider",
+      "filePath": "src/Infrastructure/Interfaces/IBlobStorageProvider.cs",
+      "summary": "Class IBlobStorageProvider with 2 method(s) in IBlobStorageProvider.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Interfaces/IChangedModelLogRepository.cs",
+      "type": "file",
+      "name": "IChangedModelLogRepository.cs",
+      "filePath": "src/Infrastructure/Interfaces/IChangedModelLogRepository.cs",
+      "summary": "IChangedModelLogRepository.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Interfaces/IChangedModelLogRepository.cs:IChangedModelLogRepository",
+      "type": "class",
+      "name": "IChangedModelLogRepository",
+      "filePath": "src/Infrastructure/Interfaces/IChangedModelLogRepository.cs",
+      "summary": "Class IChangedModelLogRepository with 1 method(s) in IChangedModelLogRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Interfaces/IDeficiencyBindModelRepository.cs",
+      "type": "file",
+      "name": "IDeficiencyBindModelRepository.cs",
+      "filePath": "src/Infrastructure/Interfaces/IDeficiencyBindModelRepository.cs",
+      "summary": "IDeficiencyBindModelRepository.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Interfaces/IDeficiencyBindModelRepository.cs:IDeficiencyBindModelRepository",
+      "type": "class",
+      "name": "IDeficiencyBindModelRepository",
+      "filePath": "src/Infrastructure/Interfaces/IDeficiencyBindModelRepository.cs",
+      "summary": "Class IDeficiencyBindModelRepository with 1 method(s) in IDeficiencyBindModelRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Interfaces/IDictEntryRepository.cs",
+      "type": "file",
+      "name": "IDictEntryRepository.cs",
+      "filePath": "src/Infrastructure/Interfaces/IDictEntryRepository.cs",
+      "summary": "IDictEntryRepository.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Interfaces/IDictEntryRepository.cs:IDictEntryRepository",
+      "type": "class",
+      "name": "IDictEntryRepository",
+      "filePath": "src/Infrastructure/Interfaces/IDictEntryRepository.cs",
+      "summary": "Class IDictEntryRepository with 1 method(s) in IDictEntryRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Interfaces/IEmailSender.cs",
+      "type": "file",
+      "name": "IEmailSender.cs",
+      "filePath": "src/Infrastructure/Interfaces/IEmailSender.cs",
+      "summary": "IEmailSender.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Interfaces/IEmailSender.cs:IEmailSender",
+      "type": "class",
+      "name": "IEmailSender",
+      "filePath": "src/Infrastructure/Interfaces/IEmailSender.cs",
+      "summary": "Class IEmailSender with 1 method(s) in IEmailSender.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Interfaces/IMonitoringRepository.cs",
+      "type": "file",
+      "name": "IMonitoringRepository.cs",
+      "filePath": "src/Infrastructure/Interfaces/IMonitoringRepository.cs",
+      "summary": "IMonitoringRepository.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Interfaces/IMonitoringRepository.cs:IMonitoringRepository",
+      "type": "class",
+      "name": "IMonitoringRepository",
+      "filePath": "src/Infrastructure/Interfaces/IMonitoringRepository.cs",
+      "summary": "Class IMonitoringRepository with 1 method(s) in IMonitoringRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Interfaces/IProfileRepository.cs",
+      "type": "file",
+      "name": "IProfileRepository.cs",
+      "filePath": "src/Infrastructure/Interfaces/IProfileRepository.cs",
+      "summary": "IProfileRepository.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Interfaces/IProfileRepository.cs:IProfileRepository",
+      "type": "class",
+      "name": "IProfileRepository",
+      "filePath": "src/Infrastructure/Interfaces/IProfileRepository.cs",
+      "summary": "Class IProfileRepository with 18 method(s) in IProfileRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Interfaces/IResearchRepository.cs",
+      "type": "file",
+      "name": "IResearchRepository.cs",
+      "filePath": "src/Infrastructure/Interfaces/IResearchRepository.cs",
+      "summary": "IResearchRepository.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Interfaces/IResearchRepository.cs:IResearchRepository",
+      "type": "class",
+      "name": "IResearchRepository",
+      "filePath": "src/Infrastructure/Interfaces/IResearchRepository.cs",
+      "summary": "Class IResearchRepository with 1 method(s) in IResearchRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Interfaces/IUserRepository.cs",
+      "type": "file",
+      "name": "IUserRepository.cs",
+      "filePath": "src/Infrastructure/Interfaces/IUserRepository.cs",
+      "summary": "IUserRepository.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Interfaces/IUserRepository.cs:IUserRepository",
+      "type": "class",
+      "name": "IUserRepository",
+      "filePath": "src/Infrastructure/Interfaces/IUserRepository.cs",
+      "summary": "Class IUserRepository with 15 method(s) in IUserRepository.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs",
+      "type": "file",
+      "name": "20250319090512_Rewriting_Initial_Create.cs",
+      "filePath": "src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs",
+      "summary": "20250319090512_Rewriting_Initial_Create.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs",
+      "summary": "Function Up in 20250319090512_Rewriting_Initial_Create.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs",
+      "summary": "Function Down in 20250319090512_Rewriting_Initial_Create.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs:Rewriting_Initial_Create",
+      "type": "class",
+      "name": "Rewriting_Initial_Create",
+      "filePath": "src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs",
+      "summary": "Class Rewriting_Initial_Create with 2 method(s) in 20250319090512_Rewriting_Initial_Create.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs",
+      "type": "file",
+      "name": "20250319090512_Rewriting_Initial_Create.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs",
+      "summary": "20250319090512_Rewriting_Initial_Create.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250319090512_Rewriting_Initial_Create.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs:Rewriting_Initial_Create",
+      "type": "class",
+      "name": "Rewriting_Initial_Create",
+      "filePath": "src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs",
+      "summary": "Class Rewriting_Initial_Create with 1 method(s) in 20250319090512_Rewriting_Initial_Create.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.cs",
+      "type": "file",
+      "name": "20250319090636_Autogenerating_Data.cs",
+      "filePath": "src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.cs",
+      "summary": "20250319090636_Autogenerating_Data.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.cs:Autogenerating_Data",
+      "type": "class",
+      "name": "Autogenerating_Data",
+      "filePath": "src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.cs",
+      "summary": "Class Autogenerating_Data with 2 method(s) in 20250319090636_Autogenerating_Data.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs",
+      "type": "file",
+      "name": "20250319090636_Autogenerating_Data.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs",
+      "summary": "20250319090636_Autogenerating_Data.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250319090636_Autogenerating_Data.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs:Autogenerating_Data",
+      "type": "class",
+      "name": "Autogenerating_Data",
+      "filePath": "src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs",
+      "summary": "Class Autogenerating_Data with 1 method(s) in 20250319090636_Autogenerating_Data.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250327152646_AddedResearches.cs",
+      "type": "file",
+      "name": "20250327152646_AddedResearches.cs",
+      "filePath": "src/Infrastructure/Migrations/20250327152646_AddedResearches.cs",
+      "summary": "20250327152646_AddedResearches.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250327152646_AddedResearches.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250327152646_AddedResearches.cs",
+      "summary": "Function Up in 20250327152646_AddedResearches.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250327152646_AddedResearches.cs:AddedResearches",
+      "type": "class",
+      "name": "AddedResearches",
+      "filePath": "src/Infrastructure/Migrations/20250327152646_AddedResearches.cs",
+      "summary": "Class AddedResearches with 2 method(s) in 20250327152646_AddedResearches.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs",
+      "type": "file",
+      "name": "20250327152646_AddedResearches.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs",
+      "summary": "20250327152646_AddedResearches.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250327152646_AddedResearches.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs:AddedResearches",
+      "type": "class",
+      "name": "AddedResearches",
+      "filePath": "src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs",
+      "summary": "Class AddedResearches with 1 method(s) in 20250327152646_AddedResearches.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs",
+      "type": "file",
+      "name": "20250331100324_DeficiencyRelationships.cs",
+      "filePath": "src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs",
+      "summary": "20250331100324_DeficiencyRelationships.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs:Up",
+      "type": "function",
+      "name": "Up",
+      "filePath": "src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs",
+      "summary": "Function Up in 20250331100324_DeficiencyRelationships.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs:Down",
+      "type": "function",
+      "name": "Down",
+      "filePath": "src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs",
+      "summary": "Function Down in 20250331100324_DeficiencyRelationships.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs:DeficiencyRelationships",
+      "type": "class",
+      "name": "DeficiencyRelationships",
+      "filePath": "src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs",
+      "summary": "Class DeficiencyRelationships with 2 method(s) in 20250331100324_DeficiencyRelationships.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs",
+      "type": "file",
+      "name": "20250331100324_DeficiencyRelationships.Designer.cs",
+      "filePath": "src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs",
+      "summary": "20250331100324_DeficiencyRelationships.Designer.cs defines 1 class(es) and 1 function(s) in the csharp layer.",
+      "tags": [
+        "migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs:BuildTargetModel",
+      "type": "function",
+      "name": "BuildTargetModel",
+      "filePath": "src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs",
+      "summary": "Function BuildTargetModel in 20250331100324_DeficiencyRelationships.Designer.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs:DeficiencyRelationships",
+      "type": "class",
+      "name": "DeficiencyRelationships",
+      "filePath": "src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs",
+      "summary": "Class DeficiencyRelationships with 1 method(s) in 20250331100324_DeficiencyRelationships.Designer.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "file:src/Infrastructure/Data/DevelopmentSeedData.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:DevelopmentDatabaseSeeder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:DevelopmentDatabaseSeeder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:SeedAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:SeedAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:SeedBaseDataAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:GetSeedTargets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureBulkLaboratoriesAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureBulkUsersAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureBulkSoilDeficienciesAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureBulkWaterDeficienciesAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureSeedOwnerRolesAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:CreateSoilDeficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:CreateWaterDeficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "function:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:EnsureLevelThresholdsDictAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "class:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:DevelopmentDatabaseSeeder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs",
+      "target": "class:src/Infrastructure/Data/DevelopmentDatabaseSeeder.cs:DevelopmentDatabaseSeeder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Data/DevelopmentSeedData.cs",
+      "target": "class:src/Infrastructure/Data/DevelopmentSeedData.cs:DevelopmentSeedData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/IDevelopmentDatabaseSeeder.cs",
+      "target": "class:src/Infrastructure/Data/IDevelopmentDatabaseSeeder.cs:IDevelopmentDatabaseSeeder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/IDevelopmentDatabaseSeeder.cs",
+      "target": "class:src/Infrastructure/Data/IDevelopmentDatabaseSeeder.cs:IDevelopmentDatabaseSeeder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Data/IProductionSuperAdminBootstrapper.cs",
+      "target": "class:src/Infrastructure/Data/IProductionSuperAdminBootstrapper.cs:IProductionSuperAdminBootstrapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/IProductionSuperAdminBootstrapper.cs",
+      "target": "class:src/Infrastructure/Data/IProductionSuperAdminBootstrapper.cs:IProductionSuperAdminBootstrapper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "target": "function:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs:ProductionSuperAdminBootstrapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "target": "function:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs:ProductionSuperAdminBootstrapper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "target": "function:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs:EnsureSuperAdminAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "target": "function:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs:EnsureSuperAdminAsync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "target": "class:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs:ProductionSuperAdminBootstrapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs",
+      "target": "class:src/Infrastructure/Data/ProductionSuperAdminBootstrapper.cs:ProductionSuperAdminBootstrapper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/EnumerableExtensions.cs",
+      "target": "function:src/Infrastructure/Extensions/EnumerableExtensions.cs:ApplyFilters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/EnumerableExtensions.cs",
+      "target": "function:src/Infrastructure/Extensions/EnumerableExtensions.cs:ApplyFilters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/EnumerableExtensions.cs",
+      "target": "class:src/Infrastructure/Extensions/EnumerableExtensions.cs:EnumerableeExtensions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/EnumerableExtensions.cs",
+      "target": "class:src/Infrastructure/Extensions/EnumerableExtensions.cs:EnumerableeExtensions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "target": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ExtractSorting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "target": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ExtractSorting",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "target": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ConvertFilterValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "target": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ApplySorting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "target": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ApplySorting",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "target": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ApplyFilters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "target": "function:src/Infrastructure/Extensions/QueryableExtensions.cs:ApplyFilters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "target": "class:src/Infrastructure/Extensions/QueryableExtensions.cs:QueryableExtensions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Extensions/QueryableExtensions.cs",
+      "target": "class:src/Infrastructure/Extensions/QueryableExtensions.cs:QueryableExtensions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IBlobStorageProvider.cs",
+      "target": "class:src/Infrastructure/Interfaces/IBlobStorageProvider.cs:IBlobStorageProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IBlobStorageProvider.cs",
+      "target": "class:src/Infrastructure/Interfaces/IBlobStorageProvider.cs:IBlobStorageProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IChangedModelLogRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IChangedModelLogRepository.cs:IChangedModelLogRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IChangedModelLogRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IChangedModelLogRepository.cs:IChangedModelLogRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IDeficiencyBindModelRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IDeficiencyBindModelRepository.cs:IDeficiencyBindModelRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IDeficiencyBindModelRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IDeficiencyBindModelRepository.cs:IDeficiencyBindModelRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IDictEntryRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IDictEntryRepository.cs:IDictEntryRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IDictEntryRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IDictEntryRepository.cs:IDictEntryRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IEmailSender.cs",
+      "target": "class:src/Infrastructure/Interfaces/IEmailSender.cs:IEmailSender",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IEmailSender.cs",
+      "target": "class:src/Infrastructure/Interfaces/IEmailSender.cs:IEmailSender",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IMonitoringRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IMonitoringRepository.cs:IMonitoringRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IMonitoringRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IMonitoringRepository.cs:IMonitoringRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IProfileRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IProfileRepository.cs:IProfileRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IProfileRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IProfileRepository.cs:IProfileRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IResearchRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IResearchRepository.cs:IResearchRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IResearchRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IResearchRepository.cs:IResearchRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IUserRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IUserRepository.cs:IUserRepository",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Interfaces/IUserRepository.cs",
+      "target": "class:src/Infrastructure/Interfaces/IUserRepository.cs:IUserRepository",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs",
+      "target": "function:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs",
+      "target": "function:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs",
+      "target": "class:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs:Rewriting_Initial_Create",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs",
+      "target": "class:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.cs:Rewriting_Initial_Create",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250319090512_Rewriting_Initial_Create.Designer.cs:Rewriting_Initial_Create",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.cs",
+      "target": "class:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.cs:Autogenerating_Data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.cs",
+      "target": "class:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.cs:Autogenerating_Data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250319090636_Autogenerating_Data.Designer.cs:Autogenerating_Data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250327152646_AddedResearches.cs",
+      "target": "function:src/Infrastructure/Migrations/20250327152646_AddedResearches.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250327152646_AddedResearches.cs",
+      "target": "class:src/Infrastructure/Migrations/20250327152646_AddedResearches.cs:AddedResearches",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250327152646_AddedResearches.cs",
+      "target": "class:src/Infrastructure/Migrations/20250327152646_AddedResearches.cs:AddedResearches",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250327152646_AddedResearches.Designer.cs:AddedResearches",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs",
+      "target": "function:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs:Up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs",
+      "target": "function:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs:Down",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs",
+      "target": "class:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs:DeficiencyRelationships",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs",
+      "target": "class:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.cs:DeficiencyRelationships",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs",
+      "target": "function:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs:BuildTargetModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs",
+      "target": "class:src/Infrastructure/Migrations/20250331100324_DeficiencyRelationships.Designer.cs:DeficiencyRelationships",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

@@ -22,6 +22,7 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
 
   private isAddingLaboratory: boolean = false;
   private destroy$ = new Subject<void>();
+  private coordinatesPickingSubscribed = false;
 
   get researchersText(): string {
     return this.details?.researchers?.map((r) => `${r.firstName} ${r.lastName}`).join("\n") || "";
@@ -51,7 +52,7 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.subscribeToCoordinatesPicking();
+    this.ensureCoordinatesPickingSubscription();
   }
 
   ngOnDestroy() {
@@ -146,6 +147,8 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
     this.details = {
       ...this.detailsForm.value,
     };
+
+    this.ensureCoordinatesPickingSubscription();
   }
 
   private getFormErrors(formGroup: FormGroup): any {
@@ -161,20 +164,31 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
     return errors;
   }
 
+  private ensureCoordinatesPickingSubscription(): void {
+    if (this.coordinatesPickingSubscribed) {
+      return;
+    }
+
+    this.coordinatesPickingSubscribed = true;
+    this.subscribeToCoordinatesPicking();
+  }
+
   private subscribeToCoordinatesPicking(): void {
     this.mapViewService.selectedCoordinates$.pipe(takeUntil(this.destroy$)).subscribe((coordinates) => {
-      if (coordinates) {
-        this.detailsForm.patchValue({
-          latitude: coordinates.latitude,
-          longitude: coordinates.longitude,
-        });
-        this.isSelectingCoordinates = false;
+      if (!coordinates || !this.detailsForm) {
+        return;
       }
+
+      this.detailsForm.patchValue({
+        latitude: coordinates.latitude,
+        longitude: coordinates.longitude,
+      });
+      this.isSelectingCoordinates = false;
     });
 
     this.mapViewService.selectedAddress$.pipe(takeUntil(this.destroy$)).subscribe((address) => {
       this.selectedAddress = address;
-      if (address) {
+      if (address && this.detailsForm) {
         this.detailsForm.patchValue({ address: address.displayName });
       }
     });

@@ -4,14 +4,26 @@
 
 <div class="grid-container">
   <div class="grid-header">
-    <div [matTooltip]="'tableHeaders.title' | translate">
-      {{ "tableHeaders.title" | translate }}
+    <div
+      class="sortable-header"
+      [class.active]="sort?.sortBy === 'title'"
+      [matTooltip]="'tableHeaders.title' | translate"
+      (click)="onSort('title')">
+      {{ "tableHeaders.title" | translate }}{{ sortIndicator(sort, "title") }}
     </div>
-    <div [matTooltip]="'tableHeaders.type' | translate">
-      {{ "tableHeaders.type" | translate }}
+    <div
+      class="sortable-header"
+      [class.active]="sort?.sortBy === 'type'"
+      [matTooltip]="'tableHeaders.type' | translate"
+      (click)="onSort('type')">
+      {{ "tableHeaders.type" | translate }}{{ sortIndicator(sort, "type") }}
     </div>
-    <div [matTooltip]="'tableHeaders.date' | translate">
-      {{ "tableHeaders.date" | translate }}
+    <div
+      class="sortable-header"
+      [class.active]="sort?.sortBy === 'date'"
+      [matTooltip]="'tableHeaders.date' | translate"
+      (click)="onSort('date')">
+      {{ "tableHeaders.date" | translate }}{{ sortIndicator(sort, "date") }}
     </div>
     <div [matTooltip]="'tableHeaders.researcher' | translate">
       {{ "tableHeaders.researcher" | translate }}
@@ -30,13 +42,15 @@
     <div
       *ngFor="let research of researchesAPIService.researches$ | async"
       class="grid-row">
-      <div>{{ research.title }}</div>
-      <div>{{ research.type | enumToString: "ResearchType" }}</div>
-      <div>{{ research.date | date }}</div>
-      <div>{{ research.researcher.firstName }} {{ research.researcher.lastName }}</div>
-      <div>
-        {{ research.laboratory.title }}, {{ research.laboratory.latitude }}, {{ research.laboratory.longitude }}
-      </div>
+      <nat-truncated-cell [value]="research.title"></nat-truncated-cell>
+      <nat-truncated-cell [value]="research.type | enumToString: 'ResearchType'"></nat-truncated-cell>
+      <nat-truncated-cell [value]="research.date | date"></nat-truncated-cell>
+      <nat-truncated-cell
+        [value]="research.researcher.firstName + ' ' + research.researcher.lastName"></nat-truncated-cell>
+      <nat-truncated-cell
+        [value]="
+          research.laboratory.title + ', ' + research.laboratory.latitude + ', ' + research.laboratory.longitude
+        "></nat-truncated-cell>
     </div>
   </div>
 </div>

@@ -68,10 +68,10 @@ button:hover {
 .navbar-left button[class*="active"],
 .navbar-left button.router-link-active,
 .navbar-left button.active {
-  background: #3f51b5 !important;
+  background: var(--color-primary) !important;
   color: white !important;
-  border: 2px solid #3f51b5 !important;
-  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.4) !important;
+  border: 2px solid var(--color-primary) !important;
+  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.4) !important;
   font-weight: 700 !important;
   transform: translateY(-2px) !important;
 }
@@ -79,10 +79,10 @@ button:hover {
 .navbar-left button[routerLink="water"].active,
 .navbar-left button[routerLink="water"].router-link-active,
 .navbar-left button[routerLink="water"][class*="active"] {
-  background: #3f51b5 !important;
+  background: var(--color-primary) !important;
   color: white !important;
-  border: 2px solid #3f51b5 !important;
-  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.4) !important;
+  border: 2px solid var(--color-primary) !important;
+  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.4) !important;
   font-weight: 700 !important;
   transform: translateY(-2px) !important;
 }
@@ -93,12 +93,29 @@ button[data-cy="map-switch-mobile"] {
   min-width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: hsl(var(--muted));
-  border: 1px solid hsl(var(--border));
   opacity: 1 !important;
 }
 
-button[data-cy="auth-menu"]:hover,
+button[data-cy="auth-menu"] {
+  background: var(--color-secondary) !important;
+  color: white !important;
+  border: 2px solid var(--color-secondary) !important;
+  box-shadow: 0 4px 12px rgba(var(--color-secondary-rgb), 0.4) !important;
+}
+
+button[data-cy="map-switch-mobile"] {
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+}
+
+button[data-cy="auth-menu"]:hover {
+  background: var(--color-secondary) !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--color-secondary-rgb), 0.5) !important;
+  opacity: 1 !important;
+}
+
 button[data-cy="map-switch-mobile"]:hover {
   background: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
@@ -107,7 +124,14 @@ button[data-cy="map-switch-mobile"]:hover {
   opacity: 1 !important;
 }
 
-button[data-cy="auth-menu"] mat-icon,
+button[data-cy="auth-menu"] mat-icon {
+  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  margin: 0px;
+  color: white;
+}
+
 button[data-cy="map-switch-mobile"] mat-icon {
   font-size: 1.2rem;
   width: 20px;

@@ -1,0 +1,2157 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/app-routing.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 237,
+      "nonEmptyLines": 223,
+      "classes": [
+        {
+          "name": "AppRoutingModule",
+          "startLine": 237,
+          "endLine": 237,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppRoutingModule",
+          "line": 233,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 20,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/IOrganization.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/components/lab-details/lab-details.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 196,
+      "nonEmptyLines": 170,
+      "classes": [
+        {
+          "name": "LabDetailsComponent",
+          "startLine": 17,
+          "endLine": 196,
+          "methods": [
+            "researchersText",
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy",
+            "onSubmit",
+            "onCancel",
+            "toggleCoordinateSelection",
+            "changeMapView",
+            "initializeForm",
+            "getFormErrors",
+            "ensureCoordinatesPickingSubscription",
+            "subscribeToCoordinatesPicking"
+          ],
+          "properties": [
+            "details",
+            "detailsForm",
+            "isSelectingCoordinates",
+            "selectedAddress",
+            "isAddingLaboratory",
+            "destroy$",
+            "coordinatesPickingSubscribed"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LabDetailsComponent",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "researchersText",
+          "callee": "this.details?.researchers?.map((r) => `${r.firstName} ${r.lastName}`).join",
+          "lineNumber": 28
+        },
+        {
+          "caller": "researchersText",
+          "callee": "this.details?.researchers?.map",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.activatedRoute.params.pipe(takeUntil(this.destroy$)).subscribe",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.activatedRoute.params.pipe",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "takeUntil",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.initializeForm",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.labsAPIService.getLabById(id).subscribe",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.labsAPIService.getLabById",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.initializeForm",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.changeMapView",
+          "lineNumber": 50
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.ensureCoordinatesPickingSubscription",
+          "lineNumber": 55
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.mapViewService.disableCoordinateSelection",
+          "lineNumber": 62
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.detailsForm.markAllAsTouched",
+          "lineNumber": 68
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 75
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.mobileMapService.hideMobileMap",
+          "lineNumber": 76
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.labsAPIService.addLab(formData).subscribe",
+          "lineNumber": 80
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.labsAPIService.addLab",
+          "lineNumber": 80
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.router.navigate",
+          "lineNumber": 82
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "console.error",
+          "lineNumber": 85
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.labsAPIService.updateLabById(formData.id, formData).subscribe",
+          "lineNumber": 89
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.labsAPIService.updateLabById",
+          "lineNumber": 89
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.router.navigate",
+          "lineNumber": 91
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "console.error",
+          "lineNumber": 94
+        },
+        {
+          "caller": "onCancel",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 101
+        },
+        {
+          "caller": "onCancel",
+          "callee": "this.mobileMapService.hideMobileMap",
+          "lineNumber": 102
+        },
+        {
+          "caller": "onCancel",
+          "callee": "this.router.navigate",
+          "lineNumber": 105
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "event.preventDefault",
+          "lineNumber": 110
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "event.stopPropagation",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "this.mapViewService.enableCoordinateSelection",
+          "lineNumber": 115
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 116
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "this.mobileMapService.showMobileMap",
+          "lineNumber": 117
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "this.mapViewService.disableCoordinateSelection",
+          "lineNumber": 120
+        },
+        {
+          "caller": "changeMapView",
+          "callee": "this.mapViewService.changeFocus",
+          "lineNumber": 125
+        },
+        {
+          "caller": "changeMapView",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 130
+        },
+        {
+          "caller": "changeMapView",
+          "callee": "this.mobileMapService.showMobileMap",
+          "lineNumber": 131
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "this.fb.group",
+          "lineNumber": 136
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 137
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.min",
+          "lineNumber": 139
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.max",
+          "lineNumber": 139
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.min",
+          "lineNumber": 140
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.max",
+          "lineNumber": 140
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.min",
+          "lineNumber": 142
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "this.ensureCoordinatesPickingSubscription",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getFormErrors",
+          "callee": "Object.keys(formGroup.controls).forEach",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getFormErrors",
+          "callee": "Object.keys",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getFormErrors",
+          "callee": "this.getFormErrors",
+          "lineNumber": 159
+        },
+        {
+          "caller": "ensureCoordinatesPickingSubscription",
+          "callee": "this.subscribeToCoordinatesPicking",
+          "lineNumber": 173
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.mapViewService.selectedCoordinates$.pipe(takeUntil(this.destroy$)).subscribe",
+          "lineNumber": 177
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.mapViewService.selectedCoordinates$.pipe",
+          "lineNumber": 177
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "takeUntil",
+          "lineNumber": 177
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.detailsForm.patchValue",
+          "lineNumber": 182
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.mapViewService.selectedAddress$.pipe(takeUntil(this.destroy$)).subscribe",
+          "lineNumber": 189
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.mapViewService.selectedAddress$.pipe",
+          "lineNumber": 189
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "takeUntil",
+          "lineNumber": 189
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.detailsForm.patchValue",
+          "lineNumber": 192
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/components/about/about.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AboutComponent",
+          "startLine": 9,
+          "endLine": 12,
+          "methods": [],
+          "properties": [
+            "data",
+            "signature"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AboutComponent",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/components/main-container/main-container.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "MainContainerComponent",
+          "startLine": 13,
+          "endLine": 50,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy"
+          ],
+          "properties": [
+            "isLeftSideVisible",
+            "loadingVisible",
+            "routerSubscription",
+            "loadingSubscription"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MainContainerComponent",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "/iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.router.url.includes",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.loading.loading$.subscribe",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "setTimeout",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.router.events.subscribe",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "event.url.includes",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "setTimeout",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.routerSubscription?.unsubscribe",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.loadingSubscription?.unsubscribe",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/components/navigation-bar/navigation-bar.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 179,
+      "nonEmptyLines": 162,
+      "classes": [
+        {
+          "name": "NavigationBarComponent",
+          "startLine": 23,
+          "endLine": 179,
+          "methods": [
+            "constructor",
+            "isMobile",
+            "isRouteActive",
+            "isDeficienciesRouteActive",
+            "isEmailVerificationDisabled$",
+            "formattedTimeRemaining",
+            "ngOnInit",
+            "ngOnDestroy",
+            "startTimer",
+            "openAuthDialog",
+            "logout",
+            "sendEmailVerification"
+          ],
+          "properties": [
+            "isOpenedMapOnMobile",
+            "lastVerificationSent",
+            "destroy$",
+            "timeRemaining",
+            "isAuthenticating"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NavigationBarComponent",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isMobile",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isRouteActive",
+          "callee": "this.router.events.pipe",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isRouteActive",
+          "callee": "filter",
+          "lineNumber": 45
+        },
+        {
+          "caller": "isRouteActive",
+          "callee": "map",
+          "lineNumber": 46
+        },
+        {
+          "caller": "isRouteActive",
+          "callee": "url.includes",
+          "lineNumber": 48
+        },
+        {
+          "caller": "isRouteActive",
+          "callee": "startWith",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isRouteActive",
+          "callee": "this.router.url.includes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isDeficienciesRouteActive",
+          "callee": "this.router.events.pipe",
+          "lineNumber": 55
+        },
+        {
+          "caller": "isDeficienciesRouteActive",
+          "callee": "filter",
+          "lineNumber": 56
+        },
+        {
+          "caller": "isDeficienciesRouteActive",
+          "callee": "map",
+          "lineNumber": 57
+        },
+        {
+          "caller": "isDeficienciesRouteActive",
+          "callee": "url.includes",
+          "lineNumber": 59
+        },
+        {
+          "caller": "isDeficienciesRouteActive",
+          "callee": "url.includes",
+          "lineNumber": 59
+        },
+        {
+          "caller": "isDeficienciesRouteActive",
+          "callee": "startWith",
+          "lineNumber": 61
+        },
+        {
+          "caller": "isDeficienciesRouteActive",
+          "callee": "this.router.url.includes",
+          "lineNumber": 61
+        },
+        {
+          "caller": "isDeficienciesRouteActive",
+          "callee": "this.router.url.includes",
+          "lineNumber": 61
+        },
+        {
+          "caller": "isEmailVerificationDisabled$",
+          "callee": "this.userService.$user.pipe",
+          "lineNumber": 66
+        },
+        {
+          "caller": "isEmailVerificationDisabled$",
+          "callee": "map",
+          "lineNumber": 67
+        },
+        {
+          "caller": "formattedTimeRemaining",
+          "callee": "moment.duration",
+          "lineNumber": 77
+        },
+        {
+          "caller": "formattedTimeRemaining",
+          "callee": "Math.floor",
+          "lineNumber": 78
+        },
+        {
+          "caller": "formattedTimeRemaining",
+          "callee": "duration.asMinutes",
+          "lineNumber": 78
+        },
+        {
+          "caller": "formattedTimeRemaining",
+          "callee": "duration.seconds",
+          "lineNumber": 79
+        },
+        {
+          "caller": "formattedTimeRemaining",
+          "callee": "seconds.toString().padStart",
+          "lineNumber": 80
+        },
+        {
+          "caller": "formattedTimeRemaining",
+          "callee": "seconds.toString",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "localStorage.getItem",
+          "lineNumber": 84
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "parseInt",
+          "lineNumber": 86
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.startTimer",
+          "lineNumber": 89
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 93
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 94
+        },
+        {
+          "caller": "startTimer",
+          "callee": "setInterval",
+          "lineNumber": 98
+        },
+        {
+          "caller": "startTimer",
+          "callee": "Date.now",
+          "lineNumber": 100
+        },
+        {
+          "caller": "startTimer",
+          "callee": "Math.max",
+          "lineNumber": 102
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "this.dialog.open",
+          "lineNumber": 112
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "dialogRef.afterClosed().subscribe",
+          "lineNumber": 121
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "dialogRef.afterClosed",
+          "lineNumber": 121
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "this.userService\n          .auth(isRegister ? EAuthType.Register : EAuthType.Login, result.email, result.password)\n          .subscribe",
+          "lineNumber": 124
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "this.userService\n          .auth",
+          "lineNumber": 124
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "this.postAuthWelcomeDialog.open",
+          "lineNumber": 132
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "this.emailVerificationService.sendVerificationEmail(authResponse.user.email).subscribe",
+          "lineNumber": 134
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "this.emailVerificationService.sendVerificationEmail",
+          "lineNumber": 134
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "Date.now",
+          "lineNumber": 136
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "localStorage.setItem",
+          "lineNumber": 137
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "this.lastVerificationSent.toString",
+          "lineNumber": 137
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "this.notify.open",
+          "lineNumber": 138
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "console.error",
+          "lineNumber": 143
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "getErrorMessage",
+          "lineNumber": 150
+        },
+        {
+          "caller": "openAuthDialog",
+          "callee": "this.notify.open",
+          "lineNumber": 151
+        },
+        {
+          "caller": "logout",
+          "callee": "this.userService.logout",
+          "lineNumber": 159
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "this.userService.$user.pipe(takeUntil(this.destroy$)).subscribe",
+          "lineNumber": 163
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "this.userService.$user.pipe",
+          "lineNumber": 163
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "takeUntil",
+          "lineNumber": 163
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "this.emailVerificationService.sendVerificationEmail(user.email).subscribe",
+          "lineNumber": 165
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "this.emailVerificationService.sendVerificationEmail",
+          "lineNumber": 165
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "Date.now",
+          "lineNumber": 167
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "localStorage.setItem",
+          "lineNumber": 168
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "this.lastVerificationSent.toString",
+          "lineNumber": 168
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "this.notify.open",
+          "lineNumber": 169
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "console.error",
+          "lineNumber": 172
+        },
+        {
+          "caller": "sendEmailVerification",
+          "callee": "this.notify.open",
+          "lineNumber": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/main/main.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "MainModule",
+          "startLine": 31,
+          "endLine": 31,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MainModule",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/organization-management/components/organization-detail/organization-detail.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 221,
+      "nonEmptyLines": 202,
+      "classes": [
+        {
+          "name": "OrganizationDetailComponent",
+          "startLine": 19,
+          "endLine": 221,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy",
+            "loadOrganization",
+            "populateForm",
+            "clearOwnerValidators",
+            "onEdit",
+            "onDelete",
+            "onBack",
+            "onSubmit",
+            "markFormGroupTouched",
+            "getFieldError"
+          ],
+          "properties": [
+            "organization",
+            "isLoading",
+            "organizationForm",
+            "isSubmitting",
+            "destroy$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrganizationDetailComponent",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 34
+        },
+        {
+          "caller": "constructor",
+          "callee": "Validators.minLength",
+          "lineNumber": 35
+        },
+        {
+          "caller": "constructor",
+          "callee": "Validators.min",
+          "lineNumber": 36
+        },
+        {
+          "caller": "constructor",
+          "callee": "Validators.minLength",
+          "lineNumber": 37
+        },
+        {
+          "caller": "constructor",
+          "callee": "Validators.minLength",
+          "lineNumber": 38
+        },
+        {
+          "caller": "constructor",
+          "callee": "Validators.minLength",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.route.params.subscribe",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.loadOrganization",
+          "lineNumber": 50
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 56
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 57
+        },
+        {
+          "caller": "loadOrganization",
+          "callee": "this.organizationAPIService\n      .getOrganizationById(id)\n      .pipe(takeUntil(this.destroy$))\n      .subscribe",
+          "lineNumber": 62
+        },
+        {
+          "caller": "loadOrganization",
+          "callee": "this.organizationAPIService\n      .getOrganizationById(id)\n      .pipe",
+          "lineNumber": 62
+        },
+        {
+          "caller": "loadOrganization",
+          "callee": "this.organizationAPIService\n      .getOrganizationById",
+          "lineNumber": 62
+        },
+        {
+          "caller": "loadOrganization",
+          "callee": "takeUntil",
+          "lineNumber": 64
+        },
+        {
+          "caller": "loadOrganization",
+          "callee": "this.populateForm",
+          "lineNumber": 69
+        },
+        {
+          "caller": "loadOrganization",
+          "callee": "this.clearOwnerValidators",
+          "lineNumber": 70
+        },
+        {
+          "caller": "loadOrganization",
+          "callee": "console.error",
+          "lineNumber": 73
+        },
+        {
+          "caller": "loadOrganization",
+          "callee": "this.notify.open",
+          "lineNumber": 74
+        },
+        {
+          "caller": "loadOrganization",
+          "callee": "this.router.navigate",
+          "lineNumber": 75
+        },
+        {
+          "caller": "populateForm",
+          "callee": "this.organizationForm.patchValue",
+          "lineNumber": 81
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get(\"firstName\")?.clearValidators",
+          "lineNumber": 88
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 88
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get(\"lastName\")?.clearValidators",
+          "lineNumber": 89
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 89
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get(\"email\")?.clearValidators",
+          "lineNumber": 90
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get(\"password\")?.clearValidators",
+          "lineNumber": 91
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 91
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get(\"firstName\")?.updateValueAndValidity",
+          "lineNumber": 93
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 93
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get(\"lastName\")?.updateValueAndValidity",
+          "lineNumber": 94
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 94
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get(\"email\")?.updateValueAndValidity",
+          "lineNumber": 95
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 95
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get(\"password\")?.updateValueAndValidity",
+          "lineNumber": 96
+        },
+        {
+          "caller": "clearOwnerValidators",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 96
+        },
+        {
+          "caller": "onEdit",
+          "callee": "this.router.navigate",
+          "lineNumber": 101
+        },
+        {
+          "caller": "onDelete",
+          "callee": "confirm",
+          "lineNumber": 106
+        },
+        {
+          "caller": "onDelete",
+          "callee": "this.organizationAPIService\n        .deleteOrganization(this.organization.id)\n        .pipe(takeUntil(this.destroy$))\n        .subscribe",
+          "lineNumber": 107
+        },
+        {
+          "caller": "onDelete",
+          "callee": "this.organizationAPIService\n        .deleteOrganization(this.organization.id)\n        .pipe",
+          "lineNumber": 107
+        },
+        {
+          "caller": "onDelete",
+          "callee": "this.organizationAPIService\n        .deleteOrganization",
+          "lineNumber": 107
+        },
+        {
+          "caller": "onDelete",
+          "callee": "takeUntil",
+          "lineNumber": 109
+        },
+        {
+          "caller": "onDelete",
+          "callee": "this.notify.open",
+          "lineNumber": 112
+        },
+        {
+          "caller": "onDelete",
+          "callee": "this.router.navigate",
+          "lineNumber": 113
+        },
+        {
+          "caller": "onDelete",
+          "callee": "console.error",
+          "lineNumber": 116
+        },
+        {
+          "caller": "onDelete",
+          "callee": "this.notify.open",
+          "lineNumber": 117
+        },
+        {
+          "caller": "onBack",
+          "callee": "this.router.navigate",
+          "lineNumber": 124
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.organizationAPIService\n          .updateOrganization(this.organization.id, organizationData)\n          .pipe(takeUntil(this.destroy$))\n          .subscribe",
+          "lineNumber": 139
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.organizationAPIService\n          .updateOrganization(this.organization.id, organizationData)\n          .pipe",
+          "lineNumber": 139
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.organizationAPIService\n          .updateOrganization",
+          "lineNumber": 139
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "takeUntil",
+          "lineNumber": 141
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.notify.open",
+          "lineNumber": 145
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.router.navigate",
+          "lineNumber": 146
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "console.error",
+          "lineNumber": 149
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.notify.open",
+          "lineNumber": 151
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.organizationAPIService\n          .createOrganization(organizationData)\n          .pipe(takeUntil(this.destroy$))\n          .subscribe",
+          "lineNumber": 160
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.organizationAPIService\n          .createOrganization(organizationData)\n          .pipe",
+          "lineNumber": 160
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.organizationAPIService\n          .createOrganization",
+          "lineNumber": 160
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "takeUntil",
+          "lineNumber": 162
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.userAPIService\n                .addUserToOrganization(userData, true)\n                .pipe(takeUntil(this.destroy$))\n                .subscribe",
+          "lineNumber": 174
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.userAPIService\n                .addUserToOrganization(userData, true)\n                .pipe",
+          "lineNumber": 174
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.userAPIService\n                .addUserToOrganization",
+          "lineNumber": 174
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "takeUntil",
+          "lineNumber": 176
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.notify.open",
+          "lineNumber": 180
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.router.navigate",
+          "lineNumber": 181
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "console.error",
+          "lineNumber": 184
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.notify.open",
+          "lineNumber": 186
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "console.error",
+          "lineNumber": 193
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.notify.open",
+          "lineNumber": 195
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.markFormGroupTouched",
+          "lineNumber": 200
+        },
+        {
+          "caller": "markFormGroupTouched",
+          "callee": "Object.keys(this.organizationForm.controls).forEach",
+          "lineNumber": 205
+        },
+        {
+          "caller": "markFormGroupTouched",
+          "callee": "Object.keys",
+          "lineNumber": 205
+        },
+        {
+          "caller": "markFormGroupTouched",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 206
+        },
+        {
+          "caller": "markFormGroupTouched",
+          "callee": "control?.markAsTouched",
+          "lineNumber": 207
+        },
+        {
+          "caller": "getFieldError",
+          "callee": "this.organizationForm.get",
+          "lineNumber": 212
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/organization-management/components/organization-list/organization-list.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 70,
+      "classes": [
+        {
+          "name": "OrganizationListComponent",
+          "startLine": 15,
+          "endLine": 81,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy",
+            "loadOrganizations",
+            "onCreateOrganization",
+            "onViewOrganization",
+            "onEditOrganization",
+            "onDeleteOrganization"
+          ],
+          "properties": [
+            "organizations",
+            "isLoading",
+            "destroy$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrganizationListComponent",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.loadOrganizations",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 32
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.organizationAPIService.loadOrganizations",
+          "lineNumber": 37
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.organizationAPIService.organizations$.pipe(takeUntil(this.destroy$)).subscribe",
+          "lineNumber": 39
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.organizationAPIService.organizations$.pipe",
+          "lineNumber": 39
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "takeUntil",
+          "lineNumber": 39
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "console.error",
+          "lineNumber": 45
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.notify.open",
+          "lineNumber": 46
+        },
+        {
+          "caller": "onCreateOrganization",
+          "callee": "this.router.navigate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "onViewOrganization",
+          "callee": "this.router.navigate",
+          "lineNumber": 57
+        },
+        {
+          "caller": "onEditOrganization",
+          "callee": "this.router.navigate",
+          "lineNumber": 61
+        },
+        {
+          "caller": "onDeleteOrganization",
+          "callee": "confirm",
+          "lineNumber": 65
+        },
+        {
+          "caller": "onDeleteOrganization",
+          "callee": "this.organizationAPIService\n        .deleteOrganization(organization.id)\n        .pipe(takeUntil(this.destroy$))\n        .subscribe",
+          "lineNumber": 66
+        },
+        {
+          "caller": "onDeleteOrganization",
+          "callee": "this.organizationAPIService\n        .deleteOrganization(organization.id)\n        .pipe",
+          "lineNumber": 66
+        },
+        {
+          "caller": "onDeleteOrganization",
+          "callee": "this.organizationAPIService\n        .deleteOrganization",
+          "lineNumber": 66
+        },
+        {
+          "caller": "onDeleteOrganization",
+          "callee": "takeUntil",
+          "lineNumber": 68
+        },
+        {
+          "caller": "onDeleteOrganization",
+          "callee": "this.notify.open",
+          "lineNumber": 71
+        },
+        {
+          "caller": "onDeleteOrganization",
+          "callee": "this.loadOrganizations",
+          "lineNumber": 72
+        },
+        {
+          "caller": "onDeleteOrganization",
+          "callee": "console.error",
+          "lineNumber": 75
+        },
+        {
+          "caller": "onDeleteOrganization",
+          "callee": "this.notify.open",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/organization-management/organization-management.module.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "OrganizationManagementModule",
+          "startLine": 17,
+          "endLine": 17,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrganizationManagementModule",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/organization-management/services/organization-api.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 67,
+      "classes": [
+        {
+          "name": "OrganizationAPIService",
+          "startLine": 14,
+          "endLine": 80,
+          "methods": [
+            "constructor",
+            "loadOrganizations",
+            "getOrganizationById",
+            "createOrganization",
+            "updateOrganization",
+            "deleteOrganization"
+          ],
+          "properties": [
+            "apiUrl",
+            "listSubject",
+            "organizations$",
+            "totalCountSubject",
+            "totalCount$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrganizationAPIService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.loadOrganizations",
+          "lineNumber": 28
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "params.set",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "scrollCount.toString",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.http.get<IListData<IOrganization>>(`${this.apiUrl}`, { params }).pipe",
+          "lineNumber": 38
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.http.get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "tap",
+          "lineNumber": 39
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "console.log",
+          "lineNumber": 41
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.listSubject.next",
+          "lineNumber": 42
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "console.log",
+          "lineNumber": 44
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.listSubject.next",
+          "lineNumber": 45
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "console.log",
+          "lineNumber": 47
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.listSubject.next",
+          "lineNumber": 48
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.listSubject.getValue",
+          "lineNumber": 48
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.totalCountSubject.next",
+          "lineNumber": 50
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "catchError",
+          "lineNumber": 52
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "console.error",
+          "lineNumber": 54
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.notify.open",
+          "lineNumber": 55
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "of",
+          "lineNumber": 56
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "shareReplay",
+          "lineNumber": 58
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.loading.showLoaderUntilCompleted(loadOrganizations$).subscribe",
+          "lineNumber": 61
+        },
+        {
+          "caller": "loadOrganizations",
+          "callee": "this.loading.showLoaderUntilCompleted",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getOrganizationById",
+          "callee": "this.http.get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createOrganization",
+          "callee": "this.http.post",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateOrganization",
+          "callee": "this.http.put",
+          "lineNumber": 74
+        },
+        {
+          "caller": "deleteOrganization",
+          "callee": "this.http.delete",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/contacts/contacts.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "ContactsComponent",
+          "startLine": 12,
+          "endLine": 14,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ContactsComponent",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/login-dialog/password-reset-dialog.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 69,
+      "classes": [
+        {
+          "name": "PasswordResetDialogComponent",
+          "startLine": 12,
+          "endLine": 77,
+          "methods": [
+            "constructor",
+            "passwordMatchValidator",
+            "onSubmit",
+            "goBack"
+          ],
+          "properties": [
+            "formGroup",
+            "hidePassword",
+            "hideConfirmPassword",
+            "token",
+            "isLoading"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PasswordResetDialogComponent",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 25
+        },
+        {
+          "caller": "constructor",
+          "callee": "Validators.minLength",
+          "lineNumber": 27
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.route.queryParams.subscribe",
+          "lineNumber": 33
+        },
+        {
+          "caller": "constructor",
+          "callee": "console.error",
+          "lineNumber": 36
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.router.navigate",
+          "lineNumber": 37
+        },
+        {
+          "caller": "passwordMatchValidator",
+          "callee": "formGroup.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "passwordMatchValidator",
+          "callee": "formGroup.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "passwordMatchValidator",
+          "callee": "formGroup.get(\"confirmPassword\")?.setErrors",
+          "lineNumber": 47
+        },
+        {
+          "caller": "passwordMatchValidator",
+          "callee": "formGroup.get",
+          "lineNumber": 47
+        },
+        {
+          "caller": "passwordMatchValidator",
+          "callee": "formGroup.get(\"confirmPassword\")?.setErrors",
+          "lineNumber": 50
+        },
+        {
+          "caller": "passwordMatchValidator",
+          "callee": "formGroup.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.formGroup.get",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.userApiService.resetPassword(newPassword, this.token!).subscribe",
+          "lineNumber": 60
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.userApiService.resetPassword",
+          "lineNumber": 60
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.router.navigate",
+          "lineNumber": 64
+        },
+        {
+          "caller": "goBack",
+          "callee": "this.router.navigate",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/email-confirmation/email-confirmation.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "EmailConfirmationComponent",
+          "startLine": 12,
+          "endLine": 67,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "confirmEmail",
+            "goToHome",
+            "resendVerification"
+          ],
+          "properties": [
+            "isLoading",
+            "isSuccess",
+            "isError",
+            "errorMessage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "EmailConfirmationComponent",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ngOnInit",
+          "callee": "this.route.queryParams.subscribe",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.confirmEmail",
+          "lineNumber": 36
+        },
+        {
+          "caller": "confirmEmail",
+          "callee": "this.emailVerificationService.confirmEmail(token).subscribe",
+          "lineNumber": 41
+        },
+        {
+          "caller": "confirmEmail",
+          "callee": "this.emailVerificationService.confirmEmail",
+          "lineNumber": 41
+        },
+        {
+          "caller": "confirmEmail",
+          "callee": "this.notify.open",
+          "lineNumber": 45
+        },
+        {
+          "caller": "confirmEmail",
+          "callee": "console.error",
+          "lineNumber": 50
+        },
+        {
+          "caller": "confirmEmail",
+          "callee": "this.notify.open",
+          "lineNumber": 53
+        },
+        {
+          "caller": "goToHome",
+          "callee": "this.router.navigate",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resendVerification",
+          "callee": "this.router.navigate",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/privacy-policy/privacy-policy.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "PrivacyPolicyComponent",
+          "startLine": 11,
+          "endLine": 13,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PrivacyPolicyComponent",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/unauthorised/unauthorised.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "UnauthorisedComponent",
+          "startLine": 8,
+          "endLine": 10,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UnauthorisedComponent",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/guards/role.guard.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "RoleGuard",
+          "startLine": 9,
+          "endLine": 49,
+          "methods": [
+            "constructor",
+            "canActivate",
+            "showPermissionAccessError"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RoleGuard",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "canActivate",
+          "callee": "sessionStorage.getItem(\"role\")?.toLowerCase",
+          "lineNumber": 16
+        },
+        {
+          "caller": "canActivate",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 16
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.showPermissionAccessError",
+          "lineNumber": 18
+        },
+        {
+          "caller": "canActivate",
+          "callee": "includeRoles.includes",
+          "lineNumber": 26
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.showPermissionAccessError",
+          "lineNumber": 29
+        },
+        {
+          "caller": "canActivate",
+          "callee": "excludeRoles.includes",
+          "lineNumber": 34
+        },
+        {
+          "caller": "canActivate",
+          "callee": "this.showPermissionAccessError",
+          "lineNumber": 37
+        },
+        {
+          "caller": "showPermissionAccessError",
+          "callee": "this.notify.open",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/email-verification.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "EmailVerificationService",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [
+            "constructor",
+            "sendVerificationEmail",
+            "confirmEmail"
+          ],
+          "properties": [
+            "apiUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "EmailVerificationService",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendVerificationEmail",
+          "callee": "this.http.post",
+          "lineNumber": 15
+        },
+        {
+          "caller": "confirmEmail",
+          "callee": "this.http.get",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/mobile-map.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "MobileMapService",
+          "startLine": 7,
+          "endLine": 30,
+          "methods": [
+            "isMobile",
+            "showMobileMap",
+            "hideMobileMap",
+            "toggleMobileMap"
+          ],
+          "properties": [
+            "isMobileMapVisibleSubject",
+            "isMobileMapVisible$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MobileMapService",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isMobile",
+          "callee": "/iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test",
+          "lineNumber": 13
+        },
+        {
+          "caller": "showMobileMap",
+          "callee": "this.isMobileMapVisibleSubject.next",
+          "lineNumber": 19
+        },
+        {
+          "caller": "hideMobileMap",
+          "callee": "this.isMobileMapVisibleSubject.next",
+          "lineNumber": 23
+        },
+        {
+          "caller": "toggleMobileMap",
+          "callee": "this.isMobileMapVisibleSubject.next",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/utils/error.utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "getErrorMessage",
+          "startLine": 3,
+          "endLine": 40,
+          "params": [
+            "error"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getErrorMessage",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

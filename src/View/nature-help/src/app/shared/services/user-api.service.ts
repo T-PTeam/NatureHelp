@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { BehaviorSubject, catchError, map, Observable, of, shareReplay, switchMap, tap } from "rxjs";
@@ -6,6 +6,8 @@ import { BehaviorSubject, catchError, map, Observable, of, shareReplay, switchMa
 import { IAuthResponse } from "@/models/IAuthResponse";
 import { IUser } from "@/models/IUser";
 import { IListData } from "../models/IListData";
+import { appendSortParams } from "../helpers/table-sort.helper";
+import { ITableSort } from "../models/ITableSort";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { LoadingService } from "./loading.service";
 import { EAuthType } from "@/models/enums";
@@ -133,17 +135,17 @@ export class UserAPIService {
     return of(false);
   }
 
-  handleOAuth2Callback(): Observable<boolean> {
+  handleOAuth2Callback(): Observable<IUser | null> {
     return this.http.post<IAuthResponse>(`${this.apiUrl}/refresh-access-token`, {}, { withCredentials: true }).pipe(
       map((authResponse) => {
-        if (authResponse && authResponse.user) {
+        if (authResponse?.user) {
           this.setAuthOptions(authResponse);
-          return true;
+          return authResponse.user;
         }
-        return false;
+        return null;
       }),
       catchError(() => {
-        return of(false);
+        return of(null);
       }),
     );
   }
@@ -298,6 +300,7 @@ export class UserAPIService {
     localStorage.removeItem("refreshToken");
     sessionStorage.removeItem("role");
     sessionStorage.removeItem("organizationId");
+    sessionStorage.removeItem("laboratoryId");
     sessionStorage.removeItem("email");
     sessionStorage.removeItem("fullName");
     sessionStorage.removeItem("userId");
@@ -305,39 +308,51 @@ export class UserAPIService {
     this.subject.next(null);
   }
 
-  loadOrganizationUsers(scrollCount: number) {
-    const organizationId = sessionStorage.getItem("organizationId");
-
-    if (!organizationId) {
-      this.notify.open("Relogin, please", "Close", { duration: 2000 });
-      return;
-    }
-
+  loadOrganizationUsers(scrollCount: number, sort: ITableSort | null = null, options?: { silent?: boolean }) {
     if (scrollCount === -1) {
       this.organizationUsersSubject.next([]);
     }
 
-    const loadOrganizationUsers$ = this.http
-      .get<
-        IListData<IUser>
-      >(`${this.apiUrl}/organization-users?organizationId=${organizationId}&scrollCount=${scrollCount}`)
-      .pipe(
-        tap((listData) => {
-          if (scrollCount === 0) this.organizationUsersSubject.next(listData.list);
-          else this.organizationUsersSubject.next([...this.organizationUsersSubject.getValue(), ...listData.list]);
+    this.loading.showLoaderUntilCompleted(this.fetchOrganizationUsers(scrollCount, sort, options)).subscribe();
+  }
 
-          this.totalCountSubject.next(listData.totalCount);
-        }),
-        catchError((err) => {
-          const message = "Could not load User Management...";
+  fetchOrganizationUsers(
+    scrollCount: number,
+    sort: ITableSort | null = null,
+    options?: { silent?: boolean },
+  ): Observable<IUser[]> {
+    const organizationId = sessionStorage.getItem("organizationId");
 
-          console.error(err);
-          this.notify.open(message, "Close", { duration: 2000 });
-          return of({ list: [], totalCount: 0 });
-        }),
-        shareReplay(),
-      );
-    this.loading.showLoaderUntilCompleted(loadOrganizationUsers$).subscribe();
+    if (!organizationId) {
+      if (!options?.silent) {
+        this.notify.open("Relogin, please", "Close", { duration: 2000 });
+      }
+      return of([]);
+    }
+
+    let params = new HttpParams().set("organizationId", organizationId).set("scrollCount", scrollCount.toString());
+    params = appendSortParams(params, sort);
+
+    return this.http.get<IListData<IUser>>(`${this.apiUrl}/organization-users`, { params }).pipe(
+      tap((listData) => {
+        if (scrollCount === 0 || scrollCount === -1) {
+          this.organizationUsersSubject.next(listData.list);
+        } else {
+          this.organizationUsersSubject.next([...this.organizationUsersSubject.getValue(), ...listData.list]);
+        }
+
+        this.totalCountSubject.next(listData.totalCount);
+      }),
+      map((listData) => listData.list),
+      catchError((err) => {
+        console.error(err);
+        if (!options?.silent) {
+          this.notify.open("Could not load User Management...", "Close", { duration: 2000 });
+        }
+        return of([]);
+      }),
+      shareReplay(1),
+    );
   }
 
   loadNotLoginEverOrganizationUsers() {
@@ -491,13 +506,22 @@ export class UserAPIService {
       return;
     }
 
-    if (authOptions.id) sessionStorage.setItem("userId", authOptions.id);
+    const nested = authOptions.user;
+    const email = authOptions.email ?? nested?.email;
+    const id = authOptions.id ?? nested?.id;
+    const firstName = authOptions.firstName ?? nested?.firstName;
+    const lastName = authOptions.lastName ?? nested?.lastName;
+    const orgId = authOptions.organizationId ?? nested?.organizationId;
+    const laboratoryId = authOptions.laboratoryId ?? nested?.laboratoryId;
+
+    if (id) sessionStorage.setItem("userId", id);
     if (authOptions.accessToken) sessionStorage.setItem("accessToken", authOptions.accessToken);
     if (authOptions.refreshToken) localStorage.setItem("refreshToken", authOptions.refreshToken);
-    if (authOptions.organizationId) sessionStorage.setItem("organizationId", authOptions.organizationId);
-    if (authOptions.email) sessionStorage.setItem("email", authOptions.email);
-    if (authOptions.firstName && authOptions.lastName)
-      sessionStorage.setItem("fullName", `${authOptions.firstName} ${authOptions.lastName}`);
+    if (orgId) sessionStorage.setItem("organizationId", orgId);
+    if (laboratoryId) sessionStorage.setItem("laboratoryId", laboratoryId);
+    else sessionStorage.removeItem("laboratoryId");
+    if (email) sessionStorage.setItem("email", email);
+    if (firstName && lastName) sessionStorage.setItem("fullName", `${firstName} ${lastName}`);
 
     const decodedTokenRole = this.jwtHelper.decodeToken(authOptions.accessToken);
     if (decodedTokenRole)

@@ -1,6 +1,6 @@
 <div class="organization-list-container">
   <div class="list-header">
-    <h2>{{ "tables.organizations" | translate }}</h2>
+    <h2>{{ "organizations.organizations" | translate }}</h2>
     <button
       mat-raised-button
       color="primary"
@@ -58,8 +58,8 @@
     <ng-template #noResultsTemplate>
       <div class="no-results">
         <mat-icon>search_off</mat-icon>
-        <h3>{{ "tables.noOrganizationsFound" | translate }}</h3>
-        <p>{{ "tables.noOrganizationsFoundDescription" | translate }}</p>
+        <h3>{{ "organizations.noOrganizationsFound" | translate }}</h3>
+        <p>{{ "organizations.noOrganizationsFoundDescription" | translate }}</p>
         <button
           mat-raised-button
           color="primary"
@@ -75,7 +75,7 @@
     <nat-loading-indicator
       type="inline"
       [diameter]="50"
-      [message]="'tables.loadingOrganizations' | translate">
+      [message]="'organizations.loadingOrganizations' | translate">
     </nat-loading-indicator>
   </ng-template>
 </div>

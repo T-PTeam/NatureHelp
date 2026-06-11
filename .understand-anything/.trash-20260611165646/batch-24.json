@@ -1,0 +1,1250 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/Domain/Models/Analitycs/Report.cs",
+      "type": "file",
+      "name": "Report.cs",
+      "filePath": "src/Domain/Models/Analitycs/Report.cs",
+      "summary": "Report.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Analitycs/Report.cs:Report",
+      "type": "class",
+      "name": "Report",
+      "filePath": "src/Domain/Models/Analitycs/Report.cs",
+      "summary": "Class Report with 0 method(s) in Report.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Analitycs/Research.cs",
+      "type": "file",
+      "name": "Research.cs",
+      "filePath": "src/Domain/Models/Analitycs/Research.cs",
+      "summary": "Research.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Analitycs/Research.cs:Research",
+      "type": "class",
+      "name": "Research",
+      "filePath": "src/Domain/Models/Analitycs/Research.cs",
+      "summary": "Class Research with 0 method(s) in Research.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Attachment.cs",
+      "type": "file",
+      "name": "Attachment.cs",
+      "filePath": "src/Domain/Models/Attachment.cs",
+      "summary": "Attachment.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Attachment.cs:Attachment",
+      "type": "class",
+      "name": "Attachment",
+      "filePath": "src/Domain/Models/Attachment.cs",
+      "summary": "Class Attachment with 0 method(s) in Attachment.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Audit/ChangedModelLog.cs",
+      "type": "file",
+      "name": "ChangedModelLog.cs",
+      "filePath": "src/Domain/Models/Audit/ChangedModelLog.cs",
+      "summary": "ChangedModelLog.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Audit/ChangedModelLog.cs:ChangedModelLog",
+      "type": "class",
+      "name": "ChangedModelLog",
+      "filePath": "src/Domain/Models/Audit/ChangedModelLog.cs",
+      "summary": "Class ChangedModelLog with 0 method(s) in ChangedModelLog.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Audit/ComplexMonitoringScheme.cs",
+      "type": "file",
+      "name": "ComplexMonitoringScheme.cs",
+      "filePath": "src/Domain/Models/Audit/ComplexMonitoringScheme.cs",
+      "summary": "ComplexMonitoringScheme.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Audit/ComplexMonitoringScheme.cs:ComplexMonitoringScheme",
+      "type": "class",
+      "name": "ComplexMonitoringScheme",
+      "filePath": "src/Domain/Models/Audit/ComplexMonitoringScheme.cs",
+      "summary": "Class ComplexMonitoringScheme with 0 method(s) in ComplexMonitoringScheme.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Audit/DeficiencyMonitoring.cs",
+      "type": "file",
+      "name": "DeficiencyMonitoring.cs",
+      "filePath": "src/Domain/Models/Audit/DeficiencyMonitoring.cs",
+      "summary": "DeficiencyMonitoring.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Audit/DeficiencyMonitoring.cs:DeficiencyMonitoring",
+      "type": "class",
+      "name": "DeficiencyMonitoring",
+      "filePath": "src/Domain/Models/Audit/DeficiencyMonitoring.cs",
+      "summary": "Class DeficiencyMonitoring with 0 method(s) in DeficiencyMonitoring.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/BaseModel.cs",
+      "type": "file",
+      "name": "BaseModel.cs",
+      "filePath": "src/Domain/Models/BaseModel.cs",
+      "summary": "BaseModel.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/BaseModel.cs:BaseModel",
+      "type": "class",
+      "name": "BaseModel",
+      "filePath": "src/Domain/Models/BaseModel.cs",
+      "summary": "Class BaseModel with 0 method(s) in BaseModel.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/CommentMessage.cs",
+      "type": "file",
+      "name": "CommentMessage.cs",
+      "filePath": "src/Domain/Models/CommentMessage.cs",
+      "summary": "CommentMessage.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/CommentMessage.cs:CommentMessage",
+      "type": "class",
+      "name": "CommentMessage",
+      "filePath": "src/Domain/Models/CommentMessage.cs",
+      "summary": "Class CommentMessage with 0 method(s) in CommentMessage.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Nature/Deficiency.cs",
+      "type": "file",
+      "name": "Deficiency.cs",
+      "filePath": "src/Domain/Models/Nature/Deficiency.cs",
+      "summary": "Deficiency.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Nature/Deficiency.cs:Deficiency",
+      "type": "class",
+      "name": "Deficiency",
+      "filePath": "src/Domain/Models/Nature/Deficiency.cs",
+      "summary": "Class Deficiency with 0 method(s) in Deficiency.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Nature/DeficiencyAttachment.cs",
+      "type": "file",
+      "name": "DeficiencyAttachment.cs",
+      "filePath": "src/Domain/Models/Nature/DeficiencyAttachment.cs",
+      "summary": "DeficiencyAttachment.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Nature/DeficiencyAttachment.cs:DeficiencyAttachment",
+      "type": "class",
+      "name": "DeficiencyAttachment",
+      "filePath": "src/Domain/Models/Nature/DeficiencyAttachment.cs",
+      "summary": "Class DeficiencyAttachment with 0 method(s) in DeficiencyAttachment.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Nature/DeficiencyMapDto.cs",
+      "type": "file",
+      "name": "DeficiencyMapDto.cs",
+      "filePath": "src/Domain/Models/Nature/DeficiencyMapDto.cs",
+      "summary": "DeficiencyMapDto.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Nature/DeficiencyMapDto.cs:DeficiencyMapDto",
+      "type": "class",
+      "name": "DeficiencyMapDto",
+      "filePath": "src/Domain/Models/Nature/DeficiencyMapDto.cs",
+      "summary": "Class DeficiencyMapDto with 0 method(s) in DeficiencyMapDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Nature/SoilDeficiency.cs",
+      "type": "file",
+      "name": "SoilDeficiency.cs",
+      "filePath": "src/Domain/Models/Nature/SoilDeficiency.cs",
+      "summary": "SoilDeficiency.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Domain/Models/Nature/SoilDeficiency.cs:SoilDeficiency",
+      "type": "class",
+      "name": "SoilDeficiency",
+      "filePath": "src/Domain/Models/Nature/SoilDeficiency.cs",
+      "summary": "Class SoilDeficiency with 0 method(s) in SoilDeficiency.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Domain/Models/Nature/WaterDeficiency.cs",
+      "type": "file",
+      "name": "WaterDeficiency.cs",
+      "filePath": "src/Domain/Models/Nature/WaterDeficiency.cs",
+      "summary": "WaterDeficiency.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Domain/Models/Nature/WaterDeficiency.cs:WaterDeficiency",
+      "type": "class",
+      "name": "WaterDeficiency",
+      "filePath": "src/Domain/Models/Nature/WaterDeficiency.cs",
+      "summary": "Class WaterDeficiency with 0 method(s) in WaterDeficiency.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Domain/Models/Organization/Laboratory.cs",
+      "type": "file",
+      "name": "Laboratory.cs",
+      "filePath": "src/Domain/Models/Organization/Laboratory.cs",
+      "summary": "Laboratory.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Organization/Laboratory.cs:Laboratory",
+      "type": "class",
+      "name": "Laboratory",
+      "filePath": "src/Domain/Models/Organization/Laboratory.cs",
+      "summary": "Class Laboratory with 0 method(s) in Laboratory.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Organization/LaboratoryMapDto.cs",
+      "type": "file",
+      "name": "LaboratoryMapDto.cs",
+      "filePath": "src/Domain/Models/Organization/LaboratoryMapDto.cs",
+      "summary": "LaboratoryMapDto.cs defines 2 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Organization/LaboratoryMapDto.cs:LaboratoryMapDto",
+      "type": "class",
+      "name": "LaboratoryMapDto",
+      "filePath": "src/Domain/Models/Organization/LaboratoryMapDto.cs",
+      "summary": "Class LaboratoryMapDto with 0 method(s) in LaboratoryMapDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Organization/LaboratoryMapDto.cs:ResearcherDto",
+      "type": "class",
+      "name": "ResearcherDto",
+      "filePath": "src/Domain/Models/Organization/LaboratoryMapDto.cs",
+      "summary": "Class ResearcherDto with 0 method(s) in LaboratoryMapDto.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Organization/Organization.cs",
+      "type": "file",
+      "name": "Organization.cs",
+      "filePath": "src/Domain/Models/Organization/Organization.cs",
+      "summary": "Organization.cs defines 1 class(es) and 4 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/Organization.cs:AddMember",
+      "type": "function",
+      "name": "AddMember",
+      "filePath": "src/Domain/Models/Organization/Organization.cs",
+      "summary": "Function AddMember in Organization.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/Organization.cs:RemoveMember",
+      "type": "function",
+      "name": "RemoveMember",
+      "filePath": "src/Domain/Models/Organization/Organization.cs",
+      "summary": "Function RemoveMember in Organization.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/Organization.cs:GetMembers",
+      "type": "function",
+      "name": "GetMembers",
+      "filePath": "src/Domain/Models/Organization/Organization.cs",
+      "summary": "Function GetMembers in Organization.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/Organization.cs:IsMember",
+      "type": "function",
+      "name": "IsMember",
+      "filePath": "src/Domain/Models/Organization/Organization.cs",
+      "summary": "Function IsMember in Organization.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Organization/Organization.cs:Organization",
+      "type": "class",
+      "name": "Organization",
+      "filePath": "src/Domain/Models/Organization/Organization.cs",
+      "summary": "Class Organization with 4 method(s) in Organization.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Organization/Person.cs",
+      "type": "file",
+      "name": "Person.cs",
+      "filePath": "src/Domain/Models/Organization/Person.cs",
+      "summary": "Person.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/Person.cs:GetFullName",
+      "type": "function",
+      "name": "GetFullName",
+      "filePath": "src/Domain/Models/Organization/Person.cs",
+      "summary": "Function GetFullName in Person.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/Person.cs:UpdateContactDetails",
+      "type": "function",
+      "name": "UpdateContactDetails",
+      "filePath": "src/Domain/Models/Organization/Person.cs",
+      "summary": "Function UpdateContactDetails in Person.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Organization/Person.cs:Person",
+      "type": "class",
+      "name": "Person",
+      "filePath": "src/Domain/Models/Organization/Person.cs",
+      "summary": "Class Person with 2 method(s) in Person.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Organization/User.cs",
+      "type": "file",
+      "name": "User.cs",
+      "filePath": "src/Domain/Models/Organization/User.cs",
+      "summary": "User.cs defines 1 class(es) and 4 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/User.cs:IsEmailValid",
+      "type": "function",
+      "name": "IsEmailValid",
+      "filePath": "src/Domain/Models/Organization/User.cs",
+      "summary": "Function IsEmailValid in User.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/User.cs:IsPasswordValid",
+      "type": "function",
+      "name": "IsPasswordValid",
+      "filePath": "src/Domain/Models/Organization/User.cs",
+      "summary": "Function IsPasswordValid in User.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/User.cs:AssignRole",
+      "type": "function",
+      "name": "AssignRole",
+      "filePath": "src/Domain/Models/Organization/User.cs",
+      "summary": "Function AssignRole in User.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Domain/Models/Organization/User.cs:HasRole",
+      "type": "function",
+      "name": "HasRole",
+      "filePath": "src/Domain/Models/Organization/User.cs",
+      "summary": "Function HasRole in User.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Organization/User.cs:User",
+      "type": "class",
+      "name": "User",
+      "filePath": "src/Domain/Models/Organization/User.cs",
+      "summary": "Class User with 4 method(s) in User.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/Domain/Models/Profile/Achievement.cs",
+      "type": "file",
+      "name": "Achievement.cs",
+      "filePath": "src/Domain/Models/Profile/Achievement.cs",
+      "summary": "Achievement.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Profile/Achievement.cs:Achievement",
+      "type": "class",
+      "name": "Achievement",
+      "filePath": "src/Domain/Models/Profile/Achievement.cs",
+      "summary": "Class Achievement with 0 method(s) in Achievement.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Profile/AppDictEntry.cs",
+      "type": "file",
+      "name": "AppDictEntry.cs",
+      "filePath": "src/Domain/Models/Profile/AppDictEntry.cs",
+      "summary": "AppDictEntry.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Profile/AppDictEntry.cs:AppDictEntry",
+      "type": "class",
+      "name": "AppDictEntry",
+      "filePath": "src/Domain/Models/Profile/AppDictEntry.cs",
+      "summary": "Class AppDictEntry with 0 method(s) in AppDictEntry.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Profile/DeficiencyConfirmation.cs",
+      "type": "file",
+      "name": "DeficiencyConfirmation.cs",
+      "filePath": "src/Domain/Models/Profile/DeficiencyConfirmation.cs",
+      "summary": "DeficiencyConfirmation.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Profile/DeficiencyConfirmation.cs:DeficiencyConfirmation",
+      "type": "class",
+      "name": "DeficiencyConfirmation",
+      "filePath": "src/Domain/Models/Profile/DeficiencyConfirmation.cs",
+      "summary": "Class DeficiencyConfirmation with 0 method(s) in DeficiencyConfirmation.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Profile/UserAchievement.cs",
+      "type": "file",
+      "name": "UserAchievement.cs",
+      "filePath": "src/Domain/Models/Profile/UserAchievement.cs",
+      "summary": "UserAchievement.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Profile/UserAchievement.cs:UserAchievement",
+      "type": "class",
+      "name": "UserAchievement",
+      "filePath": "src/Domain/Models/Profile/UserAchievement.cs",
+      "summary": "Class UserAchievement with 0 method(s) in UserAchievement.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Profile/UserDailyVisit.cs",
+      "type": "file",
+      "name": "UserDailyVisit.cs",
+      "filePath": "src/Domain/Models/Profile/UserDailyVisit.cs",
+      "summary": "UserDailyVisit.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Profile/UserDailyVisit.cs:UserDailyVisit",
+      "type": "class",
+      "name": "UserDailyVisit",
+      "filePath": "src/Domain/Models/Profile/UserDailyVisit.cs",
+      "summary": "Class UserDailyVisit with 0 method(s) in UserDailyVisit.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Domain/Models/Profile/UserXpLedger.cs",
+      "type": "file",
+      "name": "UserXpLedger.cs",
+      "filePath": "src/Domain/Models/Profile/UserXpLedger.cs",
+      "summary": "UserXpLedger.cs defines 1 class(es) for the application domain.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/Domain/Models/Profile/UserXpLedger.cs:UserXpLedger",
+      "type": "class",
+      "name": "UserXpLedger",
+      "filePath": "src/Domain/Models/Profile/UserXpLedger.cs",
+      "summary": "Class UserXpLedger with 0 method(s) in UserXpLedger.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/Infrastructure/Data/ApplicationContext.cs",
+      "type": "file",
+      "name": "ApplicationContext.cs",
+      "filePath": "src/Infrastructure/Data/ApplicationContext.cs",
+      "summary": "ApplicationContext.cs defines 1 class(es) and 2 function(s) in the csharp layer.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/ApplicationContext.cs:ApplicationContext",
+      "type": "function",
+      "name": "ApplicationContext",
+      "filePath": "src/Infrastructure/Data/ApplicationContext.cs",
+      "summary": "Function ApplicationContext in ApplicationContext.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/Infrastructure/Data/ApplicationContext.cs:OnModelCreating",
+      "type": "function",
+      "name": "OnModelCreating",
+      "filePath": "src/Infrastructure/Data/ApplicationContext.cs",
+      "summary": "Function OnModelCreating in ApplicationContext.cs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/Infrastructure/Data/ApplicationContext.cs:ApplicationContext",
+      "type": "class",
+      "name": "ApplicationContext",
+      "filePath": "src/Infrastructure/Data/ApplicationContext.cs",
+      "summary": "Class ApplicationContext with 2 method(s) in ApplicationContext.cs.",
+      "tags": [
+        "class",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/Domain/Models/Analitycs/Report.cs",
+      "target": "class:src/Domain/Models/Analitycs/Report.cs:Report",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Analitycs/Report.cs",
+      "target": "class:src/Domain/Models/Analitycs/Report.cs:Report",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Analitycs/Research.cs",
+      "target": "class:src/Domain/Models/Analitycs/Research.cs:Research",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Analitycs/Research.cs",
+      "target": "class:src/Domain/Models/Analitycs/Research.cs:Research",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Attachment.cs",
+      "target": "class:src/Domain/Models/Attachment.cs:Attachment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Attachment.cs",
+      "target": "class:src/Domain/Models/Attachment.cs:Attachment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Audit/ChangedModelLog.cs",
+      "target": "class:src/Domain/Models/Audit/ChangedModelLog.cs:ChangedModelLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Audit/ChangedModelLog.cs",
+      "target": "class:src/Domain/Models/Audit/ChangedModelLog.cs:ChangedModelLog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Audit/ComplexMonitoringScheme.cs",
+      "target": "class:src/Domain/Models/Audit/ComplexMonitoringScheme.cs:ComplexMonitoringScheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Audit/ComplexMonitoringScheme.cs",
+      "target": "class:src/Domain/Models/Audit/ComplexMonitoringScheme.cs:ComplexMonitoringScheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Audit/DeficiencyMonitoring.cs",
+      "target": "class:src/Domain/Models/Audit/DeficiencyMonitoring.cs:DeficiencyMonitoring",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Audit/DeficiencyMonitoring.cs",
+      "target": "class:src/Domain/Models/Audit/DeficiencyMonitoring.cs:DeficiencyMonitoring",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/BaseModel.cs",
+      "target": "class:src/Domain/Models/BaseModel.cs:BaseModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/BaseModel.cs",
+      "target": "class:src/Domain/Models/BaseModel.cs:BaseModel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/CommentMessage.cs",
+      "target": "class:src/Domain/Models/CommentMessage.cs:CommentMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/CommentMessage.cs",
+      "target": "class:src/Domain/Models/CommentMessage.cs:CommentMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/Deficiency.cs",
+      "target": "class:src/Domain/Models/Nature/Deficiency.cs:Deficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/Deficiency.cs",
+      "target": "class:src/Domain/Models/Nature/Deficiency.cs:Deficiency",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/DeficiencyAttachment.cs",
+      "target": "class:src/Domain/Models/Nature/DeficiencyAttachment.cs:DeficiencyAttachment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/DeficiencyAttachment.cs",
+      "target": "class:src/Domain/Models/Nature/DeficiencyAttachment.cs:DeficiencyAttachment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/DeficiencyMapDto.cs",
+      "target": "class:src/Domain/Models/Nature/DeficiencyMapDto.cs:DeficiencyMapDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/DeficiencyMapDto.cs",
+      "target": "class:src/Domain/Models/Nature/DeficiencyMapDto.cs:DeficiencyMapDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/SoilDeficiency.cs",
+      "target": "class:src/Domain/Models/Nature/SoilDeficiency.cs:SoilDeficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/SoilDeficiency.cs",
+      "target": "class:src/Domain/Models/Nature/SoilDeficiency.cs:SoilDeficiency",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/WaterDeficiency.cs",
+      "target": "class:src/Domain/Models/Nature/WaterDeficiency.cs:WaterDeficiency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Nature/WaterDeficiency.cs",
+      "target": "class:src/Domain/Models/Nature/WaterDeficiency.cs:WaterDeficiency",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Laboratory.cs",
+      "target": "class:src/Domain/Models/Organization/Laboratory.cs:Laboratory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Laboratory.cs",
+      "target": "class:src/Domain/Models/Organization/Laboratory.cs:Laboratory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/LaboratoryMapDto.cs",
+      "target": "class:src/Domain/Models/Organization/LaboratoryMapDto.cs:LaboratoryMapDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/LaboratoryMapDto.cs",
+      "target": "class:src/Domain/Models/Organization/LaboratoryMapDto.cs:LaboratoryMapDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/LaboratoryMapDto.cs",
+      "target": "class:src/Domain/Models/Organization/LaboratoryMapDto.cs:ResearcherDto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/LaboratoryMapDto.cs",
+      "target": "class:src/Domain/Models/Organization/LaboratoryMapDto.cs:ResearcherDto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "function:src/Domain/Models/Organization/Organization.cs:AddMember",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "function:src/Domain/Models/Organization/Organization.cs:AddMember",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "function:src/Domain/Models/Organization/Organization.cs:RemoveMember",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "function:src/Domain/Models/Organization/Organization.cs:RemoveMember",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "function:src/Domain/Models/Organization/Organization.cs:GetMembers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "function:src/Domain/Models/Organization/Organization.cs:GetMembers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "function:src/Domain/Models/Organization/Organization.cs:IsMember",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "function:src/Domain/Models/Organization/Organization.cs:IsMember",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "class:src/Domain/Models/Organization/Organization.cs:Organization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Organization.cs",
+      "target": "class:src/Domain/Models/Organization/Organization.cs:Organization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Person.cs",
+      "target": "function:src/Domain/Models/Organization/Person.cs:GetFullName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Person.cs",
+      "target": "function:src/Domain/Models/Organization/Person.cs:GetFullName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Person.cs",
+      "target": "function:src/Domain/Models/Organization/Person.cs:UpdateContactDetails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Person.cs",
+      "target": "function:src/Domain/Models/Organization/Person.cs:UpdateContactDetails",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Person.cs",
+      "target": "class:src/Domain/Models/Organization/Person.cs:Person",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/Person.cs",
+      "target": "class:src/Domain/Models/Organization/Person.cs:Person",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "function:src/Domain/Models/Organization/User.cs:IsEmailValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "function:src/Domain/Models/Organization/User.cs:IsEmailValid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "function:src/Domain/Models/Organization/User.cs:IsPasswordValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "function:src/Domain/Models/Organization/User.cs:IsPasswordValid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "function:src/Domain/Models/Organization/User.cs:AssignRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "function:src/Domain/Models/Organization/User.cs:AssignRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "function:src/Domain/Models/Organization/User.cs:HasRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "function:src/Domain/Models/Organization/User.cs:HasRole",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "class:src/Domain/Models/Organization/User.cs:User",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Organization/User.cs",
+      "target": "class:src/Domain/Models/Organization/User.cs:User",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/Achievement.cs",
+      "target": "class:src/Domain/Models/Profile/Achievement.cs:Achievement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/Achievement.cs",
+      "target": "class:src/Domain/Models/Profile/Achievement.cs:Achievement",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/AppDictEntry.cs",
+      "target": "class:src/Domain/Models/Profile/AppDictEntry.cs:AppDictEntry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/AppDictEntry.cs",
+      "target": "class:src/Domain/Models/Profile/AppDictEntry.cs:AppDictEntry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/DeficiencyConfirmation.cs",
+      "target": "class:src/Domain/Models/Profile/DeficiencyConfirmation.cs:DeficiencyConfirmation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/DeficiencyConfirmation.cs",
+      "target": "class:src/Domain/Models/Profile/DeficiencyConfirmation.cs:DeficiencyConfirmation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/UserAchievement.cs",
+      "target": "class:src/Domain/Models/Profile/UserAchievement.cs:UserAchievement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/UserAchievement.cs",
+      "target": "class:src/Domain/Models/Profile/UserAchievement.cs:UserAchievement",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/UserDailyVisit.cs",
+      "target": "class:src/Domain/Models/Profile/UserDailyVisit.cs:UserDailyVisit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/UserDailyVisit.cs",
+      "target": "class:src/Domain/Models/Profile/UserDailyVisit.cs:UserDailyVisit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/UserXpLedger.cs",
+      "target": "class:src/Domain/Models/Profile/UserXpLedger.cs:UserXpLedger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Domain/Models/Profile/UserXpLedger.cs",
+      "target": "class:src/Domain/Models/Profile/UserXpLedger.cs:UserXpLedger",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ApplicationContext.cs",
+      "target": "function:src/Infrastructure/Data/ApplicationContext.cs:ApplicationContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ApplicationContext.cs",
+      "target": "function:src/Infrastructure/Data/ApplicationContext.cs:ApplicationContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ApplicationContext.cs",
+      "target": "function:src/Infrastructure/Data/ApplicationContext.cs:OnModelCreating",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ApplicationContext.cs",
+      "target": "class:src/Infrastructure/Data/ApplicationContext.cs:ApplicationContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/Infrastructure/Data/ApplicationContext.cs",
+      "target": "class:src/Infrastructure/Data/ApplicationContext.cs:ApplicationContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,2819 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 30,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/View/nature-help/src/app/models/IAttachment.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/IBaseEntity.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/IChangedModelLog.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/ICommentMessage.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 10,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/IDeficiency.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/IDeficiencyMonitoring.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/IUser.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/models/enums.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/models/ILaboratory.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/laboratories/models/IResearch.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/components/soil-deficiency-details/soil-deficiency-details.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 149,
+      "nonEmptyLines": 134,
+      "classes": [
+        {
+          "name": "SoilDeficiencyDetail",
+          "startLine": 23,
+          "endLine": 149,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy",
+            "showConfirmAction",
+            "onConfirmDeficiency",
+            "onResearchFieldsToggle",
+            "onSubmit",
+            "isMonitoringActive"
+          ],
+          "properties": [
+            "state",
+            "detailsForm",
+            "disableResearchFields",
+            "isLoading",
+            "isLoadingUsers",
+            "isSaving",
+            "confirmDeficiencyPending",
+            "confirmDeficiencyDone",
+            "formConfig",
+            "destroy$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SoilDeficiencyDetail",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.deficiencyDetailsService.initializeState",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.activatedRoute.params.subscribe",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.loadOrganizationUsers(this.state).subscribe",
+          "lineNumber": 51
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.loadOrganizationUsers",
+          "lineNumber": 51
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.initializeForm",
+          "lineNumber": 57
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.subscribeToCoordinatesPicking",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.subscribeToCoordinateFormChanges",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDataService.getSoilDeficiencyById(id).subscribe",
+          "lineNumber": 67
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDataService.getSoilDeficiencyById",
+          "lineNumber": 67
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.initializeForm",
+          "lineNumber": 69
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.loadAttachments",
+          "lineNumber": 71
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.subscribeToCoordinatesPicking",
+          "lineNumber": 72
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.subscribeToCoordinateFormChanges",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.changeMapView",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "console.error",
+          "lineNumber": 78
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.snackBar.open",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.translate.instant",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 87
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 88
+        },
+        {
+          "caller": "showConfirmAction",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 93
+        },
+        {
+          "caller": "showConfirmAction",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 95
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.deficiencyConfirmation.confirm(id, EDeficiencyType.Soil).subscribe",
+          "lineNumber": 103
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.deficiencyConfirmation.confirm",
+          "lineNumber": 103
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.snackBar.open",
+          "lineNumber": 108
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.translate.instant",
+          "lineNumber": 108
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.snackBar.open",
+          "lineNumber": 112
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.translate.instant",
+          "lineNumber": 112
+        },
+        {
+          "caller": "onResearchFieldsToggle",
+          "callee": "this.deficiencyDetailsService.setResearchFieldsDisabled",
+          "lineNumber": 118
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.detailsForm.markAllAsTouched",
+          "lineNumber": 128
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.snackBar.open",
+          "lineNumber": 129
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.translate.instant",
+          "lineNumber": 129
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.deficiencyDetailsService.onSubmit(this.state, this.deficiencyDataService, 1).subscribe",
+          "lineNumber": 135
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.deficiencyDetailsService.onSubmit",
+          "lineNumber": 135
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "console.error",
+          "lineNumber": 140
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/soil-deficiency/models/ISoilDeficiency.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/components/water-deficiency-details/water-deficiency-details.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 181,
+      "nonEmptyLines": 162,
+      "classes": [
+        {
+          "name": "WaterDeficiencyDetail",
+          "startLine": 25,
+          "endLine": 181,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "ngOnDestroy",
+            "isMonitoringActive",
+            "showConfirmAction",
+            "onConfirmDeficiency",
+            "onResearchFieldsToggle",
+            "fieldError",
+            "onSubmit"
+          ],
+          "properties": [
+            "state",
+            "detailsForm",
+            "changedModelLogsOpened",
+            "disableResearchFields",
+            "isLoading",
+            "isLoadingUsers",
+            "isSaving",
+            "confirmDeficiencyPending",
+            "confirmDeficiencyDone",
+            "formConfig",
+            "destroy$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WaterDeficiencyDetail",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.deficiencyDetailsService.initializeState",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.activatedRoute.params.subscribe",
+          "lineNumber": 51
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.loadOrganizationUsers(this.state).subscribe",
+          "lineNumber": 54
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.loadOrganizationUsers",
+          "lineNumber": 54
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.initializeForm",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.subscribeToCoordinatesPicking",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.subscribeToCoordinateFormChanges",
+          "lineNumber": 64
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDataService.getWaterDeficiencyById(id).subscribe",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDataService.getWaterDeficiencyById",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.initializeForm",
+          "lineNumber": 72
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.loadAttachments",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.subscribeToCoordinatesPicking",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.subscribeToCoordinateFormChanges",
+          "lineNumber": 76
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.deficiencyDetailsService.changeMapView",
+          "lineNumber": 77
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "console.error",
+          "lineNumber": 81
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.snackBar.open",
+          "lineNumber": 83
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.translate.instant",
+          "lineNumber": 83
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.next",
+          "lineNumber": 90
+        },
+        {
+          "caller": "ngOnDestroy",
+          "callee": "this.destroy$.complete",
+          "lineNumber": 91
+        },
+        {
+          "caller": "showConfirmAction",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 100
+        },
+        {
+          "caller": "showConfirmAction",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 102
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.deficiencyConfirmation.confirm(id, EDeficiencyType.Water).subscribe",
+          "lineNumber": 110
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.deficiencyConfirmation.confirm",
+          "lineNumber": 110
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.snackBar.open",
+          "lineNumber": 115
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.translate.instant",
+          "lineNumber": 115
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.snackBar.open",
+          "lineNumber": 119
+        },
+        {
+          "caller": "onConfirmDeficiency",
+          "callee": "this.translate.instant",
+          "lineNumber": 119
+        },
+        {
+          "caller": "onResearchFieldsToggle",
+          "callee": "this.deficiencyDetailsService.setResearchFieldsDisabled",
+          "lineNumber": 125
+        },
+        {
+          "caller": "fieldError",
+          "callee": "this.detailsForm.get",
+          "lineNumber": 133
+        },
+        {
+          "caller": "fieldError",
+          "callee": "control.getError",
+          "lineNumber": 138
+        },
+        {
+          "caller": "fieldError",
+          "callee": "control.getError",
+          "lineNumber": 139
+        },
+        {
+          "caller": "fieldError",
+          "callee": "control.hasError",
+          "lineNumber": 142
+        },
+        {
+          "caller": "fieldError",
+          "callee": "this.translate.instant",
+          "lineNumber": 143
+        },
+        {
+          "caller": "fieldError",
+          "callee": "this.translate.instant",
+          "lineNumber": 146
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.detailsForm.markAllAsTouched",
+          "lineNumber": 152
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.snackBar.open",
+          "lineNumber": 153
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.translate.instant",
+          "lineNumber": 153
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.deficiencyDetailsService.onSubmit(this.state, this.deficiencyDataService, 0).subscribe",
+          "lineNumber": 159
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.deficiencyDetailsService.onSubmit",
+          "lineNumber": 159
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "console.error",
+          "lineNumber": 164
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "applyServerValidationErrors",
+          "lineNumber": 166
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.formConfig.researchFieldNames.some",
+          "lineNumber": 167
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.detailsForm.get(name)?.hasError",
+          "lineNumber": 168
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.detailsForm.get",
+          "lineNumber": 168
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.onResearchFieldsToggle",
+          "lineNumber": 172
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.snackBar.open",
+          "lineNumber": 174
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.translate.instant",
+          "lineNumber": 174
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.snackBar.open",
+          "lineNumber": 177
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "getErrorMessage",
+          "lineNumber": 177
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/modules/water-deficiency/models/IWaterDeficiency.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/attachment-list/attachment-list.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 75,
+      "classes": [
+        {
+          "name": "AttachmentListComponent",
+          "startLine": 15,
+          "endLine": 85,
+          "methods": [
+            "constructor",
+            "formatFileSize",
+            "downloadAttachment",
+            "openAttachment",
+            "loadAttachments",
+            "isImageFile",
+            "isPdfFile"
+          ],
+          "properties": [
+            "deficiency",
+            "attachments",
+            "displayedColumns"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AttachmentListComponent",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "formatFileSize",
+          "callee": "Math.floor",
+          "lineNumber": 30
+        },
+        {
+          "caller": "formatFileSize",
+          "callee": "Math.log",
+          "lineNumber": 30
+        },
+        {
+          "caller": "formatFileSize",
+          "callee": "Math.log",
+          "lineNumber": 30
+        },
+        {
+          "caller": "formatFileSize",
+          "callee": "parseFloat",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatFileSize",
+          "callee": "(bytes / Math.pow(k, i)).toFixed",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatFileSize",
+          "callee": "Math.pow",
+          "lineNumber": 31
+        },
+        {
+          "caller": "downloadAttachment",
+          "callee": "this.attachmentService.downloadAttachmentBlob(attachment.id).subscribe",
+          "lineNumber": 35
+        },
+        {
+          "caller": "downloadAttachment",
+          "callee": "this.attachmentService.downloadAttachmentBlob",
+          "lineNumber": 35
+        },
+        {
+          "caller": "downloadAttachment",
+          "callee": "window.URL.createObjectURL",
+          "lineNumber": 36
+        },
+        {
+          "caller": "downloadAttachment",
+          "callee": "document.createElement",
+          "lineNumber": 37
+        },
+        {
+          "caller": "downloadAttachment",
+          "callee": "document.body.appendChild",
+          "lineNumber": 40
+        },
+        {
+          "caller": "downloadAttachment",
+          "callee": "link.click",
+          "lineNumber": 41
+        },
+        {
+          "caller": "downloadAttachment",
+          "callee": "document.body.removeChild",
+          "lineNumber": 42
+        },
+        {
+          "caller": "downloadAttachment",
+          "callee": "window.URL.revokeObjectURL",
+          "lineNumber": 43
+        },
+        {
+          "caller": "openAttachment",
+          "callee": "this.dialog.open",
+          "lineNumber": 48
+        },
+        {
+          "caller": "loadAttachments",
+          "callee": "console.warn",
+          "lineNumber": 63
+        },
+        {
+          "caller": "loadAttachments",
+          "callee": "this.attachmentService.getAttachments(deficiencyId, deficiencyType).subscribe",
+          "lineNumber": 67
+        },
+        {
+          "caller": "loadAttachments",
+          "callee": "this.attachmentService.getAttachments",
+          "lineNumber": 67
+        },
+        {
+          "caller": "loadAttachments",
+          "callee": "console.error",
+          "lineNumber": 72
+        },
+        {
+          "caller": "isImageFile",
+          "callee": "mimeType.startsWith",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/audit-list/audit-list.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "AuditListComponent",
+          "startLine": 12,
+          "endLine": 41,
+          "methods": [
+            "constructor",
+            "loadChangedModelHistory",
+            "getParsedChangesArray"
+          ],
+          "properties": [
+            "deficiency",
+            "displayedColumns",
+            "wasOpenedExpansionPanel",
+            "objectKeys"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuditListComponent",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadChangedModelHistory",
+          "callee": "this.auditService.loadDeficiencyHistory",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getParsedChangesArray",
+          "callee": "JSON.parse",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getParsedChangesArray",
+          "callee": "Object.keys(parsed).map",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getParsedChangesArray",
+          "callee": "Object.keys",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/comment-message-list/comment-message-list.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 75,
+      "classes": [
+        {
+          "name": "CommentMessageListComponent",
+          "startLine": 15,
+          "endLine": 83,
+          "methods": [
+            "constructor",
+            "ngOnInit",
+            "loadComments",
+            "submitComment",
+            "isImageFile",
+            "isPdfFile"
+          ],
+          "properties": [
+            "deficiency",
+            "comments",
+            "commentForm",
+            "submitting"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CommentMessageListComponent",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.fb.group",
+          "lineNumber": 26
+        },
+        {
+          "caller": "constructor",
+          "callee": "Validators.maxLength",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ngOnInit",
+          "callee": "this.loadComments",
+          "lineNumber": 33
+        },
+        {
+          "caller": "loadComments",
+          "callee": "console.warn",
+          "lineNumber": 39
+        },
+        {
+          "caller": "loadComments",
+          "callee": "this.commentService.getComments(deficiencyId, deficiencyType).subscribe",
+          "lineNumber": 42
+        },
+        {
+          "caller": "loadComments",
+          "callee": "this.commentService.getComments",
+          "lineNumber": 42
+        },
+        {
+          "caller": "loadComments",
+          "callee": "console.error",
+          "lineNumber": 47
+        },
+        {
+          "caller": "submitComment",
+          "callee": "this.commentService\n      .addComment({\n        message,\n        deficiencyId: this.deficiency.id,\n        deficiencyType: this.deficiency.type,\n        creatorFullName: sessionStorage.getItem(\"fullName\") || \"Unknown\",\n      })\n      .subscribe",
+          "lineNumber": 57
+        },
+        {
+          "caller": "submitComment",
+          "callee": "this.commentService\n      .addComment",
+          "lineNumber": 57
+        },
+        {
+          "caller": "submitComment",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 62
+        },
+        {
+          "caller": "submitComment",
+          "callee": "this.commentForm.reset",
+          "lineNumber": 66
+        },
+        {
+          "caller": "submitComment",
+          "callee": "this.loadComments",
+          "lineNumber": 67
+        },
+        {
+          "caller": "isImageFile",
+          "callee": "mimeType.startsWith",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/dialogs/attachment-preview-dialog/attachment-preview-dialog.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "AttachmentPreviewDialogComponent",
+          "startLine": 10,
+          "endLine": 19,
+          "methods": [
+            "constructor",
+            "close"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AttachmentPreviewDialogComponent",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "Inject",
+          "lineNumber": 13
+        },
+        {
+          "caller": "close",
+          "callee": "this.dialogRef.close",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/components/file-upload/file-upload.component.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 72,
+      "classes": [
+        {
+          "name": "FileUploadComponent",
+          "startLine": 14,
+          "endLine": 85,
+          "methods": [
+            "constructor",
+            "onFileSelected",
+            "uploadFile"
+          ],
+          "properties": [
+            "deficiencyId",
+            "deficiencyType",
+            "fileUploaded",
+            "selectedFile",
+            "baseUrl",
+            "isUploading",
+            "uploadProgress",
+            "allowedTypes",
+            "maxSize"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileUploadComponent",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onFileSelected",
+          "callee": "alert",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onFileSelected",
+          "callee": "this.allowedTypes.includes",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onFileSelected",
+          "callee": "this.notify.open",
+          "lineNumber": 44
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "formData.append",
+          "lineNumber": 56
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.http\n      .post(`${this.baseUrl}/upload/deficiency/${this.deficiencyId}?deficiencyType=${this.deficiencyType}`, formData, {\n        reportProgress: true,\n        observe: \"events\",\n      })\n      .subscribe",
+          "lineNumber": 61
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.http\n      .post",
+          "lineNumber": 61
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "Math.round",
+          "lineNumber": 69
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.fileUploaded.emit",
+          "lineNumber": 74
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.notify.open",
+          "lineNumber": 80
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "console.error",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/helpers/form-validation.helper.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "apiFieldToFormControlName",
+          "startLine": 4,
+          "endLine": 10,
+          "params": [
+            "apiField"
+          ]
+        },
+        {
+          "name": "applyServerValidationErrors",
+          "startLine": 12,
+          "endLine": 38,
+          "params": [
+            "form",
+            "error"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "apiFieldToFormControlName",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "applyServerValidationErrors",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apiFieldToFormControlName",
+          "callee": "apiField.charAt(0).toLowerCase",
+          "lineNumber": 9
+        },
+        {
+          "caller": "apiFieldToFormControlName",
+          "callee": "apiField.charAt",
+          "lineNumber": 9
+        },
+        {
+          "caller": "apiFieldToFormControlName",
+          "callee": "apiField.slice",
+          "lineNumber": 9
+        },
+        {
+          "caller": "applyServerValidationErrors",
+          "callee": "Object.entries(apiErrors).forEach",
+          "lineNumber": 20
+        },
+        {
+          "caller": "applyServerValidationErrors",
+          "callee": "Object.entries",
+          "lineNumber": 20
+        },
+        {
+          "caller": "applyServerValidationErrors",
+          "callee": "apiFieldToFormControlName",
+          "lineNumber": 21
+        },
+        {
+          "caller": "applyServerValidationErrors",
+          "callee": "form.get",
+          "lineNumber": 22
+        },
+        {
+          "caller": "applyServerValidationErrors",
+          "callee": "control.setErrors",
+          "lineNumber": 28
+        },
+        {
+          "caller": "applyServerValidationErrors",
+          "callee": "control.markAsTouched",
+          "lineNumber": 29
+        },
+        {
+          "caller": "applyServerValidationErrors",
+          "callee": "form.updateValueAndValidity",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/models/IDeficiencyFormConfig.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/pipes/filter.cy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 100,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/pipes/filter.pipe.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "FilterPipe",
+          "startLine": 9,
+          "endLine": 15,
+          "methods": [
+            "transform"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FilterPipe",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "transform",
+          "callee": "value.filter",
+          "lineNumber": 13
+        },
+        {
+          "caller": "transform",
+          "callee": "v.title.toLowerCase().indexOf",
+          "lineNumber": 13
+        },
+        {
+          "caller": "transform",
+          "callee": "v.title.toLowerCase",
+          "lineNumber": 13
+        },
+        {
+          "caller": "transform",
+          "callee": "searchValue.toLowerCase",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/attachment-api.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 62,
+      "classes": [
+        {
+          "name": "AttachmentAPIService",
+          "startLine": 11,
+          "endLine": 71,
+          "methods": [
+            "constructor",
+            "getAttachments",
+            "getAttachment",
+            "uploadAttachment",
+            "deleteAttachment",
+            "getDownloadUrl",
+            "downloadAttachmentBlob"
+          ],
+          "properties": [
+            "baseUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AttachmentAPIService",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAttachments",
+          "callee": "this.http.get",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getAttachment",
+          "callee": "this.http.get",
+          "lineNumber": 33
+        },
+        {
+          "caller": "uploadAttachment",
+          "callee": "formData.append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "uploadAttachment",
+          "callee": "formData.append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "uploadAttachment",
+          "callee": "this.http.post",
+          "lineNumber": 47
+        },
+        {
+          "caller": "deleteAttachment",
+          "callee": "this.http.delete",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getDownloadUrl",
+          "callee": "this.http.get",
+          "lineNumber": 65
+        },
+        {
+          "caller": "downloadAttachmentBlob",
+          "callee": "this.http.get",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/comment-message-api.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 62,
+      "classes": [
+        {
+          "name": "CommentAPIService",
+          "startLine": 11,
+          "endLine": 70,
+          "methods": [
+            "constructor",
+            "getComments",
+            "getComment",
+            "addComment",
+            "uploadComment",
+            "deleteComment"
+          ],
+          "properties": [
+            "baseUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CommentAPIService",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getComments",
+          "callee": "this.http.get",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getComment",
+          "callee": "this.http.get",
+          "lineNumber": 33
+        },
+        {
+          "caller": "addComment",
+          "callee": "this.http.post",
+          "lineNumber": 45
+        },
+        {
+          "caller": "uploadComment",
+          "callee": "formData.append",
+          "lineNumber": 56
+        },
+        {
+          "caller": "uploadComment",
+          "callee": "formData.append",
+          "lineNumber": 57
+        },
+        {
+          "caller": "uploadComment",
+          "callee": "this.http.post",
+          "lineNumber": 59
+        },
+        {
+          "caller": "deleteComment",
+          "callee": "this.http.delete",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/deficiency-confirmation.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "DeficiencyConfirmationService",
+          "startLine": 15,
+          "endLine": 26,
+          "methods": [
+            "constructor",
+            "confirm"
+          ],
+          "properties": [
+            "baseUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeficiencyConfirmationService",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "confirm",
+          "callee": "this.http.post",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/deficiency-details.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 520,
+      "nonEmptyLines": 451,
+      "classes": [
+        {
+          "name": "DeficiencyDetailsService",
+          "startLine": 39,
+          "endLine": 520,
+          "methods": [
+            "constructor",
+            "initializeState",
+            "initializeForm",
+            "loadOrganizationUsers",
+            "subscribeToCoordinatesPicking",
+            "subscribeToCoordinateFormChanges",
+            "setResearchFieldsDisabled",
+            "syncDetailsCoordinates",
+            "toggleCoordinateSelection",
+            "changeMapView",
+            "toggleMonitoring",
+            "onSubmit",
+            "onCancel",
+            "showPreview",
+            "onUploadStarted",
+            "onUploadCompleted",
+            "onUploadError",
+            "onUploadProgress",
+            "onFilesSelected",
+            "onFileSelected",
+            "onFileRemoved",
+            "loadAttachments",
+            "retryUpload"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeficiencyDetailsService",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initializeState",
+          "callee": "this.fb.group",
+          "lineNumber": 56
+        },
+        {
+          "caller": "initializeState",
+          "callee": "enumToSelectOptions",
+          "lineNumber": 57
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 76
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.min",
+          "lineNumber": 80
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.max",
+          "lineNumber": 80
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.min",
+          "lineNumber": 81
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.max",
+          "lineNumber": 81
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "Validators.min",
+          "lineNumber": 83
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "moment",
+          "lineNumber": 86
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "config.getSpecificFormFields",
+          "lineNumber": 92
+        },
+        {
+          "caller": "initializeForm",
+          "callee": "this.fb.group",
+          "lineNumber": 95
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "this.usersAPIService.fetchOrganizationUsers(-1, null, { silent: true }).pipe",
+          "lineNumber": 109
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "this.usersAPIService.fetchOrganizationUsers",
+          "lineNumber": 109
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "tap",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 111
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "orgUsers.find",
+          "lineNumber": 112
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "state.detailsForm.patchValue",
+          "lineNumber": 115
+        },
+        {
+          "caller": "loadOrganizationUsers",
+          "callee": "map",
+          "lineNumber": 126
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.mapViewService.selectedCoordinates$.pipe(takeUntil(destroy$)).subscribe",
+          "lineNumber": 131
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.mapViewService.selectedCoordinates$.pipe",
+          "lineNumber": 131
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "takeUntil",
+          "lineNumber": 131
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "state.detailsForm.patchValue",
+          "lineNumber": 136
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.syncDetailsCoordinates",
+          "lineNumber": 140
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.mapViewService.highlightSelectedCoordinates",
+          "lineNumber": 141
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "state.detailsForm.get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.mapViewService.selectedAddress$.pipe(takeUntil(destroy$)).subscribe",
+          "lineNumber": 145
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "this.mapViewService.selectedAddress$.pipe",
+          "lineNumber": 145
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "takeUntil",
+          "lineNumber": 145
+        },
+        {
+          "caller": "subscribeToCoordinatesPicking",
+          "callee": "state.detailsForm.patchValue",
+          "lineNumber": 148
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "state.detailsForm.get",
+          "lineNumber": 161
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "state.detailsForm.get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "combineLatest([latitudeControl.valueChanges, longitudeControl.valueChanges])\n      .pipe(debounceTime(300), takeUntil(destroy$))\n      .subscribe",
+          "lineNumber": 168
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "combineLatest([latitudeControl.valueChanges, longitudeControl.valueChanges])\n      .pipe",
+          "lineNumber": 168
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "combineLatest",
+          "lineNumber": 168
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "debounceTime",
+          "lineNumber": 169
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "takeUntil",
+          "lineNumber": 169
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "Number",
+          "lineNumber": 175
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "Number",
+          "lineNumber": 176
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "Number.isNaN",
+          "lineNumber": 178
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "Number.isNaN",
+          "lineNumber": 178
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "this.syncDetailsCoordinates",
+          "lineNumber": 182
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "this.mapViewService.highlightSelectedCoordinates",
+          "lineNumber": 183
+        },
+        {
+          "caller": "subscribeToCoordinateFormChanges",
+          "callee": "state.detailsForm.get",
+          "lineNumber": 185
+        },
+        {
+          "caller": "setResearchFieldsDisabled",
+          "callee": "fieldNames.forEach",
+          "lineNumber": 191
+        },
+        {
+          "caller": "setResearchFieldsDisabled",
+          "callee": "form.get",
+          "lineNumber": 192
+        },
+        {
+          "caller": "setResearchFieldsDisabled",
+          "callee": "control.disable",
+          "lineNumber": 198
+        },
+        {
+          "caller": "setResearchFieldsDisabled",
+          "callee": "control.enable",
+          "lineNumber": 200
+        },
+        {
+          "caller": "setResearchFieldsDisabled",
+          "callee": "form.updateValueAndValidity",
+          "lineNumber": 204
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "event.preventDefault",
+          "lineNumber": 218
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "event.stopPropagation",
+          "lineNumber": 219
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "this.mapViewService.enableCoordinateSelection",
+          "lineNumber": 223
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "this.mobileMapService.showMobileMap",
+          "lineNumber": 225
+        },
+        {
+          "caller": "toggleCoordinateSelection",
+          "callee": "this.mapViewService.disableCoordinateSelection",
+          "lineNumber": 228
+        },
+        {
+          "caller": "focus",
+          "callee": "Number",
+          "lineNumber": 234
+        },
+        {
+          "caller": "focus",
+          "callee": "state.detailsForm?.get",
+          "lineNumber": 234
+        },
+        {
+          "caller": "focus",
+          "callee": "Number",
+          "lineNumber": 235
+        },
+        {
+          "caller": "focus",
+          "callee": "state.detailsForm?.get",
+          "lineNumber": 235
+        },
+        {
+          "caller": "focus",
+          "callee": "state.detailsForm?.get",
+          "lineNumber": 236
+        },
+        {
+          "caller": "focus",
+          "callee": "Number.isNaN",
+          "lineNumber": 238
+        },
+        {
+          "caller": "focus",
+          "callee": "Number.isNaN",
+          "lineNumber": 238
+        },
+        {
+          "caller": "focus",
+          "callee": "state.detailsForm?.get",
+          "lineNumber": 243
+        },
+        {
+          "caller": "focus",
+          "callee": "this.mapViewService.changeFocus",
+          "lineNumber": 247
+        },
+        {
+          "caller": "changeMapView",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 253
+        },
+        {
+          "caller": "changeMapView",
+          "callee": "this.mobileMapService.showMobileMap",
+          "lineNumber": 254
+        },
+        {
+          "caller": "changeMapView",
+          "callee": "setTimeout",
+          "lineNumber": 255
+        },
+        {
+          "caller": "changeMapView",
+          "callee": "setTimeout",
+          "lineNumber": 259
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.auditService.toggleMonitoring(state.details?.id || null, deficiencyType).subscribe",
+          "lineNumber": 264
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "this.auditService.toggleMonitoring",
+          "lineNumber": 264
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "observer.next",
+          "lineNumber": 275
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "observer.complete",
+          "lineNumber": 276
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "console.error",
+          "lineNumber": 279
+        },
+        {
+          "caller": "toggleMonitoring",
+          "callee": "observer.error",
+          "lineNumber": 280
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "state.detailsForm.markAllAsTouched",
+          "lineNumber": 292
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.error",
+          "lineNumber": 294
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.complete",
+          "lineNumber": 295
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "state.detailsForm.getRawValue",
+          "lineNumber": 299
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 301
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.mobileMapService.hideMobileMap",
+          "lineNumber": 302
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "deficiencyDataService[methodName](formData).subscribe",
+          "lineNumber": 308
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "deficiencyDataService[methodName]",
+          "lineNumber": 308
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.router.navigate",
+          "lineNumber": 310
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.next",
+          "lineNumber": 311
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.complete",
+          "lineNumber": 312
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.error",
+          "lineNumber": 315
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.complete",
+          "lineNumber": 316
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "deficiencyDataService[methodName](formData.id, formData).subscribe",
+          "lineNumber": 324
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "deficiencyDataService[methodName]",
+          "lineNumber": 324
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "this.router.navigate",
+          "lineNumber": 326
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.next",
+          "lineNumber": 327
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.complete",
+          "lineNumber": 328
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.error",
+          "lineNumber": 331
+        },
+        {
+          "caller": "onSubmit",
+          "callee": "observer.complete",
+          "lineNumber": 332
+        },
+        {
+          "caller": "onCancel",
+          "callee": "this.changeMapView",
+          "lineNumber": 340
+        },
+        {
+          "caller": "onCancel",
+          "callee": "this.mobileMapService.isMobile",
+          "lineNumber": 342
+        },
+        {
+          "caller": "onCancel",
+          "callee": "this.mobileMapService.hideMobileMap",
+          "lineNumber": 343
+        },
+        {
+          "caller": "onCancel",
+          "callee": "this.router.navigate",
+          "lineNumber": 346
+        },
+        {
+          "caller": "showPreview",
+          "callee": "this.dialog.open",
+          "lineNumber": 350
+        },
+        {
+          "caller": "onUploadStarted",
+          "callee": "this.snackBar.open",
+          "lineNumber": 370
+        },
+        {
+          "caller": "onUploadCompleted",
+          "callee": "this.snackBar.open",
+          "lineNumber": 382
+        },
+        {
+          "caller": "onUploadCompleted",
+          "callee": "this.loadAttachments",
+          "lineNumber": 388
+        },
+        {
+          "caller": "onUploadError",
+          "callee": "console.error",
+          "lineNumber": 393
+        },
+        {
+          "caller": "onUploadError",
+          "callee": "this.snackBar.open",
+          "lineNumber": 398
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "this.uploadService.uploadProgress$.subscribe",
+          "lineNumber": 414
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "this.uploadService.getOverallProgress",
+          "lineNumber": 415
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "this.uploadService.uploadFilesParallel(files, state.details!.id, 3).subscribe",
+          "lineNumber": 418
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "this.uploadService.uploadFilesParallel",
+          "lineNumber": 418
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "results.filter((result) => result.attachment).map",
+          "lineNumber": 420
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "results.filter",
+          "lineNumber": 420
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "results.filter((result) => result.error).map",
+          "lineNumber": 421
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "results.filter",
+          "lineNumber": 421
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "this.snackBar.open",
+          "lineNumber": 425
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "failedUploads.join",
+          "lineNumber": 432
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "this.snackBar.open",
+          "lineNumber": 433
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "progressSubscription.unsubscribe",
+          "lineNumber": 441
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "console.error",
+          "lineNumber": 444
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "progressSubscription.unsubscribe",
+          "lineNumber": 448
+        },
+        {
+          "caller": "onFilesSelected",
+          "callee": "this.snackBar.open",
+          "lineNumber": 449
+        },
+        {
+          "caller": "onFileSelected",
+          "callee": "console.log",
+          "lineNumber": 455
+        },
+        {
+          "caller": "onFileSelected",
+          "callee": "this.onFilesSelected",
+          "lineNumber": 456
+        },
+        {
+          "caller": "onFileRemoved",
+          "callee": "console.log",
+          "lineNumber": 460
+        },
+        {
+          "caller": "onFileRemoved",
+          "callee": "state.lastUploadedFiles.filter",
+          "lineNumber": 461
+        },
+        {
+          "caller": "loadAttachments",
+          "callee": "console.warn",
+          "lineNumber": 466
+        },
+        {
+          "caller": "loadAttachments",
+          "callee": "this.attachmentService.getAttachments(deficiencyId, deficiencyType).subscribe",
+          "lineNumber": 470
+        },
+        {
+          "caller": "loadAttachments",
+          "callee": "this.attachmentService.getAttachments",
+          "lineNumber": 470
+        },
+        {
+          "caller": "loadAttachments",
+          "callee": "console.error",
+          "lineNumber": 475
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "this.uploadService.uploadFilesParallel",
+          "lineNumber": 486
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "uploadObservable.subscribe",
+          "lineNumber": 488
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "results.filter((result) => result.attachment).map",
+          "lineNumber": 490
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "results.filter",
+          "lineNumber": 490
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "results.filter((result) => result.error).map",
+          "lineNumber": 491
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "results.filter",
+          "lineNumber": 491
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "this.snackBar.open",
+          "lineNumber": 495
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "failedUploads.join",
+          "lineNumber": 502
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "this.snackBar.open",
+          "lineNumber": 503
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "console.error",
+          "lineNumber": 512
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "this.snackBar.open",
+          "lineNumber": 515
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/deficiency-form-configs.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 110,
+      "classes": [
+        {
+          "name": "WaterDeficiencyFormConfig",
+          "startLine": 10,
+          "endLine": 83,
+          "methods": [
+            "getSpecificFormFields"
+          ],
+          "properties": [
+            "deficiencyType",
+            "researchFieldNames"
+          ]
+        },
+        {
+          "name": "SoilDeficiencyFormConfig",
+          "startLine": 85,
+          "endLine": 117,
+          "methods": [
+            "getSpecificFormFields"
+          ],
+          "properties": [
+            "deficiencyType",
+            "researchFieldNames"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WaterDeficiencyFormConfig",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "SoilDeficiencyFormConfig",
+          "line": 85,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.max",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "Validators.min",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getSpecificFormFields",
+          "callee": "moment",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/app/shared/services/upload.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 231,
+      "nonEmptyLines": 198,
+      "classes": [
+        {
+          "name": "UploadService",
+          "startLine": 25,
+          "endLine": 231,
+          "methods": [
+            "constructor",
+            "uploadFile",
+            "uploadFiles",
+            "uploadFilesParallel",
+            "retryUpload",
+            "cancelUpload",
+            "clearProgress",
+            "getFileProgress",
+            "getOverallProgress",
+            "hasActiveUploads",
+            "updateProgress",
+            "getErrorMessage"
+          ],
+          "properties": [
+            "uploadProgressSubject",
+            "uploadProgress$"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UploadService",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "uploadFile",
+          "callee": "console.log",
+          "lineNumber": 35
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "formData.append",
+          "lineNumber": 38
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "formData.append",
+          "lineNumber": 39
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.updateProgress",
+          "lineNumber": 41
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "console.log",
+          "lineNumber": 44
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.http\n      .post<IDeficiencyAttachment>(uploadUrl, formData, {\n        reportProgress: true,\n        observe: \"events\",\n      })\n      .pipe",
+          "lineNumber": 46
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.http\n      .post",
+          "lineNumber": 46
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "map",
+          "lineNumber": 52
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "console.log",
+          "lineNumber": 53
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "Math.round",
+          "lineNumber": 56
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.updateProgress",
+          "lineNumber": 57
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.updateProgress",
+          "lineNumber": 60
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "console.log",
+          "lineNumber": 61
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "catchError",
+          "lineNumber": 67
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "console.error",
+          "lineNumber": 68
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "getErrorMessage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "this.updateProgress",
+          "lineNumber": 70
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "throwError",
+          "lineNumber": 71
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "observer.next",
+          "lineNumber": 86
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "observer.complete",
+          "lineNumber": 87
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "this.uploadFile(file, deficiencyId).subscribe",
+          "lineNumber": 92
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "this.uploadFile",
+          "lineNumber": 92
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "results.push",
+          "lineNumber": 94
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "observer.next",
+          "lineNumber": 96
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "uploadNext",
+          "lineNumber": 97
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "results.push",
+          "lineNumber": 100
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "observer.next",
+          "lineNumber": 102
+        },
+        {
+          "caller": "uploadNext",
+          "callee": "uploadNext",
+          "lineNumber": 103
+        },
+        {
+          "caller": "uploadFiles",
+          "callee": "uploadNext",
+          "lineNumber": 108
+        },
+        {
+          "caller": "startUpload",
+          "callee": "this.uploadFile(file, deficiencyId).subscribe",
+          "lineNumber": 125
+        },
+        {
+          "caller": "startUpload",
+          "callee": "this.uploadFile",
+          "lineNumber": 125
+        },
+        {
+          "caller": "startUpload",
+          "callee": "observer.next",
+          "lineNumber": 129
+        },
+        {
+          "caller": "startUpload",
+          "callee": "observer.complete",
+          "lineNumber": 132
+        },
+        {
+          "caller": "startUpload",
+          "callee": "startUpload",
+          "lineNumber": 134
+        },
+        {
+          "caller": "startUpload",
+          "callee": "observer.next",
+          "lineNumber": 140
+        },
+        {
+          "caller": "startUpload",
+          "callee": "observer.complete",
+          "lineNumber": 143
+        },
+        {
+          "caller": "startUpload",
+          "callee": "startUpload",
+          "lineNumber": 145
+        },
+        {
+          "caller": "uploadFilesParallel",
+          "callee": "Math.min",
+          "lineNumber": 151
+        },
+        {
+          "caller": "uploadFilesParallel",
+          "callee": "startUpload",
+          "lineNumber": 152
+        },
+        {
+          "caller": "retryUpload",
+          "callee": "this.uploadFile",
+          "lineNumber": 161
+        },
+        {
+          "caller": "cancelUpload",
+          "callee": "this.updateProgress",
+          "lineNumber": 169
+        },
+        {
+          "caller": "clearProgress",
+          "callee": "this.uploadProgressSubject.next",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getFileProgress",
+          "callee": "this.uploadProgressSubject.value.find",
+          "lineNumber": 183
+        },
+        {
+          "caller": "getOverallProgress",
+          "callee": "progress.reduce",
+          "lineNumber": 193
+        },
+        {
+          "caller": "getOverallProgress",
+          "callee": "Math.round",
+          "lineNumber": 194
+        },
+        {
+          "caller": "hasActiveUploads",
+          "callee": "this.uploadProgressSubject.value.some",
+          "lineNumber": 201
+        },
+        {
+          "caller": "updateProgress",
+          "callee": "currentProgress.findIndex",
+          "lineNumber": 206
+        },
+        {
+          "caller": "updateProgress",
+          "callee": "currentProgress.push",
+          "lineNumber": 213
+        },
+        {
+          "caller": "updateProgress",
+          "callee": "this.uploadProgressSubject.next",
+          "lineNumber": 216
+        },
+        {
+          "caller": "getErrorMessage",
+          "callee": "getErrorMessage",
+          "lineNumber": 220
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/View/nature-help/src/environments/environment.dev.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "exports": [
+        {
+          "name": "environment",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

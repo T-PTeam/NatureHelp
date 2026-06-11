@@ -15,6 +15,10 @@
     "research": "Research",
     "profile": "Profile"
   },
+  "postAuthWelcome": {
+    "hello": "Hello {{name}}!",
+    "howAreYou": "How are you?"
+  },
   "about": {
     "title": "About Us",
     "intro": "NatureHelp is a platform for monitoring environmental issues and soil/water deficiencies.",
@@ -81,6 +85,28 @@
     "applyBtn": "Apply",
     "clearBtn": "Clear",
     "submitBtn": "Submit",
+    "formInvalid": "Please fix validation errors before saving. You can disable research fields if you only need to update basic data.",
+    "titleError": "Title is required",
+    "descriptionError": "Description is required",
+    "latitudeError": "Latitude must be between -90 and 90",
+    "longitudeError": "Longitude must be between -180 and 180",
+    "radiusError": "Radius is required and must be zero or greater",
+    "phError": "pH is required",
+    "phRangeError": "pH must be between 0 and 14",
+    "dissolvedOxygenRangeError": "Dissolved oxygen must be between 0 and 20 mg/L",
+    "leadConcentrationRangeError": "Lead concentration must be between 0 and 0.02 mg/L",
+    "mercuryConcentrationRangeError": "Mercury concentration must be between 0 and 0.01 mg/L",
+    "nitrateConcentrationRangeError": "Nitrate concentration must be between 0 and 50 mg/L",
+    "pesticidesContentRangeError": "Pesticides content must be between 0 and 0.1 mg/L",
+    "microbialActivityRangeError": "Microbial activity must be between 0 and 1000",
+    "radiationLevelRangeError": "Radiation level must be between 0 and 50",
+    "chemicalOxygenDemandRangeError": "Chemical oxygen demand must be between 0 and 1000",
+    "biologicalOxygenDemandRangeError": "Biological oxygen demand must be between 0 and 50 mg/L",
+    "phosphateConcentrationRangeError": "Phosphate concentration must be between 0 and 10 mg/L",
+    "cadmiumConcentrationRangeError": "Cadmium concentration must be between 0 and 0.01 mg/L",
+    "totalDissolvedSolidsRangeError": "Total dissolved solids must be between 0 and 1500 mg/L",
+    "electricalConductivityRangeError": "Electrical conductivity must be between 0 and 2500 µS/cm",
+    "microbialLoadRangeError": "Microbial load must be between 0 and 5000",
     "cancelBtn": "Cancel",
     "canceltBtn": "Cancel",
     "pH": "pH",
@@ -298,6 +324,14 @@
     "followUs": "Follow Us",
     "quickLinks": "Quick Links"
   },
+  "loading": {
+    "loadingData": "Loading data...",
+    "loadingMore": "Loading more...",
+    "loadingDeficiency": "Loading deficiency...",
+    "saving": "Saving...",
+    "adding": "Adding...",
+    "posting": "Posting..."
+  },
   "common": {
     "submit": "Submit",
     "cancel": "Cancel",
@@ -424,7 +458,8 @@
     "confirm": "Confirm this report",
     "confirmThanks": "Thanks for confirming.",
     "alreadyConfirmed": "You already confirmed this report.",
-    "confirmError": "Could not confirm this report."
+    "confirmError": "Could not confirm this report.",
+    "loadError": "Could not load deficiency details."
   },
   "profile": {
     "level": "Level",
