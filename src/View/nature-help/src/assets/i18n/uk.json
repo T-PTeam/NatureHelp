@@ -527,8 +527,15 @@
       "achievementAlerts": "Сповіщення про досягнення",
       "newsletter": "Розсилка",
       "accountTitle": "Обліковий запис",
+      "changePassword": "Змінити пароль",
+      "currentPassword": "Поточний пароль",
+      "newPassword": "Новий пароль",
+      "confirmPassword": "Підтвердити новий пароль",
+      "passwordsMismatch": "Паролі не збігаються.",
+      "passwordChangeSuccess": "Пароль успішно змінено.",
       "deleteAccount": "Видалити обліковий запис",
       "deleteAccountHint": "Остаточно видалити обліковий запис та дані. Це незворотна дія.",
+      "deleteConfirm": "Ви впевнені, що хочете видалити обліковий запис? Цю дію неможливо скасувати.",
       "saveSuccess": "Налаштування збережено."
     }
   }

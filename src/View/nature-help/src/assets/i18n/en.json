@@ -527,8 +527,15 @@
       "achievementAlerts": "Achievement alerts",
       "newsletter": "Newsletter",
       "accountTitle": "Account",
+      "changePassword": "Change password",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password",
+      "passwordsMismatch": "Passwords do not match.",
+      "passwordChangeSuccess": "Password changed successfully.",
       "deleteAccount": "Delete account",
       "deleteAccountHint": "Permanently delete your account and data. This cannot be undone.",
+      "deleteConfirm": "Are you sure you want to delete your account? This action cannot be undone.",
       "saveSuccess": "Your settings were saved."
     }
   }

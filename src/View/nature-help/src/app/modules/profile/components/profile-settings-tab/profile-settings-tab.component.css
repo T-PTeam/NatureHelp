@@ -50,3 +50,36 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+.account-actions {
+  margin-bottom: 0.5rem;
+}
+
+.password-form-wrap {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f9fbe7;
+  border-radius: 8px;
+}
+
+.password-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.password-form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.account-divider {
+  margin: 1.25rem 0;
+}
+
+.delete-account-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

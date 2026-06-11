@@ -549,6 +549,38 @@ public class UserController : Controller
         }
     }
 
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpDelete("profile/me")]
+    public async Task<IActionResult> DeleteCurrentUser()
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        var result = await _userService.DeleteUserDataAsync(email);
+        if (!result) return NotFound(new { success = false, message = "User not found." });
+        return Ok(new { success = true, message = "Account deleted successfully." });
+    }
+
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpPost("profile/change-password")]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto dto)
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        try
+        {
+            await _userService.ChangePasswordAsync(email, dto.CurrentPassword, dto.NewPassword);
+            return Ok(new { success = true });
+        }
+        catch (UnauthorizedAccessException)
+        {
+            return BadRequest(new { success = false, message = "Current password is incorrect." });
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { success = false, message = ex.Message });
+        }
+    }
+
     [HttpDelete("delete-user-data")]
     [AllowAnonymous]
     public async Task<IActionResult> DeleteUserData([FromBody] UserDto userDto)

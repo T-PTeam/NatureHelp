@@ -56,13 +56,94 @@
   <section class="account-section">
     <h2 class="section-title">{{ "profile.settings.accountTitle" | translate }}</h2>
     <mat-card class="settings-card">
-      <button
-        mat-stroked-button
-        color="warn"
-        class="account-action">
-        {{ "profile.settings.deleteAccount" | translate }}
-      </button>
-      <p class="setting-hint">{{ "profile.settings.deleteAccountHint" | translate }}</p>
+      <div class="account-actions">
+        <button
+          mat-stroked-button
+          color="primary"
+          class="account-action"
+          type="button"
+          (click)="showPasswordForm = !showPasswordForm">
+          <mat-icon>lock</mat-icon>
+          {{ "profile.settings.changePassword" | translate }}
+        </button>
+      </div>
+
+      <div
+        *ngIf="showPasswordForm"
+        class="password-form-wrap">
+        <form
+          [formGroup]="passwordForm"
+          (ngSubmit)="submitChangePassword()">
+          <mat-form-field
+            appearance="outline"
+            class="password-field">
+            <mat-label>{{ "profile.settings.currentPassword" | translate }}</mat-label>
+            <input
+              matInput
+              type="password"
+              formControlName="currentPassword" />
+          </mat-form-field>
+          <mat-form-field
+            appearance="outline"
+            class="password-field">
+            <mat-label>{{ "profile.settings.newPassword" | translate }}</mat-label>
+            <input
+              matInput
+              type="password"
+              formControlName="newPassword" />
+          </mat-form-field>
+          <mat-form-field
+            appearance="outline"
+            class="password-field">
+            <mat-label>{{ "profile.settings.confirmPassword" | translate }}</mat-label>
+            <input
+              matInput
+              type="password"
+              formControlName="confirmPassword" />
+            <mat-error *ngIf="passwordForm.hasError('passwordsMismatch')">
+              {{ "profile.settings.passwordsMismatch" | translate }}
+            </mat-error>
+          </mat-form-field>
+          <div class="password-form-actions">
+            <button
+              mat-flat-button
+              color="primary"
+              type="submit"
+              [disabled]="passwordForm.invalid || changingPassword">
+              @if (changingPassword) {
+                <mat-spinner diameter="18"></mat-spinner>
+              } @else {
+                {{ "common.save" | translate }}
+              }
+            </button>
+            <button
+              mat-button
+              type="button"
+              (click)="showPasswordForm = false; passwordForm.reset()">
+              {{ "common.cancel" | translate }}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <mat-divider class="account-divider"></mat-divider>
+
+      <div class="delete-account-row">
+        <button
+          mat-stroked-button
+          color="warn"
+          class="account-action"
+          type="button"
+          [disabled]="deletingAccount"
+          (click)="confirmDeleteAccount()">
+          @if (deletingAccount) {
+            <mat-spinner diameter="18"></mat-spinner>
+          } @else {
+            {{ "profile.settings.deleteAccount" | translate }}
+          }
+        </button>
+        <p class="setting-hint">{{ "profile.settings.deleteAccountHint" | translate }}</p>
+      </div>
     </mat-card>
   </section>
 </div>

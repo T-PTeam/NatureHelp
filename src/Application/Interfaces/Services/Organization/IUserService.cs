@@ -47,5 +47,7 @@ public interface IUserService
 
     Task<IReadOnlyList<ProfileReferralDto>> GetProfileReferralsAsync(string email);
     Task<string> GetReferralInviteLinkAsync(string email);
+
+    Task<bool> ChangePasswordAsync(string email, string currentPassword, string newPassword);
 }
 

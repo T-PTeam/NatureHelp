@@ -626,4 +626,15 @@ public class UserService : IUserService
         var baseUrl = _configuration["Frontend:Url"]?.TrimEnd('/') ?? string.Empty;
         return $"{baseUrl}/register?ref={code}";
     }
+
+    public async Task<bool> ChangePasswordAsync(string email, string currentPassword, string newPassword)
+    {
+        var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
+        var verifyResult = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, currentPassword);
+        if (verifyResult == PasswordVerificationResult.Failed) throw new UnauthorizedAccessException("Current password is incorrect.");
+        if (!user.IsPasswordValid(newPassword)) throw new ArgumentException("New password does not meet requirements.");
+        user.PasswordHash = _passwordHasher.HashPassword(user, newPassword);
+        await _userRepository.UpdateAsync(user);
+        return true;
+    }
 }

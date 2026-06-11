@@ -292,6 +292,28 @@ export class UserAPIService {
     );
   }
 
+  changePassword(currentPassword: string, newPassword: string): Observable<boolean> {
+    return this.http.post<{ success: boolean }>(`${this.apiUrl}/profile/change-password`, { currentPassword, newPassword }).pipe(
+      map((res) => res.success),
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 4000 });
+        return of(false);
+      }),
+    );
+  }
+
+  deleteCurrentUser(): Observable<boolean> {
+    return this.http.delete<{ success: boolean }>(`${this.apiUrl}/profile/me`).pipe(
+      map((res) => res.success),
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 4000 });
+        return of(false);
+      }),
+    );
+  }
+
   updateProfileSettings(payload: IUserProfileSettingsPayload): Observable<IUser | null> {
     return this.http.put<IUser>(`${this.apiUrl}/profile-settings`, payload).pipe(
       switchMap(() => this.refreshCurrentUser()),
