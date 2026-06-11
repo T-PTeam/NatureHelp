@@ -4,4 +4,6 @@ export interface IProfileJournalEntry {
   title: string;
   createdOn: string;
   address?: string;
+  latitude?: number;
+  longitude?: number;
 }

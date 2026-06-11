@@ -547,10 +547,10 @@ public class UserService : IUserService
         };
     }
 
-    public async Task<IReadOnlyList<ProfileJournalEntryDto>> GetProfileJournalAsync(string email, int take = 100)
+    public async Task<IReadOnlyList<ProfileJournalEntryDto>> GetProfileJournalAsync(string email, int take = 100, int skip = 0, int? deficiencyType = null)
     {
         var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
-        return await _profileRepository.GetProfileJournalAsync(user.Id, take);
+        return await _profileRepository.GetProfileJournalAsync(user.Id, take, skip, deficiencyType);
     }
 
     public async Task<IReadOnlyList<ProfilePhotoHistoryDto>> GetProfilePhotoHistoryAsync(string email, int take = 100)

@@ -494,7 +494,11 @@
       "totalXp": "Всього XP"
     },
     "journal": {
+      "mapTitle": "Мої локації на карті",
       "tableTitle": "Мої звіти",
+      "filterAll": "Всі",
+      "filterWater": "Вода",
+      "filterSoil": "Ґрунт",
       "colType": "Тип",
       "colTitle": "Назва",
       "colDate": "Дата",

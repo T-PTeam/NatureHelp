@@ -494,7 +494,11 @@
       "totalXp": "Total XP"
     },
     "journal": {
+      "mapTitle": "My locations on map",
       "tableTitle": "My reports",
+      "filterAll": "All",
+      "filterWater": "Water",
+      "filterSoil": "Soil",
       "colType": "Type",
       "colTitle": "Title",
       "colDate": "Date",

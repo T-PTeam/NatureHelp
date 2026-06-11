@@ -37,7 +37,7 @@ public interface IUserService
 
     Task<User> UpdateProfileSettingsAsync(string email, UserProfileSettingsDto settings);
 
-    Task<IReadOnlyList<ProfileJournalEntryDto>> GetProfileJournalAsync(string email, int take = 100);
+    Task<IReadOnlyList<ProfileJournalEntryDto>> GetProfileJournalAsync(string email, int take = 100, int skip = 0, int? deficiencyType = null);
 
     Task<IReadOnlyList<ProfilePhotoHistoryDto>> GetProfilePhotoHistoryAsync(string email, int take = 100);
 

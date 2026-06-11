@@ -1,6 +1,29 @@
 <div class="journal-tab">
+  <section class="journal-map-section">
+    <h2 class="section-title">{{ "profile.journal.mapTitle" | translate }}</h2>
+    <div
+      #mapContainer
+      class="journal-map-container"></div>
+  </section>
+
   <section class="journal-table-section">
-    <h2 class="section-title">{{ "profile.journal.tableTitle" | translate }}</h2>
+    <div class="journal-table-header">
+      <h2 class="section-title">{{ "profile.journal.tableTitle" | translate }}</h2>
+      <mat-button-toggle-group
+        class="filter-toggle"
+        [value]="activeFilter"
+        (change)="onFilterChange($event.value)">
+        <mat-button-toggle [value]="null">{{ "profile.journal.filterAll" | translate }}</mat-button-toggle>
+        <mat-button-toggle [value]="deficiencyTypeEnum.Water">
+          <mat-icon>water_drop</mat-icon>
+          {{ "profile.journal.filterWater" | translate }}
+        </mat-button-toggle>
+        <mat-button-toggle [value]="deficiencyTypeEnum.Soil">
+          <mat-icon>grass</mat-icon>
+          {{ "profile.journal.filterSoil" | translate }}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
     <div
       class="table-wrap"
       *ngIf="journal.length; else emptyJournal">

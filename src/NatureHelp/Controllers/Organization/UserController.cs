@@ -148,11 +148,11 @@ public class UserController : Controller
 
     [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
     [HttpGet("profile/journal")]
-    public async Task<IActionResult> GetProfileJournal([FromQuery] int take = 100)
+    public async Task<IActionResult> GetProfileJournal([FromQuery] int take = 100, [FromQuery] int skip = 0, [FromQuery] int? deficiencyType = null)
     {
         var email = User.FindFirst(ClaimTypes.Email)?.Value;
         if (string.IsNullOrEmpty(email)) return Unauthorized();
-        return Ok(await _userService.GetProfileJournalAsync(email, take));
+        return Ok(await _userService.GetProfileJournalAsync(email, take, skip, deficiencyType));
     }
 
     [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]

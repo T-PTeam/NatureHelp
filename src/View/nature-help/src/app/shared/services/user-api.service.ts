@@ -236,8 +236,10 @@ export class UserAPIService {
     return this.http.post<{ awarded: boolean }>(`${this.apiUrl}/profile/visit`, {}).pipe(catchError(() => of(null)));
   }
 
-  getProfileJournal(take = 100): Observable<IProfileJournalEntry[]> {
-    return this.http.get<IProfileJournalEntry[]>(`${this.apiUrl}/profile/journal?take=${take}`).pipe(
+  getProfileJournal(take = 100, skip = 0, deficiencyType?: number): Observable<IProfileJournalEntry[]> {
+    let params = new HttpParams().set("take", take).set("skip", skip);
+    if (deficiencyType != null) params = params.set("deficiencyType", deficiencyType);
+    return this.http.get<IProfileJournalEntry[]>(`${this.apiUrl}/profile/journal`, { params }).pipe(
       catchError((err: HttpErrorResponse) => {
         const errorMessage = getErrorMessage(err);
         this.notify.open(errorMessage, "Close", { duration: 4000 });

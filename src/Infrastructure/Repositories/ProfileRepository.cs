@@ -177,32 +177,48 @@ public class ProfileRepository : IProfileRepository
             .ToListAsync(ct);
     }
 
-    public async Task<List<ProfileJournalEntryDto>> GetProfileJournalAsync(Guid userId, int take, CancellationToken ct = default)
+    public async Task<List<ProfileJournalEntryDto>> GetProfileJournalAsync(Guid userId, int take, int skip = 0, int? deficiencyType = null, CancellationToken ct = default)
     {
         await using var ctx = await _contextFactory.CreateDbContextAsync(ct);
-        var water = await ctx.WaterDeficiencies.AsNoTracking()
-            .Where(d => d.CreatedBy == userId)
-            .Select(d => new ProfileJournalEntryDto
-            {
-                Id = d.Id,
-                DeficiencyType = (int)EDeficiencyType.Water,
-                Title = d.Title,
-                CreatedOn = d.CreatedOn,
-                Address = d.Address,
-            })
-            .ToListAsync(ct);
-        var soil = await ctx.SoilDeficiencies.AsNoTracking()
-            .Where(d => d.CreatedBy == userId)
-            .Select(d => new ProfileJournalEntryDto
-            {
-                Id = d.Id,
-                DeficiencyType = (int)EDeficiencyType.Soil,
-                Title = d.Title,
-                CreatedOn = d.CreatedOn,
-                Address = d.Address,
-            })
-            .ToListAsync(ct);
-        return water.Concat(soil).OrderByDescending(x => x.CreatedOn).Take(take).ToList();
+        var result = new List<ProfileJournalEntryDto>();
+
+        if (deficiencyType == null || deficiencyType == (int)EDeficiencyType.Water)
+        {
+            var water = await ctx.WaterDeficiencies.AsNoTracking()
+                .Where(d => d.CreatedBy == userId)
+                .Select(d => new ProfileJournalEntryDto
+                {
+                    Id = d.Id,
+                    DeficiencyType = (int)EDeficiencyType.Water,
+                    Title = d.Title,
+                    CreatedOn = d.CreatedOn,
+                    Address = d.Address,
+                    Latitude = d.Latitude,
+                    Longitude = d.Longitude,
+                })
+                .ToListAsync(ct);
+            result.AddRange(water);
+        }
+
+        if (deficiencyType == null || deficiencyType == (int)EDeficiencyType.Soil)
+        {
+            var soil = await ctx.SoilDeficiencies.AsNoTracking()
+                .Where(d => d.CreatedBy == userId)
+                .Select(d => new ProfileJournalEntryDto
+                {
+                    Id = d.Id,
+                    DeficiencyType = (int)EDeficiencyType.Soil,
+                    Title = d.Title,
+                    CreatedOn = d.CreatedOn,
+                    Address = d.Address,
+                    Latitude = d.Latitude,
+                    Longitude = d.Longitude,
+                })
+                .ToListAsync(ct);
+            result.AddRange(soil);
+        }
+
+        return result.OrderByDescending(x => x.CreatedOn).Skip(skip).Take(take).ToList();
     }
 
     public async Task<List<ProfileReferralDto>> GetReferralsAsync(Guid userId, CancellationToken ct = default)
