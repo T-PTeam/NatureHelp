@@ -7,4 +7,5 @@ public class UserLoginDto()
     public string Email { get; set; } = null!;
     public string Password { get; set; } = null!;
     public bool IsCreatingOwner { get; set; } = false;
+    public string? ReferralCode { get; set; }
 };

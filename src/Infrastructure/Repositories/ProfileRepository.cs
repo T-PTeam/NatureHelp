@@ -5,6 +5,7 @@ using Infrastructure.Data;
 using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Shared.Dtos;
+using Domain.Models.Organization;
 
 namespace Infrastructure.Repositories;
 
@@ -202,5 +203,42 @@ public class ProfileRepository : IProfileRepository
             })
             .ToListAsync(ct);
         return water.Concat(soil).OrderByDescending(x => x.CreatedOn).Take(take).ToList();
+    }
+
+    public async Task<List<ProfileReferralDto>> GetReferralsAsync(Guid userId, CancellationToken ct = default)
+    {
+        await using var ctx = await _contextFactory.CreateDbContextAsync(ct);
+        return await ctx.Users.AsNoTracking()
+            .Where(u => u.ReferredByUserId == userId)
+            .Select(u => new ProfileReferralDto
+            {
+                Id = u.Id,
+                Email = u.Email,
+                DisplayName = u.FirstName + " " + u.LastName,
+                JoinedAt = u.CreatedOn,
+                AvatarStage = u.CurrentLevel <= 2 ? "seed"
+                    : u.CurrentLevel <= 4 ? "sprout"
+                    : u.CurrentLevel <= 6 ? "sapling"
+                    : "tree",
+            })
+            .OrderByDescending(r => r.JoinedAt)
+            .ToListAsync(ct);
+    }
+
+    public async Task<int> CountReferralsAsync(Guid userId, CancellationToken ct = default)
+    {
+        await using var ctx = await _contextFactory.CreateDbContextAsync(ct);
+        return await ctx.Users.AsNoTracking().CountAsync(u => u.ReferredByUserId == userId, ct);
+    }
+
+    public async Task<string> EnsureReferralCodeAsync(Guid userId, CancellationToken ct = default)
+    {
+        await using var ctx = await _contextFactory.CreateDbContextAsync(ct);
+        var user = await ctx.Users.FirstOrDefaultAsync(u => u.Id == userId, ct);
+        if (user == null) throw new InvalidOperationException("User not found.");
+        if (!string.IsNullOrEmpty(user.ReferralCode)) return user.ReferralCode;
+        user.ReferralCode = Guid.NewGuid().ToString("N")[..10].ToUpperInvariant();
+        await ctx.SaveChangesAsync(ct);
+        return user.ReferralCode;
     }
 }

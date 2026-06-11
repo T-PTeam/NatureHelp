@@ -557,6 +557,12 @@ namespace Infrastructure.Migrations
                     b.Property<bool>("ProfileIsPublic")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("ReferralCode")
+                        .HasColumnType("text");
+
+                    b.Property<Guid?>("ReferredByUserId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("RefreshToken")
                         .HasColumnType("text");
 
@@ -574,6 +580,10 @@ namespace Infrastructure.Migrations
                     b.HasIndex("LaboratoryId");
 
                     b.HasIndex("OrganizationId");
+
+                    b.HasIndex("ReferralCode")
+                        .IsUnique()
+                        .HasFilter("\"ReferralCode\" IS NOT NULL");
 
                     b.ToTable("Users");
                 });

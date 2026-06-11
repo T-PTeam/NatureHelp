@@ -484,7 +484,11 @@
       "totalReports": "Total reports",
       "friendForestTitle": "Friend Forest",
       "friendForestDesc": "People you invited to NatureHelp. Grow your forest together.",
-      "inviteFriends": "Invite friends",
+      "inviteFriends": "Copy invite link",
+      "linkCopied": "Link copied!",
+      "referralsEmpty": "No friends invited yet.",
+      "shareProfile": "Share my impact",
+      "shareError": "Could not generate the image.",
       "levelStatusTitle": "Current level",
       "levelStatusDesc": "Earn XP by visiting your profile, improving reports, adding photos, and when others confirm your findings.",
       "totalXp": "Total XP"

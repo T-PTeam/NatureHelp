@@ -1,7 +1,19 @@
 <div class="overview-tab">
   <section class="impact-section">
-    <h2 class="section-title">{{ "profile.overview.impactTitle" | translate }}</h2>
+    <div class="impact-section-header">
+      <h2 class="section-title">{{ "profile.overview.impactTitle" | translate }}</h2>
+      <button
+        mat-stroked-button
+        color="primary"
+        class="share-btn"
+        [disabled]="sharingImage"
+        (click)="shareProfileImage()">
+        <mat-icon>share</mat-icon>
+        {{ "profile.overview.shareProfile" | translate }}
+      </button>
+    </div>
     <div
+      #impactCard
       class="impact-cards"
       *ngIf="stats">
       <mat-card class="impact-card">
@@ -40,5 +52,39 @@
         </div>
       </div>
     </mat-card>
+  </section>
+
+  <section class="friend-forest-section">
+    <h2 class="section-title">{{ "profile.overview.friendForestTitle" | translate }}</h2>
+    <p class="section-desc">{{ "profile.overview.friendForestDesc" | translate }}</p>
+    <div class="invite-link-row">
+      <button
+        mat-stroked-button
+        color="accent"
+        (click)="copyInviteLink()">
+        <mat-icon>{{ linkCopied ? "check" : "content_copy" }}</mat-icon>
+        {{ (linkCopied ? "profile.overview.linkCopied" : "profile.overview.inviteFriends") | translate }}
+      </button>
+    </div>
+    <div
+      class="referrals-list"
+      *ngIf="referrals.length > 0">
+      <div
+        class="referral-item"
+        *ngFor="let ref of referrals">
+        <nat-dynamic-avatar
+          [stage]="ref.avatarStage"
+          size="sm"></nat-dynamic-avatar>
+        <div class="referral-info">
+          <span class="referral-name">{{ ref.displayName }}</span>
+          <span class="referral-date">{{ ref.joinedAt | date : "mediumDate" }}</span>
+        </div>
+      </div>
+    </div>
+    <p
+      class="referrals-empty"
+      *ngIf="referrals.length === 0">
+      {{ "profile.overview.referralsEmpty" | translate }}
+    </p>
   </section>
 </div>

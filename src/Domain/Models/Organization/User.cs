@@ -45,6 +45,9 @@ public class User : Person
     public int TotalXp { get; set; }
     public int CurrentLevel { get; set; } = 1;
 
+    public string? ReferralCode { get; set; }
+    public Guid? ReferredByUserId { get; set; }
+
     public bool IsEmailValid(string email)
     {
         if (string.IsNullOrWhiteSpace(email))

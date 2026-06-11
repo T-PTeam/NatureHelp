@@ -121,8 +121,9 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.isAuthenticating = true;
+        const refCode = isRegister ? new URLSearchParams(window.location.search).get("ref") : null;
         this.userService
-          .auth(isRegister ? EAuthType.Register : EAuthType.Login, result.email, result.password)
+          .auth(isRegister ? EAuthType.Register : EAuthType.Login, result.email, result.password, refCode)
           .subscribe({
             next: (authResponse) => {
               this.isAuthenticating = false;

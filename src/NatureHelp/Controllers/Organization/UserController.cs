@@ -128,6 +128,25 @@ public class UserController : Controller
     }
 
     [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpGet("profile/referrals")]
+    public async Task<IActionResult> GetProfileReferrals()
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        return Ok(await _userService.GetProfileReferralsAsync(email));
+    }
+
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
+    [HttpGet("profile/referral-invite-link")]
+    public async Task<IActionResult> GetReferralInviteLink()
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        if (string.IsNullOrEmpty(email)) return Unauthorized();
+        var link = await _userService.GetReferralInviteLinkAsync(email);
+        return Ok(new { inviteLink = link });
+    }
+
+    [Authorize(Roles = "SuperAdmin, Owner, Manager, Supervisor, Researcher")]
     [HttpGet("profile/journal")]
     public async Task<IActionResult> GetProfileJournal([FromQuery] int take = 100)
     {

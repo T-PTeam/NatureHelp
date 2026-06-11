@@ -44,5 +44,8 @@ public interface IUserService
     Task<IReadOnlyList<ProfileAchievementDto>> GetProfileAchievementsAsync(string email);
 
     Task<bool> RecordProfileVisitAsync(string email);
+
+    Task<IReadOnlyList<ProfileReferralDto>> GetProfileReferralsAsync(string email);
+    Task<string> GetReferralInviteLinkAsync(string email);
 }
 

@@ -25,4 +25,7 @@ public interface IProfileRepository
     Task UpsertUserAchievementAsync(UserAchievement ua, CancellationToken ct = default);
     Task<List<DeficiencyAttachment>> GetAttachmentsByCreatorAsync(Guid userId, int take, CancellationToken ct = default);
     Task<List<ProfileJournalEntryDto>> GetProfileJournalAsync(Guid userId, int take, CancellationToken ct = default);
+    Task<List<ProfileReferralDto>> GetReferralsAsync(Guid userId, CancellationToken ct = default);
+    Task<int> CountReferralsAsync(Guid userId, CancellationToken ct = default);
+    Task<string> EnsureReferralCodeAsync(Guid userId, CancellationToken ct = default);
 }

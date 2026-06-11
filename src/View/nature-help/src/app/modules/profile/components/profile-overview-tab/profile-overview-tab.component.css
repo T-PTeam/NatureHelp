@@ -77,3 +77,60 @@
   font-size: 0.95rem;
   color: #424242;
 }
+
+.impact-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.impact-section-header .section-title {
+  margin: 0;
+}
+
+.share-btn {
+  font-size: 0.85rem;
+}
+
+.invite-link-row {
+  margin-bottom: 1rem;
+}
+
+.referrals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.referral-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: #f1f8e9;
+}
+
+.referral-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.referral-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1b5e20;
+}
+
+.referral-date {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.referrals-empty {
+  color: #888;
+  font-size: 0.9rem;
+}

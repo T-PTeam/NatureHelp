@@ -17,6 +17,7 @@ import { IProfileStats } from "@/models/profile/IProfileStats";
 import { IProfileJournalEntry } from "@/models/profile/IProfileJournalEntry";
 import { IProfilePhotoHistory } from "@/models/profile/IProfilePhotoHistory";
 import { IAchievement } from "@/models/profile/IAchievement";
+import { IReferral } from "@/models/profile/IReferral";
 
 interface IAchievementApi {
   id: string;
@@ -150,13 +151,14 @@ export class UserAPIService {
     );
   }
 
-  auth(authType: EAuthType, email: string, password: string | null): Observable<IAuthResponse> {
+  auth(authType: EAuthType, email: string, password: string | null, referralCode?: string | null): Observable<IAuthResponse> {
     if (password) {
       return this.http
         .post<IAuthResponse>(`${this.apiUrl}/${authType}`, {
           email,
           password,
           organizationId: sessionStorage.getItem("organizationId"),
+          ...(referralCode ? { referralCode } : {}),
         })
         .pipe(
           tap((authResponse) => {
@@ -261,6 +263,27 @@ export class UserAPIService {
         const errorMessage = getErrorMessage(err);
         this.notify.open(errorMessage, "Close", { duration: 4000 });
         return of([]);
+      }),
+    );
+  }
+
+  getProfileReferrals(): Observable<IReferral[]> {
+    return this.http.get<IReferral[]>(`${this.apiUrl}/profile/referrals`).pipe(
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 4000 });
+        return of([]);
+      }),
+    );
+  }
+
+  getReferralInviteLink(): Observable<string | null> {
+    return this.http.get<{ inviteLink: string }>(`${this.apiUrl}/profile/referral-invite-link`).pipe(
+      map((res) => res.inviteLink),
+      catchError((err: HttpErrorResponse) => {
+        const errorMessage = getErrorMessage(err);
+        this.notify.open(errorMessage, "Close", { duration: 4000 });
+        return of(null);
       }),
     );
   }

@@ -508,6 +508,7 @@ public class UserService : IUserService
         var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
         var (water, soil) = await _userRepository.CountCreatedDeficienciesAsync(user.Id);
         var total = water + soil;
+        var referralsCount = await _profileRepository.CountReferralsAsync(user.Id);
         var (level, xpInto, xpToNext) = await _profileService.GetLevelProgressAsync(user.TotalXp);
 
         var stage = level switch
@@ -536,7 +537,7 @@ public class UserService : IUserService
             ReportsCount = total,
             WaterReportsCount = water,
             SoilReportsCount = soil,
-            ReferralsCount = 0,
+            ReferralsCount = referralsCount,
             TotalXp = user.TotalXp,
             Level = level,
             XpCurrent = xpInto,
@@ -609,5 +610,19 @@ public class UserService : IUserService
         user.NewsletterEnabled = settings.NewsletterEnabled;
         await _userRepository.UpdateAsync(user);
         return user;
+    }
+
+    public async Task<IReadOnlyList<ProfileReferralDto>> GetProfileReferralsAsync(string email)
+    {
+        var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
+        return await _profileRepository.GetReferralsAsync(user.Id);
+    }
+
+    public async Task<string> GetReferralInviteLinkAsync(string email)
+    {
+        var user = await _userRepository.GetUserByEmail(email) ?? throw new NullReferenceException("User was not found.");
+        var code = await _profileRepository.EnsureReferralCodeAsync(user.Id);
+        var baseUrl = _configuration["Frontend:Url"]?.TrimEnd('/') ?? string.Empty;
+        return $"{baseUrl}/register?ref={code}";
     }
 }
