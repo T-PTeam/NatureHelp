@@ -1,3 +1,4 @@
+using Domain.Enums;
 using Domain.Models.Organization;
 using Infrastructure.Data;
 using Infrastructure.Extensions;
@@ -18,28 +19,19 @@ public class UserRepository : BaseRepository<User>, IUserRepository
             {
                 IQueryable<User> fullList = context.Set<User>()
                     .Include(u => u.Organization)
-                    .Include(u => u.Laboratory);
+                    .Include(u => u.UserLaboratories)
+                    .ThenInclude(ul => ul.Laboratory);
 
-                foreach (var user in fullList)
-                {
-                    if (user.Laboratory != null) user.Laboratory.Researchers = null;
-                }
-
-                return await fullList.ToListAsync();
+                return PopulateLaboratories(await fullList.ToListAsync());
             }
 
             IQueryable<User> list = context.Set<User>()
                     .Include(u => u.Organization)
-                    .Include(u => u.Laboratory)
+                    .Include(u => u.UserLaboratories)
+                    .ThenInclude(ul => ul.Laboratory)
                     .Skip(scrollCount * 20).Take(20);
 
-            foreach (var user in list)
-            {
-                if (user.Laboratory != null) user.Laboratory.Researchers = null;
-            }
-
-            return await list
-                .ToListAsync();
+            return PopulateLaboratories(await list.ToListAsync());
         }
     }
 
@@ -47,9 +39,13 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     {
         using (var context = _contextFactory.CreateDbContext())
         {
-            return await context.Set<User>()
+            var user = await context.Set<User>()
                 .Include(u => u.Organization)
+                .Include(u => u.UserLaboratories)
+                .ThenInclude(ul => ul.Laboratory)
                 .FirstOrDefaultAsync(u => u.Email == email);
+
+            return user == null ? null : PopulateLaboratories(user);
         }
     }
 
@@ -77,7 +73,12 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     {
         using (var context = _contextFactory.CreateDbContext())
         {
-            return await context.Set<User>().FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+            var user = await context.Set<User>()
+                .Include(u => u.UserLaboratories)
+                .ThenInclude(ul => ul.Laboratory)
+                .FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+
+            return user == null ? null : PopulateLaboratories(user);
         }
     }
 
@@ -86,12 +87,24 @@ public class UserRepository : BaseRepository<User>, IUserRepository
         using (var context = _contextFactory.CreateDbContext())
         {
             if (organizationId == null)
-                return await context.Set<User>().Where(u => string.IsNullOrEmpty(u.RefreshToken)).ToArrayAsync();
+            {
+                var usersWithoutLogin = await context.Set<User>()
+                    .Where(u => string.IsNullOrEmpty(u.RefreshToken))
+                    .Include(u => u.UserLaboratories)
+                    .ThenInclude(ul => ul.Laboratory)
+                    .ToArrayAsync();
 
-            return await context.Set<User>()
+                return PopulateLaboratories(usersWithoutLogin).ToArray();
+            }
+
+            var users = await context.Set<User>()
+                .Include(u => u.UserLaboratories)
+                .ThenInclude(ul => ul.Laboratory)
                 .Where(u => string.IsNullOrEmpty(u.RefreshToken)
                     && u.OrganizationId == organizationId)
                 .ToArrayAsync();
+
+            return PopulateLaboratories(users).ToArray();
         }
     }
 
@@ -224,6 +237,8 @@ public class UserRepository : BaseRepository<User>, IUserRepository
         var (sortBy, sortDirection, remainingFilters) = QueryableExtensions.ExtractSorting(filters);
         var query = context.Set<User>()
             .Where(u => u.OrganizationId == organizationId)
+            .Include(u => u.UserLaboratories)
+            .ThenInclude(ul => ul.Laboratory)
             .ApplyFilters(remainingFilters)
             .ApplySorting(sortBy, sortDirection);
 
@@ -232,23 +247,122 @@ public class UserRepository : BaseRepository<User>, IUserRepository
             query = query.Skip(scrollCount * 20).Take(20);
         }
 
-        var list = await query.ToListAsync();
-
-        foreach (var user in list)
-        {
-            if (user.Laboratory != null)
-            {
-                user.Laboratory.Researchers = null;
-            }
-        }
-
-        return list;
+        return PopulateLaboratories(await query.ToListAsync());
     }
 
     public async Task<int> GetTotalCountByOrganization(Guid organizationId)
     {
         using var context = _contextFactory.CreateDbContext();
         return await context.Set<User>().CountAsync(u => u.OrganizationId == organizationId);
+    }
+
+    public async Task<List<User>> GetResearchersByOrganizationAsync(Guid organizationId)
+    {
+        using var context = _contextFactory.CreateDbContext();
+        var users = await context.Set<User>()
+            .Where(u => u.OrganizationId == organizationId && u.Role == ERole.Researcher)
+            .Include(u => u.UserLaboratories)
+            .ThenInclude(ul => ul.Laboratory)
+            .OrderBy(u => u.FirstName)
+            .ThenBy(u => u.LastName)
+            .ToListAsync();
+
+        return PopulateLaboratories(users).ToList();
+    }
+
+    public async Task SyncLaboratoryResearchersAsync(Guid laboratoryId, Guid organizationId, IEnumerable<Guid> researcherIds)
+    {
+        using var context = _contextFactory.CreateDbContext();
+        var normalizedResearcherIds = researcherIds
+            .Where(id => id != Guid.Empty)
+            .Distinct()
+            .ToList();
+
+        var eligibleResearcherIds = await context.Set<User>()
+            .Where(u => u.OrganizationId == organizationId && u.Role == ERole.Researcher && normalizedResearcherIds.Contains(u.Id))
+            .Select(u => u.Id)
+            .ToListAsync();
+
+        var existingMemberships = await context.UserLaboratories
+            .Where(ul => ul.LaboratoryId == laboratoryId)
+            .ToListAsync();
+
+        var existingUserIds = existingMemberships.Select(ul => ul.UserId).ToHashSet();
+        var eligibleUserIds = eligibleResearcherIds.ToHashSet();
+
+        context.UserLaboratories.RemoveRange(existingMemberships.Where(ul => !eligibleUserIds.Contains(ul.UserId)));
+
+        var newMemberships = eligibleUserIds
+            .Except(existingUserIds)
+            .Select(userId => new UserLaboratory
+            {
+                UserId = userId,
+                LaboratoryId = laboratoryId,
+            });
+
+        await context.UserLaboratories.AddRangeAsync(newMemberships);
+        await context.SaveChangesAsync();
+
+        var affectedUserIds = existingUserIds.Union(eligibleUserIds).ToList();
+        if (affectedUserIds.Count == 0)
+        {
+            return;
+        }
+
+        var membershipsByUser = await context.UserLaboratories
+            .Where(ul => affectedUserIds.Contains(ul.UserId))
+            .OrderBy(ul => ul.LaboratoryId)
+            .ToListAsync();
+
+        var users = await context.Users
+            .Where(u => affectedUserIds.Contains(u.Id))
+            .ToListAsync();
+
+        foreach (var user in users)
+        {
+            user.LaboratoryId = membershipsByUser
+                .Where(ul => ul.UserId == user.Id)
+                .Select(ul => (Guid?)ul.LaboratoryId)
+                .FirstOrDefault();
+        }
+
+        await context.SaveChangesAsync();
+    }
+
+    private static IEnumerable<User> PopulateLaboratories(IEnumerable<User> users)
+    {
+        foreach (var user in users)
+        {
+            PopulateLaboratories(user);
+        }
+
+        return users;
+    }
+
+    private static User PopulateLaboratories(User user)
+    {
+        var laboratories = user.UserLaboratories?
+            .Select(ul => ul.Laboratory)
+            .Where(l => l != null)
+            .OrderBy(l => l!.Title)
+            .Select(l =>
+            {
+                return new Laboratory
+                {
+                    Id = l!.Id,
+                    Title = l.Title,
+                };
+            })
+            .ToList() ?? new List<Laboratory>();
+
+        user.Laboratories = laboratories!;
+        user.Laboratory = laboratories.FirstOrDefault();
+        if (user.LaboratoryId == null)
+        {
+            user.LaboratoryId = user.Laboratory?.Id;
+        }
+
+        return user;
     }
 
 }

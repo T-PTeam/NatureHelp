@@ -1,5 +1,6 @@
 ﻿using Domain.Interfaces;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Domain.Models.Organization;
 
@@ -10,7 +11,12 @@ public class Laboratory : BaseModel, ICoordinates
     [NotMapped]
     public int ResearchersCount { get; set; }
 
-    public List<User>? Researchers { get; set; }
+    public List<User> Researchers { get; set; } = [];
+    [JsonIgnore]
+    public List<UserLaboratory> UserLaboratories { get; set; } = [];
+
+    [NotMapped]
+    public List<Guid> ResearcherIds { get; set; } = [];
     public bool IsPublic { get; set; }
 
     #region ICoordinates Implementation

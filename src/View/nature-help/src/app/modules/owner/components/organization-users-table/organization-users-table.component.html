@@ -129,6 +129,13 @@
         (click)="onSort('email')">
         {{ "userManagement.email" | translate }}{{ sortIndicator(sort, "email") }}
       </div>
+      <div>{{ "tableHeaders.laboratory" | translate }}</div>
+      <div
+        class="sortable-header"
+        [class.active]="sort?.sortBy === 'createdOn'"
+        (click)="onSort('createdOn')">
+        {{ "tableHeaders.createdOn" | translate }}{{ sortIndicator(sort, "createdOn") }}
+      </div>
       <div>{{ "userManagement.status" | translate }}</div>
     </div>
     <div
@@ -160,6 +167,18 @@
           </mat-option>
         </mat-select>
         <nat-truncated-cell [value]="user.email"></nat-truncated-cell>
+        <div class="laboratories-cell">
+          <ng-container *ngIf="user.laboratories?.length; else noLaboratories">
+            <a
+              *ngFor="let laboratory of user.laboratories; let isLast = last"
+              [routerLink]="['/labs', laboratory.id]"
+              class="laboratory-link">
+              {{ laboratory.title }}<span *ngIf="!isLast">, </span>
+            </a>
+          </ng-container>
+          <ng-template #noLaboratories>—</ng-template>
+        </div>
+        <nat-truncated-cell [value]="user.createdOn | date: 'shortDate'"></nat-truncated-cell>
         <div class="status-cell">
           <span
             class="status-badge"

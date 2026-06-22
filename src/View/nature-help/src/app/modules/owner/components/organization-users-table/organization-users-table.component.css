@@ -166,13 +166,31 @@
 
 .grid-header,
 .grid-row {
-  grid-template-columns: 1fr 1fr 0.5fr 1fr 0.5fr;
+  grid-template-columns: 1fr 1fr 0.7fr 1.2fr 1.4fr 0.9fr 0.7fr;
 }
 
 .status-cell {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.laboratories-cell {
+  padding: 8px 5px;
+  border-right: 1px solid #e5e7eb;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.laboratory-link {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.laboratory-link:hover {
+  text-decoration: underline;
 }
 
 .status-badge {

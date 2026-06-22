@@ -1,18 +1,14 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { NavigationEnd, Router } from "@angular/router";
 import { Observable, Subject } from "rxjs";
 import { filter, map, startWith, takeUntil } from "rxjs/operators";
 import moment from "moment";
 
-import { AuthDialogComponent } from "@/shared/components/dialogs/login-dialog/auth-dialog.component";
+import { AuthDialogService } from "@/shared/services/auth-dialog.service";
 import { UserAPIService } from "@/shared/services/user-api.service";
 import { EmailVerificationService } from "@/shared/services/email-verification.service";
 import { MobileMapService } from "@/shared/services/mobile-map.service";
-import { EAuthType } from "@/models/enums";
-import { getErrorMessage } from "@/shared/utils/error.utils";
-import { PostAuthWelcomeDialogService } from "@/shared/services/post-auth-welcome-dialog.service";
 
 @Component({
   selector: "n-navigation-bar",
@@ -27,13 +23,12 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
   public timeRemaining: number = 0;
 
   constructor(
-    private dialog: MatDialog,
     public userService: UserAPIService,
     private emailVerificationService: EmailVerificationService,
     private notify: MatSnackBar,
     public mobileMapService: MobileMapService,
     private router: Router,
-    private postAuthWelcomeDialog: PostAuthWelcomeDialogService,
+    private authDialogService: AuthDialogService,
   ) {}
 
   get isMobile(): boolean {
@@ -106,54 +101,8 @@ export class NavigationBarComponent implements OnInit, OnDestroy {
     }, 1000);
   }
 
-  isAuthenticating = false;
-
   openAuthDialog(isRegister: boolean): void {
-    const dialogRef = this.dialog.open(AuthDialogComponent, {
-      width: "fit-content",
-      height: "fit-content",
-      maxHeight: "80vh",
-      maxWidth: "80vw",
-      minHeight: "300px",
-      minWidth: "400px",
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        this.isAuthenticating = true;
-        const refCode = isRegister ? new URLSearchParams(window.location.search).get("ref") : null;
-        this.userService
-          .auth(isRegister ? EAuthType.Register : EAuthType.Login, result.email, result.password, refCode)
-          .subscribe({
-            next: (authResponse) => {
-              this.isAuthenticating = false;
-              if (!authResponse?.user) {
-                return;
-              }
-              this.postAuthWelcomeDialog.open(authResponse.user);
-              if (!authResponse.user.isEmailConfirmed) {
-                this.emailVerificationService.sendVerificationEmail(authResponse.user.email).subscribe({
-                  next: () => {
-                    this.lastVerificationSent = Date.now();
-                    localStorage.setItem("lastVerificationSent", this.lastVerificationSent.toString());
-                    this.notify.open(`Verification email sent to ${authResponse.user.email}`, "Close", {
-                      duration: 3000,
-                    });
-                  },
-                  error: (error) => {
-                    console.error("Error sending verification email:", error);
-                  },
-                });
-              }
-            },
-            error: (err: any) => {
-              this.isAuthenticating = false;
-              const errorMessage = getErrorMessage(err);
-              this.notify.open(errorMessage, "Close", { duration: 3000 });
-            },
-          });
-      }
-    });
+    this.authDialogService.openAuthDialog(isRegister);
   }
 
   logout() {

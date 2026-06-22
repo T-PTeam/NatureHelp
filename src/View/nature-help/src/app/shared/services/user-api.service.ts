@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { JwtHelperService } from "@auth0/angular-jwt";
-import { BehaviorSubject, catchError, map, Observable, of, shareReplay, switchMap, tap } from "rxjs";
+import { BehaviorSubject, catchError, map, Observable, of, shareReplay, Subject, switchMap, tap } from "rxjs";
 
 import { IAuthResponse } from "@/models/IAuthResponse";
 import { IUser } from "@/models/IUser";
@@ -62,8 +62,10 @@ export class UserAPIService {
 
   private jwtHelper = new JwtHelperService();
   private subject = new BehaviorSubject<IUser | null>(null);
+  private authStateChangedSubject = new Subject<void>();
 
   $user: Observable<IUser | null> = this.subject.asObservable();
+  authStateChanged$: Observable<void> = this.authStateChangedSubject.asObservable();
   isLoggedIn$: Observable<boolean>;
   isLoggedOut$: Observable<boolean>;
 
@@ -357,11 +359,13 @@ export class UserAPIService {
     sessionStorage.removeItem("role");
     sessionStorage.removeItem("organizationId");
     sessionStorage.removeItem("laboratoryId");
+    sessionStorage.removeItem("laboratoryIds");
     sessionStorage.removeItem("email");
     sessionStorage.removeItem("fullName");
     sessionStorage.removeItem("userId");
 
     this.subject.next(null);
+    this.authStateChangedSubject.next();
   }
 
   loadOrganizationUsers(scrollCount: number, sort: ITableSort | null = null, options?: { silent?: boolean }) {
@@ -563,12 +567,15 @@ export class UserAPIService {
     }
 
     const nested = authOptions.user;
+    const userModel = nested ?? authOptions;
     const email = authOptions.email ?? nested?.email;
     const id = authOptions.id ?? nested?.id;
     const firstName = authOptions.firstName ?? nested?.firstName;
     const lastName = authOptions.lastName ?? nested?.lastName;
     const orgId = authOptions.organizationId ?? nested?.organizationId;
-    const laboratoryId = authOptions.laboratoryId ?? nested?.laboratoryId;
+    const laboratories = authOptions.laboratories ?? nested?.laboratories ?? [];
+    const laboratoryIds = laboratories.map((laboratory: { id: string }) => laboratory.id);
+    const laboratoryId = authOptions.laboratoryId ?? nested?.laboratoryId ?? laboratoryIds[0];
 
     if (id) sessionStorage.setItem("userId", id);
     if (authOptions.accessToken) sessionStorage.setItem("accessToken", authOptions.accessToken);
@@ -576,6 +583,7 @@ export class UserAPIService {
     if (orgId) sessionStorage.setItem("organizationId", orgId);
     if (laboratoryId) sessionStorage.setItem("laboratoryId", laboratoryId);
     else sessionStorage.removeItem("laboratoryId");
+    sessionStorage.setItem("laboratoryIds", JSON.stringify(laboratoryIds));
     if (email) sessionStorage.setItem("email", email);
     if (firstName && lastName) sessionStorage.setItem("fullName", `${firstName} ${lastName}`);
 
@@ -583,6 +591,7 @@ export class UserAPIService {
     if (decodedTokenRole)
       sessionStorage.setItem("role", decodedTokenRole["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]);
 
-    this.subject.next(authOptions);
+    this.subject.next(userModel);
+    this.authStateChangedSubject.next();
   }
 }

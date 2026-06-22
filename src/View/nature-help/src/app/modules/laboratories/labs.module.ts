@@ -8,6 +8,7 @@ import { MatModule } from "@/mat.module";
 import { SharedModule } from "@/shared/shared.module";
 
 import { LabDetailsComponent } from "./components/lab-details/lab-details.component";
+import { LabResearchersDialogComponent } from "./components/lab-researchers-dialog/lab-researchers-dialog.component";
 import { LabsTableComponent } from "./components/labs-table/labs-table.component";
 import { ResearchTableComponent } from "./components/research-table/research-table.component";
 import { InfiniteScrollDirective } from "ngx-infinite-scroll";
@@ -25,7 +26,7 @@ import { PickCoordinatesButtonComponent } from "@/shared/components/custom-eleme
     InfiniteScrollDirective,
     PickCoordinatesButtonComponent,
   ],
-  declarations: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],
+  declarations: [LabsTableComponent, LabDetailsComponent, LabResearchersDialogComponent, ResearchTableComponent],
   exports: [LabsTableComponent, LabDetailsComponent, ResearchTableComponent],
 })
 export class LabsModule {}

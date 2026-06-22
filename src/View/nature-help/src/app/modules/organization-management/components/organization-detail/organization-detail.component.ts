@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Location } from "@angular/common";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
@@ -30,6 +31,7 @@ export class OrganizationDetailComponent implements OnInit, OnDestroy {
     private userAPIService: UserAPIService,
     private notify: MatSnackBar,
     private fb: FormBuilder,
+    private location: Location,
   ) {
     this.organizationForm = this.fb.group({
       title: ["", [Validators.required, Validators.minLength(2)]],
@@ -121,6 +123,12 @@ export class OrganizationDetailComponent implements OnInit, OnDestroy {
   }
 
   onBack(): void {
+    const navigationId = window.history.state?.navigationId;
+    if (typeof navigationId === "number" && navigationId > 1) {
+      this.location.back();
+      return;
+    }
+
     this.router.navigate(["/organizations"]);
   }
 

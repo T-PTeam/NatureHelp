@@ -1,0 +1,26 @@
+.login-prompt-snackbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.message {
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.login-action {
+  color: #ff4081;
+}
+
+.close-action {
+  color: #ff4081;
+}

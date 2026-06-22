@@ -30,7 +30,9 @@ export class LaboratoryOwnerGuard implements CanActivate {
       return false;
     }
 
-    if (sessionStorage.getItem("laboratoryId") === labId) {
+    const storedLaboratoryIds = sessionStorage.getItem("laboratoryIds");
+    const accessibleLaboratoryIds = storedLaboratoryIds ? (JSON.parse(storedLaboratoryIds) as string[]) : [];
+    if (sessionStorage.getItem("laboratoryId") === labId || accessibleLaboratoryIds.includes(labId)) {
       return true;
     }
 

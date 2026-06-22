@@ -1,7 +1,17 @@
 <mat-card
   *ngIf="detailsForm"
   class="detail-card">
-  <mat-card-title>{{ "forms.labTitle" | translate }}</mat-card-title>
+  <mat-card-title data-title="{{ 'forms.labTitle' | translate }}"
+    ><button
+      mat-icon-button
+      class="back-button"
+      type="button"
+      (click)="onBack()"
+      [matTooltip]="'common.back' | translate">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="title-spacer"></span>
+  </mat-card-title>
 
   <form
     [formGroup]="detailsForm"
@@ -20,15 +30,24 @@
       </mat-checkbox>
     </div>
 
-    <mat-form-field>
-      <mat-label>{{ "forms.researchesLabel" | translate }}</mat-label>
-      <textarea
-        matInput
-        rows="5"
-        [value]="researchersText"
-        readonly>
-      </textarea>
-    </mat-form-field>
+    <div class="researchers-section">
+      <button
+        mat-stroked-button
+        color="primary"
+        type="button"
+        (click)="openResearchersDialog()">
+        {{ "tableHeaders.researchers" | translate }}
+      </button>
+      <mat-form-field>
+        <mat-label>{{ "forms.researchesLabel" | translate }}</mat-label>
+        <textarea
+          matInput
+          rows="5"
+          [value]="researchersText"
+          readonly>
+        </textarea>
+      </mat-form-field>
+    </div>
 
     <mat-form-field class="full-width">
       <mat-label>{{ "forms.address" | translate }}</mat-label>

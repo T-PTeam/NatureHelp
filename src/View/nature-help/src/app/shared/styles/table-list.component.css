@@ -199,7 +199,7 @@
 .grid-header,
 .grid-row {
   display: grid;
-  grid-template-columns: 2fr repeat(5, 1fr) repeat(3, 2fr) repeat(2, 1fr);
+  grid-template-columns: 2fr repeat(5, 1fr) repeat(4, 2fr) repeat(2, 1fr);
   text-align: center;
   align-items: center;
 }

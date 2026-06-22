@@ -28,5 +28,8 @@ public interface IUserRepository : IBaseRepository<User>
 
     Task<int> GetTotalCountByOrganization(Guid organizationId);
 
+    Task<List<User>> GetResearchersByOrganizationAsync(Guid organizationId);
+    Task SyncLaboratoryResearchersAsync(Guid laboratoryId, Guid organizationId, IEnumerable<Guid> researcherIds);
+
 }
 

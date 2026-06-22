@@ -118,7 +118,7 @@ export class SoilDeficiencyTable {
   changeMapFocus(deficiency: ISoilDeficiency) {
     this.mapViewService.changeFocus({ latitude: deficiency.latitude, longitude: deficiency.longitude }, 12, {
       layer: EMapLayer.SoilDeficiency,
-      popupHtml: `<strong>${deficiency.title}</strong>`,
+      showSelectedMarker: false,
     });
   }
 

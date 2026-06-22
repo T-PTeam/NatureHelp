@@ -13,6 +13,26 @@ namespace Infrastructure.Data;
 public class DevelopmentDatabaseSeeder : IDevelopmentDatabaseSeeder
 {
     private static readonly PasswordHasher<User> PasswordHasher = new();
+    private static readonly (double Latitude, double Longitude)[] SoilCoordinateOffsets =
+    [
+        (-0.024, 0.011),
+        (0.018, -0.022),
+        (-0.013, -0.029),
+        (0.029, 0.007),
+        (-0.006, 0.032),
+        (0.014, -0.034),
+        (0.026, 0.019),
+    ];
+    private static readonly (double Latitude, double Longitude)[] WaterCoordinateOffsets =
+    [
+        (0.021, 0.028),
+        (-0.027, 0.012),
+        (0.009, -0.031),
+        (-0.018, -0.024),
+        (0.031, -0.008),
+        (-0.011, 0.035),
+        (0.024, -0.019),
+    ];
 
     private readonly IDbContextFactory<ApplicationContext> _contextFactory;
     private readonly IConfiguration _configuration;
@@ -291,7 +311,7 @@ public class DevelopmentDatabaseSeeder : IDevelopmentDatabaseSeeder
             var location = UkrainianLocations[(index - 1) % UkrainianLocations.Length];
             var title = BulkSoilTitles[(index - 1) % BulkSoilTitles.Length];
             var description = BulkSoilDescriptions[(index - 1) % BulkSoilDescriptions.Length];
-            var offset = ((index % 7) - 3) * 0.012;
+            var offset = SoilCoordinateOffsets[(index - 1) % SoilCoordinateOffsets.Length];
             var responsibleUserId = userIds[(index - 1) % userIds.Count];
             var creatorId = userIds[index % userIds.Count];
 
@@ -316,8 +336,8 @@ public class DevelopmentDatabaseSeeder : IDevelopmentDatabaseSeeder
                 ResponsibleUserId = responsibleUserId,
                 CreatedBy = creatorId,
                 CreatedOn = now,
-                Latitude = location.Latitude + offset,
-                Longitude = location.Longitude + offset,
+                Latitude = location.Latitude + offset.Latitude,
+                Longitude = location.Longitude + offset.Longitude,
                 Address = location.Address,
                 RadiusAffected = 2 + (index % 4),
             });
@@ -357,7 +377,7 @@ public class DevelopmentDatabaseSeeder : IDevelopmentDatabaseSeeder
             var location = UkrainianLocations[(index + 5) % UkrainianLocations.Length];
             var title = BulkWaterTitles[(index - 1) % BulkWaterTitles.Length];
             var description = BulkWaterDescriptions[(index - 1) % BulkWaterDescriptions.Length];
-            var offset = ((index % 5) - 2) * 0.015;
+            var offset = WaterCoordinateOffsets[(index - 1) % WaterCoordinateOffsets.Length];
             var responsibleUserId = userIds[(index - 1) % userIds.Count];
             var creatorId = userIds[index % userIds.Count];
 
@@ -386,8 +406,8 @@ public class DevelopmentDatabaseSeeder : IDevelopmentDatabaseSeeder
                 ResponsibleUserId = responsibleUserId,
                 CreatedBy = creatorId,
                 CreatedOn = now,
-                Latitude = location.Latitude + offset,
-                Longitude = location.Longitude + offset,
+                Latitude = location.Latitude + offset.Latitude,
+                Longitude = location.Longitude + offset.Longitude,
                 Address = location.Address,
                 RadiusAffected = 2 + (index % 5),
             });

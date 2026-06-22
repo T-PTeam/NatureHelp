@@ -246,7 +246,7 @@ export class DeficiencyDetailsService {
 
       this.mapViewService.changeFocus({ latitude, longitude }, 12, {
         layer,
-        popupHtml: `<strong>${title}</strong>`,
+        showSelectedMarker: false,
       });
     };
 

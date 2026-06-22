@@ -29,6 +29,10 @@
               <mat-icon>group</mat-icon>
               <span>Allowed Members: {{ organization.allowedMembersCount }}</span>
             </div>
+            <div class="detail-item">
+              <mat-icon>schedule</mat-icon>
+              <span>{{ "tableHeaders.createdOn" | translate }}: {{ organization.createdOn | date: "shortDate" }}</span>
+            </div>
           </div>
         </mat-card-content>
 

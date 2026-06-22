@@ -169,6 +169,7 @@
     "actions": "Actions",
     "status": "Status",
     "createdDate": "Created Date",
+    "createdOn": "Created on",
     "updatedDate": "Updated Date",
     "monitoring": "Monitoring",
     "dangerLevel": "Danger Level",
@@ -232,7 +233,9 @@
   "auth": {
     "orContinueWith": "Or continue with",
     "loginWithGoogle": "Continue with Google",
-    "loginWithFacebook": "Continue with Facebook"
+    "loginWithFacebook": "Continue with Facebook",
+    "pleaseLoginToAccount": "Please, login to account",
+    "noPermission": "You do not have permission to access this page."
   },
   "legal": {
     "title": "Legal Information",

@@ -4,6 +4,7 @@ using Application.Interfaces.Services.Cache;
 using Domain.Enums;
 using Domain.Interfaces;
 using Domain.Models.Organization;
+using Infrastructure.Interfaces;
 using Shared.Dtos;
 
 namespace Application.Services.Organization;
@@ -11,6 +12,7 @@ public class LaboratoryService : BaseService<Laboratory>, IMapObjectsService<Lab
 {
     private readonly IChangedModelLogService _logService;
     private readonly IAuthenticationService _authService;
+    private readonly IUserRepository _userRepository;
     private readonly IRedisCacheService? _redisCacheService;
     private new readonly IMapObjectsRepository<Laboratory, LaboratoryMapDto> _repository;
 
@@ -18,11 +20,13 @@ public class LaboratoryService : BaseService<Laboratory>, IMapObjectsService<Lab
         IMapObjectsRepository<Laboratory, LaboratoryMapDto> repository,
         IChangedModelLogService logService,
         IAuthenticationService authService,
+        IUserRepository userRepository,
         IRedisCacheService redisCacheService)
         : base(repository, redisCacheService)
     {
         _logService = logService;
         _authService = authService;
+        _userRepository = userRepository;
         _redisCacheService = redisCacheService;
         _repository = repository;
     }
@@ -101,7 +105,12 @@ public class LaboratoryService : BaseService<Laboratory>, IMapObjectsService<Lab
             return true;
         }
 
-        return currentUser.LaboratoryId == laboratory.Id;
+        if (currentUser.LaboratoryId == laboratory.Id)
+        {
+            return true;
+        }
+
+        return currentUser.UserLaboratories?.Any(ul => ul.LaboratoryId == laboratory.Id) == true;
     }
 
     public override async Task<Guid> DeleteAsync(Guid id)
@@ -109,6 +118,28 @@ public class LaboratoryService : BaseService<Laboratory>, IMapObjectsService<Lab
         var result = await base.DeleteAsync(id);
         await InvalidateListCacheAsync();
         return result;
+    }
+
+    public async Task AssignResearchersAsync(Guid laboratoryId, IEnumerable<Guid> researcherIds)
+    {
+        var currentUser = await _authService.GetCurrentUserAsync()
+            ?? throw new UnauthorizedAccessException("User is not authenticated.");
+
+        var existing = await _repository.GetByIdAsync(laboratoryId)
+            ?? throw new KeyNotFoundException("Laboratory was not found.");
+
+        if (!CanEditLaboratory(existing, currentUser))
+        {
+            throw new UnauthorizedAccessException("You can only edit laboratories that you created or belong to.");
+        }
+
+        if (currentUser.OrganizationId == null)
+        {
+            throw new UnauthorizedAccessException("User does not belong to an organization.");
+        }
+
+        await _userRepository.SyncLaboratoryResearchersAsync(laboratoryId, currentUser.OrganizationId.Value, researcherIds);
+        await InvalidateListCacheAsync();
     }
 
     private Task InvalidateListCacheAsync()

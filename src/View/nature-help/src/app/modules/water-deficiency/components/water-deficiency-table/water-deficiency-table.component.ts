@@ -122,7 +122,7 @@ export class WaterDeficiencyTable {
   changeMapFocus(deficiency: IWaterDeficiency) {
     this.mapViewService.changeFocus({ latitude: deficiency.latitude, longitude: deficiency.longitude }, 12, {
       layer: EMapLayer.WaterDeficiency,
-      popupHtml: `<strong>${deficiency.title}</strong>`,
+      showSelectedMarker: false,
     });
   }
 

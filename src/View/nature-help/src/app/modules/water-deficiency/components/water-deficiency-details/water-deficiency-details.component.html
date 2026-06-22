@@ -9,7 +9,14 @@
   *ngIf="!isLoading && (state.details || state.isAddingDeficiency)"
   class="detail-card">
   <mat-card-title data-title="{{ 'forms.waterDeficiency' | translate }}"
-    ><span></span>
+    ><button
+      mat-icon-button
+      class="back-button"
+      type="button"
+      (click)="onBack()"
+      [matTooltip]="'common.back' | translate">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
     <button
       class="monitoring-flag"
       mat-icon-button

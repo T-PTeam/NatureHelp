@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Location } from "@angular/common";
 import { FormGroup } from "@angular/forms";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Subject } from "rxjs";
 
 import { WaterAPIService } from "@/modules/water-deficiency/services/water-api.service";
@@ -43,6 +44,8 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
     private deficiencyConfirmation: DeficiencyConfirmationService,
     private snackBar: MatSnackBar,
     private translate: TranslateService,
+    private location: Location,
+    private router: Router,
   ) {
     this.state = this.deficiencyDetailsService.initializeState();
   }
@@ -127,6 +130,16 @@ export class WaterDeficiencyDetail implements OnInit, OnDestroy {
       this.formConfig.researchFieldNames,
       disabled,
     );
+  }
+
+  onBack(): void {
+    const navigationId = window.history.state?.navigationId;
+    if (typeof navigationId === "number" && navigationId > 1) {
+      this.location.back();
+      return;
+    }
+
+    this.router.navigate(["/water"]);
   }
 
   fieldError(controlName: string, rangeKey: string, requiredKey?: string): string {

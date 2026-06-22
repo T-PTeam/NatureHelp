@@ -5,6 +5,7 @@ export interface ILaboratory extends IBaseEntity {
   id: string;
   title: string;
   researchers: IUser[];
+  researcherIds?: string[];
   latitude: number;
   longitude: number;
   researchersCount: number;

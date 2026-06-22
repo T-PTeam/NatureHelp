@@ -9,31 +9,15 @@
   *ngIf="!isLoading"
   class="detail-card">
   <mat-card-title data-title="Organization Details"
-    ><span></span>
-    <div class="header-actions">
-      <button
-        mat-icon-button
-        (click)="onBack()"
-        matTooltip="Back">
-        <mat-icon>arrow_back</mat-icon>
-      </button>
-      <div *ngIf="!organization">
-        <button
-          mat-icon-button
-          (click)="onEdit()"
-          *ngIf="organization"
-          matTooltip="Edit Organization">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          (click)="onDelete()"
-          *ngIf="organization"
-          matTooltip="Delete Organization">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-    </div>
+    ><button
+      mat-icon-button
+      class="back-button"
+      type="button"
+      (click)="onBack()"
+      [matTooltip]="'common.back' | translate">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="title-spacer"></span>
   </mat-card-title>
 
   <div class="detail-content">

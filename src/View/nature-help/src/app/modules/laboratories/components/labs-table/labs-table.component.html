@@ -68,6 +68,13 @@
     <div [matTooltip]="'tableHeaders.researchesCount' | translate">
       {{ "tableHeaders.researchesCount" | translate }}
     </div>
+    <div
+      class="sortable-header"
+      [class.active]="sort?.sortBy === 'createdOn'"
+      [matTooltip]="'tableHeaders.createdOn' | translate"
+      (click)="onSort('createdOn')">
+      {{ "tableHeaders.createdOn" | translate }}{{ sortIndicator(sort, "createdOn") }}
+    </div>
     <div [matTooltip]="'tableHeaders.location' | translate">{{ "tableHeaders.location" | translate }}</div>
     <div [matTooltip]="'tableHeaders.edit' | translate">{{ "tableHeaders.edit" | translate }}</div>
   </div>
@@ -86,6 +93,7 @@
       <nat-truncated-cell
         [value]="lab.researchersCount ? (lab.researchers | labResearchers) : '—'"></nat-truncated-cell>
       <nat-truncated-cell [value]="lab.researchersCount"></nat-truncated-cell>
+      <nat-truncated-cell [value]="lab.createdOn | date: 'shortDate'"></nat-truncated-cell>
       <div class="btn-ceil">
         <button
           mat-icon-button

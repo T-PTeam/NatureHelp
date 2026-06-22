@@ -30,6 +30,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { LanguageSwitcherComponent } from "./components/language-switcher/language-switcher.component";
 import { LoadingIndicatorComponent } from "./components/loading-indicator/loading-indicator.component";
 import { TruncatedCellComponent } from "./components/truncated-cell/truncated-cell.component";
+import { LoginPromptSnackbarComponent } from "./components/login-prompt-snackbar/login-prompt-snackbar.component";
 
 @NgModule({
   imports: [CommonModule, MatModule, ReactiveFormsModule, FormsModule, WaterSoilToggleComponent, TranslateModule],
@@ -52,6 +53,7 @@ import { TruncatedCellComponent } from "./components/truncated-cell/truncated-ce
     LanguageSwitcherComponent,
     LoadingIndicatorComponent,
     TruncatedCellComponent,
+    LoginPromptSnackbarComponent,
 
     EnumToStringPipe,
     RoleStringPipe,

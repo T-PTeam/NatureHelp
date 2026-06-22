@@ -1,6 +1,6 @@
 .grid-header,
 .grid-row {
-  grid-template-columns: repeat(3, 3fr) 2fr repeat(2, 1fr);
+  grid-template-columns: 2.5fr 2fr 2.5fr 1fr 1.5fr 1fr 1fr;
 }
 
 .button-group {

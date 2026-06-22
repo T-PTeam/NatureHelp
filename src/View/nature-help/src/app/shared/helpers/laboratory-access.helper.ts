@@ -4,7 +4,7 @@ export function canEditLaboratory(
   lab: Pick<ILaboratory, "id" | "createdBy"> & { createdById?: string },
   userId: string | null,
   role?: string | null,
-  laboratoryId?: string | null,
+  laboratoryIds?: string[] | null,
 ): boolean {
   if (!userId) {
     return false;
@@ -14,8 +14,15 @@ export function canEditLaboratory(
     return true;
   }
 
-  const userLaboratoryId = laboratoryId ?? sessionStorage.getItem("laboratoryId");
-  if (userLaboratoryId && userLaboratoryId === lab.id) {
+  const storedLaboratoryIds = sessionStorage.getItem("laboratoryIds");
+  const parsedLaboratoryIds = storedLaboratoryIds ? (JSON.parse(storedLaboratoryIds) as string[]) : [];
+  const primaryLaboratoryId = sessionStorage.getItem("laboratoryId");
+  const accessibleLaboratoryIds = laboratoryIds ?? [
+    ...parsedLaboratoryIds,
+    ...(primaryLaboratoryId ? [primaryLaboratoryId] : []),
+  ];
+
+  if (accessibleLaboratoryIds.includes(lab.id)) {
     return true;
   }
 

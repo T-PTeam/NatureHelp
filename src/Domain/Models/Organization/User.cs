@@ -1,6 +1,7 @@
 ﻿using Domain.Enums;
 using Domain.Models.Audit;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Domain.Models.Organization;
 
@@ -16,6 +17,11 @@ public class User : Person
     public string PasswordHash { get; set; } = null!;
     public Organization? Organization { get; set; }
     public Laboratory? Laboratory { get; set; }
+    [JsonIgnore]
+    public List<UserLaboratory> UserLaboratories { get; set; } = [];
+
+    [NotMapped]
+    public List<Laboratory> Laboratories { get; set; } = [];
 
     [NotMapped]
     public string? AccessToken { get; set; }

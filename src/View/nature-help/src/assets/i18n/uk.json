@@ -169,6 +169,7 @@
     "actions": "Дії",
     "status": "Статус",
     "createdDate": "Дата створення",
+    "createdOn": "Створено",
     "updatedDate": "Дата оновлення",
     "monitoring": "Моніторинг",
     "dangerLevel": "Рівень небезпеки",
@@ -232,7 +233,9 @@
   "auth": {
     "orContinueWith": "Або продовжити з",
     "loginWithGoogle": "Продовжити з Google",
-    "loginWithFacebook": "Продовжити з Facebook"
+    "loginWithFacebook": "Продовжити з Facebook",
+    "pleaseLoginToAccount": "Будь ласка, увійдіть в обліковий запис",
+    "noPermission": "У вас немає дозволу на доступ до цієї сторінки."
   },
   "legal": {
     "title": "Юридична інформація",

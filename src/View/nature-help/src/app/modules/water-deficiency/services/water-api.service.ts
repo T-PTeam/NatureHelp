@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { BehaviorSubject, catchError, Observable, of, shareReplay, tap } from "rxjs";
+import { BehaviorSubject, catchError, concatMap, from, Observable, of, shareReplay, tap } from "rxjs";
 
 import { IWaterDeficiency } from "@/modules/water-deficiency/models/IWaterDeficiency";
 import { IDeficiencyMapDto } from "@/models/IDeficiencyMapDto";
@@ -21,6 +21,9 @@ export class WaterAPIService {
   public totalCount$: Observable<number> = this.totalCountSubject.asObservable();
   public mapDeficiencies$: Observable<IDeficiencyMapDto[]> = this.mapDataSubject.asObservable();
   private watersUrl = `${environment.apiUrl}/waterdeficiency`;
+  private lastScrollCount = 0;
+  private lastFilter: IWaterDeficiencyFilter | null = null;
+  private lastSort: ITableSort | null = null;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -30,42 +33,30 @@ export class WaterAPIService {
     private http: HttpClient,
     private loading: LoadingService,
     private notify: MatSnackBar,
-  ) {
-    this.loadWaterDeficiencies(0, null);
-    this.loadAllWaterDeficienciesForMap();
-  }
+  ) {}
 
   public loadWaterDeficiencies(
     scrollCount: number,
     filter: IWaterDeficiencyFilter | null,
     sort: ITableSort | null = null,
   ) {
-    let params = new HttpParams();
+    this.lastScrollCount = scrollCount;
+    this.lastFilter = filter ? { ...filter } : null;
+    this.lastSort = sort ? { ...sort } : null;
 
-    if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
-    if (filter?.title) params = params.set("Title", filter.title);
-    if (filter?.description) params = params.set("Description", filter.description);
-    if (filter?.eDangerState || filter?.eDangerState === 0)
-      params = params.set("EDangerState", filter.eDangerState.toString());
-    params = appendSortParams(params, sort);
+    const loadDeficiencies$ = this.fetchWaterDeficiencies(scrollCount, filter, sort);
+    this.loading.showLoaderUntilCompleted(loadDeficiencies$).subscribe();
+  }
 
-    const loaddeficiencies$ = this.http.get<IListData<IWaterDeficiency>>(`${this.watersUrl}`, { params }).pipe(
-      tap((listData) => {
-        if (scrollCount === 0) this.listSubject.next(listData.list);
-        else this.listSubject.next([...this.listSubject.getValue(), ...listData.list]);
-
-        this.totalCountSubject.next(listData.totalCount);
-      }),
-      catchError((err) => {
-        const message = "Could not load water deficiencies";
-
-        console.error(err);
-        this.notify.open(message, "Close", { duration: 2000 });
-        return of({ list: [], totalCount: 0 } as IListData<IWaterDeficiency>);
-      }),
+  public reloadCurrentData(): void {
+    const pages = Array.from({ length: this.lastScrollCount + 1 }, (_, index) => index);
+    const reload$ = from(pages).pipe(
+      concatMap((page) => this.fetchWaterDeficiencies(page, this.lastFilter, this.lastSort)),
       shareReplay(),
     );
-    this.loading.showLoaderUntilCompleted(loaddeficiencies$).subscribe();
+
+    this.loading.showLoaderUntilCompleted(reload$).subscribe();
+    this.loadAllWaterDeficienciesForMap();
   }
 
   public loadAllWaterDeficienciesForMap() {
@@ -115,6 +106,38 @@ export class WaterAPIService {
         this.notify.open(message, "Close", { duration: 2000 });
 
         return err;
+      }),
+      shareReplay(),
+    );
+  }
+
+  private fetchWaterDeficiencies(
+    scrollCount: number,
+    filter: IWaterDeficiencyFilter | null,
+    sort: ITableSort | null,
+  ): Observable<IListData<IWaterDeficiency>> {
+    let params = new HttpParams();
+
+    if (scrollCount || scrollCount === 0) params = params.set("scrollCount", scrollCount);
+    if (filter?.title) params = params.set("Title", filter.title);
+    if (filter?.description) params = params.set("Description", filter.description);
+    if (filter?.eDangerState || filter?.eDangerState === 0)
+      params = params.set("EDangerState", filter.eDangerState.toString());
+    params = appendSortParams(params, sort);
+
+    return this.http.get<IListData<IWaterDeficiency>>(`${this.watersUrl}`, { params }).pipe(
+      tap((listData) => {
+        if (scrollCount === 0) this.listSubject.next(listData.list);
+        else this.listSubject.next([...this.listSubject.getValue(), ...listData.list]);
+
+        this.totalCountSubject.next(listData.totalCount);
+      }),
+      catchError((err) => {
+        const message = "Could not load water deficiencies";
+
+        console.error(err);
+        this.notify.open(message, "Close", { duration: 2000 });
+        return of({ list: [], totalCount: 0 } as IListData<IWaterDeficiency>);
       }),
       shareReplay(),
     );

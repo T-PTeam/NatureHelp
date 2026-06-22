@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
 import { TranslateModule } from "@ngx-translate/core";
 
 import { MatModule } from "@/mat.module";
@@ -18,6 +19,7 @@ import { OrganizationUsersTableComponent } from "./components/organization-users
     FormsModule,
     SharedModule,
     MatModule,
+    RouterModule,
     InfiniteScrollDirective,
     TranslateModule,
   ],

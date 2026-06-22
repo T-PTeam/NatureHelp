@@ -12,6 +12,16 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
 
     private static IQueryable<Laboratory> ApplyVisibilityFilter(IQueryable<Laboratory> query, User? currentUser)
     {
+        var laboratoryIds = currentUser?.UserLaboratories?
+            .Select(ul => ul.LaboratoryId)
+            .Distinct()
+            .ToList() ?? new List<Guid>();
+
+        if (currentUser?.LaboratoryId is Guid primaryLaboratoryId)
+        {
+            laboratoryIds.Add(primaryLaboratoryId);
+        }
+
         if (currentUser == null)
         {
             return query.Where(l => l.IsPublic);
@@ -20,7 +30,7 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
         return query.Where(l =>
             l.IsPublic
             || l.CreatedBy == currentUser.Id
-            || l.Id == currentUser.LaboratoryId);
+            || laboratoryIds.Contains(l.Id));
     }
 
     public async Task<IEnumerable<LaboratoryMapDto>> GetMapObjects(IDictionary<string, string?>? filters, User? currentUser = null)
@@ -34,13 +44,13 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
                     Title = l.Title,
                     Longitude = l.Longitude,
                     Latitude = l.Latitude,
-                    ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
-                    Researchers = l.Researchers != null
-                        ? l.Researchers
+                    ResearchersCount = l.UserLaboratories != null ? l.UserLaboratories.Count : 0,
+                    Researchers = l.UserLaboratories != null
+                        ? l.UserLaboratories
                             .Select(r => new ResearcherDto
                             {
-                                Id = r.Id,
-                                FullName = $"{r.FirstName} {r.LastName}"
+                                Id = r.User.Id,
+                                FullName = $"{r.User.FirstName} {r.User.LastName}"
                             }).ToList()
                         : new List<ResearcherDto>()
                 });
@@ -62,22 +72,28 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
             var query = ApplyVisibilityFilter(context.Set<Laboratory>(), currentUser)
                 .ApplyFilters(remainingFilters)
                 .ApplySorting(sortBy, sortDirection)
-                .Include(l => l.Researchers)
                 .Select(l => new Laboratory
                 {
                     Id = l.Id,
                     Title = l.Title,
                     CreatedBy = l.CreatedBy,
-                    Researchers = l.Researchers != null
-                        ? l.Researchers.Select(r => new User()
+                    CreatedOn = l.CreatedOn,
+                    Researchers = l.UserLaboratories != null
+                        ? l.UserLaboratories.Select(r => new User()
                         {
-                            FirstName = r.FirstName,
-                            LastName = r.LastName
+                            Id = r.User.Id,
+                            FirstName = r.User.FirstName,
+                            LastName = r.User.LastName
                         }).ToList()
                         : new List<User>(),
-                    ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
+                    ResearcherIds = l.UserLaboratories != null
+                        ? l.UserLaboratories.Select(r => r.UserId).ToList()
+                        : new List<Guid>(),
+                    ResearchersCount = l.UserLaboratories != null ? l.UserLaboratories.Count : 0,
                     Latitude = l.Latitude,
-                    Longitude = l.Longitude
+                    Longitude = l.Longitude,
+                    Address = l.Address,
+                    IsPublic = l.IsPublic,
                 });
 
             if (scrollCount != -1)
@@ -94,15 +110,27 @@ public class LaboratoryRepository : BaseRepository<Laboratory>, IMapObjectsRepos
         using (var context = _contextFactory.CreateDbContext())
         {
             return await context.Set<Laboratory>()
-                .Include(l => l.Researchers)
                 .Select(l => new Laboratory
                 {
                     Id = l.Id,
                     Title = l.Title,
                     CreatedBy = l.CreatedBy,
                     CreatedOn = l.CreatedOn,
-                    Researchers = l.Researchers,
-                    ResearchersCount = l.Researchers != null ? l.Researchers.Count : 0,
+                    Researchers = l.UserLaboratories != null
+                        ? l.UserLaboratories.Select(r => new User
+                        {
+                            Id = r.User.Id,
+                            FirstName = r.User.FirstName,
+                            LastName = r.User.LastName,
+                            Email = r.User.Email,
+                            OrganizationId = r.User.OrganizationId,
+                            LaboratoryId = r.User.LaboratoryId,
+                        }).ToList()
+                        : new List<User>(),
+                    ResearcherIds = l.UserLaboratories != null
+                        ? l.UserLaboratories.Select(r => r.UserId).ToList()
+                        : new List<Guid>(),
+                    ResearchersCount = l.UserLaboratories != null ? l.UserLaboratories.Count : 0,
                     Latitude = l.Latitude,
                     Longitude = l.Longitude,
                     Address = l.Address,

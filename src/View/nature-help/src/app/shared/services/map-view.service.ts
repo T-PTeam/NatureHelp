@@ -160,7 +160,11 @@ export class MapViewService {
     tiles.addTo(this.map);
   }
 
-  public changeFocus(coordinates: ICoordinates, zoom: number, options?: { layer?: EMapLayer; popupHtml?: string }) {
+  public changeFocus(
+    coordinates: ICoordinates,
+    zoom: number,
+    options?: { layer?: EMapLayer; popupHtml?: string; showSelectedMarker?: boolean },
+  ) {
     if (!this.map) {
       return;
     }
@@ -180,7 +184,10 @@ export class MapViewService {
 
     this.map.invalidateSize();
     this.map.setView([latitude, longitude], zoom);
-    this.showSelectedLocationMarker(normalized, options?.popupHtml);
+
+    if (options?.showSelectedMarker !== false && (options?.popupHtml || !options?.layer)) {
+      this.showSelectedLocationMarker(normalized, options?.popupHtml);
+    }
 
     if (options?.layer) {
       this.revealLayerMarker(options.layer, normalized);
@@ -263,6 +270,12 @@ export class MapViewService {
     });
 
     if (popupTags) circle.bindPopup(popupTags);
+    circle.on("click", () => {
+      this.changeFocus(coordinates, 12, {
+        layer: mapLayer,
+        showSelectedMarker: false,
+      });
+    });
 
     switch (mapLayer) {
       case EMapLayer.WaterDeficiency:

@@ -15,6 +15,7 @@ public class ApplicationContext : DbContext
     public DbSet<WaterDeficiency> WaterDeficiencies { get; set; }
     public DbSet<SoilDeficiency> SoilDeficiencies { get; set; }
     public DbSet<Laboratory> Laboratories { get; set; }
+    public DbSet<UserLaboratory> UserLaboratories { get; set; }
     public DbSet<Organization> Organizations { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Research> Researches { get; set; }
@@ -49,6 +50,24 @@ public class ApplicationContext : DbContext
             .WithMany()
             .HasForeignKey(u => u.OrganizationId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Entity<User>()
+            .HasIndex(u => u.ReferralCode)
+            .IsUnique()
+            .HasFilter("\"ReferralCode\" IS NOT NULL");
+
+        builder.Entity<UserLaboratory>(e =>
+        {
+            e.HasKey(ul => new { ul.UserId, ul.LaboratoryId });
+            e.HasOne(ul => ul.User)
+                .WithMany(u => u.UserLaboratories)
+                .HasForeignKey(ul => ul.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            e.HasOne(ul => ul.Laboratory)
+                .WithMany(l => l.UserLaboratories)
+                .HasForeignKey(ul => ul.LaboratoryId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
 
         builder.Entity<UserAchievement>(e =>
         {

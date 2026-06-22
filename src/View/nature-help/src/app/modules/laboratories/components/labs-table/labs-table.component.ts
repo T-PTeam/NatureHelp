@@ -62,7 +62,7 @@ export class LabsTableComponent {
     const focus = () =>
       this.mapViewService.changeFocus({ latitude: lab.latitude, longitude: lab.longitude }, 14, {
         layer: EMapLayer.Laboratories,
-        popupHtml: `<strong>${lab.title}</strong>`,
+        showSelectedMarker: false,
       });
 
     if (this.mobileMapService.isMobile()) {

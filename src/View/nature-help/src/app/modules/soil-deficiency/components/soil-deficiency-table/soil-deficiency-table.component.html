@@ -140,6 +140,13 @@
       <div [matTooltip]="'forms.responsibleUser' | translate">{{ "forms.responsibleUser" | translate }}</div>
       <div
         class="sortable-header"
+        [class.active]="sort?.sortBy === 'createdOn'"
+        [matTooltip]="'tableHeaders.createdOn' | translate"
+        (click)="onSort('createdOn')">
+        {{ "tableHeaders.createdOn" | translate }}{{ sortIndicator(sort, "createdOn") }}
+      </div>
+      <div
+        class="sortable-header"
         [class.active]="sort?.sortBy === 'eDangerState'"
         [matTooltip]="'forms.dangerState' | translate"
         (click)="onSort('eDangerState')">
@@ -178,6 +185,7 @@
           [value]="
             (deficiency.responsibleUser?.firstName ?? '') + ' ' + (deficiency.responsibleUser?.lastName ?? '')
           "></nat-truncated-cell>
+        <nat-truncated-cell [value]="deficiency.createdOn | date: 'shortDate'"></nat-truncated-cell>
         <nat-truncated-cell [value]="deficiency.eDangerState | enumToString: 'EDangerState'"></nat-truncated-cell>
         <div class="btn-ceil">
           <button

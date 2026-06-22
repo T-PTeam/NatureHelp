@@ -1,3 +1,4 @@
+import { ILaboratoryReference } from "./ILaboratoryReference";
 import { IMonitoringScheme } from "./IMonitoringScheme";
 
 export interface IUser {
@@ -10,6 +11,8 @@ export interface IUser {
   role: number;
   organizationId: string | null;
   laboratoryId?: string | null;
+  laboratories?: ILaboratoryReference[];
+  createdOn?: Date;
   isEmailConfirmed?: boolean;
   deficiencyMonitoringScheme?: IMonitoringScheme;
   profileIsPublic?: boolean;

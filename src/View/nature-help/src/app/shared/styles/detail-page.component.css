@@ -21,6 +21,15 @@
   position: relative;
 }
 
+.back-button {
+  z-index: 1;
+}
+
+.title-spacer {
+  width: 40px;
+  min-width: 40px;
+}
+
 .detail-card mat-card-title::before {
   content: attr(data-title);
   position: absolute;

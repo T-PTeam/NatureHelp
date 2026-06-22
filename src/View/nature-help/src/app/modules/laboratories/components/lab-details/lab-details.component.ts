@@ -1,12 +1,18 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Location } from "@angular/common";
 import { ILaboratory } from "../../models/ILaboratory";
 import { MapViewService, IAddress } from "@/shared/services/map-view.service";
 import { MobileMapService } from "@/shared/services/mobile-map.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { LabsAPIService } from "../../services/labs-api.service";
+import { UserAPIService } from "@/shared/services/user-api.service";
+import { MatDialog } from "@angular/material/dialog";
+import { ERole } from "@/models/enums";
+import { IUser } from "@/models/IUser";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
+import { LabResearchersDialogComponent } from "../lab-researchers-dialog/lab-researchers-dialog.component";
 
 @Component({
   selector: "app-lab-details",
@@ -19,25 +25,37 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
   detailsForm!: FormGroup;
   isSelectingCoordinates: boolean = false;
   selectedAddress: IAddress | null = null;
+  organizationResearchers: IUser[] = [];
+  pendingResearcherIds: string[] = [];
 
   private isAddingLaboratory: boolean = false;
   private destroy$ = new Subject<void>();
   private coordinatesPickingSubscribed = false;
 
   get researchersText(): string {
-    return this.details?.researchers?.map((r) => `${r.firstName} ${r.lastName}`).join("\n") || "";
+    const sourceResearchers =
+      this.organizationResearchers.length > 0
+        ? this.organizationResearchers.filter((researcher) => this.pendingResearcherIds.includes(researcher.id))
+        : (this.details?.researchers ?? []);
+
+    return sourceResearchers.map((researcher) => `${researcher.firstName} ${researcher.lastName}`).join("\n");
   }
 
   constructor(
     private labsAPIService: LabsAPIService,
+    private userAPIService: UserAPIService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private location: Location,
     private mapViewService: MapViewService,
     private mobileMapService: MobileMapService,
     private fb: FormBuilder,
+    private dialog: MatDialog,
   ) {}
 
   ngOnInit(): void {
+    this.loadOrganizationResearchers();
+
     this.activatedRoute.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
       const id = params["id"];
 
@@ -69,7 +87,10 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const formData: ILaboratory = this.detailsForm.value;
+    const formData: ILaboratory = {
+      ...this.detailsForm.value,
+      researcherIds: this.pendingResearcherIds,
+    };
     formData.researchers = [];
 
     if (this.mobileMapService.isMobile()) {
@@ -78,8 +99,15 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
 
     if (this.isAddingLaboratory) {
       this.labsAPIService.addLab(formData).subscribe({
-        next: () => {
-          this.router.navigate(["/labs"]);
+        next: (lab) => {
+          this.labsAPIService.assignResearchersToLab(lab.id, this.pendingResearcherIds).subscribe({
+            next: () => {
+              this.router.navigate(["/labs"]);
+            },
+            error: (error: any) => {
+              console.error("Error assigning laboratory researchers:", error);
+            },
+          });
         },
         error: (error: any) => {
           console.error("Error creating laboratory:", error);
@@ -87,8 +115,15 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
       });
     } else {
       this.labsAPIService.updateLabById(formData.id, formData).subscribe({
-        next: () => {
-          this.router.navigate(["/labs"]);
+        next: (lab) => {
+          this.labsAPIService.assignResearchersToLab(lab.id, this.pendingResearcherIds).subscribe({
+            next: () => {
+              this.router.navigate(["/labs"]);
+            },
+            error: (error: any) => {
+              console.error("Error assigning laboratory researchers:", error);
+            },
+          });
         },
         error: (error: any) => {
           console.error("Error updating laboratory:", error);
@@ -97,9 +132,48 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
     }
   }
 
+  openResearchersDialog(): void {
+    const dialogRef = this.dialog.open(LabResearchersDialogComponent, {
+      width: "640px",
+      maxWidth: "90vw",
+      data: {
+        researchers: this.organizationResearchers,
+        selectedResearcherIds: this.pendingResearcherIds,
+      },
+    });
+
+    dialogRef
+      .afterClosed()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((selectedResearcherIds?: string[]) => {
+        if (!selectedResearcherIds) {
+          return;
+        }
+
+        this.pendingResearcherIds = selectedResearcherIds;
+        this.detailsForm.patchValue({
+          researchersCount: selectedResearcherIds.length,
+        });
+      });
+  }
+
   onCancel() {
     if (this.mobileMapService.isMobile()) {
       this.mobileMapService.hideMobileMap();
+    }
+
+    this.router.navigate(["/labs"]);
+  }
+
+  onBack(): void {
+    if (this.mobileMapService.isMobile()) {
+      this.mobileMapService.hideMobileMap();
+    }
+
+    const navigationId = window.history.state?.navigationId;
+    if (typeof navigationId === "number" && navigationId > 1) {
+      this.location.back();
+      return;
     }
 
     this.router.navigate(["/labs"]);
@@ -144,6 +218,11 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
       isPublic: [laboratory?.isPublic || false],
     });
 
+    this.pendingResearcherIds =
+      laboratory?.researcherIds ?? laboratory?.researchers?.map((researcher) => researcher.id) ?? [];
+    this.detailsForm.patchValue({
+      researchersCount: this.pendingResearcherIds.length,
+    });
     this.details = {
       ...this.detailsForm.value,
     };
@@ -162,6 +241,15 @@ export class LabDetailsComponent implements OnInit, OnDestroy {
       }
     });
     return errors;
+  }
+
+  private loadOrganizationResearchers(): void {
+    this.userAPIService
+      .fetchOrganizationUsers(-1, null, { silent: true })
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((users) => {
+        this.organizationResearchers = users.filter((user) => user.role === ERole.Researcher);
+      });
   }
 
   private ensureCoordinatesPickingSubscription(): void {

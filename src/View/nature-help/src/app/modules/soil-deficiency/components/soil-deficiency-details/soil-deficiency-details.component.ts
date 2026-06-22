@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Location } from "@angular/common";
 import { FormGroup } from "@angular/forms";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Subject } from "rxjs";
 
 import { SoilAPIService } from "@/modules/soil-deficiency/services/soil-api.service";
@@ -40,6 +41,8 @@ export class SoilDeficiencyDetail implements OnInit, OnDestroy {
     private deficiencyConfirmation: DeficiencyConfirmationService,
     private snackBar: MatSnackBar,
     private translate: TranslateService,
+    private location: Location,
+    private router: Router,
   ) {
     this.state = this.deficiencyDetailsService.initializeState();
   }
@@ -120,6 +123,16 @@ export class SoilDeficiencyDetail implements OnInit, OnDestroy {
       this.formConfig.researchFieldNames,
       disabled,
     );
+  }
+
+  onBack(): void {
+    const navigationId = window.history.state?.navigationId;
+    if (typeof navigationId === "number" && navigationId > 1) {
+      this.location.back();
+      return;
+    }
+
+    this.router.navigate(["/soil"]);
   }
 
   onSubmit(): void {

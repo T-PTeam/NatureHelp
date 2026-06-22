@@ -247,7 +247,7 @@ internal static class DevelopmentSeedData
             "Municipal discharge impact on Ros river near Bila Tserkva",
             "Intermittent ammonia odors and elevated COD were reported near a stormwater outfall. The municipality started separator maintenance; oxygen levels recover within two kilometers downstream.",
             EDangerState.Moderate,
-            49.8012, 30.1058, "Ros river near Bila Tserkva, Ukraine", 2.8,
+            49.7869, 30.1392, "Ros river near Bila Tserkva, Ukraine", 2.8,
             7.3, 6.9, 3.4, 22.0, 1.2, 0.005, 0.002, 0.002, 0.02, 360.0, 0.72, 900, 120, 14.0,
             UserKaterynaId, UserNataliaId),
     ];

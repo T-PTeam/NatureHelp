@@ -4,6 +4,7 @@ import { UserAPIService } from "./shared/services/user-api.service";
 import { PostAuthWelcomeDialogService } from "./shared/services/post-auth-welcome-dialog.service";
 import { AuditService } from "./shared/services/audit.service";
 import { LanguageService } from "./shared/services/language.service";
+import { AppDataRefreshService } from "./shared/services/app-data-refresh.service";
 
 @Component({
   selector: "n-root",
@@ -12,10 +13,13 @@ import { LanguageService } from "./shared/services/language.service";
   standalone: false,
 })
 export class AppComponent implements OnInit {
+  private authInitialized = false;
+
   constructor(
     private userService: UserAPIService,
     private auditService: AuditService,
     private languageService: LanguageService,
+    private appDataRefreshService: AppDataRefreshService,
     private route: ActivatedRoute,
     private router: Router,
     private postAuthWelcomeDialog: PostAuthWelcomeDialogService,
@@ -30,7 +34,15 @@ export class AppComponent implements OnInit {
 
     this.handleOAuth2Redirect();
 
+    this.userService.authStateChanged$.subscribe(() => {
+      if (this.authInitialized) {
+        this.appDataRefreshService.refreshAll();
+      }
+    });
+
     this.userService.initializeAuth().subscribe((isLoggedIn) => {
+      this.authInitialized = true;
+      this.appDataRefreshService.refreshAll();
       if (isLoggedIn) {
         const monitoringScheme = this.userService.getCurrentUserMonitoringScheme();
         if (monitoringScheme) {

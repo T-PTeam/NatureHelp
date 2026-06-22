@@ -10,6 +10,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatDialogModule, MatDialog } from "@angular/material/dialog";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatIconModule } from "@angular/material/icon";
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { FormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -32,6 +33,7 @@ import { UserAPIService } from "@/shared/services/user-api.service";
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
+    MatIconModule,
     ReactiveFormsModule,
     FormsModule,
   ],
